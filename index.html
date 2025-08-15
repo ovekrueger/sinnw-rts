@@ -3,36 +3,56 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <title>Sinnwärts – Ove Krüger | Klarheit · Orientierung · Menschlichkeit · Integral</title>
   <meta name="description" content="Sinnwärts: Life Trust Coach Ove Krüger. Klarheit, Orientierung, Menschlichkeit – integrale, menschenzentrierte Arbeit.">
+
+  <!-- Montserrat einbinden -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Basisstil: wie auf 'Über mich' */
+    /* === Branding-Variablen (Wurzel) === */
     :root{
-      --bg:#111; --fg:#f4f4f4; --muted:#c8c8c8; --accent:#ffcc33;
-      --card:#1a1a1a; --border:#2a2a2a;
-      --maxw: 900px; --radius:12px}
-   html,body{margin:0}body{margin:0font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;background:var(--bg); color:var(--fg);
-}
-    main{max-width:var(--maxw);margin:0 auto;padding:20px}
+      --bg:#111;            /* bleibt wie bisher */
+      --fg:#f4f4f4;
+      --muted:#c8c8c8;
+      --accent:#F8C047;     /* Gold-Gelb */
+      --card:#1a1a1a;
+      --border:#2a2a2a;
+      --maxw:900px;
+      --radius:12px;
+    }
+
+    /* === Basis === */
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+    body{font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
     a{color:inherit;text-decoration:none}
+
+    /* === Layout wie bisher, nur auf Variablen umgestellt === */
     header{border-bottom:1px solid var(--border); background:#0e0e0e}
     nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
     .brand{font-weight:700}
     .menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
-    h1,h2{color:var(--accent); margin:0 0 10px}
+
+    main{max-width:var(--maxw);margin:0 auto;padding:20px}
+
+    h1,h2{color:var(--accent);letter-spacing:.015em;font-weight:700;margin:0 0 10px}
     .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
     .lead{color:var(--muted); margin:8px 0 16px}
+
     .cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:12px 0 24px}
     .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid var(--border)}
     .btn.primary{background:var(--accent); color:#111; border-color:#d6ac29}
-    img.portrait, img.kompass{display:block; width:100%; height:auto; border-radius:12px; border:1px solid var(--border); margin:0 auto}
+
+    img.portrait, img.kompass{display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border); margin:0 auto}
     img.portrait{max-width:400px; margin-bottom:18px}
+
     section.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; margin:20px 0}
+
     .badges{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
     .badge{border:1px dashed var(--border); color:var(--muted); border-radius:999px; padding:4px 10px; font-size:12px}
+
     footer{max-width:var(--maxw); margin:20px auto 40px; padding:0 20px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding-top:12px}
   </style>
 </head>

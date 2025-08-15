@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="de">
 <head>
- <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Über mich – Ove Krüger | Sinnwärts</title>
 
-  <!-- Montserrat einbinden -->
+  <!-- Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,57 +15,42 @@
       --bg:#111; --fg:#f4f4f4; --muted:#c8c8c8;
       --accent:#F8C047; --border:#2a2a2a; --radius:12px; --maxw:900px;
     }
-
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
     body{font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
-    main{max-width:var(--maxw);margin:auto;padding:20px}
+    a{color:inherit;text-decoration:none}
+    header{border-bottom:1px solid var(--border); background:#0e0e0e}
+    nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
+    .brand{font-weight:700}
+    .menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
 
+    main{max-width:var(--maxw);margin:auto;padding:20px}
     h1,h2{color:var(--accent); letter-spacing:.015em; font-weight:700}
     p{margin:0 0 14px}
     ul{list-style:disc; margin:0 0 18px 20px}
-    img{display:block; margin:0 auto 30px; max-width:400px; width:100%; border-radius:var(--radius); border:1px solid var(--border)}
-  </style>
-</head>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #f4f4f4;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #ffcc33;
-    }
-    img {
-      display: block;
-      margin: 0 auto 30px auto;
-      max-width: 400px;
-      width: 100%;
-      border-radius: 12px;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
+    img.portrait{display:block; margin:0 auto 18px; max-width:400px; width:100%; border-radius:var(--radius); border:1px solid var(--border)}
   </style>
 </head>
 <body>
-  <main>
-    <!-- Bild -->
-    <img src="assets/images/Bild.png.jpg" alt="Ove Krüger – Porträt">
 
-    <!-- Überschrift -->
+  <header>
+    <nav>
+      <div class="brand">Sinnwärts · Ove Krüger</div>
+      <div class="menu">
+        <a href="index.html">Start</a>
+        <a href="ueber-mich.html">Über mich</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Bild wieder aktiv -->
+    <img class="portrait" src="assets/images/dbca66c1.jpg" alt="Ove Krüger – Porträt">
+
     <h1>Über mich</h1>
 
     <p>🙋‍♂️ Ich bin Ove.<br>
     Geboren 1962 in Hamburg. Nach dem Abitur habe ich Musik, Sport und Pädagogik studiert. 2024 habe ich meine Life Trust Coaching-Ausbildung abgeschlossen.  
-    62 Jahre alt. 20 Jahre Alkohol – 14 Jahre trocken.</p>
+    20 Jahre Alkohol – seit vielen Jahren trocken.</p>
 
     <p>Ich habe vieles verloren – und das Wesentliche gefunden. Heute arbeite ich als professioneller Life Trust Coach.  
     Ich begleite Menschen, die aus der Sackgasse wollen. Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
@@ -75,7 +59,7 @@
     Ich weiß, was es heißt, nicht mehr weiterzuwissen – und dennoch aufzustehen.  
     Meine Geschichte ist kein Makel. Sie ist meine Stärke.  
     Ich habe gelernt, wie man in Krisen wächst, sich neu ausrichtet und das innere Steuer übernimmt.  
-    Dabei helfen mir 70 % Schwerbehinderung genauso wie 100 % Mitgefühl.</p>
+    Dabei helfen mir 70 % Schwerbehinderung genauso wie 100 % Mitgefühl.</p>
 
     <h2>Was mich ausmacht</h2>
     <ul>
@@ -119,19 +103,9 @@
     <p>🧭 K.O.M. – Klarheit, Orientierung, Menschlichkeit  
     So arbeite ich. So lebe ich.</p>
 
-    <p>Ich weiß, wie sich das anfühlt.  
-    Ich hab da selbst gesteckt – in Abhängigkeit, Angst und völliger Orientierungslosigkeit.  
-    Heute begleite ich Menschen, die den Mut haben, genauer hinzuschauen.  
-    Menschen, die ihr Leben neu sortieren wollen – innen wie außen.  
-    Nicht mit erhobenem Zeigefinger.  
-    Sondern mit einem klaren Blick, viel Mitgefühl  
-    und einem verdammt stabilen Kompass.</p>
-
     <p>Und du?  
     Bist du bereit, Verantwortung für dein Leben zu übernehmen?  
-    Dann geh ich mit dir.<br>
-    Schritt für Schritt.<br>
-    Wenn du wirklich, wirklich willst.</p>
+    Dann geh ich mit dir. Schritt für Schritt. Wenn du wirklich, wirklich willst.</p>
   </main>
 </body>
 </html>

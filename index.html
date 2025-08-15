@@ -1,109 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sinnwärts – Ove Krüger | Klarheit · Orientierung · Menschlichkeit · Integral</title>
-  <meta name="description" content="Sinnwärts: Life Trust Coach Ove Krüger. Klarheit, Orientierung, Menschlichkeit – integrale, menschenzentrierte Arbeit.">
-
-  <!-- Montserrat einbinden -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sinnwärts · Ove Krüger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* === Branding-Variablen (Wurzel) === */
-    :root{
-      --bg:#111;            /* bleibt wie bisher */
-      --fg:#f4f4f4;
-      --muted:#c8c8c8;
-      --accent:#F8C047;     /* Gold-Gelb */
-      --card:#1a1a1a;
-      --border:#2a2a2a;
-      --maxw:900px;
-      --radius:12px;
+    :root {
+      --bg: #ffffff;
+      --text: #222222;
+      --muted: #555555;
+      --card: #f8f8f8;
+      --border: #dddddd;
+      --radius: 12px;
+      --accent: #d4a373;
     }
-    main img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px; /* optional für runde Ecken */
-  display: block;
-  margin: 0 auto; /* zentriert das Bild */
-}
-
-    /* === Basis === */
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-    body{font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
-    a{color:inherit;text-decoration:none}
-
-    /* === Layout wie bisher, nur auf Variablen umgestellt === */
-    header{border-bottom:1px solid var(--border); background:#0e0e0e}
-    nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
-    .brand{font-weight:700}
-    .menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
-
-    main{max-width:var(--maxw);margin:0 auto;padding:20px}
-
-    h1,h2{color:var(--accent);letter-spacing:.015em;font-weight:700;margin:0 0 10px}
-    .kicker{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
-    .lead{color:var(--muted); margin:8px 0 16px}
-
-    .cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:12px 0 24px}
-    .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid var(--border)}
-    .btn.primary{background:var(--accent); color:#111; border-color:#d6ac29}
-
-    img.portrait, img.kompass{display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border); margin:0 auto}
-    img.portrait{max-width:400px; margin-bottom:18px}
-
-    section.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; margin:20px 0}
-
-    .badges{display:flex; gap:8px; flex-wrap:wrap; justify-content:center}
-    .badge{border:1px dashed var(--border); color:var(--muted); border-radius:999px; padding:4px 10px; font-size:12px}
-
-    footer{max-width:var(--maxw); margin:20px auto 40px; padding:0 20px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding-top:12px}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      background: var(--bg);
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .hero .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+    }
+    .hero h1 {
+      margin: 10px 0;
+    }
+    .hero .tagline {
+      font-style: italic;
+      color: var(--muted);
+    }
+    /* Zwei Spalten */
+    .twocol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    @media (max-width: 800px) {
+      .twocol { grid-template-columns: 1fr; }
+    }
+    /* Kacheln */
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 10px 0 40px;
+      padding: 0 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    @media (max-width: 900px) { .tiles { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .tiles { grid-template-columns: 1fr; } }
+    .tile {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+    }
+    .tile a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      margin-top: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+    img.fit {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav>
-      <div class="brand">Sinnwärts · Ove Krüger</div>
-      <div class="menu">
-        <a href="index.html">Start</a>
-        <a href="ueber-mich.html">Über mich</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </nav>
-  </header>
+<header>
+  <div class="logo">Sinnwärts · Ove Krüger</div>
+  <nav>
+    <a href="index.html">Start</a>
+    <a href="ueber-mich.html">Über mich</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
 
-  <main>
-<main>/* Layout-Blöcke wie auf Jimdo */
-.hero{ text-align:center; margin:14px 0 22px }
-.hero .eyebrow{ color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px }
-.hero .tagline{ font-style:italic; color:var(--muted) }
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="eyebrow">Life Trust Coach</div>
+    <h1>Willkommen bei Sinnwärts</h1>
+    <p class="tagline">Klarheit, Orientierung, Menschlichkeit</p>
+  </section>
 
-.twocol{ display:grid; grid-template-columns: 1fr 1.2fr; gap:22px; align-items:start; }
-@media (max-width: 800px){ .twocol{ grid-template-columns: 1fr } }
+  <!-- Zwei Spalten -->
+  <section class="twocol">
+    <div>
+      <h2>Ich begleite dich</h2>
+      <p>Raus aus der Sackgasse, rein ins Leben.  
+         Für Menschen, die nicht länger nur funktionieren wollen, sondern in die Tiefe gehen.  
+         Mit Klarheit, Mitgefühl und einem stabilen Kompass.</p>
+    </div>
+    <div>
+      <img src="assets/images/a3b59f83.jpg" alt="Ove Krüger" class="fit">
+    </div>
+  </section>
 
-/* Kacheln */
-.tiles{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin:10px 0 6px }
-@media (max-width: 900px){ .tiles{ grid-template-columns: 1fr 1fr } }
-@media (max-width: 600px){ .tiles{ grid-template-columns: 1fr } }
-.tile{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; }
-.tile a{ display:block; padding:10px 12px; border:1px solid var(--border); border-radius:999px; margin-top:10px }
+  <!-- Kacheln -->
+  <section class="tiles">
+    <div class="tile">
+      <h3>Klarheit</h3>
+      <p>Finde heraus, was dir wirklich wichtig ist.</p>
+      <a href="ueber-mich.html">Mehr erfahren</a>
+    </div>
+    <div class="tile">
+      <h3>Orientierung</h3>
+      <p>Erkenne neue Wege und gehe sie bewusst.</p>
+      <a href="kontakt.html">Kontakt aufnehmen</a>
+    </div>
+    <div class="tile">
+      <h3>Menschlichkeit</h3>
+      <p>Arbeite mit dir, nicht gegen dich.</p>
+      <a href="ueber-mich.html">Über mich</a>
+    </div>
+  </section>
+</main>
 
-/* Helfer */
-.lead{ color:var(--muted); margin:6px 0 12px }
-.note{ color:var(--muted); font-size:14px }
-img.fit{ display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border) }
-
-
-  </main>
-
-  <footer>
-    © <span id="y"></span> Ove Krüger · Sinnwärts
-  </footer>
-
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

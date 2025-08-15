@@ -1,14 +1,32 @@
 <!doctype html>
 <html lang="de">
 <head>
+ <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <title>Über mich – Ove Krüger | Sinnwärts</title>
-  <img src="assets/images/a3b59f83.jpg" alt="Ove Krüger – Porträt" style="width:100%; max-width:400px; border-radius:12px;">
+
+  <!-- Montserrat einbinden -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root{
+      --bg:#111; --fg:#f4f4f4; --muted:#c8c8c8;
+      --accent:#F8C047; --border:#2a2a2a; --radius:12px; --maxw:900px;
+    }
+
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
+    body{font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
+    main{max-width:var(--maxw);margin:auto;padding:20px}
+
+    h1,h2{color:var(--accent); letter-spacing:.015em; font-weight:700}
+    p{margin:0 0 14px}
+    ul{list-style:disc; margin:0 0 18px 20px}
+    img{display:block; margin:0 auto 30px; max-width:400px; width:100%; border-radius:var(--radius); border:1px solid var(--border)}
+  </style>
+</head>
     body {
       font-family: Arial, sans-serif;
       background-color: #111;

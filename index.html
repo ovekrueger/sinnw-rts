@@ -70,94 +70,27 @@
   </header>
 
   <main>
-<main>
+<main>/* Layout-Blöcke wie auf Jimdo */
+.hero{ text-align:center; margin:14px 0 22px }
+.hero .eyebrow{ color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px }
+.hero .tagline{ font-style:italic; color:var(--muted) }
 
-  <!-- Hero wie Jimdo -->
-  <section class="hero">
-    <h1>Sucht sucht Sinn</h1>
-    <p class="lead">Immer wieder aufstehen.</p>
-    <p class="tagline">Sucht neu denken. Leben neu wählen.</p>
+.twocol{ display:grid; grid-template-columns: 1fr 1.2fr; gap:22px; align-items:start; }
+@media (max-width: 800px){ .twocol{ grid-template-columns: 1fr } }
 
-    <div class="cta">
-      <a class="btn primary" href="#kontakt">Gespräch starten</a>
-      <a class="btn" href="ueber-mich.html">Mehr über mich</a>
-    </div>
-  </section>
+/* Kacheln */
+.tiles{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin:10px 0 6px }
+@media (max-width: 900px){ .tiles{ grid-template-columns: 1fr 1fr } }
+@media (max-width: 600px){ .tiles{ grid-template-columns: 1fr } }
+.tile{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; }
+.tile a{ display:block; padding:10px 12px; border:1px solid var(--border); border-radius:999px; margin-top:10px }
 
-  <!-- Du hängst fest? (2-Spalten) -->
-  <section class="card">
-    <div class="twocol">
-      <div>
-        <img class="fit" src="assets/images/a3b59f83.jpg" alt="Ove Krüger – Porträt">
-      </div>
-      <div>
-        <h2>Du hängst fest?</h2>
-        <p>Ich weiß, wie sich das anfühlt. Ich hab da selbst gesteckt – in Abhängigkeit, Angst und Orientierungslosigkeit. Heute begleite ich Menschen, die den Mut haben, genauer hinzuschauen und ihr Leben neu zu sortieren – innen wie außen.</p>
-        <p>Nicht mit erhobenem Zeigefinger, sondern mit klarem Blick, viel Mitgefühl und einem stabilen inneren Kompass.</p>
-        <p class="note">K.O.M. – Klarheit, Orientierung, Menschlichkeit. Das ist meine Arbeit – und meine Haltung.</p>
-      </div>
-    </div>
-  </section>
+/* Helfer */
+.lead{ color:var(--muted); margin:6px 0 12px }
+.note{ color:var(--muted); font-size:14px }
+img.fit{ display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border) }
 
-  <!-- Kacheln wie bei Jimdo -->
-  <section class="card">
-    <div class="tiles">
-      <div class="tile">
-        <h3>Für Frauen</h3>
-        <p class="note">Klarheit, Grenzen, Selbstwert.</p>
-        <a href="#kontakt">Mehr erfahren</a>
-      </div>
-      <div class="tile">
-        <h3>Anders frei</h3>
-        <p class="note">Sucht neu denken. Wege in die Selbstwirksamkeit.</p>
-        <a href="#kontakt">Mehr erfahren</a>
-      </div>
-      <div class="tile">
-        <h3>Für Männer</h3>
-        <p class="note">Kraft ohne Härte. Verantwortung ohne Scham.</p>
-        <a href="#kontakt">Mehr erfahren</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Neugierig? / Inneres Kind (2-Spalten, Bild links) -->
-  <section class="card">
-    <h2>Neugierig?</h2>
-    <div class="twocol" style="margin-top:8px;">
-      <div>
-        <img class="fit" src="assets/images/a3b59f83.jpg" alt="Ove Krüger – Porträt">
-      </div>
-      <div>
-        <h3 style="margin-top:0">Krügers Klarheitskompass</h3>
-        <p>„Du liest zu viel über Spiral Dynamics – und zu wenig Märchen.“ – sagte mein inneres Kind. Antwort: „Dann bauen wir deine integrale Heldenreise.“</p>
-        <p><strong>Das innere Kind</strong> will nicht optimiert werden. Es will gesehen werden.</p>
-        <p><strong>Klarheit. Orientierung. Menschlichkeit.</strong> Das sind die drei sichtbaren Pole meines Kompasses. Darunter wirkt das Integrale – das, was Denken, Fühlen, Handeln und Sein verbindet.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Kompass-Grafik -->
-  <section class="card">
-    <h2>Mein Klarheitskompass</h2>
-    <p class="lead">Orientierung für Denken, Fühlen, Handeln und Sein – das integrale System hinter meiner Arbeit.</p>
-    <img class="kompass" src="assets/images/Bild.png" alt="Krügers Klarheitskompass (Grafik)">
-  </section>
-
-  <!-- Kontakt -->
-  <section class="card" id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Schreib mir für ein unverbindliches Kennenlernen.</p>
-    <ul>
-      <li>E‑Mail: <a href="mailto:kontakt@sinnwaerts.de">kontakt@sinnwaerts.de</a></li>
-      <li>Instagram: <a href="https://www.instagram.com/" target="_blank" rel="noopener">Folgen</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    © <span id="y"></span> Ove Krüger · Sinnwärts
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</main>
   </main>
 
   <footer>

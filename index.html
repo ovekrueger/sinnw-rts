@@ -1,57 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinnwärts · Ove Krüger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Sinnwärts · Ove Krüger</div>
+      <div class="menu">
+        <a href="index.html">Start</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="nora.html">N.O.R.A.</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </nav>
+  </header>
 
-/* Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+  <main>
+    <section class="hero">
+      <div class="kicker">Klarheit · Orientierung · Menschlichkeit · Integral</div>
+      <h1>Sucht sucht Sinn</h1>
+      <p class="lead">Sucht neu denken. Leben neu wählen.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+        <a class="btn primary" href="kontakt.html">Gespräch starten</a>
+        <a class="btn ghost" href="ueber-mich.html">Mehr über mich</a>
+      </div>
+    </section>
 
-/* Root (Brand) */
-:root {
-  --background: #000;      /* Schwarz */
-  --text: #fff;            /* Weiß */
-  --muted: #aaa;           /* Hellgrau für Nebeninfos */
-  --card: #111;            /* Dunkleres Grau für Boxen */
-  --border: #333;          /* Dezente Rahmenfarbe */
-  --radius: 12px;
-}
+    <section class="twocol">
+      <div>
+        <h2>Willkommen</h2>
+        <p>Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
+        <p>Als Life Trust Coach helfe ich dir, Klarheit zu gewinnen, Orientierung zu finden und deine eigene innere Stärke neu zu entdecken.</p>
+      </div>
+      <div>
+        <img class="fit" src="assets/images/startbild.jpg" alt="Startbild">
+      </div>
+    </section>
+  </main>
 
-/* Base */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-body{font:16px/1.6 'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-a{color:inherit;text-decoration:none}
-
-/* Header / Nav */
-header{border-bottom:1px solid var(--border); background:#0e0e0e}
-nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
-.brand{font-weight:700}
-.menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
-
-/* Layout */
-main{max-width:var(--maxw); margin:auto; padding:20px}
-h1,h2{color:var(--accent); letter-spacing:.015em; font-weight:700; margin:0 0 10px}
-p{margin:0 0 14px}
-ul{list-style:disc; margin:0 0 18px 20px}
-
-/* Hero */
-.hero{text-align:center; margin:14px 0 22px}
-.eyebrow{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
-.tagline{color:var(--muted); font-style:italic}
-.cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:12px 0 24px}
-.btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid var(--border)}
-.btn.primary{background:var(--accent); color:#111; border-color:#d6ac29}
-
-/* Grids / Cards */
-.twocol{ display:grid; grid-template-columns: 1fr 1.2fr; gap:22px; align-items:start }
-@media (max-width:800px){ .twocol{ grid-template-columns:1fr } }
-
-.tiles{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin:10px 0 6px }
-@media (max-width:900px){ .tiles{ grid-template-columns:1fr 1fr } }
-@media (max-width:600px){ .tiles{ grid-template-columns:1fr } }
-
-.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; margin:20px 0}
-.note{color:var(--muted); font-size:14px}
-
-/* Images */
-img.fit{ display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border) }
-img.portrait{ display:block; width:100%; max-width:320px; height:auto; border-radius:var(--radius); border:1px solid var(--border); margin:0 auto 18px }
-
-/* Footer */
-footer{max-width:var(--maxw); margin:20px auto 40px; padding:0 20px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding-top:12px}
+  <footer style="text-align:center;color:var(--muted);padding:20px;font-size:14px">
+    © 2025 Ove Krüger · Sinnwärts
+  </footer>
+</body>
+</html>

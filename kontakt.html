@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontakt · Ove Krüger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Sinnwärts · Ove Krüger</div>
+      <div class="menu">
+        <a href="index.html">Start</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="nora.html">N.O.R.A.</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero">
+      <h1>Kontakt</h1>
+      <p class="lead">Unverbindlich anfragen – der erste Schritt ist oft der wichtigste.</p>
+    </section>
+
+    <section class="card">
+      <h2>So erreichst du mich</h2>
+      <p>E‑Mail: <a href="mailto:mail@sinnwaerts.de">mail@sinnwaerts.de</a></p>
+      <p>Instagram: <a href="https://instagram.com/" target="_blank" rel="noopener">Folgen</a></p>
+    </section>
+
+    <section class="card">
+      <h2>Kurz-Nachricht senden</h2>
+      <form action="mailto:mail@sinnwaerts.de" method="post" enctype="text/plain">
+        <div style="display:grid; gap:12px; max-width:600px;">
+          <input type="text" name="Name" placeholder="Dein Name" required
+                 style="padding:10px;border-radius:10px;border:1px solid var(--border);background:#000;color:#fff;">
+          <input type="email" name="Email" placeholder="Deine E‑Mail" required
+                 style="padding:10px;border-radius:10px;border:1px solid var(--border);background:#000;color:#fff;">
+          <textarea name="Nachricht" placeholder="Worum geht es?" rows="6" required
+                    style="padding:10px;border-radius:10px;border:1px solid var(--border);background:#000;color:#fff;"></textarea>
+          <button class="btn primary" type="submit" style="width:max-content">Senden</button>
+        </div>
+        <p class="muted" style="margin-top:10px">Hinweis: Öffnet dein E‑Mail‑Programm zum Versenden.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Ove Krüger · Sinnwärts</footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

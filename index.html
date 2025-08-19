@@ -1,160 +1,55 @@
 
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sinnwärts · Ove Krüger</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-   :root{
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* Root (Brand) */
+:root{
   --bg:#111; --fg:#f4f4f4; --muted:#c8c8c8;
   --card:#1a1a1a; --border:#2a2a2a;
-  --accent:#F8C047; --radius:12px; --maxw:900px;
+  --accent:#F8C047;
+  --radius:12px; --maxw:900px;
 }
+
+/* Base */
+*{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-    }
-    header {
-      background: var(--bg);
-      padding: 12px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 600;
-    }
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .hero .eyebrow {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: 12px;
-    }
-    .hero h1 {
-      margin: 10px 0;
-    }
-    .hero .tagline {
-      font-style: italic;
-      color: var(--muted);
-    }
-    /* Zwei Spalten */
-    .twocol {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      align-items: start;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    @media (max-width: 800px) {
-      .twocol { grid-template-columns: 1fr; }
-    }
-    /* Kacheln */
-    .tiles {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin: 10px 0 40px;
-      padding: 0 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    @media (max-width: 900px) { .tiles { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .tiles { grid-template-columns: 1fr; } }
-    .tile {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      text-align: center;
-    }
-    .tile a {
-      display: block;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      margin-top: 10px;
-      text-decoration: none;
-      color: var(--text);
-    }
-    img.fit {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      max-width: 100%;
-    }
-  </style>
-</head>
-<body>
+body{font:16px/1.6 'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
 
-<header>
-  <div class="logo">Sinnwärts · Ove Krüger</div>
-  <nav>
-    <a href="index.html">Start</a>
-    <a href="ueber-mich.html">Über mich</a>
-    <a href="kontakt.html">Kontakt</a>
-  </nav>
-</header>
+/* Header / Nav */
+header{border-bottom:1px solid var(--border); background:#0e0e0e}
+nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
+.brand{font-weight:700}
+.menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
 
-<main>
-  <!-- Hero -->
-  <section class="hero">
-    <div class="eyebrow">Life Trust Coach</div>
-    <h1>Willkommen bei Sinnwärts</h1>
-    <p class="tagline">Klarheit, Orientierung, Menschlichkeit</p>
-  </section>
+/* Layout */
+main{max-width:var(--maxw); margin:auto; padding:20px}
+h1,h2{color:var(--accent); letter-spacing:.015em; font-weight:700; margin:0 0 10px}
+p{margin:0 0 14px}
+ul{list-style:disc; margin:0 0 18px 20px}
 
-  <!-- Zwei Spalten -->
-  <section class="twocol">
-    <div>
-      <h2>Ich begleite dich</h2>
-      <p>Raus aus der Sackgasse, rein ins Leben.  
-         Für Menschen, die nicht länger nur funktionieren wollen, sondern in die Tiefe gehen.  
-         Mit Klarheit, Mitgefühl und einem stabilen Kompass.</p>
-    </div>
-    <div><img class="fit" src="assets/images/dbca66c1.jpg" alt="Ove Krüger – Porträt">
-      >
-    </div>
-  </section>
+/* Hero */
+.hero{text-align:center; margin:14px 0 22px}
+.eyebrow{color:var(--muted); text-transform:uppercase; letter-spacing:.12em; font-size:12px}
+.tagline{color:var(--muted); font-style:italic}
+.cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:12px 0 24px}
+.btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid var(--border)}
+.btn.primary{background:var(--accent); color:#111; border-color:#d6ac29}
 
-  <!-- Kacheln -->
-  <section class="tiles">
-    <div class="tile">
-      <h3>Klarheit</h3>
-      <p>Finde heraus, was dir wirklich wichtig ist.</p>
-      <a href="ueber-mich.html">Mehr erfahren</a>
-    </div>
-    <div class="tile">
-      <h3>Orientierung</h3>
-      <p>Erkenne neue Wege und gehe sie bewusst.</p>
-      <a href="kontakt.html">Kontakt aufnehmen</a>
-    </div>
-    <div class="tile">
-      <h3>Menschlichkeit</h3>
-      <p>Arbeite mit dir, nicht gegen dich.</p>
-      <a href="ueber-mich.html">Über mich</a>
-    </div>
-  </section>
-</main>
+/* Grids / Cards */
+.twocol{ display:grid; grid-template-columns: 1fr 1.2fr; gap:22px; align-items:start }
+@media (max-width:800px){ .twocol{ grid-template-columns:1fr } }
 
-</body>
-</html>
+.tiles{ display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin:10px 0 6px }
+@media (max-width:900px){ .tiles{ grid-template-columns:1fr 1fr } }
+@media (max-width:600px){ .tiles{ grid-template-columns:1fr } }
+
+.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; margin:20px 0}
+.note{color:var(--muted); font-size:14px}
+
+/* Images */
+img.fit{ display:block; width:100%; height:auto; border-radius:var(--radius); border:1px solid var(--border) }
+img.portrait{ display:block; width:100%; max-width:320px; height:auto; border-radius:var(--radius); border:1px solid var(--border); margin:0 auto 18px }
+
+/* Footer */
+footer{max-width:var(--maxw); margin:20px auto 40px; padding:0 20px; color:var(--muted); font-size:14px; border-top:1px solid var(--border); padding-top:12px}

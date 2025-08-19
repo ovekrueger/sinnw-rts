@@ -1,80 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Über mich – Ove Krüger | Sinnwärts</title>
-
-  <!-- Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#111; --fg:#f4f4f4; --muted:#c8c8c8;
-      --accent:#F8C047; --border:#2a2a2a; --radius:12px; --maxw:900px;
-    }
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg)}
-    body{font:16px/1.6 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;}
-    a{color:inherit;text-decoration:none}
-    header{border-bottom:1px solid var(--border); background:#0e0e0e}
-    nav{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:18px; align-items:center; justify-content:space-between}
-    .brand{font-weight:700}
-    .menu a{padding:6px 10px; border:1px solid var(--border); border-radius:999px}
-
-    main{max-width:var(--maxw);margin:auto;padding:20px}
-    h1,h2{color:var(--accent); letter-spacing:.015em; font-weight:700}
-    p{margin:0 0 14px}
-    ul{list-style:disc; margin:0 0 18px 20px}
-    img.portrait{display:block; margin:0 auto 18px; max-width:400px; width:100%; border-radius:var(--radius); border:1px solid var(--border)}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Über mich · Ove Krüger</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
   <header>
+    <h1>Sinnwärts · Ove Krüger</h1>
     <nav>
-      <div class="brand">Sinnwärts · Ove Krüger</div>
-      <div class="menu">
-        <a href="index.html">Start</a>
-        <a href="ueber-mich.html">Über mich</a>
-      </div>
+      <a href="index.html">Start</a>
+      <a href="ueber-mich.html" class="active">Über mich</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
   </header>
 
-  <main class="container">
-  <section class="hero">
-    <h1>Über mich</h1>
-    <p class="tagline">Wer ich bin und was mich bewegt</p>
-  </section>
+  <main>
+    <section class="hero">
+      <h2>🙋‍♂️ Ich bin Ove</h2>
+      <p class="tagline">Coach aus Hamburg – Klarheit, Orientierung, Menschlichkeit</p>
+    </section>
 
-  <section class="twocol">
-    <!-- Bild links -->
-    <div>
-      <img src="assets/images/a3b59f83.jpg" 
-           alt="Ove Krüger – Porträt" 
-           class="fit">
-    </div>
+    <section class="twocol">
+      <div>
+        <img src="assets/images/a3b59f83.jpg" 
+             alt="Ove Krüger – Porträt" 
+             class="portrait">
+      </div>
+      <div>
+        <p>Geboren 1962 in Hamburg. Studium in Musik, Sport und Pädagogik. 2024 Abschluss als Life Trust Coach.</p>
+        <p>62 Jahre alt. 20 Jahre Alkohol – 14 Jahre trocken.<br>
+           Ich habe vieles verloren – und das Wesentliche gefunden.</p>
+        <p>Heute arbeite ich als professioneller Life Trust Coach. 
+           Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
+        <p>Meine Geschichte ist kein Makel – sie ist meine Stärke. 
+           Denn ich weiß, wie es sich anfühlt, am Abgrund zu stehen – und trotzdem aufzustehen.</p>
+      </div>
+    </section>
 
-    <!-- Text rechts -->
-    <div>
-      <p>🙋‍♂️ Ich bin Ove.<br>
-      Geboren 1962 in Hamburg. Nach dem Abitur habe ich Musik, Sport und Pädagogik studiert. 
-      2024 schloss ich meine Life Trust Coaching Ausbildung ab.</p>
+    <section>
+      <h3>🧭 Krügers Klarheitskompass</h3>
+      <p>Klarheit. Orientierung. Menschlichkeit. <br>
+         Das sind die drei sichtbaren Pole meines Kompasses. 
+         Der vierte – das Integrale – hält alles zusammen.</p>
+      <p>Ich begleite Menschen, die den Mut haben, tiefer zu schauen. 
+         Mit klarem Blick, Mitgefühl und einem stabilen inneren Kompass.</p>
+    </section>
+  </main>
 
-      <p>62 Jahre alt. 20 Jahre Alkohol – 14 Jahre trocken.<br>
-      Ich habe vieles verloren – und das Wesentliche gefunden.</p>
-
-      <p>Heute arbeite ich als professioneller Life Trust Coach.  
-      Ich begleite Menschen, die aus der Sackgasse wollen.  
-      Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
-
-      <p>Ich bin kein Therapeut. Aber ich kenne den Abgrund.  
-      Ich weiß, was es heißt, nicht mehr weiterzuwissen – und dennoch aufzustehen.  
-      Meine Geschichte ist kein Makel. Sie ist meine Stärke.</p>
-
-      <p>Ich habe gelernt, wie man in Krisen wächst, sich neu ausrichtet und das innere Steuer übernimmt.  
-      Dabei helfen mir 70 % Schwerbehinderung genauso wie 100 % Mitgefühl.</p>
-    </div>
-  </section>
-</main>
+  <footer>
+    <p>© 2025 Ove Krüger · Sinnwärts</p>
+  </footer>
+</body>
+</html>
+/* Portrait-Bilder */
+img.portrait {
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}

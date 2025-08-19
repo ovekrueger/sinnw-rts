@@ -58,6 +58,15 @@
 img.portrait {
   max-width: 320px;
   width: 100%;
+/* Portrait-Bild fix skalieren */
+img.portrait {
+  width: 280px !important;   /* feste Breite */
+  height: auto !important;   /* Seitenverhältnis bleibt */
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
   margin: 0 auto;
   display: block;
   border-radius: 12px;

@@ -1,37 +1,67 @@
-/* Grundfarben Schwarz + Gold */
-:root{
-  --bg:#0a0a0a; 
-  --text:#f9f7f2; 
-  --gold:#d4af37; 
-  --muted:#9ca3af; 
-  --line:#2a2a2a; 
-  --max:1080px;
-}
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Sinnwärts · Ove Krüger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
 
-body{
-  font-family:'Montserrat', sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  margin:0;
-}
+  <section class="hero fade-in">
+    <div class="hero-flex">
+      <div>
+        <h1>Sucht sucht Sinn – Immer wieder aufstehen.</h1>
+        <p class="motto">„Was, du lebst noch? – Klar. Ich habe gerade erst angefangen!“</p>
+        <p>Ich habe Nächte durchzittert und den Atem gezählt. Heute atme ich frei.
+           Deine Narben sind kein Makel. Sie sind dein Gold. Lass uns heben.</p>
+        <p><a class="button" href="kontakt.html">Los. Dein erster Schritt.</a></p>
+      </div>
+      <figure>
+        <img src="assets/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" class="hero-portrait">
+      </figure>
+    </div>
+  </section>
 
-h1,h2,h3{color:var(--gold); font-weight:600;}
-a{color:var(--gold); text-decoration:none;}
-a:hover{text-decoration:underline;}
+  <section class="section">
+    <span class="kicker">Weg nach vorn</span>
+    <h2>Kein Kreisverkehr mehr</h2>
+    <p>Ich begleite dich, damit du nicht jahrelang im Kreis rennst,
+       sondern den Mut findest, dein Leben jetzt neu auszurichten.</p>
+  </section>
 
-/* Layout */
-main{max-width:var(--max); margin:0 auto; padding:2rem;}
-.section{padding:2rem 0; border-top:1px solid var(--line);}
-.section h2{margin:0 0 .5rem;}
-.kicker{font-size:.85rem; text-transform:uppercase; color:var(--gold); letter-spacing:.06em;}
+  <section class="section">
+    <span class="kicker">Erkennst du dich?</span>
+    <h2>Stark nach außen, müde nach innen</h2>
+    <p>Männer, Frauen, Menschen jenseits der Schubladen – mitten im Leben und doch fest im Alten:
+       Muster, Sucht, Beziehungen, die nicht mehr tragen.</p>
+  </section>
 
-/* Hero */
-.hero-flex{display:grid; gap:2rem; align-items:center;}
-@media (min-width:900px){.hero-flex{grid-template-columns:1fr 1fr;}}
-.hero-portrait{width:100%; max-width:500px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.6);}
+  <section class="section">
+    <span class="kicker">Warum ich das tue</span>
+    <h2>Ich habe Abhängigkeit überlebt</h2>
+    <p>Mehrfach dem Tod ins Auge gesehen – und lebe. Frei. Klar. Nüchtern.
+       Wandel ist kein Versprechen, er ist eine Entscheidung.</p>
+  </section>
 
-/* Trust-Badge */
-.trust{display:flex; align-items:center; gap:1rem; background:#111; border:1px solid var(--line); border-radius:12px; padding:1rem; margin-top:1rem;}
-.trust img{height:60px; width:auto; border-radius:8px;}
-.small{font-size:.9rem; color:var(--muted);}
+  <section class="section">
+    <span class="kicker">So arbeiten wir</span>
+    <h2>Denken · Fühlen · Handeln · Sein</h2>
+    <p>Neurobiologie als Boden. Integrales Denken als Karte. Stoische Ruhe als Haltung.
+       Wir gehen schlicht: einen echten Schritt nach dem anderen.</p>
+
+    <div class="trust">
+      <img src="assets/ltc-badge.png" alt="Life Trust Coaching – Zertifiziert">
+      <div>
+        <strong>Life Trust Coaching</strong><br>
+        Zertifiziert by Veit Lindau<br>
+        <span class="small">Integer · werteorientiert · dokumentiert</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

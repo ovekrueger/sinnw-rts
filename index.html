@@ -1,54 +1,37 @@
-<section class="hero">
-  <div class="hero-flex">
-    <div>
-      <h1>Sucht sucht Sinn – Immer wieder aufstehen.</h1>
-      <p class="lead motto">„Was, du lebst noch? – Klar. Ich habe gerade erst angefangen!“</p>
-      <p>
-        Ich habe Dunkelheit überlebt: Alkohol, Entzüge, Delirien.  
-        Heute lebe ich frei, klar und menschlich.  
-        Meine Geschichte ist kein Drama – sondern ein Beweis, dass Wandlung möglich ist.
-      </p>
-    </div>
-    <figure>
-      <img src="assets/ove-rolli.jpg" alt="Ove Krüger Portrait, schwarzer Rollkragen" class="hero-portrait">
-    </figure>
-  </div>
-</section>
+/* Grundfarben Schwarz + Gold */
+:root{
+  --bg:#0a0a0a; 
+  --text:#f9f7f2; 
+  --gold:#d4af37; 
+  --muted:#9ca3af; 
+  --line:#2a2a2a; 
+  --max:1080px;
+}
 
-<section>
-  <h2>Wofür?</h2>
-  <p>
-    Ich begleite dich, damit du nicht jahrelang im Kreis rennst.  
-    Sondern den Mut findest, dein Leben jetzt neu auszurichten.  
-    Denn du hast schon Mut bewiesen – allein dadurch, dass du hier gelandet bist.
-  </p>
-</section>
+body{
+  font-family:'Montserrat', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  margin:0;
+}
 
-<section>
-  <h2>Für wen?</h2>
-  <p>
-    Für Menschen, die spüren: „So geht es nicht mehr.“  
-    Männer. Frauen. Binäre. Jenseits von Schubladen.  
-    Menschen, die mitten im Leben stehen – und trotzdem festsitzen in alten Mustern, Abhängigkeiten oder Beziehungen, die nicht mehr tragen.
-  </p>
-</section>
+h1,h2,h3{color:var(--gold); font-weight:600;}
+a{color:var(--gold); text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-<section>
-  <h2>Warum?</h2>
-  <p>
-    Meine Vergangenheit war Sucht. Mein Heute ist Freiheit.  
-    Therapien, Entzüge, Delirien – und doch habe ich überlebt.  
-    Ich lebe nüchtern, klar und geerdet.  
-    Meine Botschaft: Auch wenn alles zerbricht, ist Aufstehen möglich.
-  </p>
-</section>
+/* Layout */
+main{max-width:var(--max); margin:0 auto; padding:2rem;}
+.section{padding:2rem 0; border-top:1px solid var(--line);}
+.section h2{margin:0 0 .5rem;}
+.kicker{font-size:.85rem; text-transform:uppercase; color:var(--gold); letter-spacing:.06em;}
 
-<section>
-  <h2>Wie?</h2>
-  <p>
-    Mit meinem Klarheitskompass: Denken · Fühlen · Handeln · Sein.  
-    Neurobiologisch informiert. Integral gedacht. Stoisch geerdet.  
-    Keine Floskeln, keine Abkürzungen. Nur echte Schritte in eine neue Richtung.
-  </p>
-  <p class="cta"><a class="button" href="kontakt.html">Klarheitsgespräch starten</a></p>
-</section>
+/* Hero */
+.hero-flex{display:grid; gap:2rem; align-items:center;}
+@media (min-width:900px){.hero-flex{grid-template-columns:1fr 1fr;}}
+.hero-portrait{width:100%; max-width:500px; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,.6);}
+
+/* Trust-Badge */
+.trust{display:flex; align-items:center; gap:1rem; background:#111; border:1px solid var(--line); border-radius:12px; padding:1rem; margin-top:1rem;}
+.trust img{height:60px; width:auto; border-radius:8px;}
+.small{font-size:.9rem; color:var(--muted);}

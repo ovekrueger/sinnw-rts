@@ -1,66 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ove Krüger – Life Trust Coach</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #d4af37; /* Gold-Ton */
-      text-align: center;
-      line-height: 1.6;
+    :root{
+      --bg:#000000;
+      --text:#f0e6c8;      /* Lesetext (warm-weiß) */
+      --gold:#d4af37;      /* Headlines/Highlights */
+      --line:#1e1e1e;
+      --max: 1080px;
     }
-    header nav ul {
-      list-style: none;
-      padding: 20px;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+
+    /* Reset & Layout */
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.65;
     }
-    header nav a {
-      color: #d4af37;
-      text-decoration: none;
-      font-weight: 600;
+    main{max-width:var(--max); margin:0 auto; padding:24px 16px}
+
+    /* Navigation (dezent) */
+    nav ul{list-style:none; padding:0; margin:0 0 8px; display:flex; gap:18px; justify-content:center}
+    nav a{color:var(--gold); text-decoration:none; font-weight:600}
+    nav a:hover{text-decoration:underline}
+
+    /* Intro / Hero */
+    .intro{ text-align:center; padding:32px 0 16px; border-bottom:1px solid var(--line); }
+    .portrait{
+      width:320px; max-width:92vw;
+      border-radius:16px;
+      display:block; margin:0 auto 18px;
+      box-shadow:0 18px 48px rgba(0,0,0,.55);
     }
-    header nav a:hover {
-      text-decoration: underline;
+    .intro h1{
+      color:var(--gold); font-weight:800; letter-spacing:.5px;
+      font-size:2.2rem; margin:8px 0 4px;
     }
-    .intro img.portrait {
-      max-width: 280px;
-      border-radius: 20px;
-      margin: 30px auto;
-      display: block;
+    .intro h2{
+      color:var(--gold); font-weight:700;
+      font-size:1.4rem; margin:0 0 14px; font-style:italic;
     }
-    h1 {
-      font-size: 2.2em;
-      margin: 20px 0 10px 0;
-    }
-    h2 {
-      font-size: 1.5em;
-      font-weight: 400;
-      margin: 10px 0 30px 0;
-    }
-    p {
-      max-width: 700px;
-      margin: 0 auto 40px auto;
-      font-size: 1.1em;
-      color: #f0e6c8; /* etwas heller fürs Lesen */
-    }
-    .siegel img {
-      max-width: 180px;
-      margin: 40px auto;
-      display: block;
-    }
+    .intro p{max-width:760px; margin:0 auto 26px; font-size:1.08rem}
+
+    /* Sektionen */
+    .section{ padding:28px 0; border-bottom:1px solid var(--line); }
+    .kicker{ display:inline-block; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; opacity:.95; }
+    h3{ color:var(--gold); font-weight:700; font-size:1.5rem; margin:6px 0 10px; }
+    .section p{ margin:0 0 10px; }
+
+    /* Trust / Siegel */
+    .trust{ display:flex; align-items:center; gap:14px; justify-content:center; background:#0c0c0c; border:1px solid var(--line); border-radius:14px; padding:14px; margin-top:14px; }
+    .trust img{ width:140px; height:auto; border-radius:12px; display:block; }
+    .trust .small{ font-size:.95rem; opacity:.9; }
+
+    /* Button (optional) */
+    .button{ display:inline-block; padding:.7rem 1rem; border-radius:12px; border:1px solid var(--line); background:#121212; color:#ffffff; font-weight:700; text-decoration:none; }
+    .button:hover{ transform:translateY(-1px); }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
+
+  <main>
+    <!-- Navigation -->
+    <nav aria-label="Hauptnavigation">
       <ul>
         <li><a href="index.html">Start</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
@@ -68,23 +76,58 @@
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
-  </header>
 
-  <main>
+    <!-- HERO -->
     <section class="intro">
-      <img src="assets/Ove-Rolli.jpg" alt="Ove Krüger Portrait" class="portrait">
+      <!-- Portrait oben -->
+      <img src="assets/Ove%20-Rolli.jpeg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" class="portrait" loading="eager" decoding="async" />
+
+      <!-- Mottos markant -->
       <h1>„Sucht sucht Sinn – Immer wieder aufstehen.“</h1>
       <h2>„Was, du lebst noch? – Klar, ich habe gerade erst angefangen!“</h2>
+
+      <!-- kurzer Lead (Wofür) -->
       <p>
-        Ich begleite dich, damit du nicht jahrelang im Kreis rennst.<br>
-        Sondern den Mut findest, dein Leben jetzt neu auszurichten.<br>
-        Denn du hast schon Mut bewiesen, da du hier gelandet bist.
+        Ich begleite dich, damit du nicht jahrelang im Kreis rennst – sondern den Mut findest,
+        dein Leben jetzt neu auszurichten. Dass du hier bist, ist bereits dein erster Schritt.
       </p>
-      <div class="siegel">
-        <img src="assets/LTC-siegel.png" alt="Life Trust Coaching Zertifikat">
+      <!-- <a class="button" href="kontakt.html">Klarheitsgespräch starten</a> -->
+    </section>
+
+    <!-- Block: Realität / Holpersteine (Warum) -->
+    <section class="section" aria-labelledby="sec-holpersteine">
+      <span class="kicker">Holpersteine</span>
+      <h3 id="sec-holpersteine">Vergangenheit: Sucht. Heute: Freiheit.</h3>
+      <p>Therapien. Entzüge. Delirien. Überlebt. Heute nüchtern, klar, menschlich.
+         Auch deine Holpersteine gehören zum Weg. Sie können dich klein machen – oder tiefer.
+         Entscheidend ist, was du daraus machst.</p>
+    </section>
+
+    <!-- Block: Einladung / Jetzt -->
+    <section class="section" aria-labelledby="sec-einladung">
+      <span class="kicker">Dein Anfang</span>
+      <h3 id="sec-einladung">Hier und jetzt</h3>
+      <p>Ich begleite dich, damit du nicht alle Umwege gehen musst. Wir richten deine Realität neu aus –
+         Schritt für Schritt, klar, geerdet, ohne Floskeln.</p>
+    </section>
+
+    <!-- Block: Ansatz / Klarheitskompass -->
+    <section class="section" aria-labelledby="sec-ansatz">
+      <span class="kicker">So arbeiten wir</span>
+      <h3 id="sec-ansatz">Klarheitskompass – Denken · Fühlen · Handeln · Sein</h3>
+      <p>Neurobiologisch informiert. Integral gedacht. Stoisch geerdet.
+         Keine Abkürzungen – nur echte Schritte in eine neue Richtung.</p>
+
+      <!-- Vertrauensanker: LTC-Siegel -->
+      <div class="trust" role="group" aria-label="Vertrauensanker Life Trust Coaching">
+        <img src="assets/LTC-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau" />
+        <div>
+          <strong style="color:var(--gold)">Life Trust Coaching</strong><br />
+          <span class="small">zertifiziert by Veit Lindau · integer · werteorientiert · dokumentiert</span>
+        </div>
       </div>
     </section>
+
   </main>
 </body>
 </html>
-

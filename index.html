@@ -23,49 +23,41 @@
       font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.65;
     }
-    main{max-width:var(--max); margin:0 auto; padding:24px 16px}
+   <main>
+  <!-- Navigation -->
+  <nav aria-label="Hauptnavigation">
+    <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; gap:22px; justify-content:center">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="nora.html">N.O.R.A.</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
 
-    /* Navigation */
-    nav ul{list-style:none; padding:0; margin:0 0 24px; display:flex; gap:22px; justify-content:center}
-    nav a{color:var(--gold); text-decoration:none; font-weight:600}
-    nav a:hover{text-decoration:underline}
+  <!-- HERO (einmalig!) -->
+  <section class="intro" style="text-align:center; padding:32px 16px; border-bottom:1px solid #1e1e1e;">
+    <img src="images/ove-rolli.jpg"
+         alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+         class="portrait"
+         style="width:320px; max-width:92vw; border-radius:16px; display:block; margin:0 auto 18px; box-shadow:0 18px 48px rgba(0,0,0,.55);" />
 
-    /* Intro / Hero */
-    .intro{ text-align:center; padding:32px 0 16px; border-bottom:1px solid var(--line); }
-    .portrait{
-      width:320px; max-width:92vw;
-      border-radius:16px;
-      display:block; margin:0 auto 18px;
-      box-shadow:0 18px 48px rgba(0,0,0,.55);
-    }
-    .intro h1{
-      color:var(--gold); font-weight:800; letter-spacing:.5px;
-      font-size:2.2rem; margin:8px 0 4px;
-    }
-    .intro h2{
-      color:var(--gold); font-weight:700;
-      font-size:1.4rem; margin:0 0 18px; font-style:italic;
-    }
-    .intro p{max-width:760px; margin:0 auto 26px; font-size:1.08rem}
+    <h1 style="color:#d4af37; font-weight:800; letter-spacing:.5px; font-size:2.2rem; margin:8px 0 4px;">
+      „Sucht sucht Sinn – Immer wieder aufstehen.“
+    </h1>
+    <h2 style="color:#d4af37; font-weight:700; font-size:1.4rem; margin:0 0 18px; font-style:italic;">
+      „Was, du lebst noch? – Klar, ich habe gerade erst angefangen!“
+    </h2>
+    <p style="max-width:760px; margin:0 auto 26px; font-size:1.08rem; color:#f0e6c8;">
+      Ich begleite dich, damit du nicht jahrelang im Kreis rennst – sondern den Mut findest,
+      dein Leben jetzt neu auszurichten. Dass du hier bist, ist bereits dein erster Schritt.
+    </p>
+  </section>
 
-    /* Sektionen */
-    .section{ padding:28px 0; border-bottom:1px solid var(--line); text-align:center;}
-    .kicker{ display:inline-block; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; opacity:.95; }
-    h3{ color:var(--gold); font-weight:700; font-size:1.5rem; margin:6px 0 10px; }
-    .section p{ margin:0 0 10px; }
-
-    /* Trust / Siegel */
-    .trust{ display:flex; align-items:center; gap:14px; justify-content:center; background:#0c0c0c; border:1px solid var(--line); border-radius:14px; padding:14px; margin-top:14px; flex-wrap:wrap;}
-    .trust img{ width:140px; height:auto; border-radius:12px; display:block; }
-    .trust .small{ font-size:.95rem; opacity:.9; }
-
-    /* Button */
-    .button{ display:inline-block; padding:.7rem 1rem; border-radius:12px; border:1px solid var(--line); background:#121212; color:#ffffff; font-weight:700; text-decoration:none; }
-    .button:hover{ transform:translateY(-1px); }
-  </style>
-</head>
-<body>
-
+  <!-- HOLPERSTEINE -->
+  <section class="section" style="text-align:center; padding:28px 16px; border-bottom:1px solid #1e1e1e;">
+    <span style="display:inline-block; color:#d4af37; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; opacity:.95;">Holpersteine</span>
+    <h3 style="color:#d4af37; font-weight:700; font-size:1.5rem; margin:6px 0 10px;">Vergangenheit: Sucht. Heute: Freiheit.</h3>
+    <p style="margi
   <main>
     <!-- Navigation -->
     <nav aria-label="Hauptnavigation">

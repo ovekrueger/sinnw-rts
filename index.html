@@ -1,132 +1,102 @@
+<!--
+Variante 3 – Ultra‑Minimal (angepasst auf K.O.M. und deine Portraits/Logo)
+Schwarz (#0a0a0a) · Gold (#D4AF37) · Schrift: Montserrat
+-->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ove Krüger – Life Trust Coach</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <title>Sinnwärts – Immer wieder aufstehen.</title>
+  <meta name="description" content="Ove Krüger: Coaching, Mentoring, Training – Klarheit, Orientierung, Menschlichkeit mit dem Klarheitskompass." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#000000;
-      --text:#f0e6c8;      /* Lesetext (warm-weiß) */
-      --gold:#d4af37;      /* Headlines/Highlights */
-      --line:#1e1e1e;
-      --max: 1080px;
-    }
+    :root{--bg:#0a0a0a;--gold:#D4AF37;--gold-2:#e9d08a;--line:#1b1b1b}
+    html,body{margin:0;background:var(--bg);color:var(--gold);font:400 17px/1.75 Montserrat,system-ui}
+    img{max-width:100%;height:auto;display:block;border-radius:12px}
+    .wrap{max-width:880px;margin:auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    nav a{color:var(--gold-2);text-decoration:none;margin-left:16px}
+    .hero{padding:88px 0 64px;border-bottom:1px solid var(--line);text-align:center}
+    h1{font-size:clamp(40px,7vw,68px);line-height:1.05;margin:0 0 12px}
+    .lead{color:var(--gold-2);max-width:62ch;margin:0 auto}
+    .cta{margin-top:20px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--gold);background:var(--gold);color:#000;font-weight:700;text-decoration:none}
+    .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:36px 0}
+    .box{border:1px solid var(--line);border-radius:14px;padding:18px;background:#101010;color:var(--gold-2)}
+    .portrait{text-align:center;padding:36px 0}
+    footer{padding:24px 0;border-top:1px solid var(--line);color:#8c7c4b;text-align:center}
+    @media(max-width:760px){.cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <strong>Sinnwärts</strong>
+      <nav>
+        <a href="/ueber-mich.html">Über mich</a>
+        <a href="/angebot.html">Angebot</a>
+        <a href="/nora.html">N.O.R.A.</a>
+        <a href="/kontakt.html">Kontakt</a>
+      </nav>
+    </header>
 
-    /* Reset & Layout */
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      line-height:1.65;
-    }
-   <main>
-  <!-- Navigation -->
-  <nav aria-label="Hauptnavigation">
-    <ul style="list-style:none; padding:0; margin:0 0 24px; display:flex; gap:22px; justify-content:center">
-      <li><a href="index.html">Start</a></li>
-      <li><a href="ueber-mich.html">Über mich</a></li>
-      <li><a href="nora.html">N.O.R.A.</a></li>
-      <li><a href="kontakt.html">Kontakt</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO (einmalig!) -->
-  <section class="intro" style="text-align:center; padding:32px 16px; border-bottom:1px solid #1e1e1e;">
-    <img src="images/ove-rolli.jpg"
-         alt="Ove Krüger – Portrait im schwarzen Rollkragen"
-         class="portrait"
-         style="width:320px; max-width:92vw; border-radius:16px; display:block; margin:0 auto 18px; box-shadow:0 18px 48px rgba(0,0,0,.55);" />
-
-    <h1 style="color:#d4af37; font-weight:800; letter-spacing:.5px; font-size:2.2rem; margin:8px 0 4px;">
-      „Sucht sucht Sinn – Immer wieder aufstehen.“
-    </h1>
-    <h2 style="color:#d4af37; font-weight:700; font-size:1.4rem; margin:0 0 18px; font-style:italic;">
-      „Was, du lebst noch? – Klar, ich habe gerade erst angefangen!“
-    </h2>
-    <p style="max-width:760px; margin:0 auto 26px; font-size:1.08rem; color:#f0e6c8;">
-      Ich begleite dich, damit du nicht jahrelang im Kreis rennst – sondern den Mut findest,
-      dein Leben jetzt neu auszurichten. Dass du hier bist, ist bereits dein erster Schritt.
-    </p>
-  </section>
-
-  <!-- HOLPERSTEINE -->
-  <section class="section" style="text-align:center; padding:28px 16px; border-bottom:1px solid #1e1e1e;">
-    <span style="display:inline-block; color:#d4af37; letter-spacing:.08em; text-transform:uppercase; font-size:.85rem; opacity:.95;">Holpersteine</span>
-    <h3 style="color:#d4af37; font-weight:700; font-size:1.5rem; margin:6px 0 10px;">Vergangenheit: Sucht. Heute: Freiheit.</h3>
-    <p style="margi
-  <main>
-    <!-- Navigation -->
-    <nav aria-label="Hauptnavigation">
-      <ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="nora.html">N.O.R.A.</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-
-    <!-- HERO -->
-  <!-- HERO -->
-<section class="intro">
-  <!-- Portrait -->
-  <img src="images/ove-rolli.jpg"
-       alt="Ove Krüger – Portrait im schwarzen Rollkragen" 
-       class="portrait" loading="eager" decoding="async" />
-
-  <!-- Mottos -->
-  <h1>„Sucht sucht Sinn – Immer wieder aufstehen.“</h1>
-  <h2>„Was, du lebst noch? – Klar, ich habe gerade erst angefangen!“</h2>
-</section>
-      <!-- Mottos -->
-      <h1>„Sucht sucht Sinn – Immer wieder aufstehen.“</h1>
-      <h2>„Was, du lebst noch? – Klar, ich habe gerade erst angefangen!“</h2>
-
-      <!-- Kurztext -->
-      <p>
-        Ich begleite dich, damit du nicht jahrelang im Kreis rennst – 
-        sondern den Mut findest, dein Leben jetzt neu auszurichten.  
-        Dass du hier bist, ist bereits dein erster Schritt.
-      </p>
-    </section>
-
-    <!-- Block: Realität / Holpersteine -->
-    <section class="section" aria-labelledby="sec-holpersteine">
-      <span class="kicker">Holpersteine</span>
-      <h3 id="sec-holpersteine">Vergangenheit: Sucht. Heute: Freiheit.</h3>
-      <p>Therapien. Entzüge. Delirien. Überlebt. Heute nüchtern, klar, menschlich.
-         Auch deine Holpersteine gehören zum Weg. Sie können dich klein machen – oder tiefer.
-         Entscheidend ist, was du daraus machst.</p>
-    </section>
-
-    <!-- Block: Einladung -->
-    <section class="section" aria-labelledby="sec-einladung">
-      <span class="kicker">Dein Anfang</span>
-      <h3 id="sec-einladung">Hier und jetzt</h3>
-      <p>Ich begleite dich, damit du nicht alle Umwege gehen musst. 
-         Wir richten deine Realität neu aus – Schritt für Schritt, klar, geerdet, ohne Floskeln.</p>
-    </section>
-
-    <!-- Block: Ansatz -->
-    <section class="section" aria-labelledby="sec-ansatz">
-      <span class="kicker">So arbeiten wir</span>
-      <h3 id="sec-ansatz">Klarheitskompass – Denken · Fühlen · Handeln · Sein</h3>
-      <p>Neurobiologisch informiert. Integral gedacht. Stoisch geerdet.
-         Keine Abkürzungen – nur echte Schritte in eine neue Richtung.</p>
-
-      <!-- Siegel -->
-      <div class="trust" role="group" aria-label="Vertrauensanker Life Trust Coaching">
-        <img src="assets/LTC-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau" />
-        <div>
-          <strong style="color:var(--gold)">Life Trust Coaching</strong><br />
-          <span class="small">zertifiziert by Veit Lindau · integer · werteorientiert · dokumentiert</span>
-        </div>
+    <section class="hero">
+      <img src="images/kompass-logo.png" alt="Krügers Klarheitskompass – Logo" style="width:200px;margin:auto;margin-bottom:18px"/>
+      <h1>Immer wieder aufstehen.</h1>
+      <p class="lead">Klarheit statt Chaos. Orientierung statt Overload. Menschlichkeit statt Maske. K.O.M. – getragen vom Klarheitskompass.</p>
+      <div class="cta">
+        <a class="btn" href="/angebot.html">Erstes Gespräch</a>
       </div>
     </section>
 
-  </main>
+    <section class="portrait">
+      <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen"/>
+      <h2>Ich bin Ove</h2>
+      <p class="lead">62 Jahre alt, Life Trust Coach. Kein Therapeut, sondern ein Begleiter mit Klarheit, Ruhe und gelebter Erfahrung.</p>
+    </section>
+
+    <section class="cols">
+      <div class="box">
+        <img src="images/service-coaching.jpg" alt="1:1 Coaching – ruhiges Setting">
+        <strong>Coaching</strong>
+        <p>Präzise. Respektvoll. Wirksam.</p>
+      </div>
+      <div class="box">
+        <img src="images/service-mentoring.jpg" alt="Mentoring – Gesprächsszene">
+        <strong>Mentoring</strong>
+        <p>Klarer Spiegel. Faire Herausforderung.</p>
+      </div>
+      <div class="box">
+        <img src="images/service-training.jpg" alt="Training – Gruppe im Austausch">
+        <strong>Training</strong>
+        <p>Kommunikation. Werte. Präsenz.</p>
+      </div>
+    </section>
+
+    <section class="portrait">
+      <img src="images/ove-weiß.jpg" alt="Ove Krüger – Portrait im weißen Hemd"/>
+      <p class="lead">„Nicht angepasst. Nicht laut. Nur echt.“ – So arbeite ich. So begleite ich dich mit K.O.M.</p>
+    </section>
+
+    <section class="portrait">
+      <img src="images/ove-grau.jpg" alt="Ove Krüger – Portrait im grauen Hemd"/>
+      <p class="lead">Der Klarheitskompass ist kein Modell – er ist gelebte Haltung. Denken · Fühlen · Handeln · Sein.</p>
+    </section>
+
+    <footer>
+      <small>© <span id="y"></span> Ove Krüger – <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></small>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
+
+<!--
+Bildzuordnung:
+- images/kompass-logo.png → hochgeladenes Logo (Klarheitskompass)
+- images/ove-rolli.jpg → schwarzer Rollkragen
+- images/ove-weiß.jpg → weißes Leinenhemd
+- images/ove-grau.jpg → graues Hemd
+- images/service-coaching.jpg, service-mentoring.jpg, service-training.jpg → Platzhalter oder eigene Fotos
+-->

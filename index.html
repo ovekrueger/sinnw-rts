@@ -1,75 +1,122 @@
 <!doctype html>
 <html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sinnwärts – Sucht sucht Sinn · Ove Krüger</title>
-  <meta name="description" content="Life Trust Coach Ove Krüger. K.O.M. – Klarheit, Orientierung, Menschlichkeit. Immer wieder aufstehen – getragen vom Klarheitskompass." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--bg:#0a0a0a;--gold:#D4AF37;--gold-2:#e9d08a;--mut:#8c7c4b;--line:#1b1b1b;--chip:#101010}
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--gold);font:400 17px/1.75 Montserrat,system-ui,-apple-system}
-    img{max-width:100%;height:auto;display:block;border-radius:12px}
-    a{color:var(--gold-2);text-decoration:none}
-    .wrap{max-width:980px;margin:auto;padding:0 28px}
-    header{position:sticky;top:0;background:rgba(10,10,10,.85);backdrop-filter:saturate(130%) blur(6px);z-index:30;border-bottom:1px solid var(--line)}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1100px;margin:auto;padding:14px 18px}
-    .nav a{margin-left:16px}
-    .logo{font-weight:700}
-
-    /* HERO */
-    .hero{position:relative;min-height:72vh;display:grid;place-items:center;text-align:center}
-    .hero::before{content:"";position:absolute;inset:0;background:url('images/hero-sucht-sucht-sinn.jpg') center/cover no-repeat;z-index:-2}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.45),rgba(10,10,10,.75));z-index:-1}
-    .hero h1{font-size:clamp(38px,8vw,72px);line-height:1.05;margin:0 0 10px}
-    .lead{color:var(--gold-2);max-width:70ch;margin:0 auto}
-    .cta{margin-top:20px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--gold);background:var(--gold);color:#000;font-weight:700}
-    .ltc{position:absolute;right:22px;bottom:22px;width:min(120px,20vw);aspect-ratio:1/1;border-radius:50%;overflow:hidden;border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.35)}
-
-    /* SECTIONS */
-    section{padding:40px 0;border-bottom:1px solid var(--line)}
-    h2{font-size:clamp(24px,3.5vw,34px);margin:0 0 10px}
-    .note{border-left:3px solid var(--gold);padding:0 0 0 12px;color:var(--gold-2)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--chip);border:1px solid var(--line);border-radius:16px;padding:18px;color:var(--gold-2)}
-    .portrait{text-align:center}
-    footer{padding:24px 0;color:var(--mut)}
-    @media(max-width:980px){.grid-3{grid-template-columns:1fr 1fr}}
-    @media(max-width:720px){.grid-2,.grid-3{grid-template-columns:1fr};.ltc{width:92px}}
-  </style>
-</head>
-<body>
-
-  <header>
-    <div class="nav">
-      <a class="logo" href="/">Sinnwärts</a>
-      <nav>
-        <a href="/ueber-mich.html">Über mich</a>
-        <a href="/angebot.html">Angebot</a>
-        <a href="/nora.html">N.O.R.A.</a>
-        <a href="/kontakt.html">Kontakt</a>
+  <head>
+    <!-- [1] HEAD & META -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sinnwärts – Ove Krüger</title>
+    <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Coaching & Begleitung von Ove Krüger – Sinnwärts." />
+    <link rel="preload" as="image" href="images/ove-rolli.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- [2] NAVIGATION -->
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="logo" href="#top" aria-label="Sinnwärts Start">Sinnwärts</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#intro">Start</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#angebot">Angebot</a></li>
+          <li><a href="#kompass">Klarheitskompass</a></li>
+          <li><a href="#stimmen">Stimmen</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO mit Foto + Overlay + Button + LTC-Siegel -->
-  <section class="hero" aria-label="Sucht sucht Sinn">
-    <div class="wrap" style="text-align:center">
-      <h1>✨ Sucht sucht Sinn ✨</h1>
-      <p class="lead">🔥 Immer wieder aufstehen. ❓ Was – du lebst noch? Klar. Ich habe gerade erst angefangen. 💪<br> K.O.M. – getragen vom Klarheitskompass.</p>
-      <div class="cta"><a class="btn" href="/angebot.html">Erstes Gespräch</a></div>
-    </div>
-    <img class="ltc" src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert" loading="lazy" decoding="async" />
-  </section>
+    <!-- [3] HERO / INTRO -->
+    <section id="intro" class="intro">
+      <div class="container intro-grid">
+        <div class="intro-text">
+          <h1>Ohne Ausreden. Dafür echt.</h1>
+          <p>Ich begleite dich Sinnwärts – mit Klarheit, Orientierung und Menschlichkeit. Integraler Ansatz, neurobiologisch fundiert.</p>
+          <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+        </div>
+        <figure class="intro-figure">
+          <!-- Bild ins Repo: images/ove-rolli.jpg -->
+          <img src="images/ove-rolli.jpg"
+               alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+               loading="eager" decoding="async" />
+        </figure>
+      </div>
+    </section>
 
-  <main class="wrap">
-    <!-- Klarheitskompass-Block -->
-    <section class="portrait" aria-labelledby="kompass">
-      <h2 id="kompass">🧭 Krügers Klarheitskompass</h2>
+    <!-- [4] ÜBER MICH (Kurz) -->
+    <section id="ueber-mich" class="section">
+      <div class="container two-col">
+        <div>
+          <h2>Über mich</h2>
+          <p>Life Trust Coach, Trainer, Mentor. Hintergrund: Sport, Musik, Pädagogik. Integraler Kompass nach Spiral Dynamics, Ken Wilber & Barrett Values.</p>
+          <ul class="bullets">
+            <li>K.O.M.I.: Klarheit · Orientierung · Menschlichkeit · Integral</li>
+            <li>Motto: „Sucht sucht Sinn“</li>
+            <li>Haltung: wahr, gerecht, mutig, maßvoll</li>
+          </ul>
+          <a class="link" href="ueber-mich.html">Mehr lesen</a>
+        </div>
+        <div>
+          <div class="card note">Inneres Kind integriert. Keine Suche nach äußerer Anerkennung. Bewusstsein täglich wie eine Welle surfen.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [5] ANGEBOT / FORMATE -->
+    <section id="angebot" class="section alt">
+      <div class="container">
+        <h2>Wobei ich dir helfe</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Klarheits‑Session</h3>
+            <p>60–90 Min. fokussiert: Anliegen sortieren, nächsten Schritt festlegen.</p>
+          </article>
+          <article class="card">
+            <h3>Begleitung 6–12 Wochen</h3>
+            <p>Struktur, Reflexion, Übungen. Integrales Wachstum in deinem Tempo.</p>
+          </article>
+          <article class="card">
+            <h3>HPP · Psychoedukation</h3>
+            <p>Neurobiologische Grundlagen, Suchtmechanismen, Schlaf & Regulation.</p>
+          </article>
+        </div>
+        <a class="btn" href="#kontakt">Termin anfragen</a>
+      </div>
+    </section>
+
+    <!-- [6] KRÜGERS KLARHEITSKOMPASS (K.O.M.I.) -->
+    <section id="kompass" class="section">
+      <div class="container">
+        <h2>Krügers Klarheitskompass</h2>
+        <p>Vier Himmelsrichtungen für dein Navigieren: Denken, Fühlen, Handeln, Sein – ausgerichtet an K.O.M.I.</p>
+        <div class="grid-4">
+          <div class="chip">Klarheit</div>
+          <div class="chip">Orientierung</div>
+          <div class="chip">Menschlichkeit</div>
+          <div class="chip">Integral</div>
+        </div>
+        <a class="link" href="nora.html">N.O.R.A. – mein ethischer KI‑Kompass</a>
+      </div>
+    </section>
+    
+    <!-- [6] KRÜGERS KLARHEITSKOMPASS (K.O.M.I.) -->
+    <section id="kompass" class="section">
+      <div class="container">
+        <h2>Krügers Klarheitskompass</h2>
+        <p>Vier Himmelsrichtungen für dein Navigieren: Denken, Fühlen, Handeln, Sein – ausgerichtet an K.O.M.I.</p>
+        <div class="grid-4">
+          <div class="chip">Klarheit</div>
+          <div class="chip">Orientierung</div>
+          <div class="chip">Menschlichkeit</div>
+          <div class="chip">Integral</div>
+        </div>
+        <a class="link" href="nora.html">N.O.R.A. – mein ethischer KI-Kompass</a>
+      </div>
+    </section>
+
+    <!-- [6a] PERSÖNLICHE EBENE: INTEGRALER KOMPASS -->
+    <section class="portrait" aria-labelledby="kompass-detail">
+      <h2 id="kompass-detail">🧭 Krügers Klarheitskompass</h2>
       <div class="note" style="max-width:62ch;margin:0 auto;text-align:left">
         <p>Ich hab neulich mein inneres Kind getroffen. Es saß auf dem Boden, hat geweint und gesagt:</p>
         <p><em>„Du liest zu viel über Spiral Dynamics – und zu wenig Märchen.“</em></p>
@@ -81,9 +128,10 @@
       </div>
     </section>
 
-    <!-- Ove-Block -->
+    <!-- [6b] OVE-PORTRAIT -->
     <section class="portrait" aria-labelledby="ich-bin-ove">
-      <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" loading="lazy" decoding="async" />
+      <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+           loading="lazy" decoding="async" />
       <h2 id="ich-bin-ove">🧑‍🦰 Ich bin Ove</h2>
       <div class="note" style="max-width:62ch;margin:0 auto;text-align:left">
         <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken.</p>
@@ -92,7 +140,7 @@
         <p>Ich bin kein Therapeut. Aber ich kenne den Abgrund. Ich weiß, was es heißt, nicht mehr weiterzuwissen – und dennoch aufzustehen.</p>
         <p>Meine Geschichte ist kein Makel. Sie ist meine Stärke.</p>
         <p>Ich habe gelernt, wie man in Krisen wächst, sich neu ausrichtet und das innere Steuer übernimmt.</p>
-        <p>Dabei helfen mir 🌿 70 % Schwerbehinderung und 💛 100 % Mitgefühl.</p>
+        <p>Dabei helfen mir 🌿 70 % Schwerbehinderung und 💛 100 % Mitgefühl.</p>
         <p>Was mich ausmacht:</p>
         <ul>
           <li>Ich stelle die richtigen Fragen.</li>
@@ -104,71 +152,56 @@
       </div>
     </section>
 
-    <!-- Angebot / Services -->
-    <section aria-label="Angebot">
-      <h2>Wobei ich dir helfe</h2>
-      <div class="grid-3" style="margin-top:12px">
-        <article class="card">
-          <img src="images/service-coaching.jpg" alt="1:1 Coaching – ruhiges Setting" loading="lazy" decoding="async">
-          <h3>Coaching</h3>
-          <p>Präzise. Respektvoll. Wirksam.</p>
-        </article>
-        <article class="card">
-          <img src="images/service-mentoring.jpg" alt="Mentoring – Gesprächsszene" loading="lazy" decoding="async">
-          <h3>Mentoring</h3>
-          <p>Klarer Spiegel. Faire Herausforderung.</p>
-        </article>
-        <article class="card">
-          <img src="images/service-training.jpg" alt="Training – Gruppe im Austausch" loading="lazy" decoding="async">
-          <h3>Training</h3>
-          <p>Kommunikation. Werte. Präsenz.</p>
-        </article>
+    <!-- [7] STIMMEN / TESTIMONIALS -->
+    <section id="stimmen" class="section alt">
+      ...
+    <!-- [7] STIMMEN / TESTIMONIALS (Mini) -->
+    <section id="stimmen" class="section alt">
+      <div class="container">
+        <h2>Was Klient:innen sagen</h2>
+        <div class="grid-3">
+          <blockquote class="quote">„Mehr innere Ruhe und klare Schritte.“<cite>— Führungskraft, 42</cite></blockquote>
+          <blockquote class="quote">„Respektvoll, ehrlich, wirksam.“<cite>— Ärztin, 38</cite></blockquote>
+          <blockquote class="quote">„Erklärtes neurobiologisch, begleitet menschlich.“<cite>— Musiker, 55</cite></blockquote>
+        </div>
       </div>
     </section>
 
-    <!-- Weitere Portraits -->
-    <section class="grid-2" aria-label="Portraits">
-      <div class="portrait">
-        <img src="images/ove-weiss.jpg" alt="Ove Krüger – Portrait im weißen Hemd" loading="lazy" decoding="async">
-        <p class="lead">„Nicht angepasst. Nicht laut. Nur echt.“ – So arbeite ich. So begleite ich dich mit K.O.M.</p>
-      </div>
-      <div class="portrait">
-        <img src="images/ove-stehend.jpg" alt="Ove Krüger – stehend, offene Haltung" loading="lazy" decoding="async">
-        <p class="lead">Der Klarheitskompass ist gelebte Haltung: Denken · Fühlen · Handeln · Sein.</p>
-      </div>
-    </section>
-
-    <!-- N.O.R.A. Teaser -->
-    <section class="grid-2" aria-label="N.O.R.A.">
-      <div>
-        <h2>N.O.R.A. – KI, die dich fordert</h2>
-        <p class="lead">Neural · Organized · Reflective · Assistant. Dein klares Sparring ohne Schmeichelei – mit Ethik & Datenschutz.</p>
-        <p><a href="/nora.html">Zur N.O.R.A.-Seite</a></p>
-      </div>
-      <div class="card">
-        <img src="images/nora-teaser.jpg" alt="N.O.R.A. – abstraktes Schwarz‑Gold‑Visual" loading="lazy" decoding="async">
+    <!-- [8] KONTAKT -->
+    <section id="kontakt" class="section">
+      <div class="container">
+        <h2>Kontakt</h2>
+        <p>Hamburg · Deutschland · Online & vor Ort</p>
+        <form class="contact" name="contact" method="post" action="https://formspree.io/f/your-id">
+          <label>Dein Name<input type="text" name="name" required></label>
+          <label>Deine E‑Mail<input type="email" name="email" required></label>
+          <label>Nachricht<textarea name="message" rows="6" required></textarea></label>
+          <button class="btn" type="submit">Senden</button>
+        </form>
+        <p class="small">Datenschutz transparent nach SOC‑3‑Prinzipien erklärt – Einwilligung im Erstgespräch.</p>
       </div>
     </section>
 
-    <!-- Kontakt CTA -->
-    <section class="grid-2" aria-label="Kontakt CTA">
-      <div>
-        <h2>Bereit für Klarheit?</h2>
-        <p class="lead">Ein kurzes Gespräch klärt viel. 25 Minuten, kostenfrei, präzise.</p>
-        <p><a class="btn" href="/kontakt.html">Gespräch anfragen</a></p>
+    <footer class="site-footer">
+      <div class="container foot">
+        <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
+        <nav class="foot-nav">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
       </div>
-      <div class="card">
-        <img src="images/cta-bruecke.jpg" alt="Brücke im Morgenlicht – Sinnbild für Übergänge" loading="lazy" decoding="async">
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="wrap">
-    <small>© <span id="y"></span> Ove Krüger – <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a></small>
-  </footer>
-
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
+    <script>
+      // Mini‑JS für Mobile‑Nav & Jahr
+      document.querySelector('.nav-toggle')?.addEventListener('click', e => {
+        const btn = e.currentTarget;
+        const list = document.getElementById('nav-list');
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        list?.classList.toggle('open');
+      });
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
-
-

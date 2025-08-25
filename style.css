@@ -1,23 +1,23 @@
-header h1 {
-  font-size: 3.5rem;
-  color: #d4af37;
-  font-weight: 800;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+/* =========================
+   Sinnwärts – Base Styles
+   ========================= */
+:root{
+  --bg:#ffffff;
+  --ink:#0a0a0a;
+  --muted:#5c5c5c;
+  --brand:#0f172a;        /* tiefes Blau/Grau */
+  --accent:#2563eb;       /* Link-/Button-Farbe */
+  --chip:#eef2ff;
+  --card:#f8fafc;
+  --ring:rgba(37,99,235,.35);
+  --radius:16px;
+  --max:1100px;
 }
 
-header h2 {
-  font-size: 2rem;
-  color: #d4af37;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-transform: uppercase;
-}
-
-header h3 {
-  font-size: 1.5rem;
-  color: #fff;
-  font-weight: 500;
-  font-style: italic;
-}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+body{
+  font: 16px/1

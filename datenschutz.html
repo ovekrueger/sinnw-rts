@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Datenschutz – Ove Krüger · Sinnwärts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="logo" href="index.html">Sinnwärts</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="index.html#intro">Start</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="index.html#angebot">Angebot</a></li>
+        <li><a href="index.html#kompass">Klarheitskompass</a></li>
+        <li><a href="nora.html">N.O.R.A.</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container max">
+      <h1>Datenschutz</h1>
+      <p>Der Schutz deiner Daten ist mir wichtig. Auf dieser Seite informiere ich transparent über Art, Umfang und Zweck der Verarbeitung personenbezogener Daten im Rahmen meiner Website.</p>
+
+      <h2>1. Verantwortliche Stelle</h2>
+      <p>Ove Krüger<br>Hamburg · Deutschland</p>
+
+      <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+      <p>Beim Besuch meiner Website werden automatisch Daten (z. B. IP-Adresse, Browsertyp) erfasst. Diese Daten dienen ausschließlich der Bereitstellung und Sicherheit des Angebots.</p>
+
+      <h2>3. Kontaktaufnahme</h2>
+      <p>Wenn du mich über das Formular kontaktierst, speichere ich deine Angaben zur Bearbeitung deiner Anfrage. Eine Weitergabe an Dritte erfolgt nicht.</p>
+
+      <h2>4. Rechte</h2>
+      <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten sowie das Recht auf Datenübertragbarkeit.</p>
+
+      <h2>5. Einwilligung</h2>
+      <p>Eine ausdrückliche Einwilligung hole ich im Erstgespräch ein. Du kannst diese jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+      <p class="small">Stand: <span id="d"></span></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
+      <nav class="foot-nav">
+        <a href="impressum.html">Impressum</a>
+        <a aria-current="page" href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('d').textContent = new Date().toLocaleDateString('de-DE');
+    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
+      const btn=e.currentTarget,list=document.getElementById('nav-list');
+      const open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      list?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

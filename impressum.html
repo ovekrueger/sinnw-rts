@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Impressum – Ove Krüger · Sinnwärts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="logo" href="index.html">Sinnwärts</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
+      <ul id="nav-list" class="nav-list">
+        <li><a href="index.html#intro">Start</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="index.html#angebot">Angebot</a></li>
+        <li><a href="index.html#kompass">Klarheitskompass</a></li>
+        <li><a href="nora.html">N.O.R.A.</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container max">
+      <h1>Impressum</h1>
+      <p><strong>Angaben gemäß § 5 TMG</strong></p>
+      <p>Ove Krüger<br>
+      Hamburg · Deutschland</p>
+
+      <p><strong>Kontakt</strong><br>
+      E-Mail: <a href="mailto:info@sinnwaerts.de">info@sinnwaerts.de</a></p>
+
+      <p><strong>Umsatzsteuer-ID</strong><br>
+      Wird ergänzt (falls erforderlich nach §27a UStG)</p>
+
+      <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</strong><br>
+      Ove Krüger, Hamburg</p>
+
+      <p class="small">Dieses Impressum gilt auch für die Social-Media-Profile von Sinnwärts.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
+      <nav class="foot-nav">
+        <a aria-current="page" href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
+      const btn=e.currentTarget,list=document.getElementById('nav-list');
+      const open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded', String(!open));
+      list?.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

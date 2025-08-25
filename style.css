@@ -1,18 +1,26 @@
 /* =========================
-   Sinnwärts – Base Styles
+   Sinnwärts – Dark Theme
    ========================= */
 :root{
-  --bg:#ffffff;
-  --ink:#0a0a0a;
-  --muted:#5c5c5c;
-  --brand:#0f172a;        /* tiefes Blau/Grau */
-  --accent:#2563eb;       /* Link-/Button-Farbe */
-  --chip:#eef2ff;
-  --card:#f8fafc;
-  --ring:rgba(37,99,235,.35);
+  --bg:#000000;
+  --ink:#FFD700;        /* Gold */
+  --muted:#e0c97f;      /* helleres Gold für Fließtext */
+  --brand:#FFD700;
+  --accent:#FFD700;     /* Buttons & Links in Gold */
+  --chip:#222222;       /* dunkle Chips */
+  --card:#111111;       /* Karten-Hintergrund */
+  --ring:rgba(255,215,0,.35);
   --radius:16px;
   --max:1100px;
 }
+
+body{
+  font:16px/1.6 'Montserrat', system-ui, sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+}
+
+h1,h2,h3,p,li,blockquote,label,span{
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}

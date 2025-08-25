@@ -1,3 +1,7 @@
+<!--
+Variante 3 – Ultra‑Minimal (K.O.M. · bereinigte Dateinamen · erweiterter Text)
+Schwarz (#0a0a0a) · Gold (#D4AF37) · Schrift: Montserrat
+-->
 <!doctype html>
 <html lang="de">
 <head>
@@ -10,17 +14,20 @@
     :root{--bg:#0a0a0a;--gold:#D4AF37;--gold-2:#e9d08a;--line:#1b1b1b}
     html,body{margin:0;background:var(--bg);color:var(--gold);font:400 17px/1.75 Montserrat,system-ui}
     img{max-width:100%;height:auto;display:block;border-radius:12px}
+    a{color:var(--gold-2);text-decoration:none}
     .wrap{max-width:880px;margin:auto;padding:28px}
     header{display:flex;justify-content:space-between;align-items:center}
     nav a{color:var(--gold-2);text-decoration:none;margin-left:16px}
     .hero{padding:88px 0 64px;border-bottom:1px solid var(--line);text-align:center}
     h1{font-size:clamp(40px,7vw,68px);line-height:1.05;margin:0 0 12px}
+    h2{font-size:clamp(24px,3.5vw,34px);margin:0 0 10px}
     .lead{color:var(--gold-2);max-width:62ch;margin:0 auto}
     .cta{margin-top:20px}
     .btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--gold);background:var(--gold);color:#000;font-weight:700;text-decoration:none}
     .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:36px 0}
     .box{border:1px solid var(--line);border-radius:14px;padding:18px;background:#101010;color:var(--gold-2)}
     .portrait{text-align:center;padding:36px 0}
+    .note{border-left:3px solid var(--gold);padding-left:12px;color:var(--gold-2)}
     footer{padding:24px 0;border-top:1px solid var(--line);color:#8c7c4b;text-align:center}
     @media(max-width:760px){.cols{grid-template-columns:1fr}}
   </style>
@@ -38,7 +45,7 @@
     </header>
 
     <section class="hero">
-      <img src="images/kompass-logo.png" alt="Krügers Klarheitskompass – Logo" style="width:200px;margin:auto;margin-bottom:18px"/>
+      <img src="images/klarheitskompass-logo.png" alt="Krügers Klarheitskompass – Logo" style="width:200px;margin:auto;margin-bottom:18px"/>
       <h1>Immer wieder aufstehen.</h1>
       <p class="lead">Klarheit statt Chaos. Orientierung statt Overload. Menschlichkeit statt Maske. K.O.M. – getragen vom Klarheitskompass.</p>
       <div class="cta">
@@ -46,13 +53,43 @@
       </div>
     </section>
 
+    <!-- Klarheitskompass-Block mit innerem Kind Anekdote -->
     <section class="portrait">
-      <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen"/>
-      <h2>Ich bin Ove</h2>
-      <p class="lead">62 Jahre alt, Life Trust Coach. Kein Therapeut, sondern ein Begleiter mit Klarheit, Ruhe und gelebter Erfahrung.</p>
+      <h2>🧭 Krügers Klarheitskompass</h2>
+      <div class="note" style="text-align:left;max-width:62ch;margin:0 auto">
+        <p>Ich hab neulich mein inneres Kind getroffen. Es saß auf dem Boden, hat geweint und gesagt:</p>
+        <p><em>„Du liest zu viel über Spiral Dynamics – und zu wenig Märchen.“</em></p>
+        <p>Ich hab geantwortet: <em>„Wenn du aufhörst zu heulen, bau ich dir ne integrale Heldenreise.“</em></p>
+        <p>Das innere Kind will nicht optimiert werden. Es will gesehen werden.</p>
+        <p>👉 Klarheit. Orientierung. Menschlichkeit. Das sind die drei sichtbaren Pole meines Kompasses. Doch unter der Oberfläche wirkt noch ein vierter: <strong>das Integrale.</strong></p>
+        <p>Ich arbeite mit einem inneren System, das Denken, Fühlen, Handeln und Sein verbindet. Ich begleite Menschen, die sich nicht länger auf Symptome reduzieren lassen – sondern bereit sind, sich selbst in der Tiefe zu erkennen.</p>
+        <p>K.O.M. steht auf meinem Logo. Aber es lebt in meiner Haltung.</p>
+      </div>
     </section>
 
-    <section class="cols">
+    <section class="portrait">
+      <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen"/>
+      <h2>🧑‍🦰 Ich bin Ove</h2>
+      <div class="note" style="text-align:left;max-width:62ch;margin:0 auto">
+        <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken.</p>
+        <p>Ich habe vieles verloren – und das Wesentliche gefunden.</p>
+        <p>Heute arbeite ich als professioneller Life Trust Coach. Ich begleite Menschen, die aus der Sackgasse wollen. Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
+        <p>Ich bin kein Therapeut. Aber ich kenne den Abgrund. Ich weiß, was es heißt, nicht mehr weiterzuwissen – und dennoch aufzustehen.</p>
+        <p>Meine Geschichte ist kein Makel. Sie ist meine Stärke.</p>
+        <p>Ich habe gelernt, wie man in Krisen wächst, sich neu ausrichtet und das innere Steuer übernimmt.</p>
+        <p>Dabei helfen mir 🌿 70 % Schwerbehinderung und 💛 100 % Mitgefühl.</p>
+        <p>Was mich ausmacht:</p>
+        <ul>
+          <li>Ich stelle die richtigen Fragen.</li>
+          <li>Ich höre zu, auch zwischen den Zeilen.</li>
+          <li>Ich motiviere – ohne zu pushen.</li>
+          <li>Ich finde mit dir neue Wege, auch wenn du gerade keinen siehst.</li>
+        </ul>
+        <p>Ich war schon da, wo du vielleicht gerade bist.</p>
+      </div>
+    </section>
+
+    <section class="cols" aria-label="Angebot">
       <div class="box">
         <img src="images/service-coaching.jpg" alt="1:1 Coaching – ruhiges Setting">
         <strong>Coaching</strong>
@@ -71,12 +108,12 @@
     </section>
 
     <section class="portrait">
-      <img src="images/ove-weiß.jpg" alt="Ove Krüger – Portrait im weißen Hemd"/>
+      <img src="images/ove-weiss.jpg" alt="Ove Krüger – Portrait im weißen Hemd"/>
       <p class="lead">„Nicht angepasst. Nicht laut. Nur echt.“ – So arbeite ich. So begleite ich dich mit K.O.M.</p>
     </section>
 
     <section class="portrait">
-      <img src="images/ove-grau.jpg" alt="Ove Krüger – Portrait im grauen Hemd"/>
+      <img src="images/ove-stehend.jpg" alt="Ove Krüger – stehend, offene Haltung"/>
       <p class="lead">Der Klarheitskompass ist kein Modell – er ist gelebte Haltung. Denken · Fühlen · Handeln · Sein.</p>
     </section>
 
@@ -89,6 +126,15 @@
 </html>
 
 <!--
+Bereinigte Dateinamen (bitte so in /images/ ablegen):
+- klarheitskompass-logo.png
+- ove-rolli.jpg
+- ove-weiss.jpg  (ehem. Ove-weißes Hemd.jpg)
+- ove-stehend.jpg (ehem. Ove stehend offen.jpg)
+- service-coaching.jpg
+- service-mentoring.jpg
+- service-training.jpg
+-->
 Bildzuordnung:
 - images/kompass-logo.png → hochgeladenes Logo (Klarheitskompass)
 - images/ove-rolli.jpg → schwarzer Rollkragen

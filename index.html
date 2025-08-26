@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <!-- [1] HEAD & META -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Sinnwärts – Ove Krüger</title>
@@ -10,10 +9,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body id="top">
-  <!-- [2] NAVIGATION -->
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav">
-      <a class="logo" href="#top" aria-label="Sinnwärts Start">Sinnwärts</a>
+      <a class="logo" href="#top">Sinnwärts</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
       <ul id="nav-list" class="nav-list">
         <li><a href="#intro">Start</a></li>
@@ -26,25 +25,21 @@
     </nav>
   </header>
 
-<!-- [3] HERO / INTRO – Variante 2 -->
-<section id="intro" class="intro" 
-  style="background:url('images/hero-sucht-sucht-sinn-1.jpg') center/cover no-repeat; min-height:80vh; display:flex; align-items:center; text-align:center;">
-  <div class="container">
-    <h1 style="font-size:clamp(32px,6vw,64px); margin:0; color:var(--ink);">
-      Holpersteine – Immer wieder Aufstehen.
-    </h1>
-    <h2 style="font-size:clamp(24px,4vw,40px); margin:.5rem 0; color:var(--accent);">
-      Sucht sucht Sinn
-    </h2>
-    <p style="margin-top:.5rem; font-size:1.2rem; color:var(--muted);">
-      „Was, du lebst noch?“ – Klar. Ich habe gerade erst angefangen.
-    </p>
-    <a class="btn" href="#kontakt" style="margin-top:2rem;">Erstgespräch anfragen</a>
-  </div>
-</section>
+  <!-- HERO -->
+  <section id="intro" class="intro" 
+    style="background:url('images/hero-sucht-sucht-sinn-1.jpg') center/cover no-repeat; min-height:80vh; display:flex; align-items:center; text-align:center;">
+    <div class="container">
+      <h1>Holpersteine – Immer wieder Aufstehen.</h1>
+      <h2>Sucht sucht Sinn</h2>
+      <p>„Was, du lebst noch?“ – Klar. Ich habe gerade erst angefangen.</p>
+      <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+      <figure class="intro-figure" style="margin-top:2rem;">
+        <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" loading="eager" decoding="async" style="max-width:280px;border-radius:12px;" />
+      </figure>
+    </div>
   </section>
 
-  <!-- [4] ÜBER MICH (Kurz) -->
+  <!-- ÜBER MICH -->
   <section id="ueber-mich" class="section">
     <div class="container two-col">
       <div>
@@ -63,13 +58,13 @@
     </div>
   </section>
 
-  <!-- [5] ANGEBOT / FORMATE -->
+  <!-- ANGEBOT -->
   <section id="angebot" class="section alt">
     <div class="container">
       <h2>Wobei ich dir helfe</h2>
       <div class="grid-3">
         <article class="card">
-          <h3>Klarheits‑Session</h3>
+          <h3>Klarheits-Session</h3>
           <p>60–90 Min. fokussiert: Anliegen sortieren, nächsten Schritt festlegen.</p>
         </article>
         <article class="card">
@@ -82,7 +77,6 @@
         </article>
       </div>
 
-      <!-- Siegel -->
       <div class="center" style="margin:40px 0;">
         <img src="images/ltc-siegel.png" alt="Life Trust Coach Siegel" style="max-width:180px" />
       </div>
@@ -91,12 +85,11 @@
     </div>
   </section>
 
-  <!-- [6] KRÜGERS KLARHEITSKOMPASS -->
+  <!-- KLARHEITSKOMPASS -->
   <section id="kompass" class="section">
     <div class="container">
       <h2>Krügers Klarheitskompass</h2>
-      <img src="images/klarheitskompass.png"
-           alt="Visualisierung Krügers Klarheitskompass"
+      <img src="images/klarheitskompass.png" alt="Visualisierung Krügers Klarheitskompass"
            style="max-width:400px;margin:20px auto;display:block;" />
       <p>Vier Himmelsrichtungen für dein Navigieren: Denken, Fühlen, Handeln, Sein – ausgerichtet an K.O.M.I.</p>
       <div class="grid-4">
@@ -108,7 +101,7 @@
     </div>
   </section>
 
-  <!-- [6a] ERZÄHLBLOCK -->
+  <!-- KLARHEITSKOMPASS PERSÖNLICH -->
   <section class="portrait" aria-labelledby="kompass-detail">
     <h2 id="kompass-detail">🧭 Klarheitskompass – persönlich</h2>
     <div class="note max">
@@ -117,11 +110,9 @@
     </div>
   </section>
 
-  <!-- [7] PORTRAITS / OVE -->
+  <!-- PORTRAIT OVE -->
   <section class="portrait" aria-labelledby="ich-bin-ove">
-    <img src="images/ove-stehend-offen.jpg"
-         alt="Ove Krüger – stehend, offene Haltung"
-         loading="lazy" decoding="async" />
+    <img src="images/ove-stehend-offen.jpg" alt="Ove Krüger – stehend, offene Haltung" loading="lazy" decoding="async" style="max-width:300px;border-radius:12px;" />
     <h2 id="ich-bin-ove">🧑‍🦰 Ich bin Ove</h2>
     <div class="note max">
       <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken. Meine Geschichte ist kein Makel. Sie ist meine Stärke.</p>
@@ -136,12 +127,10 @@
   </section>
 
   <figure class="portrait">
-    <img src="images/ove-weisses-hemd.jpg"
-         alt="Ove Krüger – im weißen Hemd"
-         loading="lazy" decoding="async" />
+    <img src="images/ove-weisses-hemd.jpg" alt="Ove Krüger – im weißen Hemd" loading="lazy" decoding="async" style="max-width:300px;border-radius:12px;" />
   </figure>
 
-  <!-- [8] STIMMEN -->
+  <!-- STIMMEN -->
   <section id="stimmen" class="section alt">
     <div class="container">
       <h2>Was Klient:innen sagen</h2>
@@ -153,21 +142,22 @@
     </div>
   </section>
 
-  <!-- [9] KONTAKT -->
+  <!-- KONTAKT -->
   <section id="kontakt" class="section">
     <div class="container">
       <h2>Kontakt</h2>
       <p>Hamburg · Deutschland · Online & vor Ort</p>
       <form class="contact" name="contact" method="post" action="https://formspree.io/f/your-id">
         <label>Dein Name<input type="text" name="name" required></label>
-        <label>Deine E‑Mail<input type="email" name="email" required></label>
+        <label>Deine E-Mail<input type="email" name="email" required></label>
         <label>Nachricht<textarea name="message" rows="6" required></textarea></label>
         <button class="btn" type="submit">Senden</button>
       </form>
-      <p class="small">Datenschutz transparent nach SOC‑3‑Prinzipien erklärt – Einwilligung im Erstgespräch.</p>
+      <p class="small">Datenschutz transparent nach SOC-3-Prinzipien erklärt – Einwilligung im Erstgespräch.</p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot">
       <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
@@ -179,7 +169,7 @@
   </footer>
 
   <script>
-    // Mobile‑Nav & Jahr
+    // Jahr + Mobile-Navi
     document.getElementById('y').textContent = new Date().getFullYear();
     document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
       const btn=e.currentTarget,list=document.getElementById('nav-list');

@@ -267,3 +267,52 @@ blockquote {
   content: "– ";
   color: var(--accent);
 }
+/* ===== Meine Geschichte – eigener Look ================== */
+#meine-geschichte{
+  background:#111;                 /* dunkler Raum */
+  padding:64px 20px;
+  border-top:1px solid #222;       /* feine Linien */
+  border-bottom:1px solid #222;
+}
+
+#meine-geschichte h2{
+  color:var(--accent);             /* Gold */
+  text-align:center;
+  margin-bottom:1.4rem;
+}
+
+#meine-geschichte p,
+#meine-geschichte ul,
+#meine-geschichte .note{
+  max-width:720px;                 /* ruhige Zeilenlänge */
+  margin:0 auto 1.1rem;
+  text-align:center;
+  line-height:1.6;
+}
+
+/* Liste schlank, ohne große Einzüge */
+#meine-geschichte ul{
+  list-style:none;
+  padding:0;
+  margin:1rem auto;
+}
+#meine-geschichte ul li{
+  margin:.45rem 0;
+}
+#meine-geschichte ul li::before{
+  content:"– ";
+  color:var(--accent);
+}
+
+/* Hinweis-Box im Block zentriert und etwas heller */
+#meine-geschichte .note{
+  background:#151515;
+  border:1px solid #2a2a2a;
+  border-radius:16px;
+  padding:12px 14px;
+}
+
+/* etwas Luft zum Nachbarabschnitt auf kleineren Screens */
+@media (max-width:820px){
+  #meine-geschichte{ padding:56px 16px; }
+}

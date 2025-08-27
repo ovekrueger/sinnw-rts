@@ -647,4 +647,11 @@ blockquote {
 .gold {
   color: #d4af37; /* Gold */
   font-weight: 600;
+}.full-width-img {
+  display: block;
+  max-width: 900px;   /* Bildbreite anpassen */
+  width: 100%;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }

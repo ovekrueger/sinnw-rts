@@ -644,4 +644,7 @@ blockquote {
   text-shadow: 0 2px 6px rgba(0,0,0,.6);
   margin-bottom: 2rem;
 }
-
+.gold {
+  color: #d4af37; /* Gold */
+  font-weight: 600;
+}

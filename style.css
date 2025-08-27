@@ -182,3 +182,57 @@ textarea{min-height:160px;resize:vertical}
 /* Siegel & Kompass dezent begrenzen */
 .center img{ max-width:200px; }
 #kompass img{ max-width:420px; margin:20px auto; display:block; }
+/* =========================================
+   Typografie & Textblöcke – global
+   ========================================= */
+.section h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.section p {
+  max-width: 720px;
+  margin: 0 auto 1.1rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-align: center;
+}
+
+.section ul {
+  max-width: 680px;
+  margin: 1rem auto;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+.section ul li {
+  margin-bottom: .5rem;
+}
+
+/* Zitate */
+blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--muted);
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem auto;
+  max-width: 680px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Callouts / Notes */
+.note {
+  max-width: 720px;
+  margin: 1.2rem auto;
+  padding: 1rem 1.2rem;
+  background: #171717;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}

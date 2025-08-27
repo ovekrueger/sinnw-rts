@@ -394,3 +394,8 @@ blockquote {
   border-left: 4px solid var(--accent);
   padding-left: 1rem;
 }
+/* Gold-Highlight für Texte */
+.gold {
+  color: var(--accent);   /* dein Gold */
+  font-weight: 600;       /* kräftiger */
+}

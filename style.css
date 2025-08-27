@@ -586,4 +586,21 @@ blockquote {
   margin: 0 auto 1.8rem;
   filter: drop-shadow(0 3px 8px rgba(0,0,0,.4));
 }
+/* Logo klein im Sinnwärts-Block */
+.kom-logo-small{
+  display:block;
+  width: clamp(140px, 22vw, 220px);
+  height:auto;
+  margin: 0 auto 1.8rem;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,.4));
+}
+
+/* Portrait-Styling */
+.portrait-img{
+  display:block;
+  max-width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.4);
+  margin: 1.5rem auto 0;
+}
 

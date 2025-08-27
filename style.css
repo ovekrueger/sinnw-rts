@@ -407,3 +407,31 @@ blockquote {
 @media (max-width: 640px){
   .kom-logo-hero { max-width: 160px; }
 }
+#ueber-mich {
+  padding: 60px 20px;
+}
+
+#ueber-mich .container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+#ueber-mich .bullets {
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+#ueber-mich .bullets li {
+  margin: .4rem 0;
+}
+
+#ueber-mich .bullets li::before {
+  content: "– ";
+  color: var(--accent);
+}
+
+#ueber-mich h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}

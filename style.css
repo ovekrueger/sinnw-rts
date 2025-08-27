@@ -146,6 +146,38 @@ textarea{min-height:160px;resize:vertical}
 @media (min-width:1100px){
   .portrait img{ max-width:360px; } /* etwas größer auf großen Screens */
 }
+/* Hero mit Contain-Option */
+.intro--contain {
+  background-size: contain !important;
+  background-color: #0b0b0b;
+  background-repeat: no-repeat;
+  background-position: center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+/* Rahmen-Effekt: Bild bleibt zentriert */
+.intro--contain::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  width: min(100%, 1400px);   /* Bild auf max. 1400px begrenzen */
+  height: 100%;
+  transform: translateX(-50%);
+  background: inherit;        /* nutzt das gleiche Background wie .intro */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: 0;
+}
+
+/* Inhalt bleibt darüber */
+.intro--contain .container {
+  position: relative;
+  z-index: 1;
+}
 
 /* Siegel & Kompass dezent begrenzen */
 .center img{ max-width:200px; }

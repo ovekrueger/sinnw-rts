@@ -236,3 +236,34 @@ blockquote {
   font-size: 1rem;
   line-height: 1.6;
 }
+/* Meine Geschichte – eigener Stil */
+#meine-geschichte {
+  background: #111;              /* dunkler Hintergrund */
+  padding: 60px 20px;
+  border-top: 1px solid #222;    /* feine Linie oben */
+  border-bottom: 1px solid #222; /* feine Linie unten */
+}
+
+#meine-geschichte h2 {
+  color: var(--accent);          /* Gold */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+#meine-geschichte p,
+#meine-geschichte ul,
+#meine-geschichte .note {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#meine-geschichte ul {
+  list-style: none;
+  padding: 0;
+}
+#meine-geschichte ul li::before {
+  content: "– ";
+  color: var(--accent);
+}

@@ -399,3 +399,11 @@ blockquote {
   color: var(--accent);   /* dein Gold */
   font-weight: 600;       /* kräftiger */
 }
+.kom-logo-hero {
+  max-width: 220px;
+  margin: 2rem auto 0;
+  display: block;
+}
+@media (max-width: 640px){
+  .kom-logo-hero { max-width: 160px; }
+}

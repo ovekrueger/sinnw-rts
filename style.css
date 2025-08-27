@@ -572,5 +572,11 @@ blockquote {
 
 .angebot .btn {
   margin-top: .5rem;
+}.kom-logo-hero {
+  display: block;
+  width: clamp(220px, 30vw, 360px); /* größerer Startwert */
+  height: auto;
+  margin: 2.5rem auto 0;            /* mehr Abstand nach oben */
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.4));
 }
 

@@ -246,3 +246,37 @@ input, textarea {
   background:#ffdf6a; /* etwas heller */
   color:#000;
 }
+/* Hero: Overlay + Gold für H1/H2, helles p + goldener Button */
+.intro{ position:relative; padding:90px 0 60px; }
+.intro::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.15) 60%, rgba(0,0,0,0));
+  pointer-events:none;
+}
+.intro .container{ position:relative; z-index:1; }
+
+/* Überschriften bleiben Gold */
+.intro h1,
+.intro h2{
+  color:var(--accent);
+  text-shadow:0 2px 6px rgba(0,0,0,.65);
+}
+
+/* Unterzeile hell für mehr Kontrast */
+.intro p{
+  color:#f9f9f9;
+  text-shadow:0 2px 6px rgba(0,0,0,.6);
+}
+
+/* Button sichtbar: Gold mit schwarzer Schrift */
+.intro .btn{
+  background:var(--accent);
+  color:#111;
+  border:1px solid #000;
+  font-weight:700;
+  box-shadow:0 4px 12px rgba(0,0,0,.4);
+}
+.intro .btn:hover{
+  background:#ffdf6a; /* etwas heller */
+  color:#000;
+}

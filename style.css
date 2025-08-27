@@ -675,4 +675,5 @@ blockquote {
   margin: 2rem auto;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.45);
-}
+}.full-width-img{max-width:520px}
+@media (max-width:640px){ .full-width-img{max-width:100%} }

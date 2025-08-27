@@ -579,4 +579,11 @@ blockquote {
   margin: 2.5rem auto 0;            /* mehr Abstand nach oben */
   filter: drop-shadow(0 4px 10px rgba(0,0,0,.4));
 }
+.kom-logo-small {
+  display: block;
+  width: clamp(140px, 22vw, 220px);
+  height: auto;
+  margin: 0 auto 1.8rem;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,.4));
+}
 

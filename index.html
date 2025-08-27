@@ -1,189 +1,130 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sinnwärts – Ove Krüger</title>
-  <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Coaching & Begleitung von Ove Krüger – Sinnwärts." />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body id="top">
-  <!-- NAVIGATION -->
-  <header class="site-header">
-    <nav class="container nav">
-      <a class="logo" href="#top">Sinnwärts</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a href="#intro">Start</a></li>
-        <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="#angebot">Angebot</a></li>
-        <li><a href="#kompass">Klarheitskompass</a></li>
-        <li><a href="#stimmen">Stimmen</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-  </header>
+/* =========================================================
+   Sinnwärts – Style (Clean Rebuild)
+   ========================================================= */
 
-<!-- HERO -->
-<section id="intro" class="intro">
-  <div class="container">
-    <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-    <h2>Sucht sucht Sinn</h2>
-    <p class="intro-quote">„Was, du lebst noch?“ – Klar. Ich habe gerade erst angefangen.</p>
-    <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
-  </div>
-</section>
-     
-      </figure>
-    </div>
-  </section>
+/* ---------- Tokens */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-  <!-- ÜBER MICH -->
-  <section id="ueber-mich" class="section">
-    <div class="container two-col">
-      <div>
-        <h2>Über mich</h2>
-        <p>Life Trust Coach, Trainer, Mentor. Hintergrund: Sport, Musik, Pädagogik. Integraler Kompass nach Spiral Dynamics, Ken Wilber & Barrett Values.</p>
-        <ul class="bullets">
-          <li>K.O.M.I.: Klarheit · Orientierung · Menschlichkeit · Integral</li>
-          <li>Motto: „Sucht sucht Sinn“</li>
-          <li>Haltung: wahr, gerecht, mutig, maßvoll</li>
-        </ul>
-        <!-- Portrait (aus Hero hierher verschoben) -->
-<figure class="portrait" style="margin:1rem 0 1.25rem;">
-  <img src="images/ove-rolli.jpg"
-       alt="Ove Krüger – Portrait im schwarzen Rollkragen"
-       loading="lazy" decoding="async"
-       style="max-width:280px;border-radius:12px;" />
-</figure>
-        <a class="link" href="ueber-mich.html">Mehr lesen</a>
-      </div>
-      <div>
-        <div class="card note">Inneres Kind integriert. Keine Suche nach äußerer Anerkennung. Bewusstsein täglich wie eine Welle surfen.</div>
-      </div>
-    </div>
-  </section>
+:root{
+  --bg:#0b0b0b;
+  --panel:#141414;
+  --ink:#f4f4f4;
+  --muted:#b8b8b8;
+  --accent:#ffd24a;         /* Gold */
+  --ring:#2d2408;
+  --radius:18px;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+  --max:1100px;
+  --gap:22px;
+}
 
-  <!-- ANGEBOT -->
-  <section id="angebot" class="section alt">
-    <div class="container">
-      <h2>Wobei ich dir helfe</h2>
-      <div class="grid-3">
-        <article class="card">
-          <h3>Klarheits-Session</h3>
-          <p>60–90 Min. fokussiert: Anliegen sortieren, nächsten Schritt festlegen.</p>
-        </article>
-        <article class="card">
-          <h3>Begleitung 6–12 Wochen</h3>
-          <p>Struktur, Reflexion, Übungen. Integrales Wachstum in deinem Tempo.</p>
-        </article>
-        <article class="card">
-          <h3>HPP · Psychoedukation</h3>
-          <p>Neurobiologische Grundlagen, Suchtmechanismen, Schlaf & Regulation.</p>
-        </article>
-      </div>
+/* ---------- Base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif}
+img{max-width:100%;height:auto;display:block;border-radius:calc(var(--radius) - 6px)}
+a{color:var(--accent);text-decoration:none}
+a:hover{opacity:.9}
+.container{width:min(100%,var(--max));margin:0 auto;padding:0 20px}
+.section{padding:56px 0}
+.section.alt{background:#0e0e0e}
 
-      <div class="center" style="margin:40px 0;">
-        <img src="images/ltc-siegel.png" alt="Life Trust Coach Siegel" style="max-width:180px" />
-      </div>
+/* ---------- Header / Nav */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(11,11,11,.92);backdrop-filter:saturate(120%) blur(4px);border-bottom:1px solid #171717}
+.nav{display:flex;align-items:center;gap:18px;padding:12px 20px}
+.logo{font-weight:700;color:var(--accent)}
+.nav-list{list-style:none;display:flex;gap:18px;margin-left:auto;padding:0}
+.nav-list a{padding:8px 10px;border-radius:12px}
+.nav-list a:hover{background:#111}
+.nav-toggle{display:none}
 
-      <a class="btn" href="#kontakt">Termin anfragen</a>
-    </div>
-  </section>
+@media (max-width:820px){
+  .nav-toggle{display:inline-flex;margin-left:auto;background:#111;border:1px solid #1f1f1f;color:var(--ink);padding:8px 10px;border-radius:10px}
+  .nav-list{display:none;flex-direction:column;gap:8px;background:#0f0f0f;border:1px solid #1f1f1f;border-radius:12px;padding:10px;position:absolute;right:20px;top:58px}
+  .nav-list.open{display:flex}
+}
 
-  <!-- KLARHEITSKOMPASS -->
-  <section id="kompass" class="section">
-    <div class="container">
-      <h2>Krügers Klarheitskompass</h2>
-      <img src="images/klarheitskompass.png" alt="Visualisierung Krügers Klarheitskompass"
-           style="max-width:400px;margin:20px auto;display:block;" />
-      <p>Vier Himmelsrichtungen für dein Navigieren: Denken, Fühlen, Handeln, Sein – ausgerichtet an K.O.M.I.</p>
-      <div class="grid-4">
-        <div class="chip">Klarheit</div>
-        <div class="chip">Orientierung</div>
-        <div class="chip">Menschlichkeit</div>
-        <div class="chip">Integral</div>
-      </div>
-    </div>
-  </section>
+/* ---------- Buttons */
+.btn{display:inline-block;background:var(--accent);color:#111;border:1px solid #000;padding:12px 18px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.btn:hover{background:#ffdf6a;color:#000}
 
-  <!-- KLARHEITSKOMPASS PERSÖNLICH -->
-  <section class="portrait" aria-labelledby="kompass-detail">
-    <h2 id="kompass-detail">🧭 Klarheitskompass – persönlich</h2>
-    <div class="note max">
-      <p>„Du liest zu viel über Spiral Dynamics – und zu wenig Märchen.“</p>
-      <p>Das innere Kind will nicht optimiert werden. Es will gesehen werden. Unter der Oberfläche von Klarheit, Orientierung und Menschlichkeit wirkt der vierte Pol: <strong>das Integrale</strong>.</p>
-    </div>
-  </section>
+/* ---------- Cards / Chips */
+.card{background:var(--panel);border:1px solid #1f1f1f;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.note{background:#171717;border:1px solid #222;border-radius:16px;padding:16px;color:var(--ink)}
+.chip{display:inline-block;background:#111;border:1px solid #1f1f1f;border-radius:999px;padding:8px 12px}
 
-  <!-- PORTRAIT OVE -->
-  <section class="portrait" aria-labelledby="ich-bin-ove">
-    <img src="images/ove-stehend-offen.jpg" alt="Ove Krüger – stehend, offene Haltung" loading="lazy" decoding="async" style="max-width:300px;border-radius:12px;" />
-    <h2 id="ich-bin-ove">🧑‍🦰 Ich bin Ove</h2>
-    <div class="note max">
-      <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken. Meine Geschichte ist kein Makel. Sie ist meine Stärke.</p>
-      <p>Heute arbeite ich als Life Trust Coach. Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
-      <ul>
-        <li>Ich stelle die richtigen Fragen.</li>
-        <li>Ich höre zu, auch zwischen den Zeilen.</li>
-        <li>Ich motiviere – ohne zu pushen.</li>
-        <li>Ich finde mit dir neue Wege, auch wenn du gerade keinen siehst.</li>
-      </ul>
-    </div>
-  </section>
+/* ---------- Grids */
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+}
 
-  <figure class="portrait">
-    <img src="images/ove-weisses-hemd.jpg" alt="Ove Krüger – im weißen Hemd" loading="lazy" decoding="async" style="max-width:300px;border-radius:12px;" />
-  </figure>
+/* =========================================================
+   HERO – Vollflächiges Hintergrundbild + Overlay
+   ========================================================= */
+.intro{
+  position:relative;
+  text-align:center;
+  background:url("images/hero-sucht-sucht-sinn.jpg") center 15% / cover no-repeat fixed;
+  background-attachment:scroll;             /* iOS-Fallback */
+  padding:16vh 0 12vh;                      /* Höhe ohne Crop */
+}
+@supports (background-attachment: fixed){
+  .intro{ background-attachment: fixed; }
+}
 
-  <!-- STIMMEN -->
-  <section id="stimmen" class="section alt">
-    <div class="container">
-      <h2>Was Klient:innen sagen</h2>
-      <div class="grid-3">
-        <blockquote class="card">„Mehr innere Ruhe und klare Schritte.“<br><cite>— Führungskraft, 42</cite></blockquote>
-        <blockquote class="card">„Respektvoll, ehrlich, wirksam.“<br><cite>— Ärztin, 38</cite></blockquote>
-        <blockquote class="card">„Erklärtes neurobiologisch, begleitet menschlich.“<br><cite>— Musiker, 55</cite></blockquote>
-      </div>
-    </div>
-  </section>
+/* Overlay für Kontrast */
+.intro::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.18) 60%, rgba(0,0,0,0));
+  pointer-events:none;
+}
+.intro .container{position:relative;z-index:1}
 
-  <!-- KONTAKT -->
-  <section id="kontakt" class="section">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <p>Hamburg · Deutschland · Online & vor Ort</p>
-      <form class="contact" name="contact" method="post" action="https://formspree.io/f/your-id">
-        <label>Dein Name<input type="text" name="name" required></label>
-        <label>Deine E-Mail<input type="email" name="email" required></label>
-        <label>Nachricht<textarea name="message" rows="6" required></textarea></label>
-        <button class="btn" type="submit">Senden</button>
-      </form>
-      <p class="small">Datenschutz transparent nach SOC-3-Prinzipien erklärt – Einwilligung im Erstgespräch.</p>
-    </div>
-  </section>
+/* Claim & Motto in Gold */
+.intro h1,.intro h2{
+  color:var(--accent);
+  text-shadow:0 2px 6px rgba(0,0,0,.7);
+  margin:.35rem 0;
+}
+.intro h1{font-size:clamp(1.6rem,3.5vw,2.6rem)}
+.intro h2{font-size:clamp(1.1rem,2.2vw,1.4rem);opacity:.95}
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container foot">
-      <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
-      <nav class="foot-nav">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-    </div>
-  </footer>
+/* Zitat im Hero */
+.intro-quote{
+  color:var(--accent);
+  font-size:clamp(1.05rem,2.1vw,1.35rem);
+  font-weight:600;
+  text-shadow:0 2px 6px rgba(0,0,0,.75);
+  margin:1rem 0 1.6rem;
+}
 
-  <script>
-    // Jahr + Mobile-Navi
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
-      const btn=e.currentTarget,list=document.getElementById('nav-list');
-      const open=btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded', String(!open));
-      list?.classList.toggle('open');
-    });
-  </script>
-</body>
-</html>
+/* Trennlinie unter Hero */
+.intro{box-shadow:inset 0 -1px 0 #171717}
+
+/* =========================================================
+   Inhaltliche Sektionen
+   ========================================================= */
+.portrait img{border:1px solid #1f1f1f;box-shadow:var(--shadow)}
+.center{text-align:center}
+.small{font-size:.9rem;color:var(--muted)}
+
+/* Testimonials */
+blockquote{margin:0}
+blockquote.card{color:var(--ink)}
+
+/* Kontakt */
+.contact{display:grid;gap:12px;max-width:680px}
+label{display:grid;gap:6px;color:var(--muted);font-weight:600}
+input,textarea{background:#0f0f0f;border:1px solid #1f1f1f;color:var(--ink);padding:12px 14px;border-radius:12px}
+input:focus,textarea:focus{outline:none;border-color:#2b2b2b;box-shadow:0 0 0 4px rgba(255,210,74,.08)}
+textarea{min-height:160px;resize:vertical}
+
+/* Footer */
+.site-footer{border-top:1px solid #171717;background:#0a0a0a}
+.foot{display:flex;gap:18px;justify-content:space-between;align-items:center;padding:18px 20px}
+.foot-nav a{color:var(--muted)}
+.foot-nav a:hover{color:var(--accent)}

@@ -185,30 +185,7 @@ input, textarea {
   border:1px solid #1f1f1f;border-radius:12px;
   box-shadow:0 10px 30px rgba(0,0,0,.45);
 }/* =========================================
-   Hero Section – Textfarbe dunkel
-   ========================================= */
-.intro h1,
-.intro h2,
-.intro p {
-  color: #111; /* tiefschwarz */
-  text-shadow: 0 1px 2px rgba(255,255,255,.5); /* kleine Aufhellung für Kontrast */
-}
 
-.intro .btn {
-  background: #111;
-  color: var(--accent); /* dein Gold-Gelb */
-  border: 1px solid #000;
-}
-
-.intro .btn:hover {
-  background: #222;
-  color: #ffd95e; /* etwas helleres Gelb beim Hover */
-}
-.intro::after {
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.15) 60%, transparent);
-}
 /* =========================================
    Hero: Gold-Schrift mit Schatten + Overlay
    ========================================= */

@@ -871,4 +871,9 @@ blockquote {
   box-shadow: 0 4px 25px rgba(0,0,0,0.5);
   margin: 20px auto;
   display: block;
+}.portrait-section { text-align:center; padding:40px 20px; }
+.portrait-img {
+  width:320px; max-width:90%;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
 }

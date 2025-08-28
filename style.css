@@ -914,4 +914,11 @@ blockquote {
   display: block;
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+}.portrait-about {
+  width: 600px;      /* angenehme Größe, nicht zu wuchtig */
+  max-width: 100%;
+  margin: 30px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.5);
 }

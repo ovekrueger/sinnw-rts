@@ -1,1 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sandbox – Sinnwärts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body { background:#111; color:#fff; font-family:Montserrat,sans-serif; }
+    h2 { color: var(--accent,#d4af37); margin-bottom: 1rem; }
+    .sandbox-info { background:#222; padding:16px; margin-bottom:40px; border-left:4px solid var(--accent,#d4af37);}
+  </style>
+</head>
+<body>
 
+  <div class="sandbox-info">
+    <h2>Sandbox Blocks</h2>
+    <p>Hier kannst du neue Blöcke ausprobieren, ohne die Hauptseite kaputt zu machen.</p>
+    <p>Datei: <code>sinnw-rts/sandbox/blocks.html</code></p>
+  </div>
+
+  <!-- EINSPALTIG -->
+  <section id="test-1" class="block">
+    <div class="container">
+      <h2>Einspaltiger Block</h2>
+      <p>Dies ist ein Testblock mit einfachem Inhalt.</p>
+      <a href="#" class="btn">👉 Test-Button</a>
+    </div>
+  </section>
+
+  <!-- ZWEISPALTIG -->
+  <section id="test-2" class="block">
+    <div class="container">
+      <div class="grid-2">
+        <div class="col-main">
+          <h2>Zweispaltig – Hauptspalte</h2>
+          <p>Hier stehen längere Texte.</p>
+        </div>
+        <aside class="col-aside">
+          <h2>Sidebar</h2>
+          <p>Hier könnte ein Bild oder CTA stehen.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- DREISPALTIG -->
+  <section id="test-3" class="block">
+    <div class="container">
+      <h2>Dreispaltiger Block</h2>
+      <div class="grid-3">
+        <div class="card">Spalte 1</div>
+        <div class="card">Spalte 2</div>
+        <div class="card">Spalte 3</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

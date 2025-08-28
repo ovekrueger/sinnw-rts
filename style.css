@@ -954,3 +954,37 @@ blockquote {
   display: block;
   margin: 30px auto;  /* zentriert */
 }
+/* --- Über mich Block --- */
+.block.about {
+  margin: 60px auto;
+  padding: 24px;
+  max-width: 1100px;
+  background: #151515;       /* passt zu deinem Dark Theme */
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;   /* Text größer als Bild */
+  gap: 32px;
+  align-items: center;
+}
+
+.about__text ul {
+  margin: 12px 0 0 18px;
+}
+
+.about__media img {
+  display: block;
+  max-width: 100%;
+  width: 360px;               /* kontrollierte Breite */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Mobile: stapeln */
+@media (max-width: 820px) {
+  .about__inner { grid-template-columns: 1fr; }
+  .about__media img { width: 280px; margin: 0 auto; }
+}

@@ -850,4 +850,25 @@ blockquote {
 .hero-text .btn:hover {
   background: #fff;
   color: #111;
+}/* Portrait Startseite */
+.portrait-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.portrait-img {
+  width: 320px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* Portrait Über mich */
+.portrait-about {
+  width: 1000px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.5);
+  margin: 20px auto;
+  display: block;
 }

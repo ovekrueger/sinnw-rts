@@ -1057,4 +1057,12 @@ blockquote {
 @media (max-width: 900px) {
   #geschichte .grid-2 { flex-direction: column; }
   #geschichte .col-aside { min-width: 0; }
+}/* Dreier-Raster */
+.grid-3 {
+  display: grid; gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
 }
+@media (max-width: 900px) {
+  .grid-3 { grid-template-columns: 1fr; }
+}
+.block.testimonials { max-width: 1100px; margin: 60px auto; padding: 0 16px; }

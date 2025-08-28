@@ -922,3 +922,25 @@ blockquote {
   border-radius: 12px;
   box-shadow: 0 4px 25px rgba(0,0,0,0.5);
 }
+.ueber-mich-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.ueber-mich-text {
+  flex: 1 1 55%;
+}
+
+.ueber-mich-img {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.ueber-mich-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0,0,0,.5);
+}

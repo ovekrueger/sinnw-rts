@@ -898,3 +898,13 @@ blockquote {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
+.portrait-under-hero {
+  padding: 40px 20px;
+  text-align: center;
+}
+.portrait-under-hero img {
+  width: 320px;           /* kompakt */
+  max-width: 90%;         /* mobil-freundlich */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4);
+}

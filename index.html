@@ -28,12 +28,20 @@
   </header>
 
 <!-- HERO -->
-<section id="intro" class="intro intro--contain">
-  <div class="container">
+<section class="hero">
+  <picture>
+    <!-- Kleineres Bild für Mobile -->
+    <source srcset="images/hero-1280.webp" media="(max-width: 768px)" type="image/webp">
+    <!-- Hauptbild für Desktop -->
+    <source srcset="images/hero-1920.webp" type="image/webp">
+    <!-- Fallback (JPG oder PNG) -->
+    <img src="images/hero-1920.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img">
+  </picture>
+
+  <div class="hero-text">
     <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-    <h2>Sucht sucht Sinn</h2>
-    <p class="intro-quote">„Was, du lebst noch?“ – Klar. Ich habe gerade erst angefangen.</p>
-    <a class="btn" href="#kontakt">Erstgespräch anfragen</a>
+    <p>Sucht sucht Sinn</p>
+    <a href="#angebote" class="btn">Aufstehen wagen</a>
   </div>
 </section>
 

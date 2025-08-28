@@ -988,3 +988,43 @@ blockquote {
   .about__inner { grid-template-columns: 1fr; }
   .about__media img { width: 280px; margin: 0 auto; }
 }
+/* --- Portrait + Slogan (Blockquote) --- */
+.block.portrait-slogan {
+  margin: 60px auto;
+  max-width: 1100px;
+  padding: 20px;
+}
+
+.portrait-slogan__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.portrait-slogan__media img {
+  max-width: 320px;
+  border-radius: 14px;
+}
+
+.hero__text blockquote {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;  /* radikal weiß */
+  border-left: 6px solid var(--accent, #d4af37); /* Goldene Linie */
+  padding-left: 16px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .portrait-slogan__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero__text blockquote {
+    font-size: 1.6rem;
+    border-left: none;
+    padding-left: 0;
+  }
+}

@@ -1066,3 +1066,8 @@ blockquote {
   .grid-3 { grid-template-columns: 1fr; }
 }
 .block.testimonials { max-width: 1100px; margin: 60px auto; padding: 0 16px; }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

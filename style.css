@@ -876,4 +876,25 @@ blockquote {
   width:320px; max-width:90%;
   border-radius:12px;
   box-shadow:0 4px 20px rgba(0,0,0,.4);
+}.praxis-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.praxis-text {
+  flex: 1 1 60%;
+}
+
+.praxis-img {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.praxis-img img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }

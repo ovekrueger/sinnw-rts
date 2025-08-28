@@ -1076,3 +1076,20 @@ blockquote {
 
 .block.testimonials h2{text-align:center;margin-bottom:20px;}
 .block.testimonials .card{padding:16px;border-radius:12px;background:#1a1a1a;}
+.block.haltung {
+  margin: 72px auto;
+  max-width: 1100px;
+  padding: 0 16px;
+}
+
+.block.haltung .note {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.block.haltung .muted {
+  font-size: 0.95rem;
+  color: #aaa;
+}

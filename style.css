@@ -1167,4 +1167,9 @@ blockquote {
   #ueber-mich p {
     font-size: 1.15rem;
   }
+:root {
+  --bg: #111;       /* Tiefschwarz für Hintergrund */
+  --ink: #f5f5f5;   /* Weiß/Hellgrau für Fließtext */
+  --accent: #d4af37;/* Gold für Überschriften, Links, Hervorhebungen */
+  --muted: #9aa0a6; /* Dezentes Grau für Nebentext */
 }

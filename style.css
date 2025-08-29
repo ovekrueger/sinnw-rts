@@ -1289,4 +1289,104 @@ a:hover{text-decoration:underline}
   .mainnav ul{flex-wrap:wrap}
   .mainnav .has-sub{width:100%}
   .mainnav .submenu{position:static; box-shadow:none; margin-top:.4rem}
+}/* =========================
+   HAUPTMENÜ
+   ========================= */
+
+/* Header-Hintergrund */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(17,17,17,.9);  /* Schwarz halbtransparent */
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #1f1f1f;
 }
+
+/* Container im Header */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .6rem 1rem;
+}
+
+/* Branding / Logo */
+.brand {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  letter-spacing: .3px;
+}
+
+/* Hauptliste */
+.mainnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: .5rem;
+}
+
+/* Standard-Links */
+.mainnav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  transition: background .2s, color .2s;
+}
+
+/* Hover/Fokus */
+.mainnav a:hover,
+.mainnav a:focus {
+  color: var(--accent);
+  background: #1a1a1a;
+}
+
+/* Aktiver Menüpunkt */
+.mainnav .active > a {
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Dropdown-Pfeil */
+.mainnav .has-sub > a::after {
+  content: " ▾";
+  font-size: .85em;
+  color: var(--muted);
+}
+
+/* Submenu */
+.mainnav .has-sub {
+  position: relative;
+}
+
+.mainnav .submenu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  min-width: 220px;
+  padding: .4rem;
+  margin: 0;
+  background: #121212;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.5);
+  display: none;
+  flex-direction: column;
+  gap: .2rem;
+  z-index: 50;
+}
+
+.mainnav .submenu a {
+  display: block;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  font-size: .95rem;
+}
+
+.mainnav .submenu a:hover,
+.mainnav .submenu a:focus {
+  background:

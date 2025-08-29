@@ -2052,5 +2052,21 @@ a:hover{color:var(--accent)}
 @media (max-width: 840px){
   .nav-list{ display:none; flex-direction:column; gap:.8rem; }
   .nav-list.open{ display:block; }  /* wird per Button getoggelt */
+}/* === NAV horizontal (Desktop) + Toggle (Mobile) === */
+.site-header .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.nav-list {
+  list-style:none;
+  display:flex;           /* wichtig: horizontal */
+  gap:1.4rem;
+  margin:0; padding:0;
+}
+.nav-list a { font-weight:600; text-decoration:none; }
+.nav-toggle { display:none; appearance:none; background:transparent; border:0; cursor:pointer; }
+
+/* Mobile */
+@media (max-width: 840px){
+  .nav-toggle{ display:block; }
+  .nav-list{ display:none; flex-direction:column; gap:.8rem; }
+  .nav-list.open{ display:block; } /* per JS toggeln */
 }
 

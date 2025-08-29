@@ -1265,3 +1265,28 @@ a:hover{text-decoration:underline}
 .vision-images{
   display:grid; gap:1rem;
   grid-template-columns:repeat(auto-fit,minmax(160p
+.site-header{position:sticky; top:0; z-index:100; background:rgba(17,17,17,.9);
+  backdrop-filter:blur(6px); border-bottom:1px solid #1f1f1f}
+.site-header .container{display:flex; align-items:center; justify-content:space-between;
+  padding:.6rem 1rem}
+.brand{color:var(--accent); font-weight:700; text-decoration:none; letter-spacing:.3px}
+
+.mainnav ul{list-style:none; margin:0; padding:0; display:flex; gap:.5rem}
+.mainnav a{color:var(--ink); text-decoration:none; padding:.6rem .9rem; border-radius:999px}
+.mainnav a:hover,.mainnav a:focus{color:var(--accent); background:#1a1a1a}
+
+.mainnav .has-sub{position:relative}
+.mainnav .has-sub > a::after{content:"▾"; margin-left:.35rem; font-size:.85em; color:var(--muted)}
+.mainnav .submenu{position:absolute; left:0; top:calc(100% + 6px); min-width:220px; padding:.4rem;
+  background:#121212; border:1px solid #1f1f1f; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,.5);
+  display:none; flex-direction:column; gap:.2rem; z-index:50}
+.mainnav .submenu a{display:block; padding:.55rem .7rem; border-radius:10px}
+.mainnav .submenu a:hover,.mainnav .submenu a:focus{background:#1a1a1a; color:var(--accent)}
+.mainnav .has-sub:hover .submenu,.mainnav .has-sub:focus-within .submenu{display:flex}
+
+.mainnav .active > a{color:var(--accent); border:1px solid var(--accent)}
+@media (max-width:800px){
+  .mainnav ul{flex-wrap:wrap}
+  .mainnav .has-sub{width:100%}
+  .mainnav .submenu{position:static; box-shadow:none; margin-top:.4rem}
+}

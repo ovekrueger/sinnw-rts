@@ -3,60 +3,230 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Impressum – Ove Krüger · Sinnwärts</title>
+  <title>Sinnwärts – Ove Krüger</title>
+  <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Coaching & Begleitung von Ove Krüger – Sinnwärts." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body id="top">
+  <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav">
-      <a class="logo" href="index.html">Sinnwärts</a>
+      <a class="logo" href="#top">Sinnwärts</a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
       <ul id="nav-list" class="nav-list">
-        <li><a href="index.html#intro">Start</a></li>
+        <li><a href="#intro">Start</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="index.html#angebot">Angebot</a></li>
-        <li><a href="index.html#kompass">Klarheitskompass</a></li>
-        <li><a href="nora.html">N.O.R.A.</a></li>
-        <li><a href="index.html#kontakt">Kontakt</a></li>
+        <li><a href="suechte.html">Süchte</a></li>
+        <li><a href="#angebote">Angebot</a></li>
+        <li><a href="#kompass">Klarheitskompass</a></li>
+        <li><a href="#stimmen">Stimmen</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="section">
-    <div class="container max">
-      <h1>Impressum</h1>
-      <p><strong>Angaben gemäß § 5 TMG</strong></p>
-      <p>Ove Krüger<br>
-      Hamburg · Deutschland</p>
-
-      <p><strong>Kontakt</strong><br>
-      E-Mail: <a href="mailto:info@sinnwaerts.de">info@sinnwaerts.de</a></p>
-
-      <p><strong>Umsatzsteuer-ID</strong><br>
-      Wird ergänzt (falls erforderlich nach §27a UStG)</p>
-
-      <p><strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</strong><br>
-      Ove Krüger, Hamburg</p>
-
-      <p class="small">Dieses Impressum gilt auch für die Social-Media-Profile von Sinnwärts.</p>
+  <!-- HERO -->
+  <section id="intro" class="hero dark">
+    <picture>
+      <source srcset="images/hero-sucht-sucht-sinn.webp" type="image/webp">
+      <img src="images/hero-sucht-sucht-sinn.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img">
+    </picture>
+    <div class="hero-text">
+      <h1>Holpersteine – Immer wieder Aufstehen.</h1>
+      <p>Sucht sucht Sinn</p>
+      <a href="#angebote" class="btn">Aufstehen wagen</a>
     </div>
-  </main>
+  </section>
 
+  <!-- PORTRAIT + ZITAT -->
+  <section id="portrait-slogan" class="block portrait-slogan">
+    <div class="portrait-slogan__inner">
+      <figure class="portrait-slogan__media">
+        <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" class="portrait">
+      </figure>
+      <div class="hero__text">
+        <blockquote><strong>„Was, du lebst noch?<br>Klar! Ich habe gerade erst angefangen.“</strong></blockquote>
+        <a href="kontakt.html" class="btn">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber-mich" class="block about">
+    <div class="about__inner">
+      <div class="about__text">
+        <h2>🧑‍🦰 Über mich</h2>
+        <p>Ich begleite Menschen, die nicht länger funktionieren, sondern leben wollen. Als Life Trust Coach stehe ich für eine klare Haltung:</p>
+        <ul>
+          <li><strong>K.O.M.</strong> – Klarheit · Orientierung · Menschlichkeit</li>
+          <li><strong>Motto</strong> – „Sucht sucht Sinn“</li>
+          <li><strong>Werte</strong> – Wahrheit, Gerechtigkeit, Mut und Maß</li>
+        </ul>
+        <p>Warum ich? Weil ich den Abgrund kenne – und wir alles aus integraler Sicht beleuchten.</p>
+      </div>
+      <img src="images/ove-stehend-offen.jpg" alt="Ove Krüger – Portrait stehend offen" class="portrait"
+           onerror="this.onerror=null;this.src='images/ove-rolli.jpg';">
+    </div>
+  </section>
+
+  <!-- ANGEBOT -->
+  <section id="angebote" class="block">
+    <div class="container grid-2">
+      <article class="card">
+        <h3>Klarheits-Session</h3>
+        <p class="muted">60–90 Minuten – konzentriert, sortierend, ausrichtend.</p>
+        <ul class="bullets">
+          <li>Sortieren: Was ist wirklich Thema?</li>
+          <li>Entscheiden: nächster klarer Schritt</li>
+          <li>Konkreter Plan bis zum nächsten Termin</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn--accent">Termin anfragen</a>
+      </article>
+
+      <article class="card">
+        <h3>Begleitung 6–12 Wochen</h3>
+        <p class="muted">Struktur, Reflexion, Übungen. Integrales Wachstum in deinem Tempo.</p>
+        <ul class="bullets">
+          <li>Sitzungen nach Absprache</li>
+          <li>Praxis: Denken · Fühlen · Handeln · Sein</li>
+          <li>Zwischenräume: kurze Check-ins / Aufgaben</li>
+        </ul>
+        <a href="kontakt.html" class="btn">Erstgespräch</a>
+      </article>
+    </div>
+
+    <div class="container">
+      <h2>Programme</h2>
+      <div class="cards grid-3">
+        <article class="card">
+          <h3>„Ich“-Programm</h3>
+          <p class="muted">nach Veit Lindau – <em>mit Lehr-Lizenz</em></p>
+          <ul class="bullets">
+            <li>Selbstwert, Klarheit, Integrität</li>
+            <li>Geführte Module + Praxisübungen</li>
+            <li>Übertragung in deinen Alltag</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Bootcamps</h3>
+          <p class="muted">Intensivformate zu Spezialthemen</p>
+          <ul class="bullets">
+            <li>Suchtmuster & Selbstführung</li>
+            <li>Innere Anteile / Beziehung & Rollen</li>
+            <li>3–5 Tage fokussiert, spürbare Ergebnisse</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Manifestation</h3>
+          <p class="muted">Ausrichtung + Umsetzung</p>
+          <ul class="bullets">
+            <li>Klarer Fokus & stimmige Ziele</li>
+            <li>Innere Hebel verstehen, nutzen</li>
+            <li>Rituale, Routinen, Review</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRALE PRAXIS + HALTUNG -->
+  <section id="praxis" class="section praxis">
+    <div class="container">
+      <h2>Integrale Lebenspraxis <small>nach Ken Wilber</small></h2>
+      <p><strong>Denken · Fühlen · Handeln · Sein</strong> verbinden. Balancierte Praxis statt Quick Fix. Verlässliche Navigation im Alltag.</p>
+
+      <div class="card soft" style="margin-top:12px">
+        <h3>Haltung & Rahmen</h3>
+        <p><strong>Menschlichkeit vor Methode.</strong> Klar, integer, wertebasiert (K.O.M.). Kein Heilsversprechen. Kein Therapieersatz. Coaching auf Augenhöhe.</p>
+        <a href="kontakt.html" class="btn">Unverbindliches Kennenlernen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KLARHEITSKOMPASS -->
+  <section id="kompass" class="block klarheitskompass">
+    <div class="container grid-2">
+      <div class="col-main">
+        <h2>🧭 Krügers Klarheitskompass</h2>
+        <p>Das innere Kind will nicht optimiert werden – es will gesehen werden. Mein Kompass: <strong>Klarheit, Orientierung, Menschlichkeit</strong>. Darunter wirkt das <strong>Integrale</strong>.</p>
+        <p>Ich arbeite mit einem inneren System, das Denken, Fühlen, Handeln und Sein verbindet – für echte Veränderung statt Symptomflicken.</p>
+      </div>
+      <aside class="col-aside">
+        <figure class="portrait">
+          <img src="images/ove-weisses-hemd.jpg" alt="Ove Krüger – im weißen Hemd" loading="lazy">
+        </figure>
+      </aside>
+    </div>
+  </section>
+
+  <!-- MEINE GESCHICHTE -->
+  <section id="geschichte" class="block geschichte">
+    <div class="container">
+      <div class="grid-2">
+        <div class="col-main">
+          <h2>📖 Meine Geschichte</h2>
+          <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken. Ich habe vieles verloren – und das Wesentliche gefunden.</p>
+          <p>Heute arbeite ich als professioneller Life Trust Coach. Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
+          <p><strong><span class="gold">Meine Geschichte ist kein Makel. Sie ist meine Stärke.</span></strong></p>
+          <div class="note">🌿 70 % Schwerbehinderung · 💛 100 % Mitgefühl</div>
+          <h3>Meine Stärken</h3>
+          <ul>
+            <li><span class="gold">Zuhörer</span></li>
+            <li>Problem-Detektiv</li>
+            <li>Praktiker & Wegefinder</li>
+            <li>humorvoller, liebevoller Ar…-treter</li>
+            <li>Motivator & kreativer Analyst</li>
+            <li>Strukturierer & Lösungsfinder</li>
+            <li><span class="gold">…und ich bin hartnäckig!</span></li>
+          </ul>
+          <p class="gold"><strong>DAS LEBEN IST SCHÖN! Lass es uns entdecken.</strong></p>
+          <a class="btn" href="kontakt.html">👉 Kontakt aufnehmen</a>
+        </div>
+        <aside class="col-aside">
+          <figure class="portrait">
+            <img src="images/ove-portrait-hell.jpg" alt="Ove Krüger – Portrait hell" loading="lazy">
+          </figure>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- STIMMEN -->
+  <section id="stimmen" class="block testimonials">
+    <div class="container">
+      <h2>Was Klient:innen sagen</h2>
+      <div class="grid-3">
+        <blockquote class="card">„Mehr innere Ruhe und klare Schritte.“<br><cite>— Führungskraft, 42</cite></blockquote>
+        <blockquote class="card">„Respektvoll, ehrlich, wirksam.“<br><cite>— Ärztin, 38</cite></blockquote>
+        <blockquote class="card">„Erklärt neurobiologisch, begleitet menschlich.“<br><cite>— Musiker, 55</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT-LINK -->
+  <section id="kontakt-link" class="block kontakt-link">
+    <div class="center">
+      <a href="kontakt.html" class="btn">👉 Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container foot">
       <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
       <nav class="foot-nav">
-        <a aria-current="page" href="impressum.html">Impressum</a>
+        <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </nav>
     </div>
   </footer>
 
   <script>
+    // Jahr + Mobile-Navi
     document.getElementById('y').textContent = new Date().getFullYear();
     document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
-      const btn=e.currentTarget,list=document.getElementById('nav-list');
+      const btn=e.currentTarget, list=document.getElementById('nav-list');
       const open=btn.getAttribute('aria-expanded')==='true';
       btn.setAttribute('aria-expanded', String(!open));
       list?.classList.toggle('open');

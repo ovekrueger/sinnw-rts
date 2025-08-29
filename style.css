@@ -2042,5 +2042,15 @@ a:hover{color:var(--accent)}
 @media (max-width:900px){
   .footer-grid{grid-template-columns:1fr}
   .to-top{justify-self:start;margin-top:.6rem}
+}/* NAV – Desktop horizontal, Mobile einklappbar */
+.nav-list{
+  list-style:none;
+  display:flex;          /* horizontal */
+  gap:1.4rem;
+  margin:0; padding:0;
+}
+@media (max-width: 840px){
+  .nav-list{ display:none; flex-direction:column; gap:.8rem; }
+  .nav-list.open{ display:block; }  /* wird per Button getoggelt */
 }
 

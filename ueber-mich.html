@@ -13,16 +13,18 @@
   
 
   <!-- Sub-Navigation (nur auf dieser Seite) -->
-  <header class="site-header">
+ <header class="site-header">
   <div class="container">
     <a class="brand" href="index.html">sinnwärts</a>
 
     <nav class="mainnav" aria-label="Hauptnavigation">
       <ul>
-        <li class="active"><a href="index.html">Start</a></li>
+        <!-- Start ist hier NICHT aktiv -->
+        <li><a href="index.html">Start</a></li>
 
-        <li class="active"><a href="index.html">Start</a></li>
-          <a href="ueber-mich.html#intro">Über mich</a>
+        <!-- Über mich ist aktiv + Dropdown -->
+        <li class="has-sub active">
+          <a href="ueber-mich.html#intro" aria-current="page">Über mich</a>
           <ul class="submenu" aria-label="Über-mich Untermenü">
             <li><a href="ueber-mich.html#intro">Einleitung</a></li>
             <li><a href="ueber-mich.html#rolle">Meine Rolle</a></li>
@@ -37,6 +39,7 @@
       </ul>
     </nav>
   </div>
+
 </header>  <nav class="about-subnav" aria-label="Abschnittsnavigation Über mich">
     <a href="#intro" class="active">Einleitung</a>
     <a href="#rolle">Meine Rolle</a>

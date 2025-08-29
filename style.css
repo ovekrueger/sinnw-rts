@@ -1172,4 +1172,96 @@ blockquote {
   --ink: #f5f5f5;   /* Weiß/Hellgrau für Fließtext */
   --accent: #d4af37;/* Gold für Überschriften, Links, Hervorhebungen */
   --muted: #9aa0a6; /* Dezentes Grau für Nebentext */
+}/* =========================
+   Sinnwärts – Über mich (Ove)
+   Farben, Typo, Layout
+   ========================= */
+
+/* 1) Montserrat einbinden */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* 2) Farb- und Design-Variablen */
+:root{
+  --bg:#111;          /* Hintergrund tiefschwarz */
+  --card:#151515;     /* Karten/Alt-Block */
+  --ink:#f5f5f5;      /* Text hell */
+  --muted:#9aa0a6;    /* Nebentext */
+  --accent:#d4af37;   /* Gold */
+  --ring:#ffd666;     /* Fokus-Schimmer */
+  --radius:16px;
+  --radius-sm:12px;
+  --shadow:0 10px 40px rgba(0,0,0,.45);
+  --shadow-sm:0 6px 24px rgba(0,0,0,.35);
+  --space:4rem;       /* Abschnitts-Padding */
 }
+
+/* 3) Global */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.65; font-weight:400;
+}
+img{max-width:100%; height:auto; display:block}
+
+/* Typo */
+h1,h2,h3{margin:.1rem 0 .75rem; color:var(--accent); font-weight:700; line-height:1.2}
+h1{font-size:clamp(1.9rem,2.4vw,2.4rem)}
+h2{font-size:clamp(1.4rem,2vw,1.8rem)}
+h3{font-size:clamp(1.15rem,1.6vw,1.3rem)}
+p{margin:.75rem 0}
+small,.muted{color:var(--muted)}
+
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Fokus / A11y */
+:focus-visible{
+  outline:3px solid var(--ring); outline-offset:2px; border-radius:8px;
+}
+
+/* Bewegungen reduzieren */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+}
+
+/* 4) Container & Blöcke */
+.container{max-width:1100px; margin:0 auto; padding:0 1.25rem}
+.block{padding:var(--space) 0; background:var(--bg)}
+.block.alt{background:#0d0d0d}
+
+/* 5) Sub-Navigation nur für diese Seite */
+.about-subnav{
+  position:sticky; top:0; z-index:20;
+  display:flex; gap:.5rem; padding:.5rem 1rem;
+  background:rgba(17,17,17,.85); backdrop-filter:blur(6px);
+  border-bottom:1px solid #1f1f1f;
+}
+.about-subnav a{
+  color:var(--ink); padding:.45rem .9rem; border-radius:999px;
+  border:1px solid transparent; transition:border-color .2s,color .2s,background .2s;
+}
+.about-subnav a:hover, .about-subnav a.active{
+  color:var(--accent); background:var(--card); border-color:var(--accent);
+}
+
+/* 6) Grid-Layout für Abschnitte (Text + Bild) */
+.grid{
+  display:grid; gap:2rem; align-items:center;
+}
+@media (min-width:900px){
+  .grid.cols-2{grid-template-columns:1.1fr .9fr}
+}
+
+/* 7) Portraits */
+.portrait{
+  width:100%; max-width:420px; margin:0 auto;
+  border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.portrait--small{max-width:320px}
+
+/* 8) Vision-Bilder (Trio) */
+.vision-images{
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(auto-fit,minmax(160p

@@ -1092,4 +1092,79 @@ blockquote {
 .block.haltung .muted {
   font-size: 0.95rem;
   color: #aaa;
+}/* Über mich Abschnitt */
+#ueber-mich {
+  padding: 4rem 1rem;
+  background: #111; /* dunkler Hintergrund */
+  color: #f5f5f5;   /* helle Schrift */
+  line-height: 1.6;
+}
+
+#ueber-mich h2, 
+#ueber-mich h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #d4af37; /* Gold-Akzent */
+}
+
+#ueber-mich p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+#ueber-mich ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+}
+
+#ueber-mich ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+#ueber-mich ul li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Portrait-Bilder */
+#ueber-mich .portrait {
+  display: block;
+  max-width: 280px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Vision-Symbolbilder */
+#ueber-mich .vision-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+#ueber-mich .vision-images img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#ueber-mich .vision-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Text */
+@media (min-width: 768px) {
+  #ueber-mich p {
+    font-size: 1.15rem;
+  }
 }

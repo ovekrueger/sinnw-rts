@@ -1831,3 +1831,23 @@ a:hover{color:var(--accent)}
 .footer-grid{display:grid;grid-template-columns:2fr 2fr 1fr;gap:16px;align-items:start}
 .footer-grid ul{list-style:none;margin:0;padding:0}
 .footer-grid li{margi
+/* ===== NAV sauber: horizontal, Submenu zu, kein "Listen-Salat" ===== */
+.site-header { position: relative; background: transparent; padding: 14px 0; }
+.nav-wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.brand { text-transform:lowercase; font-weight:700; letter-spacing:.5px; }
+
+.mainnav { position: static; }
+.mainnav ul { list-style:none; display:flex; gap:1.6rem; margin:0; padding:0; }
+.mainnav > ul > li { position:relative; }
+.mainnav a { font-weight:600; text-decoration:none; }
+
+.has-sub .submenu {
+  display:none; position:absolute; top:140%; left:0;
+  background:#151516; border:1px solid var(--ring); border-radius:12px;
+  padding:.6rem; min-width:220px; z-index:10;
+}
+.has-sub:hover .submenu, .has-sub:focus-within .submenu { display:block; }
+/* Mobile */
+.nav-toggle{display:none;appearance:none;background:transparent;border:0;cursor:pointer}
+.nav-toggle-bar{width:26px;height:2px;background:var(--ink);display:block;position:relative}
+.nav-toggle-bar::before,.nav-toggle-bar::after{content:"";position:absolute;left:0;width:26px;height:2px;background:var(--ink)}

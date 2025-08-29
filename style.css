@@ -1675,3 +1675,44 @@ a:hover{text-decoration:underline}
 /* kleine Helfer (optional) */
 .mw-70ch{ max-width: 70ch; }
 .center{ text-align: center; }
+/* === NAV-HOTFIX: Hauptmenü horizontal === */
+.site-header .container{
+  display:flex; align-items:center; justify-content:space-between;
+}
+
+.site-header .mainnav ul{
+  list-style:none; margin:0; padding:0;
+  display:flex !important;              /* erzwingt horizontal */
+  flex-direction:row !important;
+  align-items:center; gap:.5rem;
+}
+
+.site-header .mainnav li{ display:block; }
+.site-header .mainnav a{
+  color:var(--ink); text-decoration:none;
+  padding:.6rem .9rem; border-radius:999px;
+}
+.site-header .mainnav a:hover,
+.site-header .mainnav a:focus{
+  color:var(--accent); background:#1a1a1a;
+}
+
+/* Dropdown */
+.site-header .mainnav .has-sub{ position:relative; }
+.site-header .mainnav .has-sub > a::after{ content:" ▾"; color:var(--muted); }
+.site-header .mainnav .submenu{
+  position:absolute; left:0; top:calc(100% + 6px);
+  min-width:220px; padding:.4rem; margin:0;
+  background:#121212; border:1px solid #1f1f1f; border-radius:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.5);
+  display:none; flex-direction:column; gap:.2rem; z-index:50;
+}
+.site-header .mainnav .has-sub:hover .submenu,
+.site-header .mainnav .has-sub:focus-within .submenu{ display:flex; }
+
+/* Mobile: darf umbrechen, bleibt aber sauber */
+@media (max-width:800px){
+  .site-header .mainnav ul{ flex-wrap:wrap; }
+  .site-header .mainnav .has-sub{ width:auto; }
+  .site-header .mainnav .submenu{ position:static; box-shadow:none; margin-top:.4rem; }
+}

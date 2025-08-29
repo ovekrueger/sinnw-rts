@@ -1,12 +1,65 @@
 
 <body id="top">
 
-  <!-- HERO-Bereich -->
-  <section class="intro">
-    <div class="container hero">
+<body id="top">
+
+  <!-- NAVIGATION (einmal ganz oben) -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">sinnwärts</a>
+      <nav class="mainnav" aria-label="Hauptnavigation">
+        <ul>
+          <li class="active"><a href="index.html">Start</a></li>
+          <li class="has-sub">
+            <a href="ueber-mich.html#intro">Über mich</a>
+            <ul class="submenu" aria-label="Über-mich Untermenü">
+              <li><a href="ueber-mich.html#intro">Einleitung</a></li>
+              <li><a href="ueber-mich.html#rolle">Meine Rolle</a></li>
+              <li><a href="ueber-mich.html#vision">Vision</a></li>
+              <li><a href="ueber-mich.html#erkenntnisse">Erkenntnisse</a></li>
+            </ul>
+          </li>
+          <li><a href="suche.html">Suche</a></li>
+          <li><a href="nora.html">N.O.R.A.</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO (einmalig, neuer Block) -->
+  <section class="hero dark">
+    <picture>
+      <source srcset="images/hero-sucht-sucht-sinn.webp" media="(max-width: 768px)" type="image/webp">
+      <source srcset="images/hero-sucht-sucht-sinn.webp" type="image/webp">
+      <img src="images/hero-sucht-sucht-sinn.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img">
+    </picture>
+    <div class="hero-text">
       <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-      <p class="tagline">Sucht sucht Sinn</p>
-      <a href="ueber-mich.html" class="btn">Aufstehen wagen</a>
+      <p>Sucht sucht Sinn</p>
+      <a href="ueber-mich.html#intro" class="btn">Aufstehen wagen</a>
+    </div>
+  </section>
+
+  <!-- PORTRAIT + SLOGAN -->
+  <section id="portrait-slogan" class="block portrait-slogan">
+    <div class="portrait-slogan__inner">
+
+      <!-- Linke Spalte: Portrait -->
+      <figure class="portrait-slogan__media">
+        <img src="images/ove-rolli.jpg"
+             alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+             class="portrait">
+      </figure>
+
+      <!-- Rechte Spalte: Zitat -->
+      <div class="hero__text">
+        <blockquote>
+          <strong>„Was, du lebst noch?<br>
+          Klar! Ich habe gerade erst angefangen.“</strong>
+        </blockquote>
+      </div>
+
     </div>
   </section>
 

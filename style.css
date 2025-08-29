@@ -1715,4 +1715,35 @@ a:hover{text-decoration:underline}
   .site-header .mainnav ul{ flex-wrap:wrap; }
   .site-header .mainnav .has-sub{ width:auto; }
   .site-header .mainnav .submenu{ position:static; box-shadow:none; margin-top:.4rem; }
+}/* Navigation */
+.site-header {
+  background: transparent; /* über Hero-Bild ohne Block */
+  padding: 20px 0;
+  text-align: center;
+  position: relative; /* kein fixes Menü */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #fff; /* weiß über Hero-Bild */
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #d4af37; /* dein Gold */
 }

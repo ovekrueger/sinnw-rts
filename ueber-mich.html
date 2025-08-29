@@ -4,28 +4,40 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Über mich – Ove Krüger</title>
-
-  <!-- Stylesheet einbinden -->
   <link rel="stylesheet" href="style.css">
+  <style>
+    html{scroll-behavior:smooth}
+  </style>
 </head>
-
 <body>
-  <!-- Über mich – Dein Weg zu mir -->
-  <section id="ueber-mich" class="block ueber-mich">
-    <div class="container">
 
+  <!-- Sub-Navigation (nur auf dieser Seite) -->
+  <nav class="about-subnav" aria-label="Abschnittsnavigation Über mich">
+    <a href="#intro" class="active">Einleitung</a>
+    <a href="#rolle">Meine Rolle</a>
+    <a href="#vision">Vision</a>
+    <a href="#erkenntnisse">Erkenntnisse</a>
+  </nav>
+
+  <!-- Einleitung -->
+  <section id="intro" class="block ueber-mich">
+    <div class="container">
       <h2>Über mich – Dein Weg zu mir</h2>
 
-      <!-- Portrait oben -->
       <img src="images/ove-sitzend.jpg" alt="Ove Krüger – Portrait sitzend" class="portrait" />
 
       <p>Du liest diese Zeilen, weil auch Du auf der Suche bist – nach Orientierung, nach Sinn oder nach einem Weg aus Mustern, die Dich gefangen halten.</p>
       <p>Mein Leben war alles andere als gradlinig. Ich bin oft scheinbar falsch abgebogen. Für mich – und auch für mein Umfeld – war das in den Momenten absolute Scheiße. Und doch: im Nachhinein ergibt alles Sinn. Jeder Bruch, jede Niederlage, jeder Umweg hat mich dahin gebracht, wo ich heute bin.</p>
       <p>20 Jahre Alkohol, Depressionen, Unfälle und Rückschläge haben mich an den Rand gebracht. Ich habe in den Abgrund geblickt – und dort gelernt, loszulassen. Genau in diesem Moment öffneten sich Türen, von denen ich keine Ahnung hatte.</p>
       <p>Seit vielen Jahren lebe ich trocken. Mit meinen Einschränkungen habe ich gelernt, neue Stärken zu entwickeln. Und ich habe verstanden: Jeder Augenblick trägt die Chance, ein neues Kapitel zu beginnen.</p>
+    </div>
+  </section>
 
-      <!-- Rolle für Dich -->
+  <!-- Rolle -->
+  <section id="rolle" class="block alt">
+    <div class="container">
       <h3>Meine Rolle für Dich</h3>
+
       <img src="images/ove-stehend.jpg" alt="Ove Krüger – Portrait stehend" class="portrait" />
 
       <ul class="list-clean">
@@ -36,9 +48,14 @@
         <li>Ich gehe mit Dir neue Wege – klar, motivierend, menschlich.</li>
       </ul>
       <p>Alles, was ich Dir anbiete, habe ich selbst durchlebt, erprobt und in mein Leben integriert.</p>
+    </div>
+  </section>
 
-      <!-- Vision -->
+  <!-- Vision -->
+  <section id="vision" class="block">
+    <div class="container">
       <h3>Meine Vision</h3>
+
       <div class="vision-images">
         <img src="images/baum-wurzeln.jpg" alt="Baum mit tiefen Wurzeln" />
         <img src="images/leuchtturm-brandung.jpg" alt="Leuchtturm in der Brandung" />
@@ -49,9 +66,14 @@
       <p>Die Früchte dieses Lebensbaums stehen Dir zur Verfügung. Du darfst sie pflücken, wenn Du wirklich, wirklich bereit bist, etwas zu verändern. Denn Dein Weg muss nicht so viele Umwege nehmen wie meiner.</p>
       <p>Ich bin angekommen – bei mir, in meiner Berufung. Heute bin ich da, um Dir zu dienen: damit Du erkennst, wer Du wirklich bist, und warum Du auf dieser Welt bist. Kein Versprechen, sondern Wahrheit: Es gibt immer eine Möglichkeit zur Veränderung.</p>
       <p>Wir alle tragen nur eine kleine Taschenlampe 🔦. Sie leuchtet in einer riesigen Halle, gefüllt mit Geschenken und Herausforderungen. Schritt für Schritt richtet sich der Lichtkegel – und zeigt Dir, was für Dich jetzt dran ist.</p>
+    </div>
+  </section>
 
-      <!-- Erkenntnisse -->
+  <!-- Erkenntnisse -->
+  <section id="erkenntnisse" class="block alt">
+    <div class="container">
       <h3>Meine Erkenntnisse</h3>
+
       <p>Ich sage „Ja“ zum jetzigen Augenblick – auch wenn er schmerzhaft oder dunkel erscheint ⚡. Denn genau dort beginnt Veränderung.</p>
       <p>Ich weiß auch um eine große Gefahr: das <strong>spirituelle Bypassing</strong>. Gerade dort, wo Menschen eigentlich hinschauen müssten, weichen sie aus. Sie überspringen Konflikte und Schatten, reden sich die Welt schön oder flüchten sich in Harmonie und Wir-Gefühl. In Spiral Dynamics nennt man das die <em>grüne Ebene</em> – ein Raum von Gemeinschaft, Empathie und Gleichheit. Ein wichtiger Schritt. Aber wenn er zum Vermeiden von Schmerz genutzt wird, bleibt Entwicklung oberflächlich. Dann wird das „Wir“ zur Falle.</p>
       <p>„Wir sind alle EINS“ 🌍 – ja. Doch sobald wir in der Schlange stehen oder auf den Bus warten 🚌, drängelt unser Ego, ärgert sich über andere, vergisst Rücksicht. Genau hier liegt die tägliche Übung: klar bleiben, mitfühlend bleiben – und sich daran erinnern, dass wir verbunden sind.</p>
@@ -62,5 +84,20 @@
       <p>Schon früh hatte ich das Gefühl, dass da mehr ist, als ich sehen konnte. Die wichtigste Erkenntnis: Dieses „Mehr“ finde ich nicht im Außen, sondern in mir selbst.</p>
     </div>
   </section>
+
+  <!-- (Optional) kleines Script: aktiven Subnav-Link beim Scrollen setzen -->
+  <script>
+    const links = document.querySelectorAll('.about-subnav a');
+    const ids = [...links].map(a => document.querySelector(a.getAttribute('href')));
+    const onScroll = () => {
+      let idx = ids.findIndex((s, i) => s.getBoundingClientRect().top <= 120 && (ids[i+1]?.getBoundingClientRect().top > 120 || !ids[i+1]));
+      if (idx < 0) idx = 0;
+      links.forEach(l => l.classList.remove('active'));
+      links[idx]?.classList.add('active');
+    };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  </script>
+
 </body>
 </html>

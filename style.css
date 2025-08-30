@@ -2080,3 +2080,34 @@ a:hover{color:var(--accent)}
   margin: 0 auto;
   display: block;
 }
+/* Layout-Basics */
+:root { --container: 1080px; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.block { padding: 64px 0; }
+
+/* 2-Spalten-Layout: Text + Bild (Bildspalte fix schmal) */
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 420px; /* links flexibel, rechts fix */
+  align-items: center;
+  gap: 32px;
+}
+
+/* Bilder sicher begrenzen */
+.grid-2 > figure { margin: 0; justify-self: center; }
+.grid-2 > figure img {
+  width: 100%;
+  height: auto;
+  max-width: 420px;          /* doppelt abgesichert */
+  display: block;
+  border-radius: 12px;       /* optional schöner */
+}
+
+/* Optional: globale Portrait-/Symbolbilder */
+.portrait, .vision-img { width: 100%; height: auto; display: block; }
+
+/* Mobile: untereinander, Bild etwas kleiner */
+@media (max-width: 900px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-2 > figure img { max-width: 70%; }
+}

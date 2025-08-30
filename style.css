@@ -2074,4 +2074,9 @@ a:hover{color:var(--accent)}
   height: auto;
   margin: 0 auto;
   display: block;
+}.portrait-small img {
+  max-width: 70%;   /* Bild kleiner */
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }

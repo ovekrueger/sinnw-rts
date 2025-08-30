@@ -2110,4 +2110,46 @@ a:hover{color:var(--accent)}
 @media (max-width: 900px) {
   .grid-2 { grid-template-columns: 1fr; }
   .grid-2 > figure img { max-width: 70%; }
+}/* === Farben / Grundlayout (dunkel + Gold) === */
+:root{
+  --bg:#0b0b0b;
+  --card:#141414;
+  --text:#eee;
+  --muted:#a6a6a6;
+  --gold:#f5c242;
+}
+html,body{background:var(--bg); color:var(--text);}
+a{color:var(--gold);}
+.muted{color:var(--muted);}
+
+/* Blöcke & Container */
+.block{padding:72px 0; background:transparent;}
+.container{max-width:1080px; margin:0 auto; padding:0 20px;}
+
+/* Bilder nie größer als ihr Container */
+img{max-width:100%; height:auto; display:block;}
+
+/* === Text-Bild-Layout: Bild rechts, kleiner === */
+.grid-2{
+  display:grid;
+  grid-template-columns: 1fr minmax(280px, 380px); /* Text flexibel | Bild 280–380 px */
+  gap:32px;
+  align-items:center;
+}
+/* Bildspalte */
+.grid-2 > figure{margin:0; justify-self:end;}
+.grid-2 > figure img{width:100%; max-width:380px; border-radius:12px}
+
+/* Optional: Sektion mit Bild links (falls gewünscht) */
+.grid-2.flip{
+  grid-template-columns: minmax(280px,380px) 1fr;
+}
+.grid-2.flip > figure{justify-self:start; order:1;}
+.grid-2.flip > article{order:2;}
+
+/* Mobile: untereinander, Bild kleiner */
+@media (max-width: 900px){
+  .grid-2{grid-template-columns:1fr;}
+  .grid-2 > figure{justify-self:center;}
+  .grid-2 > figure img{max-width:70%;}
 }

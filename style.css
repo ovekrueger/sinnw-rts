@@ -2069,4 +2069,9 @@ a:hover{color:var(--accent)}
   .nav-list{ display:none; flex-direction:column; gap:.8rem; }
   .nav-list.open{ display:block; } /* per JS toggeln */
 }
-
+.portrait-small img {
+  max-width: 70%;   /* oder 60% */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}

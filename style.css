@@ -2244,3 +2244,30 @@ img{ max-width:100%; height:auto; display:block; border-radius:12px; }
 /* FOOTER */
 .site-footer{ border-top:1px solid #1e1e1e; padding:32px 0; margin-top:32px; }
 .muted{ color:var(--muted); }
+/* === HERO Styling (nur für #ueber) === */
+#ueber .hero{
+  background:linear-gradient(to bottom, #111, #0b0b0b);
+  padding:100px 0 80px;
+}
+#ueber .hero h1{
+  font-size:2.4rem;
+  color:#f5c242;
+  margin-bottom:16px;
+}
+#ueber .hero .tagline{
+  font-size:1.2rem;
+  color:#eee;
+  margin-bottom:24px;
+}
+#ueber .hero .btn{
+  display:inline-block;
+  background:#f5c242;
+  color:#0b0b0b;
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+}
+#ueber .hero .btn:hover{
+  background:#d9a51f;
+}

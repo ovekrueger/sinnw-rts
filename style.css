@@ -2320,4 +2320,38 @@ img{ max-width:100%; height:auto; display:block; border-radius:12px; }
 
 #ueber #hero .btn:hover {
   background: #d9a51f;
+}/* === NAVIGATION HORIZONTAL === */
+#ueber .site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(11,11,11,0.9);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+#ueber .nav-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+#ueber .nav-list {
+  list-style: none;
+  display: flex;              /* macht es horizontal */
+  flex-direction: row;        /* extra Absicherung */
+  justify-content: flex-start;
+  gap: 24px;                  /* Abstand zwischen Links */
+  margin: 0;
+  padding: 0;
+}
+
+#ueber .nav-list li a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#ueber .nav-list li a:hover {
+  color: var(--gold);
 }

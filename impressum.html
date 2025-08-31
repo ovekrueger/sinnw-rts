@@ -7,9 +7,48 @@
   <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Coaching & Begleitung von Ove Krüger – Sinnwärts." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-</head>
 
-<body id="top">
+  <!-- HOME-ONLY-PATCH -->
+  <style>
+    #home { color: #111; }
+
+    #home .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(245,245,245,.92);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid #ddd;
+    }
+    #home .nav-container{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #home .brand{ font-weight: 700; font-size: 1.1rem; color:#111; text-decoration:none; }
+    #home .nav-list{
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0; padding: 0;
+    }
+    #home .nav-list a{
+      color:#222; text-decoration:none; font-weight:600;
+    }
+    #home .nav-list a:hover,
+    #home .nav-list a.active{ color:#000; }
+
+    #home .container{ max-width:1100px; margin:0 auto; padding:0 20px; }
+    #home .block{ padding:64px 0; }
+
+    /* Grid aus Über-mich neutralisieren */
+    #home .grid-2{ display:block; }
+  </style>
+</head>
+<body id="home"
   <!-- NAVIGATION -->
   <header class="site-header">
     <nav class="container nav">

@@ -4,58 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Über mich – Ove Krüger | Sinnwärts</title>
-  <meta name="description" content="Über mich – Ove Krüger. Meine Rolle, Vision, Erkenntnisse, Geschichte." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- NUKLEAR-PATCH: erzwingt Layout für #ueber -->
+  <!-- NUKLEAR-PATCH: wirkt nur auf body#ueber -->
   <style>
     :root{ --bg:#0b0b0b; --ink:#eee; --muted:#a6a6a6; --gold:#f5c242; }
-    #ueber{ background:var(--bg) !important; color:var(--ink) !important; margin:0; font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55; }
-    #ueber a{ color:var(--gold) !important; }
-    #ueber h1,#ueber h2,#ueber h3{ line-height:1.2; margin:0 0 12px; }
-    #ueber p, #ueber ul{ margin:0 0 16px; }
-    #ueber .muted{ color:var(--muted); }
-    #ueber .container{ max-width:1080px !important; margin:0 auto !important; padding:0 20px !important; }
-    #ueber .block{ padding:64px 0 !important; }
-    #ueber img{ display:block !important; max-width:100% !important; height:auto !important; border-radius:12px; }
+    #ueber{ background:var(--bg)!important; color:var(--ink)!important; margin:0;
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55; }
+    #ueber a{ color:var(--gold)!important; text-decoration:none; }
+    #ueber h1,#ueber h2{ margin:0 0 16px; line-height:1.2; }
+    #ueber p{ margin:0 0 16px; }
+    #ueber .container{ max-width:1080px; margin:0 auto; padding:0 20px; }
+    #ueber .block{ padding:64px 0; }
+    #ueber img{ display:block; max-width:100%; height:auto; border-radius:12px; }
 
-    /* Grid: Text links, Bild rechts */
-    #ueber .grid-2{
-      display:grid !important;
-      grid-template-columns: 1fr 380px !important;
-      gap:32px !important; align-items:start !important;
+    /* HERO Vollfläche */
+    #ueber #hero.hero-full{
+      position:relative; height:80vh;
+      background:url("images/hero-sucht-sucht-sinn.jpg") no-repeat center center;
+      background-size:cover;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:0 20px;
     }
-    #ueber .grid-2.tight{ gap:18px !important; }
-    #ueber .grid-2 > article{ min-width:0 !important; }
-    #ueber .grid-2 > figure{ margin:0 !important; justify-self:end !important; }
-    #ueber .grid-2 > figure img{ width:100% !important; max-width:380px !important; }
-
-    /* Mobile Tweaks */
-    @media (max-width:700px){
-      #ueber .grid-2{ grid-template-columns:1fr 320px !important; gap:24px !important; }
-      #ueber .grid-2 > figure img{ max-width:320px !important; }
+    #ueber #hero.hero-full::after{
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,0.45);
     }
-    @media (max-width:640px){
-      #ueber .grid-2{ grid-template-columns:1fr !important; }
-      #ueber .grid-2 > figure{ justify-self:center !important; }
-      #ueber .grid-2 > figure img{ max-width:70% !important; }
+    #ueber #hero .hero-content{ position:relative; z-index:1; max-width:800px; }
+    #ueber #hero h1{ font-size:3rem; color:var(--gold); margin-bottom:16px; }
+    #ueber #hero .tagline{ font-size:1.3rem; color:#eee; margin-bottom:24px; }
+    #ueber #hero .btn{
+      display:inline-block; background:var(--gold); color:#0b0b0b;
+      padding:14px 24px; border-radius:8px; font-weight:600;
     }
 
-    /* Header/Footer mini */
-    #ueber .site-footer{ border-top:1px solid #1e1e1e; padding:32px 0; margin-top:32px; }
+    /* Grid Layout für normale Sektionen */
+    #ueber .grid-2{ display:grid; grid-template-columns:1fr 380px; gap:32px; align-items:start; }
+    #ueber .grid-2.tight{ gap:18px; }
+    #ueber .grid-2>article{ min-width:0; }
+    #ueber .grid-2>figure{ margin:0; justify-self:end; }
+    #ueber .grid-2>figure img{ width:100%; max-width:380px; }
+    @media(max-width:700px){
+      #ueber .grid-2{ grid-template-columns:1fr 320px; gap:24px; }
+      #ueber .grid-2>figure img{ max-width:320px; }
+    }
+    @media(max-width:640px){
+      #ueber .grid-2{ grid-template-columns:1fr; }
+      #ueber .grid-2>figure{ justify-self:center; }
+      #ueber .grid-2>figure img{ max-width:70%; }
+    }
+
+    /* Footer */
+    #ueber .site-footer{ border-top:1px solid #1e1e1e; padding:32px 0; margin-top:32px; color:var(--muted); }
   </style>
 </head>
 
+<body id="ueber">
 
   <!-- HERO Vollfläche -->
-<section id="hero" class="hero-full">
-  <div class="hero-content">
-    <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-    <p class="tagline">Sucht sucht Sinn · Klarheit · Orientierung · Menschlichkeit</p>
-    <a href="#geschichte" class="btn">Meine Geschichte lesen</a>
-  </div>
-</section>
-    <!-- MEINE GESCHICHTE -->
+  <section id="hero" class="hero-full">
+    <div class="hero-content">
+      <h1>Holpersteine – Immer wieder Aufstehen.</h1>
+      <p class="tagline">Sucht sucht Sinn · Klarheit · Orientierung · Menschlichkeit</p>
+      <a href="#geschichte" class="btn">Meine Geschichte lesen</a>
+    </div>
+  </section>
+
+  <!-- MEINE GESCHICHTE -->
   <section id="geschichte" class="block">
     <div class="container grid-2 tight">
       <article>
@@ -66,7 +80,7 @@
         <p>Seit vielen Jahren lebe ich trocken. Mit meinen Einschränkungen habe ich gelernt, neue Stärken zu entwickeln. Und ich habe verstanden: Jeder Augenblick trägt die Chance, ein neues Kapitel zu beginnen.</p>
       </article>
       <figure>
-        <img src="images/ove.stehend.weisses-hemd.jpg" =Ove Krüger – Portrait im weißen Hemd, stehend">
+        <img src="images/ove-weiss.jpg" alt="Ove Krüger – Portrait im weißen Hemd, stehend">
       </figure>
     </div>
   </section>
@@ -121,10 +135,8 @@
     </div>
   </section>
 
- 
-
   <footer class="site-footer">
-    <div class="container muted">© <span id="y"></span> Ove Krüger · Sinnwärts</div>
+    <div class="container">© <span id="y"></span> Ove Krüger · Sinnwärts</div>
   </footer>
   <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>

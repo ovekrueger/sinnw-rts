@@ -2270,4 +2270,54 @@ img{ max-width:100%; height:auto; display:block; border-radius:12px; }
 }
 #ueber .hero .btn:hover{
   background:#d9a51f;
+}/* === HERO Vollfläche (nur #hero) === */
+#ueber #hero.hero-full {
+  position: relative;
+  height: 80vh; /* Höhe des Hero-Bereichs */
+  background: url("images/hero-sucht-sucht-sinn.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#ueber #hero.hero-full::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* Overlay für bessere Lesbarkeit */
+}
+
+#ueber #hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+#ueber #hero h1 {
+  font-size: 3rem;
+  color: #f5c242;
+  margin-bottom: 16px;
+}
+
+#ueber #hero .tagline {
+  font-size: 1.3rem;
+  color: #eee;
+  margin-bottom: 24px;
+}
+
+#ueber #hero .btn {
+  display: inline-block;
+  background: #f5c242;
+  color: #0b0b0b;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#ueber #hero .btn:hover {
+  background: #d9a51f;
 }

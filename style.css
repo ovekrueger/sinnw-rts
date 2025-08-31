@@ -2388,6 +2388,21 @@ img{ max-width:100%; height:auto; display:block; border-radius:12px; }
   font-weight: 600;
   text-decoration: none;
   transition: color 0.3s ease;
+}/* Aktiver Menüpunkt beim Anker-Ziel */
+#ueber section:target h2 {
+  scroll-margin-top: 80px; /* Platz wegen Sticky-Header */
+}
+
+#ueber .nav-list li a.active {
+  color: var(--accent);
+}
+
+/* Mapping mit :target */
+#geschichte:target ~ header .nav-list li a[href="#geschichte"],
+#rolle:target ~ header .nav-list li a[href="#rolle"],
+#vision:target ~ header .nav-list li a[href="#vision"],
+#erkenntnisse:target ~ header .nav-list li a[href="#erkenntnisse"] {
+  color: var(--accent);
 }
 
 #ueber .nav-list li a:hover {

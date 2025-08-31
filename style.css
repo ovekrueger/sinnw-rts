@@ -2633,6 +2633,37 @@ h1,h2,h3{ line-height:1.2; margin:0 0 16px; }
 /* ===== Footer ===== */
 .site-footer{
   border-top:1px solid #1e1e1e; padding:32px 0; margin-top:32px; color:var(--muted); text-align:center;
+}/* =========
+   Design-Setup (Dark)
+   ========= */
+:root{
+  --bg:#0b0b0b;
+  --panel:#111;
+  --ink:#eee;
+  --muted:#a6a6a6;
+  --gold:#f5c242;
+  --ring:#222;
+  --maxw:1100px;
+  --radius:12px;
+  --gap:24px;
 }
+
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.6;
+}
+
+/* =========
+   Utilities
+   ========= */
+.container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+.hide{display:none}
+.btn{
+  disp
 
 

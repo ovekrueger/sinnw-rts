@@ -2665,4 +2665,49 @@ body{
 .hide{display:none}
 .btn{
   disp
+/* ===== Sinnwärts – Global Dark Theme ===== */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
 
+:root{
+  --bg:#0b0b0b; --panel:#141414; --ink:#eee; --muted:#a6a6a6; --gold:#f5c242;
+  --max:1100px; --gap:24px; --radius:12px;
+}
+
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55}
+a{color:var(--gold);text-decoration:none}
+h1,h2{line-height:1.2;margin:0 0 16px}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.block{padding:64px 0}
+img{max-width:100%;height:auto;display:block;border-radius:var(--radius)}
+
+/* NAV */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(11,11,11,.95);
+  backdrop-filter:blur(4px);border-bottom:1px solid #222}
+.nav-container{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:1.1rem;color:var(--gold)}
+.nav-list{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+.nav-list a{color:var(--ink);font-weight:600}
+.nav-list a:hover,.nav-list a.active{color:var(--gold)}
+
+/* HERO Vollfläche */
+.hero{position:relative;height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;background-position:center;background-size:cover}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.hero .hero-content{position:relative;z-index:1;max-width:800px}
+.hero h1{font-size:3rem;color:var(--gold);margin-bottom:16px}
+.hero .tagline{font-size:1.2rem;color:#eee;margin-bottom:24px}
+.btn{display:inline-block;background:var(--gold);color:#0b0b0b;padding:14px 24px;border-radius:10px;font-weight:700}
+.btn:hover{filter:brightness(1.07)}
+
+/* PANELS / KARTEN */
+.panel{background:var(--panel);border:1px solid #1e1e1e;border-radius:var(--radius);padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+.card{background:var(--panel);border:1px solid #1f1f1f;border-radius:var(--radius);padding:18px}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.badge{display:inline-block;background:#2a250f;color:var(--gold);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.85rem}
+
+/* Footer */
+.site-footer{border-top:1px solid #1e1e1e;padding:32px 0;margin-top:32px;color:var(--muted);text-align:center;font-size:.95rem}

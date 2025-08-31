@@ -2172,6 +2172,50 @@ img { max-width:100%; height:auto; display:block; }
   .nav-toggle{display:block;}
   .nav-list{display:none; flex-direction:column;}
   .nav-list.open{display:block;}
+}/* Hauptnavigation Style */
+#ueber .site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(11,11,11,0.95);  /* fast schwarz, leicht durchsichtig */
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
+
+#ueber .nav-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#ueber .brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+#ueber .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+#ueber .nav-list li a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#ueber .nav-list li a:hover,
+#ueber .nav-list li a.active {
+  color: var(--gold);
 }
 
 /* Text links | Bild rechts */

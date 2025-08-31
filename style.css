@@ -2152,4 +2152,48 @@ img{max-width:100%; height:auto; display:block;}
   .grid-2{grid-template-columns:1fr;}
   .grid-2 > figure{justify-self:center;}
   .grid-2 > figure img{max-width:70%;}
+}/* === NOTFALL-PATCH (oberste Priorität) === */
+:root{ --bg:#0b0b0b; --card:#141414; --text:#eee; --muted:#a6a6a6; --gold:#f5c242; }
+
+html, body { background:var(--bg) !important; color:var(--text) !important; }
+a { color:var(--gold); }
+.container { max-width:1080px; margin:0 auto; padding:0 20px; }
+.block { padding:64px 0; }
+img { max-width:100%; height:auto; display:block; }
+
+/* NAV horizontal (failsafe) */
+.site-header .nav{display:flex; align-items:center; justify-content:space-between; gap:1rem;}
+.nav-list{list-style:none; display:flex; gap:1.2rem; margin:0; padding:0;}
+.nav-toggle{display:none; background:transparent; border:0;}
+@media (max-width:840px){
+  .nav-toggle{display:block;}
+  .nav-list{display:none; flex-direction:column;}
+  .nav-list.open{display:block;}
 }
+
+/* Text links | Bild rechts */
+.grid-2{
+  display:grid !important;
+  grid-template-columns: 1fr 380px !important;
+  gap:32px; align-items:start;
+}
+.grid-2 > article{min-width:0;}
+.grid-2 > figure{margin:0; justify-self:end;}
+.grid-2 > figure img{ width:100%; max-width:380px !important; border-radius:12px; }
+
+/* Optional: Bild links (Klasse .flip am Container) */
+.grid-2.flip{ grid-template-columns:380px 1fr !important; }
+.grid-2.flip > figure{ justify-self:start; order:1; }
+.grid-2.flip > article{ order:2; }
+
+/* Mobile */
+@media (max-width:900px){
+  .grid-2{ grid-template-columns:1fr !important; }
+  .grid-2 > figure{ justify-self:center; }
+  .grid-2 > figure img{ max-width:70% !important; }
+}
+
+/* Karten/Footers sanft */
+.card{ background:var(--card); padding:24px; border-radius:12px; }
+.muted{ color:var(--muted); }
+.site-footer{ border-top:1px solid #222; padding:32px 0; margin-top:32px; }

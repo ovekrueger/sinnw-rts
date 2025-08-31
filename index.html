@@ -3,234 +3,144 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sinnwärts – Ove Krüger</title>
+  <title>Sinnwärts – Start</title>
   <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Coaching & Begleitung von Ove Krüger – Sinnwärts." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- NUKLEAR-PATCH: wirkt NUR auf body#home (dunkles, stabiles Startseiten-Layout) -->
+  <style>
+    :root{ --bg:#0b0b0b; --panel:#141414; --ink:#eee; --muted:#a6a6a6; --gold:#f5c242; --max:1100px; }
+    html{ scroll-behavior:smooth; }
+    #home{ margin:0; background:var(--bg); color:var(--ink);
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55; }
+
+    /* Layout-Basics */
+    #home .container{ max-width:var(--max); margin:0 auto; padding:0 20px; }
+    #home .block{ padding:64px 0; }
+    #home h1,#home h2{ margin:0 0 16px; line-height:1.2; }
+    #home a{ color:var(--gold); text-decoration:none; }
+    #home img{ display:block; max-width:100%; height:auto; border-radius:12px; }
+
+    /* Hauptnavigation */
+    #home .site-header{
+      position:sticky; top:0; z-index:1000;
+      background:rgba(11,11,11,.95); backdrop-filter:blur(4px);
+      border-bottom:1px solid #222;
+    }
+    #home .nav-container{
+      max-width:var(--max); margin:0 auto; padding:12px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    #home .brand{ font-weight:700; font-size:1.1rem; color:var(--gold); }
+    #home .nav-list{ list-style:none; display:flex; gap:24px; margin:0; padding:0; }
+    #home .nav-list a{ color:var(--ink); font-weight:600; }
+    #home .nav-list a:hover, #home .nav-list a.active{ color:var(--gold); }
+
+    /* Hero (Vollfläche) */
+    #home #hero{
+      position:relative; height:85vh;
+      background:url("images/hero-sucht-sucht-sinn.jpg") no-repeat center/cover;
+      display:flex; align-items:center; justify-content:center; text-align:center; padding:0 20px;
+    }
+    #home #hero::after{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.45); }
+    #home #hero .hero-content{ position:relative; z-index:1; max-width:800px; }
+    #home #hero h1{ font-size:3rem; color:var(--gold); margin-bottom:16px; }
+    #home #hero .tagline{ font-size:1.2rem; color:#eee; margin-bottom:24px; }
+    #home .btn{ display:inline-block; background:var(--gold); color:#0b0b0b; padding:14px 24px; border-radius:8px; font-weight:600; }
+    #home .btn:hover{ filter:brightness(1.05); }
+
+    /* Sektionen (schlank, editierbar) */
+    #home .panel{ background:var(--panel); border:1px solid #1e1e1e; border-radius:12px; padding:24px; }
+
+    /* Footer */
+    #home .site-footer{ border-top:1px solid #1e1e1e; padding:32px 0; margin-top:32px; color:var(--muted); text-align:center; font-size:.95rem; }
+  </style>
 </head>
 
-<body id="top">
-  <!-- NAVIGATION -->
+<body id="home">
+
+  <!-- NAV -->
   <header class="site-header">
-    <nav class="container nav">
-      <a class="logo" href="#top">Sinnwärts</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menü</button>
-      <ul id="nav-list" class="nav-list">
-        <li><a href="#intro">Start</a></li>
-        <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="suechte.html">Süchte</a></li>
-        <li><a href="#angebote">Angebot</a></li>
-        <li><a href="#kompass">Klarheitskompass</a></li>
-        <li><a href="#stimmen">Stimmen</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container">
+      <a href="index.html" class="brand">Sinnwärts</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="suechte.html">Süchte</a></li>
+          <li><a href="angebot.html">Angebot</a></li>
+          <li><a href="klarheitskompass.html">Klarheitskompass</a></li>
+          <li><a href="stimmen.html">Stimmen</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- HERO -->
-  <section id="intro" class="hero dark">
-    <picture>
-      <source srcset="images/hero-sucht-sucht-sinn.webp" type="image/webp">
-      <img src="images/hero-sucht-sucht-sinn.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img">
-    </picture>
-    <div class="hero-text">
+  <section id="hero">
+    <div class="hero-content">
       <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-      <p>Sucht sucht Sinn</p>
-      <a href="#angebote" class="btn">Aufstehen wagen</a>
+      <p class="tagline">Sucht sucht Sinn · Klarheit · Orientierung · Menschlichkeit</p>
+      <a href="ueber-mich.html" class="btn">Mehr über mich</a>
     </div>
   </section>
 
-  <!-- PORTRAIT + ZITAT -->
-  <section id="portrait-slogan" class="block portrait-slogan">
-    <div class="portrait-slogan__inner">
-      <figure class="portrait-slogan__media">
-        <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" class="portrait">
-      </figure>
-      <div class="hero__text">
-        <blockquote><strong>„Was, du lebst noch?<br>Klar! Ich habe gerade erst angefangen.“</strong></blockquote>
-        <a href="kontakt.html" class="btn">Kontakt aufnehmen</a>
+  <!-- PROGRAMME -->
+  <section id="programme" class="block">
+    <div class="container">
+      <div class="panel">
+        <h2>Programme</h2>
+        <p>Kurzvorstellung deiner Coaching-Programme. Ersetze diesen Text durch deine Inhalte.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ÜBER MICH -->
-  <section id="ueber-mich" class="block about">
-    <div class="about__inner">
-      <div class="about__text">
-        <h2>🧑‍🦰 Über mich</h2>
-        <p>Ich begleite Menschen, die nicht länger funktionieren, sondern leben wollen. Als Life Trust Coach stehe ich für eine klare Haltung:</p>
-        <ul>
-          <li><strong>K.O.M.</strong> – Klarheit · Orientierung · Menschlichkeit</li>
-          <li><strong>Motto</strong> – „Sucht sucht Sinn“</li>
-          <li><strong>Werte</strong> – Wahrheit, Gerechtigkeit, Mut und Maß</li>
-        </ul>
-        <p>Warum ich? Weil ich den Abgrund kenne – und wir alles aus integraler Sicht beleuchten.</p>
-      </div>
-      <img src="images/ove-stehend-offen.jpg" alt="Ove Krüger – Portrait stehend offen" class="portrait"
-           onerror="this.onerror=null;this.src='images/ove-rolli.jpg';">
     </div>
   </section>
 
   <!-- ANGEBOT -->
-  <section id="angebote" class="block">
-    <div class="container grid-2">
-      <article class="card">
-        <h3>Klarheits-Session</h3>
-        <p class="muted">60–90 Minuten – konzentriert, sortierend, ausrichtend.</p>
-        <ul class="bullets">
-          <li>Sortieren: Was ist wirklich Thema?</li>
-          <li>Entscheiden: nächster klarer Schritt</li>
-          <li>Konkreter Plan bis zum nächsten Termin</li>
-        </ul>
-        <a href="kontakt.html" class="btn btn--accent">Termin anfragen</a>
-      </article>
-
-      <article class="card">
-        <h3>Begleitung 6–12 Wochen</h3>
-        <p class="muted">Struktur, Reflexion, Übungen. Integrales Wachstum in deinem Tempo.</p>
-        <ul class="bullets">
-          <li>Sitzungen nach Absprache</li>
-          <li>Praxis: Denken · Fühlen · Handeln · Sein</li>
-          <li>Zwischenräume: kurze Check-ins / Aufgaben</li>
-        </ul>
-        <a href="kontakt.html" class="btn">Erstgespräch</a>
-      </article>
-    </div>
-
+  <section id="angebot" class="block">
     <div class="container">
-      <h2>Programme</h2>
-      <div class="cards grid-3">
-        <article class="card">
-          <h3>„Ich“-Programm</h3>
-          <p class="muted">nach Veit Lindau – <em>mit Lehr-Lizenz</em></p>
-          <ul class="bullets">
-            <li>Selbstwert, Klarheit, Integrität</li>
-            <li>Geführte Module + Praxisübungen</li>
-            <li>Übertragung in deinen Alltag</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Bootcamps</h3>
-          <p class="muted">Intensivformate zu Spezialthemen</p>
-          <ul class="bullets">
-            <li>Suchtmuster & Selbstführung</li>
-            <li>Innere Anteile / Beziehung & Rollen</li>
-            <li>3–5 Tage fokussiert, spürbare Ergebnisse</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Manifestation</h3>
-          <p class="muted">Ausrichtung + Umsetzung</p>
-          <ul class="bullets">
-            <li>Klarer Fokus & stimmige Ziele</li>
-            <li>Innere Hebel verstehen, nutzen</li>
-            <li>Rituale, Routinen, Review</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTEGRALE PRAXIS + HALTUNG -->
-  <section id="praxis" class="section praxis">
-    <div class="container">
-      <h2>Integrale Lebenspraxis <small>nach Ken Wilber</small></h2>
-      <p><strong>Denken · Fühlen · Handeln · Sein</strong> verbinden. Balancierte Praxis statt Quick Fix. Verlässliche Navigation im Alltag.</p>
-
-      <div class="card soft" style="margin-top:12px">
-        <h3>Haltung & Rahmen</h3>
-        <p><strong>Menschlichkeit vor Methode.</strong> Klar, integer, wertebasiert (K.O.M.). Kein Heilsversprechen. Kein Therapieersatz. Coaching auf Augenhöhe.</p>
-        <a href="kontakt.html" class="btn">Unverbindliches Kennenlernen</a>
+      <div class="panel">
+        <h2>Mein Angebot</h2>
+        <p>Übersicht: Einzelcoaching, Gruppen, Workshops …</p>
       </div>
     </div>
   </section>
 
   <!-- KLARHEITSKOMPASS -->
-  <section id="kompass" class="block klarheitskompass">
-    <div class="container grid-2">
-      <div class="col-main">
-        <h2>🧭 Krügers Klarheitskompass</h2>
-        <p>Das innere Kind will nicht optimiert werden – es will gesehen werden. Mein Kompass: <strong>Klarheit, Orientierung, Menschlichkeit</strong>. Darunter wirkt das <strong>Integrale</strong>.</p>
-        <p>Ich arbeite mit einem inneren System, das Denken, Fühlen, Handeln und Sein verbindet – für echte Veränderung statt Symptomflicken.</p>
-      </div>
-      <aside class="col-aside">
-        <figure class="portrait">
-          <img src="images/ove-weisses-hemd.jpg" alt="Ove Krüger – im weißen Hemd" loading="lazy">
-        </figure>
-      </aside>
-    </div>
-  </section>
-
-  <!-- MEINE GESCHICHTE -->
-  <section id="geschichte" class="block geschichte">
+  <section id="klarheitskompass" class="block">
     <div class="container">
-      <div class="grid-2">
-        <div class="col-main">
-          <h2>📖 Meine Geschichte</h2>
-          <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken. Ich habe vieles verloren – und das Wesentliche gefunden.</p>
-          <p>Heute arbeite ich als professioneller Life Trust Coach. Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
-          <p><strong><span class="gold">Meine Geschichte ist kein Makel. Sie ist meine Stärke.</span></strong></p>
-          <div class="note">🌿 70 % Schwerbehinderung · 💛 100 % Mitgefühl</div>
-          <h3>Meine Stärken</h3>
-          <ul>
-            <li><span class="gold">Zuhörer</span></li>
-            <li>Problem-Detektiv</li>
-            <li>Praktiker & Wegefinder</li>
-            <li>humorvoller, liebevoller Ar…-treter</li>
-            <li>Motivator & kreativer Analyst</li>
-            <li>Strukturierer & Lösungsfinder</li>
-            <li><span class="gold">…und ich bin hartnäckig!</span></li>
-          </ul>
-          <p class="gold"><strong>DAS LEBEN IST SCHÖN! Lass es uns entdecken.</strong></p>
-          <a class="btn" href="kontakt.html">👉 Kontakt aufnehmen</a>
-        </div>
-        <aside class="col-aside">
-          <figure class="portrait">
-            <img src="images/ove-portrait-hell.jpg" alt="Ove Krüger – Portrait hell" loading="lazy">
-          </figure>
-        </aside>
+      <div class="panel">
+        <h2>Krügers Klarheitskompass</h2>
+        <p>Kurz-Intro zu Klarheit · Orientierung · Menschlichkeit · Integral.</p>
       </div>
     </div>
   </section>
 
   <!-- STIMMEN -->
-  <section id="stimmen" class="block testimonials">
+  <section id="stimmen" class="block">
     <div class="container">
-      <h2>Was Klient:innen sagen</h2>
-      <div class="grid-3">
-        <blockquote class="card">„Mehr innere Ruhe und klare Schritte.“<br><cite>— Führungskraft, 42</cite></blockquote>
-        <blockquote class="card">„Respektvoll, ehrlich, wirksam.“<br><cite>— Ärztin, 38</cite></blockquote>
-        <blockquote class="card">„Erklärt neurobiologisch, begleitet menschlich.“<br><cite>— Musiker, 55</cite></blockquote>
+      <div class="panel">
+        <h2>Stimmen</h2>
+        <p>Platz für Testimonials/Zitate deiner Klient:innen.</p>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT-LINK -->
-  <section id="kontakt-link" class="block kontakt-link">
-    <div class="center">
-      <a href="kontakt.html" class="btn">👉 Kontakt aufnehmen</a>
+  <!-- KONTAKT -->
+  <section id="kontakt" class="block">
+    <div class="container">
+      <div class="panel">
+        <h2>Kontakt</h2>
+        <p>Kurzer Hinweis + CTA zum Kontaktformular oder E-Mail.</p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container foot">
-      <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
-      <nav class="foot-nav">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
-    </div>
+    © <span id="y"></span> Ove Krüger · Sinnwärts
   </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 
-  <script>
-    // Jahr + Mobile-Navi
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
-      const btn=e.currentTarget, list=document.getElementById('nav-list');
-      const open=btn.getAttribute('aria-expanded')==='true';
-      btn.setAttribute('aria-expanded', String(!open));
-      list?.classList.toggle('open');
-    });
-  </script>
 </body>
 </html>

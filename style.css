@@ -61,3 +61,17 @@ a{color:var(--gold);text-decoration:none}
 
 /* footer */
 .site-footer{border-top:1px solid #1f1f1f;padding:30px 0;margin-top:20px;color:var(--muted);text-align:center}
+.hero-nora::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
+  filter: brightness(0.35) saturate(0.9);
+}
+.section-img {
+  display: block;
+  max-width: 640px;
+  margin: 24px auto;
+  border-radius: 12px;
+  border: 1px solid var(--ring);
+}

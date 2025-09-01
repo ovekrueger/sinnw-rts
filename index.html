@@ -1,335 +1,63 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sinnwärts – Ove Krüger</title>
-  <meta name="description" content="Sinnwärts – Holpersteine? Immer wieder aufstehen. Life Trust Coach Ove Krüger: Klarheit, Orientierung, Menschlichkeit." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Sinnwärts – Klarheit, Orientierung, Menschlichkeit. Life Trust Coach Ove Krüger: Holpersteine – immer wieder Aufstehen." />
-</head>
+/* ===== Sinnwärts – Dark Theme ===== */
+:root{
+  --bg:#0b0b0b; --ink:#eee; --muted:#a6a6a6; --gold:#f5c242;
+  --panel:#141414; --max:1100px; --gap:28px; --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
+img{max-width:100%;height:auto;display:block;border-radius:12px}
+h1,h2,h3{line-height:1.2;margin:0 0 14px}
+h2{color:var(--gold)}
+a{color:var(--gold);text-decoration:none}
 
-<body id="top">
-  <!-- NAVIGATION -->
-  <!-- ============ NAV ============ -->
-  <header class="site-header" role="banner">
-    <div class="gold-bar"></div>
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html" aria-label="Startseite">sinnwärts</a>
-      <a class="brand" href="index.html">sinnwärts</a>
+/* containers */
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.block{padding:72px 0}
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">
-        <span class="nav-toggle-bar"></span>
-        <span class="sr-only">Menü öffnen</span>
-        <span class="nav-toggle-bar"></span><span class="sr-only">Menü</span>
-      </button>
+/* nav */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(11,11,11,.92);backdrop-filter:blur(4px);border-bottom:1px solid #222}
+.nav-container{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:1.1rem;color:var(--gold)}
+.nav-list{list-style:none;display:flex;gap:24px;margin:0;padding:0}
+.nav-list a{color:var(--ink);font-weight:600}
+.nav-list a:hover,.nav-list a.active{color:var(--gold)}
 
-      <nav id="mainnav" class="mainnav" aria-label="Hauptnavigation">
-        <ul>
-          <li class="active"><a href="index.html">Start</a></li>
-          <li class="has-sub">
-            <a href="ueber-mich.html#intro">Über mich</a>
-            <ul class="submenu" aria-label="Über-mich Untermenü">
-            <ul class="submenu">
-              <li><a href="ueber-mich.html#intro">Einleitung</a></li>
-              <li><a href="ueber-mich.html#rolle">Meine Rolle</a></li>
-              <li><a href="ueber-mich.html#vision">Vision</a></li>
-              <li><a href="ueber-mich.html#erkenntnisse">Erkenntnisse</a></li>
-            </ul>
-          </li>
-          <li><a href="suche.html">Suche</a></li>
-          <li><a href="nora.html">N.O.R.A.</a></li>
-          <li><a href="klarheitskompass.html">Klarheitskompass</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-@@ -42,100 +43,109 @@
-    </div>
-  </header>
+/* hero */
+.hero{position:relative;height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;background-size:cover;background-position:center}
+.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.hero-content{position:relative;z-index:1;max-width:900px;padding:0 20px}
+.hero-badge{height:84px;margin-bottom:12px;border-radius:10px}
+.hero h1{font-size:3.2rem;color:var(--gold);margin-bottom:4px}
+.tagline{font-size:1.15rem;color:#f0f0f0;margin:0 0 8px}
+.subline{color:#e3e3e3;margin:0 0 18px}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-  <!-- HERO -->
-  <!-- ============ HERO ============ -->
-  <section class="hero dark">
-    <picture>
-      <source srcset="images/hero-sucht-sucht-sinn.webp" media="(max-width: 768px)" type="image/webp">
-      <source srcset="images/hero-sucht-sucht-sinn.webp" type="image/webp">
-      <img src="images/hero-sucht-sucht-sinn.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img">
-      <img src="images/hero-sucht-sucht-sinn.jpg" alt="Holpersteine – Immer wieder Aufstehen" class="hero-img" loading="eager" decoding="async">
-    </picture>
-    <div class="hero-text">
-      <h1>Holpersteine – Immer wieder Aufstehen.</h1>
-      <h1>Holpersteine – Immer wieder<br> Aufstehen.</h1>
-      <p class="tagline">Sucht sucht Sinn</p>
-      <a href="ueber-mich.html#intro" class="btn btn-accent">Aufstehen wagen</a>
-    </div>
-  </section>
+/* buttons */
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700}
+.btn-accent{background:var(--gold);color:#0b0b0b}
+.btn-ghost{border:1px solid #373737;color:var(--ink);background:transparent}
+.btn:hover{filter:brightness(1.06)}
 
-  <!-- PORTRAIT + ZITAT -->
-  <section id="portrait-slogan" class="block portrait-slogan">
-    <div class="container portrait-slogan__inner">
-  <!-- ============ PORTRAIT + ZITAT ============ -->
-  <section class="block portrait-slogan">
-    <div class="container grid-2 portrait-slogan__inner">
-      <figure class="portrait-slogan__media">
-        <img src="images/ove-rolli.jpg" alt="Ove Krüger – Portrait im schwarzen Rollkragen" class="portrait">
-      </figure>
-      <div class="portrait-slogan__text">
-        <blockquote>
-          <p><strong>„Was, du lebst noch? Klar! Ich habe gerade erst angefangen.“</strong></p>
-        <blockquote class="quote-card">
-          <p><strong>„Was, du lebst noch? <br> Klar! Ich habe gerade erst angefangen.“</strong></p>
-        </blockquote>
-        <a href="kontakt.html" class="btn">Kontakt aufnehmen</a>
-      </div>
-    </div>
-  </section>
+/* grid */
+.grid-2{display:grid;grid-template-columns:1fr 420px;gap:var(--gap);align-items:center}
+.grid-2.flip{grid-template-columns:420px 1fr}
+.grid-2.flip > figure{order:1}
+.grid-2.flip > article{order:2}
+@media (max-width:900px){
+  .grid-2,.grid-2.flip{grid-template-columns:1fr}
+  .grid-2 > figure,.grid-2.flip > figure{justify-self:center}
+  .grid-2 > figure img{max-width:78%}
+}
 
-  <!-- ÜBER MICH -->
-  <section class="block intro-compact">
-    <div class="container grid-2 card" style="padding:24px">
-      <div>
-        <h2>Über mich</h2>
-        <p>Ich begleite Menschen, die ihr Leben klären und wieder aufstehen wollen. Fokus: Klarheit, Orientierung, Menschlichkeit – mein K.O.M.-Kompass.</p>
-  <!-- ============ ÜBER MICH (Text + Bild) ============ -->
-  <section class="block">
-    <div class="container grid-2">
-      <article class="card">
-        <h2>🟡 Über mich</h2>
-        <p>Ich begleite Menschen, die ihr Leben klären und wieder aufstehen wollen. Mein Kompass: Klarheit, Orientierung, Menschlichkeit – kurz: <strong>K.O.M.</strong></p>
-        <ul class="checks">
-          <li>Klarheit – Fakten, Verantwortung, Fokus</li>
-          <li>Orientierung – Struktur, Kompass, nächste Schritte</li>
-          <li>Menschlichkeit – Nähe, Würde, Humor</li>
-          <li><strong>Klarheit</strong> – Fakten, Verantwortung, Fokus</li>
-          <li><strong>Orientierung</strong> – Struktur, Kompass, nächste Schritte</li>
-          <li><strong>Menschlichkeit</strong> – Nähe, Würde, Humor</li>
-        </ul>
-      </div>
-      <figure>
-        <img src="images/ove-sitzend-1.jpg" alt="Ove Krüger – Portrait sitzend" class="portrait">
-        <p>Worum es geht? Mut zum Eigenwerden – und alles, was dazugehört: Stolz, Mitgefühl, echte Schritte und Praxisreife.</p>
-      </article>
-      <figure class="card card-img">
-        <img src="images/ove-sitzend-1.jpg" class="portrait" alt="Ove Krüger – Portrait sitzend">
-      </figure>
-    </div>
-  </section>
+/* lists / quote / pills */
+.checks{margin:0;padding:0 0 0 18px}
+.checks li{margin:6px 0}
+.quote{border-left:4px solid var(--gold);padding-left:14px;color:#f5f5f5}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.pill{display:inline-block;border:1px solid #3a3a3a;border-radius:999px;padding:10px 14px;color:#ddd}
+.pill:hover{border-color:#555}
 
-  <!-- ANGEBOTE + COACHINGFORMATE -->
-  <!-- ============ ANGEBOTE + FORMATE ============ -->
-  <section class="block">
-    <div class="container grid-2">
-      <article class="card">
-        <div class="eyebrow">Schwerpunkte</div>
-        <h3>Angebote</h3>
-        <p>Viele starten spontan, andere wählen gezielte Programme. Wichtig ist: Es geht immer um dich und dein Leben.</p>
-        <div class="grid-2" style="gap:14px">
-          <a class="btn btn-ghost" href="kontakt.html">Termine anfragen</a>
-          <a class="btn btn-ghost" href="ueber-mich.html#angebote">Mehr erfahren</a>
-        <p>Vom kurzen Gespräch bis zu verschiedenen Programmen – in deinem Tempo. Fragen sind willkommen.</p>
-        <div class="btn-row">
-          <a class="btn btn-ghost" href="kontakt.html">Coaching</a>
-          <a class="btn btn-ghost" href="kontakt.html">Programme</a>
-          <a class="btn btn-ghost" href="kontakt.html">Anfrage</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <h3>Coachingformate</h3>
-        <p>Vom einzelnen Gespräch bis zu intensiven Modulen – wir finden das passende Format.</p>
-        <div class="grid-2" style="gap:14px">
-        <p>Wir arbeiten im Gespräch, in Modulen oder über 12+ Wochen. Wir finden die Form, die zu dir passt.</p>
-        <div class="btn-row">
-          <a class="btn btn-ghost" href="kontakt.html">Anmelden</a>
-          <a class="btn btn-ghost" href="ueber-mich.html#formate">Übersicht</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- METHODEN & BEREICHE / BEGLEITUNG -->
-  <section class="block">
-    <div class="container grid-2">
-    <div class="container grid-2 mt-16">
-      <article class="card">
-        <h3>Methoden & Bereiche</h3>
-        <h3>Klarheits-Session</h3>
-        <ul class="checks">
-          <li>Arbeit mit dem Nervensystem</li>
-          <li>Biografie & Suchtgeschichte</li>
-          <li>Grenzen setzen</li>
-          <li>Alltagspraxis entwickeln</li>
-          <li>Integrale Perspektive</li>
-          <li>90 Min – konzentriert, verbindend, strukturiert</li>
-          <li>ein Thema, ein konkreter Schritt</li>
-          <li>handfest &amp; alltagstauglich</li>
-          <li>für „Ich hänge – was ist der nächste Schritt?“</li>
-        </ul>
-        <a class="btn" href="kontakt.html">Termin anfragen</a>
-      </article>
-
-      <article class="card">
-        <h3>Begleitung 12+ Wochen</h3>
-        <p>Wir arbeiten über drei Monate, strukturiert und tief. Dein Alltag wird der Trainingsraum, wir entwickeln Gewohnheiten, die bleiben.</p>
-        <a class="btn" href="kontakt.html">Besprechen</a>
-        <p>Struktur, Präsenz, Übung – Integration in den Alltag. Wir stabilisieren, klären und bauen Gewohnheiten auf.</p>
-        <ul class="checks">
-          <li>Rhythmus: 1×/Woche (flexibel)</li>
-          <li>Praxis: kleine Schritte mit Wirkung</li>
-          <li>Fokus: Klarheit, Grenzen, Kraft</li>
-        </ul>
-        <a class="btn" href="kontakt.html">Einsteigen</a>
-      </article>
-    </div>
-
-    <div class="container">
-      <aside class="card soft notice">
-        <p>Hinweis: Ich arbeite als Coach, ohne psychische, medizinische oder rechtliche Diagnosen zu stellen. Ich arbeite transparent, achtsam und mit klaren Leitplanken.</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- PROGRAMME -->
-  <!-- ============ PROGRAMME (3 Karten) ============ -->
-  <section class="block programmes">
-    <div class="container">
-      <h2>Programme</h2>
-@@ -150,48 +160,47 @@
-          <a class="btn btn-ghost" href="kontakt.html">Infos anfordern</a>
-        </article>
-        <article class="card">
-          <h3>Systemix</h3>
-          <h3>Bootcamp</h3>
-          <ul class="checks">
-            <li>Systemische Perspektive</li>
-            <li>Spiegelung & Struktur</li>
-            <li>Klare Handlungsoptionen</li>
-            <li>Intensiv-Format (2–3 Sessions/Woche)</li>
-            <li>Fokus &amp; Stabilisierung</li>
-            <li>Ziele klar &amp; Schrittfolgen</li>
-          </ul>
-          <a class="btn btn-ghost" href="kontakt.html">Gespräch starten</a>
-        </article>
-        <article class="card">
-          <h3>Manifestation</h3>
-          <ul class="checks">
-            <li>Bewusstes Kreieren</li>
-            <li>Kraftvolle Ausrichtung</li>
-            <li>Schritt für Schritt ins Handeln</li>
-            <li>Ausrichtung · Umsetzung</li>
-            <li>realistisch &amp; wertebasiert</li>
-            <li>kein Bullshit – Taten</li>
-          </ul>
-          <a class="btn btn-ghost" href="kontakt.html">Teilnehmen</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- INTEGRALES LEBENSRAD + HALTUNG -->
-  <!-- ============ INTEGRALES LEBENSRAD & HALTUNG ============ -->
-  <section class="block">
-    <div class="container">
-      <h2>Integrales Lebensrad &amp; Haltung</h2>
-      <div class="card">
-        <p>Denken · Fühlen · Handeln · Sein verbinden – das ist mein Ansatz. Praxisnah, klar und integral.</p>
-        <div class="card soft" style="margin-top:12px">
-          <p>Haltung heißt für mich: Würde, Achtsamkeit, Klarheit und Mitgefühl. Keine schnellen Tricks – sondern tiefes Verstehen und bewusstes Handeln.</p>
-        </div>
-        <div style="margin-top:12px">
-          <a class="btn btn-accent" href="kontakt.html">Unverbindliches Kennenlernen</a>
-        </div>
-      <h2>Integrale Lebenspraxis nach Ken Wilber</h2>
-      <p>Denken · Fühlen · Handeln · Sein verbinden. Bereiche: Körper, Geist, Seele, Beruf, Beziehung, Kultur, Natur – integral.</p>
-      <p>Bewusste Praxis im Alltag.</p>
-
-      <div class="card soft mt-12">
-        <h3>Haltung &amp; Rahmen</h3>
-        <p>Menschlichkeit vor Methode. Ich arbeite klar, integer und verbindbar (K.O.M.). Klarheit, Orientierung, Menschlichkeit. Keine schnellen Tricks – sondern bewusstes Verstehen und verantwortetes Handeln. Und ja: mit Humor.</p>
-        <a class="btn btn-accent" href="kontakt.html">Unverbindliches Kennenlernen</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- KLARHEITSKOMPASS -->
-  <!-- ============ KLARHEITSKOMPASS (Teaser) ============ -->
-  <section class="block">
-    <div class="container">
-      <h2>Krügers Klarheitskompass</h2>
-      <p>Mein Modell für Klarheit, Orientierung und Integrität. Es verbindet Denken, Fühlen, Handeln und Sein.</p>
-      <h2>🧭 Krügers Klarheitskompass</h2>
-      <p>Mein Modell, um klarer, orientierter und integer zu handeln – und Sinn wiederzufinden.</p>
-      <ul class="checks">
-        <li>Dein innerer Nordstern</li>
-        <li>Struktur für Entscheidungen</li>
-@@ -200,34 +209,34 @@
-    </div>
-  </section>
-
-  <!-- MEINE GESCHICHTE -->
-  <!-- ============ MEINE GESCHICHTE (Text + Bild + Fortschritt) ============ -->
-  <section class="block">
-    <div class="container grid-2">
-      <article>
-        <h2>Meine Geschichte</h2>
-        <p>62 Jahre alt.  
-        20 Jahre Alkohol – 15 Jahre trocken.  
-        Ich habe vieles verloren – und das Wesentliche gefunden.</p>
-        <p>Heute arbeite ich als professioneller Life Trust Coach.  
-        Mein Leben zeigt: Aufstehen ist möglich. Jederzeit.</p>
-        <a class="btn btn-ghost" href="ueber-mich.html#geschichte">Mehr lesen</a>
-        <h2>🧩 Meine Geschichte</h2>
-        <p>62 Jahre alt. <br> 20 Jahre Alkohol – 15 Jahre trocken.</p>
-        <p>Ich habe vieles verloren – und das Wesentliche gefunden. Heute arbeite ich als professioneller Life Trust Coach. Mein Leben zeigt: Aufstehen ist möglich. Jederzeit.</p>
-        <p><strong>Meine Essenz in 3 Sätzen:</strong><br>
-          Ich bleibe bei mir, kenne meine Schatten, schäme mich nicht – sondern integriere sie.<br>
-          Ich bin kein Vorbild, aber ich bin echt.<br>
-          Ich bin nicht perfekt – und gehe weiter.</p>
-
-        <div class="progress">
-          <div class="progress-bar" style="--val:90"></div>
-          <div class="progress-label">90% Akzeptanz</div>
-        </div>
-
-        <p>Du willst deine eigene Geschichte schreiben? Lass uns anfangen – in deinem Tempo, mit echten Themen und einer wertschätzenden, klaren Haltung.</p>
-        <a class="btn" href="kontakt.html">Kontakt aufnehmen</a>
-      </article>
-      <figure>
-        <img src="images/ove-portrait-hell.jpg" alt="Ove Krüger – Portrait hell" class="portrait">
-      </figure>
-    </div>
-  </section>
-  <section class="block testimonials">
-  <div class="container">
-    <h2>Was Klient:innen sagen</h2>
-    <div class="cards-3">
-      <!-- deine drei Karten -->
-    </div>
-  </div>
-</section>
-
-  <!-- TESTIMONIALS -->
-  <section class="block">
-  <!-- ============ TESTIMONIALS ============ -->
-  <section class="block testimonials">
-    <div class="container">
-      <h2>Was Klient:innen sagen</h2>
-      <div class="cards-3">
-@@ -238,7 +247,7 @@
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-@@ -259,6 +268,7 @@
-  </footer>
-
-  <script>
-    // Mobile Nav Toggle
-    const btn = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('mainnav');
-    if (btn && na
+/* footer */
+.site-footer{border-top:1px solid #1f1f1f;padding:30px 0;margin-top:20px;color:var(--muted);text-align:center}

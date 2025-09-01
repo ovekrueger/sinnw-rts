@@ -6,81 +6,7 @@
   <title>Meine KI – N.O.R.A. | Sinnwärts</title>
   <meta name="description" content="Ich denke – KI rechnet. N.O.R.A. ist mein neuro-orientiertes Reflexionssystem für Coaching, Mentoring und Training. Grenzen, Möglichkeiten, neues Berufsbild." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0f12;
-      --ink:#e8e6e3;
-      --muted:#a7a7a7;
-      --accent:#d4af37; /* Gold */
-      --ring:#393f4a;
-      --maxw:1000px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:24px}
-    /* HERO */
-    .hero{
-      position:relative;
-      min-height:52vh;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      overflow:hidden;
-      border-bottom:1px solid var(--ring);
-    }
-    .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      background:url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
-      filter:brightness(0.35) saturate(0.9);
-    }
-    .hero > .inner{position:relative;padding:48px 20px}
-    .eyebrow{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-    h1{margin:.25em 0 .4em 0;font-size:clamp(2rem,5vw,3.25rem);font-weight:700;line-height:1.15}
-    .sub{
-      font-size:clamp(1rem,2.6vw,1.25rem);
-      color:var(--ink);
-      opacity:.95;
-      max-width:780px;
-      margin:0 auto 18px;
-    }
-    .btn{
-      display:inline-block;margin-top:10px;padding:12px 18px;border:1px solid var(--accent);
-      color:var(--bg);background:var(--accent);font-weight:600;border-radius:10px;
-    }
-    .btn.ghost{background:transparent;color:var(--accent)}
-    /* NAV */
-    .nav{
-      position:sticky;top:0;z-index:5;
-      background:rgba(11,15,18,.9);backdrop-filter:saturate(120%) blur(6px);
-      border-bottom:1px solid var(--ring);
-    }
-    .nav .wrap{display:flex;gap:16px;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:var(--accent)}
-    .nav ul{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none}
-    .nav a{padding:10px 12px;border-radius:8px}
-    .nav a:hover{background:#11161b}
-    /* SECTIONS */
-    section{scroll-margin-top:80px;padding:48px 0;border-bottom:1px solid var(--ring)}
-    h2{font-size:clamp(1.5rem,3.5vw,2.1rem);margin:0 0 10px}
-    p{margin:0 0 14px}
-    .lead{color:var(--ink);opacity:.95}
-    .muted{color:var(--muted)}
-    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:14px}
-    .card{border:1px solid var(--ring);border-radius:14px;padding:18px;background:#0e1216}
-    .card h3{margin:0 0 6px;font-size:1.1rem;color:var(--accent)}
-    figure{margin:18px 0 0 0}
-    figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--ring)}
-    figcaption{color:var(--muted);font-size:.9rem;margin-top:6px}
-    /* FOOT */
-    footer{padding:32px 0;color:var(--muted);text-align:center}
-    /* small helpers */
-    .grid-2{display:grid;gap:20px;grid-template-columns:1.2fr .8fr;align-items:start}
-    @media (max-width:880px){.grid-2{grid-template-columns:1fr}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body id="top">
 
@@ -97,130 +23,62 @@
         <li><a href="#ki-coaching">Warum KI</a></li>
         <li><a href="#neues-berufsbild">Neues Berufsbild</a></li>
         <li><a href="#zukunft">Metamoderne & VUCA</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero hero-nora">
     <div class="inner">
       <div class="eyebrow">Sinnwärts · Klarheit · Orientierung · Menschlichkeit</div>
       <h1>Ich denke – KI rechnet.</h1>
-      <p class="sub">Meine KI heißt <strong>N.O.R.A.</strong> Sie ist kein Mensch, sondern ein reflektierendes System – gebaut, um Denken zu ordnen, Orientierung zu geben und Verantwortung beim Menschen zu belassen.</p>
+      <p class="sub">Meine KI heißt <strong>N.O.R.A.</strong>. Sie ist kein Mensch, sondern ein reflektierendes System – gebaut, um Denken zu ordnen, Orientierung zu geben und Verantwortung beim Menschen zu belassen.</p>
       <a class="btn" href="#nora-akronym">Loslegen</a>
       <a class="btn ghost" href="index.html">Zur Startseite</a>
     </div>
   </header>
 
   <main>
-
-    <!-- 1. N.O.R.A. – Bedeutung -->
-    <section id="nora-akronym">
-      <div class="wrap grid-2">
-        <div>
-          <h2>N.O.R.A. – Bedeutung</h2>
-          <p class="lead"><strong>N</strong>euro-orientiert · <strong>O</strong>rientiert · <strong>R</strong>eflexiv · <strong>A</strong>usgerichtet</p>
-          <p>Ich nutze N.O.R.A. als <em>neuro-orientiertes Reflexionssystem</em>. Sie rechnet Muster, bringt Struktur und macht Optionen sichtbar. Ich übernehme die Deutung, die Haltung und die Entscheidung.</p>
-          <div class="cards">
-            <div class="card"><h3>Kompass</h3><p>Statt Antworten zu behaupten, erzeugt N.O.R.A. bessere Fragen. Orientierung statt Besserwisserei.</p></div>
-            <div class="card"><h3>Spiegel</h3><p>Sie wirft mein Denken zurück – klar, logisch, ohne Ego. Das macht blinde Flecken verhandelbar.</p></div>
-            <div class="card"><h3>Werkbank</h3><p>Modelle, Abläufe, Texte: schnell iterieren, sauber dokumentieren – ethisch gerahmt.</p></div>
-          </div>
-        </div>
-        <aside>
-          <figure>
-            <img src="images/ki-mensch.png" alt="Mensch–KI Kooperation: Denken & Rechnen im Dialog">
-            <figcaption>Mensch denkt. KI rechnet. Verantwortung bleibt menschlich.</figcaption>
-          </figure>
-        </aside>
-      </div>
+    <!-- Abschnitt 1 -->
+    <section id="nora-akronym" class="wrap">
+      <h2>N.O.R.A. – Bedeutung</h2>
+      <p><strong>N</strong>euro-orientiert · <strong>O</strong>rientiert · <strong>R</strong>eflexiv · <strong>A</strong>usgerichtet</p>
+      <p>N.O.R.A. ist mein neuro-orientiertes Reflexionssystem. Sie rechnet Muster, bringt Struktur, macht Optionen sichtbar. Verantwortung bleibt menschlich.</p>
+      <img src="images/ki-mensch.png" alt="Mensch–KI Kooperation" class="section-img" />
     </section>
 
-    <!-- 2. Was KI nicht kann & nicht soll -->
-    <section id="ki-grenzen">
-      <div class="wrap">
-        <h2>Was KI nicht kann – und nicht soll</h2>
-        <div class="cards">
-          <div class="card"><h3>Keine Gefühle</h3><p>KI spürt nicht. Empathie, Reue, Liebe – bleiben menschlich.</p></div>
-          <div class="card"><h3>Keine Verantwortung</h3><p>KI unterstützt. Entscheiden und haften: der Mensch.</p></div>
-          <div class="card"><h3>Keine Ethik von sich aus</h3><p>Werte müssen implementiert und gelebt werden.</p></div>
-          <div class="card"><h3>Keine Abhängigkeit</h3><p>KI ist Werkzeug, nicht Ersatz für Intuition oder Gewissen.</p></div>
-        </div>
-      </div>
+    <!-- Abschnitt 2 -->
+    <section id="ki-grenzen" class="wrap">
+      <h2>Was KI nicht kann – und nicht soll</h2>
+      <ul>
+        <li><strong>Keine Gefühle:</strong> Empathie, Reue, Liebe – bleiben menschlich.</li>
+        <li><strong>Keine Verantwortung:</strong> Entscheiden muss der Mensch.</li>
+        <li><strong>Keine Ethik von sich aus:</strong> Werte müssen wir definieren.</li>
+        <li><strong>Keine Abhängigkeit:</strong> KI ist Werkzeug, nicht Gewissen.</li>
+      </ul>
     </section>
 
-    <!-- 3. Warum KI für mich unverzichtbar wird -->
-    <section id="ki-coaching">
-      <div class="wrap grid-2">
-        <div>
-          <h2>Warum KI für mich unverzichtbar ist</h2>
-          <p>In Coaching, Mentoring und Training beschleunigt KI Klarheit:</p>
-          <ul>
-            <li>Strukturiert Gedanken, verdichtet Komplexität.</li>
-            <li>Macht Modelle, Entscheidungsbäume und Lernpfade greifbar.</li>
-            <li>Erhöht Qualität durch Iteration und Dokumentation.</li>
-            <li>Hält mich werteorientiert – weil ich Grenzen definiere.</li>
-          </ul>
-        </div>
-        <aside>
-          <figure>
-            <img src="images/ove.stehend.weisses-hemd.jpg" alt="Ove Krüger – Portrait im weißen Hemd">
-            <figcaption>Haltung vor Technik. Technik im Dienst von Haltung.</figcaption>
-          </figure>
-        </aside>
-      </div>
+    <!-- Abschnitt 3 -->
+    <section id="ki-coaching" class="wrap">
+      <h2>Warum KI für mich unverzichtbar ist</h2>
+      <p>Als Coach, Mentor und Trainer nutze ich KI, weil sie Gedanken strukturiert, Komplexität verdichtet, Modelle sichtbar macht und Dokumentation erleichtert.</p>
+      <img src="images/ove.stehend.weisses-hemd.jpg" alt="Ove Krüger – Portrait" class="section-img" />
     </section>
 
-    <!-- 4. Neues Berufsbild -->
-    <section id="neues-berufsbild">
-      <div class="wrap">
-        <h2>Neues Berufsbild: Coaching im KI-Zeitalter</h2>
-        <p class="lead">Ab Mitte 2026 bin ich zertifiziert, Menschen auszubilden, KI <strong>ethisch sauber</strong>, <strong>werteorientiert</strong> und <strong>kompetent</strong> in Arbeit und Leben zu integrieren.</p>
-        <div class="cards">
-          <div class="card"><h3>Ethik & Sicherheit</h3><p>Klare Spielregeln, Datenschutz-Basics, Red-Team-Denken.</p></div>
-          <div class="card"><h3>Kompetenzen</h3><p>Prompting, Workflow-Design, Qualitätskontrolle, Dokumentation.</p></div>
-          <div class="card"><h3>Haltung</h3><p>Ambiguitätstoleranz, Verantwortung, Mensch-vor-Output.</p></div>
-        </div>
-      </div>
+    <!-- Abschnitt 4 -->
+    <section id="neues-berufsbild" class="wrap">
+      <h2>Neues Berufsbild: Coaching im KI-Zeitalter</h2>
+      <p>Ab Mitte 2026 bin ich zertifiziert, Menschen auszubilden, KI <strong>ethisch sauber</strong>, <strong>werteorientiert</strong> und <strong>kompetent</strong> zu nutzen.</p>
     </section>
 
-    <!-- 5. Zukunft, Metamoderne & VUCA -->
-    <section id="zukunft">
-      <div class="wrap grid-2">
-        <div>
-          <h2>Die Zukunft mit KI: Metamoderne & VUCA</h2>
-          <p>KI ist mehr als ein Tool. Sie prägt Arbeit, Bildung, Beziehungen – und Sinn. Wir surfen eine Welle, die bleibt.</p>
-          <p><strong>VUCA</strong> kurz erklärt:</p>
-          <ul>
-            <li><strong>Volatility</strong>: hohe Veränderungsdynamik.</li>
-            <li><strong>Uncertainty</strong>: Unvorhersehbarkeit, Szenarien statt Prognosen.</li>
-            <li><strong>Complexity</strong>: viele Wechselwirkungen, keine einfachen Ursachen.</li>
-            <li><strong>Ambiguity</strong>: Mehrdeutigkeit erfordert Deutungskompetenz.</li>
-          </ul>
-          <p><em>Metamoderne</em> heißt für mich: integrales Denken, ko-kreatives Handeln, klare Werte – Mensch und KI in Balance.</p>
-        </div>
-        <aside>
-          <figure>
-            <img src="images/stehend.jpg" alt="Ove Krüger – stehendes Portrait">
-            <figcaption>Reif führen: klar denken, sauber handeln, Mensch bleiben.</figcaption>
-          </figure>
-        </aside>
-      </div>
+    <!-- Abschnitt 5 -->
+    <section id="zukunft" class="wrap">
+      <h2>Die Zukunft mit KI: Metamoderne & VUCA</h2>
+      <p>Wir stehen vor einer Revolution. KI verändert Arbeit, Bildung, Beziehungen, Sinn. Wir müssen lernen, die Welle zu surfen.</p>
+      <p><strong>VUCA:</strong> Volatility, Uncertainty, Complexity, Ambiguity.</p>
+      <img src="images/stehend.jpg" alt="Ove Krüger – stehendes Portrait" class="section-img" />
     </section>
-
-    <!-- Kontakt / CTA -->
-    <section id="kontakt">
-      <div class="wrap">
-        <h2>Weitergehen</h2>
-        <p class="muted">Neugierig auf Training, Begleitung oder Team-Workshops?</p>
-        <p>
-          <a class="btn" href="kontakt.html">Gespräch anfragen</a>
-          <a class="btn ghost" href="#top">Nach oben</a>
-        </p>
-      </div>
-    </section>
-
   </main>
 
   <footer>

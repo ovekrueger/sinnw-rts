@@ -129,5 +129,8 @@ a{color:var(--gold);text-decoration:none}
 @media (max-width: 860px) {
   .grid-2 {
     grid-template-columns: 1fr;
-  }
+  .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }

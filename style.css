@@ -108,4 +108,9 @@ a{color:var(--gold);text-decoration:none}
   margin: 0 auto;
   display: block;
   border-radius: 12px;
+}#inneres-kind blockquote{
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+  margin: 0 0 14px;
+  opacity: .95;
 }

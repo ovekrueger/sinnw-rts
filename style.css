@@ -1,145 +1,222 @@
-/* ===== Sinnwärts – Dark Theme ===== */
+/* ======================================================
+   Sinnwärts – Dark Theme Stylesheet
+   ------------------------------------------------------
+   Struktur:
+   1. Reset & Basics
+   2. Layout Container
+   3. Navigation
+   4. Hero
+   5. Typografie
+   6. Buttons
+   7. Grid-System
+   8. Listen / Zitate / Extras
+   9. Footer
+   ====================================================== */
+
+
+/* ---------- 1. Reset & Basics ---------- */
 :root{
-  --bg:#0b0b0b; --ink:#eee; --muted:#a6a6a6; --gold:#f5c242;
-  --panel:#141414; --max:1100px; --gap:28px; --r:14px;
+  --bg:#0b0b0b; 
+  --ink:#eee; 
+  --muted:#a6a6a6; 
+  --gold:#f5c242;
+  --panel:#141414; 
+  --max:1100px; 
+  --gap:28px; 
+  --r:14px;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-html,body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6}
-img{max-width:100%;height:auto;display:block;border-radius:12px}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.6;
+}
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
+}
 h1,h2,h3{line-height:1.2;margin:0 0 14px}
 h2{color:var(--gold)}
 a{color:var(--gold);text-decoration:none}
 
-/* containers */
-.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ---------- 2. Layout Container ---------- */
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 20px;
+}
 .block{padding:72px 0}
 
-/* nav */
-.site-header{position:sticky;top:0;z-index:1000;background:rgba(11,11,11,.92);backdrop-filter:blur(4px);border-bottom:1px solid #222}
-.nav-container{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-weight:700;font-size:1.1rem;color:var(--gold)}
-.nav-list{list-style:none;display:flex;gap:24px;margin:0;padding:0}
-.nav-list a{color:var(--ink);font-weight:600}
-.nav-list a:hover,.nav-list a.active{color:var(--gold)}
 
-/* hero */
-.hero{position:relative;height:82vh;display:flex;align-items:center;justify-content:center;text-align:center;background-size:cover;background-position:center}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.hero-content{position:relative;z-index:1;max-width:900px;padding:0 20px}
-.hero-badge{height:84px;margin-bottom:12px;border-radius:10px}
-.hero h1{font-size:3.2rem;color:var(--gold);margin-bottom:4px}
-.tagline{font-size:1.15rem;color:#f0f0f0;margin:0 0 8px}
-.subline{color:#e3e3e3;margin:0 0 18px}
-.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* ---------- 3. Navigation ---------- */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(11,11,11,.92);
+  backdrop-filter:blur(4px);
+  border-bottom:1px solid #222;
+}
+.nav-container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  font-weight:700;
+  font-size:1.1rem;
+  color:var(--gold);
+}
+.nav-list{
+  list-style:none;
+  display:flex;
+  gap:24px;
+  margin:0;
+  padding:0;
+}
+.nav-list a{
+  color:var(--ink);
+  font-weight:600;
+}
+.nav-list a:hover,
+.nav-list a.active{
+  color:var(--gold);
+}
 
-/* buttons */
-.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:700}
-.btn-accent{background:var(--gold);color:#0b0b0b}
-.btn-ghost{border:1px solid #373737;color:var(--ink);background:transparent}
+
+/* ---------- 4. Hero ---------- */
+.hero{
+  position:relative;
+  height:82vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-size:cover;
+  background-position:center;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+}
+.hero-content{
+  position:relative;
+  z-index:1;
+  max-width:900px;
+  padding:0 20px;
+}
+.hero-badge{
+  height:84px;
+  margin-bottom:12px;
+  border-radius:10px;
+}
+.hero h1{
+  font-size:3.2rem;
+  color:var(--gold);
+  margin-bottom:4px;
+}
+.tagline{
+  font-size:1.15rem;
+  color:#f0f0f0;
+  margin:0 0 8px;
+}
+.subline{
+  color:#e3e3e3;
+  margin:0 0 18px;
+}
+.btn-row{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+
+/* ---------- 5. Typografie ---------- */
+h2{font-size:1.8rem}
+h3{font-size:1.2rem;color:var(--gold)}
+
+
+/* ---------- 6. Buttons ---------- */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+}
+.btn-accent{
+  background:var(--gold);
+  color:#0b0b0b;
+}
+.btn-ghost{
+  border:1px solid #373737;
+  color:var(--ink);
+  background:transparent;
+}
 .btn:hover{filter:brightness(1.06)}
 
-/* grid */
-.grid-2{display:grid;grid-template-columns:1fr 420px;gap:var(--gap);align-items:center}
-.grid-2.flip{grid-template-columns:420px 1fr}
+
+/* ---------- 7. Grid-System ---------- */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:var(--gap);
+  align-items:center;
+}
+.grid-2.flip{
+  grid-template-columns:420px 1fr;
+}
 .grid-2.flip > figure{order:1}
 .grid-2.flip > article{order:2}
 @media (max-width:900px){
   .grid-2,.grid-2.flip{grid-template-columns:1fr}
-  .grid-2 > figure,.grid-2.flip > figure{justify-self:center}
+  .grid-2 > figure,
+  .grid-2.flip > figure{justify-self:center}
   .grid-2 > figure img{max-width:78%}
 }
 
-/* lists / quote / pills */
+
+/* ---------- 8. Listen / Zitate / Extras ---------- */
 .checks{margin:0;padding:0 0 0 18px}
 .checks li{margin:6px 0}
-.quote{border-left:4px solid var(--gold);padding-left:14px;color:#f5f5f5}
-.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.pill{display:inline-block;border:1px solid #3a3a3a;border-radius:999px;padding:10px 14px;color:#ddd}
+.quote{
+  border-left:4px solid var(--gold);
+  padding-left:14px;
+  color:#f5f5f5;
+}
+.ctas{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.pill{
+  display:inline-block;
+  border:1px solid #3a3a3a;
+  border-radius:999px;
+  padding:10px 14px;
+  color:#ddd;
+}
 .pill:hover{border-color:#555}
 
-/* footer */
-.site-footer{border-top:1px solid #1f1f1f;padding:30px 0;margin-top:20px;color:var(--muted);text-align:center}
-.hero-nora::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
-  filter: brightness(0.35) saturate(0.9);
-}
-.section-img {
-  display: block;
-  max-width: 640px;
-  margin: 24px auto;
-  border-radius: 12px;
-  border: 1px solid var(--ring);
-}
-.grid-2 {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-@media (max-width: 860px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-}
-.cards {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 20px 0;
-}
-.card {
-  background: #0e1216;
-  border: 1px solid var(--ring);
-  border-radius: 12px;
-  padding: 16px;
-}
-.card h3 {
-  margin-top: 0;
-  color: var(--accent);
-}
-.section-img {
-  width: 100%;
-  max-width: 360px;
-  margin: 0 auto;
-  display: block;
-  border-radius: 12px;
-}#inneres-kind blockquote{
-  border-left: 3px solid var(--accent);
-  padding-left: 14px;
-  margin: 0 0 14px;
-  opacity: .95;
-}.wrap {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 24px; /* sorgt für Abstand links/rechts */
-}
 
-.grid-2 {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-@media (max-width: 860px) {
-  .grid-2 {
-    grid-template-columns: 1fr;
-  .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}.section-img,
-.portrait {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
-  border: 1px solid var(--ring);
+/* ---------- 9. Footer ---------- */
+.site-footer{
+  border-top:1px solid #1f1f1f;
+  padding:30px 0;
+  margin-top:20px;
+  color:var(--muted);
+  text-align:center;
 }

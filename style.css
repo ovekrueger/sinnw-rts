@@ -198,4 +198,12 @@ li{margin:6px 0}
   background:#10151b;
   border:1px solid var(--ring);
   color:var(--ink);
+  /* Falls auf der Startseite noch "container" verwendet wird */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* Falls ein <section> direkt .grid-2 trägt (ohne .wrap innen) */
+section.grid-2{padding-left:24px;padding-right:24px}
+
+/* Extra: Abstände konsistent */
+section{padding:48px 0;border-bottom:1px solid var(--ring)}
 

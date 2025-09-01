@@ -191,29 +191,33 @@ li{margin:6px 0}
 
 /* ========== Helper Links (Top) ========== */
 .to-top{
-  position:fixed;
-  right:16px; bottom:16px;
-  padding:10px 12px;
-  border-radius:10px;
-  background:#10151b;
-  border:1px solid var(--ring);
-  color:var(--ink);
-  /* Falls auf der Startseite noch "container" verwendet wird */
-.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  position: fixed;
+  right: 16px; bottom: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #10151b;
+  border: 1px solid var(--ring);
+  color: var(--ink);
+}
+.to-top:hover{ color: var(--accent); }
 
-/* Falls ein <section> direkt .grid-2 trägt (ohne .wrap innen) */
-section.grid-2{padding-left:24px;padding-right:24px}
+/* Optionaler Container-Fallback */
+.container{ max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
-/* Abstände konsistent */
-section {
+/* Falls ein <section> direkt .grid-2 trägt */
+section.grid-2{ padding-left: 24px; padding-right: 24px; }
+
+/* Abstände konsistent (nur 1x definieren) */
+section{
   padding: 48px 0;
   border-bottom: 1px solid var(--ring);
+  scroll-margin-top: 80px;
 }
 
-/* Hero – einheitlich für Start + Unterseiten */
-.hero {
+/* ========== Hero – EINMAL, global gültig ========== */
+.hero{
   position: relative;
-  min-height: 100vh;    /* volle Bildschirmhöhe */
+  min-height: 100vh;          /* volle Viewport-Höhe */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,15 +225,16 @@ section {
   overflow: hidden;
   border-bottom: 1px solid var(--ring);
 }
-
-.hero .inner {
+.hero .inner{
   position: relative;
   z-index: 1;
   max-width: 800px;
   padding: 40px 20px;
 }
+.hero .sub{ max-width: 780px; margin: 0 auto 14px; }
 
-.hero-bg::before {
+/* Hintergrundbild über ::before */
+.hero-bg::before{
   content: "";
   position: absolute;
   inset: 0;
@@ -237,3 +242,13 @@ section {
   filter: brightness(0.45) saturate(0.9);
   z-index: 0;
 }
+
+/* (Optional) eigenes Hero-Bild pro Seite, z. B. Süchte: */
+/*
+.hero-suechte::before{
+  content:"";
+  position:absolute; inset:0;
+  background:url("images/hero-suechte.jpg") center/cover no-repeat;
+  filter:brightness(0.45) saturate(0.9);
+}
+*/

@@ -247,4 +247,29 @@ section{padding:48px 0;border-bottom:1px solid var(--ring)}
   background: url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
   filter: brightness(0.45) saturate(0.9);
   z-index: 0;
+}.hero {
+  position: relative;
+  min-height: 100vh;    /* volle Bildschirmhöhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring);
+}
+
+.hero .inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 40px 20px;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
+  filter: brightness(0.45) saturate(0.9);
+  z-index: 0;
 }

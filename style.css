@@ -1,222 +1,202 @@
-/* ======================================================
-   Sinnwärts – Dark Theme Stylesheet
-   ------------------------------------------------------
-   Struktur:
-   1. Reset & Basics
-   2. Layout Container
-   3. Navigation
-   4. Hero
-   5. Typografie
-   6. Buttons
-   7. Grid-System
-   8. Listen / Zitate / Extras
-   9. Footer
-   ====================================================== */
-
-
-/* ---------- 1. Reset & Basics ---------- */
+/* ========== Basis / Reset ========== */
 :root{
-  --bg:#0b0b0b; 
-  --ink:#eee; 
-  --muted:#a6a6a6; 
-  --gold:#f5c242;
-  --panel:#141414; 
-  --max:1100px; 
-  --gap:28px; 
-  --r:14px;
+  --bg:#0b0f12;        /* Hintergrund */
+  --ink:#e8e6e3;       /* Text */
+  --muted:#a7a7a7;     /* Sekundärtext */
+  --accent:#d4af37;    /* Gold */
+  --ring:#2a2f36;      /* Linien/Umriss */
+  --maxw:1000px;       /* Inhaltsbreite */
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-html,body{
-  margin:0;
+html,body{margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+
+body{
   background:var(--bg);
   color:var(--ink);
-  font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-family: 'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.6;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
 }
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
+
+/* Links & Buttons */
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.btn{
+  display:inline-block;
+  padding:12px 18px;
   border-radius:12px;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:var(--bg);
+  font-weight:600;
 }
-h1,h2,h3{line-height:1.2;margin:0 0 14px}
-h2{color:var(--gold)}
-a{color:var(--gold);text-decoration:none}
+.btn.ghost{
+  background:transparent;
+  color:var(--accent);
+}
 
+/* Überschriften & Text */
+h1,h2,h3{line-height:1.2;margin:0 0 10px}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:700}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:700;color:var(--accent)}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
-/* ---------- 2. Layout Container ---------- */
-.container{
-  max-width:var(--max);
+/* Layout Container */
+.wrap{
+  max-width:var(--maxw);
   margin:0 auto;
-  padding:0 20px;
+  padding:0 24px;           /* Abstand links/rechts */
 }
-.block{padding:72px 0}
 
+/* Grid Utilities */
+.grid-2{
+  display:grid;
+  gap:32px;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+}
+@media (max-width: 880px){
+  .grid-2{grid-template-columns:1fr}
+}
 
-/* ---------- 3. Navigation ---------- */
+/* Kartenlayout (Cards) */
+.cards{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  margin:16px 0;
+}
+.card{
+  background:#0e1216;
+  border:1px solid var(--ring);
+  border-radius:14px;
+  padding:16px;
+}
+.card p{margin:6px 0 0}
+
+/* Bilder einheitlich */
+.section-img,
+.portrait{
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+  border-radius:12px;
+  border:1px solid var(--ring);
+}
+
+/* Blockquote (Zitate) */
+blockquote{
+  border-left:3px solid var(--accent);
+  padding-left:14px;
+  margin:0 0 14px;
+  opacity:.95;
+}
+blockquote p{margin:8px 0}
+
+/* ========== Navigation (oben, sticky) ========== */
 .site-header{
   position:sticky;
   top:0;
-  z-index:1000;
-  background:rgba(11,11,11,.92);
-  backdrop-filter:blur(4px);
-  border-bottom:1px solid #222;
+  z-index:100;
+  background:rgba(11,15,18,.95);
+  backdrop-filter:saturate(120%) blur(6px);
+  border-bottom:1px solid var(--ring);
 }
 .nav-container{
-  max-width:var(--max);
+  max-width:var(--maxw);
   margin:0 auto;
-  padding:12px 20px;
+  padding:10px 24px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
+  gap:16px;
 }
 .brand{
-  font-weight:700;
   font-size:1.1rem;
-  color:var(--gold);
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--accent);
 }
 .nav-list{
   list-style:none;
   display:flex;
-  gap:24px;
+  gap:18px;
   margin:0;
   padding:0;
+  flex-wrap:wrap;
 }
 .nav-list a{
   color:var(--ink);
-  font-weight:600;
+  text-decoration:none;
+  padding:8px 0;
+  border-bottom:2px solid transparent;
 }
-.nav-list a:hover,
-.nav-list a.active{
-  color:var(--gold);
-}
+.nav-list a:hover{color:var(--accent)}
+.nav-list a.active{border-bottom-color:var(--accent)}
 
-
-/* ---------- 4. Hero ---------- */
+/* ========== Hero ========== */
 .hero{
   position:relative;
-  height:82vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  background-size:cover;
-  background-position:center;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.45);
-}
-.hero-content{
-  position:relative;
-  z-index:1;
-  max-width:900px;
-  padding:0 20px;
-}
-.hero-badge{
-  height:84px;
-  margin-bottom:12px;
-  border-radius:10px;
-}
-.hero h1{
-  font-size:3.2rem;
-  color:var(--gold);
-  margin-bottom:4px;
-}
-.tagline{
-  font-size:1.15rem;
-  color:#f0f0f0;
-  margin:0 0 8px;
-}
-.subline{
-  color:#e3e3e3;
-  margin:0 0 18px;
-}
-.btn-row{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-
-/* ---------- 5. Typografie ---------- */
-h2{font-size:1.8rem}
-h3{font-size:1.2rem;color:var(--gold)}
-
-
-/* ---------- 6. Buttons ---------- */
-.btn{
-  display:inline-block;
-  padding:12px 20px;
-  border-radius:10px;
-  font-weight:700;
-}
-.btn-accent{
-  background:var(--gold);
-  color:#0b0b0b;
-}
-.btn-ghost{
-  border:1px solid #373737;
-  color:var(--ink);
-  background:transparent;
-}
-.btn:hover{filter:brightness(1.06)}
-
-
-/* ---------- 7. Grid-System ---------- */
-.grid-2{
+  min-height:52vh;
   display:grid;
-  grid-template-columns:1fr 420px;
-  gap:var(--gap);
-  align-items:center;
-}
-.grid-2.flip{
-  grid-template-columns:420px 1fr;
-}
-.grid-2.flip > figure{order:1}
-.grid-2.flip > article{order:2}
-@media (max-width:900px){
-  .grid-2,.grid-2.flip{grid-template-columns:1fr}
-  .grid-2 > figure,
-  .grid-2.flip > figure{justify-self:center}
-  .grid-2 > figure img{max-width:78%}
-}
-
-
-/* ---------- 8. Listen / Zitate / Extras ---------- */
-.checks{margin:0;padding:0 0 0 18px}
-.checks li{margin:6px 0}
-.quote{
-  border-left:4px solid var(--gold);
-  padding-left:14px;
-  color:#f5f5f5;
-}
-.ctas{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.pill{
-  display:inline-block;
-  border:1px solid #3a3a3a;
-  border-radius:999px;
-  padding:10px 14px;
-  color:#ddd;
-}
-.pill:hover{border-color:#555}
-
-
-/* ---------- 9. Footer ---------- */
-.site-footer{
-  border-top:1px solid #1f1f1f;
-  padding:30px 0;
-  margin-top:20px;
-  color:var(--muted);
+  place-items:center;
   text-align:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--ring);
 }
+.hero > .inner{position:relative;padding:48px 20px}
+.hero .sub{max-width:780px;margin:0 auto 14px}
+
+/* Hero mit Hintergrundbild:
+   Füge deiner Hero-Section entweder .hero-bg hinzu ODER eine spezifische Klasse (z. B. .hero-nora).
+   Beispiel im HTML: <header class="hero hero-bg"> */
+.hero-bg::before,
+.hero-nora::before{
+  content:"";
+  position:absolute;inset:0;
+  background:#0b0f12 center/cover no-repeat;
+  filter:brightness(0.35) saturate(0.9);
+}
+/* Standard-Bild für generische Seiten (kannst du überschreiben) */
+.hero-bg::before{
+  background-image:url("images/hero-sucht-sucht-sinn.jpg");
+}
+/* Spezifisches Bild für N.O.R.A.-Seite (nur wenn .hero-nora genutzt wird) */
+.hero-nora::before{
+  background-image:url("images/hero-sucht-sucht-sinn.jpg");
+}
+
+/* ========== Sections & Footer ========== */
+section{
+  padding:48px 0;
+  border-bottom:1px solid var(--ring);
+  scroll-margin-top:80px; /* für Anchor-Links unter sticky Header */
+}
+footer{
+  padding:32px 0;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid var(--ring);
+}
+
+/* ========== Listen ========== */
+ul{padding-left:18px;margin:0 0 14px}
+li{margin:6px 0}
+
+/* ========== Helper Links (Top) ========== */
+.to-top{
+  position:fixed;
+  right:16px; bottom:16px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#10151b;
+  border:1px solid var(--ring);
+  color:var(--ink);
+}
+.to-top:hover{color:var(--accent)}

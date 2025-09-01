@@ -201,3 +201,11 @@ li{margin:6px 0}
 }
 .to-top:hover{color:var(--accent)}
 <link rel="stylesheet" href="style.css">
+.section-img, .portrait, #ueber img{
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--ring);
+}

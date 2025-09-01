@@ -206,4 +206,20 @@ section.grid-2{padding-left:24px;padding-right:24px}
 
 /* Extra: Abstände konsistent */
 section{padding:48px 0;border-bottom:1px solid var(--ring)}
+  .hero {
+  position: relative;
+  min-height: 100vh;       /* statt 52vh → volles Viewport-Höhe */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring);
+}
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-sucht-sucht-sinn.jpg") center/cover no-repeat;
+  filter: brightness(0.45) saturate(0.9);
+}
 

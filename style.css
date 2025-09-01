@@ -113,4 +113,21 @@ a{color:var(--gold);text-decoration:none}
   padding-left: 14px;
   margin: 0 0 14px;
   opacity: .95;
+}.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px; /* sorgt für Abstand links/rechts */
+}
+
+.grid-2 {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
 }

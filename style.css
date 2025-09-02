@@ -259,4 +259,17 @@ section{
   .hero h1{font-size:clamp(2.6rem,4vw,4rem);color:#d4af37;font-weight:700}
   .hero .sub{font-size:clamp(1.1rem,1.6vw,1.5rem);color:#d4af37;margin:.75rem 0 0}
 </style>
-
+/* Header: kompakt, mit goldener Linie */
+.site-header{
+  position:sticky; top:0; z-index:1000;
+  background:#0b0f12;
+  padding:.65rem 1.2rem;
+  border-bottom:2px solid #d4af37;
+}
+.nav-container{
+  max-width:1000px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+}
+.brand{
+  font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  colo

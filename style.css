@@ -193,3 +193,33 @@ footer{
 #ueber .nav-list a{ color:var(--ink) }
 #ueber .nav-list a:hover,
 #ueber .nav-list a.active{ color:var(--accent); border-bottom-color:var(--accent) }
+/* === Vars & Basics === */
+:root{--bg:#0b0f12;--ink:#e8e6e3;--muted:#a7a7a7;--accent:#d4af37;--ring:#2a2f36;--maxw:1000px}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+
+/* Links & Buttons */
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--accent);background:var(--accent);color:var(--bg);font-weight:600}
+.btn.ghost{background:transparent;color:var(--accent)}
+
+/* Header / Navigation */
+.site-header{position:sticky;top:0;z-index:1000;background:#0b0f12;border-bottom:2px solid var(--accent);padding:.65rem 1.2rem}
+.nav-container{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{color:var(--ink);font-weight:700;text-transform:uppercase}
+.nav-list{list-style:none;display:flex;gap:1.4rem;margin:0;padding:0;flex-wrap:wrap}
+.nav-list a{color:var(--ink);border-bottom:2px solid transparent;opacity:.92;padding:.35rem .1rem}
+.nav-list a:hover,.nav-list a.active{color:var(--accent);border-bottom-color:var(--accent);opacity:1}
+
+/* Hero – OHNE Bilder (nur stabiler Textblock) */
+.hero{position:relative;min-height:45vh;display:grid;place-items:center;text-align:center;border-bottom:1px solid var(--ring)}
+.hero .inner,.hero .hero-content{max-width:900px;margin:0 auto;padding:48px 20px}
+.hero h1{color:var(--accent);font-weight:700;line-height:1.15;margin:.2rem 0 .6rem}
+.hero .sub,.tagline{max-width:780px;margin:0 auto 14px;opacity:.95}
+.hero-home{min-height:60vh}
+.hero-ueber{min-height:45vh}
+@media(max-width:768px){.hero-home{min-height:70vh}}
+
+/* Sections / Footer */
+section{padding:48px 0;border-bottom:1px solid var(--ring);scroll-margin-top:80px}
+footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid var(--ring)}

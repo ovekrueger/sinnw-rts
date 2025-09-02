@@ -213,25 +213,7 @@ section{
   border-bottom: 1px solid var(--ring);
   scroll-margin-top: 80px;
 }
-
-/* ========== Hero – EINMAL, global gültig ========== */
-.hero{
-  position: relative;
-  min-height: 100vh;          /* volle Viewport-Höhe */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  border-bottom: 1px solid var(--ring);
-}
-.hero .inner{
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 40px 20px;
-}
-.hero .sub{ max-width: 780px; margin: 0 auto 14px; }
+px; margin: 0 auto 14px; }
 
 /* Hintergrundbild über ::before */
 .hero-bg::before{
@@ -243,15 +225,7 @@ section{
   z-index: 0;
 }
 
-/* (Optional) eigenes Hero-Bild pro Seite, z. B. Süchte: */
-/*
-.hero-suechte::before{
-  content:"";
-  position:absolute; inset:0;
-  background:url("images/hero-suechte.jpg") center/cover no-repeat;
-  filter:brightness(0.45) saturate(0.9);
-}
-/* Navigation konsistent */
+
 #ueber a{ color:var(--ink); text-decoration:none; }
 #ueber .nav-list a{
   color:#e8e6e3;

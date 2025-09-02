@@ -409,4 +409,8 @@ section{
     min-height:70vh;
     background-size:cover;
   }
-}
+/* ALT – macht ALLE Links gold */
+#ueber a{ color:var(--gold)!important; text-decoration:none; }
+
+/* NEU – Standard hell; Gold nur via Nav-Regeln */
+#ueber a{ color:var(--ink); text-decoration:none; }

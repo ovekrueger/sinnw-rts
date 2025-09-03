@@ -331,4 +331,28 @@ section{
 #ueber-mich-nav a:hover {
   text-decoration: underline;
 }
+/* Subnav unter Hero */
+.subnav {
+  max-width: var(--maxw);
+  margin: 0 auto 40px;
+  padding: 0 32px;
+}
 
+.subnav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  justify-content: center; /* mittig ausgerichtet */
+  margin: 0;
+  padding: 0;
+}
+
+.subnav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.subnav a:hover {
+  text-decoration: underline;
+}

@@ -141,10 +141,10 @@ blockquote p{margin:8px 0}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
 
-/* ========== Hero ========== */
+/* ========== Hero (einheitlich) ========== */
 .hero{
   position: relative;
-  min-height: 40vh;    /* Höhe – kannst du bei Bedarf auf 55–60vh erhöhen */
+  min-height: 66vh;                 /* mehr Höhe, unten wird sichtbar */
   display: grid;
   place-items: center;
   text-align: center;
@@ -154,7 +154,9 @@ blockquote p{margin:8px 0}
 
 .hero > .inner{
   position: relative;
-  padding: 48px 20px;
+  z-index: 1;
+  max-width: 800px;
+  padding: 40px 20px;
 }
 
 .hero .sub{
@@ -162,17 +164,18 @@ blockquote p{margin:8px 0}
   margin: 0 auto 14px;
 }
 
-/* Hintergrundbild */
+/* Hintergrundbild – Fokus deutlich nach unten */
 .hero-bg::before,
 .hero-nora::before{
   content: "";
   position: absolute;
   inset: 0;
-  background: #0b0f12 center/cover no-repeat;
+  background: #0b0f12 / cover no-repeat;
   background-image: url("images/hero-sucht-sucht-sinn.jpg");
-  background-position: 50% 90%;   /* Fokus nach unten */
-  filter: brightness(0.45) saturate(0.9);
+  background-position: 50% 92%;     /* 92% = tieferer Ausschnitt unten */
+  filter: brightness(.45) saturate(.9);
   z-index: 0;
+}
 }
 /* Inhalt über das Bild legen */
 .hero .inner{

@@ -307,5 +307,28 @@ section{
     border: 1px solid var(--ring);
   }
 }
+/* Über-mich – Linkliste unter Hero */
+#ueber-mich-nav {
+  max-width: var(--maxw);
+  margin: 0 auto 40px;
+  padding: 0 32px;
+}
 
+#ueber-mich-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  justify-content: center; /* mittig statt links */
+  padding: 0;
+  margin: 0;
+}
+
+#ueber-mich-nav a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#ueber-mich-nav a:hover {
+  text-decoration: underline;
+}
 

@@ -141,9 +141,7 @@ blockquote p{margin:8px 0}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
 
-
-/
-}/* ========== Hero (einheitlich) ========== */
+/* ========== Hero (einheitlich) ========== */
 .hero{
   position: relative;
   min-height: 66vh;                  /* Höhe für alle Seiten */

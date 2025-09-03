@@ -5,8 +5,8 @@
   --muted:#a7a7a7;     /* Sekundärtext */
   --accent:#d4af37;    /* Gold */
   --ring:#2a2f36;      /* Linien/Umriss */
-  --maxw:1000px;       /* Inhaltsbreite */
-}
+  --maxw:1000px;}      /* Inhaltsbreite */
+
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -140,17 +140,45 @@ blockquote p{margin:8px 0}
 .nav-list a:hover{color:var(--accent)}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
+/* ========== Hero (einheitlich) ========== */
+.hero{
+  position: relative;
+  min-height: 66vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring);
+}
+.hero > .inner{
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 40px 20px;
+}
+.hero .sub{
+  max-width: 780px;
+  margin: 0 auto 14px;
+}
 
-
-}/* Hero-Bild für die Meine-KI-Seite */
-.hero-nora::before{
+/* Standard-Hintergrundbild für alle mit .hero-bg */
+.hero-bg::before{
   content: "";
   position: absolute;
   inset: 0;
   background: url("images/hero-sucht-sucht-sinn.jpg") 50% 94%/cover no-repeat;
   filter: brightness(.45) saturate(.9);
   z-index: 0;
+}/* Hero-Bild für die Meine-KI-Seite */
+.hero-nora::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/hero-sucht-sucht-sinn.jpg") 50% 94%/cover no-repeat; /* oder eigenes Bild */
+  filter: brightness(.45) saturate(.9);
+  z-index: 0;
 }
+
 
 /* Optional: individuelles Hero-Bild für Süchte (nur nutzen, wenn gewünscht)
 .hero-suechte::before{

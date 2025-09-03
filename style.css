@@ -371,4 +371,24 @@ section{
   height: 50vh;          /* gleiche Höhe wie der Container */
   object-fit: cover;     /* füllt den Bereich aus, ohne Verzerrung */
   display: block;
+}/* Hero flacher machen */
+.hero-home {
+  min-height: 50vh;   /* flacher als vorher */
+  position: relative; /* wichtig für das Bild */
+  overflow: hidden;
+}
+
+.hero-home img.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Bild füllt Container, ohne Verzerrung */
+  z-index: 0;         /* liegt hinter dem Text */
+}
+
+.hero-home .inner {
+  position: relative;
+  z-index: 1;         /* Text liegt über dem Bild */
 }

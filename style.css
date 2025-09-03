@@ -361,4 +361,14 @@ section{
   height: auto;
   margin: 0 auto;
   display: block;
+}/* Hero: Größe und Bildanpassung */
+.hero-home {
+  min-height: 50vh; /* statt 66vh – macht das Hero flacher */
+}
+
+.hero-home img.hero-bg {
+  width: 100%;
+  height: 50vh;          /* gleiche Höhe wie der Container */
+  object-fit: cover;     /* füllt den Bereich aus, ohne Verzerrung */
+  display: block;
 }

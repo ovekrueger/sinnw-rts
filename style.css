@@ -144,24 +144,26 @@ blockquote p{margin:8px 0}
 /* ========== Hero (einheitlich) ========== */
 .hero{
   position: relative;
-  min-height: 66vh;                 /* mehr Höhe, unten wird sichtbar */
+  min-height: 68vh;               /* höher, damit unten sichtbar wird */
   display: grid;
   place-items: center;
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid var(--ring);
 }
+.hero > .inner{ position: relative; z-index: 1; max-width: 800px; padding: 40px 20px; }
+.hero .sub{ max-width: 780px; margin: 0 auto 14px; }
 
-.hero > .inner{
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 40px 20px;
-}
-
-.hero .sub{
-  max-width: 780px;
-  margin: 0 auto 14px;
+/* Hintergrundbild mit Fokus unten */
+.hero-bg::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0b0f12 center/cover no-repeat;
+  background-image: url("images/hero-sucht-sucht-sinn.jpg");
+  background-position: 50% 94%;   /* deutlich nach unten */
+  filter: brightness(.45) saturate(.9);
+  z-index: 0;
 }
 
 /* Hintergrundbild – Fokus deutlich nach unten */

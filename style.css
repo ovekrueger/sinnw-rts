@@ -155,18 +155,25 @@ blockquote p{margin:8px 0}
 .hero .sub{max-width:780px;margin:0 auto 14px}
 
 /* Hero mit Hintergrundbild:
-   Füge deiner Hero-Section entweder .hero-bg hinzu ODER eine spezifische Klasse (z. B. .hero-nora).
-   Beispiel im HTML: <header class="hero hero-bg"> */
+   HTML: <section class="hero hero-bg"> oder <header class="hero hero-bg"> */
 .hero-bg::before,
 .hero-nora::before{
-  content:"";
-  position:absolute;inset:0;
-  background:#0b0f12 center/cover no-repeat;
-  filter:brightness(0./* ========== Sections & Footer ========== */
-section{
-  padding:48px 0;
-  border-bottom:1px solid var(--ring);
-  scroll-margin-top:80px; /* für Anchor-Links unter sticky Header */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0b0f12 center/cover no-repeat;
+  background-image: url("images/hero-sucht-sucht-sinn.jpg"); /* Pfad ggf. anpassen */
+  filter: brightness(0.45) saturate(0.9);
+  z-index: 0;
+}
+
+/* Inhalt über das Bild legen */
+.hero .inner{
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 40px 20px;
+}
 }
 footer{
   padding:32px 0;

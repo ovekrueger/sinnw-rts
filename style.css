@@ -355,4 +355,10 @@ section{
 
 .subnav a:hover {
   text-decoration: underline;
+}/* Bildgröße für Digitale Süchte */
+.small-img {
+  max-width: 300px;   /* Bild wird nicht breiter als 300px */
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }

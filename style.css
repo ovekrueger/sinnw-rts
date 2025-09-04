@@ -184,7 +184,26 @@ blockquote p{margin:8px 0}
   height:100%;
   object-fit:cover;
   z-index:0;
-}
+}/* =========================
+   Hero (global)
+   ========================= */
+.hero{ … }        /* dein globaler Hero */
+.hero .inner{ … }
+.hero img.hero-bg{ … }
+
+/* ==== HERO BASELINE RESETS ==== */
+.hero{ … }
+.hero .inner{ … }
+.hero img.hero-bg{ … }
+
+/* ==== HERO PRESETS ==== */
+.hero-home{ … }
+.hero-ueber{ … }
+.hero-nora{ … }
+.hero-suechte{ … }
+
+/* ==== optional: Kontrast-Variante ==== */
+.hero::before{ … }
 
 /* Alias für Startseiten-/Unterseiten-Hero */
 .hero-home{ /* nutzt die Basis aus .hero */ }

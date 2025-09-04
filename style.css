@@ -395,20 +395,21 @@ section{
 .hero-suechte img.hero-bg {
   object-position: center 90%; /* weniger Himmel, mehr unten */
 }/* Hero-Text für Süchte-Seite */
-.hero-suechte .inner {
+
+.hero-suechte {
+  display: flex;
+  align-items: flex-start; /* oder center, wenn du mittig willst */
+  justify-content: center;
+  min-height: 50vh;
   position: relative;
-  z-index: 1;
-  color: #d4af37; /* Gold */
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* dunkler Schimmer für Kontrast */
-  top: 20%; 
-  transform: translateY(-20%);
 }
 
-/* optional: leichter Overlay hinter Text */
-.hero-suechte::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
-  z-index: 0;
+.hero-suechte .inner {
+  margin-top: 15%;   /* Abstand von oben */
+  color: #d4af37;    /* Gold */
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* dezenter Schatten */
+}
+.hero-suechte .inner {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }

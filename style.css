@@ -326,3 +326,32 @@ blockquote p{margin:8px 0}
 @media (max-width:640px){
   .hero .inner{ margin-top: 12vh; }
 }
+.hero .inner{
+  color:#d4af37; /* Gold */
+  text-shadow:0 2px 4px rgba(0,0,0,.65);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+.hero h1{
+  font-size:3rem;       /* größer */
+  line-height:1.2;
+  margin-bottom:0.5em;
+}
+.hero .sub{
+  font-size:1.4rem;     /* Untertitel größer */
+  line-height:1.4;
+}
+@media (max-width:640px){
+  .hero h1{ font-size:2rem; }
+  .hero .sub{ font-size:1.1rem; }
+}
+.hero .inner{ margin-top:6vh; } /* Standard höher gesetzt */
+.hero.hero-home .inner{ margin-top:7vh; }
+.hero.hero-ueber .inner{ margin-top:8vh; }
+.hero.hero-suechte .inner{ margin-top:5vh; }
+.hero.hero-nora .inner{ margin-top:7vh; }
+
+@media (max-width:640px){
+  .hero .inner{ margin-top:12vh; } /* Mobile etwas tiefer */
+}

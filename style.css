@@ -393,5 +393,5 @@ section{
   z-index: 1;         /* Text liegt über dem Bild */
 }/* Hero-Bild nur für Süchte-Seite */
 .hero-suechte img.hero-bg {
-  object-position: center 35%; /* weniger Himmel, mehr unten */
+  object-position: center 70%; /* weniger Himmel, mehr unten */
 }

@@ -299,3 +299,4 @@ blockquote p{margin:8px 0}
 .hero.hero-ueber img.hero-bg{ object-position: center 80% !important; }
 /* Süchte */
 .hero.hero-suechte img.hero-bg{ object-position: center 80% !important; }
+.hero{ outline:none !important; }

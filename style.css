@@ -347,10 +347,10 @@ blockquote p{margin:8px 0}
   .hero .sub{ font-size:1.1rem; }
 }
 .hero .inner{ margin-top:6vh; } /* Standard höher gesetzt */
-.hero.hero-home .inner{ margin-top:2vh; }
-.hero.hero-ueber .inner{ margin-top:2vh; }
-.hero.hero-suechte .inner{ margin-top:2vh; }
-.hero.hero-nora .inner{ margin-top:7vh; }
+.hero.hero-home .inner{ margin-top:1vh; }
+.hero.hero-ueber .inner{ margin-top:1vh; }
+.hero.hero-suechte .inner{ margin-top:1vh; }
+.hero.hero-nora .inner{ margin-top:1vh; }
 
 @media (max-width:640px){
   .hero .inner{ margin-top:12vh; } /* Mobile etwas tiefer */

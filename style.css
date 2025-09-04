@@ -300,3 +300,29 @@ blockquote p{margin:8px 0}
 /* Süchte */
 .hero.hero-suechte img.hero-bg{ object-position: center 90% !important; }
 .hero{ outline:none !important; }
+/* ======================================
+   HERO – Textfarbe & Position (global)
+   ====================================== */
+
+/* Basis: alle Hero-Texte gold & klar */
+.hero .inner{
+  color: #d4af37;  /* Gold */
+  text-shadow: 0 1px 3px rgba(0,0,0,.55);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Globale Text-Höhe anheben */
+.hero .inner{ margin-top: 8vh; }
+
+/* Feinjustierung je Seite */
+.hero.hero-home .inner{ margin-top: 9vh; }
+.hero.hero-ueber .inner{ margin-top: 10vh; }
+.hero.hero-suechte .inner{ margin-top: 7vh; }
+.hero.hero-nora .inner{ margin-top: 9vh; }
+
+/* Mobile: etwas tiefer, sonst zu nah am Rand */
+@media (max-width:640px){
+  .hero .inner{ margin-top: 12vh; }
+}

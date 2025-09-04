@@ -373,3 +373,41 @@ blockquote p{margin:8px 0}
 .hero.hero-ueber  .inner{ margin-top: 2vh; }
 .hero.hero-suechte.inner{ margin-top: 2vh; }
 .hero.hero-nora   .inner{ margin-top: 3vh; }
+/* =========================
+   ÜBER-MICH – Zickzack Layout
+   ========================= */
+.about .section{
+  display:grid;
+  grid-template-columns: 1.25fr 1fr;    /* Text etwas breiter als Bild */
+  gap:32px;
+  align-items:center;
+  margin:48px 0;
+}
+
+/* Jeder gerade Block (2., 4., …) tauscht Seiten */
+.about .section:nth-child(even){
+  grid-template-columns: 1fr 1.25fr;
+}
+.about .section:nth-child(even) .media{ order:-1; }
+
+.about .text{
+  max-width:65ch;
+}
+.about .media img{
+  width:clamp(260px, 32vw, 400px);      /* kleiner machen über mittleren Wert */
+  height:auto;
+  border-radius:12px;
+  border:1px solid var(--ring);
+  object-fit:cover;
+  display:block;
+}
+
+@media (max-width:880px){
+  .about .section{
+    grid-template-columns:1fr;
+    gap:20px;
+    margin:36px 0;
+  }
+  .about .media{ order:2; justify-self:center; }
+  .about .media img{ width:min(90vw,380px); }
+}

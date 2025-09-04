@@ -355,3 +355,21 @@ blockquote p{margin:8px 0}
 @media (max-width:640px){
   .hero .inner{ margin-top:12vh; } /* Mobile etwas tiefer */
 }
+/* === Hero: oben ausrichten, nicht zentrieren === */
+.hero{
+  /* statt place-items:center */
+  place-items: start center;           /* vertikal oben, horizontal mittig */
+}
+
+/* Das Element selbst nach oben pinnen */
+.hero .inner{
+  align-self: start;                    /* ignoriert zentrierung */
+  margin-top: 2vh;                      /* feintuning: 0–6vh je nach Seite */
+  padding-top: 0;                       /* falls der 40px-Padding zu tief wirkt */
+}
+
+/* Optional: pro Seite Startwerte */
+.hero.hero-home   .inner{ margin-top: 3vh; }
+.hero.hero-ueber  .inner{ margin-top: 2vh; }
+.hero.hero-suechte.inner{ margin-top: 2vh; }
+.hero.hero-nora   .inner{ margin-top: 3vh; }

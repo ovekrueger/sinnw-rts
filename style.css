@@ -292,3 +292,5 @@ blockquote p{margin:8px 0}
   color:var(--muted);
 }
 .site-footer .wrap{padding:20px 24px}
+/* DEBUG – nachher wieder löschen */
+.hero{ outline:2px solid red !important; }

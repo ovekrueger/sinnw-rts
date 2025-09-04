@@ -1,12 +1,14 @@
-/* ========== Basis / Reset ========== */
+/* =========================
+   Basis / Variablen
+   ========================= */
 :root{
   --bg:#0b0f12;        /* Hintergrund */
   --ink:#e8e6e3;       /* Text */
   --muted:#a7a7a7;     /* Sekundärtext */
   --accent:#d4af37;    /* Gold */
   --ring:#2a2f36;      /* Linien/Umriss */
-  --maxw:1000px;}      /* Inhaltsbreite */
-
+  --maxw:1000px;       /* Inhaltsbreite */
+}
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
@@ -19,42 +21,45 @@ body{
   line-height:1.6;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 
-/* Links & Buttons */
+/* =========================
+   Links & Buttons
+   ========================= */
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
+
 .btn{
   display:inline-block;
-  padding:12px 18px;
+  padding:10px 16px;
   border-radius:12px;
   border:1px solid var(--accent);
-  background:var(--accent);
-  color:var(--bg);
-  font-weight:600;
-}
-.btn.ghost{
+  color:var(--ink);
   background:transparent;
-  color:var(--accent);
+  text-decoration:none;
 }
+.btn:hover{background:rgba(212,175,55,.12)}
+.btn.ghost{
+  border-color:var(--ring);
+  color:var(--ink);
+}
+.btn.ghost:hover{background:rgba(255,255,255,.06)}
 
-/* Überschriften & Text */
-h1,h2,h3{line-height:1.2;margin:0 0 10px}
-h1{font-size:clamp(2rem,5vw,3rem);font-weight:700}
-h2{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:700}
-h3{font-size:1.15rem;font-weight:700;color:var(--accent)}
-p{margin:0 0 14px}
-.muted{color:var(--muted)}
-.eyebrow{letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
-
-/* Layout Container */
+/* =========================
+   Layout-Container & Utilities
+   ========================= */
 .wrap{
   max-width:var(--maxw);
   margin:0 auto;
-  padding:0 24px;           /* Abstand links/rechts */
+  padding:0 24px;
 }
 
-/* Grid Utilities */
+.block{
+  padding:40px 0;
+  border-bottom:1px solid var(--ring);
+}
+
 .grid-2{
   display:grid;
   gap:32px;
@@ -65,7 +70,7 @@ p{margin:0 0 14px}
   .grid-2{grid-template-columns:1fr}
 }
 
-/* Kartenlayout (Cards) */
+/* Karten (falls verwendet) */
 .cards{
   display:grid;
   gap:16px;
@@ -90,7 +95,15 @@ p{margin:0 0 14px}
   border:1px solid var(--ring);
 }
 
-/* Blockquote (Zitate) */
+/* Kleine Bildvariante (z. B. Handy) */
+.small-img{
+  max-width:300px;
+  height:auto;
+  margin:0 auto;
+  display:block;
+}
+
+/* Zitate */
 blockquote{
   border-left:3px solid var(--accent);
   padding-left:14px;
@@ -99,7 +112,9 @@ blockquote{
 }
 blockquote p{margin:8px 0}
 
-/* ========== Navigation (oben, sticky) ========== */
+/* =========================
+   Navigation (oben, sticky)
+   ========================= */
 .site-header{
   position:sticky;
   top:0;
@@ -140,17 +155,19 @@ blockquote p{margin:8px 0}
 .nav-list a:hover{color:var(--accent)}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
-/* ========== Hero (einheitlich) ========== */
+/* =========================
+   Hero (global)
+   ========================= */
 .hero{
   position: relative;
-  min-height: 66vh;
+  min-height: 50vh;              /* flacher, konsistent */
   display: grid;
   place-items: center;
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid var(--ring);
 }
-.hero > .inner{
+.hero .inner{
   position: relative;
   z-index: 1;
   max-width: 800px;
@@ -160,256 +177,99 @@ blockquote p{margin:8px 0}
   max-width: 780px;
   margin: 0 auto 14px;
 }
-
-/* Standard-Hintergrundbild für alle mit .hero-bg */
-.hero-bg::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/hero-sucht-sucht-sinn.jpg") 50% 94%/cover no-repeat;
-  filter: brightness(.45) saturate(.9);
-  z-index: 0;
-}/* Hero-Bild für die Meine-KI-Seite */
-.hero-nora::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/hero-sucht-sucht-sinn.jpg") 50% 94%/cover no-repeat; /* oder eigenes Bild */
-  filter: brightness(.45) saturate(.9);
-  z-index: 0;
+.hero img.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
 }
 
+/* Alias für Startseiten-/Unterseiten-Hero */
+.hero-home{ /* nutzt die Basis aus .hero */ }
 
-/* Optional: individuelles Hero-Bild für Süchte (nur nutzen, wenn gewünscht)
-.hero-suechte::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("images/hero-suechte.jpg") 50% 94%/cover no-repeat;
-  filter: brightness(.45) saturate(.9);
-  z-index: 0;
+/* =========================
+   Subnav (unter Hero, zentriert)
+   ========================= */
+#ueber-mich-nav a{color:var(--accent);text-decoration:none}
+#ueber-mich-nav a:hover{text-decoration:underline}
+
+.subnav{
+  max-width:var(--maxw);
+  margin:0 auto 40px;
+  padding:0 32px;
 }
-*/
-
-/* Optional: Seite mit eigenem Hero-Bild (nur benutzen, wenn gewünscht)
-.hero-suechte::before{
-  content:"";
-  position:absolute; inset:0;
-  background: url("images/hero-suechte.jpg") 50% 94%/cover no-repeat;
-  filter: brightness(.45) saturate(.9);
-  z-index: 0;
+.subnav ul{
+  list-style:none;
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  margin:0;
+  padding:0;
 }
-*/
-
-
-footer{
-  padding:32px 0;
-  text-align:center;
-  color:var(--muted);
-  border-top:1px solid var(--ring);
+.subnav a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
 }
+.subnav a:hover{text-decoration:underline}
 
-/* ========== Listen ========== */
-ul{padding-left:18px;margin:0 0 14px}
-li{margin:6px 0}
-
-/* ========== Helper Links (Top) ========== */
-.to-top{
-  position: fixed;
-  right: 16px; bottom: 16px;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: #10151b;
-  border: 1px solid var(--ring);
-  color: var(--ink);
-}
-.to-top:hover{ color: var(--accent); }
-
-/* Optionaler Container-Fallback */
-.container{ max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-
-/* Falls ein <section> direkt .grid-2 trägt */
-section.grid-2{ padding-left: 24px; padding-right: 24px; }
-
-/* Abstände konsistent (nur 1x definieren) */
-section{
-  padding: 48px 0;
-  border-bottom: 1px solid var(--ring);
-  scroll-margin-top: 80px;
-}
-/* ================== ABOUT BLOCKS START ================== */
-/* Container (falls noch nicht vorhanden) */
+/* =========================
+   Über-mich – alternierende Blöcke
+   (nur wenn du .about-block nutzt)
+   ========================= */
 .about{
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 32px 24px;
 }
-
-/* Grundlayout pro Block */
 .about-block{
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  margin-bottom:3rem;
 }
-
-/* Wechsel: 1. (odd) Bild rechts, 2. (even) Bild links, usw. */
-.about-block:nth-child(odd){ flex-direction: row; }
-.about-block:nth-child(even){ flex-direction: row-reverse; }
-
-.about-text{ flex: 1; }
-.about-img{ flex: 1; }
-
+.about-block:nth-child(odd){flex-direction:row}
+.about-block:nth-child(even){flex-direction:row-reverse}
+.about-text{flex:1}
+.about-img{flex:1}
 .about-img img{
-  width: 100%;
-  max-width: 380px;
-  border-radius: 12px;
-  border: 1px solid var(--ring);
-  box-shadow: 0 4px 10px rgba(0,0,0,.3);
-  margin: 0 auto; /* zentriert schmale Bilder */
+  width:100%;
+  max-width:380px;
+  border-radius:12px;
+  border:1px solid var(--ring);
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  margin:0 auto;
 }
-
-/* Mobile: untereinander, Bild oberhalb (optional) */
 @media (max-width: 880px){
-  .about-block{
-    flex-direction: column;
-    text-align: left; /* oder center, wenn dir das besser gefällt */
-  }
-}
-/* =================== ABOUT BLOCKS END =================== */
-
-/* Über-mich: Bild links/rechts alternierend */
-.block:nth-of-type(even) .grid-2 article { grid-column: 2; }
-.block:nth-of-type(even) .grid-2 figure  { grid-column: 1; }
-
-/* Mobile: natürliche Reihenfolge beibehalten */
-@media (max-width: 880px){
-  .block:nth-of-type(even) .grid-2 article,
-  .block:nth-of-type(even) .grid-2 figure { grid-column: auto; }
-}
-/* Über-mich Alternierung: nur ab 881px nebeneinander */
-@media (min-width: 881px){
-  /* Grundlayout: Artikel links, Bild rechts */
-  .block .grid-2 > article { grid-column: 1; grid-row: 1; }
-  .block .grid-2 > figure  { grid-column: 2; grid-row: 1; justify-self: end; }
-
-  /* Gerader Block (2,4,...) tauscht Seiten */
-  .block:nth-of-type(even) .grid-2 > article { grid-column: 2; }
-  .block:nth-of-type(even) .grid-2 > figure  { grid-column: 1; }
-
-  /* Optional: Bildbreite ruhig halten */
-  .block .grid-2 figure img{
-    width: 100%;
-    max-width: 380px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 12px;
-    border: 1px solid var(--ring);
-  }
-}
-/* Über-mich – Linkliste unter Hero */
-#ueber-mich-nav {
-  max-width: var(--maxw);
-  margin: 0 auto 40px;
-  padding: 0 32px;
+  .about-block{flex-direction:column}
 }
 
-#ueber-mich-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  justify-content: center; /* mittig statt links */
-  padding: 0;
-  margin: 0;
+/* =========================
+   Süchte-Seite – Hero-Feintuning
+   ========================= */
+.hero-suechte img.hero-bg{
+  object-position:center 90%;   /* weniger Himmel, mehr unten; bei Bedarf 80–95% justieren */
+}
+.hero-suechte .inner{
+  margin-top:15%;               /* Text höher */
+  color:#d4af37;                /* Gold */
+  text-shadow:0 1px 3px rgba(0,0,0,.5);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+@media (max-width:600px){
+  .hero-suechte .inner{margin-top:10%}
 }
 
-#ueber-mich-nav a {
-  color: var(--accent);
-  text-decoration: none;
+/* =========================
+   Footer
+   ========================= */
+.site-footer{
+  border-top:1px solid var(--ring);
+  margin-top:40px;
+  color:var(--muted);
 }
-
-#ueber-mich-nav a:hover {
-  text-decoration: underline;
-}
-/* Subnav unter Hero */
-.subnav {
-  max-width: var(--maxw);
-  margin: 0 auto 40px;
-  padding: 0 32px;
-}
-
-.subnav ul {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  justify-content: center; /* mittig ausgerichtet */
-  margin: 0;
-  padding: 0;
-}
-
-.subnav a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.subnav a:hover {
-  text-decoration: underline;
-}/* Bildgröße für Digitale Süchte */
-.small-img {
-  max-width: 300px;   /* Bild wird nicht breiter als 300px */
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}/* Hero: Größe und Bildanpassung */
-.hero-home {
-  min-height: 50vh; /* statt 66vh – macht das Hero flacher */
-}
-
-.hero-home img.hero-bg {
-  width: 100%;
-  height: 50vh;          /* gleiche Höhe wie der Container */
-  object-fit: cover;     /* füllt den Bereich aus, ohne Verzerrung */
-  display: block;
-}/* Hero flacher machen */
-.hero-home {
-  min-height: 50vh;   /* flacher als vorher */
-  position: relative; /* wichtig für das Bild */
-  overflow: hidden;
-}
-
-.hero-home img.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* Bild füllt Container, ohne Verzerrung */
-  z-index: 0;         /* liegt hinter dem Text */
-}
-
-.hero-home .inner {
-  position: relative;
-  z-index: 1;         /* Text liegt über dem Bild */
-}/* Hero-Bild nur für Süchte-Seite */
-.hero-suechte img.hero-bg {
-  object-position: center 90%; /* weniger Himmel, mehr unten */
-}/* Hero-Text für Süchte-Seite */
-
-.hero-suechte {
-  display: flex;
-  align-items: flex-start; /* oder center, wenn du mittig willst */
-  justify-content: center;
-  min-height: 50vh;
-  position: relative;
-}
-
-.hero-suechte .inner {
-  margin-top: 15%;   /* Abstand von oben */
-  color: #d4af37;    /* Gold */
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* dezenter Schatten */
-}
-.hero-suechte .inner {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+.site-footer .wrap{padding:20px 24px}

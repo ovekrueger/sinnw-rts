@@ -347,9 +347,9 @@ blockquote p{margin:8px 0}
   .hero .sub{ font-size:1.1rem; }
 }
 .hero .inner{ margin-top:6vh; } /* Standard höher gesetzt */
-.hero.hero-home .inner{ margin-top:7vh; }
-.hero.hero-ueber .inner{ margin-top:8vh; }
-.hero.hero-suechte .inner{ margin-top:5vh; }
+.hero.hero-home .inner{ margin-top:4vh; }
+.hero.hero-ueber .inner{ margin-top:4vh; }
+.hero.hero-suechte .inner{ margin-top:3vh; }
 .hero.hero-nora .inner{ margin-top:7vh; }
 
 @media (max-width:640px){

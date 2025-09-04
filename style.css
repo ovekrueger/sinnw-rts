@@ -293,3 +293,9 @@ blockquote p{margin:8px 0}
 }
 
 .hero{ outline:2px solid red !important; }
+/* Start */
+.hero.hero-home img.hero-bg{ object-position: center 60% !important; }
+/* Über mich */
+.hero.hero-ueber img.hero-bg{ object-position: center 35% !important; }
+/* Süchte */
+.hero.hero-suechte img.hero-bg{ object-position: center 92% !important; }

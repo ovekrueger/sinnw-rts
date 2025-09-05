@@ -1,1 +1,66 @@
 
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Angebote – Ove Krüger | Sinnwärts</title>
+  <meta name="description" content="Coaching, Mentoring, Workshops – klar, orientierend, menschlich." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Sinnwärts</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-mich.html">Über mich</a></li>
+        <li><a href="suechte.html">Süchte</a></li>
+        <li><a href="nora.html">Meine KI</a></li>
+        <li><a href="angebot.html" class="active">Angebote</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero hero-angebot">
+  <img src="images/hero-angebot.jpg" alt="Angebote – Sinnwärts" class="hero-bg" />
+  <div class="inner">
+    <h1>Angebote</h1>
+    <p class="sub">Klarheit, Orientierung, Menschlichkeit – als Prozess.</p>
+  </div>
+</section>
+
+<!-- Karten -->
+<section class="wrap block">
+  <div class="cards">
+    <article class="card">
+      <h3>1:1 Coaching</h3>
+      <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
+      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+    </article>
+    <article class="card">
+      <h3>Mentoring</h3>
+      <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
+      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+    </article>
+    <article class="card">
+      <h3>Workshops</h3>
+      <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
+      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+    </article>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap"><small>© <span id="y"></span> Ove Krüger · Sinnwärts</small></div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>

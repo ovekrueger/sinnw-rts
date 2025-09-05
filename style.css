@@ -209,11 +209,11 @@ blockquote p{margin:8px 0}
 }
 /* Pro Seite anpassen */
 .hero-home   .inner{margin-top:3vh;}
-.hero-home   img.hero-bg{object-position:center 60%;}
+.hero-home   img.hero-bg{object-position:center 92%;}
 .hero-ueber  .inner{margin-top:2vh;}
-.hero-ueber  img.hero-bg{object-position:center 30%;}
+.hero-ueber  img.hero-bg{object-position:center 92%;}
 .hero-suechte.inner{margin-top:2vh;}
-.hero-suechte img.hero-bg{object-position:center 90%;}
+.hero-suechte img.hero-bg{object-position:center 92%;}
 .hero-nora   .inner{margin-top:2vh;}
 .hero-nora   img.hero-bg{object-position:center 92%;}
 .hero::before{

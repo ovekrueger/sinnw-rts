@@ -313,8 +313,6 @@ blockquote p{margin:8px 0}
   text-rendering: optimizeLegibility;
 }
 
-/* Globale Text-Höhe anheben */
-.hero .inner{ margin-top: 8vh; }
 
 /* Feinjustierung je Seite */
 .hero.hero-home .inner{ margin-top: 9vh; }
@@ -410,4 +408,10 @@ blockquote p{margin:8px 0}
   }
   .about .media{ order:2; justify-self:center; }
   .about .media img{ width:min(90vw,380px); }
+}/* HERO FIX – Text nicht verschieben */
+.hero .inner {
+  position: relative !important;
+  top: auto !important;
+  transform: none !important;
+  margin-top: 2vh;  /* Regler für Höhe */
 }

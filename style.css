@@ -289,3 +289,20 @@ blockquote p{margin:8px 0}
   color:var(--muted);
 }
 .site-footer .wrap{padding:20px 24px}
+/* HERO-TEXT CRISP – global */
+.hero{ place-items: start center !important; }
+
+.hero .inner{
+  position: relative !important;
+  top: auto !important;
+  transform: none !important;   /* killt Unschärfe */
+  filter: none !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.45); /* ggf. testweise: none */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optional: H1/Untertitel etwas knackiger */
+.hero h1{ text-shadow: 0 1px 2px rgba(0,0,0,.4); }
+.hero .sub{ text-shadow: 0 1px 1px rgba(0,0,0,.35); }

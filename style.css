@@ -17,7 +17,7 @@ img{max-width:100%;height:auto;display:block}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family: 'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.6;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
@@ -66,11 +66,11 @@ a:hover{text-decoration:underline}
   grid-template-columns:1fr 1fr;
   align-items:center;
 }
-@media (max-width: 880px){
+@media (max-width:880px){
   .grid-2{grid-template-columns:1fr}
 }
 
-/* Karten (falls verwendet) */
+/* Karten */
 .cards{
   display:grid;
   gap:16px;
@@ -85,7 +85,7 @@ a:hover{text-decoration:underline}
 }
 .card p{margin:6px 0 0}
 
-/* Bilder einheitlich */
+/* Bilder */
 .section-img,
 .portrait{
   width:100%;
@@ -94,8 +94,6 @@ a:hover{text-decoration:underline}
   border-radius:12px;
   border:1px solid var(--ring);
 }
-
-/* Kleine Bildvariante (z. B. Handy) */
 .small-img{
   max-width:300px;
   height:auto;
@@ -156,64 +154,79 @@ blockquote p{margin:8px 0}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
 /* =========================
-   Hero (global)
+   HERO — Clean Baseline
    ========================= */
 .hero{
-  position: relative;
-  min-height: 50vh;              /* flacher, konsistent */
-  display: grid;
-  place-items: center;
-  text-align: center;
-  overflow: hidden;
-  border-bottom: 1px solid var(--ring);
-}
-.hero .inner{
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 40px 20px;
-}
-.hero .sub{
-  max-width: 780px;
-  margin: 0 auto 14px;
+  position:relative;
+  display:grid;
+  place-items:start center;
+  min-height:62vh;
+  text-align:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--ring);
 }
 .hero img.hero-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
+  position:absolute; inset:0;
+  width:100%; height:100%;
   object-fit:cover;
+  object-position:center 50%; /* Default */
+  display:block;
   z-index:0;
-}/* =========================
-   Hero (global)
-   ========================= */
-.hero{ … }        /* dein globaler Hero */
-.hero .inner{ … }
-.hero img.hero-bg{ … }
+}
+.hero .inner{
+  position:relative !important;
+  z-index:1;
+  align-self:start;
+  margin-top:2vh;
+  max-width:800px;
+  padding:40px 20px;
+  transform:none !important;
+  top:auto !important;
+  filter:none !important;
 
-/* ==== HERO BASELINE RESETS ==== */
-.hero{ … }
-.hero .inner{ … }
-.hero img.hero-bg{ … }
-
-/* ==== HERO PRESETS ==== */
-.hero-home{ … }
-.hero-ueber{ … }
-.hero-nora{ … }
-.hero-suechte{ … }
-
-/* ==== optional: Kontrast-Variante ==== */
-.hero::before{ … }
-
-/* Alias für Startseiten-/Unterseiten-Hero */
-.hero-home{ /* nutzt die Basis aus .hero */ }
+  color:#d4af37;
+  text-shadow:0 2px 4px rgba(0,0,0,.6);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+.hero h1{
+  font-size:3rem;
+  line-height:1.2;
+  margin:0 0 .5em;
+}
+.hero .sub{
+  font-size:1.3rem;
+  line-height:1.4;
+  max-width:780px;
+  margin:0 auto 14px;
+}
+@media (max-width:640px){
+  .hero{min-height:56vh;}
+  .hero .inner{margin-top:10vh; padding:28px 18px;}
+  .hero h1{font-size:2rem;}
+  .hero .sub{font-size:1.05rem;}
+}
+/* Pro Seite anpassen */
+.hero-home   .inner{margin-top:3vh;}
+.hero-home   img.hero-bg{object-position:center 60%;}
+.hero-ueber  .inner{margin-top:2vh;}
+.hero-ueber  img.hero-bg{object-position:center 30%;}
+.hero-suechte.inner{margin-top:2vh;}
+.hero-suechte img.hero-bg{object-position:center 90%;}
+.hero-nora   .inner{margin-top:2vh;}
+.hero-nora   img.hero-bg{object-position:center 92%;}
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,0) 55%);
+  pointer-events:none;
+}
 
 /* =========================
-   Subnav (unter Hero, zentriert)
+   Subnav (unter Hero)
    ========================= */
 #ueber-mich-nav a{color:var(--accent);text-decoration:none}
 #ueber-mich-nav a:hover{text-decoration:underline}
-
 .subnav{
   max-width:var(--maxw);
   margin:0 auto 40px;
@@ -235,52 +248,36 @@ blockquote p{margin:8px 0}
 .subnav a:hover{text-decoration:underline}
 
 /* =========================
-   Über-mich – alternierende Blöcke
-   (nur wenn du .about-block nutzt)
+   Über-mich – Zickzack Layout
    ========================= */
-.about{
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 32px 24px;
-}
-.about-block{
-  display:flex;
+.about .section{
+  display:grid;
+  grid-template-columns:1.25fr 1fr;
+  gap:32px;
   align-items:center;
-  gap:2rem;
-  margin-bottom:3rem;
+  margin:48px 0;
 }
-.about-block:nth-child(odd){flex-direction:row}
-.about-block:nth-child(even){flex-direction:row-reverse}
-.about-text{flex:1}
-.about-img{flex:1}
-.about-img img{
-  width:100%;
-  max-width:380px;
+.about .section:nth-child(even){
+  grid-template-columns:1fr 1.25fr;
+}
+.about .section:nth-child(even) .media{order:-1;}
+.about .text{max-width:65ch;}
+.about .media img{
+  width:clamp(260px,32vw,400px);
+  height:auto;
   border-radius:12px;
   border:1px solid var(--ring);
-  box-shadow:0 4px 10px rgba(0,0,0,.3);
-  margin:0 auto;
+  object-fit:cover;
+  display:block;
 }
-@media (max-width: 880px){
-  .about-block{flex-direction:column}
-}
-
-/* =========================
-   Süchte-Seite – Hero-Feintuning
-   ========================= */
-.hero-suechte img.hero-bg{
-  object-position:center 90%;   /* weniger Himmel, mehr unten; bei Bedarf 80–95% justieren */
-}
-.hero-suechte .inner{
-  margin-top:15%;               /* Text höher */
-  color:#d4af37;                /* Gold */
-  text-shadow:0 1px 3px rgba(0,0,0,.5);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
-}
-@media (max-width:600px){
-  .hero-suechte .inner{margin-top:10%}
+@media (max-width:880px){
+  .about .section{
+    grid-template-columns:1fr;
+    gap:20px;
+    margin:36px 0;
+  }
+  .about .media{order:2; justify-self:center;}
+  .about .media img{width:min(90vw,380px);}
 }
 
 /* =========================
@@ -291,127 +288,4 @@ blockquote p{margin:8px 0}
   margin-top:40px;
   color:var(--muted);
 }
-
-.hero{ outline:2px solid red !important; }
-/* Start */
-.hero.hero-home img.hero-bg{ object-position: center 90% !important; }
-/* Über mich */
-.hero.hero-ueber img.hero-bg{ object-position: center 90% !important; }
-/* Süchte */
-.hero.hero-suechte img.hero-bg{ object-position: center 90% !important; }
-.hero{ outline:none !important; }
-/* ======================================
-   HERO – Textfarbe & Position (global)
-   ====================================== */
-
-/* Basis: alle Hero-Texte gold & klar */
-.hero .inner{
-  color: #d4af37;  /* Gold */
-  text-shadow: 0 1px 3px rgba(0,0,0,.55);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-
-/* Feinjustierung je Seite */
-.hero.hero-home .inner{ margin-top: 9vh; }
-.hero.hero-ueber .inner{ margin-top: 10vh; }
-.hero.hero-suechte .inner{ margin-top: 7vh; }
-.hero.hero-nora .inner{ margin-top: 9vh; }
-
-/* Mobile: etwas tiefer, sonst zu nah am Rand */
-@media (max-width:640px){
-  .hero .inner{ margin-top: 12vh; }
-}
-.hero .inner{
-  color:#d4af37; /* Gold */
-  text-shadow:0 2px 4px rgba(0,0,0,.65);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
-}
-.hero h1{
-  font-size:3rem;       /* größer */
-  line-height:1.2;
-  margin-bottom:0.5em;
-}
-.hero .sub{
-  font-size:1.4rem;     /* Untertitel größer */
-  line-height:1.4;
-}
-@media (max-width:640px){
-  .hero h1{ font-size:2rem; }
-  .hero .sub{ font-size:1.1rem; }
-}
-.hero .inner{ margin-top:6vh; } /* Standard höher gesetzt */
-.hero.hero-home .inner{ margin-top:1vh; }
-.hero.hero-ueber .inner{ margin-top:1vh; }
-.hero.hero-suechte .inner{ margin-top:1vh; }
-.hero.hero-nora .inner{ margin-top:1vh; }
-
-@media (max-width:640px){
-  .hero .inner{ margin-top:12vh; } /* Mobile etwas tiefer */
-}
-/* === Hero: oben ausrichten, nicht zentrieren === */
-.hero{
-  /* statt place-items:center */
-  place-items: start center;           /* vertikal oben, horizontal mittig */
-}
-
-/* Das Element selbst nach oben pinnen */
-.hero .inner{
-  align-self: start;                    /* ignoriert zentrierung */
-  margin-top: 2vh;                      /* feintuning: 0–6vh je nach Seite */
-  padding-top: 0;                       /* falls der 40px-Padding zu tief wirkt */
-}
-
-/* Optional: pro Seite Startwerte */
-.hero.hero-home   .inner{ margin-top: 3vh; }
-.hero.hero-ueber  .inner{ margin-top: 2vh; }
-.hero.hero-suechte.inner{ margin-top: 2vh; }
-.hero.hero-nora   .inner{ margin-top: 3vh; }
-/* =========================
-   ÜBER-MICH – Zickzack Layout
-   ========================= */
-.about .section{
-  display:grid;
-  grid-template-columns: 1.25fr 1fr;    /* Text etwas breiter als Bild */
-  gap:32px;
-  align-items:center;
-  margin:48px 0;
-}
-
-/* Jeder gerade Block (2., 4., …) tauscht Seiten */
-.about .section:nth-child(even){
-  grid-template-columns: 1fr 1.25fr;
-}
-.about .section:nth-child(even) .media{ order:-1; }
-
-.about .text{
-  max-width:65ch;
-}
-.about .media img{
-  width:clamp(260px, 32vw, 400px);      /* kleiner machen über mittleren Wert */
-  height:auto;
-  border-radius:12px;
-  border:1px solid var(--ring);
-  object-fit:cover;
-  display:block;
-}
-
-@media (max-width:880px){
-  .about .section{
-    grid-template-columns:1fr;
-    gap:20px;
-    margin:36px 0;
-  }
-  .about .media{ order:2; justify-self:center; }
-  .about .media img{ width:min(90vw,380px); }
-}/* HERO FIX – Text nicht verschieben */
-.hero .inner {
-  position: relative !important;
-  top: auto !important;
-  transform: none !important;
-  margin-top: 2vh;  /* Regler für Höhe */
-}
+.site-footer .wrap{padding:20px 24px}

@@ -306,3 +306,26 @@ blockquote p{margin:8px 0}
 /* Optional: H1/Untertitel etwas knackiger */
 .hero h1{ text-shadow: 0 1px 2px rgba(0,0,0,.4); }
 .hero .sub{ text-shadow: 0 1px 1px rgba(0,0,0,.35); }
+.fuer-wen {
+  text-align: center;
+  margin: 60px auto;
+  max-width: var(--maxw);
+  padding: 0 20px;
+}
+
+.fuer-wen h2 {
+  margin-bottom: 16px;
+  font-size: 2rem;
+  color: var(--accent); /* Gold oder anpassen */
+}
+
+.fuer-wen p {
+  margin-bottom: 24px;
+}
+
+.fuer-wen .micro {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}

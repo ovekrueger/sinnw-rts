@@ -328,4 +328,36 @@ blockquote p{margin:8px 0}
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.4;
+}/* Standard-Button */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+/* Gold-Standard für alle Buttons */
+.btn,
+.btn.gold {
+  background-color: #d4af37; /* Gold */
+  color: #000;              /* Schwarzer Text */
+}
+
+/* Hover-Effekt */
+.btn:hover,
+.btn.gold:hover {
+  background-color: #b9962f; /* dunkleres Gold */
+  color: #000;
+}
+
+/* Button-Reihen mittig */
+.btn-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* Buttons in die Mitte */
+  flex-wrap: wrap;         /* bricht um bei kleinerem Bildschirm */
+  margin: 40px 0;
 }

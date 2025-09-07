@@ -442,4 +442,24 @@ button.btn:hover,
 .benefits li {
   font-size: 1.1rem;
   line-height: 1.6;
+}/* Hero-Bilder für Angebote */
+.hero-offer {
+  padding: 80px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.hero-frauen {
+  background-image: url('/images/hero-frauen.jpg');
+}
+
+.hero-maenner {
+  background-image: url('/images/hero-maenner.jpg');
+}
+
+.hero-anders {
+  background-image: url('/images/hero-anders.jpg');
 }

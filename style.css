@@ -360,4 +360,29 @@ blockquote p{margin:8px 0}
   justify-content: center; /* Buttons in die Mitte */
   flex-wrap: wrap;         /* bricht um bei kleinerem Bildschirm */
   margin: 40px 0;
+}.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  background-color: #d4af37;  /* Gold */
+  color: #000;                /* Schwarzer Text */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover-Effekt */
+.btn:hover {
+  background-color: #b9962f;  /* dunkleres Gold beim Hover */
+  color: #000;
+}
+
+.btn-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }

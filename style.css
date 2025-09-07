@@ -418,4 +418,28 @@ button.btn:hover,
   justify-content: center;
   flex-wrap: wrap;
   margin: 40px 0;
+}.benefits {
+  max-width: var(--maxw);
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.benefits h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: var(--accent); /* Gold */
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.benefits li {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }

@@ -385,4 +385,37 @@ blockquote p{margin:8px 0}
   justify-content: center;
   flex-wrap: wrap;
   margin: 40px 0;
+}/* Alle Buttons einheitlich Gold mit schwarzer Schrift */
+a.btn,
+button.btn,
+.btn,
+.btn.gold,
+.btn.black {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  background-color: #d4af37 !important;  /* Gold */
+  color: #000 !important;                /* Schwarzer Text */
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover-Effekt */
+a.btn:hover,
+button.btn:hover,
+.btn:hover {
+  background-color: #b9962f !important;  /* dunkleres Gold */
+  color: #000 !important;
+}
+
+/* Button-Reihen mittig */
+.btn-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
 }

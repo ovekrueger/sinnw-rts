@@ -493,11 +493,7 @@ button.btn:hover,
   overflow: hidden;
 }
 
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(70%);
+
 }
 
 .hero-text {
@@ -516,8 +512,38 @@ button.btn:hover,
   height: 80vh; /* größer, damit mehr Bild sichtbar ist */
 }
 
-.hero-andersfrei .hero-img {
-  object-fit: cover;
-  object-position: center 60%; /* weniger Himmel, mehr Paare */
-  background-color: #000; /* falls am Rand Lücken bleiben */
+.hero-andersfrei {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Höhe anpassbar */
+  overflow: hidden;
+}
+
+.hero-andersfrei .hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/divers-hero-strand.png");
+  background-size: cover;           /* Bild füllt die Fläche */
+  background-repeat: no-repeat;
+  background-position: 50% 70%;     /* hier justierst du: 0% = oben, 100% = unten */
+  filter: brightness(70%);
+  z-index: 1;
+}
+
+.hero-andersfrei .hero-text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: #fff;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.hero-andersfrei .hero-text h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5em 0;
+  color: #d4af37; /* Gold-Akzent */
 }

@@ -503,6 +503,6 @@ button.btn:hover,
   background-image: url("images/divers-hero-strand.png"); /* <— Pfad korrigiert */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 55%;
+  background-position: 50% 90%;
   filter: brightness(0.7);
 }

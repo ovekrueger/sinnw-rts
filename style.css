@@ -503,4 +503,7 @@ button.btn:hover,
   background-repeat: no-repeat;
   background-position: 50% 55%;  /* 55% = mehr Köpfe sichtbar */
   filter: brightness(0.7);
+}.af-hero {
+  height: 80vh;
+  background: red !important;
 }

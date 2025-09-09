@@ -496,10 +496,15 @@ button.btn:hover,
 .af-hero{
   height: 80vh;
   /* Shorthand: Position / Size / Repeat in einem Rutsch */
-  background: url("images/divers-strand-paare.jpg") 50% 60% / 110% auto no-repeat;
+  background: url("images/divers-strand-paare.jpg") 50% 80% / 120% auto no-repeat;
   filter: brightness(0.7);
 }
 
-.af-hero{ outline: 3px dashed lime; }
-
+@media (max-width: 640px){
+  .af-hero{
+    height: 60vh;
+    background-position: 50% 75%;
+    background-size: 120% auto;
+  }
+}
 

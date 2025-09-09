@@ -550,4 +550,11 @@ button.btn:hover,
   background-repeat: no-repeat;
   background-position: 50% 55%; /* <- hier ist der Hebel */
   filter: brightness(0.7);
+}.hero-andersfrei {
+  height: 80vh;
+  background-image: url("../../images/divers-hero-strand.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: 50% 55% !important; /* Y-Wert runter → mehr Köpfe */
+  filter: brightness(0.7);
 }

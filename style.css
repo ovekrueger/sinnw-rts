@@ -493,26 +493,16 @@ button.btn:hover,
   height: 60vh;
   overflow: hidden;}
 
-
-
-
-
-/* Anders frei – FINAL */
-.af-hero{
+/* ===== Anders frei – Final ===== */
+.af-hero {
   height: 80vh;
-  background-image: url("images/divers-hero-strand.png"); /* <— Pfad korrigiert */
+  background-image: url("images/divers-hero-strand.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 90%;
+  background-position: 50% 85%;  /* Köpfe im Fokus, weniger Himmel */
   filter: brightness(0.7);
 }
-/* Debug-Test */
-.af-hero {
-  height: 80vh !important;
-  background-image: url("images/divers-hero-strand.png") !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  background-position: 50% 0% !important;   /* ganz oben */
-  filter: brightness(0.7) !important;
-  outline: 4px solid red !important;       /* Debug: sichtbarer Rahmen */
-}
+
+
+
+

@@ -495,15 +495,14 @@ button.btn:hover,
 
 
 
-/* ===== Anders frei – Final ===== */
-.af-hero {
+
+
+/* Anders frei – FINAL */
+.af-hero{
   height: 80vh;
-  background-image: url("../../images/divers-hero-strand.png");
+  background-image: url("images/divers-hero-strand.png"); /* <— Pfad korrigiert */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 55%;  /* 55% = mehr Köpfe sichtbar */
+  background-position: 50% 55%;
   filter: brightness(0.7);
-}.af-hero {
-  height: 80vh;
-  background: red !important;
 }

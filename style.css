@@ -495,11 +495,13 @@ button.btn:hover,
 
 
 
-}.hero-andersfrei {
+/* ===== Anders frei – FINAL ===== */
+.hero-andersfrei{
   height: 80vh;
   background-image: url("../../images/divers-hero-strand.png") !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  background-position: 50% 55% !important; /* Y-Wert runter → mehr Köpfe */
+  background-position: 50% 55% !important;  /* 55% = mehr Köpfe */
   filter: brightness(0.7);
+  outline: 2px dashed lime; /* DEBUG: kurz drin lassen */
 }

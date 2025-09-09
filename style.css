@@ -496,10 +496,10 @@ button.btn:hover,
 /* ===== Anders frei – Final ===== */
 .af-hero {
   height: 80vh;
-  background-image: url("images/divers-hero-strand.png");
-  background-size: 110% auto;   /* leicht reinzoomen */
+  background-image: url("images/divers-hero-strand-clean.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 100%; /* 85% = weniger Himmel */
+  background-position: 50% 100%;  /* ggf. anpassen */
   filter: brightness(0.7);
 }
 

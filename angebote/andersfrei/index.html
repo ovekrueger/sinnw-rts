@@ -1,63 +1,99 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anders frei – Dein Weg | Sinnwärts</title>
-  <link rel="stylesheet" href="../../style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anders frei – Sinnwärts</title>
+
+  <!-- Globale Styles beibehalten -->
+  <link rel="stylesheet" href="../../style.css" />
+
+  <!-- Nur seiten-spezifische Regeln (scoped) -->
   <style>
-    .section { max-width: 800px; margin: 60px auto; text-align: center; }
+    /* Seite eindeutig scopen, damit nichts anderes beeinflusst wird */
+    .af-hero {
+      position: relative;
+      width: 100%;
+      height: 80vh;              /* groß, damit die Paare sichtbar sind */
+      color: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--ring);
+      background-image: url("../../images/divers-hero-strand.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50% 70%; /* 70% = weniger Himmel, mehr Paare */
+      filter: brightness(0.7);
+    }
+    .af-hero .hero-text {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      max-width: 600px;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45);
+    }
+    .af-hero .hero-text h1 {
+      margin: 0 0 .5em 0;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: var(--accent);
+    }
+    .af-hero .hero-text p { margin: 0; }
+
+    @media (max-width: 640px) {
+      .af-hero { height: 56vh; }
+      .af-hero .hero-text { bottom: 14%; left: 6%; }
+      .af-hero .hero-text h1 { font-size: 2rem; }
+    }
+
+    /* Seitencontent */
+    .af-wrap { max-width: var(--maxw); margin: 40px auto; padding: 0 24px; }
+    .af-wrap h2 { color: var(--accent); margin-bottom: .4em; }
+    .af-wrap p { margin: .5em 0 1em; }
   </style>
 </head>
-<body>
 
-  <!-- Menü -->
+<body>
+  <!-- Optional: deine bestehende Header-Navigation (falls gewünscht) -->
   <header class="site-header">
     <div class="nav-container">
       <div class="brand">Sinnwärts</div>
       <nav>
         <ul class="nav-list">
           <li><a href="../../index.html">Start</a></li>
-          <li><a href="../../angebot.html" class="active">Angebote</a></li>
+          <li><a href="../../ueber-mich.html">Über mich</a></li>
+          <li><a href="../../suechte.html">Süchte</a></li>
+          <li><a href="../../nora.html">Meine KI</a></li>
+          <li><a href="../../angebot.html" class="active">Angebot</a></li>
           <li><a href="../../kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero-andersfrei">
-  <div class="hero-bg"></div>
-  <div class="hero-text">
-    <h1>Anders. Frei.</h1>
-    <p>Ein Raum für Vielfalt, Authentizität und neue Wege.</p>
-  </div>
-</section>
-
-  <!-- Textblöcke -->
-  <section class="section">
-    <h2>Problem / Schmerz</h2>
-    <p>Viele Menschen fühlen sich eingeengt durch Rollenbilder oder Erwartungen.</p>
+  <!-- Neuer Hero nur für diese Seite -->
+  <section class="af-hero">
+    <div class="hero-text">
+      <h1>Anders. Frei.</h1>
+      <p>Ein Raum für Vielfalt, Authentizität und neue Wege.</p>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Zielbild</h2>
-    <p>Authentisch, frei, würdevoll – eigene Mischung finden.</p>
-  </section>
+  <!-- Inhalt (Beispiel, kann ersetzt werden) -->
+  <main class="af-wrap">
+    <h2>Worum es hier geht</h2>
+    <p>Hier entsteht dein Angebot für Menschen, die jenseits von Schubladen leben wollen – klar, respektvoll, wertebasiert.</p>
 
-  <section class="section">
-    <h2>Weg</h2>
-    <p>Integrale Begleitung, kreative Tools, Selbstreflexion → innere Ordnung, äußere Freiheit.</p>
-  </section>
+    <div class="btn-row">
+      <a class="btn" href="../frauen/index.html">Zu Frauen</a>
+      <a class="btn" href="../maenner/index.html">Zu Männer</a>
+      <a class="btn" href="../../angebot.html">Zur Übersicht</a>
+    </div>
+  </main>
 
-  <section class="section">
-    <h2>Angebote / Formate</h2>
-    <p>1:1 Coaching · Offene Gruppe · Online-Impulse</p>
-  </section>
-
-  <section class="section">
-    <a class="btn" href="../../kontakt.html">Finde deinen eigenen Weg – jenseits von Schubladen.</a>
-  </section>
-
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© Sinnwärts – Ove Krüger</small>
+    </div>
+  </footer>
 </body>
 </html>

@@ -548,6 +548,6 @@ button.btn:hover,
   background-image: url("../../images/divers-hero-strand.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 70%; /* <- hier ist der Hebel */
+  background-position: 50% 55%; /* <- hier ist der Hebel */
   filter: brightness(0.7);
 }

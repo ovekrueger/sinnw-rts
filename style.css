@@ -495,24 +495,14 @@ button.btn:hover,
 /* ===== Anders frei – Final ===== */
 .af-hero {
   height: 80vh;
-  background-image: url("images/divers-strand-paare.jpg"); /* neue Datei */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 70%;  /* 70% = weniger Himmel, mehr Paare */
-  filter: brightnes
-
-
-/* ===== Anders frei – FINAL ===== */
-section.af-hero {
-  height: 80vh !important;
-  background-image: url("images/.af-hero {
-  height: 80vh;
   background-image: url("images/divers-strand-paare.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 55%;  /* ggf. anpassen */
+  background-size: 110% auto;          /* reinzoomen */
+  background-position: 50% 60%;        /* Bildausschnitt steuern */
   filter: brightness(0.7);
 }
+
+
+
  !important;
   background-size: 110% auto !important;   /* leicht reinzoomen */
   background-repeat: no-repeat !important;

@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Anders frei – Sinnwärts</title>
 
-  <!-- Nur globales CSS -->
+  <!-- globales CSS -->
   <link rel="stylesheet" href="../../style.css" />
 </head>
 
 <body>
-  <!-- Hero direkt mit Inline-Styles -->
+  <!-- Hero -->
   <section class="af-hero"
     style="
       position: relative;
@@ -19,9 +19,10 @@
       color: #fff;
       overflow: hidden;
       border-bottom: 1px solid var(--ring);
-      background-image: url('../../images/divers-strand-paare.jpg");
-      background-size: cover;
-      background-position: 50% 70%;
+      background-image: url('../../images/divers-hero-strand.png');
+      background-size: cover;       /* füllt ganze Fläche */
+      background-repeat: no-repeat; /* keine Kacheln */
+      background-position: center;  /* mittig ausgerichtet */
       filter: brightness(0.7);
     ">
     <div class="hero-text"
@@ -39,6 +40,7 @@
     </div>
   </section>
 
+  <!-- Content -->
   <main class="af-wrap" style="max-width:var(--maxw);margin:40px auto;padding:0 24px;">
     <h2 style="color:var(--accent);margin-bottom:.4em;">Worum es hier geht</h2>
     <p style="margin:.5em 0 1em;">

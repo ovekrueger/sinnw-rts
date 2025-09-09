@@ -512,3 +512,4 @@ section.af-hero {
   background-position: 50% 90% !important; /* 90% = weniger Himmel */
   filter: brightness(0.7) !important;
 }
+section.af-hero { outline: 4px solid lime !important; }

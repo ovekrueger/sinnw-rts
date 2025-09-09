@@ -509,7 +509,6 @@ section.af-hero {
   background-image: url("images/divers-hero-strand.png") !important;
   background-size: 110% auto !important;   /* leicht reinzoomen */
   background-repeat: no-repeat !important;
-  background-position: 50% 90% !important; /* 90% = weniger Himmel */
+  background-position: 50% 45% !important; /* 90% = weniger Himmel */
   filter: brightness(0.7) !important;
 }
-section.af-hero { outline: 4px solid lime !important; }

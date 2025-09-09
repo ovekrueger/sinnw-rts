@@ -512,4 +512,12 @@ button.btn:hover,
   font-size: 2.5rem;
   margin: 0 0 0.5em 0;
   color: #d4af37; /* Gold-Akzent */
+}.hero-andersfrei {
+  height: 80vh; /* größer, damit mehr Bild sichtbar ist */
+}
+
+.hero-andersfrei .hero-img {
+  object-fit: contain;    /* zeigt das ganze Bild, nichts wird abgeschnitten */
+  object-position: center;
+  background-color: #000; /* falls am Rand Lücken bleiben */
 }

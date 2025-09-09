@@ -517,7 +517,8 @@ button.btn:hover,
 }
 
 .hero-andersfrei .hero-img {
-  object-fit: contain;    /* zeigt das ganze Bild, nichts wird abgeschnitten */
-  object-position: center;
+  object-fit: cover;
+  object-position: center 30%; /* weniger Himmel, mehr Paare */
+}
   background-color: #000; /* falls am Rand Lücken bleiben */
 }

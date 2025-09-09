@@ -500,6 +500,6 @@ button.btn:hover,
   filter: brightness(0.7);
 }
 
-
+.af-hero{ outline: 3px dashed lime; }
 
 

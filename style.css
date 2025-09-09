@@ -543,4 +543,11 @@ button.btn:hover,
   font-size: 2.5rem;
   margin: 0 0 0.5em 0;
   color: #d4af37; /* Gold-Akzent */
+}.hero-andersfrei {
+  height: 80vh;
+  background-image: url("../../images/divers-hero-strand.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 70%; /* <- hier ist der Hebel */
+  filter: brightness(0.7);
 }

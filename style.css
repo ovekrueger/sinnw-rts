@@ -503,9 +503,4 @@ button.btn:hover,
 
 
 
- !important;
-  background-size: 110% auto !important;   /* leicht reinzoomen */
-  background-repeat: no-repeat !important;
-  background-position: 50% 45% !important; /* 90% = weniger Himmel */
-  filter: brightness(0.7) !important;
-}
+

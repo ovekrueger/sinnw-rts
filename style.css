@@ -497,12 +497,9 @@ button.btn:hover,
 .af-hero {
   height: 80vh;
   background-image: url("images/divers-hero-strand.png");
-  background-size: 110 auto;
+  background-size: 110% auto;   /* leicht reinzoomen */
   background-repeat: no-repeat;
-  background-position: 50% 110%;  /* Köpfe im Fokus, weniger Himmel */
+  background-position: 50% 100%; /* 85% = weniger Himmel */
   filter: brightness(0.7);
 }
-
-
-
 

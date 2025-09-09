@@ -492,12 +492,11 @@ button.btn:hover,
   width: 100%;
   height: 60vh;
   overflow: hidden;}
-/* ===== Anders frei – Final ===== */
-.af-hero {
+/* ===== Anders frei – FINAL ===== */
+.af-hero{
   height: 80vh;
-  background-image: url("images/divers-strand-paare.jpg");
-  background-size: 110% auto;          /* reinzoomen */
-  background-position: 50% 60%;        /* Bildausschnitt steuern */
+  /* Shorthand: Position / Size / Repeat in einem Rutsch */
+  background: url("images/divers-strand-paare.jpg") 50% 60% / 110% auto no-repeat;
   filter: brightness(0.7);
 }
 

@@ -340,3 +340,37 @@ button.btn:active,
   color: #fff; /* Weiß */
   text-shadow: 0 2px 4px rgba(0,0,0,.65);
 }
+/* =========================================
+   Hero-Overlay & Textfarben
+   ========================================= */
+
+/* Standard: alle Seiten etwas dunkler */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0,0,0,0.65); /* 65% Abdunklung */
+  pointer-events: none;
+}
+
+/* Angebote: Overlay heller */
+.hero-angebot::before {
+  background: rgba(0,0,0,0.35); /* 35% Abdunklung */
+}
+
+/* Textfarben einheitlich */
+.hero h1 {
+  color: var(--accent); /* Gold */
+  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+}
+.hero .sub {
+  color: #fff; /* Weiß */
+  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+}
+
+/* Angebote: Text weiter nach unten rücken */
+.hero-angebot .inner {
+  margin-top: 18vh;  /* nach unten verschoben */
+  text-align: center;
+}

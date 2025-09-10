@@ -114,12 +114,19 @@ blockquote p{margin:8px 0}
    Navigation (oben, sticky)
    ========================= */
 .site-header{
-  position:sticky;
+  .site-header{
+  position: fixed;       /* statt sticky */
   top:0;
-  z-index:100;
+  left:0;
+  width:100%;            /* wichtig, sonst nur so breit wie Inhalt */
+  z-index:1000;
   background:rgba(11,15,18,.95);
   backdrop-filter:saturate(120%) blur(6px);
   border-bottom:1px solid var(--ring);
+}
+
+body{
+  padding-top:64px;      /* Höhe deines Headers, anpassen falls nötig */
 }
 .nav-container{
   max-width:var(--maxw);

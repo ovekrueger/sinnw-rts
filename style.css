@@ -501,3 +501,15 @@ button.btn:hover,
   object-position: 50% 80%;     /* 80% = Bild nach unten schieben */
   filter: brightness(0.7);
 }
+/* Menü immer oben (fixiert) + Platz nach oben für den Inhalt */
+.site-header{
+  position: fixed;
+  top:0; left:0; width:100%;
+  z-index: 1000;
+  background: rgba(11,15,18,.95);
+  backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid var(--ring);
+}
+
+/* Abstand für fixen Header (Höhe anpassen, z.B. 64–80px) */
+body{ padding-top: 72px; }

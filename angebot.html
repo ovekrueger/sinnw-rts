@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="de">
 <head>
@@ -8,37 +7,46 @@
   <meta name="description" content="Coaching, Mentoring, Workshops – klar, orientierend, menschlich." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-<head>
-  <meta charset="utf-8">
-  <title>Angebot – Sinnwärts</title>
-  <link rel="stylesheet" href="style.css">
 
+  <!-- Nur Mobile-Tuning für den Hero dieser Seite -->
   <style>
     @media (max-width: 640px) {
-      .hero-angebot {
+      .hero-angebot{
         height: 60vh !important;
         background-position: 50% 65% !important;
       }
     }
   </style>
 </head>
+
 <body>
-  <body>
-  <!-- Menü -->
+  <!-- Menü (einmal!) -->
   <header class="site-header">
-    … dein Menü …
+    <div class="nav-container">
+      <a class="brand" href="index.html">Sinnwärts</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="suechte.html">Süchte</a></li>
+          <li><a href="nora.html">Meine KI</a></li>
+          <li><a href="angebot.html" class="active">Angebote</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
+  <!-- EIN Hero (kein <img>, sauber als Background) -->
   <section class="hero hero-angebot"
     style="
       position:relative;
       height:65vh;
-      background:url('images/hero-sucht-sucht-sinn.jpg') 50% 110%/cover no-repeat;
+      background:url('images/hero-sucht-sucht-sinn.jpg') 50% 80%/cover no-repeat;
     ">
-    <!-- Overlay -->
-    <div style="position:absolute;inset:0;background:rgba(0,0,0,.35);"></div>
-    
+    <!-- Overlay für Lesbarkeit -->
+    <div style="position:absolute;inset:0;background:rgba(0,0,0,.45);"></div>
+
     <!-- Text -->
     <div class="inner"
       style="position:absolute;bottom:18%;left:10%;max-width:680px;z-index:1;">
@@ -49,61 +57,40 @@
     </div>
   </section>
 
- 
-<body>
-  
-<!-- NAV -->
-<header class="site-header">
-  <div class="nav-container">
-    <a class="brand" href="index.html">Sinnwärts</a>
-    <nav aria-label="Hauptnavigation">
-      <ul class="nav-list">
-        <li><a href="index.html">Start</a></li>
-        <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="suechte.html">Süchte</a></li>
-        <li><a href="nora.html">Meine KI</a></li>
-        <li><a href="angebot.html" class="active">Angebote</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- Karten -->
+  <section class="wrap block">
+    <div class="cards">
+      <article class="card">
+        <h3>1:1 Coaching</h3>
+        <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+      <article class="card">
+        <h3>Mentoring</h3>
+        <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+      <article class="card">
+        <h3>Workshops</h3>
+        <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+    </div>
+  </section>
 
+  <!-- Für wen -->
+  <section class="angebot-targets">
+    <h2>Für wen?</h2>
+    <div class="btn-row">
+      <a class="btn" href="angebote/frauen/">Für Frauen</a>
+      <a class="btn" href="angebote/andersfrei/">Anders frei</a>
+      <a class="btn" href="angebote/maenner/">Für Männer</a>
+    </div>
+  </section>
 
-
-<!-- Karten -->
-<section class="wrap block">
-  <div class="cards">
-    <article class="card">
-      <h3>1:1 Coaching</h3>
-      <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
-      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
-    </article>
-    <article class="card">
-      <h3>Mentoring</h3>
-      <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
-      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
-    </article>
-    <article class="card">
-      <h3>Workshops</h3>
-      <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
-      <p><a class="btn" href="kontakt.html">Anfragen</a></p>
-    </article>
-  </div>
-</section>
-  
-<!-- ✨ NEUER BLOCK: Für wen -->
-<section class="angebot-targets">
-  <h2>Für wen?</h2>
-  <div class="btn-row">
-    <a class="btn" href="angebote/frauen/">Für Frauen</a>
-    <a class="btn" href="angebote/andersfrei/">Anders frei</a>
-    <a class="btn" href="angebote/maenner/">Für Männer</a>
-  </div>
-</section>
-<footer class="site-footer">
-  <div class="wrap"><small>© <span id="y"></span> Ove Krüger · Sinnwärts</small></div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="wrap"><small>© <span id="y"></span> Ove Krüger · Sinnwärts</small></div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>

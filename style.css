@@ -487,3 +487,10 @@ button.btn:hover,
 .hero-maenner { background-image: url("../../images/hero-maenner.jpg"); }
 .hero-anders  { background-image: url("../../images/hero-anders.jpg"); }
 
+/* Nur der Hero auf der Angebots-Startseite */
+.hero-angebot .hero-bg {
+  height: 70vh;               /* weniger hoch → weniger Himmel */
+  object-fit: cover;          
+  object-position: 50% 70%;   /* 70% nach unten → weniger Himmel, mehr Motiv */
+  filter: brightness(0.7);
+}

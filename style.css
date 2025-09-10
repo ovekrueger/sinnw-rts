@@ -489,8 +489,8 @@ button.btn:hover,
 
 /* Nur der Hero auf der Angebots-Startseite */
 .hero-angebot .hero-bg {
-  height: 70vh;               /* weniger hoch → weniger Himmel */
-  object-fit: cover;          
-  object-position: 50% 70%;   /* 70% nach unten → weniger Himmel, mehr Motiv */
+  height: 60vh;                 /* weniger hoch */
+  object-fit: cover;            
+  object-position: 50% 80%;     /* 80% = Bild nach unten schieben */
   filter: brightness(0.7);
 }

@@ -319,22 +319,24 @@ button.btn:active,
   text-shadow: 0 2px 4px rgba(0,0,0,.6);
 }
 
-/* Alle anderen Seiten */
-.hero-frauen h1,
-.hero-maenner h1,
-.hero-anders h1,
-.hero-ueber h1,
-.hero-suechte h1,
-.hero-nora h1 {
-  color: #fff; /* Überschrift weiß */
-  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+/* =========================================
+   Hero-Text – Einheitlich für ALLE Seiten
+   ========================================= */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(0,0,0,0.55); /* Overlay-Dunkelheit (0.55 = 55%) */
+  pointer-events: none;
 }
-.hero-frauen .sub,
-.hero-maenner .sub,
-.hero-anders .sub,
-.hero-ueber .sub,
-.hero-suechte .sub,
-.hero-nora .sub {
-  color: #fff; /* Untertext weiß */
-  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+
+.hero h1 {
+  color: var(--accent); /* Gold */
+  text-shadow: 0 2px 4px rgba(0,0,0,.65);
+}
+
+.hero .sub {
+  color: #fff; /* Weiß */
+  text-shadow: 0 2px 4px rgba(0,0,0,.65);
 }

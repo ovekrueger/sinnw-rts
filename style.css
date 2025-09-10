@@ -290,3 +290,20 @@ button.btn:active,
 .hero-angebot::before {
   background: rgba(0,0,0,0.25); /* nur 25% Abdunklung */
 }
+/* =========================================
+   Feintuning Hero-Text „Angebote“
+   ========================================= */
+.hero-angebot .inner {
+  margin-top: 18vh;        /* Text weiter nach unten schieben */
+  text-align: center;      /* mittig statt linksbündig */
+}
+
+.hero-angebot h1 {
+  color: var(--accent);    /* Gold für die Überschrift */
+}
+
+.hero-angebot .sub {
+  color: #fff;             /* Untertext weiß für Kontrast */
+  text-shadow: 0 2px 4px rgba(0,0,0,.6);
+}
+

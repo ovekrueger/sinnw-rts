@@ -455,3 +455,11 @@ button.btn:active,
 .hero .inner {
   margin-top: var(--hero-offset, 15vh);
 }
+/* Hero-Variablen anwenden */
+.hero { --overlay:.62; --hero-offset:12vh; }
+.hero .inner { margin-top: var(--hero-offset, 12vh); }
+.hero::after {
+  content:""; position:absolute; inset:0; z-index:0;
+  background: rgba(0,0,0,var(--overlay));
+  pointer-events:none;
+}

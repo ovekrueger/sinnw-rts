@@ -375,3 +375,50 @@ button.btn:active,
   margin-top: 18vh;  /* nach unten verschoben */
   text-align: center;
 }
+/* ===== Hero-Overlay: einheitlich dunkel, Angebote heller ===== */
+/* Wir nutzen ::after, damit dein bestehendes ::before (Gradient) unberührt bleibt */
+.hero { position: relative; }
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  z-index:0;               /* hinter dem Text, vor dem Bild */
+  background: rgba(0,0,0,.62);   /* Standard: deutlich abdunkeln */
+  pointer-events:none;
+}
+/* Angebote bleibt wärmer/heller */
+.hero-angebot::after{
+  background: rgba(0,0,0,.35);
+}
+
+/* ===== Hero-Text: überall Gold-Headline + weiße Subzeile, scharf ===== */
+.hero h1{
+  color: var(--accent);                       /* Gold */
+  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+}
+.hero .sub{
+  color:#fff; 
+  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+}
+.hero .inner{
+  position:relative;
+  z-index:1;
+  filter:none !important;
+  transform:none !important;
+  top:auto !important;
+}
+
+/* ===== Angebot: Textblock sauber im Bild verankern (responsive) ===== */
+.hero-angebot { min-height: 62vh; }
+.hero-angebot .inner{
+  /* Basis-Offset; passt Desktop u. Tablet */
+  margin-top: 18vh;
+  text-align: center;
+}
+/* Kleinere Screens: etwas höher, damit nichts abgeschnitten wirkt */
+@media (max-width: 768px){
+  .hero-angebot .inner{ margin-top: 14vh; }
+}
+/* Große Screens: minimal tiefer für harmonische Bildwirkung */
+@media (min-width: 1200px){
+  .hero-angebot .inner{ margin-top: 20vh; }
+}

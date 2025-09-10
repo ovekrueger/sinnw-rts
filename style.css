@@ -452,3 +452,6 @@ button.btn:active,
     margin-top: 12vh;
   }
 }
+.hero .inner {
+  margin-top: var(--hero-offset, 15vh);
+}

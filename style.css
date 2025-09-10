@@ -464,3 +464,16 @@ button.btn:active,
   pointer-events:none;
 }
 
+/* =========================
+   ZigZag Flex Layout (.zz)
+   ========================= */
+.zz{max-width:1000px;margin:56px auto;padding:0 24px;}
+.zz-row{display:flex;gap:32px;align-items:center;margin:56px 0;}
+.zz-text{flex:1.15;max-width:65ch;}
+.zz-media{flex:1;}
+.zz-media img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--ring);}
+.zz-row.rev{flex-direction:row-reverse;}
+@media (max-width:880px){
+  .zz-row,.zz-row.rev{flex-direction:column;}
+  .zz-media{order:2;}
+}

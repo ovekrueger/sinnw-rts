@@ -29,11 +29,24 @@
 </header>
 
 <!-- HERO -->
-<section class="hero hero-angebot">
-  <img src="images/hero-sucht-sucht-sinn.jpg" alt="Angebote – Sinnwärts" class="hero-bg" />
-  <div class="inner">
-    <h1>Angebote</h1>
-    <p class="sub">Klarheit, Orientierung, Menschlichkeit – als Prozess.</p>
+<section class="hero hero-angebot"
+  style="
+    position: relative;
+    width: 100%;
+    height: 65vh; /* Höhe anpassen */
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 1px solid var(--ring);
+
+    background: url('images/hero-sucht-sucht-sinn.jpg') 50% 75% / cover no-repeat;
+    filter: brightness(0.7);
+  ">
+  <div class="inner"
+    style="position:absolute;bottom:20%;left:10%;max-width:600px;text-shadow:0 1px 2px rgba(0,0,0,.45);">
+    <h1 style="margin:0 0 .5em;font-size:2.5rem;line-height:1.2;color:var(--accent);">
+      Angebote
+    </h1>
+    <p class="sub" style="margin:0;">Klarheit, Orientierung, Menschlichkeit – als Prozess.</p>
   </div>
 </section>
 

@@ -422,3 +422,33 @@ button.btn:active,
 @media (min-width: 1200px){
   .hero-angebot .inner{ margin-top: 20vh; }
 }
+/* Basis */
+.hero .inner {
+  margin-top: 12vh; /* Standard-Offset */
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero .inner {
+    margin-top: 15vh;
+  }
+}
+
+/* Große Screens */
+@media (min-width: 1200px) {
+  .hero .inner {
+    margin-top: 18vh;
+  }
+}
+/* Angebote – eigener Offset */
+.hero-angebot .inner {
+  margin-top: 20vh;     /* weiter runter */
+  text-align: center;   /* mittig */
+}
+
+/* Auf Mobile nicht zu tief */
+@media (max-width: 640px) {
+  .hero-angebot .inner {
+    margin-top: 12vh;
+  }
+}

@@ -463,29 +463,4 @@ button.btn:active,
   background: rgba(0,0,0,var(--overlay));
   pointer-events:none;
 }
-/* =========================
-   ZigZag Sections: Bild/Text alternierend
-   ========================= */
-.zigzag{ max-width:var(--maxw); margin:60px auto; padding:0 24px; }
-.zigzag .row{
-  display:grid;
-  grid-template-columns:1.15fr 1fr;   /* Text etwas breiter */
-  gap:32px;
-  align-items:center;
-  margin:56px 0;
-}
-.zigzag .text{ max-width:65ch; }
-.zigzag .media img{
-  width:100%; height:auto;
-  border-radius:12px; border:1px solid var(--ring);
-  display:block; object-fit:cover;
-}
 
-/* Jeder gerade Block dreht die Reihenfolge automatisch um */
-.zigzag .row:nth-child(even) .media{ order:-1; }
-
-/* Mobile: untereinander, Bild darunter */
-@media (max-width:880px){
-  .zigzag .row{ grid-template-columns:1fr; gap:20px; margin:40px 0; }
-  .zigzag .row:nth-child(even) .media{ order:2; } /* Text vor Bild */
-}

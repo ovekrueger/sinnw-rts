@@ -477,3 +477,12 @@ button.btn:active,
   .zz-row,.zz-row.rev{flex-direction:column;}
   .zz-media{order:2;}
 }
+/* === SAFE MODE (temporär zur Fehlersuche) === */
+*{transition:none !important}
+.site-header{ /* kein teurer Blur */
+  background:rgba(11,15,18,.96) !important;
+  /* backdrop-filter: none !important;  <-- sicherheitshalber aktiv nicht nutzen */
+}
+.hero h1,.hero .sub{ text-shadow:none !important }
+.hero img.hero-bg{ filter:none !important }
+.hero::after{ background:rgba(0,0,0,var(--overlay)) !important } /* bleibt billig */

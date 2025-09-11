@@ -477,3 +477,7 @@ button.btn:active,
   .zz-row,.zz-row.rev{flex-direction:column;}
   .zz-media{order:2;}
 }
+.hero-frauen .hero-bg,
+.hero-maenner .hero-bg {
+  filter: brightness(1.0); /* heller */
+}

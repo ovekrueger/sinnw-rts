@@ -2,66 +2,90 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Für Männer – Samurai sein | Sinnwärts</title>
-  <link rel="stylesheet" href="../../style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Angebote – Ove Krüger | Sinnwärts</title>
+  <meta name="description" content="Coaching, Mentoring, Workshops – klar, orientierend, menschlich." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Nur Mobile-Tuning für den Hero dieser Seite -->
   <style>
-    .section { max-width: 800px; margin: 60px auto; text-align: center; }
+    @media (max-width: 640px) {
+      .hero-angebot{
+        height: 60vh !important;
+        background-position: 50% 65% !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- NAV -->
-
-<header class="site-header">
-  <div class="nav-container">
-    <div class="brand"><a href="../../index.html">Sinnwärts</a></div>
-    <nav aria-label="Hauptnavigation">
-      <ul class="nav-list">
-        <li><a href="../../index.html">Start</a></li>
-        <li><a href="../../ueber-mich.html">Über mich</a></li>
-        <li><a href="../../suechte.html">Süchte</a></li>
-        <li><a href="../../nora.html">Meine KI</a></li>
-        <li><a href="../../angebot.html" class="active">Angebote</a></li>
-        <li><a href="../../kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-  <!-- Hero -->
-  
-<section class="hero hero-maenner">
-  <img src="../../images/samurai.webp" alt="Hero Männer – Samurai" class="hero-img">
-  <div class="hero-text">
-    <h1>Die Klarheit des Samurai</h1>
-    <p>Orientierung und Werte für Männer, die führen wollen.</p>
+  <!-- Menü (einmal!) -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="index.html">Sinnwärts</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="suechte.html">Süchte</a></li>
+          <li><a href="nora.html">Meine KI</a></li>
+          <li><a href="angebot.html" class="active">Angebote</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- HERO -->
+<section class="hero hero-angebot" style="--overlay:.35; --hero-offset:12vh;">
+  <img src="images/hero-sucht-sucht-sinn.jpg"
+       alt=""
+       class="hero-bg"
+       style="object-position:50% 85%;">
+  <div class="inner">
+    <h1>Angebote</h1>
+    <p class="sub">Klarheit, Orientierung, Menschlichkeit – als Prozess.</p>
   </div>
 </section>
-  <!-- Textblöcke -->
-  <section class="section">
-    <h2>Problem / Schmerz</h2>
-    <p>Männer schwanken zwischen Härtepanzer und Unsicherheit.</p>
+
+
+ 
+
+  <!-- Karten -->
+  <section class="wrap block">
+    <div class="cards">
+      <article class="card">
+        <h3>1:1 Coaching</h3>
+        <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+      <article class="card">
+        <h3>Mentoring</h3>
+        <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+      <article class="card">
+        <h3>Workshops</h3>
+        <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
+        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+      </article>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Zielbild</h2>
-    <p>Werteorientierte Führung, Klarheit, Herz offen – Samurai mit Haltung.</p>
+  <!-- Für wen -->
+  <section class="angebot-targets">
+    <h2>Für wen?</h2>
+    <div class="btn-row">
+      <a class="btn" href="angebote/frauen/">Für Frauen</a>
+      <a class="btn" href="angebote/andersfrei/">Anders frei</a>
+      <a class="btn" href="angebote/maenner/">Für Männer</a>
+    </div>
   </section>
 
-  <section class="section">
-    <h2>Weg</h2>
-    <p>Coaching, Rituale, innere Arbeit → Verbindung von Stärke und Gefühl.</p>
-  </section>
-
-  <section class="section">
-    <h2>Angebote / Formate</h2>
-    <p>1:1 Coaching · Männergruppe · Retreat</p>
-  </section>
-
-  <section class="section">
-    <a class="btn" href="../../kontakt.html">Führe mit Herz und Haltung. Jetzt Verantwortung übernehmen.</a>
-  </section>
-
+  <footer class="site-footer">
+    <div class="wrap"><small>© <span id="y"></span> Ove Krüger · Sinnwärts</small></div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>

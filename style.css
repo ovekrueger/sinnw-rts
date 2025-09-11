@@ -184,3 +184,28 @@ body{padding-top:72px}
    Misc
    =================================================== */
 .to-top{position:fixed;right:16px;bottom:16px;background:var(--accent);color:#000;padding:10px 14px;border-radius:999px}
+/* ===== Hero-Harmonisierung (Frauen/Männer leiser, Rest minimal kräftiger) ===== */
+
+/* 1) Frauen & Männer: etwas flacher + weniger „glänzend“ */
+.hero-frauen,
+.hero-maenner{
+  --overlay: .30;     /* etwas mehr Abdunklung als zuvor */
+  --hero-height: 48vh;/* kleiner als vorher */
+  --inner-bottom: 16%;
+  min-height: 340px;
+}
+.hero-frauen img.hero-bg,
+.hero-maenner img.hero-bg{
+  object-position: 50% 64%;
+  /* weniger Effekt als vorher */
+  filter: brightness(1.15) contrast(1.05) !important;
+}
+
+/* 2) Alle anderen Heros: ganz leicht mehr Präsenz, ohne zu knallen */
+.hero-home  img.hero-bg,
+.hero-ueber img.hero-bg,
+.hero-suechte img.hero-bg,
+.hero-nora  img.hero-bg,
+.hero-angebot img.hero-bg{
+  filter: brightness(1.06) contrast(1.03);
+}

@@ -479,5 +479,10 @@ button.btn:active,
 }
 .hero-frauen .hero-bg,
 .hero-maenner .hero-bg {
-  filter: brightness(1.0); /* heller */
+  filter: brightness(5.0); /* heller */
+}
+.hero-frauen,
+.hero-maenner {
+  height: 55vh;   /* kleiner machen, statt z. B. 65vh */
+  min-height: 400px; /* optional, damit es nicht zu klein wird auf großen Screens */
 }

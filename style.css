@@ -20,7 +20,7 @@ img{display:block;max-width:100%;height:auto}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -66,13 +66,15 @@ body{padding-top:72px}
 .nav-list a.active{border-bottom-color:var(--accent)}
 
 /* ===================================================
-   HERO – EIN SYSTEM (verwende <img class="hero-bg">)
+   HERO – EIN SYSTEM (immer mit <img class="hero-bg">)
    =================================================== */
 .hero{
   /* Variablen – pro Seite überschreibbar */
   --overlay:.42;          /* 0 = kein Overlay, .65 = dunkel */
   --hero-height:62vh;     /* Gesamthöhe */
   --inner-bottom:15%;     /* Abstand Text vom unteren Rand */
+  --pos-x:50%;            /* Bildfokus X */
+  --pos-y:78%;            /* Bildfokus Y */
 
   position:relative;
   display:grid;place-items:start center;
@@ -83,7 +85,8 @@ body{padding-top:72px}
 }
 .hero img.hero-bg{
   position:absolute;inset:0;z-index:0;
-  width:100%;height:100%;object-fit:cover;object-position:50% 80%;
+  width:100%;height:100%;
+  object-fit:cover;object-position:var(--pos-x) var(--pos-y);
 }
 .hero::after{
   content:"";position:absolute;inset:0;z-index:0;
@@ -95,14 +98,22 @@ body{padding-top:72px}
   bottom:var(--inner-bottom);
   z-index:1;max-width:800px;padding:0 20px;text-align:center;
 }
-.hero h1{margin:0 0 .5em;font-size:3rem;line-height:1.2;color:var(--accent);text-shadow:0 2px 4px rgba(0,0,0,.65)}
-.hero .sub{margin:0;font-size:1.3rem;line-height:1.4;color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.65)}
+.hero h1{
+  margin:0 0 .5em;
+  font-size:clamp(2rem,4vw,3rem);
+  line-height:1.2;color:var(--accent);
+  text-shadow:0 2px 4px rgba(0,0,0,.65)
+}
+.hero .sub{
+  margin:0;
+  font-size:clamp(1.05rem,2.2vw,1.3rem);
+  line-height:1.4;color:#fff;
+  text-shadow:0 2px 4px rgba(0,0,0,.65)
+}
 
 @media (max-width:640px){
   .hero{--hero-height:56vh}
   .hero .inner{--inner-bottom:12%}
-  .hero h1{font-size:2rem}
-  .hero .sub{font-size:1.05rem}
 }
 
 /* ===== HERO – Utilities (Variante B) ===== */
@@ -121,7 +132,7 @@ body{padding-top:72px}
 .hero--mid { --pos-y:50% }
 .hero--low { --pos-y:78% }
 
-/* Text höher (Fix fürs „zu tief“) */
+/* Text höher (Fix für „zu tief“) */
 .hero--textUp      { --inner-bottom:18% }
 .hero--textHigh    { --inner-bottom:22% }
 .hero--textHighest { --inner-bottom:26% }
@@ -130,7 +141,6 @@ body{padding-top:72px}
   .hero--textUp      { --inner-bottom:16% }
   .hero--textHigh    { --inner-bottom:18% }
   .hero--textHighest { --inner-bottom:20% }
-}
 }
 
 /* ===================================================
@@ -184,28 +194,3 @@ body{padding-top:72px}
    Misc
    =================================================== */
 .to-top{position:fixed;right:16px;bottom:16px;background:var(--accent);color:#000;padding:10px 14px;border-radius:999px}
-/* ===== Hero-Harmonisierung (Frauen/Männer leiser, Rest minimal kräftiger) ===== */
-
-/* 1) Frauen & Männer: etwas flacher + weniger „glänzend“ */
-.hero-frauen,
-.hero-maenner{
-  --overlay: .30;     /* etwas mehr Abdunklung als zuvor */
-  --hero-height: 48vh;/* kleiner als vorher */
-  --inner-bottom: 16%;
-  min-height: 340px;
-}
-.hero-frauen img.hero-bg,
-.hero-maenner img.hero-bg{
-  object-position: 50% 64%;
-  /* weniger Effekt als vorher */
-  filter: brightness(1.15) contrast(1.05) !important;
-}
-
-/* 2) Alle anderen Heros: ganz leicht mehr Präsenz, ohne zu knallen */
-.hero-home  img.hero-bg,
-.hero-ueber img.hero-bg,
-.hero-suechte img.hero-bg,
-.hero-nora  img.hero-bg,
-.hero-angebot img.hero-bg{
-  filter: brightness(1.06) contrast(1.03);
-}

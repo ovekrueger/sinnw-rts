@@ -105,32 +105,32 @@ body{padding-top:72px}
   .hero .sub{font-size:1.05rem}
 }
 
-/* Per-Page Feintuning (nur, wenn gebraucht) */
-.hero-home  img.hero-bg{object-position:50% 92%}
-.hero-ueber img.hero-bg{object-position:50% 92%}
-.hero-suechte img.hero-bg{object-position:50% 78%}
-.hero-nora  img.hero-bg{object-position:50% 78%}
+/* ===== HERO – Utilities (Variante B) ===== */
+/* Höhe */
+.hero--S { --hero-height:48vh; --inner-bottom:16% }
+.hero--M { --hero-height:60vh; --inner-bottom:15% }
+.hero--L { --hero-height:72vh; --inner-bottom:18% }
 
-/* Angebots-Startseite etwas heller */
-.hero-angebot{--overlay:.28}
+/* Overlay / Licht */
+.hero--soft   { --overlay:.28 }
+.hero--normal { --overlay:.40 }
+.hero--dark   { --overlay:.55 }
 
-/* Frauen/Männer – flacher, heller, anderer Ausschnitt */
-.hero-frauen,.hero-maenner{
-  --overlay:.22;
-  --hero-height:52vh;
-  --inner-bottom:14%;
-  min-height:360px;
+/* Bildfokus (Y) */
+.hero--top { --pos-y:30% }
+.hero--mid { --pos-y:50% }
+.hero--low { --pos-y:78% }
+
+/* Text höher (Fix fürs „zu tief“) */
+.hero--textUp      { --inner-bottom:18% }
+.hero--textHigh    { --inner-bottom:22% }
+.hero--textHighest { --inner-bottom:26% }
+
+@media (max-width:640px){
+  .hero--textUp      { --inner-bottom:16% }
+  .hero--textHigh    { --inner-bottom:18% }
+  .hero--textHighest { --inner-bottom:20% }
 }
-.hero-frauen img.hero-bg,
-.hero-maenner img.hero-bg{
-  object-position:50% 62%;
-  filter:brightness(1.35) contrast(1.08) !important;
-}
-
-/* „Anders frei“ (falls genutzt) */
-.hero-anders{
-  --overlay:.26;
-  --hero-height:54vh;
 }
 
 /* ===================================================

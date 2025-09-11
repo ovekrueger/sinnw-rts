@@ -486,3 +486,18 @@ button.btn:active,
 .hero h1,.hero .sub{ text-shadow:none !important }
 .hero img.hero-bg{ filter:none !important }
 .hero::after{ background:rgba(0,0,0,var(--overlay)) !important } /* bleibt billig */
+/* === PERF PATCH (global) === */
+*{transition:none!important}
+
+/* Header: kein Blur */
+.site-header{
+  background:rgba(11,15,18,.96)!important;
+  /* backdrop-filter: none !important; */
+}
+
+/* Render erst bei Sichtbarkeit (beschleunigt große Seiten) */
+main > section{ content-visibility:auto; contain-intrinsic-size: 800px; }
+
+/* Heros: keine teuren Filter/Schatten (testweise) */
+.hero h1,.hero .sub{ text-shadow:none!important }
+.hero img.hero-bg{ filter:none!important }

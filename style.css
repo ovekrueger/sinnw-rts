@@ -501,3 +501,10 @@ main > section{ content-visibility:auto; contain-intrinsic-size: 800px; }
 /* Heros: keine teuren Filter/Schatten (testweise) */
 .hero h1,.hero .sub{ text-shadow:none!important }
 .hero img.hero-bg{ filter:none!important }
+/* Bildfilter steuerbar machen */
+.hero img.hero-bg{ filter: var(--img-filter, none); }
+
+/* Utilities für Helligkeit/Kontrast */
+.hero--bright   { --overlay:.24; --img-filter:brightness(1.15) contrast(1.05); }
+.hero--brighter { --overlay:.20; --img-filter:brightness(1.22) contrast(1.06); }
+.hero--dim      { --overlay:.46; --img-filter:brightness(0.95) contrast(1.02); }

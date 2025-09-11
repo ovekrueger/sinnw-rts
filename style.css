@@ -479,10 +479,26 @@ button.btn:active,
 }
 .hero-frauen .hero-bg,
 .hero-maenner .hero-bg {
-  filter: brightness(1.3); /* heller */
+  filter: brightness(1.3) contrast(1.1);
+}
 }
 .hero-frauen,
 .hero-maenner {
   height: 55vh;   /* kleiner machen, statt z. B. 65vh */
   min-height: 400px; /* optional, damit es nicht zu klein wird auf großen Screens */
+}
+.hero .inner {
+  position: absolute;
+  bottom: 15%;   /* statt margin-top */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+.hero-frauen,
+.hero-maenner {
+  height: 55vh;
+  min-height: 380px;
 }

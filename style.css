@@ -139,6 +139,24 @@ body{ padding-top:72px; } /* Höhe des Headers */
 }
 .hero h1{ font-size:3rem; line-height:1.2; margin:0 0 .5em; }
 .hero .sub{ font-size:1.3rem; line-height:1.4; max-width:780px; margin:0 auto 14px; }
+/* Schwarzer Kontrastrand für bessere Lesbarkeit */
+.hero h1 {
+  color: var(--accent); /* Gold */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.hero .sub {
+  color: #fff; /* Weiß */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
 
 @media (max-width:640px){
   .hero{ min-height:56vh; }

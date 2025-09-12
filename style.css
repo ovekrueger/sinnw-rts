@@ -413,11 +413,11 @@ button.btn:active,
 /* ===== Hero-Text: überall Gold-Headline + weiße Subzeile, scharf ===== */
 .hero h1{
   color: var(--accent);                       /* Gold */
-  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+  
 }
 .hero .sub{
   color:#fff; 
-  text-shadow: 0 2px 4px rgba(0,0,0,.7);
+ 
 }
 .hero .inner{
   position:relative;

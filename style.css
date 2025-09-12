@@ -128,10 +128,8 @@ body{ padding-top:72px; } /* Höhe des Headers */
                                             ), rgba(0,0,0,0) 55%);
   pointer-events:none;
 }
-.hero .inner{
-  position:relative; z-index:1; align-self:start;
-  margin-top:2vh; max-width:800px; padding:40px 20px;
-  color:var(--accent);
+-  margin-top:2vh;
++  margin-top:var(--hero-offset, 2vh);
   
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;

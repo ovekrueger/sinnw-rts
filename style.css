@@ -528,3 +528,22 @@ main > section{ content-visibility:auto; contain-intrinsic-size: 800px; }
 .hero--bright   { --overlay:.24; --img-filter:brightness(1.15) contrast(1.05); }
 .hero--brighter { --overlay:.20; --img-filter:brightness(1.22) contrast(1.06); }
 .hero--dim      { --overlay:.46; --img-filter:brightness(0.95) contrast(1.02); }
+/* === Hero Text Kontrast – erzwungen === */
+.hero h1,
+.hero .sub {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1::before,
+.hero .sub::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; right: 0;
+  color: black;
+  z-index: -1;
+  text-shadow: -1px -1px 0 #000,
+                1px -1px 0 #000,
+               -1px  1px 0 #000,
+                1px  1px 0 #000;
+}

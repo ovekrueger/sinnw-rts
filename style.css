@@ -149,14 +149,7 @@ body{ padding-top:72px; } /* Höhe des Headers */
      1px  1px 0 #000;
 }
 
-.hero .sub {
-  color: #fff; /* Weiß */
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
+
 
 @media (max-width:640px){
   .hero{ min-height:56vh; }
@@ -550,4 +543,28 @@ main > section{ content-visibility:auto; contain-intrinsic-size: 800px; }
                 1px -1px 0 #000,
                -1px  1px 0 #000,
                 1px  1px 0 #000;
+}
+/* Kräftige schwarze Outline für Hero-Text */
+.hero h1,
+.hero .sub {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1::before,
+.hero .sub::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  color: black;
+  z-index: -1;
+  text-align: inherit;
+  transform: translate(0, 0); /* kein Versatz */
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0    0   6px rgba(0,0,0,.8);
 }

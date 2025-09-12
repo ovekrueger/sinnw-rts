@@ -132,7 +132,7 @@ body{ padding-top:72px; } /* Höhe des Headers */
   position:relative; z-index:1; align-self:start;
   margin-top:2vh; max-width:800px; padding:40px 20px;
   color:var(--accent);
-  text-shadow:0 2px 4px rgba(0,0,0,.6);
+  
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;

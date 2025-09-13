@@ -215,3 +215,47 @@ body{padding-top:72px}
    Performance (sanft, ohne Debug-Patches)
    =================================================== */
 main > section{content-visibility:auto;contain-intrinsic-size:800px}
+/* Zick-Zack Layout */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.zigzag-text h2 {
+  color: var(--accent);
+  margin-bottom: 0.5em;
+}
+
+.zigzag-text p {
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.zigzag-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Abwechseln: bei jedem zweiten Block Bild links, Text rechts */
+.section:nth-child(even) .zigzag-text {
+  order: 2;
+}
+.section:nth-child(even) .zigzag-image {
+  order: 1;
+}
+
+/* Mobile Ansicht: untereinander */
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .section .zigzag-text,
+  .section .zigzag-image {
+    order: unset;
+  }
+}

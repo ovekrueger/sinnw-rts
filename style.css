@@ -216,7 +216,7 @@ body{padding-top:72px}
    =================================================== */
 main > section{content-visibility:auto;contain-intrinsic-size:800px}
 /* Zick-Zack Layout */
-.section {
+.about .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -224,38 +224,42 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
   margin-bottom: 80px;
 }
 
+/* Text */
 .zigzag-text h2 {
   color: var(--accent);
   margin-bottom: 0.5em;
 }
-
 .zigzag-text p {
   color: var(--ink);
   line-height: 1.6;
 }
 
+/* Bild */
 .zigzag-image img {
   width: 100%;
   height: auto;
   border-radius: 12px;
   display: block;
+  max-width: 400px;   /* Bild verkleinern */
+  margin: 0 auto;     /* zentrieren */
 }
 
-/* Abwechseln: bei jedem zweiten Block Bild links, Text rechts */
-.section:nth-child(even) .zigzag-text {
-  order: 2;
+/* Abwechseln: jedes zweite .section */
+.about .section:nth-of-type(even) {
+  direction: rtl;              /* Trick: Reihenfolge spiegeln */
 }
-.section:nth-child(even) .zigzag-image {
-  order: 1;
+.about .section:nth-of-type(even) .zigzag-text,
+.about .section:nth-of-type(even) .zigzag-image {
+  direction: ltr;              /* Inhalt wieder normal lesen */
 }
 
 /* Mobile Ansicht: untereinander */
 @media (max-width: 768px) {
-  .section {
+  .about .section {
     grid-template-columns: 1fr;
+    text-align: center;
   }
-  .section .zigzag-text,
-  .section .zigzag-image {
-    order: unset;
+  .zigzag-image img {
+    max-width: 100%;
   }
 }

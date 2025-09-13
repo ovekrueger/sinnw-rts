@@ -69,7 +69,7 @@ body{padding-top:72px}
 /* ===================================================
    HERO – ein System (immer mit <img class="hero-bg">)
    =================================================== */
-.hero{
+.hero {
   /* Überschreibbare Variablen */
   --overlay:.32;          /* 0 = kein Overlay, .65 = dunkel */
   --hero-height:60vh;     /* Blockhöhe */
@@ -77,41 +77,48 @@ body{padding-top:72px}
   --pos-x:50%;            /* Bildfokus X */
   --pos-y:70%;            /* Bildfokus Y */
 
-  position:relative;
-  display:grid;place-items:start center;
-  min-height:var(--hero-height);
-  text-align:center;
-  overflow:hidden;
-  border-bottom:1px solid var(--ring);
+  position: relative;
+  display: grid;
+  place-items: start center;
+  min-height: var(--hero-height);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring);
 }
 
 .hero img.hero-bg {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 0; /* Bild unten */
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% var(--pos-y, 70%);
-}
-}
-
-.hero::after{
-  content:"";position:absolute;inset:0;z-index:0;
-  background:rgba(0,0,0,var(--overlay));
-  pointer-events:none;
+  object-position: var(--pos-x, 50%) var(--pos-y, 70%);
 }
 
-.hero .inner{
-  position:absolute;left:50%;transform:translateX(-50%);
-  bottom:var(--inner-bottom);
-  z-index:1;max-width:800px;padding:0 20px;text-align:center;
-  color:var(--accent);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Overlay über dem Bild */
+  background: rgba(0,0,0,var(--overlay));
+  pointer-events: none;
 }
 
+.hero .inner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: var(--inner-bottom);
+  z-index: 2; /* Text ganz oben */
+  max-width: 800px;
+  padding: 0 20px;
+  text-align: center;
+  color: var(--accent);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 /* Lesbarkeit: kräftige Kontur + weicher Glow */
 .hero h1{
   margin:0 0 .5em;

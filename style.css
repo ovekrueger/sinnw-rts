@@ -293,4 +293,10 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
   .hero{min-height:56vh}
   .hero{ --pos-y:65%; --inner-bottom:62% } /* mobile default */
 }
+/* Fix: Hero-Text wirklich vom unteren Rand steuern */
+.hero .inner{
+  top:auto !important;
+  bottom: var(--inner-bottom) !important;
+  transform: translateX(-50%); /* kein -50% in Y */
+}
 

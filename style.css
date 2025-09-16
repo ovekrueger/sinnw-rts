@@ -294,5 +294,5 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
   .hero{ --pos-y:65%; --inner-bottom:62% } /* mobile default */
 }
 .hero--about .hero-bg {
-  object-position:50% 35%; /* Kopf tiefer im Bild sichtbar */
+  object-position:50% 20%; /* Kopf tiefer im Bild sichtbar */
 }

@@ -299,4 +299,6 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
   bottom: var(--inner-bottom) !important;
   transform: translateX(-50%); /* kein -50% in Y */
 }
-
+@media (max-width:640px){
+  .hero .inner{ bottom:22%; }
+}

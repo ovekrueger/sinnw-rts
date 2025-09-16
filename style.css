@@ -293,3 +293,6 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
   .hero{min-height:56vh}
   .hero{ --pos-y:65%; --inner-bottom:62% } /* mobile default */
 }
+.hero--about .hero-bg {
+  object-position:50% 35%; /* Kopf tiefer im Bild sichtbar */
+}

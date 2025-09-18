@@ -302,3 +302,10 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
 @media (max-width:640px){
   .hero .inner{ bottom:22%; }
 }
+.about-block img {
+  max-width: 300px;   /* maximale Breite */
+  height: auto;       /* Höhe passt sich automatisch an */
+  margin: 20px auto;  /* Abstand und zentriert */
+  display: block;     /* Bild mittig */
+  border-radius: 12px; /* abgerundete Ecken, optional */
+}

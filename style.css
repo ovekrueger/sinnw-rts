@@ -327,3 +327,8 @@ body.ueber-mich .zigzag-image img {
   display: block;
   border-radius: 12px;
 }
+body.ueber-mich .hero-bg {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+}

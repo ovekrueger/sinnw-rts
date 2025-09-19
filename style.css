@@ -225,7 +225,7 @@ main > section{content-visibility:auto;contain-intrinsic-size:800px}
 /* Zick-Zack Layout */
 .about .section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;<
   gap: 40px;
   align-items: center;
   margin-bottom: 80px;

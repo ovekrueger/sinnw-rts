@@ -361,3 +361,15 @@ body.ueber-mich .hero-bg {
   margin: 40px auto;
   display: block;
 }
+.hero .siegel {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  max-width: 120px;
+}
+
+.hero .siegel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

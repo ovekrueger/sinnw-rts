@@ -380,3 +380,11 @@ body.ueber-mich .zigzag-image img {
   margin:40px auto;
   display:block;
 }
+.portrait-img {
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ring);
+  display: block;
+  margin: 0 auto;
+}

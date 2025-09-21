@@ -12,7 +12,37 @@
   --ring:#2a2f36;      /* Linien/Umriss */
   --maxw:1000px;       /* Inhaltsbreite */
 }
+/* ======================
+   Montserrat lokal laden
+   ====================== */
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/montserrat-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/montserrat-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/montserrat-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Standard Body-Font */
+body {
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
 * { box-sizing:border-box }
 html, body { margin:0; padding:0 }
 img { display:block; max-width:100%; height:auto }

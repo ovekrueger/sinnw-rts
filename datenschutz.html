@@ -47,40 +47,28 @@
       <p class="small">Stand: <span id="d"></span></p>
     </div>
   </main>
-
   <footer class="site-footer">
-    <div class="container foot">
-      <span>© <span id="y"></span> Ove Krüger · Sinnwärts</span>
-      <nav class="foot-nav">
-        <a href="impressum.html">Impressum</a>
-        <a aria-current="page" href="datenschutz.html">Datenschutz</a>
-      </nav>
+    <div class="wrap">
+      <small>© <span id="y"></span> Ove Krüger · Sucht sucht Sinn</small>
+      <p>
+        <a href="impressum.html">Impressum</a> | 
+        <a href="datenschutz.html">Datenschutz</a>
+      </p>
     </div>
   </footer>
 
+  <a class="to-top" href="#top">↑ Nach oben</a>
+
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('d').textContent = new Date().toLocaleDateString('de-DE');
+    document.getElementById('d')?.textContent = new Date().toLocaleDateString('de-DE');
     document.querySelector('.nav-toggle')?.addEventListener('click', e=>{
-      const btn=e.currentTarget,list=document.getElementById('nav-list');
-      const open=btn.getAttribute('aria-expanded')==='true';
+      const btn = e.currentTarget;
+      const list = document.getElementById('nav-list');
+      const open = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!open));
       list?.classList.toggle('open');
     });
   </script>
-  <footer class="site-footer">
-  <div class="wrap">
-    <small>© <span id="y"></span> Ove Krüger · Sucht sucht Sinn</small>
-    <p>
-      <a href="impressum.html">Impressum</a> | 
-      <a href="datenschutz.html">Datenschutz</a>
-    </p>
-  </div>
-</footer>
-
-<a class="to-top" href="#top">↑ Nach oben</a>
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>

@@ -101,7 +101,6 @@
     </article>
   </div>
 </section>
-
 <!-- Für wen -->
 <section class="angebot-targets">
   <h2>Für wen?</h2>
@@ -116,34 +115,41 @@
   <div class="wrap">
     <small>© <span id="y"></span> Ove Krüger · Sinnwärts</small>
     <p>
-      <a href="impressum.html">Impressum</a> | 
+      <a href="impressum.html">Impressum</a> |
       <a href="datenschutz.html">Datenschutz</a>
     </p>
   </div>
 </footer>
 
 <a class="to-top" href="#top">↑ Nach oben</a>
+
 <script>
+  // Jahr im Footer
   document.getElementById('y').textContent = new Date().getFullYear();
 </script>
-  <script>
+
+<!-- EIN robustes Hash-Scroll-Script (Header-Offset, smooth) -->
+<script>
   (function () {
-    // Höhe des fixen Headers ermitteln (Fallback 72px)
     const header = document.querySelector('.site-header');
     const NAV_H = (header && header.offsetHeight) ? header.offsetHeight : 72;
 
-    function jumpToHash() {
+    function jump() {
       if (!location.hash) return;
-      const id = location.hash.slice(1);
-      const el = document.getElementById(id);
+      const el = document.getElementById(location.hash.slice(1));
       if (!el) return;
       const y = el.getBoundingClientRect().top + window.scrollY - (NAV_H + 16);
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
 
-    // beim Laden (nach Layout) + bei späteren Hash-Änderungen
-    window.addEventListener('load', () => setTimeout(jumpToHash, 50));
-    window.addEventListener('hashchange', jumpToHash);
+    // gegen spätes Reflow (Bilder/Fonts) mehrmals versuchen
+    function jumpRobust(tries = 0) {
+      jump();
+      if (tries < 6) setTimeout(() => jumpRobust(tries + 1), 120);
+    }
+
+    window.addEventListener('load', () => setTimeout(jumpRobust, 50));
+    window.addEventListener('hashchange', jump);
   })();
 </script>
 </body>

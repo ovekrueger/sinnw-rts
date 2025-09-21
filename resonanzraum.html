@@ -1,1 +1,130 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resonanzraum – Sinnwärts</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Resonanzraum – Stimmen, Blogbeiträge und Videos von Ove Krüger · Sinnwärts." />
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero hero--L hero--soft hero--low"
+          style="--overlay:.25; --hero-offset:34vh; --inner-bottom:15%;">
+    <img src="images/hero-resonanzraum.webp"
+         alt="Resonanzraum – Stimmen, Beiträge, Videos"
+         class="hero-bg"
+         style="object-position:center 30%;">
+    <div class="inner">
+      <h1>Resonanzraum</h1>
+      <p class="sub">Stimmen · Beiträge · Videos</p>
+    </div>
+  </header>
 
+  <!-- MENÜ -->
+  <nav class="container nav nav--sub">
+    <a class="logo" href="index.html">Sinnwärts</a>
+    <ul class="menu">
+      <li><a href="index.html">Start</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="angebote.html">Angebote</a></li>
+      <li><a href="resonanzraum.html" aria-current="page">Resonanzraum</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <main class="container flow">
+    <!-- INTRO -->
+    <section class="block">
+      <h2>Willkommen im Resonanzraum</h2>
+      <p>Hier sammeln sich die Echos – Erfahrungen von Menschen, Impulse aus meinem Blog und Klarheitswellen in Videoform.</p>
+    </section>
+
+    <!-- STIMMEN -->
+    <section class="block">
+      <h2>Stimmen</h2>
+      <div class="grid grid--cards">
+        <blockquote class="card">
+          <p>„Oves Klarheitskompass hat mir in einer schwierigen Phase Orientierung gegeben.“</p>
+          <footer>– Klient:in A</footer>
+        </blockquote>
+        <blockquote class="card">
+          <p>„Seine ruhige Art hat mir geholfen, meine eigenen Antworten zu finden.“</p>
+          <footer>– Klient:in B</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section class="block">
+      <h2>Blog</h2>
+      <div class="grid grid--cards">
+        <article class="card card--blog">
+          <a class="card-link" href="blog-beispiel.html">
+            <figure class="card-media">
+              <img src="images/blog/beispiel.webp" alt="Blogtitel" loading="lazy">
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Blogtitel</h3>
+              <p class="card-meta">Datum · 4 Min</p>
+              <p class="card-text">Kurzer Teasertext zum Beitrag…</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="block">
+      <h2>Videos</h2>
+      <div class="grid grid--cards">
+        <article class="card card--video">
+          <div class="card-media video-shell" 
+               data-youtube-id="XXXXXXXXXXX" 
+               data-src-nocookie="https://www.youtube-nocookie.com/embed/XXXXXXXXXXX?rel=0">
+            <img src="images/video/poster-beispiel.webp" alt="Video-Titel" loading="lazy">
+            <button class="play-btn" type="button">▶︎ Video laden</button>
+            <small class="privacy-note">Es werden erst nach Klick Daten geladen.</small>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Video-Titel</h3>
+            <p class="card-meta">Datum · 7:32</p>
+            <p class="card-text">Kurzer Teaser zum Video…</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <nav class="footer-nav">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+    <p class="copy">&copy; <span id="y"></span> Ove Krüger · Sinnwärts</p>
+  </footer>
+
+  <script>
+    // Jahr im Footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Klick-zum-Laden (YouTube-nocookie)
+    document.querySelectorAll('.video-shell').forEach(shell => {
+      const btn = shell.querySelector('.play-btn');
+      btn.addEventListener('click', () => {
+        const src = shell.dataset.srcNocookie;
+        const iframe = document.createElement('iframe');
+        iframe.setAttribute('title', 'YouTube Video');
+        iframe.setAttribute('width', '560');
+        iframe.setAttribute('height', '315');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.src = src + '&autoplay=1';
+        shell.innerHTML = '';
+        shell.appendChild(iframe);
+      });
+    });
+  </script>
+</body>
+</html>

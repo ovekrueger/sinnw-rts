@@ -74,10 +74,7 @@
 
 
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('d').textContent = new Date().toLocaleDateString('de-DE');
-  </script>
+
  
 <footer class="site-footer">
   <div class="wrap">
@@ -90,9 +87,10 @@
 </footer>
 
 <a class="to-top" href="#top">↑ Nach oben</a>
+
 <script>
   document.getElementById('y').textContent = new Date().getFullYear();
+  document.getElementById('d')?.textContent = new Date().toLocaleDateString('de-DE');
 </script>
 </body>
 </html>
-

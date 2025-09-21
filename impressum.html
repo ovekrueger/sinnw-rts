@@ -4,12 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Impressum – Ove Krüger · Sinnwärts</title>
- 
   <link rel="stylesheet" href="style.css">
 </head>
-  
 <body>
-  
   <header class="site-header">
     <nav class="container nav">
       <a class="logo" href="index.html">Sinnwärts</a>
@@ -26,69 +23,62 @@
   </header>
 
   <main class="section legal">
-  <div class="container max">
-    <h1>Impressum</h1>
+    <div class="container max">
+      <h1>Impressum</h1>
 
-    <section>
-      <h2>Angaben gemäß § 5 TMG</h2>
-      <p>
-        Ove Krüger · Sucht sucht Sinn<br>
-        Hamburg · Deutschland
+      <section>
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p>Ove Krüger · Sucht sucht Sinn<br>Hamburg · Deutschland</p>
+      </section>
+
+      <section>
+        <h2>Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:ove.krger@gmail.com">ove.krger@gmail.com</a><br>
+          Telefon: 0157 334567782
+        </p>
+      </section>
+
+      <section>
+        <h2>Umsatzsteuer</h2>
+        <p>Derzeit keine Umsatzsteuer-ID, da Kleinunternehmer gemäß § 19 UStG.</p>
+      </section>
+
+      <section>
+        <h2>Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8–10 TMG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+      </section>
+
+      <section>
+        <h2>Haftung für Links</h2>
+        <p>Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für diese Inhalte ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+      </section>
+
+      <section>
+        <h2>Urheberrecht</h2>
+        <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Eine Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.</p>
+      </section>
+
+      <p class="small">Stand: <span id="d"></span></p>
+      <p class="small">
+        Weitere Informationen findest du in meiner <a href="datenschutz.html">Datenschutzerklärung</a>.
       </p>
-    </section>
-
-    <section>
-      <h2>Kontakt</h2>
-      <p>
-        E-Mail: <a href="mailto:ove.krger@gmail.com">ove.krger@gmail.com</a><br>
-        Telefon: 0157 334567782
+      <p class="small">
+        <a href="index.html">← Zurück zur Startseite</a>
       </p>
-    </section>
+    </div>
+  </main>
 
-    <!-- Falls vorhanden, lassen – sonst diesen Block löschen -->
-    <section>
-      <h2>Umsatzsteuer</h2>
-      <p>Derzeit keine Umsatzsteuer-ID, da Kleinunternehmer gemäß § 19 UStG.</p>
-    </section>
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>© <span id="y"></span> Ove Krüger · Sucht sucht Sinn</small>
+      <p><a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a></p>
+    </div>
+  </footer>
 
-    <section>
-      <h2>Haftung für Inhalte</h2>
-      <p>Als Diensteanbieter bin ich gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8–10 TMG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
-    </section>
-
-    <section>
-      <h2>Haftung für Links</h2>
-      <p>Mein Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für diese Inhalte ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-    </section>
-
-    <section>
-      <h2>Urheberrecht</h2>
-      <p>Die durch mich erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Eine Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen meiner schriftlichen Zustimmung.</p>
-    </section>
-
-    <p class="small">Stand: <span id="d"></span></p>
-    <p class="small">
-  Weitere Informationen zur Verarbeitung personenbezogener Daten findest du in meiner
-  <a href="datenschutz.html">Datenschutzerklärung</a>.
-</p>
-</div>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <small>© <span id="y"></span> Ove Krüger · Sucht sucht Sinn</small>
-    <p>
-      <a href="impressum.html">Impressum</a> | 
-      <a href="datenschutz.html">Datenschutz</a>
-    </p>
-  </div>
-</footer>
-
-<a class="to-top" href="#top">↑ Nach oben</a>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-  document.getElementById('d')?.textContent = new Date().toLocaleDateString('de-DE');
-</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('d').textContent = new Date().toLocaleDateString('de-DE');
+  </script>
 </body>
 </html>

@@ -388,3 +388,40 @@ body.ueber-mich .zigzag-image img {
   display: block;
   margin: 0 auto;
 }
+/* sorgt dafür, dass Body den ganzen Bildschirm ausfüllt */
+html, body {
+  height: 100%;
+  margin: 0;                /* Standard-Abstände weg */
+  display: flex;
+  flex-direction: column;   /* stapelt Header, Main, Footer */
+}
+
+/* Hauptinhalt wächst automatisch */
+main {
+  flex: 1;                  /* nimmt alles an Platz ein, was übrig bleibt */
+}
+
+/* Footer bleibt unten */
+.site-footer {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--ring);
+}
+
+.site-footer small {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
+}

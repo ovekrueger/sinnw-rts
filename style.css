@@ -447,3 +447,16 @@ main {
 .site-footer a:hover {
   color: var(--accent);
 }
+/* Legal/Impressum/Datenschutz – Block-Layout */
+.legal section {
+  padding: 20px 0;
+  border-top: 1px solid var(--ring);
+}
+.legal section:first-of-type { border-top: 0; }
+.legal h2 {
+  margin: 0 0 .5rem;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.legal p { margin: 0; color: var(--ink); }
+.legal .small { color: var(--muted); margin-top: 24px; }

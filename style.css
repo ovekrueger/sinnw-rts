@@ -253,3 +253,6 @@ body.ueber-mich .zigzag-image img{
 :root { --nav-h: 72px; }           /* an deine Headerhöhe anpassen */
 #suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
 html { scroll-behavior: smooth; }
+:root { --nav-h: 72px; }                /* ggf. an Headerhöhe anpassen */
+#suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
+html { scroll-behavior: smooth; }

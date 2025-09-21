@@ -250,3 +250,6 @@ body.ueber-mich .zigzag-image img{
 /* Startseiten-Teaser Süchte */
 .block--teaser-suechte { margin-top: 2rem; }
 .block--teaser-suechte .zz-row { display: grid; gap: 1rem; }
+:root { --nav-h: 72px; }           /* an deine Headerhöhe anpassen */
+#suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
+html { scroll-behavior: smooth; }

@@ -315,3 +315,11 @@ html { scroll-behavior: smooth; }
   .extra-box { padding: 1rem; }
   .extra-box .btn { width: 100%; max-width: 100%; }
 }
+/* -----------------------------------
+   Feintuning Lesbarkeit
+----------------------------------- */
+.zz-text {
+  max-width: 65ch;   /* ca. 65 Zeichen = optimale Lesbarkeit */
+  margin-left: auto;
+  margin-right: auto;
+}

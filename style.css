@@ -279,3 +279,39 @@ html { scroll-behavior: smooth; }
   .hero .cta .cta-row { flex-direction: column; align-items: stretch; }
   .hero .cta .cta-row .btn { width: 100%; }
 }
+/* Liste besser lesbar */
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem auto 0;
+  max-width: 65ch;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Extra-Boxen */
+.extras {
+  margin: 2rem auto 0;
+  display: grid;
+  gap: 1.2rem;
+  max-width: 720px;
+}
+.extra-box {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 14px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.extra-box p {
+  margin: .2rem 0 .9rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Mobile-Optimierung */
+@media (max-width: 720px) {
+  .benefits-list { font-size: 1rem; }
+  .extra-box { padding: 1rem; }
+  .extra-box .btn { width: 100%; max-width: 100%; }
+}

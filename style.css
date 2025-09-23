@@ -256,3 +256,26 @@ html { scroll-behavior: smooth; }
 :root { --nav-h: 72px; }                /* ggf. an Headerhöhe anpassen */
 #suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
 html { scroll-behavior: smooth; }
+/* Kleinere Subline im Hero */
+.sub--small { font-size: clamp(.95rem, 1.1vw, 1.05rem); }
+
+/* CTA-Gruppe im Hero */
+.hero .cta { margin-top: 1.4rem; display: grid; gap: .9rem; }
+.hero .cta .cta-row { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+.hero .cta .cta-row .btn { min-width: clamp(180px, 22vw, 280px); text-align: center; }
+
+/* Untere Einzelzeile */
+.hero .cta .cta-row.single { margin-top: .15rem; }
+
+/* Buttons (kompatibel zu deinem Stil) */
+.btn { padding: .85rem 1.2rem; border-radius: 999px; line-height: 1; font-weight: 600; display:inline-block; }
+.btn-gold    { background:#d4af37; color:#0b0f12; border:1px solid #d4af37; }
+.btn-gold:hover { filter: brightness(.95); }
+.btn-outline { background:transparent; color:#d4af37; border:1px solid #d4af37; }
+.btn-outline:hover { background: rgba(212,175,55,.08); }
+
+/* Responsive */
+@media (max-width: 720px) {
+  .hero .cta .cta-row { flex-direction: column; align-items: stretch; }
+  .hero .cta .cta-row .btn { width: 100%; }
+}

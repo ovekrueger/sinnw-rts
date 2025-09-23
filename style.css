@@ -323,3 +323,19 @@ html { scroll-behavior: smooth; }
   margin-left: auto;
   margin-right: auto;
 }
+/* Einheitliche Abstände zwischen Hauptblöcken */
+.zz-row, .section, .benefits {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+/* Fließtext */
+body {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* Listen (Benefits) */
+.benefits-list {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

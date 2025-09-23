@@ -28,7 +28,7 @@
   <meta name="twitter:image" content="images/og-start.jpg">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -49,44 +49,48 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero hero--XL hero--soft hero--low"
-         style="--overlay:.32; --pos-y:78%; --inner-bottom:60%;">
-  <img src="images/start.strand.png" 
-       alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" 
-       class="hero-bg"
-       width="1920" height="1080"
-       loading="eager" fetchpriority="high">
+<main id="main">
 
-  <div class="siegel">
-    <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
-  </div>
+  <!-- HERO (clean – nur Botschaft) -->
+  <section class="hero hero--XL hero--soft hero--low"
+           style="--overlay:.32; --pos-y:50%; --inner-bottom:50%;">
+    <img src="images/start.strand.png" 
+         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" 
+         class="hero-bg"
+         width="1920" height="1080"
+         loading="eager" fetchpriority="high">
 
-  <div class="inner tac">
-    <h1>Sucht sucht Sinn.</h1>
+    <div class="siegel">
+      <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
+    </div>
 
-    <p class="sub" style="max-width:700px;margin:0 auto;line-height:1.6">
-      Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
-      hin zu Klarheit, Würde und innerer Freiheit.
-    </p>
+    <div class="inner tac" style="display:flex;flex-direction:column;justify-content:center;min-height:60vh">
+      <h1>Sucht sucht Sinn.</h1>
 
-    <!-- Klarstellung/Claim (kleiner) -->
-    <p class="sub sub--small" style="max-width:760px;margin:0.75rem auto 0;color:#cdd1d6;opacity:.9">
-      Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
-    </p>
+      <p class="sub" style="max-width:700px;margin:.75rem auto 0;line-height:1.6">
+        Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
+        hin zu Klarheit, Würde und innerer Freiheit.
+      </p>
 
-    <!-- CTAs im Hero -->
-    <div class="cta">
-      <div class="cta-row">
-        <a href="angebote/frauen/"  class="btn btn-gold">Für Frauen – KÖNIGIN</a>
-        <a href="angebote/maenner/" class="btn btn-gold">Für Männer – SAMURAI</a>
+      <p style="max-width:760px;margin:.75rem auto 0;color:#cdd1d6;opacity:.9;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.5">
+        Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA-BLOCK direkt unter dem Hero -->
+  <section class="block tac" style="margin:2.5rem 0;">
+    <div class="cta" style="display:grid;gap:.9rem;justify-items:center">
+      <div class="cta-row" style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
+        <a href="angebote/frauen/"  class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Frauen – KÖNIGIN</a>
+        <a href="angebote/maenner/" class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Männer – SAMURAI</a>
       </div>
-      <div class="cta-row single">
-        <a href="suechte.html" class="btn btn-outline">Zu „Süchte neu denken“</a>
+      <div class="cta-row single" style="margin-top:.15rem">
+        <a href="suechte.html" class="btn btn-outline" style="min-width:clamp(200px,24vw,300px);text-align:center">Zu „Süchte neu denken“</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- START: ZZ-Layout Blöcke -->
   <section class="zz">
     <!-- Warum? (Bild rechts) -->
@@ -166,29 +170,30 @@
       </div>
     </section>
 
-    <!-- Ich bin Ove -->
-    <div class="zz-row rev">
-      <div class="zz-text">
-        <h2>Ich bin Ove.</h2>
-        <p>62 Jahre alt. 20 Jahre Alkohol – 15 Jahre trocken. Ich habe vieles verloren – und das Wesentliche gefunden.</p>
-        <p>Heute arbeite ich als Life Trust Coach. Ich begleite Menschen, die nicht mehr nur funktionieren, sondern leben wollen.</p>
-        <ul>
-          <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
-          <li>Ich motiviere – ohne zu pushen.</li>
-          <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
-        </ul>
-        <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
-        <p>
-          <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
-          <a class="btn" href="angebot.html">Angebote für dich</a>
-        </p>
-      </div>
-      <div class="zz-media">
-        <img src="images/ove.stehend.weisses-hemd.jpg" alt="Ove Krüger – weißes Hemd"
-             width="640" height="800"
-             loading="lazy" decoding="async">
-      </div>
-    </div>
+   <!-- Ich bin Ove -->
+<div class="zz-row rev">
+  <div class="zz-text">
+    <h2>Ich bin Ove.</h2>
+    <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
+    <p>Heute arbeite ich als Life Trust Coach. Klarheit, Würde und Freiheit sind mein Kompass – und können auch deiner sein.</p>
+    <ul>
+      <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
+      <li>Ich motiviere – ohne zu pushen.</li>
+      <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
+    </ul>
+    <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
+    <p>
+      <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
+      <a class="btn" href="angebot.html">Angebote für dich</a>
+    </p>
+  </div>
+  <div class="zz-media">
+    <img src="images/ove.stehend.weisses-hemd.jpg" 
+         alt="Ove Krüger – weißes Hemd"
+         width="640" height="800"
+         loading="lazy" decoding="async">
+  </div>
+</div>
   </section>
 
   <!-- Was du bekommst -->

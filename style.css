@@ -339,3 +339,11 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
 }
+/* Mobile Button-Optimierung (alle Seiten) */
+@media (max-width: 640px) {
+  .btn {
+    min-width: 140px;      /* weniger breit */
+    font-size: 0.9rem;     /* kleinere Schrift */
+    padding: 0.5rem 1rem;  /* weniger Höhe und Breite */
+  }
+}

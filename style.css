@@ -528,3 +528,14 @@ body {
   color:#f8f5e8;  /* warmes Weiß-Gold, angenehmer auf Gold */
   text-shadow:0 2px 12px rgba(0,0,0,.55);
 }
+/* === Hero Textfarben final === */
+.hero h1 {
+  color: var(--accent); /* dein Gold (#d4af37) */
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+}
+
+.hero .sub,
+.hero .tagline {
+  color: #f8f5e8; /* warmes Weiß-Gold */
+  text-shadow: 0 2px 12px rgba(0,0,0,.55);
+}

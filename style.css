@@ -539,3 +539,32 @@ body {
   color: #f8f5e8; /* warmes Weiß-Gold */
   text-shadow: 0 2px 12px rgba(0,0,0,.55);
 }
+/* === Hero: Höhe/Ausschnitt/Position (Gong voll sichtbar) === */
+.hero{
+  --hero-height:80vh;   /* höheres Bild */
+  --pos-x:50%;
+  --pos-y:38%;          /* mehr vom oberen Bereich zeigen */
+  --inner-bottom:13%;   /* Text knapp unter dem Gong */
+}
+
+/* Claim oben links */
+.hero-claim{
+  position:absolute; top:8%; left:6%; z-index:2; max-width:42%;
+}
+.hero-claim h2{
+  margin:0; line-height:1.2;
+  font-size:clamp(1.8rem,4.2vw,2.8rem);
+  color:#f8f5e8; /* warmes Weiß-Gold */
+  text-shadow:0 2px 14px rgba(0,0,0,.6);
+}
+
+/* Text ohne Hintergrundkasten, markenrichtig eingefärbt */
+.hero .hero-copy{ background:none; padding:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
+.hero h1{ color:var(--accent); text-shadow:0 2px 12px rgba(0,0,0,.55); }
+.hero .sub,.hero .tagline{ color:#f8f5e8; text-shadow:0 2px 12px rgba(0,0,0,.55); }
+
+/* Optionales Mobile-Tuning (Falls es zu dicht wird) */
+@media (max-width:640px){
+  .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
+  .hero-claim{ top:10%; left:6%; max-width:70%; }
+}

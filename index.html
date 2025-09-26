@@ -28,7 +28,14 @@
   <meta name="twitter:image" content="images/og-start.jpg">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
+
+  <!-- Mobile Button Optimierung (global, dezent) -->
+  <style>
+    @media (max-width: 640px) {
+      .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
+    }
+  </style>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -51,99 +58,82 @@
 
 <main id="main">
 
+  <!-- HERO -->
+  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.30;">
+    <picture>
+      <source srcset="images/start.strand.webp" type="image/webp">
+      <img src="images/start.strand.png"
+           alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+           class="hero-bg"
+           width="1920" height="1080"
+           loading="eager" fetchpriority="high">
+    </picture>
 
-<!-- HERO (zentrierter Text) -->
-<section class="hero hero--XL hero--soft hero--low"
-         style="--overlay:.30;">
-  <picture>
-    <source srcset="images/start.strand.webp" type="image/webp">
-    <img src="images/start.strand.png" 
-         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" 
-         class="hero-bg"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high">
-  </picture>
-
-  <div class="siegel">
-    <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
-  </div>
-
-  <div class="inner tac"
-       style="display:flex;flex-direction:column;
-              justify-content:center;align-items:center;
-              min-height:70vh; padding:0 1rem;">
-    <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
-
-    <p class="sub"
-       style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
-      Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
-      hin zu Klarheit, Würde und innerer Freiheit.
-    </p>
-
-    <p class="sub"
-       style="max-width:760px;margin:.6rem auto 0;
-              color:#cdd1d6;opacity:.9;
-              font-size:clamp(.95rem,1.1vw,1.05rem);
-              line-height:1.5">
-      Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
-    </p>
-  </div>
-</section>
-
-<section class="block tac" style="margin:2.5rem 0;">
-  <div class="cta" style="display:grid;gap:.9rem;justify-items:center">
-    <div class="cta-row" style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
-      <a href="angebote/frauen/"  class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Frauen – KÖNIGIN</a>
-      <a href="angebote/maenner/" class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Männer – SAMURAI</a>
+    <div class="siegel">
+      <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
     </div>
-    <div class="cta-row single" style="margin-top:.15rem">
-      <a href="suechte.html" class="btn btn-outline" style="min-width:clamp(200px,24vw,300px);text-align:center">Zu „Süchte neu denken“</a>
-    </div>
-  </div>
-</section>
 
-  <!-- START: ZZ-Layout Blöcke -->
+    <div class="inner tac" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:70vh;padding:0 1rem;">
+      <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
+      <p class="sub" style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
+        Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
+        hin zu Klarheit, Würde und innerer Freiheit.
+      </p>
+      <p class="sub" style="max-width:760px;margin:.6rem auto 0;color:#cdd1d6;opacity:.9;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.5">
+        Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA unter dem Hero -->
+  <section class="block tac" style="margin:2.5rem 0;">
+    <div class="cta" style="display:grid;gap:.9rem;justify-items:center">
+      <div class="cta-row" style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
+        <a href="angebote/frauen/"  class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Frauen – KÖNIGIN</a>
+        <a href="angebote/maenner/" class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Männer – SAMURAI</a>
+      </div>
+      <div class="cta-row single" style="margin-top:.15rem">
+        <a href="suechte.html" class="btn btn-outline" style="min-width:clamp(200px,24vw,300px);text-align:center">Zu „Süchte neu denken“</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT-BLÖCKE -->
   <section class="zz">
+
     <!-- Warum? (Bild rechts) -->
     <div class="zz-row">
       <div class="zz-text">
         <h2>Warum?</h2>
-        <p><strong>Jeder Mensch hat seine Holpersteine.</strong><br>
-        Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
-        <p>Du bist müde, leer, ausgebrannt.<br>
-        Du hängst in Mustern fest, die dir nicht guttun.<br>
-        Abhängigkeiten, Beziehungen, Süchte – sie scheinen stärker als du.<br>
-        Und plötzlich fragst du dich: <em>„Wer bin ich eigentlich – und wofür lebe ich?“</em></p>
+        <p><strong>Jeder Mensch hat seine Holpersteine.</strong><br>Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
+        <p>Du bist müde, leer, ausgebrannt.<br>Du hängst in Mustern fest, die dir nicht guttun.<br>Abhängigkeiten, Beziehungen, Süchte – sie scheinen stärker als du.<br>Und plötzlich fragst du dich: <em>„Wer bin ich eigentlich – und wofür lebe ich?“</em></p>
         <p><strong>Ich brenne für diese Themen:</strong></p>
         <ul>
           <li>Abhängigkeiten – besonders Sucht und Alkohol</li>
           <li>Beziehungsprobleme</li>
           <li>Selbstwert, Selbstachtung, Selbstbewusstsein, Selbstbild</li>
         </ul>
-        <p>Du willst ein neues Drehbuch für dein Leben schreiben?<br>
-        Du spürst: Es ist Zeit loszugehen. <strong>Dann bist du hier richtig.</strong></p>
-        <p>Ich kann die Fackel sein, die deine Flamme neu entzündet.<br>
-        Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
-        <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze.  
-        Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
+        <p>Du willst ein neues Drehbuch für dein Leben schreiben?<br>Du spürst: Es ist Zeit loszugehen. <strong>Dann bist du hier richtig.</strong></p>
+        <p>Ich kann die Fackel sein, die deine Flamme neu entzündet.<br>Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
+        <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
         <p><a href="ueber-mich.html" class="btn">Mehr über mich</a></p>
       </div>
-    <picture>
-  <source srcset="images/ove-rolli.webp" type="image/webp">
-  <img src="images/ove-rolli.jpg" 
-       alt="Ove Krüger – Portrait im schwarzen Rollkragen"
-       width="640" height="800"
-       loading="lazy" decoding="async">
-</picture>
+      <div class="zz-media">
+        <picture>
+          <source srcset="images/ove-rolli.webp" type="image/webp">
+          <img src="images/ove-rolli.jpg"
+               alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+               width="640" height="800"
+               loading="lazy" decoding="async">
+        </picture>
       </div>
-    
+    </div>
 
     <!-- Bin ich ein Coach? -->
     <div class="zz-row rev">
       <div class="zz-text">
         <h2>Bin ich ein Coach?</h2>
-        <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
-        <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
+        <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist: <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
         <p>Ich betrachte das Leben integral. Alles hängt zusammen und bedingt sich: Denken · Fühlen · Handeln · Sein.</p>
         <p><strong>Ich bin Experte als:</strong></p>
         <ul>
@@ -161,11 +151,8 @@
       <div class="zz-row">
         <div class="zz-text">
           <h2>Das innere Kind</h2>
-          <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen.<br>
-          <em>Es darf weinen.</em><br>
-          Oft fühlt er sich allein, unsicher, überfordert. Genau da liegt die Kraft: 
-          Wenn du dein inneres Kind würdevoll annimmst, entsteht Klarheit, Nähe und Ruhe. 
-          Dann wird aus Schmerz Würde – und aus Ohnmacht Selbstbestimmung.</p>
+          <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen.<br><em>Es darf weinen.</em></p>
+          <p>Oft fühlt er sich allein, unsicher, überfordert. Genau da liegt die Kraft: Wenn du dein inneres Kind würdevoll annimmst, entsteht Klarheit, Nähe und Ruhe. Dann wird aus Schmerz Würde – und aus Ohnmacht Selbstbestimmung.</p>
           <ul>
             <li>Alte Muster erkennen – ohne Schuld, ohne Drama.</li>
             <li>Gefühle regulieren: Körper, Atem, klare Grenzen.</li>
@@ -175,109 +162,94 @@
             <a class="btn btn-gold" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
           </div>
         </div>
-     <div class="zz-media">
-  <picture>
-    <source srcset="images/teddy-im-sand.webp" type="image/webp">
-    <img src="images/teddy-im-sand.png"
-         alt="Symbolbild: Teddybär im Sand im warmen Abendlicht – stilles Zeichen für das innere Kind"
-         width="640" height="400"
-         loading="lazy" decoding="async">
-  </picture>
-</div>
+        <div class="zz-media">
+          <picture>
+            <source srcset="images/teddy-im-sand.webp" type="image/webp">
+            <img src="images/teddy-im-sand.png"
+                 alt="Symbolbild: Teddybär im Sand im warmen Abendlicht – stilles Zeichen für das innere Kind"
+                 width="640" height="400"
+                 loading="lazy" decoding="async">
+          </picture>
         </div>
-    
+      </div>
     </section>
 
-   <!-- Ich bin Ove -->
-<div class="zz-row rev">
-  <div class="zz-text">
-    <h2>Ich bin Ove.</h2>
-    <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
-    <p>Heute arbeite ich als Life Trust Coach. Klarheit, Würde und Freiheit sind mein Kompass – und können auch deiner sein.</p>
-    <ul>
-      <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
-      <li>Ich motiviere – ohne zu pushen.</li>
-      <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
-    </ul>
-    <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
-    <p>
-      <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
-      <a class="btn" href="angebot.html">Angebote für dich</a>
-    </p>
-  </div>
-  <picture>
- <picture>
-  <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
-  <img src="images/ove.stehend.weisses-hemd.jpg" 
-       alt="Ove Krüger – Portrait im weißen Hemd"
-       width="640" height="800"
-       loading="lazy" decoding="async">
-</picture>
-  </div>
+    <!-- Ich bin Ove -->
+    <div class="zz-row rev">
+      <div class="zz-text">
+        <h2>Ich bin Ove.</h2>
+        <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
+        <p>Heute arbeite ich als Life Trust Coach. Klarheit, Würde und Freiheit sind mein Kompass – und können auch deiner sein.</p>
+        <ul>
+          <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
+          <li>Ich motiviere – ohne zu pushen.</li>
+          <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
+        </ul>
+        <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
+        <p>
+          <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
+          <a class="btn" href="angebot.html">Angebote für dich</a>
+        </p>
+      </div>
+      <div class="zz-media">
+        <picture>
+          <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
+          <img src="images/ove.stehend.weisses-hemd.jpg"
+               alt="Ove Krüger – Portrait im weißen Hemd"
+               width="640" height="800"
+               loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
 
+  </section><!-- /.zz -->
+
+  <!-- Was du bekommst -->
+  <section class="benefits" style="text-align:center; margin:4rem 0 3rem;">
+    <h2>Was du bekommst</h2>
+    <ul class="benefits-list">
+      <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
+      <li>🧘 <strong>Innere Ruhe</strong> – weniger Druck, mehr Atem, mehr Achtsamkeit im Alltag.</li>
+      <li>🤝 <strong>Gesündere Beziehungen</strong> – zu dir selbst und zu anderen, getragen von Würde.</li>
+      <li>🌙 <strong>Besserer Schlaf</strong> – erholsam, tiefer, echter Reset für Körper und Seele.</li>
+      <li>🎯 <strong>Ein Wofür</strong> – Sinn, Richtung, Orientierung und mehr Selbstwirksamkeit.</li>
+      <li>⚡ <strong>Energie</strong> – für das, was dir wirklich wichtig ist.</li>
+    </ul>
+
+    <!-- Sahnehäubchen / Geschenke -->
+    <div style="margin:2rem auto 0; display:grid; gap:1rem; max-width:720px;">
+
+      <!-- Klanggeschenk -->
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;text-align:center;">
+        <p style="margin:.1rem 0 .7rem 0;">
+          <strong>Klanggeschenk:</strong> Ein Klangraum, den meine Partnerin (Breathwork-Coachin) und ich für dich geschaffen haben. Eigenproduktion, Herzarbeit, Einladung zum bewussten Atem.
+        </p>
+
+        <audio controls preload="none" style="width:100%;max-width:420px;display:block;margin:0 auto .8rem;">
+          <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
+          Dein Browser unterstützt das Audio-Element nicht.
+          <a href="assets/audio/atem-mein-leben.mp3">Hier herunterladen</a>.
+        </audio>
+
+        <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download>
+          🎵 „Atmen, mein Leben“ – Download
+        </a>
+      </div>
+
+      <!-- Leseprobe -->
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;text-align:center;">
+        <p style="margin:.1rem 0 .7rem 0;">
+          <strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.
+        </p>
+        <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
+          <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px);text-align:center">📖 Online lesen</a>
+          <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download style="min-width:clamp(200px,24vw,300px);text-align:center">⬇ PDF herunterladen</a>
+        </div>
+      </div>
+
+    </div>
   </section>
 
-<!-- Was du bekommst -->
-<section class="benefits" style="text-align:center; margin:4rem 0 3rem;">
-  <h2>Was du bekommst</h2>
- 
-<ul class="benefits-list">
-  <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
-  <li>🧘 <strong>Innere Ruhe</strong> – weniger Druck, mehr Atem, mehr Achtsamkeit im Alltag.</li>
-  <li>🤝 <strong>Gesündere Beziehungen</strong> – zu dir selbst und zu anderen, getragen von Würde.</li>
-  <li>🌙 <strong>Besserer Schlaf</strong> – erholsam, tiefer, echter Reset für Körper und Seele.</li>
-  <li>🎯 <strong>Ein Wofür</strong> – Sinn, Richtung, Orientierung und mehr Selbstwirksamkeit.</li>
-  <li>⚡ <strong>Energie</strong> – für das, was dir wirklich wichtig ist.</li>
-</ul>
-
-<!-- Sahnehäubchen / Geschenke -->
-<div style="margin:2rem auto 0; display:grid; gap:1rem; max-width:720px;">
-
-  <!-- Klanggeschenk -->
-  <div style="background:rgba(255,255,255,.04);
-              border:1px solid rgba(212,175,55,.25);
-              border-radius:14px; padding:1.1rem; text-align:center;">
-    <p style="margin:.1rem 0 .7rem 0;">
-      <strong>Klanggeschenk:</strong> Ein Klangraum, den meine Partnerin (Breathwork-Coachin)
-      und ich für dich geschaffen haben. Eigenproduktion, Herzarbeit, Einladung zum bewussten Atem.
-    </p>
-
-    <audio controls preload="metadata"
-           style="width:100%;max-width:420px;display:block;margin:0 auto .8rem;">
-      <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
-      Dein Browser unterstützt das Audio-Element nicht.
-      <a href="assets/audio/atem-mein-leben.mp3">Hier herunterladen</a>.
-    </audio>
-
-    <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download>
-      🎵 „Atmen, mein Leben“ – Download
-    </a>
-  </div>
-
-  <!-- Leseprobe -->
-  <div style="background:rgba(255,255,255,.04);
-              border:1px solid rgba(212,175,55,.25);
-              border-radius:14px; padding:1.1rem; text-align:center;">
-    <p style="margin:.1rem 0 .7rem 0;">
-      <strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.
-    </p>
-
-    <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
-      <a href="leseprobe.html" class="btn"
-         style="min-width:clamp(200px,24vw,300px);text-align:center">
-        📖 Online lesen
-      </a>
-      <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download
-         style="min-width:clamp(200px,24vw,300px);text-align:center">
-        ⬇ PDF herunterladen
-      </a>
-    </div>
-  </div>
-
-</div>
- 
-
-</section>
 </main>
 
 <!-- FOOTER -->
@@ -296,9 +268,9 @@
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
     <small style="display:block; margin-top:.75rem; font-size:.85rem; opacity:.8;">
-  🎵 <a href="assets/audio/atmen_mein_leben.mp3" download>Song „Atmen, mein Leben“</a> · 
-  📖 <a href="assets/book/Holpersteine_Kapitel1.pdf">Preview „Holpersteine“</a>
-</small>
+      🎵 <a href="assets/audio/atem-mein-leben.mp3" download>Song „Atmen, mein Leben“</a> · 
+      📖 <a href="assets/books/leseprobe.pdf">Preview „Holpersteine“</a>
+    </small>
   </div>
 </footer>
 

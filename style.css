@@ -314,3 +314,24 @@ body.ueber-mich .zigzag-image img{
   .site-header .nav{ flex-wrap:wrap; }
   .site-header .menu{ width:100%; justify-content:flex-start; }
 }
+/* === NAV-Kompatibilität (unterstützt beide HTML-Varianten) === */
+.site-header .container.nav,
+.site-header .nav-container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:10px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+.site-header .logo,
+.site-header .brand{
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--accent);
+  text-decoration:none;
+}
+.site-header .menu,
+.site-header .nav-list{
+  disp

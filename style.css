@@ -91,41 +91,63 @@ body{ padding-top:72px } /* Platz für fixed Header */
 .nav-list a.active{ border-bottom-color:var(--accent) }
 
 /* ===================================================
-   HERO
+   HERO – Resonanzraum (aufgeräumt, 1 Quelle der Wahrheit)
    =================================================== */
 .hero{
-  --overlay:.32; --hero-height:60vh; --inner-bottom:22%; --pos-x:50%; --pos-y:70%;
-  position:relative; display:grid; place-items:start center; min-height:var(--hero-height);
-  text-align:center; overflow:hidden; border-bottom:1px solid var(--ring);
+  /* Steuersignale */
+  --hero-height:80vh;    /* Höhe des Heros (kompakt-groß) */
+  --pos-x:50%;           /* horizontaler Bildfokus */
+  --pos-y:38%;           /* vertikaler Bildfokus: kleiner = weiter nach oben */
+  --inner-bottom:13%;    /* Abstand Text vom unteren Rand */
+
+  position:relative;
+  display:grid; place-items:center;
+  min-height:var(--hero-height);
+  text-align:center;
+  overflow:hidden;
+  border-bottom:1px solid var(--ring);
 }
+
 .hero img.hero-bg{
-  position:absolute; inset:0; z-index:0; width:100%; height:100%;
-  object-fit:cover; object-position:var(--pos-x,50%) var(--pos-y,70%);
+  position:absolute; inset:0; z-index:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:var(--pos-x) var(--pos-y);
 }
-.hero::after{ content:""; position:absolute; inset:0; z-index:1; background:rgba(0,0,0,var(--overlay)); pointer-events:none }
+
+/* weicher Verlauf unten für Lesbarkeit */
+.hero.hero--soft::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(11,15,18,0) 46%, rgba(11,15,18,.62) 100%);
+  pointer-events:none;
+}
+
+/* Textblock – frei schwebend (kein Kasten) */
 .hero .inner{
-  position:absolute; left:50%; transform:translateX(-50%); bottom:var(--inner-bottom);
-  z-index:2; max-width:800px; padding:0 20px; text-align:center; color:var(--accent);
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:var(--inner-bottom); z-index:2; max-width:800px; padding:0 20px;
 }
-.hero h1{
-  margin:0 0 .5em; font-size:clamp(2rem,4vw,3rem); line-height:1.2; color:var(--accent);
-  text-shadow:-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 6px rgba(0,0,0,.8);
-}
-.hero .sub{
-  margin:0; font-size:clamp(1.05rem,2.2vw,1.3rem); line-height:1.4; color:#fff;
-  text-shadow:-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 0 6px rgba(0,0,0,.8);
-}
-@media (max-width:640px){ .hero{ --hero-height:56vh } .hero .inner{ --inner-bottom:18% } }
-.hero--S{ --hero-height:48vh; --inner-bottom:18% }
-.hero--M{ --hero-height:60vh; --inner-bottom:22% }
-.hero--L{ --hero-height:72vh; --inner-bottom:24% }
-.hero--soft{ --overlay:.24 } .hero--normal{ --overlay:.40 } .hero--dark{ --overlay:.55 }
-.hero--top{ --pos-y:30% } .hero--mid{ --pos-y:50% } .hero--low{ --pos-y:78% }
+.hero .hero-copy{ background:none; padding:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
 
-/* Siegel im Hero */
-.hero .siegel{ position:absolute; right:30px; bottom:30px; max-width:120px; z-index:2; opacity:.95 }
-.hero .siegel img{ width:100%; height:auto; border-radius:8px }
+.hero h1{ 
+  margin:0; 
+  color:#f8f5e8; 
+  text-shadow:0 2px 14px rgba(0,0,0,.60);
+  font-size:clamp(2rem, 4vw, 3rem);
+}
+.hero .sub,
+.hero .tagline{
+  margin:.25rem 0 0;
+  color:#f8f5e8;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+  line-height:1.35;
+}
 
+/* Mobile Feintuning */
+@media (max-width:640px){
+  .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
+  .hero h1{ font-size:clamp(1.7rem, 6vw, 2.3rem); }
+}
 /* ===================================================
    ZigZag (.zz)
    =================================================== */

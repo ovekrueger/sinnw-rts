@@ -577,3 +577,19 @@ body {
   letter-spacing: 0.5px;
   text-shadow: 0 2px 18px rgba(0,0,0,.65);  /* Tiefe auf hellem Hintergrund */
 }
+.hero-claim {
+  position: absolute;
+  top: 14%;      /* statt ganz oben → etwas tiefer ins Bild */
+  left: 6%;      /* etwas eingerückt */
+  z-index: 3;
+}
+
+.hero-claim h2 {
+  margin: 0;
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--accent); /* Gold */
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.75),
+    0 0 14px rgba(0,0,0,.55);
+}

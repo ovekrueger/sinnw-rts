@@ -27,15 +27,26 @@
   <meta name="twitter:description" content="Aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit. Coaching & Mentoring von Ove Krüger.">
   <meta name="twitter:image" content="images/og-start.jpg">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=11">
+ <!-- Styles -->
+<link rel="stylesheet" href="style.css?v=14">
 
-  <!-- Mobile Button Optimierung (global, dezent) -->
-  <style>
-    @media (max-width: 640px) {
-      .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
-    }
-  </style>
+<!-- Startseiten-Overrides (hart, unabhängig von style.css-Caches) -->
+<style>
+  /* Mobile Button Optimierung (dezent) */
+  @media (max-width: 640px){
+    .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
+  }
+
+  /* === Startseite: Hero kleiner + Text höher (erzwingen) === */
+  body.startseite .hero{ min-height:40vh !important; }
+  body.startseite .hero .inner{
+    bottom:48% !important;               /* 46–52% feinjustieren */
+    left:0 !important; right:0 !important; margin:0 auto !important;
+    transform:none !important;           /* vermeidet Weichzeichnung */
+    max-width:800px !important; text-align:center !important;
+    z-index:2 !important; min-height:0 !important;
+  }
+</style>
 </head>
 <body class="startseite" id="top">
 <!-- NAV -->

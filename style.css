@@ -437,4 +437,41 @@ body {
   max-width: 800px;
   padding: 0 20px;
 }
+/* === Resonanzraum – finaler Hero (kompakt & sauber) === */
+.hero{
+  --hero-height:56vh;    /* Höhe des Heros (kompakt) */
+  --pos-x:50%;           /* horizontaler Bildfokus */
+  --pos-y:42%;           /* vertikaler Bildfokus: kleiner = mehr oben sichtbar */
+  --inner-bottom:14%;    /* Abstand Text vom unteren Rand */
+  position:relative;
+  display:grid; place-items:center;
+  min-height:var(--hero-height);
+  text-align:center; overflow:hidden;
+  border-bottom:1px solid var(--ring);
+}
+.hero img.hero-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:var(--pos-x) var(--pos-y);
+  z-index:0;
+}
+.hero.hero--soft::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
+  pointer-events:none;
+}
+.hero .inner{
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:var(--inner-bottom); z-index:2; max-width:800px; padding:0 20px;
+}
+.hero .hero-copy{
+  display:inline-block; padding:.6rem 1.2rem; border-radius:12px;
+  background:rgba(11,15,18,.40); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+}
+.hero h1{ margin:0; text-shadow:0 2px 18px rgba(0,0,0,.55); }
+.hero .sub,.hero .tagline{ margin:.25rem 0 0; text-shadow:0 2px 14px rgba(0,0,0,.55); }
 
+/* Mobile Feintuning */
+@media (max-width:640px){
+  .hero{ --hero-height:52vh; --pos-y:46%; --inner-bottom:12%; }
+  .hero .hero-copy{ padding:.5rem 1rem; border-radius:10px; }
+}

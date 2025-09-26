@@ -593,3 +593,18 @@ body.startseite .hero .sub {
   color:#f5f5f5;                /* Hellgrau für Lesbarkeit */
   text-shadow:0 2px 12px rgba(0,0,0,.65);
 }
+/* === FINAL OVERRIDE NUR STARTSEITE ========================= */
+body.startseite .hero{
+  min-height:40vh !important;                 /* Hero wirklich kleiner */
+}
+
+body.startseite .hero--XL .inner{
+  bottom:46% !important;                      /* Höhe des Textblocks */
+  left:0 !important; right:0 !important;      /* zentrieren ohne translate */
+  margin:0 auto !important;
+  transform:none !important;
+  max-width:800px !important;
+  text-align:center !important;
+  min-height:0 !important;
+  z-index:2 !important;
+}

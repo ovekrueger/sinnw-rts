@@ -394,3 +394,124 @@ body.ueber-mich .zigzag-image img{
   .hero-claim{ top:12%; left:5%; max-width:70%; }
   .hero-claim h2{ font-size: clamp(1.6rem, 6vw, 2rem); }
 }
+/* === NAV-Kompatibilität (unterstützt beide HTML-Varianten) === */
+.site-header .container.nav,
+.site-header .nav-container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:10px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+}
+.site-header .logo,
+.site-header .brand{
+  font-weight:700;
+  text-transform:uppercase;
+  color:var(--accent);
+  text-decoration:none;
+}
+.site-header .menu,
+.site-header .nav-list{
+  display:flex !important;
+  flex-wrap:wrap;
+  gap:2rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.site-header .menu li,
+.site-header .nav-list li{ margin:0; }
+.site-header .menu a,
+.site-header .nav-list a{
+  display:inline-block;
+  color:var(--ink);
+  padding:8px 0;
+  text-decoration:none;
+  border-bottom:2px solid transparent;
+}
+.site-header .menu a:hover,
+.site-header .nav-list a:hover{ color:var(--accent); }
+.site-header .menu a.is-active,
+.site-header .nav-list a.is-active,
+.site-header .nav-list a.active{ border-bottom-color:var(--accent); }
+@media (max-width:760px){
+  .site-header .container.nav,
+  .site-header .nav-container{ flex-wrap:wrap; }
+  .site-header .menu,
+  .site-header .nav-list{ gap:1rem 1.1rem; justify-content:flex-start; }
+}
+
+/* === HERO Feintuning (Claim tiefer & weiter links; Gold/Schatten bleibt) === */
+.hero{ --inner-bottom:16%; }
+.hero-claim{ top:22%; left:5%; max-width:40%; }
+.hero-claim h2{
+  font-size:clamp(2.1rem,5.2vw,3.6rem);
+  letter-spacing:.2px;
+}
+@media (max-width:880px){
+  .hero{ --inner-bottom:14%; }
+  .hero-claim{ top:16%; left:6%; max-width:64%; }
+}
+
+/* === Sektionen: Headline/Meta === */
+.block-hd{ text-align:left; margin:0 0 1rem; }
+.block-hd .eyebrow{
+  margin:0 0 .25rem;
+  font-size:.8rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.block-hd h2{ margin:.2rem 0 .4rem; color:var(--accent); }
+
+/* === Cards-Layouts für Resonanzraum === */
+.cards{ display:grid; gap:16px; }
+.cards--3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
+.cards--1{ grid-template-columns:1fr; }
+@media (max-width:980px){ .cards--3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px){ .cards--3{ grid-template-columns:1fr; } }
+.card{
+  background:#0e1216;
+  border:1px solid var(--ring);
+  border-radius:14px;
+  padding:16px;
+}
+.card h3{ margin:.2rem 0 .4rem; color:#e9e6df; }
+.card p{ margin:.35rem 0 0; }
+
+/* === Quotes / Stimmen === */
+.quotes--grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+@media (max-width:880px){ .quotes--grid{ grid-template-columns:1fr; } }
+.quote{
+  background:#0e1216;
+  border:1px solid var(--ring);
+  border-radius:12px;
+  padding:16px;
+}
+.quote blockquote{
+  margin:0 0 .6rem 0;
+  border-left:3px solid var(--accent);
+  padding-left:14px;
+}
+.quote figcaption{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+/* === Footer klein & dezent (Resonanzraum-Variante passt sich an) === */
+.site-footer{
+  text-align:center;
+  color:var(--muted);
+  padding:2rem 1rem;
+  border-top:1px solid var(--ring);
+  margin-top:40px;
+  font-size:.85rem;
+}
+.site-footer a{ color:var(--muted); text-decoration:none; }
+.site-footer a:hover{ color:var(--accent); }

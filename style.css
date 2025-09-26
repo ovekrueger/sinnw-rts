@@ -407,5 +407,34 @@ body {
 .hero.hero--soft::after{
   background: linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
 }
+.hero {
+  --hero-height: 68vh;     /* Höhe des Heros */
+  --inner-bottom: 18%;     /* Abstand Textblock vom unteren Rand */
+  --pos-y: 55%;            /* Bildausschnitt vertikal */
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: var(--hero-height);
+  text-align: center;
+  overflow: hidden;
+}
 
+.hero img.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center var(--pos-y);
+}
+
+.hero .inner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: var(--inner-bottom);
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
 

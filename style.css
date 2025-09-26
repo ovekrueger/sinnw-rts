@@ -506,3 +506,23 @@ body#index .hero .sub{
 .hero--XL.hero--soft::after{
   background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
 }
+/* Globale Grundhöhe etwas reduzieren */
+.hero{
+  --hero-height:70vh;  /* vorher 80vh */
+}
+
+/* Angebote + Kontakt kleiner */
+body.angebot .hero,
+body.kontakt .hero{
+  --hero-height:58vh;
+}
+
+/* Resonanzraum leicht größer, aber nicht so massiv */
+body.resonanzraum .hero{
+  --hero-height:68vh;
+}
+
+/* Über mich bleibt bewusst hoch */
+body.ueber-mich .hero{
+  --hero-height:80vh;
+}

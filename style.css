@@ -353,3 +353,32 @@ body {
   gap: 2rem;
   width: 100%;
 }
+/* Scrim: weicher, transparenter Verlauf hinter dem Text */
+.hero.hero--soft::after{
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(11,15,18,0) 50%, rgba(11,15,18,.55) 100%);
+  pointer-events:none;
+}
+
+/* Textblock-Feinschliff */
+.hero .inner{
+  text-align:center;
+  /* schiebt den Block etwas tiefer in die Bildhöhe */
+  transform: translateY(6vh);
+}
+.hero h1{
+  text-shadow: 0 2px 18px rgba(0,0,0,.55);
+}
+.hero .sub, .hero .tagline{
+  text-shadow: 0 2px 14px rgba(0,0,0,.55);
+  margin-top:.25rem;
+}
+.hero .tagline{
+  opacity:.9;
+  font-size:.95rem;
+}
+@media (max-width: 640px){
+  .hero .inner{ transform: translateY(2vh); }
+  .hero h1{ font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+}

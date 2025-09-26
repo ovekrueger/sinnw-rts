@@ -406,3 +406,26 @@ body#index .hero .sub{
   color: #f5f5f5; /* hellere Lesbarkeit */
   text-shadow: 0 2px 10px rgba(0,0,0,.65);
 }
+/* === Startseite: Hero-Text höher & besser lesbar === */
+/* greift nur auf der Startseite, weil dort .hero--XL gesetzt ist */
+.hero--XL .inner{
+  bottom:24% !important;              /* höher (vorher ~13%) */
+}
+.hero--XL h1{
+  color:var(--accent);
+  text-shadow:0 3px 14px rgba(0,0,0,.7);
+}
+.hero--XL .sub{
+  color:#f5f5f5;
+  text-shadow:0 2px 12px rgba(0,0,0,.65);
+}
+
+/* etwas mehr Lesbarkeit durch sanfteres Abdunkeln unten */
+.hero--XL.hero--soft::after{
+  background:linear-gradient(180deg, rgba(11,15,18,0) 44%, rgba(11,15,18,.68) 100%);
+}
+
+/* optional: Bild leicht „ankontrastieren“, damit Gold mehr knallt */
+.hero--XL .hero-bg{
+  filter:contrast(1.05) brightness(.98);
+}

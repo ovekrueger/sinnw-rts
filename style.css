@@ -259,20 +259,7 @@ body.ueber-mich .zigzag-image img{
 @media (prefers-reduced-motion:reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important }
 }
-<picture>
-  <source
-    type="image/webp"
-    srcset="images/stimmgabel-gong-1280.webp 1280w,
-            images/stimmgabel-gong-1920.webp 1920w,
-            images/stimmgabel-gong-2560.webp 2560w"
-    sizes="100vw">
-  <img
-    src="images/stimmgabel-gong-1920.jpg"
-    alt="Stimmgabel und Gong im goldenen Resonanzlicht"
-    class="hero-bg"
-    decoding="async"
-    fetchpriority="high">
-</picture>
+
 /* Quote-Accordion */
 .quote--long details{
   background:#0e1216;
@@ -300,14 +287,16 @@ body.ueber-mich .zigzag-image img{
   border-left:3px solid var(--accent);
   padding-left:14px;
 }
+
 /* === NAV-HOTFIX (oben im Header) === */
+/* WICHTIG: wir targeten .menu (deine UL hat diese Klasse) */
 .site-header .nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:1rem;
 }
-.site-header .nav ul{
+.site-header .menu{
   display:flex !important;
   flex-wrap:wrap;
   gap:.75rem 1.1rem;
@@ -315,13 +304,13 @@ body.ueber-mich .zigzag-image img{
   margin:0;
   padding:0;
 }
-.site-header .nav li{ margin:0; }
-.site-header .nav a{
+.site-header .menu li{ margin:0; }
+.site-header .menu a{
   display:inline-block;
   padding:.35rem .6rem;
   text-decoration:none;
 }
-@media (max-width: 760px){
+@media (max-width:760px){
   .site-header .nav{ flex-wrap:wrap; }
-  .site-header .nav ul{ width:100%; justify-content:flex-start; }
+  .site-header .menu{ width:100%; justify-content:flex-start; }
 }

@@ -470,3 +470,39 @@ body#index .hero .sub{
   left:50% !important;
   z-index:2 !important;
 }
+/* === STARTSEITE: Hero-Text scharf + höher ========================= */
+
+/* 1) Transform entfernen, zentrieren ohne translate */
+.hero--XL .inner{
+  position:absolute !important;
+  left:0 !important;
+  right:0 !important;
+  margin:0 auto !important;
+  transform:none !important;           /* verhindert Weichzeichnung */
+  bottom:50% !important;               /* Höhe: 48–54% je nach Geschmack */
+  max-width:800px !important;
+  padding:0 1rem !important;
+  text-align:center !important;
+  min-height:0 !important;             /* kein 70vh-„Ziehen“ */
+  z-index:2 !important;
+}
+
+/* 2) Schatten entschärfen (weniger Blur = mehr Schärfe) */
+.hero--XL h1{
+  color:var(--accent);
+  text-shadow:0 2px 6px rgba(0,0,0,.6); /* vorher ~14px */
+}
+.hero--XL .sub{
+  color:#f5f5f5;
+  text-shadow:0 1px 5px rgba(0,0,0,.55);
+}
+
+/* 3) Falls Safari/Chrome vom Bild-Filter das Compositing weichzeichnet: deaktivieren */
+.hero--XL .hero-bg{
+  filter:none !important;              /* bei Bedarf wieder einschalten */
+}
+
+/* 4) Lesbarkeits-Gradient unten etwas kräftiger */
+.hero--XL.hero--soft::after{
+  background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
+}

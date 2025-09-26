@@ -460,3 +460,13 @@ body#index .hero .sub{
 .hero--XL .hero-bg{
   filter: contrast(1.05) brightness(.98);
 }
+/* Hard override für Startseiten-Hero */
+.hero--XL .inner{
+  position:absolute !important;
+  top:auto !important;            /* falls irgendwo 'top' gesetzt wird */
+  bottom:48% !important;          /* HÖHER: 48–56% testen */
+  min-height:0 !important;        /* killt alte 70vh-Effekte */
+  transform:translateX(-50%) !important;
+  left:50% !important;
+  z-index:2 !important;
+}

@@ -382,3 +382,34 @@ body {
   .hero .inner{ transform: translateY(2vh); }
   .hero h1{ font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
 }
+/* === Resonanzraum: kompakter Hero (Höhe, Ausschnitt, Texttiefe) === */
+.hero{ 
+  --hero-height:50vh;     /* Höhe des Heros (kompakt) */
+  --pos-x:50%;            /* Bild horizontal zentriert */
+  --pos-y:38%;            /* Bildausschnitt: mehr oben zeigen (30–45% testen) */
+  --inner-bottom:14%;     /* Abstand Text vom unteren Rand (12–18% testen) */
+}
+
+/* Textbox für bessere Lesbarkeit (leicht getönt) */
+.hero .hero-copy{
+  display:inline-block;
+  padding:.6rem 1.2rem;
+  border-radius:12px;
+  background: rgba(11,15,18,.40);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* Kein zusätzliches Verschieben – steuern wir nur über --inner-bottom */
+.hero .inner{ transform:none; }
+
+/* Etwas stärkerer Verlauf unten = mehr Kontrast */
+.hero.hero--soft::after{
+  background: linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
+}
+
+/* Mobile Feintuning */
+@media (max-width: 640px){
+  .hero{ --hero-height:52vh; --pos-y:42%; --inner-bottom:12%; }
+  .hero .hero-copy{ padding:.5rem 1rem; border-radius:10px; }
+}

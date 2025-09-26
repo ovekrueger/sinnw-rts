@@ -347,3 +347,9 @@ body {
     padding: 0.5rem 1rem;  /* weniger Höhe und Breite */
   }
 }
+.site-header .nav ul.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}

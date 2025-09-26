@@ -475,3 +475,22 @@ body {
   .hero{ --hero-height:52vh; --pos-y:46%; --inner-bottom:12%; }
   .hero .hero-copy{ padding:.5rem 1rem; border-radius:10px; }
 }
+/* Hero höher machen und Text frei stellen */
+.hero{
+  --hero-height:72vh;   /* Höhe vergrößert */
+  --pos-x:50%;
+  --pos-y:42%;          /* Fokus etwas nach oben */
+  --inner-bottom:12%;
+}
+.hero .hero-copy{
+  background:none;      /* Hintergrundkasten weg */
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  padding:0;            /* Polsterung raus */
+}
+.hero h1,
+.hero .sub,
+.hero .tagline{
+  color:#fff;           /* weiß auf Gold */
+  text-shadow:0 2px 18px rgba(0,0,0,.65); /* Lesbarkeit */
+}

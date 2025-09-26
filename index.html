@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="de">
 <head>
@@ -27,28 +28,19 @@
   <meta name="twitter:description" content="Aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit. Coaching & Mentoring von Ove Krüger.">
   <meta name="twitter:image" content="images/og-start.jpg">
 
- <!-- Styles -->
-<link rel="stylesheet" href="style.css?v=14">
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css?v=11">
 
-<!-- Startseiten-Overrides (hart, unabhängig von style.css-Caches) -->
-<style>
-  /* Mobile Button Optimierung (dezent) */
-  @media (max-width: 640px){
-    .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
-  }
-
-  /* === Startseite: Hero kleiner + Text höher (erzwingen) === */
-  body.startseite .hero{ min-height:40vh !important; }
-  body.startseite .hero .inner{
-    bottom:48% !important;               /* 46–52% feinjustieren */
-    left:0 !important; right:0 !important; margin:0 auto !important;
-    transform:none !important;           /* vermeidet Weichzeichnung */
-    max-width:800px !important; text-align:center !important;
-    z-index:2 !important; min-height:0 !important;
-  }
-</style>
+  <!-- Mobile Button Optimierung (global, dezent) -->
+  <style>
+    @media (max-width: 640px) {
+      .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
+    }
+  </style>
 </head>
-<body class="startseite" id="top">
+<body id="top">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
 <!-- NAV -->
 <header class="site-header">
   <div class="nav-container">
@@ -68,33 +60,32 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero hero--soft">
+  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.30;">
     <picture>
       <source srcset="images/start.strand.webp" type="image/webp">
-      <img
-        src="images/start.strand.png"
-        alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-        class="hero-bg"
-        width="1920" height="1080"
-        loading="eager" fetchpriority="high">
+      <img src="images/start.strand.png"
+           alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+           class="hero-bg"
+           width="1920" height="1080"
+           loading="eager" fetchpriority="high">
     </picture>
 
     <div class="siegel">
       <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
     </div>
 
-    <div class="inner">
-      <h1>Sucht sucht Sinn.</h1>
-      <p class="sub">
-        Ich begleite dich aus Abhängigkeit und alten Mustern –
+    <div class="inner tac" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:70vh;padding:0 1rem;">
+      <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
+      <p class="sub" style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
+        Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
         hin zu Klarheit, Würde und innerer Freiheit.
       </p>
-      <p class="sub" style="opacity:.95; font-size:clamp(.95rem,1.1vw,1.05rem);">
+      <p class="sub" style="max-width:760px;margin:.6rem auto 0;color:#cdd1d6;opacity:.9;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.5">
         Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
       </p>
     </div>
   </section>
-</section>
+
   <!-- CTA unter dem Hero -->
   <section class="block tac" style="margin:2.5rem 0;">
     <div class="cta" style="display:grid;gap:.9rem;justify-items:center">

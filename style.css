@@ -408,8 +408,4 @@ body {
   background: linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
 }
 
-/* Mobile Feintuning */
-@media (max-width: 640px){
-  .hero{ --hero-height:52vh; --pos-y:42%; --inner-bottom:12%; }
-  .hero .hero-copy{ padding:.5rem 1rem; border-radius:10px; }
-}
+

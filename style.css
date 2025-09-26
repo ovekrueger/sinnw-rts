@@ -494,3 +494,15 @@ body {
   color:#fff;           /* weiß auf Gold */
   text-shadow:0 2px 18px rgba(0,0,0,.65); /* Lesbarkeit */
 }
+.hero{
+  --hero-height:82vh;   /* mehr Höhe → Gong komplett sichtbar */
+  --pos-y:38%;          /* Bildausschnitt etwas nach oben verschieben */
+  --inner-bottom:12%;   /* Text knapp unterhalb Gong */
+}
+
+.hero h1,
+.hero .sub,
+.hero .tagline{
+  color:#f8f5e8;  /* warmes Weiß-Gold, angenehmer auf Gold */
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+}

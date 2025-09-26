@@ -1,5 +1,5 @@
 /* =========================================================
-   SINNWÄRTS – CLEAN CSS (bereinigt)
+   SINNWÄRTS – CLEAN CSS (aufgeräumt)
    Stand: 2025-09-20
    ========================================================= */
 
@@ -11,6 +11,7 @@
   --accent:#d4af37;    /* Gold */
   --ring:#2a2f36;      /* Linien/Umriss */
   --maxw:1000px;       /* Inhaltsbreite */
+  --nav-h:72px;        /* Headerhöhe für Scroll-Offsets */
 }
 
 /* ===== Fonts (lokal) ===== */
@@ -35,18 +36,22 @@
 html,body{ margin:0; padding:0 }
 img{ display:block; max-width:100%; height:auto }
 
+html{ scroll-behavior:smooth }
 body{
   background:var(--bg);
   color:var(--ink);
   font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  line-height:1.6;
+  font-size:1.05rem;
+  line-height:1.65;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
+  padding-top:var(--nav-h); /* Platz für fixed Header */
 }
 
 a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
+a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
 
 /* ===== Layout Utils ===== */
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
@@ -78,27 +83,25 @@ blockquote p{ margin:8px 0 }
   background:rgba(11,15,18,.95);
   border-bottom:1px solid var(--ring);
 }
-body{ padding-top:72px } /* Platz für fixed Header */
-
-.nav-container{
+.site-header .nav{
   max-width:var(--maxw); margin:0 auto; padding:10px 24px;
-  display:flex; justify-content:space-between; align-items:center; gap:16px
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
 }
-.brand{ font-size:1.1rem; font-weight:700; text-transform:uppercase; color:var(--accent) }
-.nav-list{ list-style:none; display:flex; gap:18px; margin:0; padding:0; flex-wrap:wrap }
-.nav-list a{ color:var(--ink); padding:8px 0; border-bottom:2px solid transparent }
-.nav-list a:hover{ color:var(--accent) }
-.nav-list a.active{ border-bottom-color:var(--accent) }
+.site-header .logo{ font-weight:700; text-transform:uppercase; color:var(--accent) }
+.site-header .menu{ list-style:none; display:flex; gap:2rem; margin:0; padding:0; flex-wrap:wrap; justify-content:center }
+.site-header .menu a{ color:var(--ink); padding:8px 0; border-bottom:2px solid transparent }
+.site-header .menu a:hover{ color:var(--accent) }
+.site-header .menu a.is-active{ border-bottom-color:var(--accent) }
 
 /* ===================================================
-   HERO – Resonanzraum (aufgeräumt, 1 Quelle der Wahrheit)
+   HERO – final & singular
    =================================================== */
 .hero{
-  /* Steuersignale */
-  --hero-height:80vh;    /* Höhe des Heros (kompakt-groß) */
-  --pos-x:50%;           /* horizontaler Bildfokus */
-  --pos-y:38%;           /* vertikaler Bildfokus: kleiner = weiter nach oben */
-  --inner-bottom:13%;    /* Abstand Text vom unteren Rand */
+  /* Steuer-Variablen */
+  --hero-height:80vh;   /* Bildhöhe */
+  --pos-x:50%;          /* Fokus horizontal */
+  --pos-y:38%;          /* Fokus vertikal (kleiner = höher) */
+  --inner-bottom:13%;   /* Abstand Titel vom unteren Rand */
 
   position:relative;
   display:grid; place-items:center;
@@ -107,54 +110,63 @@ body{ padding-top:72px } /* Platz für fixed Header */
   overflow:hidden;
   border-bottom:1px solid var(--ring);
 }
-
 .hero img.hero-bg{
   position:absolute; inset:0; z-index:0;
   width:100%; height:100%;
-  object-fit:cover;
-  object-position:var(--pos-x) var(--pos-y);
+  object-fit:cover; object-position:var(--pos-x) var(--pos-y);
 }
-
-/* weicher Verlauf unten für Lesbarkeit */
+/* sanfter Verlauf unten für Lesbarkeit */
 .hero.hero--soft::after{
   content:""; position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg, rgba(11,15,18,0) 46%, rgba(11,15,18,.62) 100%);
   pointer-events:none;
 }
 
-/* Textblock – frei schwebend (kein Kasten) */
+/* Claim oben links */
+.hero-claim{
+  position:absolute; top:14%; left:6%; z-index:3; max-width:42%;
+}
+.hero-claim h2{
+  margin:0; line-height:1.15;
+  font-size:clamp(2.2rem,5vw,3.4rem);
+  font-weight:700;
+  color:var(--accent);
+  text-shadow:
+    0 3px 8px rgba(0,0,0,.75),
+    0 0 14px rgba(0,0,0,.55);
+}
+
+/* Titel unten mittig (frei, ohne Kasten) */
 .hero .inner{
   position:absolute; left:50%; transform:translateX(-50%);
   bottom:var(--inner-bottom); z-index:2; max-width:800px; padding:0 20px;
 }
-.hero .hero-copy{ background:none; padding:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
-
-.hero h1{ 
-  margin:0; 
-  color:#f8f5e8; 
-  text-shadow:0 2px 14px rgba(0,0,0,.60);
+.hero .hero-copy{ background:none; padding:0 }
+.hero h1{
+  margin:0;
+  color:var(--accent);
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
   font-size:clamp(2rem, 4vw, 3rem);
 }
-.hero .sub,
-.hero .tagline{
+.hero .sub,.hero .tagline{
   margin:.25rem 0 0;
   color:#f8f5e8;
   text-shadow:0 2px 12px rgba(0,0,0,.55);
   line-height:1.35;
 }
-
-/* Mobile Feintuning */
 @media (max-width:640px){
   .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
+  .hero-claim{ top:10%; left:6%; max-width:70%; }
   .hero h1{ font-size:clamp(1.7rem, 6vw, 2.3rem); }
 }
+
 /* ===================================================
    ZigZag (.zz)
    =================================================== */
 .zz{ max-width:var(--maxw); margin:56px auto; padding:0 24px }
 .zz-row{ display:flex; gap:32px; align-items:center; margin:56px 0 }
 .zz-row.rev{ flex-direction:row-reverse }
-.zz-text{ flex:1.15; max-width:65ch }
+.zz-text{ flex:1.15; max-width:65ch; margin-left:auto; margin-right:auto }
 .zz-media{ flex:1 }
 .zz-media img{ width:100%; height:auto; border-radius:12px; border:1px solid var(--ring) }
 @media (max-width:880px){ .zz-row,.zz-row.rev{ flex-direction:column } .zz-media{ order:2 } }
@@ -162,14 +174,18 @@ body{ padding-top:72px } /* Platz für fixed Header */
 /* ===================================================
    Buttons / Pills – Gold
    =================================================== */
-.btn,.pill,a.btn,button.btn,.card .btn{
+.btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 24px; border-radius:999px; font-weight:600;
-  background:var(--accent); color:#000; border:none; cursor:pointer; text-decoration:none;
-  transition:background-color .2s ease, transform .05s ease;
+  padding:.85rem 1.2rem; border-radius:999px; line-height:1; font-weight:600;
+  border:1px solid transparent; cursor:pointer; text-decoration:none;
+  transition:background-color .2s ease, transform .05s ease, filter .2s ease;
+  min-height:44px;
 }
-.btn:hover{ background:#b9962f }
 .btn:active{ transform:translateY(1px) }
+.btn-gold    { background:var(--accent); color:#0b0f12; border-color:var(--accent) }
+.btn-gold:hover{ filter:brightness(.95) }
+.btn-outline { background:transparent; color:var(--accent); border-color:var(--accent) }
+.btn-outline:hover{ background:rgba(212,175,55,.08) }
 .btn-row{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:40px 0 }
 
 /* ===================================================
@@ -183,7 +199,7 @@ body{ padding-top:72px } /* Platz für fixed Header */
 /* ===================================================
    Legal Pages (Impressum / Datenschutz) – Karten
    =================================================== */
-.legal .container.max{ max-width:800px } /* lesefreundliche Breite */
+.legal .container.max{ max-width:800px }
 .legal section{
   background:#111519; border:1px solid var(--ring); border-radius:12px;
   padding:1.5rem; margin:1.25rem 0; box-shadow:0 2px 6px rgba(0,0,0,.25);
@@ -195,21 +211,18 @@ body{ padding-top:72px } /* Platz für fixed Header */
 /* ===================================================
    Footer (sticky + dezent)
    =================================================== */
-html,body{ height:100%; display:flex; flex-direction:column } /* Sticky-Layout */
-main{ flex:1 } /* Hauptinhalt füllt Höhe */
-
+html,body{ height:100%; display:flex; flex-direction:column }
+main{ flex:1 }
 .site-footer{
   text-align:center; color:var(--muted);
   padding:2rem 1rem; border-top:1px solid var(--ring); margin-top:40px;
-  font-size:.85rem; font-family:"Montserrat",sans-serif;
+  font-size:.85rem;
 }
-.site-footer .wrap{ padding:0 24px }
-.site-footer small{ display:block; margin-bottom:.5rem }
 .site-footer a{ color:var(--muted); text-decoration:none; margin:0 .5rem }
 .site-footer a:hover{ color:var(--accent) }
 
 /* ===================================================
-   Misc / Performance
+   Misc / Performance / A11y
    =================================================== */
 .to-top{
   position:fixed; right:16px; bottom:16px; background:var(--accent);
@@ -238,358 +251,25 @@ body.ueber-mich .zigzag-image img{
   max-width:320px; height:auto; border-radius:12px; border:1px solid var(--ring);
   display:block; margin:0 auto;
 }
-/* =========================
-   Custom Blocks (Ove)
-   ========================= */
 
-.block--ki .zz-row {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1.5rem;
-  align-items: center;
-}
+/* Feintuning Lesbarkeit */
+.benefits-list{ list-style:none; padding:0; margin:1.25rem auto 0; max-width:65ch; text-align:left; line-height:1.6 }
 
-@media (max-width: 840px) {
-  .block--ki .zz-row {
-    grid-template-columns: 1fr;
-  }
+/* Motion-Respekt */
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important }
 }
-
-.btn {
-  display: inline-block;
-  padding: 0.65rem 1rem;
-  border: 1px solid #333;
-  border-radius: 0.6rem;
-  text-decoration: none;
-  color: inherit;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn:hover {
-  background: #d4af37; /* Goldton deiner Marke */
-  color: #000;
-}
-/* Startseiten-Teaser Süchte */
-.block--teaser-suechte { margin-top: 2rem; }
-.block--teaser-suechte .zz-row { display: grid; gap: 1rem; }
-:root { --nav-h: 72px; }           /* an deine Headerhöhe anpassen */
-#suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
-html { scroll-behavior: smooth; }
-:root { --nav-h: 72px; }                /* ggf. an Headerhöhe anpassen */
-#suechte { scroll-margin-top: calc(var(--nav-h) + 16px); }
-html { scroll-behavior: smooth; }
-/* Kleinere Subline im Hero */
-.sub--small { font-size: clamp(.95rem, 1.1vw, 1.05rem); }
-
-/* CTA-Gruppe im Hero */
-.hero .cta { margin-top: 1.4rem; display: grid; gap: .9rem; }
-.hero .cta .cta-row { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
-.hero .cta .cta-row .btn { min-width: clamp(180px, 22vw, 280px); text-align: center; }
-
-/* Untere Einzelzeile */
-.hero .cta .cta-row.single { margin-top: .15rem; }
-
-/* Buttons (kompatibel zu deinem Stil) */
-.btn { padding: .85rem 1.2rem; border-radius: 999px; line-height: 1; font-weight: 600; display:inline-block; }
-.btn-gold    { background:#d4af37; color:#0b0f12; border:1px solid #d4af37; }
-.btn-gold:hover { filter: brightness(.95); }
-.btn-outline { background:transparent; color:#d4af37; border:1px solid #d4af37; }
-.btn-outline:hover { background: rgba(212,175,55,.08); }
-
-/* Responsive */
-@media (max-width: 720px) {
-  .hero .cta .cta-row { flex-direction: column; align-items: stretch; }
-  .hero .cta .cta-row .btn { width: 100%; }
-}
-/* Liste besser lesbar */
-.benefits-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.25rem auto 0;
-  max-width: 65ch;
-  text-align: left;
-  line-height: 1.6;
-}
-
-/* Extra-Boxen */
-.extras {
-  margin: 2rem auto 0;
-  display: grid;
-  gap: 1.2rem;
-  max-width: 720px;
-}
-.extra-box {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(212,175,55,.25);
-  border-radius: 14px;
-  padding: 1.25rem;
-  text-align: center;
-}
-.extra-box p {
-  margin: .2rem 0 .9rem 0;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* Mobile-Optimierung */
-@media (max-width: 720px) {
-  .benefits-list { font-size: 1rem; }
-  .extra-box { padding: 1rem; }
-  .extra-box .btn { width: 100%; max-width: 100%; }
-}
-/* -----------------------------------
-   Feintuning Lesbarkeit
------------------------------------ */
-.zz-text {
-  max-width: 65ch;   /* ca. 65 Zeichen = optimale Lesbarkeit */
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Einheitliche Abstände zwischen Hauptblöcken */
-.zz-row, .section, .benefits {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-/* Fließtext */
-body {
-  font-size: 1.05rem;
-  line-height: 1.65;
-}
-
-/* Listen (Benefits) */
-.benefits-list {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-/* Mobile Button-Optimierung (alle Seiten) */
-@media (max-width: 640px) {
-  .btn {
-    min-width: 140px;      /* weniger breit */
-    font-size: 0.9rem;     /* kleinere Schrift */
-    padding: 0.5rem 1rem;  /* weniger Höhe und Breite */
-  }
-}
-.site-header .nav ul.menu {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
-}
-/* Scrim: weicher, transparenter Verlauf hinter dem Text */
-.hero.hero--soft::after{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(11,15,18,0) 50%, rgba(11,15,18,.55) 100%);
-  pointer-events:none;
-}
-
-/* Textblock-Feinschliff */
-.hero .inner{
-  text-align:center;
-  /* schiebt den Block etwas tiefer in die Bildhöhe */
-  transform: translateY(6vh);
-}
-.hero h1{
-  text-shadow: 0 2px 18px rgba(0,0,0,.55);
-}
-.hero .sub, .hero .tagline{
-  text-shadow: 0 2px 14px rgba(0,0,0,.55);
-  margin-top:.25rem;
-}
-.hero .tagline{
-  opacity:.9;
-  font-size:.95rem;
-}
-@media (max-width: 640px){
-  .hero .inner{ transform: translateY(2vh); }
-  .hero h1{ font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
-}
-/* === Resonanzraum: kompakter Hero (Höhe, Ausschnitt, Texttiefe) === */
-.hero{ 
-  --hero-height:50vh;     /* Höhe des Heros (kompakt) */
-  --pos-x:50%;            /* Bild horizontal zentriert */
-  --pos-y:38%;            /* Bildausschnitt: mehr oben zeigen (30–45% testen) */
-  --inner-bottom:14%;     /* Abstand Text vom unteren Rand (12–18% testen) */
-}
-
-/* Textbox für bessere Lesbarkeit (leicht getönt) */
-.hero .hero-copy{
-  display:inline-block;
-  padding:.6rem 1.2rem;
-  border-radius:12px;
-  background: rgba(11,15,18,.40);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-/* Kein zusätzliches Verschieben – steuern wir nur über --inner-bottom */
-.hero .inner{ transform:none; }
-
-/* Etwas stärkerer Verlauf unten = mehr Kontrast */
-.hero.hero--soft::after{
-  background: linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
-}
-.hero {
-  --hero-height: 68vh;     /* Höhe des Heros */
-  --inner-bottom: 18%;     /* Abstand Textblock vom unteren Rand */
-  --pos-y: 55%;            /* Bildausschnitt vertikal */
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-height: var(--hero-height);
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero img.hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center var(--pos-y);
-}
-
-.hero .inner {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: var(--inner-bottom);
-  z-index: 2;
-  max-width: 800px;
-  padding: 0 20px;
-}
-/* === Resonanzraum – finaler Hero (kompakt & sauber) === */
-.hero{
-  --hero-height:56vh;    /* Höhe des Heros (kompakt) */
-  --pos-x:50%;           /* horizontaler Bildfokus */
-  --pos-y:42%;           /* vertikaler Bildfokus: kleiner = mehr oben sichtbar */
-  --inner-bottom:14%;    /* Abstand Text vom unteren Rand */
-  position:relative;
-  display:grid; place-items:center;
-  min-height:var(--hero-height);
-  text-align:center; overflow:hidden;
-  border-bottom:1px solid var(--ring);
-}
-.hero img.hero-bg{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; object-position:var(--pos-x) var(--pos-y);
-  z-index:0;
-}
-.hero.hero--soft::after{
-  content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(11,15,18,0) 48%, rgba(11,15,18,.62) 100%);
-  pointer-events:none;
-}
-.hero .inner{
-  position:absolute; left:50%; transform:translateX(-50%);
-  bottom:var(--inner-bottom); z-index:2; max-width:800px; padding:0 20px;
-}
-.hero .hero-copy{
-  display:inline-block; padding:.6rem 1.2rem; border-radius:12px;
-  background:rgba(11,15,18,.40); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
-}
-.hero h1{ margin:0; text-shadow:0 2px 18px rgba(0,0,0,.55); }
-.hero .sub,.hero .tagline{ margin:.25rem 0 0; text-shadow:0 2px 14px rgba(0,0,0,.55); }
-
-/* Mobile Feintuning */
-@media (max-width:640px){
-  .hero{ --hero-height:52vh; --pos-y:46%; --inner-bottom:12%; }
-  .hero .hero-copy{ padding:.5rem 1rem; border-radius:10px; }
-}
-/* Hero höher machen und Text frei stellen */
-.hero{
-  --hero-height:72vh;   /* Höhe vergrößert */
-  --pos-x:50%;
-  --pos-y:42%;          /* Fokus etwas nach oben */
-  --inner-bottom:12%;
-}
-.hero .hero-copy{
-  background:none;      /* Hintergrundkasten weg */
-  backdrop-filter:none;
-  -webkit-backdrop-filter:none;
-  padding:0;            /* Polsterung raus */
-}
-.hero h1,
-.hero .sub,
-.hero .tagline{
-  color:#fff;           /* weiß auf Gold */
-  text-shadow:0 2px 18px rgba(0,0,0,.65); /* Lesbarkeit */
-}
-.hero{
-  --hero-height:82vh;   /* mehr Höhe → Gong komplett sichtbar */
-  --pos-y:38%;          /* Bildausschnitt etwas nach oben verschieben */
-  --inner-bottom:12%;   /* Text knapp unterhalb Gong */
-}
-
-.hero h1,
-.hero .sub,
-.hero .tagline{
-  color:#f8f5e8;  /* warmes Weiß-Gold, angenehmer auf Gold */
-  text-shadow:0 2px 12px rgba(0,0,0,.55);
-}
-/* === Hero Textfarben final === */
-.hero h1 {
-  color: var(--accent); /* dein Gold (#d4af37) */
-  text-shadow: 0 2px 12px rgba(0,0,0,.55);
-}
-
-.hero .sub,
-.hero .tagline {
-  color: #f8f5e8; /* warmes Weiß-Gold */
-  text-shadow: 0 2px 12px rgba(0,0,0,.55);
-}
-/* === Hero: Höhe/Ausschnitt/Position (Gong voll sichtbar) === */
-.hero{
-  --hero-height:80vh;   /* höheres Bild */
-  --pos-x:50%;
-  --pos-y:38%;          /* mehr vom oberen Bereich zeigen */
-  --inner-bottom:13%;   /* Text knapp unter dem Gong */
-}
-
-/* Claim oben links */
-.hero-claim{
-  position:absolute; top:8%; left:6%; z-index:2; max-width:42%;
-}
-.hero-claim h2{
-  margin:0; line-height:1.2;
-  font-size:clamp(1.8rem,4.2vw,2.8rem);
-  color:#f8f5e8; /* warmes Weiß-Gold */
-  text-shadow:0 2px 14px rgba(0,0,0,.6);
-}
-
-/* Text ohne Hintergrundkasten, markenrichtig eingefärbt */
-.hero .hero-copy{ background:none; padding:0; backdrop-filter:none; -webkit-backdrop-filter:none; }
-.hero h1{ color:var(--accent); text-shadow:0 2px 12px rgba(0,0,0,.55); }
-.hero .sub,.hero .tagline{ color:#f8f5e8; text-shadow:0 2px 12px rgba(0,0,0,.55); }
-
-/* Optionales Mobile-Tuning (Falls es zu dicht wird) */
-@media (max-width:640px){
-  .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
-  .hero-claim{ top:10%; left:6%; max-width:70%; }
-}
-.hero-claim h2 {
-  margin: 0;
-  line-height: 1.2;
-  font-size: clamp(2rem, 4.5vw, 3rem);  /* größer als Sub, kleiner als H1 */
-  font-weight: 700;
-  color: var(--accent);                 /* dein Gold (#d4af37) */
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 18px rgba(0,0,0,.65);  /* Tiefe auf hellem Hintergrund */
-}
-.hero-claim {
-  position: absolute;
-  top: 14%;      /* statt ganz oben → etwas tiefer ins Bild */
-  left: 6%;      /* etwas eingerückt */
-  z-index: 3;
-}
-
-.hero-claim h2 {
-  margin: 0;
-  font-size: clamp(2.3rem, 5vw, 3.4rem);
-  font-weight: 700;
-  color: var(--accent); /* Gold */
-  text-shadow:
-    0 3px 8px rgba(0,0,0,.75),
-    0 0 14px rgba(0,0,0,.55);
-}
+<picture>
+  <source
+    type="image/webp"
+    srcset="images/stimmgabel-gong-1280.webp 1280w,
+            images/stimmgabel-gong-1920.webp 1920w,
+            images/stimmgabel-gong-2560.webp 2560w"
+    sizes="100vw">
+  <img
+    src="images/stimmgabel-gong-1920.jpg"
+    alt="Stimmgabel und Gong im goldenen Resonanzlicht"
+    class="hero-bg"
+    decoding="async"
+    fetchpriority="high">
+</picture>

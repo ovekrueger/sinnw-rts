@@ -273,3 +273,30 @@ body.ueber-mich .zigzag-image img{
     decoding="async"
     fetchpriority="high">
 </picture>
+/* Quote-Accordion */
+.quote--long details{
+  background:#0e1216;
+  border:1px solid var(--ring);
+  border-radius:12px;
+  padding:0.85rem 1rem;
+}
+.quote--long summary{
+  list-style:none;
+  cursor:pointer;
+  display:flex; align-items:center; gap:.5rem;
+  font-weight:600; color:var(--ink);
+  outline:none;
+}
+.quote--long summary::-webkit-details-marker{ display:none }
+.quote--long summary::after{
+  content:"▸";
+  margin-left:auto;
+  transition:transform .2s ease;
+  opacity:.85;
+}
+.quote--long details[open] summary::after{ transform:rotate(90deg) }
+.quote--long blockquote{
+  margin:.75rem 0 0;
+  border-left:3px solid var(--accent);
+  padding-left:14px;
+}

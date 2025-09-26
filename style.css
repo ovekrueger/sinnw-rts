@@ -429,3 +429,34 @@ body#index .hero .sub{
 .hero--XL .hero-bg{
   filter:contrast(1.05) brightness(.98);
 }
+/* === Startseite: Hero-Text höher + besser lesbar (für .hero--XL) === */
+
+/* Höhe/Position über die bereits genutzte Variable steuern */
+.hero--XL{
+  --inner-bottom: 26%;            /* vorher ~13% -> deutlich höher */
+}
+
+/* Sicherheit: keine unnötige Mindesthöhe im Textcontainer */
+.hero--XL .inner{
+  min-height: 0 !important;       /* überschreibt inline 70vh */
+}
+
+/* Lesbarkeit: Goldtitel + stärkere Schatten */
+.hero--XL h1{
+  color: var(--accent);
+  text-shadow: 0 3px 14px rgba(0,0,0,.7);
+}
+.hero--XL .sub{
+  color: #f5f5f5;
+  text-shadow: 0 2px 12px rgba(0,0,0,.65);
+}
+
+/* Unten stärker abdunkeln, damit Text kontrastiert */
+.hero--XL.hero--soft::after{
+  background: linear-gradient(180deg, rgba(11,15,18,0) 42%, rgba(11,15,18,.78) 100%);
+}
+
+/* Bild minimal ankontrastieren */
+.hero--XL .hero-bg{
+  filter: contrast(1.05) brightness(.98);
+}

@@ -568,3 +568,12 @@ body {
   .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
   .hero-claim{ top:10%; left:6%; max-width:70%; }
 }
+.hero-claim h2 {
+  margin: 0;
+  line-height: 1.2;
+  font-size: clamp(2rem, 4.5vw, 3rem);  /* größer als Sub, kleiner als H1 */
+  font-weight: 700;
+  color: var(--accent);                 /* dein Gold (#d4af37) */
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 18px rgba(0,0,0,.65);  /* Tiefe auf hellem Hintergrund */
+}

@@ -608,3 +608,14 @@ body.startseite .hero--XL .inner{
   min-height:0 !important;
   z-index:2 !important;
 }
+/* === Hero-Anpassung Startseite === */
+.hero--XL {
+  min-height: 38vh !important;   /* statt ~70vh */
+  padding-block: 0 !important;   /* falls alte Klassen Polster hinzufügen */
+}
+
+@media (max-width: 640px) {
+  .hero--XL {
+    min-height: 48vh !important; /* etwas höher auf Handy */
+  }
+}

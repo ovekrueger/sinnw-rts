@@ -304,3 +304,23 @@ section.hero.hero--XL .inner{
   text-align: center !important;
   z-index: 2 !important;
 }
+/* === STARTSEITE HERO – Lesbarkeit Text === */
+section.hero.hero--XL h1 {
+  color: var(--accent);  /* Gold */
+  font-size: clamp(2.4rem, 4.8vw, 3.4rem);
+  font-weight: 700;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.8),
+    0 0 14px rgba(0,0,0,.55);
+  -webkit-text-stroke: 0.6px rgba(0,0,0,.4); /* hauchdünne Outline */
+}
+
+section.hero.hero--XL .sub {
+  color: #fff;  /* heller als bisher */
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.5;
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.75),
+    0 0 8px rgba(0,0,0,.5);
+  font-weight: 500;
+}

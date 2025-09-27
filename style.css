@@ -254,3 +254,17 @@ main > section{ content-visibility:auto; contain-intrinsic-size:800px }
 @media (prefers-reduced-motion:reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important }
 }
+body.index .hero.hero--XL {
+  min-height: 22vh !important;   /* runter von 32 → 22 */
+}
+
+body.index .hero.hero--XL .inner {
+  bottom: 50% !important;        /* Text leicht hochschieben */
+}
+body.index .hero.hero--XL {
+  min-height: 24vh !important;   /* kleiner Hero, weniger Himmel */
+}
+
+body.index .hero.hero--XL .inner {
+  bottom: 60% !important;        /* Textblock deutlich höher */
+}

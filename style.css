@@ -458,3 +458,26 @@ body.resonanzraum .hero .inner{ bottom: 16%; }
   body.resonanzraum .hero{ min-height: 76vh !important; }
   body.resonanzraum .hero .inner{ bottom: 12%; }
 }
+/* Resonanzraum: Hero höher + Bild sicher aufspannen */
+body.resonanzraum section.hero{
+  position: relative;
+  min-height: 88vh !important;      /* Höhe steuern */
+  overflow: hidden;
+}
+
+/* Bild/Picture absolut, unabhängig von Klassenname */
+body.resonanzraum section.hero > picture,
+body.resonanzraum section.hero > picture > img{
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 35% !important;   /* mehr Gong ↑ (kleiner = weiter nach oben) */
+}
+
+/* Overlays unten, Texte oben */
+body.resonanzraum .hero-claim{ top:18%; left:6%; z-index:3; }
+body.resonanzraum .hero .inner{ bottom:16%; z-index:2; }
+.hero.hero--soft::after{ z-index:1; }

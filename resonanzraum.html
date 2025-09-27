@@ -10,44 +10,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="resonanzraum">
-  <!-- HEADER / NAV -->
-  <header class="site-header">
-    <nav class="container nav">
-      <a class="logo" href="index.html">Sucht sucht Sinn</a>
-      <ul class="menu">
+
+<header class="site-header">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Sucht sucht Sinn</a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav-list">
         <li><a href="index.html">Start</a></li>
         <li><a href="ueber-mich.html">Über mich</a></li>
         <li><a href="angebot.html">Angebote</a></li>
-        <li><a class="is-active" href="resonanzraum.html">Resonanzraum</a></li>
+        <li><a href="resonanzraum.html" class="active" aria-current="page">Resonanzraum</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-<!-- HERO Resonanzraum – mit zweitem Header/Claim oben links -->
+<!-- HERO -->
 <section class="hero hero--soft">
   <picture>
-    <source srcset="images/stimmgabel-gong.webp" type="image/webp">
-    <img src="images/stimmgabel-gong.jpg"
-         alt="Stimmgabel und Gong im goldenen Resonanzlicht"
-         class="hero-bg">
+    <source srcset="images/resonanzraum-gong.webp" type="image/webp">
+    <img src="images/resonanzraum-gong.jpg" alt="Resonanzraum – Gong im Licht"
+         class="hero-bg" width="1920" height="1080" loading="eager" fetchpriority="high">
   </picture>
 
-  <!-- Zweiter Header/Claim oben links -->
+  <!-- Claim oben links -->
   <div class="hero-claim">
     <h2>Wo Schwingung Begegnung wird</h2>
+    <p class="tagline">Impulse · Blog · Stimmen</p>
   </div>
 
-  <!-- Haupttitel unten mittig -->
-  <div class="inner">
-    <div class="hero-copy">
-      <h1>Resonanzraum</h1>
-      <p class="sub">Impulse · Blog · Stimmen</p>
-    </div>
+  <!-- Titel mittig -->
+  <div class="inner hero-copy">
+    <h1>Resonanzraum</h1>
   </div>
 </section>
-
   <main>
     <!-- IMPULSE -->
     <section class="wrap block" id="impulse">

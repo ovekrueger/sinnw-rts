@@ -369,3 +369,15 @@ section.hero.hero--XL .sub-strong {
   -webkit-text-stroke: 0.7px rgba(0,0,0,.45); /* klare Kontur */
   margin-top: 1rem;
 }
+/* === Buttons optimiert (Gold) === */
+.btn-gold {
+  background: #e0b937;          /* etwas kräftigeres Gold */
+  color: #0b0f12;
+  border-color: #e0b937;
+  font-weight: 600;
+}
+.btn-gold:hover {
+  background: #cfa32f;          /* dunkler beim Hover */
+  border-color: #cfa32f;
+  filter: brightness(1);
+}

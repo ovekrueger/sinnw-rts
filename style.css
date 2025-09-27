@@ -513,3 +513,38 @@ body.resonanzraum .hero .sub-strong{
   list-style:none;
   margin:0; padding:0;
 }
+/* === Navigation mittig === */
+.site-header .nav-container{
+  display:flex;
+  align-items:center;
+}
+.site-header .brand{ margin-right:auto; }
+.site-header nav{ flex:1; }
+.site-header .nav-list{
+  display:flex;
+  justify-content:center;
+  gap:2rem;
+  list-style:none;
+  margin:0; padding:0;
+}
+
+/* === Resonanzraum Hero größer + Bildfokus === */
+body.resonanzraum .hero{
+  min-height: 95vh !important;   /* fast volle Höhe */
+  position: relative;
+  overflow: hidden;
+}
+body.resonanzraum .hero > picture,
+body.resonanzraum .hero > picture > img{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 38% !important; /* Fokus etwas nach oben -> Gong im Bild */
+}
+
+/* Text dezenter */
+body.resonanzraum .hero h1{ font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.7); }
+body.resonanzraum .hero .sub,
+body.resonanzraum .hero .tagline{ font-weight:500; text-shadow:0 1px 4px rgba(0,0,0,.65); }

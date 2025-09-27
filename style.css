@@ -324,3 +324,25 @@ section.hero.hero--XL .sub {
     0 0 8px rgba(0,0,0,.5);
   font-weight: 500;
 }
+/* === STARTSEITE HERO – Headline + Subheadline === */
+section.hero.hero--XL h1 {
+  color: var(--accent);  /* Gold */
+  font-size: clamp(2.6rem, 5vw, 3.6rem); /* etwas größer */
+  font-weight: 700;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.85),
+    0 0 14px rgba(0,0,0,.6);
+  -webkit-text-stroke: 0.6px rgba(0,0,0,.35);
+  margin-bottom: .6rem;
+}
+
+section.hero.hero--XL .sub {
+  color: #fff;
+  font-size: clamp(1.15rem, 1.6vw, 1.35rem); /* größer als normaler Fließtext */
+  line-height: 1.55;
+  font-weight: 600;
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.8),
+    0 0 10px rgba(0,0,0,.55);
+  margin-top: .4rem;
+}

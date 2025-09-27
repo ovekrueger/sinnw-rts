@@ -633,3 +633,38 @@ body.resonanzraum .hero .inner {
   max-width: 800px;
   z-index: 2;
 }
+/* Claim links: kleiner, weiter an den Rand */
+body.resonanzraum .hero-claim{
+  position:absolute; top:22%; left:4%;   /* näher am Rand */
+  max-width:36%; z-index:2;
+}
+body.resonanzraum .hero-claim h2{
+  margin:0;
+  font-size:clamp(1.4rem,3.6vw,2.2rem);  /* kleiner als H1 */
+  font-weight:600;                        /* schlanker */
+  color:var(--accent);
+  text-shadow:0 2px 6px rgba(0,0,0,.6);
+}
+
+/* H1 bleibt Haupttitel, Tagline darunter zentriert */
+body.resonanzraum .hero .inner{ bottom:16%; text-align:center; }
+body.resonanzraum .hero h1{
+  margin:.4rem 0;
+  font-size:clamp(2.2rem,5vw,3.2rem);
+  font-weight:700;
+  color:var(--accent);
+  text-shadow:0 3px 8px rgba(0,0,0,.7);
+}
+body.resonanzraum .hero .tagline{
+  margin:.5rem 0 0;
+  font-size:clamp(1rem,2vw,1.25rem);
+  font-weight:500;
+  color:#f5f5f5;
+  text-shadow:0 2px 5px rgba(0,0,0,.6);
+}
+
+/* Mobile etwas weiter rein + kleiner */
+@media (max-width:880px){
+  body.resonanzraum .hero-claim{ left:6%; top:18%; max-width:58%; }
+  body.resonanzraum .hero-claim h2{ font-size:clamp(1.2rem,4.8vw,1.8rem); }
+}

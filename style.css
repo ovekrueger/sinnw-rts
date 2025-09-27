@@ -268,3 +268,39 @@ body.index .hero.hero--XL {
 body.index .hero.hero--XL .inner {
   bottom: 60% !important;        /* Textblock deutlich höher */
 }
+/* === STARTSEITE HERO: Höhe + Textposition HART FESTLEGEN === */
+section.hero.hero--XL{
+  position: relative;
+  min-height: 24vh !important;     /* -> Höhe des Heros */
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* Bild aus dem Flow, auf Section spannen */
+section.hero.hero--XL > picture{
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+section.hero.hero--XL .hero-bg{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 55% !important; /* Fokus etwas tiefer als Mitte */
+}
+
+/* Textblock optisch höher setzen */
+section.hero.hero--XL .inner{
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: 60% !important;           /* -> höher über den Kopf des Mannes */
+  min-height: 0 !important;
+  padding: 0 1rem !important;
+  text-align: center !important;
+  z-index: 2 !important;
+}

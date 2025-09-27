@@ -357,3 +357,15 @@ section.hero.hero--XL .sub {
     0 0 12px rgba(0,0,0,.6);    /* weiche Umhüllung */
   -webkit-text-stroke: 0.5px rgba(0,0,0,.4); /* hauchdünne Kontur */
 }
+/* === HERO Subheadline STRONG === */
+section.hero.hero--XL .sub-strong {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 2.2vw, 1.9rem); /* deutlich größer */
+  font-weight: 800;                        /* extrafett */
+  line-height: 1.4;
+  text-shadow:
+    0 4px 10px rgba(0,0,0,.95),            /* starker Schlagschatten */
+    0 0 18px rgba(0,0,0,.7);               /* weiche Aura */
+  -webkit-text-stroke: 0.7px rgba(0,0,0,.45); /* klare Kontur */
+  margin-top: 1rem;
+}

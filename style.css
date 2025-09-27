@@ -404,3 +404,11 @@ body.resonanzraum .hero-claim{ top:18%; left:6%; max-width:46%; }
 
 /* Sicherstellen, dass Overlays darunter bleiben */
 .hero.hero--soft::after{ z-index:1; }
+/* Resonanzraum – Hero höher für Gong */
+body.resonanzraum .hero {
+  min-height: 80vh !important;   /* statt 60–68vh */
+}
+
+body.resonanzraum .hero img.hero-bg {
+  object-position: center 40%;   /* Fokus leicht nach oben, damit Gong sichtbar bleibt */
+}

@@ -636,3 +636,18 @@ section.hero.hero--XL .inner {
 /* Hero kompakt (Startseite) */
 section.hero.hero--XL{ min-height:30vh !important; padding-block:0 !important; }
 section.hero.hero--XL .inner{ min-height:0 !important; padding:clamp(7vh,10vh,13vh) 1rem 2rem !important; }
+/* === Hero-Bild fixiert, Section bestimmt die Höhe === */
+section.hero.hero--XL {
+  position: relative;
+  min-height: 32vh;         /* hier steuerst du die Höhe des ganzen Hero */
+  overflow: hidden;         /* Bildreste abschneiden */
+}
+
+section.hero.hero--XL .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* Bild füllt Section */
+  object-position: center 60%;
+}

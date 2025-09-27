@@ -1,20 +1,20 @@
 /* =========================================================
-   SINNWÄRTS – CLEAN CSS (aufgeräumt)
-   Stand: 2025-09-26
+   SINNWÄRTS – CLEAN CSS
+   Stand: 2025-09-27
    ========================================================= */
 
 /* ===== Variables / Base ===== */
 :root{
-  --bg:#0b0f12;        /* Hintergrund */
-  --ink:#e8e6e3;       /* Text */
-  --muted:#a7a7a7;     /* Sekundärtext */
-  --accent:#d4af37;    /* Gold */
-  --ring:#2a2f36;      /* Linien/Umriss */
-  --maxw:1000px;       /* Inhaltsbreite */
-  --nav-h:72px;        /* Headerhöhe für Scroll-Offsets */
+  --bg:#0b0f12;
+  --ink:#e8e6e3;
+  --muted:#a7a7a7;
+  --accent:#d4af37;
+  --ring:#2a2f36;
+  --maxw:1000px;
+  --nav-h:72px;
 }
 
-/* ===== Fonts (lokal oder Google) ===== */
+/* ===== Fonts (lokal) ===== */
 @font-face{
   font-family:"Montserrat";
   src:url("fonts/montserrat/montserrat-400.woff2") format("woff2");
@@ -31,12 +31,12 @@
   font-weight:700; font-style:normal; font-display:swap;
 }
 
-/* ===== Resets / Base ===== */
+/* ===== Reset / Base ===== */
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
 img{ display:block; max-width:100%; height:auto }
-
 html{ scroll-behavior:smooth }
+
 body{
   background:var(--bg);
   color:var(--ink);
@@ -46,7 +46,7 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
-  padding-top:var(--nav-h); /* Platz für fixed Header */
+  padding-top:var(--nav-h);
 }
 
 a{ color:var(--accent); text-decoration:none }
@@ -71,25 +71,19 @@ a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
 }
 .small-img{ max-width:300px; margin:0 auto }
 
-/* ===== Quotes (allgemein) ===== */
+/* ===== Quotes ===== */
 blockquote{ border-left:3px solid var(--accent); padding-left:14px; margin:0 0 14px; opacity:.95 }
 blockquote p{ margin:8px 0 }
 
 /* ===================================================
-   Header / Navigation (fixed)
-   – unterstützt beide HTML-Varianten:
-   Variante A: <nav class="container nav"><ul class="menu">…</ul>
-   Variante B: <div class="nav-container"><nav><ul class="nav-list">…</ul>
+   Header / Navigation
    =================================================== */
 .site-header{
   position:fixed; top:0; left:0; width:100%; z-index:1000;
   background:rgba(11,15,18,.95);
   border-bottom:1px solid var(--ring);
 }
-
-/* Container (beide Varianten) */
 .site-header .nav,
-.site-header .container.nav,
 .site-header .nav-container{
   max-width:var(--maxw);
   margin:0 auto;
@@ -99,157 +93,115 @@ blockquote p{ margin:8px 0 }
   align-items:center;
   gap:16px;
 }
-
-/* Brand/Logo */
-.site-header .logo,
 .site-header .brand{
-  font-weight:700;
-  text-transform:uppercase;
-  color:var(--accent);
-  text-decoration:none;
+  font-weight:700; text-transform:uppercase;
+  color:var(--accent); text-decoration:none;
 }
-
-/* UL (beide Varianten) */
-.site-header .menu,
 .site-header .nav-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:2rem;
-  list-style:none;
-  margin:0;
-  padding:0;
+  display:flex; flex-wrap:wrap; gap:2rem;
+  list-style:none; margin:0; padding:0;
 }
-.site-header .menu li,
-.site-header .nav-list li{ margin:0; }
-
-.site-header .menu a,
 .site-header .nav-list a{
   display:inline-block;
   color:var(--ink);
   padding:8px 0;
-  text-decoration:none;
   border-bottom:2px solid transparent;
 }
-.site-header .menu a:hover,
 .site-header .nav-list a:hover{ color:var(--accent); }
-.site-header .menu a.is-active,
-.site-header .nav-list a.is-active,
 .site-header .nav-list a.active{ border-bottom-color:var(--accent); }
-
 @media (max-width:760px){
-  .site-header .nav,
-  .site-header .container.nav,
   .site-header .nav-container{ flex-wrap:wrap; }
-  .site-header .menu,
-  .site-header .nav-list{ gap:1rem 1.1rem; justify-content:flex-start; }
+  .site-header .nav-list{ gap:1rem 1.1rem; }
 }
 
 /* ===================================================
-   HERO – final & singular
+   HERO – einheitlich
    =================================================== */
 .hero{
-  /* Steuer-Variablen */
-  --hero-height:80vh;   /* Bildhöhe */
-  --pos-x:50%;          /* Fokus horizontal */
-  --pos-y:38%;          /* Fokus vertikal (kleiner = höher) */
-  --inner-bottom:13%;   /* Abstand Titel vom unteren Rand */
-
   position:relative;
-  display:grid; place-items:center;
-  min-height:var(--hero-height);
-  text-align:center;
   overflow:hidden;
   border-bottom:1px solid var(--ring);
+  min-height:var(--hero-height, 70vh);
+  display:grid;
+  place-items:center;
+  text-align:center;
 }
-.hero img.hero-bg{
-  position:absolute; inset:0; z-index:0;
+.hero .hero-bg{
+  position:absolute; inset:0;
   width:100%; height:100%;
-  object-fit:cover; object-position:var(--pos-x) var(--pos-y);
+  object-fit:cover; object-position:center 40%;
+  z-index:0;
 }
-/* sanfter Verlauf unten für Lesbarkeit */
 .hero.hero--soft::after{
   content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(11,15,18,0) 46%, rgba(11,15,18,.62) 100%);
-  pointer-events:none;
+  background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
 }
-
-/* Claim oben links (wird im Resonanzraum genutzt) */
-.hero-claim{
-  position:absolute; top:14%; left:6%; z-index:3; max-width:42%;
-}
-.hero-claim h2{
-  margin:0; line-height:1.15;
-  font-size:clamp(2.2rem,5vw,3.4rem);
-  font-weight:700;
-  color:var(--accent);
-  text-shadow:
-    0 3px 8px rgba(0,0,0,.75),
-    0 0 14px rgba(0,0,0,.55);
-}
-
-/* Titel unten mittig */
 .hero .inner{
-  position:absolute; left:50%; transform:translateX(-50%);
-  bottom:var(--inner-bottom); z-index:2; max-width:800px; padding:0 20px;
+  position:absolute;
+  left:50%; transform:translateX(-50%);
+  bottom:var(--inner-bottom, 14%);
+  z-index:2;
+  max-width:800px;
+  padding:0 1rem;
 }
-.hero .hero-copy{ background:none; padding:0 }
 .hero h1{
   margin:0;
   color:var(--accent);
-  text-shadow:0 2px 12px rgba(0,0,0,.55);
-  font-size:clamp(2rem, 4vw, 3rem);
+  font-size:clamp(2rem,4vw,3rem);
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
-.hero .sub,.hero .tagline{
+.hero .sub{
   margin:.25rem 0 0;
-  color:#f8f5e8;
-  text-shadow:0 2px 12px rgba(0,0,0,.55);
-  line-height:1.35;
-}
-@media (max-width:640px){
-  .hero{ --hero-height:72vh; --pos-y:42%; --inner-bottom:12%; }
-  .hero-claim{ top:10%; left:6%; max-width:70%; }
-  .hero h1{ font-size:clamp(1.7rem, 6vw, 2.3rem); }
+  color:#f5f5f5;
+  text-shadow:0 1px 5px rgba(0,0,0,.55);
 }
 
-/* ===================================================
-   Resonanzraum – spezifisches Feintuning (Claim tiefer/links)
-   =================================================== */
-body.resonanzraum .hero{ --inner-bottom:16%; }
-body.resonanzraum .hero-claim{ top:22%; left:5%; max-width:40%; }
-body.resonanzraum .hero-claim h2{
-  font-size:clamp(2.1rem,5.2vw,3.6rem);
-  letter-spacing:.2px;
+/* --- Startseite Hero kompakter --- */
+body.index .hero.hero--XL{
+  min-height:32vh !important;
 }
-@media (max-width:880px){
-  body.resonanzraum .hero{ --inner-bottom:14%; }
-  body.resonanzraum .hero-claim{ top:16%; left:6%; max-width:64%; }
+body.index .hero.hero--XL .inner{
+  bottom:46% !important;
 }
 
+/* --- Varianten für andere Seiten --- */
+body.angebot .hero,
+body.kontakt .hero{ min-height:58vh; }
+body.resonanzraum .hero{ min-height:68vh; }
+body.ueber-mich .hero{ min-height:80vh; }
+
 /* ===================================================
-   ZigZag (.zz)
+   ZigZag
    =================================================== */
 .zz{ max-width:var(--maxw); margin:56px auto; padding:0 24px }
 .zz-row{ display:flex; gap:32px; align-items:center; margin:56px 0 }
 .zz-row.rev{ flex-direction:row-reverse }
 .zz-text{ flex:1.15; max-width:65ch; margin-left:auto; margin-right:auto }
 .zz-media{ flex:1 }
-.zz-media img{ width:100%; height:auto; border-radius:12px; border:1px solid var(--ring) }
-@media (max-width:880px){ .zz-row,.zz-row.rev{ flex-direction:column } .zz-media{ order:2 } }
+.zz-media img{ width:100%; border-radius:12px; border:1px solid var(--ring) }
+@media (max-width:880px){
+  .zz-row,.zz-row.rev{ flex-direction:column }
+  .zz-media{ order:2 }
+}
 
 /* ===================================================
-   Buttons / Pills – Gold
+   Buttons
    =================================================== */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:.85rem 1.2rem; border-radius:999px; line-height:1; font-weight:600;
-  border:1px solid transparent; cursor:pointer; text-decoration:none;
+  padding:.85rem 1.2rem;
+  border-radius:999px;
+  font-weight:600;
+  border:1px solid transparent;
+  cursor:pointer;
+  text-decoration:none;
   transition:background-color .2s ease, transform .05s ease, filter .2s ease;
   min-height:44px;
 }
 .btn:active{ transform:translateY(1px) }
-.btn-gold    { background:var(--accent); color:#0b0f12; border-color:var(--accent) }
+.btn-gold{ background:var(--accent); color:#0b0f12; border-color:var(--accent) }
 .btn-gold:hover{ filter:brightness(.95) }
-.btn-outline { background:transparent; color:var(--accent); border-color:var(--accent) }
+.btn-outline{ background:transparent; color:var(--accent); border-color:var(--accent) }
 .btn-outline:hover{ background:rgba(212,175,55,.08) }
 .btn-row{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:40px 0 }
 
@@ -262,19 +214,22 @@ body.resonanzraum .hero-claim h2{
 .benefits li{ font-size:1.1rem; line-height:1.6 }
 
 /* ===================================================
-   Legal Pages (Impressum / Datenschutz) – Karten
+   Legal Pages
    =================================================== */
 .legal .container.max{ max-width:800px }
 .legal section{
-  background:#111519; border:1px solid var(--ring); border-radius:12px;
-  padding:1.5rem; margin:1.25rem 0; box-shadow:0 2px 6px rgba(0,0,0,.25);
+  background:#111519;
+  border:1px solid var(--ring);
+  border-radius:12px;
+  padding:1.5rem; margin:1.25rem 0;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
 }
 .legal h2{ margin:.1rem 0 .5rem; color:var(--accent); font-size:1.3rem }
 .legal p{ margin:.5rem 0 0; line-height:1.55 }
 .legal .small{ color:var(--muted); margin-top:24px }
 
 /* ===================================================
-   Footer (sticky + dezent)
+   Footer
    =================================================== */
 html,body{ height:100%; display:flex; flex-direction:column }
 main{ flex:1 }
@@ -287,381 +242,15 @@ main{ flex:1 }
 .site-footer a:hover{ color:var(--accent) }
 
 /* ===================================================
-   Resonanzraum – Layout-Ergänzungen
-   =================================================== */
-.block-hd{ text-align:left; margin:0 0 1rem; }
-.block-hd .eyebrow{
-  margin:0 0 .25rem;
-  font-size:.8rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-.block-hd h2{ margin:.2rem 0 .4rem; color:var(--accent); }
-
-.cards--3{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-.cards--1{ grid-template-columns:1fr; }
-@media (max-width:980px){ .cards--3{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:640px){ .cards--3{ grid-template-columns:1fr; } }
-
-.quotes--grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-}
-@media (max-width:880px){ .quotes--grid{ grid-template-columns:1fr; } }
-.quote{
-  background:#0e1216;
-  border:1px solid var(--ring);
-  border-radius:12px;
-  padding:16px;
-}
-.quote blockquote{
-  margin:0 0 .6rem 0;
-  border-left:3px solid var(--accent);
-  padding-left:14px;
-}
-.quote figcaption{
-  color:var(--muted);
-  font-size:.95rem;
-}
-
-/* ===================================================
-   Misc / Performance / A11y
+   Misc
    =================================================== */
 .to-top{
-  position:fixed; right:16px; bottom:16px; background:var(--accent);
-  color:#000; padding:10px 14px; border-radius:999px
+  position:fixed; right:16px; bottom:16px;
+  background:var(--accent); color:#000;
+  padding:10px 14px; border-radius:999px
 }
 main > section{ content-visibility:auto; contain-intrinsic-size:800px }
-
-/* Über-mich – kleinere Bilder */
-body.ueber-mich .about-block img,
-body.ueber-mich .zigzag-image img{
-  max-width:300px !important; height:auto !important;
-  margin:20px auto !important; display:block; border-radius:12px;
-}
-
-/* About Block Styling */
-.about-block h3{
-  font-size:1.2rem; margin:32px 0 8px; color:var(--accent);
-  display:flex; align-items:center; gap:8px;
-}
-.about-block h3 .icon{ font-size:1.2rem }
-.about-block p strong{ font-weight:700; opacity:.95 }
-.about-block.portrait img{
-  max-width:280px; border-radius:12px; margin:40px auto; display:block;
-}
-.portrait-img{
-  max-width:320px; height:auto; border-radius:12px; border:1px solid var(--ring);
-  display:block; margin:0 auto;
-}
-
-/* Feintuning Lesbarkeit */
 .benefits-list{ list-style:none; padding:0; margin:1.25rem auto 0; max-width:65ch; text-align:left; line-height:1.6 }
-
-/* Motion-Respekt */
 @media (prefers-reduced-motion:reduce){
   *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important }
-}
-
-/* Quote-Accordion (falls genutzt) */
-.quote--long details{
-  background:#0e1216;
-  border:1px solid var(--ring);
-  border-radius:12px;
-  padding:0.85rem 1rem;
-}
-.quote--long summary{
-  list-style:none;
-  cursor:pointer;
-  display:flex; align-items:center; gap:.5rem;
-  font-weight:600; color:var(--ink);
-  outline:none;
-}
-.quote--long summary::-webkit-details-marker{ display:none }
-.quote--long summary::after{
-  content:"▸";
-  margin-left:auto;
-  transition:transform .2s ease;
-  opacity:.85;
-}
-.quote--long details[open] summary::after{ transform:rotate(90deg) }
-.quote--long blockquote{
-  margin:.75rem 0 0;
-  border-left:3px solid var(--accent);
-  padding-left:14px;
-}
-/* === Hero Fix nur für Startseite (index) === */
-body#index .hero .inner{
-  bottom: 24%; /* höher ziehen – vorher 13% */
-}
-
-body#index .hero h1{
-  color: var(--accent); /* Gold statt grau */
-  text-shadow: 0 3px 12px rgba(0,0,0,.7);
-}
-
-body#index .hero .sub{
-  color: #f5f5f5; /* hellere Lesbarkeit */
-  text-shadow: 0 2px 10px rgba(0,0,0,.65);
-}
-/* === Startseite: Hero-Text höher & besser lesbar === */
-/* greift nur auf der Startseite, weil dort .hero--XL gesetzt ist */
-.hero--XL .inner{
-  bottom:24% !important;              /* höher (vorher ~13%) */
-}
-.hero--XL h1{
-  color:var(--accent);
-  text-shadow:0 3px 14px rgba(0,0,0,.7);
-}
-.hero--XL .sub{
-  color:#f5f5f5;
-  text-shadow:0 2px 12px rgba(0,0,0,.65);
-}
-
-/* etwas mehr Lesbarkeit durch sanfteres Abdunkeln unten */
-.hero--XL.hero--soft::after{
-  background:linear-gradient(180deg, rgba(11,15,18,0) 44%, rgba(11,15,18,.68) 100%);
-}
-
-/* optional: Bild leicht „ankontrastieren“, damit Gold mehr knallt */
-.hero--XL .hero-bg{
-  filter:contrast(1.05) brightness(.98);
-}
-/* === Startseite: Hero-Text höher + besser lesbar (für .hero--XL) === */
-
-/* Höhe/Position über die bereits genutzte Variable steuern */
-.hero--XL{
-  --inner-bottom: 26%;            /* vorher ~13% -> deutlich höher */
-}
-
-/* Sicherheit: keine unnötige Mindesthöhe im Textcontainer */
-.hero--XL .inner{
-  min-height: 0 !important;       /* überschreibt inline 70vh */
-}
-
-/* Lesbarkeit: Goldtitel + stärkere Schatten */
-.hero--XL h1{
-  color: var(--accent);
-  text-shadow: 0 3px 14px rgba(0,0,0,.7);
-}
-.hero--XL .sub{
-  color: #f5f5f5;
-  text-shadow: 0 2px 12px rgba(0,0,0,.65);
-}
-
-/* Unten stärker abdunkeln, damit Text kontrastiert */
-.hero--XL.hero--soft::after{
-  background: linear-gradient(180deg, rgba(11,15,18,0) 42%, rgba(11,15,18,.78) 100%);
-}
-
-/* Bild minimal ankontrastieren */
-.hero--XL .hero-bg{
-  filter: contrast(1.05) brightness(.98);
-}
-/* Hard override für Startseiten-Hero */
-.hero--XL .inner{
-  position:absolute !important;
-  top:auto !important;            /* falls irgendwo 'top' gesetzt wird */
-  bottom:48% !important;          /* HÖHER: 48–56% testen */
-  min-height:0 !important;        /* killt alte 70vh-Effekte */
-  transform:translateX(-50%) !important;
-  left:50% !important;
-  z-index:2 !important;
-}
-/* === STARTSEITE: Hero-Text scharf + höher ========================= */
-
-/* 1) Transform entfernen, zentrieren ohne translate */
-.hero--XL .inner{
-  position:absolute !important;
-  left:0 !important;
-  right:0 !important;
-  margin:0 auto !important;
-  transform:none !important;           /* verhindert Weichzeichnung */
-  bottom:50% !important;               /* Höhe: 48–54% je nach Geschmack */
-  max-width:800px !important;
-  padding:0 1rem !important;
-  text-align:center !important;
-  min-height:0 !important;             /* kein 70vh-„Ziehen“ */
-  z-index:2 !important;
-}
-
-/* 2) Schatten entschärfen (weniger Blur = mehr Schärfe) */
-.hero--XL h1{
-  color:var(--accent);
-  text-shadow:0 2px 6px rgba(0,0,0,.6); /* vorher ~14px */
-}
-.hero--XL .sub{
-  color:#f5f5f5;
-  text-shadow:0 1px 5px rgba(0,0,0,.55);
-}
-
-/* 3) Falls Safari/Chrome vom Bild-Filter das Compositing weichzeichnet: deaktivieren */
-.hero--XL .hero-bg{
-  filter:none !important;              /* bei Bedarf wieder einschalten */
-}
-
-/* 4) Lesbarkeits-Gradient unten etwas kräftiger */
-.hero--XL.hero--soft::after{
-  background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
-}
-/* Globale Grundhöhe etwas reduzieren */
-.hero{
-  --hero-height:70vh;  /* vorher 80vh */
-}
-
-/* Angebote + Kontakt kleiner */
-body.angebot .hero,
-body.kontakt .hero{
-  --hero-height:58vh;
-}
-
-/* Resonanzraum leicht größer, aber nicht so massiv */
-body.resonanzraum .hero{
-  --hero-height:68vh;
-}
-
-/* Über mich bleibt bewusst hoch */
-body.ueber-mich .hero{
-  --hero-height:80vh;
-}
-/* === Startseite – Hero-Text wirklich lesbar, ohne Box ================== */
-
-/* 1) Sanfte Abdunklung genau um den Text herum (über dem Bild, unter dem Text) */
-.hero--XL::before{
-  content:"";
-  position:absolute; inset:0;
-  /* Positioniere den Radialpunkt ungefähr auf den Sonnenkern */
-  background:radial-gradient(
-    ellipse at 50% 38%,
-    rgba(0,0,0,.45) 0%,
-    rgba(0,0,0,.35) 22%,
-    rgba(0,0,0,.22) 38%,
-    rgba(0,0,0,0) 60%
-  );
-  z-index:1;          /* über Bild, unter Text */
-  pointer-events:none;
-}
-
-/* 2) Text liegt sicher über den Overlays */
-.hero--XL .inner{ position:absolute; left:0; right:0; margin:0 auto;
-  bottom:50%; max-width:800px; padding:0 1rem; text-align:center;
-  z-index:2; min-height:0; transform:none;
-}
-
-/* 3) Schärferer, schlanker Schatten + leichte Kontur */
-.hero--XL h1{
-  color:var(--accent);
-  text-shadow:
-    0 1px 0 rgba(0,0,0,.55),
-    0 3px 10px rgba(0,0,0,.55);
-  -webkit-text-stroke:.6px rgba(0,0,0,.28);
-}
-.hero--XL .sub{
-  color:#f5f5f5;
-  text-shadow:0 1px 6px rgba(0,0,0,.55);
-}
-
-/* 4) Unten etwas stärkerer Verlauf bleibt für Kontrast */
-.hero--XL.hero--soft::after{
-  background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
-}
-/* ================================================
-   Startseite (index) – Hero kleiner & Text höher
-   ================================================ */
-body.startseite .hero {
-  min-height:40vh;              /* Höhe des Hero-Bereichs */
-}
-
-body.startseite .hero .inner {
-  bottom:46%;                   /* Textblock höher/tiefer steuern */
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  text-align:center;
-  max-width:800px;
-  padding:0 1rem;
-}
-
-body.startseite .hero h1 {
-  color:var(--accent);          /* Gold */
-  text-shadow:0 3px 14px rgba(0,0,0,.7);
-}
-
-body.startseite .hero .sub {
-  color:#f5f5f5;                /* Hellgrau für Lesbarkeit */
-  text-shadow:0 2px 12px rgba(0,0,0,.65);
-}
-/* === FINAL OVERRIDE NUR STARTSEITE ========================= */
-body.startseite .hero{
-  min-height:40vh !important;                 /* Hero wirklich kleiner */
-}
-
-body.startseite .hero--XL .inner{
-  bottom:46% !important;                      /* Höhe des Textblocks */
-  left:0 !important; right:0 !important;      /* zentrieren ohne translate */
-  margin:0 auto !important;
-  transform:none !important;
-  max-width:800px !important;
-  text-align:center !important;
-  min-height:0 !important;
-  z-index:2 !important;
-}
-/* === Hero-Anpassung Startseite === */
-.hero--XL {
-  min-height: 38vh !important;   /* statt ~70vh */
-  padding-block: 0 !important;   /* falls alte Klassen Polster hinzufügen */
-}
-
-@media (max-width: 640px) {
-  .hero--XL {
-    min-height: 48vh !important; /* etwas höher auf Handy */
-  }
-}
-/* === Hero kompakt (Startseite) === */
-section.hero.hero--XL { 
-  min-height: 38vh !important;
-  padding-block: 0 !important;
-}
-section.hero.hero--XL .inner {
-  min-height: 0 !important;                 /* verhindert Aufblähen */
-  justify-content: flex-start !important;   /* bleibt oben */
-  padding: clamp(8vh,12vh,16vh) 1rem 2rem !important;
-}
-
-@media (max-width:640px){
-  section.hero.hero--XL { min-height: 44vh !important; }
-}
-/* Hero kompakt (Startseite) */
-section.hero.hero--XL{ min-height:20vh !important; padding-block:0 !important; }
-section.hero.hero--XL .inner{ min-height:0 !important; padding:clamp(7vh,10vh,13vh) 1rem 2rem !important; }
-/* === Hero-Bild fixiert, Section bestimmt die Höhe === */
-section.hero.hero--XL {
-  position: relative;
-  min-height: 28vh;         /* hier steuerst du die Höhe des ganzen Hero */
-  overflow: hidden;         /* Bildreste abschneiden */
-}
-
-section.hero.hero--XL .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* Bild füllt Section */
-  object-position: center 60%;
-}
-section.hero.hero--XL {
-  position: relative;
-  min-height: 32vh;   /* Höhe hier einstellen */
-  overflow: hidden;
-}
-
-section.hero.hero--XL .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
 }

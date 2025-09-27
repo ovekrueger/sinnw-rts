@@ -591,3 +591,45 @@ body.resonanzraum .hero .inner {
   text-align: center;
   z-index: 2;
 }
+/* === Resonanzraum Hero sichtbar + groß === */
+body.resonanzraum .hero {
+  position: relative;
+  min-height: 92vh;        /* fast voller Screen */
+  overflow: hidden;
+}
+
+/* Bild füllt Section */
+body.resonanzraum .hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%; /* leicht höher -> Gong sichtbar */
+  z-index: 0;
+}
+
+/* Verlauf */
+body.resonanzraum .hero.hero--soft::after {
+  z-index: 1;
+}
+
+/* Claim oben links */
+body.resonanzraum .hero-claim {
+  position: absolute;
+  top: 18%;
+  left: 6%;
+  max-width: 42%;
+  z-index: 2;
+}
+
+/* Titel mittig unten */
+body.resonanzraum .hero .inner {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14%;
+  text-align: center;
+  max-width: 800px;
+  z-index: 2;
+}

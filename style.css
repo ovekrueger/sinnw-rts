@@ -619,3 +619,17 @@ body.startseite .hero--XL .inner{
     min-height: 48vh !important; /* etwas höher auf Handy */
   }
 }
+/* === Hero kompakt (Startseite) === */
+section.hero.hero--XL { 
+  min-height: 38vh !important;
+  padding-block: 0 !important;
+}
+section.hero.hero--XL .inner {
+  min-height: 0 !important;                 /* verhindert Aufblähen */
+  justify-content: flex-start !important;   /* bleibt oben */
+  padding: clamp(8vh,12vh,16vh) 1rem 2rem !important;
+}
+
+@media (max-width:640px){
+  section.hero.hero--XL { min-height: 44vh !important; }
+}

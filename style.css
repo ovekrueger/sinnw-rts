@@ -639,7 +639,7 @@ section.hero.hero--XL .inner{ min-height:0 !important; padding:clamp(7vh,10vh,13
 /* === Hero-Bild fixiert, Section bestimmt die Höhe === */
 section.hero.hero--XL {
   position: relative;
-  min-height: 32vh;         /* hier steuerst du die Höhe des ganzen Hero */
+  min-height: 28vh;         /* hier steuerst du die Höhe des ganzen Hero */
   overflow: hidden;         /* Bildreste abschneiden */
 }
 

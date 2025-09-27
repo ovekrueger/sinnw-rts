@@ -634,7 +634,7 @@ section.hero.hero--XL .inner {
   section.hero.hero--XL { min-height: 44vh !important; }
 }
 /* Hero kompakt (Startseite) */
-section.hero.hero--XL{ min-height:28vh !important; padding-block:0 !important; }
+section.hero.hero--XL{ min-height:20vh !important; padding-block:0 !important; }
 section.hero.hero--XL .inner{ min-height:0 !important; padding:clamp(7vh,10vh,13vh) 1rem 2rem !important; }
 /* === Hero-Bild fixiert, Section bestimmt die Höhe === */
 section.hero.hero--XL {

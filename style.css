@@ -346,3 +346,14 @@ section.hero.hero--XL .sub {
     0 0 10px rgba(0,0,0,.55);
   margin-top: .4rem;
 }
+/* === HERO Subheadline deutlicher === */
+section.hero.hero--XL .sub {
+  color: #ffffff;  /* reines Weiß */
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  line-height: 1.55;
+  text-shadow:
+    0 3px 6px rgba(0,0,0,.9),   /* kräftiger Schlagschatten */
+    0 0 12px rgba(0,0,0,.6);    /* weiche Umhüllung */
+  -webkit-text-stroke: 0.5px rgba(0,0,0,.4); /* hauchdünne Kontur */
+}

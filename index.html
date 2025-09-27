@@ -60,7 +60,7 @@
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.30;">
+  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;">
     <picture>
       <source srcset="images/start.strand.webp" type="image/webp">
       <img src="images/start.strand.png"
@@ -74,16 +74,23 @@
       <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
     </div>
 
-    <div class="inner tac" style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:70vh;padding:0 1rem;">
-      <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
-      <p class="sub" style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
-        Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
-        hin zu Klarheit, Würde und innerer Freiheit.
-      </p>
-      <p class="sub" style="max-width:760px;margin:.6rem auto 0;color:#cdd1d6;opacity:.9;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.5">
-        Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
-      </p>
-    </div>
+    <div class="inner tac"
+     style="display:flex;
+            flex-direction:column;
+            justify-content:flex-start;    /* vorher: center */
+            align-items:flex-start;        /* vorher: center */
+            min-height:52vh;               /* vorher: 70vh */
+            padding:clamp(10vh,16vh,22vh) 1rem 2rem;">  <!-- vorher: 0 1rem -->
+      
+  <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
+  <p class="sub" style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
+    Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
+    hin zu Klarheit, Würde und innerer Freiheit.
+  </p>
+  <p class="sub" style="max-width:760px;margin:.6rem auto 0;color:#cdd1d6;opacity:.9;font-size:clamp(.95rem,1.1vw,1.05rem);line-height:1.5">
+    Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
+  </p>
+</div>
   </section>
 
   <!-- CTA unter dem Hero -->

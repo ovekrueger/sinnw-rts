@@ -668,58 +668,6 @@ body.resonanzraum .hero .tagline{
   body.resonanzraum .hero-claim{ left:6%; top:18%; max-width:58%; }
   body.resonanzraum .hero-claim h2{ font-size:clamp(1.2rem,4.8vw,1.8rem); }
 }
-/* === Blog Grid === */
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 2rem;
-}
-
-.cards--3 {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.card {
-  background: var(--card);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
-.card-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid var(--card);
-}
-
-.card-hd {
-  padding: 1rem 1.25rem 0;
-}
-.card-hd h3 {
-  margin: .25rem 0;
-  font-size: 1.25rem;
-  line-height: 1.3;
-}
-
-.card-txt {
-  padding: 0 1.25rem 1rem;
-  color: var(--text-soft);
-  flex-grow: 1;
-}
-
-.card-cta {
-  display: inline-block;
-  margin: 0 1.25rem 1.25rem;
-}
 /* === Blog Cards === */
 .cards {
   list-style: none;
@@ -745,4 +693,37 @@ body.resonanzraum .hero .tagline{
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.card-media {
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-hd {
+  padding: 1rem 1.25rem 0;
+}
+
+.card-hd h3 {
+  margin: .25rem 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.card-txt {
+  padding: 0 1.25rem 1rem;
+  color: var(--text-soft);
+  flex-grow: 1;
+}
+
+.card-cta {
+  display: inline-block;
+  margin: 0 1.25rem 1.25rem;
 }

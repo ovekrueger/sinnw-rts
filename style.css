@@ -736,3 +736,23 @@ body.resonanzraum .hero .tagline{
   color: var(--gold);
   font-weight: bold;
 }
+.card-media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-media .placeholder {
+  background: var(--gold-25);
+  color: var(--gold);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+}

@@ -1,1 +1,29 @@
-
+[
+  {
+    "slug": "sucht-sucht-sinn",
+    "title": "Sucht sucht Sinn: Warum Kontrolle allein nicht wirkt",
+    "date": "2025-09-15",
+    "read": "6",
+    "cat": "Sucht & Selbstwirksamkeit",
+    "img": "sucht-sucht-sinn",
+    "teaser": "Neurotransmitter, Bedürfnisse, Würde: Ein integraler Blick auf Abhängigkeit – ohne Moralkeule."
+  },
+  {
+    "slug": "klarheitskompass",
+    "title": "Denken · Fühlen · Handeln · Sein",
+    "date": "2025-09-20",
+    "read": "5",
+    "cat": "Klarheitskompass",
+    "img": "klarheitskompass",
+    "teaser": "Wie der innere Kompass Orientierung gibt – jenseits von Dogma und Selbstoptimierungsdruck."
+  },
+  {
+    "slug": "neuro-basics-gaba",
+    "title": "GABA: Ruhe im System – ohne Abstumpfung",
+    "date": "2025-09-25",
+    "read": "7",
+    "cat": "Neuro-Basics",
+    "img": "neuro-gaba",
+    "teaser": "Wie der wichtigste hemmende Neurotransmitter Stress abfedert – und wo die Grenzen liegen."
+  }
+]

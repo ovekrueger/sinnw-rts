@@ -727,3 +727,12 @@ body.resonanzraum .hero .tagline{
   display: inline-block;
   margin: 0 1.25rem 1.25rem;
 }
+.card-media {
+  background: var(--gold-25); /* leicht goldene Fläche */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--gold);
+  font-weight: bold;
+}

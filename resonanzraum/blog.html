@@ -86,10 +86,10 @@
     .is-disabled{opacity:.45; pointer-events:none}
     .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
   </style>
-  <script>
+<script>
 (async () => {
   const ul = document.querySelector('.post-grid');
- const resp = await fetch('blog/posts.json');
+  const resp = await fetch('posts.json');
   const posts = await resp.json();
 
   posts.sort((a,b)=>new Date(b.date)-new Date(a.date));
@@ -99,10 +99,14 @@
       <article>
         <a class="card-link" href="${p.slug}.html">
           <figure class="card-media">
-            <picture>
-              <source srcset="../../images/blog/${p.img}.webp" type="image/webp">
-              <img src="../../images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
-            </picture>
+            ${
+              p.img 
+              ? `<picture>
+                   <source srcset="../../images/blog/${p.img}.webp" type="image/webp">
+                   <img src="../../images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
+                 </picture>`
+              : `<div class="placeholder">${p.title}</div>`
+            }
           </figure>
           <header class="card-hd">
             <p class="eyebrow">${p.cat}</p>

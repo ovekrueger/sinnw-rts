@@ -215,3 +215,21 @@ main > section{ content-visibility:auto; contain-intrinsic-size:800px }
 .card-txt{ padding:0 1.25rem 1rem; color:var(--muted); flex-grow:1 }
 .card-cta{ display:inline-block; margin:0 1.25rem 1.25rem }
 /* === FIX 2025-10-02 · Schritt 1: Blog-Hintergrund ===*
+/* === FIX Blog + Hero 2025-10-02 === */
+
+/* 1. Blog-Hintergrund sicher dunkel */
+html, body {
+  background: var(--bg) !important;
+  color: var(--ink);
+  min-height: 100%;
+}
+
+/* Container, die evtl. Weiß erzwingen → durchsichtig */
+main, .wrap, .content, .page, .blog, .archive {
+  background: transparent !important;
+}
+
+/* 2. Startseite Hero-Text-Position */
+body.index .hero.hero--XL .inner {
+  bottom: 58% !important; /* anpassen: höher = Zahl größer, tiefer = Zahl kleiner */
+}

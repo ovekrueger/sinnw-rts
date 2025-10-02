@@ -214,7 +214,7 @@ main > section{ content-visibility:auto; contain-intrinsic-size:800px }
 .card-hd .meta{ color:var(--muted); font-size:.9rem }
 .card-txt{ padding:0 1.25rem 1rem; color:var(--muted); flex-grow:1 }
 .card-cta{ display:inline-block; margin:0 1.25rem 1.25rem }
-/* === FIX 2025-10-02 · Schritt 1: Blog-Hintergrund ===*
+/* === FIX 2025-10-02 · Schritt 1: Blog-Hintergrund === */
 /* === FIX Blog + Hero 2025-10-02 === */
 
 /* 1. Blog-Hintergrund sicher dunkel */
@@ -233,11 +233,10 @@ main, .wrap, .content, .page, .blog, .archive {
 
 /* STARTSEITE: Höhe / Text / Ausschnitt feinjustieren */
 body.index{
-  --hero-height: 22vh;     /* 28–40vh je nach Geschmack */
-  --inner-bottom: 40%;     /* kleiner = Text tiefer, größer = höher (typisch 48–60%) */
-  --hero-focus-y: 80%;     /* höherer Wert = Bild nach unten verschoben → weniger Himmel */
+  --hero-height: 18vh;   /* 16–24: flach bis mittel */
+  --inner-bottom: 58%;   /* größer = Text höher */
+  --hero-focus-y: 84%;   /* höher = weniger Himmel */
 }
-
 
 body.index .hero.hero--XL{ min-height:var(--hero-height); }
 body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
@@ -246,7 +245,6 @@ body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
 /* === 2) Hero-Overlay kräftiger für bessere Lesbarkeit === */
 .hero.hero--soft::after{
   content:""; position:absolute; inset:0; z-index:1;
-  /* stärkerer Verlauf: oben leicht abdunkeln, unten deutlicher */
   background:linear-gradient(
     180deg,
     rgba(11,15,18,.25) 0%,
@@ -254,7 +252,6 @@ body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
     rgba(11,15,18,.88) 100%
   );
 }
-/* Text noch etwas klarer */
 .hero h1{ text-shadow:0 3px 12px rgba(0,0,0,.75); }
 .hero .sub{ text-shadow:0 2px 8px rgba(0,0,0,.7); }
 
@@ -264,11 +261,3 @@ body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
 .btn-row--hero .row-top{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
 .btn-row--hero .row-bottom{ display:flex; justify-content:center; }
 .btn-row--hero a{ min-width:clamp(200px,24vw,300px); text-align:center; }
-/* =========================================
-   STARTSEITE: Hero über Variablen steuern
-   ========================================= */
-body.index{
-  --hero-height: 18vh;   /* 16–24: flach bis mittel */
-  --inner-bottom: 58%;   /* größer = Text höher */
-  --hero-focus-y: 84%;   /* höher = weniger Himmel */
-}

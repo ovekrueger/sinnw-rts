@@ -249,7 +249,7 @@ body.index .hero.hero--XL .inner {
 }
 /* STARTSEITE: Höhe / Text / Ausschnitt feinjustieren */
 body.index{
-  --hero-height: 28vh;     /* 28–40vh je nach Geschmack */
+  --hero-height: 22vh;     /* 28–40vh je nach Geschmack */
   --inner-bottom: 50%;     /* kleiner = Text tiefer, größer = höher (typisch 48–60%) */
   --hero-focus-y: 80%;     /* höherer Wert = Bild nach unten verschoben → weniger Himmel */
 }

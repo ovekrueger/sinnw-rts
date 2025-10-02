@@ -1,17 +1,21 @@
 /* =========================================================
-   SINNWÄRTS – CLEAN CSS
-   Stand: 2025-09-27
+   SINNWÄRTS – MASTER CSS (bereinigt)
+   Stand: 2025-10-02
+   Struktur: Variablen → Reset/Base → Layout → Header → Hero → Sektionen → Komponenten → Footer → Blog
    ========================================================= */
 
-/* ===== Variables / Base ===== */
+/* ===== Variables / Design Tokens ===== */
 :root{
-  --bg:#0b0f12;
-  --ink:#e8e6e3;
-  --muted:#a7a7a7;
-  --accent:#d4af37;
-  --ring:#2a2f36;
-  --maxw:1000px;
-  --nav-h:72px;
+  --bg:#0b0f12;           /* Seitenhintergrund (schwarzgrau) */
+  --bg-soft:#10151b;      /* abgesetzte Flächen dunkel */
+  --card:#0e1216;         /* Kartenhintergrund */
+  --ink:#e8e6e3;          /* Haupttext auf dunkel */
+  --muted:#a7a7a7;        /* Sekundärtext */
+  --accent:#d4af37;       /* Gold */
+  --gold-25:rgba(212,175,55,.25);
+  --ring:#2a2f36;         /* Linien/Rahmen */
+  --maxw:1000px;          /* Inhaltsbreite */
+  --nav-h:72px;           /* Fixierte Headerhöhe */
 }
 
 /* ===== Fonts (lokal) ===== */
@@ -34,18 +38,15 @@
 /* ===== Reset / Base ===== */
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
-img{ display:block; max-width:100%; height:auto }
 html{ scroll-behavior:smooth }
+img{ display:block; max-width:100%; height:auto }
 
 body{
   background:var(--bg);
   color:var(--ink);
   font-family:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  font-size:1.05rem;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-rendering:optimizeLegibility;
+  font-size:1.05rem; line-height:1.65;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; text-rendering:optimizeLegibility;
   padding-top:var(--nav-h);
 }
 
@@ -53,22 +54,19 @@ a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
 a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
 
-/* ===== Layout Utils ===== */
+/* ===== Layout Utilities ===== */
 .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px }
 .block{ padding:40px 0; border-bottom:1px solid var(--ring) }
 .grid-2{ display:grid; gap:32px; grid-template-columns:1fr 1fr; align-items:center }
 @media (max-width:880px){ .grid-2{ grid-template-columns:1fr } }
 
-/* ===== Cards ===== */
+/* ===== Generic Cards (simple) ===== */
 .cards{ display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin:16px 0 }
-.card{ background:#0e1216; border:1px solid var(--ring); border-radius:14px; padding:16px }
+.card{ background:var(--card); border:1px solid var(--ring); border-radius:14px; padding:16px }
 .card p{ margin:6px 0 0 }
 
-/* ===== Images ===== */
-.section-img,.portrait{
-  width:100%; max-width:420px; margin:0 auto;
-  border-radius:12px; border:1px solid var(--ring)
-}
+/* ===== Media / Images ===== */
+.section-img,.portrait{ width:100%; max-width:420px; margin:0 auto; border-radius:12px; border:1px solid var(--ring) }
 .small-img{ max-width:300px; margin:0 auto }
 
 /* ===== Quotes ===== */
@@ -76,102 +74,61 @@ blockquote{ border-left:3px solid var(--accent); padding-left:14px; margin:0 0 1
 blockquote p{ margin:8px 0 }
 
 /* ===================================================
-   Header / Navigation
+   Header / Navigation (fixed)
    =================================================== */
 .site-header{
   position:fixed; top:0; left:0; width:100%; z-index:1000;
   background:rgba(11,15,18,.95);
   border-bottom:1px solid var(--ring);
 }
-.site-header .nav,
 .site-header .nav-container{
-  max-width:var(--maxw);
-  margin:0 auto;
-  padding:10px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
+  max-width:var(--maxw); margin:0 auto; padding:10px 24px;
+  display:flex; align-items:center; gap:2rem;
 }
-.site-header .brand{
-  font-weight:700; text-transform:uppercase;
-  color:var(--accent); text-decoration:none;
-}
-.site-header .nav-list{
-  display:flex; flex-wrap:wrap; gap:2rem;
-  list-style:none; margin:0; padding:0;
-}
-.site-header .nav-list a{
-  display:inline-block;
-  color:var(--ink);
-  padding:8px 0;
-  border-bottom:2px solid transparent;
-}
-.site-header .nav-list a:hover{ color:var(--accent); }
-.site-header .nav-list a.active{ border-bottom-color:var(--accent); }
-@media (max-width:760px){
-  .site-header .nav-container{ flex-wrap:wrap; }
-  .site-header .nav-list{ gap:1rem 1.1rem; }
-}
+.site-header .brand{ margin-right:auto; font-weight:700; text-transform:uppercase; color:var(--accent) }
+.site-header nav{ flex:1 }
+.site-header .nav-list{ display:flex; justify-content:center; gap:2rem; list-style:none; margin:0; padding:0 }
+.site-header .nav-list a{ display:inline-block; color:var(--ink); padding:8px 0; border-bottom:2px solid transparent }
+.site-header .nav-list a:hover{ color:var(--accent) }
+.site-header .nav-list a.active{ border-bottom-color:var(--accent) }
+@media (max-width:760px){ .site-header .nav-container{ flex-wrap:wrap } .site-header .nav-list{ gap:1rem 1.1rem } }
 
 /* ===================================================
    HERO – einheitlich
    =================================================== */
 .hero{
-  position:relative;
-  overflow:hidden;
-  border-bottom:1px solid var(--ring);
-  min-height:var(--hero-height, 70vh);
-  display:grid;
-  place-items:center;
-  text-align:center;
+  position:relative; overflow:hidden; border-bottom:1px solid var(--ring);
+  min-height:var(--hero-height, 70vh); display:grid; place-items:center; text-align:center;
 }
-.hero .hero-bg{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover; object-position:center 40%;
-  z-index:0;
-}
-.hero.hero--soft::after{
-  content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%);
-}
-.hero .inner{
-  position:absolute;
-  left:50%; transform:translateX(-50%);
-  bottom:var(--inner-bottom, 14%);
-  z-index:2;
-  max-width:800px;
-  padding:0 1rem;
-}
-.hero h1{
-  margin:0;
-  color:var(--accent);
-  font-size:clamp(2rem,4vw,3rem);
-  text-shadow:0 2px 8px rgba(0,0,0,.6);
-}
-.hero .sub{
-  margin:.25rem 0 0;
-  color:#f5f5f5;
-  text-shadow:0 1px 5px rgba(0,0,0,.55);
-}
+.hero .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 40%; z-index:0 }
+.hero.hero--soft::after{ content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(11,15,18,0) 40%, rgba(11,15,18,.78) 100%) }
+.hero .inner{ position:absolute; left:50%; transform:translateX(-50%); bottom:var(--inner-bottom, 14%); z-index:2; max-width:800px; padding:0 1rem }
+.hero h1{ margin:0; color:var(--accent); font-size:clamp(2rem,4vw,3rem); text-shadow:0 2px 8px rgba(0,0,0,.6) }
+.hero .sub{ margin:.25rem 0 0; color:#f5f5f5; text-shadow:0 1px 5px rgba(0,0,0,.55) }
 
-/* --- Startseite Hero kompakter --- */
-body.index .hero.hero--XL{
-  min-height:32vh !important;
-}
-body.index .hero.hero--XL .inner{
-  bottom:46% !important;
-}
+/* Startseite – kompakter Hero */
+body.index .hero.hero--XL{ min-height:24vh }
+body.index .hero.hero--XL .inner{ bottom:60% }
 
-/* --- Varianten für andere Seiten --- */
+/* Seiten-spezifische Heros */
 body.angebot .hero,
-body.kontakt .hero{ min-height:58vh; }
-body.resonanzraum .hero{ min-height:68vh; }
-body.ueber-mich .hero{ min-height:80vh; }
+body.kontakt .hero{ min-height:58vh }
+body.resonanzraum .hero{ min-height:80vh }
+body.ueber-mich .hero{ min-height:80vh }
+
+/* Resonanzraum – Bild/Claim/Titel sauber gestapelt */
+body.resonanzraum .hero{ position:relative; overflow:hidden }
+body.resonanzraum .hero > picture,
+body.resonanzraum .hero .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 38%; z-index:0 }
+body.resonanzraum .hero.hero--soft::after{ z-index:1 }
+body.resonanzraum .hero-claim{ position:absolute; top:18%; left:6%; max-width:42%; z-index:2 }
+body.resonanzraum .hero .inner{ position:absolute; left:50%; transform:translateX(-50%); bottom:14%; max-width:800px; text-align:center; z-index:2 }
+body.resonanzraum .hero h1{ font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.7) }
+body.resonanzraum .hero .sub{ font-weight:500; text-shadow:0 1px 4px rgba(0,0,0,.65) }
+@media (max-width:880px){ body.resonanzraum .hero{ min-height:76vh } body.resonanzraum .hero-claim{ left:6%; top:18%; max-width:58% } }
 
 /* ===================================================
-   ZigZag
+   ZigZag Sektion
    =================================================== */
 .zz{ max-width:var(--maxw); margin:56px auto; padding:0 24px }
 .zz-row{ display:flex; gap:32px; align-items:center; margin:56px 0 }
@@ -179,34 +136,21 @@ body.ueber-mich .hero{ min-height:80vh; }
 .zz-text{ flex:1.15; max-width:65ch; margin-left:auto; margin-right:auto }
 .zz-media{ flex:1 }
 .zz-media img{ width:100%; border-radius:12px; border:1px solid var(--ring) }
-@media (max-width:880px){
-  .zz-row,.zz-row.rev{ flex-direction:column }
-  .zz-media{ order:2 }
-}
+@media (max-width:880px){ .zz-row,.zz-row.rev{ flex-direction:column } .zz-media{ order:2 } }
 
 /* ===================================================
    Buttons
    =================================================== */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:.85rem 1.2rem;
-  border-radius:999px;
-  font-weight:600;
-  border:1px solid transparent;
-  cursor:pointer;
-  text-decoration:none;
-  transition:background-color .2s ease, transform .05s ease, filter .2s ease;
-  min-height:44px;
-}
+.btn{ display:inline-flex; align-items:center; justify-content:center; padding:.85rem 1.2rem; border-radius:999px; font-weight:600; border:1px solid transparent; cursor:pointer; text-decoration:none; transition:background-color .2s ease, transform .05s ease, filter .2s ease; min-height:44px }
 .btn:active{ transform:translateY(1px) }
-.btn-gold{ background:var(--accent); color:#0b0f12; border-color:var(--accent) }
-.btn-gold:hover{ filter:brightness(.95) }
+.btn-gold{ background:#e0b937; color:#0b0f12; border-color:#e0b937; font-weight:600 }
+.btn-gold:hover{ background:#cfa32f; border-color:#cfa32f; filter:brightness(1) }
 .btn-outline{ background:transparent; color:var(--accent); border-color:var(--accent) }
 .btn-outline:hover{ background:rgba(212,175,55,.08) }
 .btn-row{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin:40px 0 }
 
 /* ===================================================
-   Benefits
+   Benefits (Landing)
    =================================================== */
 .benefits{ max-width:var(--maxw); margin:60px auto; padding:0 20px; text-align:center }
 .benefits h2{ font-size:2rem; margin-bottom:24px; color:var(--accent) }
@@ -217,13 +161,7 @@ body.ueber-mich .hero{ min-height:80vh; }
    Legal Pages
    =================================================== */
 .legal .container.max{ max-width:800px }
-.legal section{
-  background:#111519;
-  border:1px solid var(--ring);
-  border-radius:12px;
-  padding:1.5rem; margin:1.25rem 0;
-  box-shadow:0 2px 6px rgba(0,0,0,.25);
-}
+.legal section{ background:#111519; border:1px solid var(--ring); border-radius:12px; padding:1.5rem; margin:1.25rem 0; box-shadow:0 2px 6px rgba(0,0,0,.25) }
 .legal h2{ margin:.1rem 0 .5rem; color:var(--accent); font-size:1.3rem }
 .legal p{ margin:.5rem 0 0; line-height:1.55 }
 .legal .small{ color:var(--muted); margin-top:24px }
@@ -233,633 +171,46 @@ body.ueber-mich .hero{ min-height:80vh; }
    =================================================== */
 html,body{ height:100%; display:flex; flex-direction:column }
 main{ flex:1 }
-.site-footer{
-  text-align:center; color:var(--muted);
-  padding:2rem 1rem; border-top:1px solid var(--ring); margin-top:40px;
-  font-size:.85rem;
-}
+.site-footer{ text-align:center; color:var(--muted); padding:2rem 1rem; border-top:1px solid var(--ring); margin-top:40px; font-size:.85rem }
 .site-footer a{ color:var(--muted); text-decoration:none; margin:0 .5rem }
 .site-footer a:hover{ color:var(--accent) }
 
 /* ===================================================
-   Misc
+   Misc / Utilities
    =================================================== */
-.to-top{
-  position:fixed; right:16px; bottom:16px;
-  background:var(--accent); color:#000;
-  padding:10px 14px; border-radius:999px
-}
+.to-top{ position:fixed; right:16px; bottom:16px; background:var(--accent); color:#000; padding:10px 14px; border-radius:999px }
 main > section{ content-visibility:auto; contain-intrinsic-size:800px }
 .benefits-list{ list-style:none; padding:0; margin:1.25rem auto 0; max-width:65ch; text-align:left; line-height:1.6 }
-@media (prefers-reduced-motion:reduce){
-  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important }
-}
-body.index .hero.hero--XL {
-  min-height: 22vh !important;   /* runter von 32 → 22 */
-}
+@media (prefers-reduced-motion:reduce){ *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition:none !important } }
 
-body.index .hero.hero--XL .inner {
-  bottom: 50% !important;        /* Text leicht hochschieben */
-}
-body.index .hero.hero--XL {
-  min-height: 24vh !important;   /* kleiner Hero, weniger Himmel */
-}
-
-body.index .hero.hero--XL .inner {
-  bottom: 60% !important;        /* Textblock deutlich höher */
-}
-/* === STARTSEITE HERO: Höhe + Textposition HART FESTLEGEN === */
-section.hero.hero--XL{
-  position: relative;
-  min-height: 24vh !important;     /* -> Höhe des Heros */
-  padding: 0 !important;
-  overflow: hidden;
-}
-
-/* Bild aus dem Flow, auf Section spannen */
-section.hero.hero--XL > picture{
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-}
-section.hero.hero--XL .hero-bg{
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 55% !important; /* Fokus etwas tiefer als Mitte */
-}
-
-/* Textblock optisch höher setzen */
-section.hero.hero--XL .inner{
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  bottom: 60% !important;           /* -> höher über den Kopf des Mannes */
-  min-height: 0 !important;
-  padding: 0 1rem !important;
-  text-align: center !important;
-  z-index: 2 !important;
-}
-/* === STARTSEITE HERO – Lesbarkeit Text === */
-section.hero.hero--XL h1 {
-  color: var(--accent);  /* Gold */
-  font-size: clamp(2.4rem, 4.8vw, 3.4rem);
-  font-weight: 700;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,.8),
-    0 0 14px rgba(0,0,0,.55);
-  -webkit-text-stroke: 0.6px rgba(0,0,0,.4); /* hauchdünne Outline */
-}
-
-section.hero.hero--XL .sub {
-  color: #fff;  /* heller als bisher */
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
-  line-height: 1.5;
-  text-shadow:
-    0 2px 5px rgba(0,0,0,.75),
-    0 0 8px rgba(0,0,0,.5);
-  font-weight: 500;
-}
-/* === STARTSEITE HERO – Headline + Subheadline === */
-section.hero.hero--XL h1 {
-  color: var(--accent);  /* Gold */
-  font-size: clamp(2.6rem, 5vw, 3.6rem); /* etwas größer */
-  font-weight: 700;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,.85),
-    0 0 14px rgba(0,0,0,.6);
-  -webkit-text-stroke: 0.6px rgba(0,0,0,.35);
-  margin-bottom: .6rem;
-}
-
-section.hero.hero--XL .sub {
-  color: #fff;
-  font-size: clamp(1.15rem, 1.6vw, 1.35rem); /* größer als normaler Fließtext */
-  line-height: 1.55;
-  font-weight: 600;
-  text-shadow:
-    0 2px 6px rgba(0,0,0,.8),
-    0 0 10px rgba(0,0,0,.55);
-  margin-top: .4rem;
-}
-/* === HERO Subheadline deutlicher === */
-section.hero.hero--XL .sub {
-  color: #ffffff;  /* reines Weiß */
-  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
-  font-weight: 700;
-  line-height: 1.55;
-  text-shadow:
-    0 3px 6px rgba(0,0,0,.9),   /* kräftiger Schlagschatten */
-    0 0 12px rgba(0,0,0,.6);    /* weiche Umhüllung */
-  -webkit-text-stroke: 0.5px rgba(0,0,0,.4); /* hauchdünne Kontur */
-}
-/* === HERO Subheadline STRONG === */
-section.hero.hero--XL .sub-strong {
-  color: #ffffff;
-  font-size: clamp(1.6rem, 2.2vw, 1.9rem); /* deutlich größer */
-  font-weight: 800;                        /* extrafett */
-  line-height: 1.4;
-  text-shadow:
-    0 4px 10px rgba(0,0,0,.95),            /* starker Schlagschatten */
-    0 0 18px rgba(0,0,0,.7);               /* weiche Aura */
-  -webkit-text-stroke: 0.7px rgba(0,0,0,.45); /* klare Kontur */
-  margin-top: 1rem;
-}
-/* === Buttons optimiert (Gold) === */
-.btn-gold {
-  background: #e0b937;          /* etwas kräftigeres Gold */
-  color: #0b0f12;
-  border-color: #e0b937;
-  font-weight: 600;
-}
-.btn-gold:hover {
-  background: #cfa32f;          /* dunkler beim Hover */
-  border-color: #cfa32f;
-  filter: brightness(1);
-}
-/* Claim oben links – sichtbar vor Overlays */
-.hero-claim{
-  position:absolute; top:14%; left:6%; z-index:3;
-  max-width:42%;
-}
-.hero-claim h2{
-  margin:0; line-height:1.15;
-  font-size:clamp(2rem,5vw,3.2rem);
-  font-weight:700; color:var(--accent);
-  text-shadow:0 3px 10px rgba(0,0,0,.65);
-}
-.hero-claim .tagline{
-  margin:.35rem 0 0; color:#f5f5f5;
-  font-weight:600;
-  text-shadow:0 2px 8px rgba(0,0,0,.6);
-}
-
-/* Auf dieser Seite Claim-Feintuning */
-body.resonanzraum .hero{ min-height: 60vh; }  /* falls nötig anpassen */
-body.resonanzraum .hero-claim{ top:18%; left:6%; max-width:46%; }
-
-/* Sicherstellen, dass Overlays darunter bleiben */
-.hero.hero--soft::after{ z-index:1; }
-/* Resonanzraum – Hero höher für Gong */
-body.resonanzraum .hero {
-  min-height: 80vh !important;   /* statt 60–68vh */
-}
-
-body.resonanzraum .hero img.hero-bg {
-  object-position: center 40%;   /* Fokus leicht nach oben, damit Gong sichtbar bleibt */
-}
-/* === Navigation horizontal mittig === */
-.site-header .nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;    /* alles mittig */
-  gap: 2rem;
-}
-
-/* Brand links festpinnen */
-.site-header .brand {
-  margin-right: auto;         /* schiebt Logo/Brand ganz nach links */
-}
-
-/* Liste mittig ausrichten */
-.site-header nav {
-  flex: 1;
-}
-.site-header .nav-list {
-  display: flex;
-  justify-content: center;    /* zentriert die Links */
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}/* Resonanzraum: Hero hoch + Bild korrekt spannen */
-body.resonanzraum .hero{
-  position: relative;
-  min-height: 88vh !important;   /* mehr Höhe -> nichts wird abgeschnitten */
-  overflow: hidden;
-}
-body.resonanzraum .hero > picture{
-  position: absolute; inset: 0; display: block; width: 100%; height: 100%;
-}
-body.resonanzraum .hero .hero-bg{
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center 35%;   /* zeigt MEHR OBEN (Gong) */
-}
-
-/* Claim/Title feinsetzen, damit sie nicht kollidieren */
-body.resonanzraum .hero-claim{ top:18%; left:6%; z-index:3; }
-body.resonanzraum .hero .inner{ bottom: 16%; }
-@media (max-width: 880px){
-  body.resonanzraum .hero{ min-height: 76vh !important; }
-  body.resonanzraum .hero .inner{ bottom: 12%; }
-}
-/* Resonanzraum: Hero höher + Bild sicher aufspannen */
-body.resonanzraum section.hero{
-  position: relative;
-  min-height: 88vh !important;      /* Höhe steuern */
-  overflow: hidden;
-}
-
-/* Bild/Picture absolut, unabhängig von Klassenname */
-body.resonanzraum section.hero > picture,
-body.resonanzraum section.hero > picture > img{
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 35% !important;   /* mehr Gong ↑ (kleiner = weiter nach oben) */
-}
-
-/* Overlays unten, Texte oben */
-body.resonanzraum .hero-claim{ top:18%; left:6%; z-index:3; }
-body.resonanzraum .hero .inner{ bottom:16%; z-index:2; }
-.hero.hero--soft::after{ z-index:1; }
-/* Resonanzraum – Hero Text schlanker */
-body.resonanzraum .hero h1{
-  font-weight: 600;  /* statt 700/800 */
-  text-shadow: 0 2px 6px rgba(0,0,0,.7); /* weniger Blur */
-}
-
-body.resonanzraum .hero .sub,
-body.resonanzraum .hero .sub-strong{
-  font-weight: 500;  /* leichter */
-  text-shadow: 0 1px 4px rgba(0,0,0,.65); /* schlanker Schatten */
-}
-/* Navigation mittig */
-.site-header .nav-container{
-  display:flex;
-  align-items:center;
-}
-
-.site-header .brand{
-  margin-right:auto;   /* schiebt Brand ganz links */
-}
-
-.site-header nav{
-  flex:1;
-}
-
-.site-header .nav-list{
-  display:flex;
-  justify-content:center; /* zentriert */
-  gap:2rem;
-  list-style:none;
-  margin:0; padding:0;
-}
-/* === Navigation mittig === */
-.site-header .nav-container{
-  display:flex;
-  align-items:center;
-}
-.site-header .brand{ margin-right:auto; }
-.site-header nav{ flex:1; }
-.site-header .nav-list{
-  display:flex;
-  justify-content:center;
-  gap:2rem;
-  list-style:none;
-  margin:0; padding:0;
-}
-
-/* === Resonanzraum Hero größer + Bildfokus === */
-body.resonanzraum .hero{
-  min-height: 95vh !important;   /* fast volle Höhe */
-  position: relative;
-  overflow: hidden;
-}
-body.resonanzraum .hero > picture,
-body.resonanzraum .hero > picture > img{
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center 38% !important; /* Fokus etwas nach oben -> Gong im Bild */
-}
-
-/* Text dezenter */
-body.resonanzraum .hero h1{ font-weight:600; text-shadow:0 2px 6px rgba(0,0,0,.7); }
-body.resonanzraum .hero .sub,
-body.resonanzraum .hero .tagline{ font-weight:500; text-shadow:0 1px 4px rgba(0,0,0,.65); }
-/* === Resonanzraum Hero – fix Bild sichtbar === */
-body.resonanzraum .hero {
-  position: relative;
-  min-height: 92vh;      /* Höhe fast Vollbild */
-  overflow: hidden;
-}
-
-/* Bild sichtbar, richtig gestapelt */
-body.resonanzraum .hero picture,
-body.resonanzraum .hero .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%; /* Fokus leicht hoch -> Gong sichtbar */
-  z-index: 0 !important;       /* Bild ganz unten */
-}
-
-/* Overlays */
-body.resonanzraum .hero.hero--soft::after {
-  z-index: 1;  /* Verlauf über Bild */
-}
-
-/* Claim oben links */
-body.resonanzraum .hero-claim {
-  position: absolute;
-  top: 18%;
-  left: 6%;
-  max-width: 42%;
-  z-index: 2;  /* über Verlauf */
-}
-
-/* Haupttitel */
-body.resonanzraum .hero .inner {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 14%;
-  max-width: 800px;
-  text-align: center;
-  z-index: 2;
-}
-/* === Resonanzraum Hero sichtbar + groß === */
-body.resonanzraum .hero {
-  position: relative;
-  min-height: 92vh;        /* fast voller Screen */
-  overflow: hidden;
-}
-
-/* Bild füllt Section */
-body.resonanzraum .hero .hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 38%; /* leicht höher -> Gong sichtbar */
-  z-index: 0;
-}
-
-/* Verlauf */
-body.resonanzraum .hero.hero--soft::after {
-  z-index: 1;
-}
-
-/* Claim oben links */
-body.resonanzraum .hero-claim {
-  position: absolute;
-  top: 18%;
-  left: 6%;
-  max-width: 42%;
-  z-index: 2;
-}
-
-/* Titel mittig unten */
-body.resonanzraum .hero .inner {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 14%;
-  text-align: center;
-  max-width: 800px;
-  z-index: 2;
-}
-/* Claim links: kleiner, weiter an den Rand */
-body.resonanzraum .hero-claim{
-  position:absolute; top:22%; left:4%;   /* näher am Rand */
-  max-width:36%; z-index:2;
-}
-body.resonanzraum .hero-claim h2{
-  margin:0;
-  font-size:clamp(1.4rem,3.6vw,2.2rem);  /* kleiner als H1 */
-  font-weight:600;                        /* schlanker */
-  color:var(--accent);
-  text-shadow:0 2px 6px rgba(0,0,0,.6);
-}
-
-/* H1 bleibt Haupttitel, Tagline darunter zentriert */
-body.resonanzraum .hero .inner{ bottom:16%; text-align:center; }
-body.resonanzraum .hero h1{
-  margin:.4rem 0;
-  font-size:clamp(2.2rem,5vw,3.2rem);
-  font-weight:700;
-  color:var(--accent);
-  text-shadow:0 3px 8px rgba(0,0,0,.7);
-}
-body.resonanzraum .hero .tagline{
-  margin:.5rem 0 0;
-  font-size:clamp(1rem,2vw,1.25rem);
-  font-weight:500;
-  color:#f5f5f5;
-  text-shadow:0 2px 5px rgba(0,0,0,.6);
-}
-
-/* Mobile etwas weiter rein + kleiner */
-@media (max-width:880px){
-  body.resonanzraum .hero-claim{ left:6%; top:18%; max-width:58%; }
-  body.resonanzraum .hero-claim h2{ font-size:clamp(1.2rem,4.8vw,1.8rem); }
-}
-/* === Blog Cards === */
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 2rem;
-}
-
-.cards--3 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.card {
-  background: var(--card);
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
-.card-media {
-  margin: 0;
-  overflow: hidden;
-  background: var(--bg-soft);
-}
-
-.card-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.card-hd {
-  padding: 1rem 1.25rem 0;
-}
-
-.card-hd h3 {
-  margin: .25rem 0;
-  font-size: 1.25rem;
-  line-height: 1.3;
-}
-
-.card-txt {
-  padding: 0 1.25rem 1rem;
-  color: var(--text-soft);
-  flex-grow: 1;
-}
-
-.card-cta {
-  display: inline-block;
-  margin: 0 1.25rem 1.25rem;
-}
-.card-media {
-  background: var(--gold-25); /* leicht goldene Fläche */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  color: var(--gold);
-  font-weight: bold;
-}
-.card-media {
-  margin: 0;
-  overflow: hidden;
-  border-radius: 1rem;
-  background: var(--card);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-media .placeholder {
-  background: var(--gold-25);
-  color: var(--gold);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 2rem;
-  width: 100%;
-  height: 100%;
-}
-/* Karten auf dunklem Grund stärker hervorheben */
-.cards .card {
-  background: var(--bg-soft); /* dunkleres Grau statt Schwarz */
-  border: 1px solid rgba(212,175,55,.25); /* Gold-Schimmer */
-  border-radius: 1rem;
-}
-
-.card-hd h3 {
-  color: var(--text);
-}
-
-.card-txt {
-  color: var(--text-soft);
-}/* ===================================================
-   BLOG – Karten & Grid
+/* ===================================================
+   BLOG – Archiv-Karten (Resonanzraum/Blog)
    =================================================== */
+/* Grid für Archiv */
+.post-grid{ list-style:none; margin:0; padding:0; display:grid; gap:2rem }
+.cards--3{ grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
 
-/* Grid */
-.cards {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 2rem;
+/* Karte */
+.post-grid .card{
+  background:var(--card);
+  border:1px solid var(--ring);
+  border-top:3px solid var(--accent);
+  border-radius:1rem;
+  overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:transform .2s ease, box-shadow .2s ease;
 }
+.post-grid .card:hover{ transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,.25) }
 
-.cards--3 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+/* Medienbereich (Bild oder Platzhalter) */
+.card-media{ margin:0; overflow:hidden; background:#1a1f24; display:flex; align-items:center; justify-content:center; min-height:200px }
+.card-media img{ display:block; width:100%; height:auto; object-fit:cover }
+.card-media .placeholder{ color:var(--accent); font-weight:600; font-size:1.05rem; text-align:center; padding:2rem; width:100% }
 
-/* Kartenbasis */
-.card {
-  background: #0e1216;                        /* abgesetztes Dunkelgrau */
-  border: 1px solid var(--ring);
-  border-top: 3px solid var(--accent);        /* goldene Linie oben */
-  border-radius: 1rem;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
-/* Medienbereich */
-.card-media {
-  margin: 0;
-  overflow: hidden;
-  background: #1a1f24;                        /* dunkler Block als Default */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-}
-
-.card-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* Platzhalter (falls kein Bild) */
-.card-media .placeholder {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 2rem;
-  width: 100%;
-}
-
-/* Header & Texte */
-.card-hd {
-  padding: 1rem 1.25rem 0;
-}
-.card-hd h3 {
-  margin: .25rem 0;
-  font-size: 1.25rem;
-  line-height: 1.3;
-  color: var(--ink);
-}
-.card-hd .eyebrow {
-  color: var(--accent);
-  font-size: .9rem;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-.card-hd .meta {
-  color: var(--muted);
-  font-size: .9rem;
-}
-
-.card-txt {
-  padding: 0 1.25rem 1rem;
-  color: var(--muted);
-  flex-grow: 1;
-}
-
-/* CTA */
-.card-cta {
-  display: inline-block;
-  margin: 0 1.25rem 1.25rem;
-}
+/* Inhalt */
+.card-hd{ padding:1rem 1.25rem 0 }
+.card-hd .eyebrow{ color:var(--accent); font-size:.9rem; text-transform:uppercase; letter-spacing:.5px }
+.card-hd h3{ margin:.25rem 0; font-size:1.25rem; line-height:1.3; color:var(--ink) }
+.card-hd .meta{ color:var(--muted); font-size:.9rem }
+.card-txt{ padding:0 1.25rem 1rem; color:var(--muted); flex-grow:1 }
+.card-cta{ display:inline-block; margin:0 1.25rem 1.25rem }

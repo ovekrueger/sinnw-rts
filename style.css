@@ -235,7 +235,7 @@ main, .wrap, .content, .page, .blog, .archive {
 body.index{
   --hero-height: 18vh;   /* 16–24: flach bis mittel */
   --inner-bottom: 58%;   /* größer = Text höher */
-  --hero-focus-y: 84%;   /* höher = weniger Himmel */
+  --hero-focus-y: 90%;   /* höher = weniger Himmel */
 }
 
 body.index .hero.hero--XL{ min-height:var(--hero-height); }

@@ -59,42 +59,7 @@
 
 <main id="main">
 
-  <!-- HERO -->
-  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;">
-    <picture>
-      <source srcset="images/start.strand.webp" type="image/webp">
-      <img src="images/start.strand.png"
-           alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-           class="hero-bg"
-           width="1920" height="1080"
-           loading="eager" fetchpriority="high">
-    </picture>
-
-    <div class="siegel">
-      <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
-    </div>
-
-  <div class="inner tac"
-     style="display:flex;flex-direction:column;
-            justify-content:center;  /* Mitte statt Start */
-            align-items:center;
-            padding:clamp(4vh,6vh,8vh) 1rem; /* weniger Padding */
-            min-height:60vh;">  <!-- Hero insgesamt kleiner -->
-
-  <h1 style="margin:0 0 1rem 0;">Sucht sucht Sinn.</h1>
-
-  <p class="sub" style="max-width:700px;margin:.5rem auto 0;line-height:1.6">
-    Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
-    hin zu Klarheit, Würde und innerer Freiheit.
-  </p>
-
-  <p class="sub sub-strong">
-    Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
-  </p>
-
-</div>
-</section>
-
+  
   <!-- CTA unter dem Hero -->
   <section class="block tac" style="margin:2.5rem 0;">
     <div class="cta" style="display:grid;gap:.9rem;justify-items:center">
@@ -107,7 +72,38 @@
       </div>
     </div>
   </section>
+<!-- HERO -->
+<section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;min-height:50vh;">
+  <picture>
+    <source srcset="images/start.strand.webp" type="image/webp">
+    <img src="images/start.strand.png"
+         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+         class="hero-bg"
+         width="1920" height="1080"
+         loading="eager" fetchpriority="high"
+         style="object-fit:cover;object-position:center 30%;">
+  </picture>
 
+  <div class="siegel">
+    <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
+  </div>
+
+  <div class="inner tac"
+       style="display:flex;flex-direction:column;align-items:center;
+              justify-content:center;
+              gap:.75rem;
+              padding:clamp(2vh,3vh,4vh) 1rem;
+              min-height:clamp(320px,48vh,560px);">
+    <h1 style="margin:0;">Sucht sucht Sinn.</h1>
+    <p class="sub" style="max-width:700px;margin:0 auto;line-height:1.6">
+      Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
+      hin zu Klarheit, Würde und innerer Freiheit.
+    </p>
+    <p class="sub sub-strong">
+      Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
+    </p>
+  </div>
+</section>
   <!-- CONTENT-BLÖCKE -->
   <section class="zz">
 

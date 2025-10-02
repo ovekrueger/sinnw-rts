@@ -242,3 +242,34 @@ body.index{
 body.index .hero.hero--XL{ min-height:var(--hero-height); }
 /* Entferne/überschreibe feste 60% */
 body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom) !important; }
+/* === 1) Startseite: Hero wirklich flach + Fokus tiefer === */
+body.index{
+  --hero-height: 18vh;   /* 16–24: flach bis mittel */
+  --inner-bottom: 58%;   /* größer = Text höher */
+  --hero-focus-y: 84%;   /* höher = weniger Himmel */
+}
+body.index .hero.hero--XL{ min-height:var(--hero-height); }
+body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
+.hero .hero-bg{ object-position:center var(--hero-focus-y,40%); }
+
+/* === 2) Hero-Overlay kräftiger für bessere Lesbarkeit === */
+.hero.hero--soft::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  /* stärkerer Verlauf: oben leicht abdunkeln, unten deutlicher */
+  background:linear-gradient(
+    180deg,
+    rgba(11,15,18,.25) 0%,
+    rgba(11,15,18,.55) 50%,
+    rgba(11,15,18,.88) 100%
+  );
+}
+/* Text noch etwas klarer */
+.hero h1{ text-shadow:0 3px 12px rgba(0,0,0,.75); }
+.hero .sub{ text-shadow:0 2px 8px rgba(0,0,0,.7); }
+
+/* === 3) CTA-Zeile: 2 oben, 1 unten === */
+.cta-under-hero{ padding:clamp(10px,2.6vh,24px) 0 0; }
+.btn-row--hero{ display:grid; gap:.75rem; justify-items:center; }
+.btn-row--hero .row-top{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
+.btn-row--hero .row-bottom{ display:flex; justify-content:center; }
+.btn-row--hero a{ min-width:clamp(200px,24vw,300px); text-align:center; }

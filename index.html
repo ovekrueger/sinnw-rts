@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="de">
 <head>
@@ -6,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Sucht sucht Sinn – Coaching für Klarheit, Würde, Freiheit</title>
-  <meta name="description" content="Ove Krüger begleitet dich aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit. Angebote für Frauen (KÖNIGIN), Männer (SAMURAI) und Vielfalt (Anders frei).">
+  <meta name="description" content="Ove Krüger begleitet dich aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit. Angebote für Frauen (KÖNIGIN), Männer (SAMURAI) und Vielfalt.">
 
   <!-- Canonical & Robots -->
   <link rel="canonical" href="index.html">
@@ -29,17 +28,17 @@
   <meta name="twitter:image" content="images/og-start.jpg">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=16">
+  <link rel="preload" href="style.css?v=17" as="style">
+  <link rel="stylesheet" href="style.css?v=17">
 
-  <!-- Mobile Button Optimierung (global, dezent) -->
+  <!-- Mobile Button-Feinschliff -->
   <style>
-    @media (max-width: 640px) {
-      .btn { min-width:140px; font-size:.9rem; padding:.5rem 1rem; }
+    @media (max-width: 640px){
+      .btn{min-width:140px;font-size:.9rem;padding:.5rem 1rem}
     }
   </style>
 </head>
-<body id="top">
-
+<body id="top" class="index">
 
 <!-- NAV -->
 <header class="site-header">
@@ -59,52 +58,51 @@
 
 <main id="main">
 
-  
-  <!-- CTA unter dem Hero -->
-  <section class="block tac" style="margin:2.5rem 0;">
-    <div class="cta" style="display:grid;gap:.9rem;justify-items:center">
-      <div class="cta-row" style="display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center">
-        <a href="angebote/frauen/"  class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Frauen – KÖNIGIN</a>
-        <a href="angebote/maenner/" class="btn btn-gold" style="min-width:clamp(180px,22vw,280px);text-align:center">Für Männer – SAMURAI</a>
-      </div>
-      <div class="cta-row single" style="margin-top:.15rem">
-        <a href="suechte.html" class="btn btn-outline" style="min-width:clamp(200px,24vw,300px);text-align:center">Zu „Süchte neu denken“</a>
+  <!-- HERO (schlanker Banner, weniger Himmel) -->
+  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;min-height:50vh;">
+    <picture>
+      <source srcset="images/start.strand.webp" type="image/webp">
+      <img src="images/start.strand.png"
+           alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+           class="hero-bg"
+           width="1920" height="1080"
+           loading="eager" fetchpriority="high"
+           style="object-fit:cover;object-position:center 70%;">
+    </picture>
+
+    <div class="siegel">
+      <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
+    </div>
+
+    <div class="inner tac"
+         style="display:flex;flex-direction:column;align-items:center;
+                justify-content:flex-start;
+                gap:.75rem;
+                padding:clamp(6vh,8vh,10vh) 1rem 2rem;
+                min-height:clamp(320px,48vh,560px);">
+      <h1 style="margin:0;">Sucht sucht Sinn.</h1>
+      <p class="sub" style="max-width:700px;margin:0 auto;line-height:1.6">
+        Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
+        hin zu Klarheit, Würde und innerer Freiheit.
+      </p>
+      <p class="sub sub-strong" style="margin:0">
+        Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA direkt unter dem Hero -->
+  <section class="cta-under-hero">
+    <div class="wrap tac">
+      <div class="btn-row btn-row--hero">
+        <a class="btn btn-gold" href="angebote/frauen/">Für Frauen – KÖNIGIN</a>
+        <a class="btn btn-gold" href="angebote/maenner/">Für Männer – SAMURAI</a>
+        <a class="btn btn-outline" href="suechte.html">Zu „Süchte neu denken“</a>
       </div>
     </div>
   </section>
-<!-- HERO -->
-<section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;min-height:50vh;">
-  <picture>
-    <source srcset="images/start.strand.webp" type="image/webp">
-    <img src="images/start.strand.png"
-         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-         class="hero-bg"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         style="object-fit:cover;object-position:center 30%;">
-  </picture>
 
-  <div class="siegel">
-    <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
-  </div>
-
-  <div class="inner tac"
-       style="display:flex;flex-direction:column;align-items:center;
-              justify-content:center;
-              gap:.75rem;
-              padding:clamp(2vh,3vh,4vh) 1rem;
-              min-height:clamp(320px,48vh,560px);">
-    <h1 style="margin:0;">Sucht sucht Sinn.</h1>
-    <p class="sub" style="max-width:700px;margin:0 auto;line-height:1.6">
-      Ich begleite dich aus Abhängigkeit und alten Mustern – <br>
-      hin zu Klarheit, Würde und innerer Freiheit.
-    </p>
-    <p class="sub sub-strong">
-      Abhängigkeit ist kein Charakterfehler. Sie ist ein Ruf nach Orientierung.
-    </p>
-  </div>
-</section>
-  <!-- CONTENT-BLÖCKE -->
+  <!-- CONTENT -->
   <section class="zz">
 
     <!-- Warum? (Bild rechts) -->
@@ -211,7 +209,7 @@
   </section><!-- /.zz -->
 
   <!-- Was du bekommst -->
-  <section class="benefits" style="text-align:center; margin:4rem 0 3rem;">
+  <section class="benefits" style="text-align:center;margin:4rem 0 3rem;">
     <h2>Was du bekommst</h2>
     <ul class="benefits-list">
       <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
@@ -222,8 +220,8 @@
       <li>⚡ <strong>Energie</strong> – für das, was dir wirklich wichtig ist.</li>
     </ul>
 
-    <!-- Sahnehäubchen / Geschenke -->
-    <div style="margin:2rem auto 0; display:grid; gap:1rem; max-width:720px;">
+    <!-- Geschenke -->
+    <div style="margin:2rem auto 0;display:grid;gap:1rem;max-width:720px;">
 
       <!-- Klanggeschenk -->
       <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;text-align:center;">
@@ -247,7 +245,7 @@
         <p style="margin:.1rem 0 .7rem 0;">
           <strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.
         </p>
-        <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
+        <div style="margin-top:.5rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;">
           <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px);text-align:center">📖 Online lesen</a>
           <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download style="min-width:clamp(200px,24vw,300px);text-align:center">⬇ PDF herunterladen</a>
         </div>
@@ -260,21 +258,21 @@
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="wrap" style="text-align:center; padding:2rem 1rem;">
-    <small style="display:block; margin-bottom:.5rem; opacity:.85;">
+  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
+    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
       © <span id="y"></span> Ove Krüger · Sucht sucht Sinn
     </small>
-    <nav style="font-size:.9rem; opacity:.85;">
-      <a href="index.html">Start</a> · 
-      <a href="ueber-mich.html">Über mich</a> · 
-      <a href="angebot.html">Angebote</a> · 
-      <a href="resonanzraum.html">Resonanzraum</a> · 
-      <a href="kontakt.html">Kontakt</a> · 
-      <a href="impressum.html">Impressum</a> · 
+    <nav style="font-size:.9rem;opacity:.85;">
+      <a href="index.html">Start</a> ·
+      <a href="ueber-mich.html">Über mich</a> ·
+      <a href="angebot.html">Angebote</a> ·
+      <a href="resonanzraum.html">Resonanzraum</a> ·
+      <a href="kontakt.html">Kontakt</a> ·
+      <a href="impressum.html">Impressum</a> ·
       <a href="datenschutz.html">Datenschutz</a>
     </nav>
-    <small style="display:block; margin-top:.75rem; font-size:.85rem; opacity:.8;">
-      🎵 <a href="assets/audio/atem-mein-leben.mp3" download>Song „Atmen, mein Leben“</a> · 
+    <small style="display:block;margin-top:.75rem;font-size:.85rem;opacity:.8;">
+      🎵 <a href="assets/audio/atem-mein-leben.mp3" download>Song „Atmen, mein Leben“</a> ·
       📖 <a href="assets/books/leseprobe.pdf">Preview „Holpersteine“</a>
     </small>
   </div>

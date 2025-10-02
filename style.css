@@ -238,16 +238,7 @@ body.index{
   --hero-focus-y: 80%;     /* höherer Wert = Bild nach unten verschoben → weniger Himmel */
 }
 
-/* Option: XL-Hero auf Variablen umstellen (entkoppelt feste Werte) */
-body.index .hero.hero--XL{ min-height:var(--hero-height); }
-/* Entferne/überschreibe feste 60% */
-body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom) !important; }
-/* === 1) Startseite: Hero wirklich flach + Fokus tiefer === */
-body.index{
-  --hero-height: 18vh;   /* 16–24: flach bis mittel */
-  --inner-bottom: 58%;   /* größer = Text höher */
-  --hero-focus-y: 84%;   /* höher = weniger Himmel */
-}
+
 body.index .hero.hero--XL{ min-height:var(--hero-height); }
 body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
 .hero .hero-bg{ object-position:center var(--hero-focus-y,40%); }
@@ -273,3 +264,11 @@ body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
 .btn-row--hero .row-top{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
 .btn-row--hero .row-bottom{ display:flex; justify-content:center; }
 .btn-row--hero a{ min-width:clamp(200px,24vw,300px); text-align:center; }
+/* =========================================
+   STARTSEITE: Hero über Variablen steuern
+   ========================================= */
+body.index{
+  --hero-height: 18vh;   /* 16–24: flach bis mittel */
+  --inner-bottom: 58%;   /* größer = Text höher */
+  --hero-focus-y: 84%;   /* höher = weniger Himmel */
+}

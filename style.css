@@ -233,3 +233,11 @@ main, .wrap, .content, .page, .blog, .archive {
 body.index .hero.hero--XL .inner {
   bottom: 58% !important; /* anpassen: höher = Zahl größer, tiefer = Zahl kleiner */
 }
+/* === FIX Hero-Text Startseite === */
+body.index .hero.hero--XL .inner {
+  position: absolute;
+  bottom: 62% !important; /* höher oder tiefer nach Wunsch */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}

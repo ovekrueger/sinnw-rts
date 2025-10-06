@@ -261,3 +261,23 @@ body.index .hero.hero--XL .inner{ bottom:var(--inner-bottom); }
 .btn-row--hero .row-top{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center; }
 .btn-row--hero .row-bottom{ display:flex; justify-content:center; }
 .btn-row--hero a{ min-width:clamp(200px,24vw,300px); text-align:center; }
+/* Kontakt: Hero-Steuerung */
+body.kontakt{
+  --hero-height: 20vh;  /* flacher = kleinerer Wert (16–28vh) */
+  --inner-bottom: 60%;  /* größer = Text höher (50–70%) */
+  --hero-focus-y: 82%;  /* höher = weniger Himmel (70–90%) */
+}
+
+/* Basierend auf deinen Hero-Basisregeln */
+body.kontakt .hero{ min-height: var(--hero-height); }
+body.kontakt .hero .inner{ bottom: var(--inner-bottom); }
+.hero-kontakt .hero-bg{ object-position: center var(--hero-focus-y); }
+
+/* Lesbarkeit: Overlay etwas kräftiger auf Kontakt */
+.hero.hero--soft::after{
+  content:""; position:absolute; inset:0; z-index:1;
+  background: linear-gradient(180deg,
+    rgba(11,15,18,.25) 0%,
+    rgba(11,15,18,.55) 50%,
+    rgba(11,15,18,.88) 100%);
+}

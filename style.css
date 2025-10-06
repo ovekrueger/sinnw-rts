@@ -284,7 +284,7 @@ body.kontakt .hero .inner{ bottom: var(--inner-bottom); }
 /* Kontakt: Hero feinregeln */
 body.kontakt{
   --hero-height: 64vh;   /* 16–28 (kleiner = flacher) */
-  --inner-bottom: 50%;   /* 50–70 (größer = Text höher) */
+  --inner-bottom: 56%;   /* 50–70 (größer = Text höher) */
   --hero-focus-y: 78%;   /* 70–90 (größer = weniger Himmel) */
 }
 body.kontakt .hero{ min-height: var(--hero-height); }

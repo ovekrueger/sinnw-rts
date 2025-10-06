@@ -4,79 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kontakt – Ove Krüger | Sucht sucht Sinn</title>
-  <meta name="description" content="Kontakt zu Ove Krüger – Sinnwärts. Anfragen zu Coaching, Mentoring und Training." />
-  
+  <meta name="description" content="Kontakt zu Ove Krüger – Anfragen zu Coaching, Mentoring und Training." />
+  <link rel="canonical" href="kontakt.html" />
+  <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="style.css" />
 </head>
-  
+
 <body id="top" class="kontakt">
-<header class="site-header">
-  ...
-  <ul class="nav-list">
-    <li><a href="index.html">Start</a></li>
-    <li><a href="ueber-mich.html">Über mich</a></li>
-    <li><a href="angebot.html">Angebote</a></li>
-    <li><a href="resonanzraum.html">Resonanzraum</a></li>
-    <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
-  </ul>
-  ...
-</header>
 
-<!-- HERO -->
-<section class="hero hero--soft hero-kontakt">
-  <img src="images/hero-sucht-sucht-sinn.jpg" alt="Kontakt – Sinnwärts" class="hero-bg" />
-  <div class="inner tac">
-    <h1>Kontakt</h1>
-    <p class="sub">Klarheit beginnt mit einem Gespräch.</p>
-  </div>
-</section>
-
-<!-- Inhalt -->
-<section class="wrap block">
-  <h2>So erreichst du mich</h2>
-  <p><strong>E-Mail:</strong> <a href="mailto:ove.krger@gmail.com">ove.krger@gmail.com</a></p>
-  <p><strong>Telefon:</strong> <a href="tel:+4915734567782">0157&nbsp;345&nbsp;677&nbsp;82</a></p>
-  <p><strong>Ort:</strong> Hamburg · Online & vor Ort</p>
-</section>
-
-<section class="wrap block">
-  <h2>Deine Nachricht</h2>
- <form action="#" method="POST" class="grid-2">
-      <label for="name">Name</label><br>
-      <input id="name" name="name" type="text" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
-  
-    <div>
-      <label for="email">E-Mail</label><br>
-      <input id="email" name="email" type="email" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="index.html">Sucht sucht Sinn</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="angebot.html">Angebote</a></li>
+          <li><a href="resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
     </div>
-    <div style="grid-column:1/-1">
-      <label for="msg">Nachricht</label><br>
-      <textarea id="msg" name="message" rows="6" required style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)"></textarea>
-    </div>
-    <div style="grid-column:1/-1">
-      <button class="btn" type="submit">Senden</button>
-    </div>
-  </form>
-</section>
+  </header>
 
-<footer class="site-footer">
-  <div class="wrap"><small>© <span id="y"></span> Ove Krüger · Sinnwärts</small></div>
-</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <!-- HERO (klein, gut lesbar) -->
+  <section class="hero hero--soft hero-kontakt">
+    <img src="images/hero-sucht-sucht-sinn.jpg" alt="Kontakt – Sinnwärts" class="hero-bg" />
+    <div class="inner tac">
+      <h1>Kontakt</h1>
+      <p class="sub">Klarheit beginnt mit einem Gespräch.</p>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- Kontaktinfos -->
+    <section class="wrap block">
+      <h2>So erreichst du mich</h2>
+      <p><strong>E-Mail:</strong> <a href="mailto:ove.krger@gmail.com">ove.krger@gmail.com</a></p>
+      <p><strong>Telefon:</strong> <a href="tel:+4915734567782">0157&nbsp;345&nbsp;677&nbsp;82</a></p>
+      <p><strong>Ort:</strong> Hamburg · Online &amp; vor Ort</p>
+      <hr style="border:0;border-top:1px solid var(--ring);opacity:.5;margin:1rem 0 0;">
+    </section>
+
+    <!-- Formular (lokal ohne Versand) -->
+    <section class="wrap block">
+      <h2>Deine Nachricht</h2>
+      <form action="#" method="POST" class="grid-2">
+        <div>
+          <label for="name">Name</label><br />
+          <input id="name" name="name" type="text" required
+                 style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)" />
+        </div>
+        <div>
+          <label for="email">E-Mail</label><br />
+          <input id="email" name="email" type="email" required
+                 style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)" />
+        </div>
+        <div style="grid-column:1/-1">
+          <label for="msg">Nachricht</label><br />
+          <textarea id="msg" name="message" rows="6" required
+                    style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)"></textarea>
+        </div>
+        <div style="grid-column:1/-1">
+          <button class="btn" type="submit">Senden</button>
+        </div>
+      </form>
+      <!-- Hinweis: Sobald die Seite live ist, <form action="#"> durch deine Formspree-URL ersetzen, z. B. action="https://formspree.io/f/xyzabcd" -->
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-  <div class="wrap">
-    <small>© <span id="y"></span> Ove Krüger · Sucht sucht Sinn</small>
-    <p>
-      <a href="impressum.html">Impressum</a> | 
-      <a href="datenschutz.html">Datenschutz</a>
-    </p>
-  </div>
-</footer>
+    <div class="wrap" style="text-align:center; padding:2rem 1rem;">
+      <small style="display:block; margin-bottom:.5rem; opacity:.85;">
+        © <span id="y"></span> Ove Krüger · Sucht sucht Sinn
+      </small>
+      <nav style="font-size:.9rem; opacity:.85;">
+        <a href="index.html">Start</a> ·
+        <a href="ueber-mich.html">Über mich</a> ·
+        <a href="angebot.html">Angebote</a> ·
+        <a href="resonanzraum.html">Resonanzraum</a> ·
+        <a href="kontakt.html">Kontakt</a> ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
 
-<a class="to-top" href="#top">↑ Nach oben</a>
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+  <a class="to-top" href="#top">↑ Nach oben</a>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
-

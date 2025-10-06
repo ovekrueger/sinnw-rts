@@ -283,9 +283,9 @@ body.kontakt .hero .inner{ bottom: var(--inner-bottom); }
 }
 /* Kontakt: Hero feinregeln */
 body.kontakt{
-  --hero-height: 56vh;   /* 16–28 (kleiner = flacher) */
-  --inner-bottom: 52%;   /* 50–70 (größer = Text höher) */
-  --hero-focus-y: 85%;   /* 70–90 (größer = weniger Himmel) */
+  --hero-height: 68vh;   /* 16–28 (kleiner = flacher) */
+  --inner-bottom: 48%;   /* 50–70 (größer = Text höher) */
+  --hero-focus-y: 88%;   /* 70–90 (größer = weniger Himmel) */
 }
 body.kontakt .hero{ min-height: var(--hero-height); }
 body.kontakt .hero .inner{ bottom: var(--inner-bottom); }

@@ -89,7 +89,35 @@
       </article>
     </section>
 
-    <!-- Callout -->
+<footer class="site-footer">
+  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
+    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
+      © <span id="y"></span> Ove Krüger · Sinnwärts Studio
+    </small>
+    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
+      <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/angebot.html">Angebote</a> ·
+      <a href="/resonanzraum.html">Resonanzraum</a> ·
+      <a href="/kontakt.html">Kontakt</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+  (function(){
+    var btn=document.querySelector('.to-top');
+    if(!btn) return;
+    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+<!-- Callout -->
     <div class="callout tac" style="margin:2.5rem auto 0;max-width:900px;padding:1rem 1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
       <p style="margin:0;line-height:1.6">
         Am Ende gehst du, wie du gemeint bist: nicht klein, nicht angepasst – sondern voller Würde, Klarheit und Liebe. Du bist <b>KÖNIGIN</b> deines Lebens. 👑
@@ -109,31 +137,6 @@
 </section>
 <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
   <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
-    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
-      © <span id="y"></span> Ove Krüger · Sinnwärts Studio
-    </small>
-    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="ueber-mich.html">Über mich</a> ·
-      <a href="angebot.html">Angebote</a> ·
-      <a href="resonanzraum.html">Resonanzraum</a> ·
-      <a href="kontakt.html">Kontakt</a> ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a>
-    </nav>
-  </div>
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script>
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script></body>
+></body>
 </html>
 

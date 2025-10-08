@@ -290,3 +290,6 @@ body.kontakt{
 body.kontakt .hero{ min-height: var(--hero-height); }
 body.kontakt .hero .inner{ bottom: var(--inner-bottom); }
 .hero-kontakt .hero-bg{ object-position:center var(--hero-focus-y); }
+/* Lesbarer Brand auf Mobile */
+.brand{ font-variant-ligatures: none; letter-spacing:.2px }
+@media (max-width:640px){ .brand{ font-size:1.05rem } }

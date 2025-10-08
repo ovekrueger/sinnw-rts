@@ -293,3 +293,25 @@ body.kontakt .hero .inner{ bottom: var(--inner-bottom); }
 /* Lesbarer Brand auf Mobile */
 .brand{ font-variant-ligatures: none; letter-spacing:.2px }
 @media (max-width:640px){ .brand{ font-size:1.05rem } }
+html { scroll-behavior: smooth; }
+
+.to-top{
+  position: fixed; right: 1rem; bottom: 1rem;
+  display: none; /* per JS sichtbar */
+  padding: .55rem .7rem; border-radius: .75rem;
+  text-decoration: none; line-height: 1; font-size: 1.1rem;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(6px);
+  transition: opacity .2s ease, transform .2s ease;
+  opacity: .9; z-index: 50;
+}
+.to-top.show{ display: inline-flex; }
+.to-top:hover{ opacity: 1; transform: translateY(-2px); }
+.to-top:focus-visible{ outline: 2px solid #d4af37; outline-offset: 2px; }
+@media (max-width: 640px){ .to-top{ right: .75rem; bottom: .75rem } }
+/* Respektiert Nutzer:innen, die reduzierte Bewegung wünschen */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior: auto; }
+  .to-top{ transition: none; }
+}

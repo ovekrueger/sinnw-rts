@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Für Männer – Samurai sein | Sucht sucht Sinn</title>
-  <link rel="stylesheet" href="../../style.css">
+  <title>Für Männer – Samurai sein | Sinnwärts Studio</title>
+
+  <!-- CSS -->
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="stylesheet" href="/style.css">
+
   <style>
     .section { max-width: 800px; margin: 60px auto; text-align: center; }
     .zz-row{display:grid;place-items:center;}
@@ -12,27 +16,27 @@
     .btn-row{margin-top:1.25rem;}
   </style>
 </head>
-  
-<body>
+
+<body id="top">
 <header class="site-header">
   <div class="nav-container">
-    <a class="brand" href="../../index.html">Sucht sucht Sinn</a>
+    <a class="brand" href="/index.html">Sinnwärts Studio</a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav-list">
-        <li><a href="../../index.html">Start</a></li>
-        <li><a href="../../ueber-mich.html">Über mich</a></li>
-        <li><a href="../../angebot.html">Angebote</a></li>
-        <li><a href="../../resonanzraum.html">Resonanzraum</a></li>
-        <li><a href="../../kontakt.html">Kontakt</a></li>
+        <li><a href="/index.html">Start</a></li>
+        <li><a href="/ueber-mich.html">Über mich</a></li>
+        <li><a href="/angebot.html">Angebote</a></li>
+        <li><a href="/resonanzraum.html">Resonanzraum</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
   </div>
 </header>
-  
+
 <!-- Hero -->
 <section class="hero hero--S hero--soft hero--mid hero--textHigh"
          style="--overlay:.25; --hero-offset:34vh; --inner-bottom:25%;">
-  <img src="../../images/samurai.webp"
+  <img src="/images/samurai.webp"
        alt="Aufrecht wie ein Samurai"
        class="hero-bg"
        style="object-position:center 5%;">
@@ -66,37 +70,38 @@
   Sondern in einen Raum, in dem du deine Stärke neu entdeckst – jenseits der Pose.</em></p>
 
   <div class="btn-row">
-    <a class="btn btn-gold" href="../../kontakt.html#samurai">Jetzt deinen Weg beginnen</a>
+    <a class="btn btn-gold" href="/kontakt.html#samurai">Jetzt deinen Weg beginnen</a>
   </div>
 </section>
 
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
-  <!-- FOOTER -->
 <footer class="site-footer">
   <div class="wrap" style="text-align:center;padding:2rem 1rem;">
     <small style="display:block;margin-bottom:.5rem;opacity:.85;">
       © <span id="y"></span> Ove Krüger · Sinnwärts Studio
     </small>
     <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="ueber-mich.html">Über mich</a> ·
-      <a href="angebot.html">Angebote</a> ·
-      <a href="resonanzraum.html">Resonanzraum</a> ·
-      <a href="kontakt.html">Kontakt</a> ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/angebot.html">Angebote</a> ·
+      <a href="/resonanzraum.html">Resonanzraum</a> ·
+      <a href="/kontakt.html">Kontakt</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
     </nav>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script>
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script></body>
-</html>
 
+<button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+<script>
+  // Jahr
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // ↑-Button
+  const btn = document.querySelector('.to-top');
+  const onScroll = () => btn.classList.toggle('show', window.scrollY > 600);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  onScroll();
+</script>
+</body>
+</html>

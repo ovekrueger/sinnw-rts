@@ -167,14 +167,15 @@
     </section>
   </main>
 
-<!-- FOOTER -->
+<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+  <!-- FOOTER -->
 <footer class="site-footer">
   <div class="wrap" style="text-align:center;padding:2rem 1rem;">
     <small style="display:block;margin-bottom:.5rem;opacity:.85;">
       © <span id="y"></span> Ove Krüger · Sinnwärts Studio
     </small>
-    <nav style="font-size:.9rem;opacity:.85;">
-      <a href="index.html">Start</a> ·
+    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
+      <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
       <a href="ueber-mich.html">Über mich</a> ·
       <a href="angebot.html">Angebote</a> ·
       <a href="resonanzraum.html">Resonanzraum</a> ·
@@ -184,6 +185,14 @@
     </nav>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-</body>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+  (function(){
+    var btn=document.querySelector('.to-top');
+    if(!btn) return;
+    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script></body>
 </html>

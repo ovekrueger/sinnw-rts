@@ -31,7 +31,8 @@
   <meta name="twitter:image" content="https://sinnwaerts-studio.de/assets/og-angebot.jpg">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- Nur Mobile-Tuning für den Hero dieser Seite -->
   <style>
@@ -41,6 +42,8 @@
         background-position: 50% 65% !important;
       }
     }
+    /* Sauberer Anker-Offset ohne Dummy-DIV */
+    #suechte { scroll-margin-top: 88px; }
   </style>
 </head>
 
@@ -48,18 +51,14 @@
   <!-- NAV -->
   <header class="site-header">
     <div class="nav-container">
-
-
-
-
-      
+      <a class="brand" href="/index.html">Sinnwärts Studio</a>
       <nav aria-label="Hauptnavigation">
         <ul class="nav-list">
-          <li><a href="index.html">Start</a></li>
-          <li><a href="ueber-mich.html">Über mich</a></li>
-          <li><a href="angebot.html" class="active">Angebote</a></li>
-          <li><a href="resonanzraum.html">Resonanzraum</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="/index.html">Start</a></li>
+          <li><a href="/ueber-mich.html">Über mich</a></li>
+          <li><a href="/angebot.html" class="active">Angebote</a></li>
+          <li><a href="/resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -68,7 +67,7 @@
   <!-- HERO -->
   <section class="hero hero--L hero--soft hero--low"
            style="--overlay:.25; --hero-offset:34vh; --inner-bottom:10%;">
-    <img src="./images/angebote-strand.webp"
+    <img src="/images/angebote-strand.webp"
          alt="Angebote – Coaching, Mentoring, Workshops"
          class="hero-bg"
          style="object-position:center 30%;">
@@ -84,42 +83,39 @@
       <article class="card">
         <h3>1:1 Coaching</h3>
         <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
-        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+        <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
       </article>
       <article class="card">
         <h3>Mentoring</h3>
         <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
-        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+        <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
       </article>
       <article class="card">
         <h3>Workshops</h3>
         <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
-        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+        <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
       </article>
     </div>
   </section>
 
-  <!-- Fixer Anker mit Header-Offset für Direktlink #suechte -->
-  <div id="suechte" style="position:relative; top:-88px;"></div>
+  <!-- Süchte -->
+  <section id="suechte" class="block">
+    <h2>Süchte neu denken</h2>
+    <p>Raus aus Scham & Verstecken. Rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung – neurobiologisch fundiert, menschlich, integral.</p>
 
-<!-- Süchte -->
-<section id="suechte" class="block">
-  <h2>Süchte neu denken</h2>
-  <p>Raus aus Scham & Verstecken. Rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung – neurobiologisch fundiert, menschlich, integral.</p>
-
-  <div class="grid grid--cards">
-    <article class="card">
-      <div class="card-body">
-        <h3 class="card-title">1:1 Coaching</h3>
-        <p>Individuell, vertraulich, zielklar. Stabilisierung, Triggerarbeit, Rückfallprävention.</p>
-        <p><a class="btn" href="kontakt.html">Anfragen</a></p>
-      </div>
-    </article>
+    <div class="grid grid--cards">
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">1:1 Coaching</h3>
+          <p>Individuell, vertraulich, zielklar. Stabilisierung, Triggerarbeit, Rückfallprävention.</p>
+          <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
+        </div>
+      </article>
       <article class="card">
         <div class="card-body">
           <h3 class="card-title">Workshops</h3>
           <p>Suchtmechanismen verstehen. Teams stärken. KI & Dopamin bewusst nutzen.</p>
-          <p><a class="btn" href="kontakt.html">Anfragen</a></p>
+          <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
         </div>
       </article>
     </div>
@@ -129,37 +125,41 @@
   <section class="angebot-targets">
     <h2>Für wen?</h2>
     <div class="btn-row">
-      <a class="btn" href="angebote/frauen/">Für Frauen</a>
-      <a class="btn" href="angebote/maenner/">Für Männer</a>
+      <a class="btn" href="/angebote/frauen/">Für Frauen</a>
+      <a class="btn" href="/angebote/maenner/">Für Männer</a>
     </div>
   </section>
 
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+  <button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+
   <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
-    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
-      © <span id="y"></span> Ove Krüger · Sinnwärts Studio
-    </small>
-    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="ueber-mich.html">Über mich</a> ·
-      <a href="angebot.html">Angebote</a> ·
-      <a href="resonanzraum.html">Resonanzraum</a> ·
-      <a href="kontakt.html">Kontakt</a> ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a>
-    </nav>
-  </div>
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="wrap" style="text-align:center;padding:2rem 1rem;">
+      <small style="display:block;margin-bottom:.5rem;opacity:.85;">
+        © <span id="y"></span> Ove Krüger · Sinnwärts Studio
+      </small>
+      <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
+        <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+        <a href="/ueber-mich.html">Über mich</a> ·
+        <a href="/angebot.html">Angebote</a> ·
+        <a href="/resonanzraum.html">Resonanzraum</a> ·
+        <a href="/kontakt.html">Kontakt</a> ·
+        <a href="/impressum.html">Impressum</a> ·
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
   <script>
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    // Jahr
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // ↑-Button
+    const btn = document.querySelector('.to-top');
+    const onScroll = () => btn.classList.toggle('show', window.scrollY > 600);
     window.addEventListener('scroll', onScroll, {passive:true});
+    btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
     onScroll();
-  })();
-</script></body>
+  </script>
+</body>
 </html>

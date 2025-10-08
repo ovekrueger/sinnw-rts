@@ -150,5 +150,15 @@
   </div>
 </footer>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+  <script>
+  (function(){
+    var btn=document.querySelector('.to-top');
+    if(!btn) return;
+    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
 </body>
 </html>

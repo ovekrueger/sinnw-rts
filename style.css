@@ -320,3 +320,6 @@ html{ scroll-behavior:smooth }
 .to-top.show{ display:inline-flex }
 .to-top:hover{ opacity:1; transform:translateY(-2px) }
 @media (max-width:640px){ .to-top{ right:.75rem; bottom:.75rem } }
+/* Hero-Globals */
+.hero--XL{ height: clamp(62vh, 70vh, 78vh); }
+.page-about .hero--XL .hero-bg{ object-position: center 62%; }

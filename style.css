@@ -323,3 +323,10 @@ html{ scroll-behavior:smooth }
 /* Hero-Globals */
 .hero--XL{ height: clamp(62vh, 70vh, 78vh); }
 .page-about .hero--XL .hero-bg{ object-position: center 62%; }
+/* Kontakt – Hero höher & Ausschnitt weiter oben */
+.page-contact .hero--XL{ height: clamp(64vh, 72vh, 80vh); }
+.page-contact .hero--XL .hero-bg{ object-position: center 42%; }
+@media (max-width: 640px){
+  .page-contact .hero--XL{ height: 60vh; }
+  .page-contact .hero--XL .hero-bg{ object-position: center 38%; }
+}

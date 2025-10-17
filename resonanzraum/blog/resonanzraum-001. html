@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Resonanzraum #001 – Wenn der Lärm in dir still wird | Sinnwärts Studio</title>
+  <link rel="stylesheet" href="../../style.css">
+  <meta name="description" content="Resonanz beginnt, wenn du aufhörst, dich zu übertönen.">
+</head>
+<body class="post">
+  <main class="wrap" style="max-width:780px;margin:40px auto;padding:0 16px;color:#F5F2EB">
+    <a href="blog.html">← Zurück zum Blog</a>
+    <article id="content" style="margin-top:1rem"></article>
+  </main>
+  <script>
+    fetch('posts/2025-10-17-resonanzraum-001.html')
+      .then(r=>r.text())
+      .then(html=>{ document.getElementById('content').innerHTML = html; })
+      .catch(e=>{ document.getElementById('content').textContent='Beitrag konnte nicht geladen werden.'; console.error(e) });
+  </script>
+</body>
+</html>

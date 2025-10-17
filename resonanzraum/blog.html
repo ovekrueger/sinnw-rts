@@ -103,59 +103,51 @@
   </main>
 
   <!-- Script: lädt /resonanzraum/blog/posts.json -->
-  <script>
-  (async () => {
-    const ul = document.querySelector('.post-grid');
-    try {
-     - const resp = await fetch('blog/posts.json');
-+ const resp = await fetch('posts.json');
+ <script>
+(async () => {
+  const ul = document.querySelector('.post-grid');
+  try {
+    const resp = await fetch('posts.json'); // liegt im gleichen Verzeichnis
+    if (!resp.ok) throw new Error('posts.json not found: ' + resp.status);
+    const posts = await resp.json();
 
-      // sortieren neu → alt
-      posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
+    // neueste zuerst
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      // einfache Suche/Filter (optional)
-      const q = new URLSearchParams(location.search).get('q')?.toLowerCase() || '';
-      const cat = new URLSearchParams(location.search).get('cat') || '';
-      const filtered = posts.filter(p => {
-        const hitQ = q ? (p.title + ' ' + (p.teaser||'') + ' ' + (p.cat||'')).toLowerCase().includes(q) : true;
-        const hitC = cat ? (p.cat||'').toLowerCase().includes(cat) : true;
-        return hitQ && hitC;
-      });
-
-      ul.innerHTML = filtered.map(p => `
-        <li class="card">
-          <article>
-            <a class="card-link" href="blog/${p.slug}.html" aria-label="${p.title}">
-              <figure class="card-media">
-                ${
-                  p.img
+    // Karten-HTML generieren
+    ul.innerHTML = posts.map(p => `
+      <li class="card">
+        <article>
+          <a class="card-link" href="${p.slug}.html" aria-label="${p.title}">
+            <figure class="card-media">
+              ${
+                p.img
                   ? `<picture>
-                       <source srcset="images/blog/${p.img}.webp" type="image/webp">
-                       <img src="images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
+                       <source srcset="images/${p.img.replace('.jpg','')}.webp" type="image/webp">
+                       <img src="images/${p.img}" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
                      </picture>`
-                  : `<div class="placeholder" style="aspect-ratio:16/9;display:grid;place-items:center;background:var(--card);padding:28px">${p.title}</div>`
-                }
-              </figure>
-              <header class="card-hd">
-                <p class="eyebrow">${p.cat || ''}</p>
-                <h3>${p.title}</h3>
-                <p class="meta"><time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time>${p.read ? ` · ${p.read} Min` : ''}</p>
-              </header>
-              <p class="card-txt">${p.teaser || ''}</p>
-              <span class="card-cta btn">Lesen</span>
-            </a>
-          </article>
-        </li>
-      `).join('');
-
-      if (!filtered.length) {
-        ul.innerHTML = '<li class="card"><p style="padding:16px">Keine Beiträge gefunden.</p></li>';
-      }
-    } catch (e) {
-      console.error(e);
-      ul.innerHTML = '<li class="card"><p style="padding:16px">Fehler beim Laden der Beiträge.</p></li>';
-    }
-  })();
-  </script>
+                  : `<div class="placeholder" style="aspect-ratio:16/9;display:grid;place-items:center;">${p.title}</div>`
+              }
+            </figure>
+            <header class="card-hd">
+              <p class="eyebrow">${p.cat || ''}</p>
+              <h3>${p.title}</h3>
+              <p class="meta">
+                <time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time>
+                ${p.read ? ` · ${p.read} Min` : ''}
+              </p>
+            </header>
+            <p class="card-txt">${p.teaser || ''}</p>
+            <span class="card-cta btn">Lesen</span>
+          </a>
+        </article>
+      </li>
+    `).join('');
+  } catch (e) {
+    console.error(e);
+    ul.innerHTML = '<li class="card"><p>Fehler beim Laden der Beiträge.</p></li>';
+  }
+})();
+</script>
 </body>
 </html>

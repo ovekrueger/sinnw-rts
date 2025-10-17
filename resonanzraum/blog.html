@@ -1,10 +1,8 @@
 <!doctype html>
 <html lang="de">
-
-  <head>
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
   <meta name="description" content="Alle Blog-Beiträge aus dem Resonanzraum. Teaser, Kategorien, Suche und Archiv.">
   <link rel="canonical" href="https://sinnwaerts-studio.de/resonanzraum/blog.html">
@@ -14,46 +12,18 @@
   <link rel="preload" href="/style.css" as="style">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- JSON-LD: Archiv als CollectionPage -->
-<script>
-(async () => {
-  // 1) Korrekte Pfade: blog.html liegt unter /resonanzraum/,
-  //    die Daten & Seiten liegen unter /resonanzraum/blog/
-  const ul = document.querySelector('.post-grid');
-  const resp = await fetch('blog/posts.json');      // ← vorher: 'posts.json'
-  const posts = await resp.json();
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "url":"https://sinnwaerts-studio.de/resonanzraum/blog.html",
+    "name":"Blog-Archiv"
+  }
+  </script>
 
-  // 2) Sortieren (neueste zuerst)
-  posts.sort((a,b)=>new Date(b.date)-new Date(a.date));
-
-  // 3) Karten-HTML (korrekte Links + Bildpfade)
-  ul.innerHTML = posts.map(p => `
-    <li class="card">
-      <article>
-        <a class="card-link" href="blog/${p.slug}.html" aria-label="${p.title}">
-          <figure class="card-media">
-            ${
-              p.img
-              ? `<picture>
-                   <source srcset="images/blog/${p.img}.webp" type="image/webp">
-                   <img src="images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
-                 </picture>`
-              : `<div class="placeholder" style="aspect-ratio:16/9;display:grid;place-items:center;">${p.title}</div>`
-            }
-          </figure>
-          <header class="card-hd">
-            <p class="eyebrow">${p.cat||''}</p>
-            <h3>${p.title}</h3>
-            <p class="meta"><time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time>${p.read?` · ${p.read} Min`:''}</p>
-          </header>
-          <p class="card-txt">${p.teaser||''}</p>
-          <span class="card-cta btn">Lesen</span>
-        </a>
-      </article>
-    </li>
-  `).join('');
-})();
-</script>
+  <!-- JSON-LD: Breadcrumbs -->
+  <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"BreadcrumbList",
@@ -64,10 +34,35 @@
     ]
   }
   </script>
+
+  <style>
+    /* kleine Hilfs-Styles, falls style.css nicht alles abdeckt */
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .block{margin:40px 0}
+    .breadcrumb{display:flex;gap:.5rem;align-items:center;color:var(--muted)}
+    .breadcrumb a{color:var(--text-soft);text-decoration:none}
+    .lead{color:var(--text-soft);max-width:60ch}
+    .toolbar{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+    .toolbar input[type="search"], .toolbar select{
+      background:var(--bg-soft); border:1px solid var(--card); color:var(--text);
+      padding:.6rem .8rem; border-radius:.75rem; min-width:16rem
+    }
+    .cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+    .card{background:var(--bg-soft);border:1px solid var(--card);border-radius:14px;overflow:hidden}
+    .card a{display:block;text-decoration:none;color:inherit}
+    .card-media{margin:0;overflow:hidden;background:var(--card)}
+    .card-media img{display:block;width:100%;height:auto}
+    .card-hd{padding:16px 16px 0}
+    .card-hd h3{margin:.25rem 0}
+    .card-txt{padding:8px 16px 0;color:var(--text-soft)}
+    .card-cta{display:inline-block;margin:12px 16px 16px}
+    .meta{color:var(--muted);font-size:.9rem}
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+  </style>
 </head>
 <body id="top" class="blog">
 
-   <!-- Header / Intro -->
+  <!-- Header -->
   <header class="wrap block">
     <nav aria-label="Brotkrumen" class="breadcrumb">
       <a href="/resonanzraum.html">Resonanzraum</a><span aria-hidden="true">›</span>
@@ -76,11 +71,12 @@
     <p class="eyebrow">VERTIEFUNG</p>
     <h1>Alle Blog-Beiträge</h1>
     <p class="lead">Gedanken, Neuro-Basics und Stories aus der Praxis. Mehr Substanz, weniger Buzzwords.</p>
+  </header>
 
-  <!-- Suche / Filter -->
+  <!-- Suche / Filter (platzhalter) -->
   <section class="wrap block" aria-labelledby="filter-hd">
     <h2 id="filter-hd" class="visually-hidden">Suche & Filter</h2>
-    <form class="toolbar" role="search">
+    <form class="toolbar" role="search" onsubmit="return false">
       <label for="q" class="visually-hidden">Suche</label>
       <input id="q" name="q" type="search" placeholder="Beiträge durchsuchen …" autocomplete="off" />
       <label for="cat" class="visually-hidden">Kategorie</label>
@@ -95,86 +91,72 @@
     </form>
   </section>
 
-<!-- Archiv-Grid -->
-<main class="wrap block" aria-labelledby="archive-hd">
-  <h2 id="archive-hd" class="visually-hidden">Archiv</h2>
+  <!-- Archiv-Grid -->
+  <main class="wrap block" aria-labelledby="archive-hd">
+    <h2 id="archive-hd" class="visually-hidden">Archiv</h2>
+    <ul class="cards post-grid" aria-live="polite"></ul>
 
-  <ul class="cards cards--3 post-grid"></ul>
+    <div class="btn-row" style="display:flex;gap:12px;justify-content:center;margin-top:32px">
+      <a class="btn" href="../resonanzraum.html">Zurück zum Resonanzraum</a>
+      <a class="btn btn-gold" href="#top">Nach oben</a>
+    </div>
+  </main>
 
-  <!-- Stimmen / Testimonials (optional) -->
-  <section class="block" aria-labelledby="stimmen-hd">
-    <h2 id="stimmen-hd" class="visually-hidden">Stimmen</h2>
-    <!-- Hier deine Quotes -->
-  </section>
+  <!-- Script: lädt /resonanzraum/blog/posts.json -->
+  <script>
+  (async () => {
+    const ul = document.querySelector('.post-grid');
+    try {
+      const resp = await fetch('blog/posts.json');       // Daten liegen unter /resonanzraum/blog/
+      if (!resp.ok) throw new Error('posts.json not found: ' + resp.status);
+      const posts = await resp.json();
 
-  <!-- Pagination -->
-  <nav class="pagination" aria-label="Seiten">
-    <a class="btn" rel="prev" href="?page=1">‹ Neuere</a>
-    <span class="page-status">Seite 1 von 1</span>
-    <a class="btn btn-gold is-disabled" aria-disabled="true" tabindex="-1">Ältere ›</a>
-  </nav>
+      // sortieren neu → alt
+      posts.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
-  <div class="btn-row">
-    <a class="btn" href="../resonanzraum.html">Zurück zum Resonanzraum</a>
-    <a class="btn btn-gold" href="#top">Nach oben</a>
-  </div>
-</main>
+      // einfache Suche/Filter (optional)
+      const q = new URLSearchParams(location.search).get('q')?.toLowerCase() || '';
+      const cat = new URLSearchParams(location.search).get('cat') || '';
+      const filtered = posts.filter(p => {
+        const hitQ = q ? (p.title + ' ' + (p.teaser||'') + ' ' + (p.cat||'')).toLowerCase().includes(q) : true;
+        const hitC = cat ? (p.cat||'').toLowerCase().includes(cat) : true;
+        return hitQ && hitC;
+      });
 
-  <!-- kleine Hilfs-Styles für neue Hooks -->
-  <style>
-    .breadcrumb{display:flex;gap:.5rem;align-items:center;color:var(--muted)}
-    .breadcrumb a{color:var(--text-soft);text-decoration:none}
-    .lead{color:var(--text-soft);max-width:60ch}
-    .toolbar{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
-    .toolbar input[type="search"], .toolbar select{
-      background:var(--bg-soft); border:1px solid var(--card); color:var(--text);
-      padding:.6rem .8rem; border-radius:.75rem; min-width:16rem
+      ul.innerHTML = filtered.map(p => `
+        <li class="card">
+          <article>
+            <a class="card-link" href="blog/${p.slug}.html" aria-label="${p.title}">
+              <figure class="card-media">
+                ${
+                  p.img
+                  ? `<picture>
+                       <source srcset="images/blog/${p.img}.webp" type="image/webp">
+                       <img src="images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
+                     </picture>`
+                  : `<div class="placeholder" style="aspect-ratio:16/9;display:grid;place-items:center;background:var(--card);padding:28px">${p.title}</div>`
+                }
+              </figure>
+              <header class="card-hd">
+                <p class="eyebrow">${p.cat || ''}</p>
+                <h3>${p.title}</h3>
+                <p class="meta"><time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time>${p.read ? ` · ${p.read} Min` : ''}</p>
+              </header>
+              <p class="card-txt">${p.teaser || ''}</p>
+              <span class="card-cta btn">Lesen</span>
+            </a>
+          </article>
+        </li>
+      `).join('');
+
+      if (!filtered.length) {
+        ul.innerHTML = '<li class="card"><p style="padding:16px">Keine Beiträge gefunden.</p></li>';
+      }
+    } catch (e) {
+      console.error(e);
+      ul.innerHTML = '<li class="card"><p style="padding:16px">Fehler beim Laden der Beiträge.</p></li>';
     }
-    .post-grid .card-link{display:block; text-decoration:none; color:inherit}
-    .card-media{margin:0; overflow:hidden; border-radius:1rem; background:var(--card)}
-    .card-media img{display:block; width:100%; height:auto}
-    .card-hd h3{margin:.25rem 0 .25rem}
-    .meta{color:var(--muted); font-size:.9rem}
-    .card-cta{margin-top:.5rem}
-    .pagination{display:flex; gap:1rem; align-items:center; justify-content:center; margin-top:2rem}
-    .page-status{color:var(--muted)}
-    .is-disabled{opacity:.45; pointer-events:none}
-    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-  </style>
-<script>
-(async () => {
-  const ul = document.querySelector('.post-grid');
-  const resp = await fetch('posts.json');
-  const posts = await resp.json();
-
-  posts.sort((a,b)=>new Date(b.date)-new Date(a.date));
-
-  ul.innerHTML = posts.map(p => `
-    <li class="card">
-      <article>
-        <a class="card-link" href="${p.slug}.html">
-          <figure class="card-media">
-            ${
-              p.img 
-              ? `<picture>
-                   <source srcset="../../images/blog/${p.img}.webp" type="image/webp">
-                   <img src="../../images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
-                 </picture>`
-              : `<div class="placeholder">${p.title}</div>`
-            }
-          </figure>
-          <header class="card-hd">
-            <p class="eyebrow">${p.cat}</p>
-            <h3>${p.title}</h3>
-            <p class="meta"><time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time> · ${p.read} Min</p>
-          </header>
-          <p class="card-txt">${p.teaser}</p>
-          <span class="card-cta btn">Lesen</span>
-        </a>
-      </article>
-    </li>
-  `).join('');
-})();
-</script>
+  })();
+  </script>
 </body>
 </html>

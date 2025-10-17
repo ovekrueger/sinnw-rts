@@ -54,9 +54,8 @@
 
   try {
     // Repo-Prefix automatisch erkennen (z.B. "/sinnw-rts")
-    var parts  = window.location.pathname.split('/');
-    var prefix = '/' + (parts.length>1 ? parts[1] : '');
-
+    
+var POSTS_URL = prefix + '/resonanzraum/blog/posts.json';
     var POSTS_URL = prefix + '/resonanzraum/blog/posts.json';
 
     loadJson(POSTS_URL, function(posts){

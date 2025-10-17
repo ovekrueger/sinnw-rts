@@ -60,5 +60,46 @@
 
   <p class="back">🧭 <a href="/resonanzraum/blog.html">Zurück zum Archiv</a></p>
 </article>
+  <script>
+(async function(){
+  const status = document.getElementById('status');
+  const grid   = document.getElementById('grid');
+
+  function bust(u){ return u + (u.includes('?')?'&':'?') + 'v=' + Date.now(); }
+  const base = window.location.href.replace(/\/blog\.html(?:\?.*)?$/, '/');
+
+  async function load(u){
+    const r = await fetch(bust(u), {cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.json();
+  }
+
+  try {
+    let posts;
+    try { posts = await load(new URL('blog/posts.json', base)); }
+    catch {
+      const prefix = window.location.pathname.includes('/sinnw-rts/') ? '/sinnw-rts' : '';
+      posts = await load(prefix + '/resonanzraum/blog/posts.json');
+    }
+
+    posts.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    grid.innerHTML = posts.map(p => `
+      <article class="card">
+        <a href="./blog/${p.slug}.html" aria-label="${p.title}">
+          <img src="${p.img.startsWith('/') ? p.img : '/images/blog/'+p.img}" alt="">
+          <div class="inner">
+            <div class="meta">${p.date} · ${p.read} min · ${p.cat||'Resonanzraum'}</div>
+            <h3>${p.title}</h3>
+            <p>${p.teaser}</p>
+          </div>
+        </a>
+      </article>`).join('');
+    status.textContent = posts.length ? `${posts.length} Beitrag·e geladen.` : 'Noch keine Beiträge.';
+  } catch(e){
+    status.textContent = 'Fehler beim Laden der Beiträge.';
+    console.error(e);
+  }
+})();
+</script>
 </body>
 </html>

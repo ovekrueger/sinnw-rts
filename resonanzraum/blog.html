@@ -34,70 +34,61 @@
   var status = document.getElementById('status');
   var grid   = document.getElementById('grid');
 
-  function cacheBust(url){
-    return url + (url.indexOf('?')>-1 ? '&' : '?') + 'v=' + Date.now();
-  }
-  function loadJson(url, cb, eb){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', cacheBust(url), true);
-    xhr.responseType = 'json';
-    xhr.onload = function(){
-      if(xhr.status >= 200 && xhr.status < 300){
-        cb(xhr.response || JSON.parse(xhr.responseText));
-      } else {
-        eb(new Error('HTTP ' + xhr.status + ' for ' + url));
+  function bust(u){ return u + (u.indexOf('?')>-1?'&':'?') + 'v=' + Date.now(); }
+  function get(url){ return new Promise(function(ok,err){
+    var x=new XMLHttpRequest();
+    x.open('GET', bust(url), true);
+    x.responseType='json';
+    x.onload=function(){ (x.status>=200 && x.status<300) ? ok(x.response||JSON.parse(x.responseText)) : err(new Error(x.status+' '+url)); };
+    x.onerror=function(){ err(new Error('net '+url)); };
+    x.send();
+  });}
+
+  // Kandidaten: absolut (mit Repo-Prefix), absolut (ohne), relativ
+  var CANDIDATES = [
+    '/sinnw-rts/resonanzraum/blog/posts.json',
+    '/resonanzraum/blog/posts.json',
+    './blog/posts.json'
+  ];
+
+  (async function load(){
+    try {
+      // nacheinander probieren
+      var posts, lastErr;
+      for (var i=0;i<CANDIDATES.length;i++){
+        try { posts = await get(CANDIDATES[i]); break; }
+        catch(e){ lastErr = e; }
       }
-    };
-    xhr.onerror = function(){ eb(new Error('Network error for ' + url)); };
-    xhr.send();
-  }
+      if(!posts) throw lastErr || new Error('no posts.json found');
 
-  try {
-    // Repo-Prefix automatisch erkennen (z.B. "/sinnw-rts")
-    
-var POSTS_URL = prefix + '/resonanzraum/blog/posts.json';
-    var POSTS_URL = prefix + '/resonanzraum/blog/posts.json';
+      // sortieren und rendern
+      posts.sort(function(a,b){ return (b.date||'').localeCompare(a.date||''); });
 
-    loadJson(POSTS_URL, function(posts){
-      // sort: newest first
-      posts.sort(function(a,b){
-        var da = (a.date||'');
-        var db = (b.date||'');
-        return db.localeCompare(da);
-      });
-
-      var html = '';
-      for(var i=0;i<posts.length;i++){
+      var html='';
+      for (var i=0;i<posts.length;i++){
         var p = posts[i];
-        var img = (p.img && p.img.charAt(0) === '/')
-          ? prefix + p.img
-          : prefix + '/images/blog/' + (p.img || '');
+        var prefix = '/sinnw-rts';
+        var img = (p.img && p.img.charAt(0)==='/') ? prefix + p.img : prefix + '/images/blog/' + (p.img||'');
         var href = prefix + '/resonanzraum/blog/' + p.slug + '.html';
-
         html += ''
           + '<article class="card">'
-          +   '<a href="' + href + '" aria-label="' + (p.title||'Beitrag') + '">'
-          +     '<img src="' + img + '" alt="">'
+          +   '<a href="'+href+'" aria-label="'+(p.title||'Beitrag')+'">'
+          +     '<img src="'+img+'" alt="">'
           +     '<div class="inner">'
-          +       '<div class="meta">' + (p.date||'') + ' · ' + (p.read||'') + ' min · ' + (p.cat||'Resonanzraum') + '</div>'
-          +       '<h3>' + (p.title||'') + '</h3>'
-          +       '<p>' + (p.teaser||'') + '</p>'
+          +       '<div class="meta">'+(p.date||'')+' · '+(p.read||'')+' min · '+(p.cat||'Resonanzraum')+'</div>'
+          +       '<h3>'+(p.title||'')+'</h3>'
+          +       '<p>'+(p.teaser||'')+'</p>'
           +     '</div>'
           +   '</a>'
           + '</article>';
       }
-
       grid.innerHTML = html;
-      status.textContent = posts.length ? (posts.length + ' Beitrag·e geladen.') : 'Noch keine Beiträge.';
-    }, function(err){
+      status.textContent = posts.length ? (posts.length+' Beitrag·e geladen.') : 'Noch keine Beiträge.';
+    } catch(e){
       status.textContent = 'Fehler beim Laden der Beiträge.';
-      console.error(err);
-    });
-
-  } catch(e){
-    status.textContent = 'Fehler beim Laden der Beiträge.';
-    console.error(e);
-  }
+      console.error('posts.json loader:', e);
+    }
+  })();
 })();
 </script>
 </body>

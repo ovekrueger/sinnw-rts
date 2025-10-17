@@ -15,17 +15,45 @@
   <link rel="stylesheet" href="/style.css">
 
   <!-- JSON-LD: Archiv als CollectionPage -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "url":"https://sinnwaerts-studio.de/resonanzraum/blog.html",
-    "name":"Blog-Archiv"
-  }
-  </script>
+<script>
+(async () => {
+  // 1) Korrekte Pfade: blog.html liegt unter /resonanzraum/,
+  //    die Daten & Seiten liegen unter /resonanzraum/blog/
+  const ul = document.querySelector('.post-grid');
+  const resp = await fetch('blog/posts.json');      // ← vorher: 'posts.json'
+  const posts = await resp.json();
 
-  <!-- Optional: Breadcrumbs, nur wenn sichtbar auf der Seite -->
-  <script type="application/ld+json">
+  // 2) Sortieren (neueste zuerst)
+  posts.sort((a,b)=>new Date(b.date)-new Date(a.date));
+
+  // 3) Karten-HTML (korrekte Links + Bildpfade)
+  ul.innerHTML = posts.map(p => `
+    <li class="card">
+      <article>
+        <a class="card-link" href="blog/${p.slug}.html" aria-label="${p.title}">
+          <figure class="card-media">
+            ${
+              p.img
+              ? `<picture>
+                   <source srcset="images/blog/${p.img}.webp" type="image/webp">
+                   <img src="images/blog/${p.img}.jpg" alt="${p.title}" width="960" height="540" loading="lazy" decoding="async">
+                 </picture>`
+              : `<div class="placeholder" style="aspect-ratio:16/9;display:grid;place-items:center;">${p.title}</div>`
+            }
+          </figure>
+          <header class="card-hd">
+            <p class="eyebrow">${p.cat||''}</p>
+            <h3>${p.title}</h3>
+            <p class="meta"><time datetime="${p.date}">${new Date(p.date).toLocaleDateString('de-DE')}</time>${p.read?` · ${p.read} Min`:''}</p>
+          </header>
+          <p class="card-txt">${p.teaser||''}</p>
+          <span class="card-cta btn">Lesen</span>
+        </a>
+      </article>
+    </li>
+  `).join('');
+})();
+</script>
   {
     "@context":"https://schema.org",
     "@type":"BreadcrumbList",

@@ -28,11 +28,15 @@
     .meta{opacity:.75;margin-bottom:1.2em}
     .back{margin-top:2rem}
   </style>
-
-
 </head>
 <body class="resonanzraum">
 <header class="site-header"><a class="brand" href="/index.html">Sinnwärts Studio</a></header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:820px;margin:2rem auto 1rem;padding:0 16px;font-size:0.95rem;opacity:.8">
+  <a href="/index.html">Start</a> › 
+  <a href="/resonanzraum/blog.html">Resonanzraum</a> › 
+  <span>Beitrag #001</span>
+</nav>
 
 <div class="hero"><img src="/images/blog/resonanzraum-hero.jpg" alt=""></div>
 
@@ -59,47 +63,11 @@
   <p>Und vielleicht, ganz vielleicht, beginnt Sinn genau dort – wo du ihn nicht mehr suchst.</p>
 
   <p class="back">🧭 <a href="/resonanzraum/blog.html">Zurück zum Archiv</a></p>
+  <hr style="margin:3rem 0;opacity:.2">
+  <nav class="post-nav" style="display:flex;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px">
+    <a href="/resonanzraum/blog.html" aria-label="Zurück zum Archiv">← Zurück zum Archiv</a>
+    <span style="opacity:.5">Nächster Beitrag folgt bald →</span>
+  </nav>
 </article>
-  <script>
-(async function(){
-  const status = document.getElementById('status');
-  const grid   = document.getElementById('grid');
-
-  function bust(u){ return u + (u.includes('?')?'&':'?') + 'v=' + Date.now(); }
-  const base = window.location.href.replace(/\/blog\.html(?:\?.*)?$/, '/');
-
-  async function load(u){
-    const r = await fetch(bust(u), {cache:'no-store'});
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    return r.json();
-  }
-
-  try {
-    let posts;
-    try { posts = await load(new URL('blog/posts.json', base)); }
-    catch {
-      const prefix = window.location.pathname.includes('/sinnw-rts/') ? '/sinnw-rts' : '';
-      posts = await load(prefix + '/resonanzraum/blog/posts.json');
-    }
-
-    posts.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-    grid.innerHTML = posts.map(p => `
-      <article class="card">
-        <a href="./blog/${p.slug}.html" aria-label="${p.title}">
-          <img src="${p.img.startsWith('/') ? p.img : '/images/blog/'+p.img}" alt="">
-          <div class="inner">
-            <div class="meta">${p.date} · ${p.read} min · ${p.cat||'Resonanzraum'}</div>
-            <h3>${p.title}</h3>
-            <p>${p.teaser}</p>
-          </div>
-        </a>
-      </article>`).join('');
-    status.textContent = posts.length ? `${posts.length} Beitrag·e geladen.` : 'Noch keine Beiträge.';
-  } catch(e){
-    status.textContent = 'Fehler beim Laden der Beiträge.';
-    console.error(e);
-  }
-})();
-</script>
 </body>
 </html>

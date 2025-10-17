@@ -29,52 +29,7 @@
     .back{margin-top:2rem}
   </style>
 
-<script>
-(async function () {
-  const status = document.getElementById('status');
-  const grid   = document.getElementById('grid');
 
-  function bust(url){ return url + (url.includes('?')?'&':'?') + 'v=' + Date.now(); }
-
-  // Basis: Verzeichnis von blog.html, funktioniert mit/ohne Repo-Prefix (…/sinnw-rts/)
-  const base = window.location.href.replace(/\/blog\.html(?:\?.*)?$/, '/');
-
-  async function load(url) {
-    const res = await fetch(bust(url), { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    return res.json();
-  }
-
-  try {
-    // 1) Relativ korrekt aus dem gleichen Verzeichnis
-    let posts;
-    try { posts = await load(new URL('blog/posts.json', base)); }
-    catch { // 2) Fallback absolut (wenn jemand direkt domain.tld/sinnw-rts/ nutzt)
-      posts = await load(new URL('/resonanzraum/blog/posts.json', window.location.origin + (window.location.pathname.includes('/sinnw-rts/') ? '/sinnw-rts' : '')));
-    }
-
-    posts.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-
-    grid.innerHTML = posts.map(p => `
-      <article class="card">
-        <a href="./blog/${p.slug}.html" aria-label="${p.title}">
-          <img src="${p.img.startsWith('/') ? p.img : '/images/blog/'+p.img}" alt="">
-          <div class="inner">
-            <div class="meta">${p.date} · ${p.read} min · ${p.cat || 'Resonanzraum'}</div>
-            <h3>${p.title}</h3>
-            <p>${p.teaser}</p>
-          </div>
-        </a>
-      </article>
-    `).join('');
-
-    status.textContent = posts.length ? `${posts.length} Beitrag·e geladen.` : 'Noch keine Beiträge.';
-  } catch (e) {
-    status.textContent = 'Fehler beim Laden der Beiträge.';
-    console.error(e);
-  }
-})();
-</script>
 </head>
 <body class="resonanzraum">
 <header class="site-header"><a class="brand" href="/index.html">Sinnwärts Studio</a></header>

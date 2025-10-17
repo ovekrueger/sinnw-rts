@@ -107,9 +107,8 @@
   (async () => {
     const ul = document.querySelector('.post-grid');
     try {
-      const resp = await fetch('blog/posts.json');       // Daten liegen unter /resonanzraum/blog/
-      if (!resp.ok) throw new Error('posts.json not found: ' + resp.status);
-      const posts = await resp.json();
+     - const resp = await fetch('blog/posts.json');
++ const resp = await fetch('posts.json');
 
       // sortieren neu → alt
       posts.sort((a,b)=> new Date(b.date) - new Date(a.date));

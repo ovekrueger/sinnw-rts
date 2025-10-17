@@ -26,44 +26,76 @@
   <div id="grid" class="grid" aria-live="polite"></div>
   <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
 
-  <p style="margin-top:32px"><a href="/sinnw-rts/index.html">← Zur Startseite</a></p>
+  <noscript><p style="color:#f66">JavaScript ist deaktiviert – das Archiv kann so nicht geladen werden.</p></noscript>
 </main>
 
 <script>
-(async function(){
-  const status = document.getElementById('status');
-  const grid   = document.getElementById('grid');
+(function(){
+  var status = document.getElementById('status');
+  var grid   = document.getElementById('grid');
 
-  async function loadJson(url){
-    const res = await fetch(url + (url.includes('?')?'&':'?') + 'v=' + Date.now(), {cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP ' + res.status + ' for ' + url);
-    return res.json();
+  function cacheBust(url){
+    return url + (url.indexOf('?')>-1 ? '&' : '?') + 'v=' + Date.now();
+  }
+  function loadJson(url, cb, eb){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', cacheBust(url), true);
+    xhr.responseType = 'json';
+    xhr.onload = function(){
+      if(xhr.status >= 200 && xhr.status < 300){
+        cb(xhr.response || JSON.parse(xhr.responseText));
+      } else {
+        eb(new Error('HTTP ' + xhr.status + ' for ' + url));
+      }
+    };
+    xhr.onerror = function(){ eb(new Error('Network error for ' + url)); };
+    xhr.send();
   }
 
   try {
-    const PREFIX    = '/sinnw-rts';
-    const POSTS_URL = PREFIX + '/resonanzraum/blog/posts.json';
-    const posts     = await loadJson(POSTS_URL);
+    // Repo-Prefix automatisch erkennen (z.B. "/sinnw-rts")
+    var parts  = window.location.pathname.split('/');
+    var prefix = '/' + (parts.length>1 ? parts[1] : '');
 
-    posts.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    var POSTS_URL = prefix + '/resonanzraum/blog/posts.json';
 
-    grid.innerHTML = posts.map(p => `
-      <article class="card">
-        <a href="${PREFIX}/resonanzraum/blog/${p.slug}.html" aria-label="${p.title}">
-          <img src="${p.img.startsWith('/') ? PREFIX + p.img : PREFIX + '/images/blog/' + p.img}" alt="">
-          <div class="inner">
-            <div class="meta">${p.date} · ${p.read} min · ${p.cat || 'Resonanzraum'}</div>
-            <h3>${p.title}</h3>
-            <p>${p.teaser}</p>
-          </div>
-        </a>
-      </article>
-    `).join('');
+    loadJson(POSTS_URL, function(posts){
+      // sort: newest first
+      posts.sort(function(a,b){
+        var da = (a.date||'');
+        var db = (b.date||'');
+        return db.localeCompare(da);
+      });
 
-    status.textContent = posts.length
-      ? `${posts.length} Beitrag·e geladen.`
-      : 'Noch keine Beiträge.';
-  } catch (e) {
+      var html = '';
+      for(var i=0;i<posts.length;i++){
+        var p = posts[i];
+        var img = (p.img && p.img.charAt(0) === '/')
+          ? prefix + p.img
+          : prefix + '/images/blog/' + (p.img || '');
+        var href = prefix + '/resonanzraum/blog/' + p.slug + '.html';
+
+        html += ''
+          + '<article class="card">'
+          +   '<a href="' + href + '" aria-label="' + (p.title||'Beitrag') + '">'
+          +     '<img src="' + img + '" alt="">'
+          +     '<div class="inner">'
+          +       '<div class="meta">' + (p.date||'') + ' · ' + (p.read||'') + ' min · ' + (p.cat||'Resonanzraum') + '</div>'
+          +       '<h3>' + (p.title||'') + '</h3>'
+          +       '<p>' + (p.teaser||'') + '</p>'
+          +     '</div>'
+          +   '</a>'
+          + '</article>';
+      }
+
+      grid.innerHTML = html;
+      status.textContent = posts.length ? (posts.length + ' Beitrag·e geladen.') : 'Noch keine Beiträge.';
+    }, function(err){
+      status.textContent = 'Fehler beim Laden der Beiträge.';
+      console.error(err);
+    });
+
+  } catch(e){
     status.textContent = 'Fehler beim Laden der Beiträge.';
     console.error(e);
   }

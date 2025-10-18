@@ -27,33 +27,32 @@
 </main>
 
 <script>
-// robust: Pfad relativ zur aktuellen Seite ableiten
-const base = location.pathname.replace(/\/[^\/]*$/, '/');   // z.B. /resonanzraum/
-const DATA_URL = base + 'blog/posts.json?v=' + Date.now();  // Cache-Buster
+  const DATA_URL = 'posts.json?v=' + Date.now();
 
-fetch(DATA_URL)
-  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
-  .then(posts => {
-    const grid = document.querySelector('#grid');
-    const html = posts
-      .sort((a,b) => b.date.localeCompare(a.date))
-      .map(p => `
-        <article class="card">
-          <a class="inner" href="blog/${p.slug}.html">
-            <img src="${p.img}" alt="${p.title}" loading="lazy">
-            <h3>${p.title}</h3>
-            <p class="meta">${p.date} · ca. ${p.read} Min</p>
-            <p class="teaser">${p.teaser || ''}</p>
-          </a>
-        </article>
-      `).join('');
-    grid.innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
-    document.getElementById('status').textContent = `${posts.length} Beiträge geladen.`;
-  })
-  .catch(err => {
-    console.error('Blog fetch error:', err);
-    document.getElementById('status').textContent = 'Fehler beim Laden der Beiträge.';
-  });
+  fetch(DATA_URL)
+    .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(posts => {
+      const grid = document.querySelector('#grid');
+      const html = posts
+        .sort((a,b) => b.date.localeCompare(a.date))
+        .map(p => `
+          <article class="card">
+            <a class="inner" href="${p.slug}.html">
+              <img src="${p.img}" alt="${p.title}" loading="lazy">
+              <h3>${p.title}</h3>
+              <p class="meta">${p.date} · ca. ${p.read} Min</p>
+              <p class="teaser">${p.teaser || ''}</p>
+            </a>
+          </article>
+        `)
+        .join('');
+      grid.innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
+      document.getElementById('status')?.textContent = `${posts.length} Beiträge geladen.`;
+    })
+    .catch(err => {
+      console.error('Blog fetch error:', err);
+      document.getElementById('status')?.textContent = 'Fehler beim Laden der Beiträge.';
+    });
 </script>
 </body>
 </html>

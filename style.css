@@ -374,3 +374,16 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .resonanzraum #grid .card.no-img .inner{ padding:16px 18px; }
 .resonanzraum #grid .card.no-img h3{ margin-top:.1rem; }
 .resonanzraum #grid{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+/* ===== Resonanzraum · zentrierte Post-Ansicht ===== */
+.resonanzraum .post{max-width:820px;margin:0 auto;padding:0 16px}
+.resonanzraum .post .eyebrow,
+.resonanzraum .post h1,
+.resonanzraum .post .meta{ text-align:center }
+.resonanzraum .post p,
+.resonanzraum .post ul,
+.resonanzraum .post ol,
+.resonanzraum .post blockquote{ text-align:left }
+.resonanzraum .breadcrumb{ text-align:center; margin:1.2rem 0; opacity:.9 }
+.resonanzraum .back-row{
+  display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:2rem
+}

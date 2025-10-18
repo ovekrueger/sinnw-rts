@@ -1,27 +1,30 @@
-
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resonanzraum #001 – Wenn der Lärm in dir still wird | Sinnwärts Studio</title>
-  <link rel="stylesheet" href="../../style.css">
-  <p style="margin-top:2rem">
-  <a class="btn btn-gold" href="blog.html">← Zurück zum Blog-Archiv</a>
-  &nbsp;&nbsp;
-  <a class="btn btn-gold" href="../../resonanzraum.html">← Zurück zum Resonanzraum</a>
-</p>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    /* nur für diese Seite: mittige Form */
+    .post{max-width:820px;margin:0 auto;padding:0 16px}
+    .post .eyebrow,.post h1,.post .meta{text-align:center}
+    .breadcrumb{max-width:820px;margin:1.5rem auto .5rem;padding:0 16px;font-size:.95rem;opacity:.8;text-align:center}
+    .back-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:2rem}
+  </style>
 </head>
-<body class="resonanzraum">
-<header class="site-header"><a class="brand" href="../../index.html">Sinnwärts Studio</a></header>
 
-<nav class="breadcrumb" aria-label="Breadcrumb" style="max-width:820px;margin:2rem auto 1rem;padding:0 16px;font-size:0.95rem;opacity:.8">
-  <a href="../../index.html">Start</a> › <a href="../blog.html">Resonanzraum</a> › <span>Beitrag #001</span>
+<body class="resonanzraum">
+<header class="site-header">
+  <a class="brand" href="../../index.html">Sinnwärts Studio</a>
+</header>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="../../index.html">Start</a> › <a href="../../resonanzraum.html">Resonanzraum</a> › <span>Beitrag #001</span>
 </nav>
 
-
-
-<article>
+<article class="post">
+  <p class="eyebrow">VERTIEFUNG</p>
   <h1>Resonanzraum #001 – Wenn der Lärm in dir still wird</h1>
   <p class="meta">17.10.2025 · Resonanzraum · ca. 7 Min</p>
 
@@ -43,12 +46,17 @@
   <p>Wenn wir wieder lernen, diesen Raum zu halten – nicht auszuweichen, nicht zu fliehen – dann beginnt Resonanz nicht nur im Einzelnen, sondern in der Kultur.</p>
   <p>Und vielleicht, ganz vielleicht, beginnt Sinn genau dort – wo du ihn nicht mehr suchst.</p>
 
-  <p class="back">🧭 <a href="../blog.html">Zurück zum Archiv</a></p>
-  <hr style="margin:3rem 0;opacity:.2">
-  <nav class="post-nav" style="display:flex;justify-content:space-between;max-width:820px;margin:0 auto;padding:0 16px">
-    <a href="../blog.html" aria-label="Zurück zum Archiv">← Zurück zum Archiv</a>
-    <span style="opacity:.5">Nächster Beitrag folgt bald →</span>
-  </nav>
+  <div class="back-row">
+    <a class="btn btn-gold" href="blog.html">← Zurück zum Blog-Archiv</a>
+    <a class="btn btn-gold" href="../../resonanzraum.html">← Zurück zum Resonanzraum</a>
+  </div>
 </article>
+
+<footer class="site-footer">
+  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
+    <small>© <span id="y"></span> Ove Krüger · Sinnwärts Studio</small>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>

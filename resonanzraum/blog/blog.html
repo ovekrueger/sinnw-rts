@@ -43,25 +43,26 @@
 
         posts.sort(function(a,b){ return String(b.date).localeCompare(String(a.date)); });
 
-        var html = posts.map(function(p){
-          var slug   = String(p.slug||'').trim();
-          var title  = String(p.title||'Ohne Titel');
-          var date   = String(p.date||'');
-          var read   = String(p.read||'');
-          var teaser = String(p.teaser||'');
-          var img    = String(p.img||'');
+       var html = posts.map(function(p){
+  var slug   = String(p.slug||'').trim();
+  var title  = String(p.title||'Ohne Titel');
+  var date   = String(p.date||'');
+  var read   = String(p.read||'');
+  var teaser = String(p.teaser||'');
+  var img    = String(p.img||'');      // kann leer sein
+  var cls    = 'card' + (img ? '' : ' no-img');
 
-          return (
-            '<article class="card">'+
-              '<a class="inner" href="'+ slug +'.html">'+
-                (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
-                '<h3>'+ title +'</h3>'+
-                '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
-                (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
-              '</a>'+
-            '</article>'
-          );
-        }).join('');
+  return (
+    '<article class="'+cls+'">'+
+      '<a class="inner" href="'+ slug +'.html">'+
+        (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
+        '<h3>'+ title +'</h3>'+
+        '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
+        (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
+      '</a>'+
+    '</article>'
+  );
+}).join('');
 
         document.getElementById('grid').innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
         setStatus(posts.length + ' Beitrag' + (posts.length===1?'':'e') + ' geladen.');

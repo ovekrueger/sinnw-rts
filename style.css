@@ -371,3 +371,6 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .resonanzraum .btn, .btn{ display:inline-block; padding:.55rem .9rem; border-radius:10px; border:1px solid var(--sw-gold); }
 .resonanzraum .btn-gold{ background:transparent; color:var(--sw-gold); }
 .resonanzraum .btn-gold:hover{ background:rgba(230,190,74,.12); text-decoration:none; }
+.resonanzraum #grid .card.no-img .inner{ padding:16px 18px; }
+.resonanzraum #grid .card.no-img h3{ margin-top:.1rem; }
+.resonanzraum #grid{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }

@@ -27,27 +27,29 @@
 </main>
 
 <script>
-(function(){
-  var status=document.getElementById('status'), grid=document.getElementById('grid');
-  function bust(u){return u+(u.indexOf('?')>-1?'&':'?')+'v='+Date.now();}
-  function get(u,ok,err){var x=new XMLHttpRequest();x.open('GET',bust(u),true);x.responseType='json';
-    x.onload=function(){(x.status>=200&&x.status<300)?ok(x.response||JSON.parse(x.responseText)):err(new Error('HTTP '+x.status));};
-    x.onerror=function(){err(new Error('Network'));};x.send();}
-  get('./blog/posts.json', function(posts){
-    posts=(posts||[]).sort(function(a,b){return (b.date||'').localeCompare(a.date||'');});
-    var html=''; 
-    for(var i=0;i<posts.length;i++){
-      var p=posts[i];
-      var img = p.img || '../images/blog/placeholder.jpg';
-      var href = './blog/'+p.slug+'.html';
-      html+= '<article class="card"><a href="'+href+'" aria-label="'+(p.title||'Beitrag')+'">'
-           + '<img src="'+img+'" alt=""><div class="inner">'
-           + '<div class="meta">'+(p.date||'')+' · '+(p.read||'')+' min · '+(p.cat||'Resonanzraum')+'</div>'
-           + '<h3>'+(p.title||'')+'</h3><p>'+(p.teaser||'')+'</p></div></a></article>';
-    }
-    grid.innerHTML=html; status.textContent=posts.length?(posts.length+' Beitrag·e geladen.'):'Noch keine Beiträge.';
-  }, function(){status.textContent='Fehler beim Laden der Beiträge.';});
-})();
+// 1) JSON relativ zur blog.html (liegt in /resonanzraum/)
+const DATA_URL = 'blog/posts.json';
+
+fetch(DATA_URL)
+  .then(r => r.json())
+  .then(posts => {
+    const list = document.querySelector('#posts');
+    list.innerHTML = posts.map(p => `
+      <article class="post">
+        <a class="post-link" href="blog/${p.slug}.html">
+          <img class="post-img" src="${p.img}" alt="${p.title}" loading="lazy">
+          <h3>${p.title}</h3>
+          <p class="meta">${p.date} · ca. ${p.read} Min</p>
+          <p class="teaser">${p.teaser}</p>
+        </a>
+      </article>
+    `).join('');
+  })
+  .catch(err => {
+    console.error('Blog fetch error:', err);
+    document.querySelector('#posts').innerHTML =
+      '<p class="warn">Beiträge konnten nicht geladen werden.</p>';
+  });
 </script>
 </body>
 </html>

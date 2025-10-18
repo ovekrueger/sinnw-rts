@@ -331,3 +331,43 @@ html{ scroll-behavior:smooth }
   .page-contact .hero--XL{ height: 60vh; }
   .page-contact .hero--XL .hero-bg{ object-position: center 38%; }
 }
+/* ===== Sinnwärts · Resonanzraum (Brand-Block) ===== */
+:root{
+  --sw-bg:#0B0F12;
+  --sw-card:#111418;
+  --sw-border:#2a2d31;
+  --sw-gold:#E6BE4A;    /* dein Gold */
+  --sw-text:#E8E9EA;
+  --sw-muted:#A8B0B8;
+}
+
+body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
+
+/* Links im Resonanzraum niemals blau/purpur */
+.resonanzraum a{ color:var(--sw-gold); text-decoration:none; }
+.resonanzraum a:hover{ text-decoration:underline; }
+
+/* Archiv-Karten (blog.html, #grid) */
+.resonanzraum #grid{ display:grid; gap:28px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
+.resonanzraum #grid .card{
+  background:var(--sw-card);
+  border:1px solid var(--sw-border);
+  border-radius:16px; overflow:hidden;
+  box-shadow:0 2px 6px rgba(0,0,0,.3);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.resonanzraum #grid .card:hover{ transform:translateY(-4px); box-shadow:0 4px 10px rgba(0,0,0,.4); }
+.resonanzraum #grid .card img{ width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.9; }
+.resonanzraum #grid .card .inner{ display:block; padding:18px 20px; color:inherit; }
+.resonanzraum #grid .card h3{ color:var(--sw-gold); margin:.2em 0 .4em; font-weight:600; font-size:1.1rem; line-height:1.3; }
+.resonanzraum #grid .card .meta{ font-size:.9rem; color:var(--sw-muted); margin-bottom:.6em; }
+.resonanzraum #grid .card .teaser{ font-size:.95rem; color:#DADDE1; line-height:1.45; }
+
+/* Typo-Helfer */
+.resonanzraum .eyebrow{ letter-spacing:.08em; font-size:.8rem; color:var(--sw-muted); }
+.resonanzraum .meta{ color:var(--sw-muted); }
+
+/* Buttons: Gold-Variante konsistent */
+.resonanzraum .btn, .btn{ display:inline-block; padding:.55rem .9rem; border-radius:10px; border:1px solid var(--sw-gold); }
+.resonanzraum .btn-gold{ background:transparent; color:var(--sw-gold); }
+.resonanzraum .btn-gold:hover{ background:rgba(230,190,74,.12); text-decoration:none; }

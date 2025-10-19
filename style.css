@@ -387,3 +387,11 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .resonanzraum .back-row{
   display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:2rem
 }
+.hero{position:relative;overflow:hidden}
+.hero .inner{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.hero .sub{opacity:.92}
+.hero .hero-bg{width:100%;height:100%;object-fit:cover;object-position:50% var(--pos-y,50%);display:block}
+.hero.hero--soft .inner::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(11,15,18,.15), rgba(11,15,18,.6) 55%, rgba(11,15,18,.9));
+}

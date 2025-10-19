@@ -395,3 +395,4 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   content:"";position:absolute;inset:0;
   background:linear-gradient(180deg, rgba(11,15,18,.15), rgba(11,15,18,.6) 55%, rgba(11,15,18,.9));
 }
+.zz-media img{max-width:560px;width:100%;height:auto;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}

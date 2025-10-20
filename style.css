@@ -391,3 +391,35 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   padding:.6rem 1.4rem;border-radius:999px;text-decoration:none;transition:.25s}
 .button:hover{background:#f1d46c;transform:translateY(-1px)}
 .benefits{ padding-inline: clamp(20px, 6vw, 56px); }
+/* --- Feinschliff Content-Abstände --- */
+.zz,
+.benefits {
+  padding-inline: clamp(28px, 6vw, 72px);
+}
+
+.zz > .zz-row {
+  max-width: 1160px;
+  margin-inline: auto;
+}
+
+/* sorgt dafür, dass die Textspalten nicht anstoßen */
+.zz-text {
+  margin-inline: auto;
+}
+/* --- Klanggeschenk zentrieren --- */
+.benefits > div {
+  display: grid;
+  place-items: center;
+}
+
+.benefits audio,
+.benefits p,
+.benefits .btn {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefits p {
+  text-align: center;
+  max-width: 580px;
+}

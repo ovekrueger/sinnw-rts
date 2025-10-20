@@ -31,11 +31,11 @@
   <meta name="twitter:description" content="Echtes Gespräch, klare Schritte, integrale Sicht.">
   <meta name="twitter:image" content="https://sinnwaerts-studio.de/images/og-start.jpg">
 
-  <!-- Basiscss -->
+  <!-- CSS (dein style.css enthält die flip-Regel) -->
   <link rel="preload" href="/style.css?v=17" as="style">
   <link rel="stylesheet" href="/style.css?v=17">
 
-  <!-- Hotfix: Seitenränder & Benefits-Zentrierung -->
+  <!-- Hotfix-Padding + Benefits-Zentrierung (wie gehabt) -->
   <style id="hotfix-gutters">
     body.index .zz{ padding-inline: clamp(28px, 6vw, 72px) !important; }
     body.index .zz > .zz-row{ max-width:1160px !important; margin-inline:auto !important; }
@@ -53,7 +53,7 @@
     }
   </style>
 
-  <!-- A11y + CTA -->
+  <!-- A11y + CTA (bewährt) -->
   <style>
     :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
     .skip-link{
@@ -86,11 +86,12 @@
     @media (min-width: 960px){
       .zz-row{ grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap:36px; }
       .zz-row.rev{ grid-template-columns: minmax(0,0.95fr) minmax(0,1.05fr); }
+      /* Flip: Bild links, Text rechts bei gleicher DOM-Reihenfolge (Text dann Col 2) */
+      .zz-row.flip .zz-text  { grid-column: 2; }
+      .zz-row.flip .zz-media { grid-column: 1; }
     }
     .zz-text{ max-width:75ch; }
   </style>
-
-  <!-- Strukturierte Daten … (wie gehabt) -->
 </head>
 
 <body id="top" class="index">
@@ -163,7 +164,7 @@
     <!-- CONTENT (.zz) -->
     <section class="zz">
 
-      <!-- 1) Warum?  (Bild RECHTS) -->
+      <!-- 1) Warum?  (Bild RECHTS – Standard) -->
       <div class="zz-row">
         <div class="zz-text">
           <h2>Warum?</h2>
@@ -190,35 +191,34 @@
         </div>
       </div>
 
+      <!-- 2) Bin ich ein Coach?  (Bild LINKS → flip) -->
+      <div class="zz-row flip" id="coach-section">
+        <div class="zz-text">
+          <h2>Bin ich ein Coach?</h2>
+          <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
+             <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
+          <p>Coaching muss neu gedacht werden. Lineare Konzepte greifen in einer komplexen Welt nicht mehr –
+             wir brauchen integrale Ansätze, die Denken, Fühlen, Handeln und Sein verbinden.</p>
+          <p><strong>Ich bin Experte als:</strong></p>
+          <ul>
+            <li>Zuhörer &amp; Problem-Detektiv</li>
+            <li>Praktiker &amp; Wegfinder</li>
+            <li>Humorvoller, liebevoller „Ar...treter“</li>
+            <li>Motivator, kreativer Analyt, Strukturierer</li>
+            <li>Lösungsfinder – und hartnäckig</li>
+          </ul>
+        </div>
+        <div class="zz-media">
+          <img src="/images/ove-stehend-offen.jpg"
+               width="900" height="1125"
+               alt="Ove Krüger im Gespräch – ruhig, offen, zugewandt"
+               loading="lazy" decoding="async">
+        </div>
+      </div>
 
-<!-- 2) Bin ich ein Coach?  (Text links, Bild rechts) -->
-<div class="zz-row" id="coach-section">
-  <div class="zz-text">
-    <h2>Bin ich ein Coach?</h2>
-    <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
-       <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
-    <p>Coaching muss neu gedacht werden. Lineare Konzepte greifen in einer komplexen Welt nicht mehr –
-       wir brauchen integrale Ansätze, die Denken, Fühlen, Handeln und Sein verbinden.</p>
-    <p><strong>Ich bin Experte als:</strong></p>
-    <ul>
-      <li>Zuhörer &amp; Problem-Detektiv</li>
-      <li>Praktiker &amp; Wegfinder</li>
-      <li>Humorvoller, liebevoller „Ar...treter“</li>
-      <li>Motivator, kreativer Analyt, Strukturierer</li>
-      <li>Lösungsfinder – und hartnäckig</li>
-    </ul>
-  </div>
-
-  <div class="zz-media">
-    <img src="/images/ove-stehend-offen.jpg"
-         width="900" height="1125"
-         alt="Ove Krüger im Gespräch – ruhig, offen, zugewandt"
-         loading="lazy" decoding="async">
-  </div>
-</div>
-      <!-- 3) Das innere Kind  (Bild RECHTS) -->
+      <!-- 3) Das innere Kind  (Bild RECHTS – Standard) -->
       <section id="inneres-kind" class="section">
-        <div class="zz-row rev">
+        <div class="zz-row">
           <div class="zz-text">
             <h2>Das innere Kind</h2>
             <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen.<br><em>Es darf weinen.</em></p>
@@ -243,16 +243,8 @@
         </div>
       </section>
 
-      <!-- 4) Ich bin Ove.  (Bild LINKS) -->
-      <div class="zz-row">
-        <div class="zz-media">
-          <picture>
-            <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
-            <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800"
-                 alt="Ove Krüger – Portrait im weißen Hemd"
-                 loading="lazy" decoding="async">
-          </picture>
-        </div>
+      <!-- 4) Ich bin Ove.  (Bild LINKS → flip) -->
+      <div class="zz-row flip">
         <div class="zz-text">
           <h2>Ich bin Ove.</h2>
           <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
@@ -267,6 +259,14 @@
             <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
             <a class="btn" href="angebot.html">Angebote für dich</a>
           </p>
+        </div>
+        <div class="zz-media">
+          <picture>
+            <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
+            <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800"
+                 alt="Ove Krüger – Portrait im weißen Hemd"
+                 loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
 

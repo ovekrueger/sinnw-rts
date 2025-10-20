@@ -34,6 +34,18 @@
   <!-- Basiscss -->
   <link rel="preload" href="/style.css?v=17" as="style">
   <link rel="stylesheet" href="/style.css?v=17">
+  <style id="hotfix-gutters">
+  /* mehr Rand links/rechts NUR auf der Startseite */
+  body.index .zz{ padding-inline: clamp(28px, 6vw, 72px) !important; }
+  body.index .zz > .zz-row{ max-width:1160px !important; margin-inline:auto !important; }
+
+  /* „Was du bekommst“ mittiger + ruhiger */
+  body.index .benefits{ padding-inline: clamp(28px, 6vw, 72px) !important; }
+  body.index .benefits > div{ max-width: 720px; margin-inline:auto; }
+  body.index .benefits p{ text-align:center; max-width: 580px; margin-inline:auto; }
+  body.index .benefits audio,
+  body.index .benefits .btn{ margin-left:auto; margin-right:auto; display:block; }
+</style>
 
   <!-- Mobile Button-Feinschliff -->
   <style>

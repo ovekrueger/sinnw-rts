@@ -34,18 +34,17 @@
   <!-- Basiscss -->
   <link rel="preload" href="/style.css?v=17" as="style">
   <link rel="stylesheet" href="/style.css?v=17">
-  <style id="hotfix-gutters">
-  /* mehr Rand links/rechts NUR auf der Startseite */
-  body.index .zz{ padding-inline: clamp(28px, 6vw, 72px) !important; }
-  body.index .zz > .zz-row{ max-width:1160px !important; margin-inline:auto !important; }
 
-  /* „Was du bekommst“ mittiger + ruhiger */
-  body.index .benefits{ padding-inline: clamp(28px, 6vw, 72px) !important; }
-  body.index .benefits > div{ max-width: 720px; margin-inline:auto; }
-  body.index .benefits p{ text-align:center; max-width: 580px; margin-inline:auto; }
-  body.index .benefits audio,
-  body.index .benefits .btn{ margin-left:auto; margin-right:auto; display:block; }
-</style>
+  <!-- Hotfix: Seitenränder & Benefits-Zentrierung -->
+  <style id="hotfix-gutters">
+    body.index .zz{ padding-inline: clamp(28px, 6vw, 72px) !important; }
+    body.index .zz > .zz-row{ max-width:1160px !important; margin-inline:auto !important; }
+    body.index .benefits{ padding-inline: clamp(28px, 6vw, 72px) !important; }
+    body.index .benefits > div{ max-width: 720px; margin-inline:auto; }
+    body.index .benefits p{ text-align:center; max-width: 580px; margin-inline:auto; }
+    body.index .benefits audio,
+    body.index .benefits .btn{ margin-left:auto; margin-right:auto; display:block; }
+  </style>
 
   <!-- Mobile Button-Feinschliff -->
   <style>
@@ -54,7 +53,7 @@
     }
   </style>
 
-  <!-- A11y + CTA (bewährt) -->
+  <!-- A11y + CTA -->
   <style>
     :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
     .skip-link{
@@ -77,27 +76,21 @@
     .btn-row--hero{ margin-top:1rem; }
     @media (min-width:720px){ .btn-row--hero{ margin-top:1.2rem; } }
 
-   .zz{ padding-inline: clamp(20px, 6vw, 56px); }
-    .zz > .zz-row{
-  max-width: 1160px;
-  margin-inline: auto;
-}
+    .zz{ padding-inline: clamp(20px, 6vw, 56px); }
+    .zz > .zz-row{ max-width: 1160px; margin-inline: auto; }
     .zz-row{
       display:grid; grid-template-columns: 1fr; gap:24px;
       align-items:center; margin:40px 0;
     }
     .zz-media img{ display:block; width:100%; height:auto; border-radius:12px; }
-    /* Desktop: zweispaltig mit sicherem Abstand */
     @media (min-width: 960px){
       .zz-row{ grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap:36px; }
       .zz-row.rev{ grid-template-columns: minmax(0,0.95fr) minmax(0,1.05fr); }
     }
-    /* Optionale Breite der Textspalte für bessere Lesbarkeit */
     .zz-text{ max-width:75ch; }
   </style>
 
-  <!-- Strukturierte Daten (bestehend + ergänzt – Person/Service/Audio kannst du beibehalten) -->
-  <!-- … Deine bestehenden JSON-LD Blöcke hier belassen … -->
+  <!-- Strukturierte Daten … (wie gehabt) -->
 </head>
 
 <body id="top" class="index">
@@ -197,8 +190,16 @@
         </div>
       </div>
 
-      <!-- 2) Bin ich ein Coach?  (nur Text, bleibt mittig) -->
-      <div class="zz-row">
+      <!-- 2) Bin ich ein Coach?  (Bild LINKS) -->
+      <div class="zz-row" id="coach-section">
+        <div class="zz-media">
+          <picture>
+            <source srcset="images/ove-coach-gestik.webp" type="image/webp">
+            <img src="images/ove-coach-gestik.jpg" width="900" height="1125"
+                 alt="Ove Krüger im Gespräch – ruhig, offen, zugewandt"
+                 loading="lazy" decoding="async">
+          </picture>
+        </div>
         <div class="zz-text">
           <h2>Bin ich ein Coach?</h2>
           <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist: <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
@@ -214,17 +215,9 @@
         </div>
       </div>
 
-      <!-- 3) Das innere Kind  (Bild LINKS) -->
+      <!-- 3) Das innere Kind  (Bild RECHTS) -->
       <section id="inneres-kind" class="section">
         <div class="zz-row rev">
-          <div class="zz-media">
-            <picture>
-              <source srcset="images/teddy-im-sand.webp" type="image/webp">
-              <img src="images/teddy-im-sand.png" width="640" height="400"
-                   alt="Teddybär im Sand – stilles Zeichen für das innere Kind"
-                   loading="lazy" decoding="async">
-            </picture>
-          </div>
           <div class="zz-text">
             <h2>Das innere Kind</h2>
             <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen.<br><em>Es darf weinen.</em></p>
@@ -238,11 +231,27 @@
               <a class="btn btn-gold" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
             </div>
           </div>
+          <div class="zz-media">
+            <picture>
+              <source srcset="images/teddy-im-sand.webp" type="image/webp">
+              <img src="images/teddy-im-sand.png" width="640" height="400"
+                   alt="Teddybär im Sand – stilles Zeichen für das innere Kind"
+                   loading="lazy" decoding="async">
+            </picture>
+          </div>
         </div>
       </section>
 
-      <!-- 4) Ich bin Ove.  (Bild RECHTS) -->
+      <!-- 4) Ich bin Ove.  (Bild LINKS) -->
       <div class="zz-row">
+        <div class="zz-media">
+          <picture>
+            <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
+            <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800"
+                 alt="Ove Krüger – Portrait im weißen Hemd"
+                 loading="lazy" decoding="async">
+          </picture>
+        </div>
         <div class="zz-text">
           <h2>Ich bin Ove.</h2>
           <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
@@ -258,82 +267,71 @@
             <a class="btn" href="angebot.html">Angebote für dich</a>
           </p>
         </div>
-        <div class="zz-media">
-          <picture>
-            <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
-            <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800"
-                 alt="Ove Krüger – Portrait im weißen Hemd"
-                 loading="lazy" decoding="async">
-          </picture>
-        </div>
       </div>
 
     </section><!-- /.zz -->
-<!-- Was du bekommst -->
-<section class="benefits" style="margin:4rem 0 3rem;">
-  <!-- fester Innen-Container: zentriert + Seitenabstand -->
-  <div style="max-width:900px; margin:0 auto; padding:0 24px; text-align:center;">
 
-    <h2>Was du bekommst</h2>
+    <!-- Was du bekommst -->
+    <section class="benefits" style="margin:4rem 0 3rem;">
+      <div style="max-width:900px; margin:0 auto; padding:0 24px; text-align:center;">
+        <h2>Was du bekommst</h2>
 
-    <!-- Liste: Block bleibt mittig, Text links für Lesbarkeit -->
-    <ul class="benefits-list" style="max-width:900px; margin:0 auto 1.5rem; text-align:left;">
-      <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
-      <li>🧘 <strong>Innere Ruhe</strong> – weniger Druck, mehr Atem, mehr Achtsamkeit im Alltag.</li>
-      <li>🤝 <strong>Gesündere Beziehungen</strong> – zu dir selbst und zu anderen, getragen von Würde.</li>
-      <li>🌙 <strong>Besserer Schlaf</strong> – erholsam, tiefer, echter Reset für Körper und Seele.</li>
-      <li>🎯 <strong>Ein Wofür</strong> – Sinn, Richtung, Orientierung und mehr Selbstwirksamkeit.</li>
-      <li>⚡ <strong>Energie</strong> – für das, was dir wirklich wichtig ist.</li>
-    </ul>
+        <ul class="benefits-list" style="max-width:900px; margin:0 auto 1.5rem; text-align:left;">
+          <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
+          <li>🧘 <strong>Innere Ruhe</strong> – weniger Druck, mehr Atem, mehr Achtsamkeit im Alltag.</li>
+          <li>🤝 <strong>Gesündere Beziehungen</strong> – zu dir selbst und zu anderen, getragen von Würde.</li>
+          <li>🌙 <strong>Besserer Schlaf</strong> – erholsam, tiefer, echter Reset für Körper und Seele.</li>
+          <li>🎯 <strong>Ein Wofür</strong> – Sinn, Richtung, Orientierung und mehr Selbstwirksamkeit.</li>
+          <li>⚡ <strong>Energie</strong> – für das, was dir wirklich wichtig ist.</li>
+        </ul>
 
-    <!-- Karten-Container: 1-spaltig, Inhalte wirklich mittig -->
-    <div style="margin:2rem auto 0; display:grid; gap:1rem; justify-items:center;">
+        <div style="margin:2rem auto 0; display:grid; gap:1rem; justify-items:center;">
 
-      <!-- Klanggeschenk (zentriert, feste max-Breite) -->
-      <div style="width:100%; max-width:720px; margin:0 auto;
-                  background:rgba(255,255,255,.04);
-                  border:1px solid rgba(212,175,55,.25);
-                  border-radius:14px; padding:1.1rem; text-align:center;">
-        <p style="margin:.1rem 0 .7rem 0; max-width:580px; margin-left:auto; margin-right:auto;">
-          <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth&nbsp;Gröger</strong> (Breathwork-Coachin).
-        </p>
+          <!-- Klanggeschenk -->
+          <div style="width:100%; max-width:720px; margin:0 auto;
+                      background:rgba(255,255,255,.04);
+                      border:1px solid rgba(212,175,55,.25);
+                      border-radius:14px; padding:1.1rem; text-align:center;">
+            <p style="margin:.1rem 0 .7rem 0; max-width:580px; margin-left:auto; margin-right:auto;">
+              <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth&nbsp;Gröger</strong> (Breathwork-Coachin).
+            </p>
 
-        <audio controls preload="none" aria-describedby="audio-desc audio-credits"
-               style="width:100%; max-width:420px; display:block; margin:0 auto .8rem;">
-          <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
-          Dein Browser unterstützt das Audio-Element nicht.
-          <a href="assets/audio/atem-mein-leben.mp3">Hier herunterladen</a>.
-        </audio>
+            <audio controls preload="none" aria-describedby="audio-desc audio-credits"
+                   style="width:100%; max-width:420px; display:block; margin:0 auto .8rem;">
+              <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
+              Dein Browser unterstützt das Audio-Element nicht.
+              <a href="assets/audio/atem-mein-leben.mp3">Hier herunterladen</a>.
+            </audio>
 
-        <p id="audio-desc" style="opacity:.8; margin:.3rem auto .4rem; max-width:580px;">
-          Weiche Drone-Flächen, ruhiger Puls, Vokalisen ohne Worte – Einladung zum bewussten Atem (≈4 Min).
-        </p>
-        <p id="audio-credits" style="opacity:.7; margin:.1rem auto .8rem; max-width:580px;">
-          Vocals: Ruth&nbsp;Gröger · Komposition/Produktion: Ove&nbsp;Krüger &amp; Ruth&nbsp;Gröger.
-        </p>
+            <p id="audio-desc" style="opacity:.8; margin:.3rem auto .4rem; max-width:580px;">
+              Weiche Drone-Flächen, ruhiger Puls, Vokalisen ohne Worte – Einladung zum bewussten Atem (≈4 Min).
+            </p>
+            <p id="audio-credits" style="opacity:.7; margin:.1rem auto .8rem; max-width:580px;">
+              Vocals: Ruth&nbsp;Gröger · Komposition/Produktion: Ove&nbsp;Krüger &amp; Ruth&nbsp;Gröger.
+            </p>
 
-        <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download style="display:inline-block;">
-          🎵 „Atmen, mein Leben“ – Download
-        </a>
-      </div>
+            <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download style="display:inline-block;">
+              🎵 „Atmen, mein Leben“ – Download
+            </a>
+          </div>
 
-      <!-- Leseprobe (gleiche Breite wie Klanggeschenk) -->
-      <div style="width:100%; max-width:720px; margin:0 auto;
-                  background:rgba(255,255,255,.04);
-                  border:1px solid rgba(212,175,55,.25);
-                  border-radius:14px; padding:1.1rem; text-align:center;">
-        <p style="margin:.1rem 0 .7rem 0; max-width:580px; margin-left:auto; margin-right:auto;">
-          <strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.
-        </p>
-        <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
-          <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px); text-align:center">📖 Online lesen</a>
-          <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download style="min-width:clamp(200px,24vw,300px); text-align:center">⬇ PDF herunterladen</a>
+          <!-- Leseprobe -->
+          <div style="width:100%; max-width:720px; margin:0 auto;
+                      background:rgba(255,255,255,.04);
+                      border:1px solid rgba(212,175,55,.25);
+                      border-radius:14px; padding:1.1rem; text-align:center;">
+            <p style="margin:.1rem 0 .7rem 0; max-width:580px; margin-left:auto; margin-right:auto;">
+              <strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.
+            </p>
+            <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
+              <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px); text-align:center">📖 Online lesen</a>
+              <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download style="min-width:clamp(200px,24vw,300px); text-align:center">⬇ PDF herunterladen</a>
+            </div>
+          </div>
+
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   </main>
 
   <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>

@@ -437,3 +437,18 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   .zz-row.flip .zz-text  { grid-column: 2; }
   .zz-row.flip .zz-media { grid-column: 1; }
 }
+/* Einheitliche Bildbreite in den Content-Sections */
+.zz-row .zz-media img{
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 12px;
+}
+
+/* Coach-Block: Bild oben bündig, Text wirkt ruhiger */
+#coach-section .zz-media{ align-self: start; }
+#coach-section .zz-text h2{ margin-top: .15rem; }
+.zz-text p{ margin: 0 0 .85rem; }
+.zz-text ul{ margin: .6rem 0 0 1.1rem; line-height: 1.55; }
+.zz-text li + li{ margin-top: .25rem; }

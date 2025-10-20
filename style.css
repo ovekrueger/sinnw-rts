@@ -428,3 +428,7 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .zz-text p{ margin: 0 0 .85rem; }
 .zz-text ul{ margin:.6rem 0 0 1.1rem; line-height:1.55; }
 .zz-text li+li{ margin-top:.25rem; }
+/* Mobile: Text vor Bild */
+@media (max-width: 959px){
+  .zz-row .zz-text{ order:1; }
+  .zz-row .zz-media{ order:2

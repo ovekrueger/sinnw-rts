@@ -42,18 +42,17 @@
     }
   </style>
 <style>
-  /* A11y: sichtbare Fokusrahmen für alle fokussierbaren Elemente */
+  /* A11y: sichtbare Fokusrahmen */
   :focus-visible{
     outline:3px solid #D4AF37; /* Gold */
     outline-offset:3px;
     border-radius:.25rem;
   }
 
-  /* A11y: Skip-Link nur beim Fokus sichtbar */
+  /* Skip-Link nur beim Fokus sichtbar */
   .skip-link{
-    position:absolute;
-    left:-9999px; top:auto;
-    background:#ffffff; color:#0B0F12;
+    position:absolute; left:-9999px; top:auto;
+    background:#fff; color:#0B0F12;
     padding:.6rem .8rem; border-radius:.5rem;
     box-shadow:0 6px 18px -8px rgba(0,0,0,.25);
     z-index:1000;
@@ -61,6 +60,36 @@
   .skip-link:focus, .skip-link:focus-visible{
     left:1rem; top:1rem;
   }
+
+  /* nur visuell verstecken – für Überschriften/Labels */
+  .visually-hidden{
+    position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+  }
+
+  /* Primär-CTA unter dem Hero */
+  .cta-under-hero{ margin:1.2rem 0 2.2rem; text-align:center; }
+  .lead-under-hero{
+    margin:.2rem 0 .6rem; opacity:.9;
+    font-size:clamp(1rem,2.2vw,1.1rem);
+  }
+  .btn-primary{
+    display:inline-block;
+    min-width:clamp(220px,40vw,320px);
+    padding:.9rem 1.2rem; border-radius:.9rem;
+    background:#D4AF37; color:#0B0F12; font-weight:800; letter-spacing:.2px;
+    text-decoration:none; box-shadow:0 10px 28px -12px rgba(212,175,55,.55);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{
+    transform:translateY(-1px);
+    box-shadow:0 16px 34px -14px rgba(212,175,55,.6);
+  }
+  @media (prefers-reduced-motion: reduce){ .btn-primary{ transition:none; } }
+
+  /* Abstand zu Sekundär-CTAs */
+  .btn-row--hero{ margin-top:1rem; }
+  @media (min-width:720px){ .btn-row--hero{ margin-top:1.2rem; } }
 </style>
   <!-- Strukturierte Daten (Basis: Organization + WebSite) -->
   <script type="application/ld+json">

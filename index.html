@@ -65,10 +65,11 @@
     .btn-row--hero{ margin-top:1rem; }
     @media (min-width:720px){ .btn-row--hero{ margin-top:1.2rem; } }
 
-    /* ===== Stabile Content-Layouts NUR für die .zz-Sektion ===== */
-    .zz{ /* keine globale Wrap-Änderung, nur eigene Innenluft */
-      padding-left:16px; padding-right:16px;
-    }
+   .zz{ padding-inline: clamp(20px, 6vw, 56px); }
+    .zz > .zz-row{
+  max-width: 1160px;
+  margin-inline: auto;
+}
     .zz-row{
       display:grid; grid-template-columns: 1fr; gap:24px;
       align-items:center; margin:40px 0;

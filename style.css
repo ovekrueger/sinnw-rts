@@ -452,3 +452,8 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .zz-text p{ margin: 0 0 .85rem; }
 .zz-text ul{ margin: .6rem 0 0 1.1rem; line-height: 1.55; }
 .zz-text li + li{ margin-top: .25rem; }
+/* Desktop: Flip wirklich nebeneinander erzwingen */
+@media (min-width: 960px){
+  .zz-row.flip .zz-text  { grid-column: 2; grid-row: 1; }
+  .zz-row.flip .zz-media { grid-column: 1; grid-row: 1; }
+}

@@ -4,81 +4,72 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-
-  <!-- Grund-Meta -->
-  <title>Angebot – Coaching & Mentoring | Sinnwärts Studio</title>
-  <meta name="description" content="Klarheit, Orientierung, Menschlichkeit – Coaching & Mentoring mit Ove Krüger. Integraler Blick, neurobiologisch fundiert.">
+  <title>Angebote – Coaching · Mentoring · KI | Sinnwärts Studio</title>
+  <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Angebote von Ove Krüger: 1:1 Coaching, Mentoring/Begleitprogramm, Lasercoaching und deine KI als Co-Pilot:in – ethisch, ruhig, wirksam.">
   <link rel="canonical" href="https://sinnwaerts-studio.de/angebot.html">
   <meta name="robots" content="index,follow">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Angebot – Coaching & Mentoring | Sinnwärts Studio">
-  <meta property="og:description" content="Klarheit, Orientierung, Menschlichkeit – Coaching & Mentoring mit Ove Krüger. Integraler Blick, neurobiologisch fundiert.">
-  <meta property="og:type" content="article">
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="Angebote – Coaching · Mentoring · KI | Sinnwärts Studio">
+  <meta property="og:description" content="1:1 Coaching, Mentoring/Begleitprogramm, Lasercoaching und deine KI als Co-Pilot:in – ethisch, ruhig, wirksam.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://sinnwaerts-studio.de/angebot.html">
   <meta property="og:image" content="https://sinnwaerts-studio.de/assets/og-angebot.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="de_DE">
-
-  <!-- X (Twitter) -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Angebot – Coaching & Mentoring | Sinnwärts Studio">
-  <meta name="twitter:description" content="Klarheit, Orientierung, Menschlichkeit – Coaching & Mentoring mit Ove Krüger.">
+  <meta name="twitter:title" content="Angebote – Coaching · Mentoring · KI | Sinnwärts Studio">
+  <meta name="twitter:description" content="Klarheit, Orientierung, Menschlichkeit – Angebote von Ove Krüger.">
   <meta name="twitter:image" content="https://sinnwaerts-studio.de/assets/og-angebot.jpg">
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
   <!-- Styles -->
   <link rel="preload" href="/style.css" as="style">
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=10">
 
-  <!-- Nur Mobile-Tuning für den Hero dieser Seite -->
+  <!-- Page tweaks -->
   <style>
-    @media (max-width: 640px) {
-      .hero-angebot {
-        height: 60vh !important;
-        background-position: 50% 65% !important;
-      }
+    /* mobile hero crop */
+    @media (max-width: 640px){
+      .hero-angebot { height: 60vh !important; background-position: 50% 65% !important; }
     }
-    /* Sauberer Anker-Offset ohne Dummy-DIV */
-    #suechte { scroll-margin-top: 88px; }
+    /* saubere Anker-Offsets */
+    #co-pilotin, #mentoring, #lasercoaching, #suechte { scroll-margin-top: 88px; }
+    /* dezente Layout-Feinschliffe, falls global nicht gesetzt */
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .block{padding:24px 0}
+    .cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+    .card{background:#0e1317;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
+    .card h3{margin:.2rem 0 .6rem}
+    .card ul{margin:.6rem 0 .6rem 1.1rem;opacity:.95}
+    .btn{display:inline-block;background:#d4af37;color:#0b0f12;font-weight:600;padding:.6rem 1.2rem;border-radius:999px;text-decoration:none;transition:.25s}
+    .btn:hover{background:#f1d46c;transform:translateY(-1px)}
+    .pricing{margin:36px 0 8px;padding:20px;border:1px solid rgba(212,175,55,.25);border-radius:16px;background:rgba(255,255,255,.02)}
+    .pricing h2{margin:.2rem 0 .6rem;font-size:1.25rem}
+    .grid.grid--cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
   </style>
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"CollectionPage",
-  "url":"https://sinnwaerts-studio.de/angebot.html",
-  "name":"Angebote – Coaching, Mentoring, Workshops",
-  "about":[
-    {
-      "@type":"Service",
-      "name":"1:1 Coaching",
-      "url":"https://sinnwaerts-studio.de/kontakt.html",
-      "areaServed":"DE",
-      "provider":{"@type":"Organization","name":"Sinnwärts Studio"}
-    },
-    {
-      "@type":"Service",
-      "name":"Mentoring",
-      "url":"https://sinnwaerts-studio.de/kontakt.html",
-      "areaServed":"DE",
-      "provider":{"@type":"Organization","name":"Sinnwärts Studio"}
-    },
-    {
-      "@type":"Service",
-      "name":"Workshops",
-      "url":"https://sinnwaerts-studio.de/kontakt.html",
-      "areaServed":"DE",
-      "provider":{"@type":"Organization","name":"Sinnwärts Studio"}
-    }
-  ]
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "url":"https://sinnwaerts-studio.de/angebot.html",
+    "name":"Angebote – Coaching, Mentoring, KI",
+    "about":[
+      {"@type":"Service","name":"1:1 Coaching","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
+      {"@type":"Service","name":"Mentoring/Begleitprogramm","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
+      {"@type":"Service","name":"Lasercoaching","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
+      {"@type":"Service","name":"KI Co-Pilot:in (maßgeschneidert)","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}}
+    ]
+  }
+  </script>
 </head>
 
 <body id="top">
+
   <!-- NAV -->
   <header class="site-header">
     <div class="nav-container">
@@ -96,64 +87,99 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero hero--L hero--soft hero--low"
+  <section class="hero hero--L hero--soft hero--low hero-angebot"
            style="--overlay:.25; --hero-offset:34vh; --inner-bottom:10%;">
     <img src="/images/angebote-strand.webp"
-         alt="Angebote – Coaching, Mentoring, Workshops"
+         alt="Angebote – Coaching, Mentoring, KI"
          class="hero-bg"
          style="object-position:center 30%;">
     <div class="inner">
       <h1>Angebote</h1>
-      <p class="sub">Coaching · Mentoring · Workshops</p>
+      <p class="sub">Coaching · Mentoring · Lasercoaching · KI als Co-Pilot:in</p>
     </div>
+  </section>
+
+  <!-- Erklärung: Wertschätzung & Energieausgleich -->
+  <section class="pricing wrap" aria-labelledby="pricing-title">
+    <h2 id="pricing-title">Wertschätzung &amp; Energieausgleich</h2>
+    <p>Für mich bedeutet Wertschätzung mehr als Geld. In dieser Übergangszeit arbeite ich ohne feste Preise – aus rechtlichen Gründen, aber auch, weil ich an eine neue Kultur des Gebens und Empfangens glaube. Sobald mein Gewerbe offiziell angemeldet ist, werden klare, faire Honorare veröffentlicht.</p>
+    <p>Bis dahin gilt: Wir wirken auf Vertrauensbasis. Doch eine Form von angemessenem <em>Energieaustausch</em> wird es geben – denn auch dadurch spiegeln sich Klarheit, Selbstachtung und gegenseitiger Wert.</p>
   </section>
 
   <!-- Haupt-Angebote -->
-  <section class="wrap block">
+  <section class="wrap block" aria-label="Angebotsübersicht">
     <div class="cards">
-      <article class="card">
+      <!-- KI Co-Pilot:in -->
+      <article class="card" id="co-pilotin">
+        <h3>Deine Co-Pilot:in – maßgeschneiderte KI</h3>
+        <p>KI als Spiegel, Sortierhilfe und Inspiration – so, dass sie dich stärkt, nicht ersetzt. Ruhig, ethisch, auf deine Sprache und Werte trainiert.</p>
+        <ul>
+          <li><strong>Entlastung:</strong> Routinen vereinfachen, Überblick behalten</li>
+          <li><strong>Entscheidungen:</strong> Pro/Contra, Szenarien, nächste Schritte</li>
+          <li><strong>Content-Support:</strong> Briefings, Rohtexte, Redaktionspläne</li>
+          <li><strong>Ethik first:</strong> Verantwortung &amp; Menschlichkeit bleiben bei dir</li>
+        </ul>
+        <p><a class="btn" href="/kontakt.html">Unverbindlich anfragen</a></p>
+      </article>
+
+      <!-- 1:1 Coaching -->
+      <article class="card" id="einszu1">
         <h3>1:1 Coaching</h3>
-        <p>Individuell, vertraulich, zielklar. Neuro-orientiert & integral.</p>
+        <p>Individuell, vertraulich, zielklar. Neuro-orientiert &amp; integral. Vom Verstehen ins Tun – mit Struktur, Spiegel und ruhiger Präsenz.</p>
         <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
       </article>
-      <article class="card">
-        <h3>Mentoring</h3>
-        <p>Begleitung über mehrere Wochen. Struktur, Reflexion, Umsetzung.</p>
-        <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
+
+      <!-- Mentoring / Begleitprogramm -->
+      <article class="card" id="mentoring">
+        <h3>Mentoring / Begleitprogramm</h3>
+        <p>Individuelle Begleitung mit viel Reflexion, klaren Challenges und intensivem Austausch – auch zwischen den Sessions. Fokus: Umsetzung, Halt, ehrliches Feedback.</p>
+        <ul>
+          <li><strong>Rahmen:</strong> 6–12 Wochen, regelmäßige Sessions</li>
+          <li><strong>Zwischenräume:</strong> kurze Check-ins (Text/Audio)</li>
+          <li><strong>Praxis:</strong> Aufgaben, Review, nächste Schritte</li>
+        </ul>
+        <p><a class="btn" href="/kontakt.html">Unverbindlich anfragen</a></p>
       </article>
-      <article class="card">
-        <h3>Workshops</h3>
-        <p>Süchte neu denken. Teams stärken. KI verständlich & ethisch nutzen.</p>
-        <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
+
+      <!-- Lasercoaching -->
+      <article class="card" id="lasercoaching">
+        <h3>Lasercoaching</h3>
+        <p>In <strong>1–2 Sessions</strong> ein konkretes Thema direkt in die Umsetzung bringen – ohne Ursachenanalyse, ohne Umwege.</p>
+        <ul>
+          <li><strong>Fokus:</strong> ein Ziel, klare Entscheidung</li>
+          <li><strong>Action:</strong> nächste Schritte, Verantwortungen, Termin</li>
+          <li><strong>Nachhalten:</strong> kurzer Check-in optional</li>
+        </ul>
+        <p><a class="btn" href="/kontakt.html">Start klarmachen</a></p>
       </article>
     </div>
   </section>
 
-  <!-- Süchte -->
-  <section id="suechte" class="block">
+  <!-- Süchte neu denken (angepasst) -->
+  <section id="suechte" class="wrap block" aria-label="Süchte neu denken">
     <h2>Süchte neu denken</h2>
-    <p>Raus aus Scham & Verstecken. Rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung – neurobiologisch fundiert, menschlich, integral.</p>
+    <p>Raus aus Scham &amp; Verstecken. Rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung – neurobiologisch fundiert, menschlich, integral.</p>
 
     <div class="grid grid--cards">
       <article class="card">
         <div class="card-body">
           <h3 class="card-title">1:1 Coaching</h3>
-          <p>Individuell, vertraulich, zielklar. Stabilisierung, Triggerarbeit, Rückfallprävention.</p>
+          <p>Stabilisierung, Triggerarbeit, Rückfallprävention – ruhig, klar, zugewandt.</p>
           <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
         </div>
       </article>
       <article class="card">
         <div class="card-body">
-          <h3 class="card-title">Workshops</h3>
-          <p>Suchtmechanismen verstehen. Teams stärken. KI & Dopamin bewusst nutzen.</p>
-          <p><a class="btn" href="/kontakt.html">Anfragen</a></p>
+          <h3 class="card-title">Lasercoaching</h3>
+          <p>Akut ein Thema lösen und in Umsetzung bringen – 1–2 fokussierte Sessions.</p>
+          <p><a class="btn" href="/kontakt.html">Start klarmachen</a></p>
         </div>
       </article>
     </div>
   </section>
 
   <!-- Für wen -->
-  <section class="angebot-targets">
+  <section class="angebot-targets wrap block">
     <h2>Für wen?</h2>
     <div class="btn-row">
       <a class="btn" href="/angebote/frauen/">Für Frauen</a>
@@ -161,9 +187,7 @@
     </div>
   </section>
 
-  <button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="wrap" style="text-align:center;padding:2rem 1rem;">
       <small style="display:block;margin-bottom:.5rem;opacity:.85;">
@@ -181,10 +205,11 @@
     </div>
   </footer>
 
+  <button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+
   <script>
     // Jahr
     document.getElementById('y').textContent = new Date().getFullYear();
-
     // ↑-Button
     const btn = document.querySelector('.to-top');
     const onScroll = () => btn.classList.toggle('show', window.scrollY > 600);

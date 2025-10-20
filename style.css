@@ -423,3 +423,8 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   text-align: center;
   max-width: 580px;
 }
+/* in <style> ergänzen */
+.zz .is-portrait{ aspect-ratio: 4 / 5; object-fit: cover; }
+.zz-text p{ margin: 0 0 .85rem; }
+.zz-text ul{ margin:.6rem 0 0 1.1rem; line-height:1.55; }
+.zz-text li+li{ margin-top:.25rem; }

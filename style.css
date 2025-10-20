@@ -390,3 +390,4 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .button{display:inline-block;background:#d4af37;color:#0b0f12;font-weight:600;
   padding:.6rem 1.4rem;border-radius:999px;text-decoration:none;transition:.25s}
 .button:hover{background:#f1d46c;transform:translateY(-1px)}
+.benefits{ padding-inline: clamp(20px, 6vw, 56px); }

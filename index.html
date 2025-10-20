@@ -41,7 +41,27 @@
       .btn{min-width:140px;font-size:.9rem;padding:.5rem 1rem}
     }
   </style>
+<style>
+  /* A11y: sichtbare Fokusrahmen für alle fokussierbaren Elemente */
+  :focus-visible{
+    outline:3px solid #D4AF37; /* Gold */
+    outline-offset:3px;
+    border-radius:.25rem;
+  }
 
+  /* A11y: Skip-Link nur beim Fokus sichtbar */
+  .skip-link{
+    position:absolute;
+    left:-9999px; top:auto;
+    background:#ffffff; color:#0B0F12;
+    padding:.6rem .8rem; border-radius:.5rem;
+    box-shadow:0 6px 18px -8px rgba(0,0,0,.25);
+    z-index:1000;
+  }
+  .skip-link:focus, .skip-link:focus-visible{
+    left:1rem; top:1rem;
+  }
+</style>
   <!-- Strukturierte Daten (Basis: Organization + WebSite) -->
   <script type="application/ld+json">
   {
@@ -75,8 +95,8 @@
   </script>
 </head>
 <body id="top" class="index">
-
-<!-- NAV -->
+ <a class="skip-link" href="#main">Zum Inhalt springen</a><!-- NAV -->
+  
 <header class="site-header">
   <div class="nav-container">
     <a class="brand" href="index.html">Sinnwärts Studio</a>

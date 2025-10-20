@@ -432,3 +432,8 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 @media (max-width: 959px){
   .zz-row .zz-text{ order:1; }
   .zz-row .zz-media{ order:2
+/* Spalten-Swap nur auf Desktop: Text rechts, Bild links */
+@media (min-width: 960px){
+  .zz-row.flip .zz-text  { grid-column: 2; }
+  .zz-row.flip .zz-media { grid-column: 1; }
+}

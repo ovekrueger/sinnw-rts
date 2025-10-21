@@ -460,3 +460,17 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   .zz-row.flip .zz-text  { grid-column: 2; grid-row: 1; }
   .zz-row.flip .zz-media { grid-column: 1; grid-row: 1; }
 }
+/* Buttons: Gold mit dunkler Schrift – Spezifität > .resonanzraum a */
+body.resonanzraum a.button{
+  color:#0b0f12 !important;       /* Lesbar auf Gold */
+  background:var(--accent);
+  border:1px solid var(--accent);
+}
+body.resonanzraum a.button:hover{
+  background:#f1d46c;
+  color:#0b0f12 !important;
+  text-decoration:none;
+}
+body.resonanzraum a.button:visited{
+  color:#0b0f12 !important;
+}

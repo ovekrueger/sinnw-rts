@@ -4,7 +4,6 @@
     "title": "Wenn der Lärm in dir still wird",
     "date": "2025-10-17",
     "read": 7,
-    
     "teaser": "Wenn der äußere Lärm fällt, bleibt erst einmal der innere. Genau dort beginnt Orientierung."
   },
   {
@@ -12,16 +11,13 @@
     "title": "Sucht sucht Sinn: Warum Kontrolle allein nicht wirkt",
     "date": "2025-10-18",
     "read": 5,
-    
     "teaser": "Neurotransmitter, Bedürfnisse, Würde: ein integraler Blick auf Abhängigkeit ohne Moralkeule."
+  },
+  {
+    "slug": "overload",
+    "title": "Overload → Flow – Eine Einladung zur integralen Lebenspraxis",
+    "date": "2025-10-21",
+    "read": 6,
+    "teaser": "Wir leben in einer Zeit, in der das Tempo der Welt schneller steigt, als unsere Fähigkeit innerlich Schritt zu halten. Diese Serie ist eine Einladung, innezuhalten – und die Welle zu reiten, statt von ihr überrollt zu werden."
   }
 ]
-
-{
-  "title": "Overload → Flow – Eine Einladung zur integralen Lebenspraxis",
-  "subtitle": "Wie wir lernen, die Welle der Herausforderungen zu surfen",
-  "slug": "overload",
-  "date": "2025-10-21",
-  "image": "",
-  "excerpt": "Wir leben in einer Zeit, in der das Tempo der Welt schneller steigt, als unsere Fähigkeit innerlich Schritt zu halten. Diese Serie ist eine Einladung, innezuhalten – und die Welle zu reiten, statt von ihr überrollt zu werden."
-}

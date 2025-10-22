@@ -539,3 +539,11 @@ body.resonanzraum a.button:visited{
   height:auto;          /* wichtige Zeile: keine feste Höhe */
   /* kein object-fit, kein object-position */
 }
+/* Hero: wirklich keine Beschneidung */
+.resonanzraum .blog-hero img{
+  all: unset;
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px;
+}

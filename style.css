@@ -474,3 +474,21 @@ body.resonanzraum a.button:hover{
 body.resonanzraum a.button:visited{
   color:#0b0f12 !important;
 }
+/* Hero-Header */
+.blog-hero{
+  position:relative;overflow:hidden;border-radius:12px;
+  margin:clamp(12px,3vw,24px) auto; max-width:1100px;
+}
+.blog-hero img{
+  display:block;width:100%;height:auto;aspect-ratio:16/6; /* saubere Höhe */
+  object-fit:cover;
+}
+.blog-hero__overlay{
+  position:absolute;inset:0;display:flex;align-items:flex-end;
+  padding:clamp(12px,3vw,28px);
+  background:linear-gradient(to top,rgba(11,15,18,.55),rgba(11,15,18,0) 60%);
+}
+.blog-hero__overlay h1,.blog-hero__overlay .kicker{
+  margin:0;color:#fff;letter-spacing:.2px;line-height:1.15;
+  font-size:clamp(1.6rem,3.2vw,2.6rem);
+}

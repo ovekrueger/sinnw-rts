@@ -505,3 +505,23 @@ body.resonanzraum a.button:visited{
             position:absolute;left:0;right:0;top:56px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
   .nav-list.is-open{display:flex}
 }
+/* Hero-Header */
+.blog-hero{
+  position:relative;overflow:hidden;border-radius:12px;
+  margin:clamp(12px,3vw,24px) auto;max-width:1100px;
+}
+.blog-hero img{
+  display:block;width:100%;
+  height:clamp(220px,34vw,420px);      /* responsive Höhe */
+  object-fit:cover;
+  object-position: 20% 40%;            /* Fokus nach links/oben */
+  border-radius:12px;
+}
+.blog-hero__overlay{
+  position:absolute;inset:0;display:flex;align-items:flex-end;
+  padding:clamp(12px,3vw,28px);
+  background:linear-gradient(to top,rgba(11,15,18,.55),rgba(11,15,18,0) 60%);
+}
+.blog-hero__overlay h1{margin:0;color:#fff;letter-spacing:.2px;line-height:1.15;
+  font-size:clamp(1.6rem,3.2vw,2.6rem);
+}

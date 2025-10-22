@@ -5,95 +5,154 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
 
-  <!-- Pfade: blog.html liegt in /resonanzraum/blog/  → CSS im Root = ../../style.css -->
+  <!-- Basis-Styles (liegt im Repo-Root) -->
   <link rel="stylesheet" href="../../style.css">
 
- 
+  <!-- Lokale Fixes/Ergänzungen NACH der Haupt-CSS einbinden -->
+  <style>
+    /* Layout-Container der Seite */
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+
+    /* Hero: komplettes Bild, ohne Cropping */
+    .resonanzraum .blog-hero{
+      max-width:1100px;
+      margin:clamp(12px,3vw,24px) auto;
+      border-radius:12px;
+      overflow:hidden;
+      background:#0b0f12; /* Letterbox-Farbe */
+    }
+    .resonanzraum .blog-hero img{
+      display:block;
+      width:100%;
+      height:auto;       /* wichtig: kein Beschneiden */
+    }
+
+    /* Kartenraster */
+    .grid{
+      display:grid;
+      gap:24px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    }
+    .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.06)}
+    .card.no-img .inner{display:block;padding:18px 18px 20px}
+    .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
+    .card h3{margin:12px 0 6px}
+    .meta{opacity:.7}
+
+    /* Header-Navigation (minimal responsive) */
+    .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
+    .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
+    .brand{color:#ffc94d;text-decoration:none;font-weight:600}
+    .nav-list{list-style:none;display:flex;gap:16px;margin:0;padding:0}
+    .nav-list a{color:#fff;text-decoration:none;opacity:.9}
+    .nav-list a:hover,.nav-list a.active{opacity:1;text-underline-offset:4px;text-decoration:underline}
+    .menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.4rem;line-height:1}
+
+    @media (max-width:800px){
+      .menu-toggle{display:block;margin-left:auto}
+      nav[aria-label="Hauptnavigation"]{position:relative}
+      .nav-list{
+        display:none;flex-direction:column;gap:12px;background:#0b0f12;
+        position:absolute;left:0;right:0;top:42px;padding:12px 16px;
+        border-bottom:1px solid rgba(255,255,255,.08)
+      }
+      .nav-list.is-open{display:flex}
+    }
+  </style>
 </head>
 
 <body class="resonanzraum">
-  <!-- Pfad zur Startseite im Root → ../../index.html -->
-  
+  <!-- Site-Header + Navigation -->
   <header class="site-header">
-  <div class="nav-container">
-    <a class="brand" href="../../index.html">Sinnwärts Studio</a>
+    <div class="nav-container">
+      <a class="brand" href="../../index.html">Sinnwärts Studio</a>
 
-    <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">
-      ☰
-    </button>
+      <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
 
-    <nav aria-label="Hauptnavigation">
-      <ul class="nav-list">
-        <li><a href="../../index.html">Start</a></li>
-        <li><a href="../../ueber-mich.html">Über mich</a></li>
-        <li><a href="../../angebot.html">Angebote</a></li>
-        <li><a class="active" aria-current="page" href="../../resonanzraum.html">Resonanzraum</a></li>
-        <li><a href="../../kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-  
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="../../index.html">Start</a></li>
+          <li><a href="../../ueber-mich.html">Über mich</a></li>
+          <li><a href="../../angebot.html">Angebote</a></li>
+          <li><a class="active" aria-current="page" href="../../resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="../../kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- Hero-Header -->
-<!-- Hero-Header -->
-<header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum">
-  <img
-    src="../../images/integrale-lebenspr.jpg"
-    alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
-    loading="eager" fetchpriority="high" decoding="async">
-</header>
-   <p class="kicker">Resonanzraum</p>    <div id="grid" class="grid" aria-live="polite"></div>
+  <!-- Hero-Header (nur Bild, kein Text) -->
+  <header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum">
+    <img
+      src="../../images/integrale-lebenspr.jpg"
+      alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
+      loading="eager" fetchpriority="high" decoding="async">
+  </header>
+
+  <!-- Inhalt -->
+  <main class="wrap">
+    <h1>Resonanzraum</h1>
+    <p class="sub">Weniger Rauschen. Mehr Richtung.</p>
+
+    <div id="grid" class="grid" aria-live="polite"></div>
     <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
   </main>
 
+  <!-- JS: Menü-Toggle + Blog-Posts laden -->
   <script>
-  (function(){
-    var statusEl = document.getElementById('status');
-    function setStatus(msg){ if(statusEl){ statusEl.textContent = msg; } }
+    // Mobile-Menü
+    (function(){
+      const btn = document.querySelector('.menu-toggle');
+      const list = document.querySelector('.nav-list');
+      if(btn && list){
+        btn.addEventListener('click', () => {
+          const open = list.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+    })();
 
-    // posts.json liegt im selben Ordner wie diese Datei
-    var DATA_URL = 'posts.json?v=' + Date.now();
+    // Posts laden (posts.json liegt im selben Ordner wie diese Datei)
+    (function(){
+      const statusEl = document.getElementById('status');
+      const gridEl = document.getElementById('grid');
+      const setStatus = (msg) => { if(statusEl) statusEl.textContent = msg; };
 
-    fetch(DATA_URL)
-      .then(function(r){
-        if(!r.ok) throw new Error('HTTP '+r.status+' ('+DATA_URL+')');
-        return r.json();
-      })
-      .then(function(posts){
-        if(!Array.isArray(posts)) throw new Error('Ungültiges JSON (Array erwartet).');
+      fetch('posts.json?v=' + Date.now())
+        .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+        .then(posts => {
+          if(!Array.isArray(posts)) throw new Error('Ungültiges JSON (Array erwartet).');
+          posts.sort((a,b) => String(b.date).localeCompare(String(a.date)));
 
-        posts.sort(function(a,b){ return String(b.date).localeCompare(String(a.date)); });
+          const html = posts.map(p => {
+            const slug   = String(p.slug||'').trim();
+            const title  = String(p.title||'Ohne Titel');
+            const date   = String(p.date||'');
+            const read   = String(p.read||'');
+            const teaser = String(p.teaser||'');
+            const img    = String(p.img||'');
+            const cls    = 'card' + (img ? '' : ' no-img');
 
-       var html = posts.map(function(p){
-  var slug   = String(p.slug||'').trim();
-  var title  = String(p.title||'Ohne Titel');
-  var date   = String(p.date||'');
-  var read   = String(p.read||'');
-  var teaser = String(p.teaser||'');
-  var img    = String(p.img||'');      // kann leer sein
-  var cls    = 'card' + (img ? '' : ' no-img');
+            return (
+              '<article class="'+cls+'">'+
+                '<a class="inner" href="'+ slug +'.html">'+
+                  (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
+                  '<h3>'+ title +'</h3>'+
+                  '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
+                  (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
+                '</a>'+
+              '</article>'
+            );
+          }).join('');
 
-  return (
-    '<article class="'+cls+'">'+
-      '<a class="inner" href="'+ slug +'.html">'+
-        (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
-        '<h3>'+ title +'</h3>'+
-        '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
-        (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
-      '</a>'+
-    '</article>'
-  );
-}).join('');
-
-        document.getElementById('grid').innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
-        setStatus(posts.length + ' Beitrag' + (posts.length===1?'':'e') + ' geladen.');
-      })
-      .catch(function(err){
-        console.error('Blog fetch error:', err);
-        setStatus('Fehler beim Laden: ' + err.message);
-      });
-  })();
+          gridEl.innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
+          setStatus(posts.length + ' Beitrag' + (posts.length===1?'':'e') + ' geladen.');
+        })
+        .catch(err => {
+          console.error('Blog fetch error:', err);
+          setStatus('Fehler beim Laden: ' + err.message);
+        });
+    })();
   </script>
 </body>
 </html>

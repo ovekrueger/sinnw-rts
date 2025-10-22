@@ -5,41 +5,42 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
 
-  <!-- Basis-Styles (liegt im Repo-Root) -->
+  <!-- Basis-Styles (Repo-Root) -->
   <link rel="stylesheet" href="../../style.css">
 
-  <!-- Lokale Fixes/Ergänzungen NACH der Haupt-CSS einbinden -->
+  <!-- Lokale Ergänzungen (keine Doppelungen) -->
   <style>
-    /* Layout-Container der Seite */
+    /* Layout */
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
 
-    /* Hero: komplettes Bild, ohne Cropping */
+    /* Hero: komplettes Bild, kein Cropping */
     .resonanzraum .blog-hero{
       max-width:1100px;
       margin:clamp(12px,3vw,24px) auto;
       border-radius:12px;
       overflow:hidden;
-      background:#0b0f12; /* Letterbox-Farbe */
+      background:#0b0f12;
+      line-height:0;
     }
     .resonanzraum .blog-hero img{
       display:block;
-      width:100%;
-      height:auto;       /* wichtig: kein Beschneiden */
+      width:100% !important;
+      height:auto !important;
+      object-fit:unset !important;
+      object-position:unset !important;
+      aspect-ratio:auto !important;
+      border-radius:12px;
     }
 
-    /* Kartenraster */
-    .grid{
-      display:grid;
-      gap:24px;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    }
+    /* Cards/Grid */
+    .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.06)}
     .card.no-img .inner{display:block;padding:18px 18px 20px}
     .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
     .card h3{margin:12px 0 6px}
     .meta{opacity:.7}
 
-    /* Header-Navigation (minimal responsive) */
+    /* Header-Navigation */
     .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
     .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{color:#ffc94d;text-decoration:none;font-weight:600}
@@ -62,13 +63,11 @@
 </head>
 
 <body class="resonanzraum">
-  <!-- Site-Header + Navigation -->
+  <!-- Header + Navigation -->
   <header class="site-header">
     <div class="nav-container">
       <a class="brand" href="../../index.html">Sinnwärts Studio</a>
-
       <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-
       <nav aria-label="Hauptnavigation">
         <ul class="nav-list">
           <li><a href="../../index.html">Start</a></li>
@@ -81,12 +80,10 @@
     </div>
   </header>
 
-  <!-- Hero-Header (nur Bild, kein Text) -->
+  <!-- Hero nur Bild -->
   <header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum">
-    <img
-      src="../../images/integrale-lebenspr.jpg"
-      alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
-      loading="eager" fetchpriority="high" decoding="async">
+    <img src="../../images/integrale-lebenspr.jpg"
+         alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best">
   </header>
 
   <!-- Inhalt -->
@@ -98,7 +95,7 @@
     <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
   </main>
 
-  <!-- JS: Menü-Toggle + Blog-Posts laden -->
+  <!-- JS -->
   <script>
     // Mobile-Menü
     (function(){
@@ -112,45 +109,45 @@
       }
     })();
 
-    // Posts laden (posts.json liegt im selben Ordner wie diese Datei)
+    // Posts laden
     (function(){
       const statusEl = document.getElementById('status');
       const gridEl = document.getElementById('grid');
-      const setStatus = (msg) => { if(statusEl) statusEl.textContent = msg; };
+      const setStatus = (m)=>{ if(statusEl) statusEl.textContent=m; };
 
       fetch('posts.json?v=' + Date.now())
         .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
         .then(posts => {
           if(!Array.isArray(posts)) throw new Error('Ungültiges JSON (Array erwartet).');
-          posts.sort((a,b) => String(b.date).localeCompare(String(a.date)));
+          posts.sort((a,b)=> String(b.date).localeCompare(String(a.date)));
 
-          const html = posts.map(p => {
-            const slug   = String(p.slug||'').trim();
-            const title  = String(p.title||'Ohne Titel');
-            const date   = String(p.date||'');
-            const read   = String(p.read||'');
-            const teaser = String(p.teaser||'');
-            const img    = String(p.img||'');
-            const cls    = 'card' + (img ? '' : ' no-img');
+          const html = posts.map(p=>{
+            const slug=String(p.slug||'').trim();
+            const title=String(p.title||'Ohne Titel');
+            const date=String(p.date||'');
+            const read=String(p.read||'');
+            const teaser=String(p.teaser||'');
+            const img=String(p.img||'');
+            const cls='card'+(img?'':' no-img');
 
             return (
               '<article class="'+cls+'">'+
-                '<a class="inner" href="'+ slug +'.html">'+
-                  (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
-                  '<h3>'+ title +'</h3>'+
-                  '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
-                  (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
+                '<a class="inner" href="'+slug+'.html">'+
+                  (img?'<img src="'+img+'" alt="'+title.replace(/"/g,'&quot;')+'" loading="lazy">':'')+
+                  '<h3>'+title+'</h3>'+
+                  '<p class="meta">'+(date?date+' · ':'')+(read?('ca. '+read+' Min'):'')+'</p>'+
+                  (teaser?'<p class="teaser">'+teaser+'</p>':'')+
                 '</a>'+
               '</article>'
             );
           }).join('');
 
           gridEl.innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
-          setStatus(posts.length + ' Beitrag' + (posts.length===1?'':'e') + ' geladen.');
+          setStatus(posts.length+' Beitrag'+(posts.length===1?'':'e')+' geladen.');
         })
-        .catch(err => {
+        .catch(err=>{
           console.error('Blog fetch error:', err);
-          setStatus('Fehler beim Laden: ' + err.message);
+          setStatus('Fehler beim Laden: '+err.message);
         });
     })();
   </script>

@@ -89,30 +89,30 @@
        alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
        style="display:block;width:100%;height:auto;max-width:100%;border-radius:12px;">
 </header>
-  <!-- Inhalt -->
-  <main class="wrap">
-    <h1>Resonanzraum</h1>
-    <p class="sub">Weniger Rauschen. Mehr Richtung.</p>
+<!-- Inhalt -->
+<main class="wrap">
+  <div style="margin:.5rem 0 1rem">
+    <a class="btn" id="back-to-resonanzraum" href="../../resonanzraum.html" style="display:inline-flex;align-items:center;gap:.5rem">
+      ← Zurück zum Resonanzraum
+    </a>
+  </div>
 
-    <div id="grid" class="grid" aria-live="polite"></div>
-    <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
-  </main>
-<div class="wrap" style="margin:12px auto 0; padding:0 24px;">
-  <a class="btn" href="../../resonanzraum.html" id="back-to-resonanzraum"
-     style="display:inline-flex; align-items:center; gap:.5rem;">
-    ← Zurück zum Resonanzraum
-  </a>
-</div>
+  <h1>Resonanzraum</h1>
+  <p class="sub">Weniger Rauschen. Mehr Richtung.</p>
+
+  <div id="grid" class="grid" aria-live="polite"></div>
+  <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
+</main>
 
 <script>
-  // Wenn es eine Verlaufsseite gibt, nutze history.back(); sonst Fallback-Link.
+  // Nutze history.back() wenn möglich, sonst Fallback-Link
   (function(){
     var a = document.getElementById('back-to-resonanzraum');
     if(!a) return;
     a.addEventListener('click', function(e){
       if (window.history.length > 1) {
         e.preventDefault();
-        window.history.back();
+        history.back();
       }
     });
   })();

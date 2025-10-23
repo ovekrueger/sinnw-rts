@@ -540,3 +540,18 @@ body.resonanzraum a.button:visited{
   </picture>
   <div class="inner" aria-hidden="true"></div>
 </section>
+/* Hero: alle alten Höhen/Cover-Regeln aushebeln */
+.resonanzraum .blog-hero{height:auto !important; min-height:0 !important; overflow:visible !important;}
+.resonanzraum .blog-hero img{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:initial !important;
+  object-position:initial !important;
+  aspect-ratio:auto !important;
+  border-radius:12px;
+}
+/* Sicherheit: keine pseudo Overlays */
+.resonanzraum .blog-hero::before,
+.resonanzraum .blog-hero::after{content:none !important;}

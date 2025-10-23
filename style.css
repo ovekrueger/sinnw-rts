@@ -555,17 +555,4 @@ body.resonanzraum a.button:visited{
 /* Sicherheit: keine pseudo Overlays */
 .resonanzraum .blog-hero::before,
 .resonanzraum .blog-hero::after{content:none !important;}
-/* Fade-in + Parallax-Basis */
-.fx-hero{position:relative;max-width:1100px;margin:clamp(12px,3vw,24px) auto;border-radius:12px;overflow:hidden}
-.fx-hero-img{display:block;width:100%;height:auto;border-radius:12px;
-  opacity:0; transform:translateY(12px); transition:opacity .8s ease, transform .8s ease}
-.fx-hero.is-visible .fx-hero-img{opacity:1; transform:translateY(0)}
 
-/* Parallax: Bild leicht verschieben */
-.fx-hero .fx-hero-img{will-change:transform}
-
-/* Barrierefreiheit: Nutzer*innen mit „Bewegung reduzieren“ => keine Parallax */
-@media (prefers-reduced-motion: reduce){
-  .fx-hero-img{transition:none}
-  .fx-hero.is-parallax .fx-hero-img{transform:none !important}
-}

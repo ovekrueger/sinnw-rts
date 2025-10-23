@@ -555,4 +555,28 @@ body.resonanzraum a.button:visited{
 /* Sicherheit: keine pseudo Overlays */
 .resonanzraum .blog-hero::before,
 .resonanzraum .blog-hero::after{content:none !important;}
-
+/* Navigation: genau EIN Underline für aktiv */
+.nav-list a{
+  position:relative;
+  text-decoration:none;           /* Basis: keine Unterstreichung */
+}
+.nav-list a:hover{
+  text-decoration:none;           /* kein 2. Strich beim Hover */
+  opacity:1;
+}
+.nav-list a.active,
+.nav-list a[aria-current="page"]{
+  text-decoration:none;           /* wichtig: Unterstreichung aus */
+}
+.nav-list a.active::after,
+.nav-list a[aria-current="page"]::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-6px;
+  height:2px;
+  background: var(--accent, #ffc94d); /* dein Gold */
+  border-radius:2px;
+}
+/* bitte löschen oder auskommentieren, falls vorhanden */
+.nav-list a:hover,
+.nav-list a.active{ text-decoration: underline; }

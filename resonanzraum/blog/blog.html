@@ -92,30 +92,29 @@
 <!-- Inhalt -->
 <main class="wrap">
   <div style="margin:.5rem 0 1rem">
-    <a class="btn" id="back-to-resonanzraum" href="../../resonanzraum.html" style="display:inline-flex;align-items:center;gap:.5rem">
-      ← Zurück zum Resonanzraum
-    </a>
-  </div>
-
-  <h1>Resonanzraum</h1>
-  <p class="sub">Weniger Rauschen. Mehr Richtung.</p>
-
-  <div id="grid" class="grid" aria-live="polite"></div>
-  <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
-</main>
+  <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
+     style="display:inline-flex;align-items:center;gap:.5rem">
+    ← Zurück zum Resonanzraum
+  </a>
+</div>
 
 <script>
-  // Nutze history.back() wenn möglich, sonst Fallback-Link
-  (function(){
-    var a = document.getElementById('back-to-resonanzraum');
-    if(!a) return;
-    a.addEventListener('click', function(e){
-      if (window.history.length > 1) {
-        e.preventDefault();
-        history.back();
-      }
+  (function () {
+    var a = document.getElementById('back-to-reso');
+    if (!a) return;
+
+    a.addEventListener('click', function (e) {
+      try {
+        var ref = document.referrer;
+        var same = ref && new URL(ref).origin === location.origin;
+        if (same && history.length > 1) {
+          e.preventDefault();
+          history.back();
+        }
+      } catch (_) { /* Fallback: Link führt nach /resonanzraum.html */ }
     });
   })();
+</script>
 </script>
   <!-- JS -->
   <script>

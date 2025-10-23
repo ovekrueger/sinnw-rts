@@ -580,3 +580,40 @@ body.resonanzraum a.button:visited{
 /* bitte löschen oder auskommentieren, falls vorhanden */
 .nav-list a:hover,
 .nav-list a.active{ text-decoration: underline; }
+/* === NAV: genau 1 Unterstreichung, sauber überschrieben === */
+.site-header .nav-list a{
+  position: relative;
+  text-decoration: none !important;   /* nie Browser-Underline */
+}
+
+.site-header .nav-list a:hover,
+.site-header .nav-list a:focus,
+.site-header .nav-list a:active,
+.site-header .nav-list a:visited{
+  text-decoration: none !important;   /* auch im Zustand keine zweite Linie */
+}
+
+/* Linie via ::after steuern */
+.site-header .nav-list a::after{
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -6px;
+  height: 2px; border-radius: 2px;
+  background: transparent;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease, background-color .18s ease, opacity .18s ease;
+  opacity: .9;
+}
+
+/* Hover = weiß */
+.site-header .nav-list a:hover::after{
+  background: rgba(255,255,255,.85);
+  transform: scaleX(1);
+}
+
+/* Aktiv/aktuelle Seite = gold */
+.site-header .nav-list a.active::after,
+.site-header .nav-list a[aria-current="page"]::after{
+  background: var(--accent, #ffc94d);
+  transform: scaleX(1);
+}

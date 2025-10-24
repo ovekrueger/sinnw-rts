@@ -89,16 +89,23 @@
        alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
        style="display:block;width:100%;height:auto;max-width:100%;border-radius:12px;">
 </header>
-<!-- Inhalt -->
+
+<<!-- Inhalt -->
 <main class="wrap">
   <div style="margin:.5rem 0 1rem">
-  <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
-     style="display:inline-flex;align-items:center;gap:.5rem">
-    ← Zurück zum Resonanzraum
-  </a>
-</div>
+    <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
+       style="display:inline-flex;align-items:center;gap:.5rem">
+      ← Zurück zum Resonanzraum
+    </a>
+  </div>
 
-<script>
+  <!-- Grid-Container (neu: außerhalb des Links) -->
+  <section>
+    <p id="status" class="meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+>
   (function () {
     var a = document.getElementById('back-to-reso');
     if (!a) return;
@@ -115,7 +122,7 @@
     });
   })();
 </script>
-</script>
+
   <!-- JS -->
   <script>
     // Mobile-Menü

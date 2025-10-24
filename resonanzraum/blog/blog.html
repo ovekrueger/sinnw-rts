@@ -57,14 +57,21 @@
     </div>
   </header>
 
-<!-- Hero -->
-<figure class="blog-hero">
-  <img id="hero-img"
-       src="../../images/integrale-lebenspr.png"
-       alt="Integrale Lebenspraxis – Figur auf farbiger Fläche"
-       width="1600" height="520"
-       loading="eager" decoding="sync">
-</figure>
+<!-- Hero (stabil, kein Cropping, kein Flackern) -->
+<div
+  class="blog-hero-stable"
+  role="img"
+  aria-label="Integrale Lebenspraxis – Figur auf farbiger Fläche"
+  style="
+    max-width:1100px;
+    margin:16px auto;
+    border-radius:12px;
+    background:#0b0f12 url('../../images/integrale-lebenspr.png') center center / contain no-repeat;
+    aspect-ratio: 21 / 7;     /* Höhe nach Geschmack: 21/7 ≈ flacher Banner; nimm 21/9 für höher */
+    display:block !important;
+    overflow:visible !important;
+  ">
+</div>
   <main class="wrap">
     <div style="margin:.5rem 0 1rem">
       <a class="btn btn-gold" href="/resonanzraum.html"

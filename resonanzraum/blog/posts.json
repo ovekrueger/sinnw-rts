@@ -1,78 +1,37 @@
-
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
-
-  <!-- Pfade: blog.html liegt in /resonanzraum/blog/  → CSS im Root = ../../style.css -->
-  <link rel="stylesheet" href="../../style.css">
-
- 
-</head>
-
-<body class="resonanzraum">
-  <!-- Pfad zur Startseite im Root → ../../index.html -->
-  <header class="site-header">
-    <a class="brand" href="../../index.html">Sinnwärts Studio</a>
-  </header>
-
-  <main class="wrap">
-    <h1>Resonanzraum</h1>
-    <p class="sub">Weniger Rauschen. Mehr Richtung.</p>
-
-    <div id="grid" class="grid" aria-live="polite"></div>
-    <p id="status" class="meta" role="status" style="margin-top:16px;"></p>
-  </main>
-
-  <script>
-  (function(){
-    var statusEl = document.getElementById('status');
-    function setStatus(msg){ if(statusEl){ statusEl.textContent = msg; } }
-
-    // posts.json liegt im selben Ordner wie diese Datei
-    var DATA_URL = 'posts.json?v=' + Date.now();
-
-    fetch(DATA_URL)
-      .then(function(r){
-        if(!r.ok) throw new Error('HTTP '+r.status+' ('+DATA_URL+')');
-        return r.json();
-      })
-      .then(function(posts){
-        if(!Array.isArray(posts)) throw new Error('Ungültiges JSON (Array erwartet).');
-
-        posts.sort(function(a,b){ return String(b.date).localeCompare(String(a.date)); });
-
-       var html = posts.map(function(p){
-  var slug   = String(p.slug||'').trim();
-  var title  = String(p.title||'Ohne Titel');
-  var date   = String(p.date||'');
-  var read   = String(p.read||'');
-  var teaser = String(p.teaser||'');
-  var img    = String(p.img||'');      // kann leer sein
-  var cls    = 'card' + (img ? '' : ' no-img');
-
-  return (
-    '<article class="'+cls+'">'+
-      '<a class="inner" href="'+ slug +'.html">'+
-        (img ? '<img src="'+ img +'" alt="'+ title.replace(/"/g,'&quot;') +'" loading="lazy">' : '')+
-        '<h3>'+ title +'</h3>'+
-        '<p class="meta">'+ (date?date+' · ':'') + (read?('ca. '+read+' Min'):'') +'</p>'+
-        (teaser ? '<p class="teaser">'+ teaser +'</p>' : '')+
-      '</a>'+
-    '</article>'
-  );
-}).join('');
-
-        document.getElementById('grid').innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
-        setStatus(posts.length + ' Beitrag' + (posts.length===1?'':'e') + ' geladen.');
-      })
-      .catch(function(err){
-        console.error('Blog fetch error:', err);
-        setStatus('Fehler beim Laden: ' + err.message);
-      });
-  })();
-  </script>
-</body>
-</html>
+[
+  {
+    "slug": "resonanzraum-001",
+    "title": "Wenn der Lärm in dir still wird",
+    "date": "2025-10-17",
+    "read": 7,
+    "teaser": "Wenn der äußere Lärm fällt, bleibt erst einmal der innere. Genau dort beginnt Orientierung."
+  },
+  {
+    "slug": "sucht-sucht-sinn",
+    "title": "Sucht sucht Sinn: Warum Kontrolle allein nicht wirkt",
+    "date": "2025-10-18",
+    "read": 5,
+    "teaser": "Neurotransmitter, Bedürfnisse, Würde: ein integraler Blick auf Abhängigkeit ohne Moralkeule."
+  },
+  {
+    "slug": "overload",
+    "title": "Overload → Flow – Eine Einladung zur integralen Lebenspraxis",
+    "date": "2025-10-21",
+    "read": 6,
+    "teaser": "Wir leben in einer Zeit, in der das Tempo der Welt schneller steigt, als unsere Fähigkeit innerlich Schritt zu halten. Diese Serie ist eine Einladung, innezuhalten – und die Welle zu reiten, statt von ihr überrollt zu werden."
+  },
+  {
+    "slug": "klarheitskompass",
+    "title": "Klarheitskompass: Denken · Fühlen · Handeln · Sein",
+    "date": "2025-10-24",
+    "read": 6,
+    "teaser": "Wie der innere Kompass Entscheidungen entgiftet – und Orientierung in stürmischen Zeiten gibt."
+  },
+  {
+    "slug": "mikrostopp",
+    "title": "Stop heißt Willkommen: Mikro-Stopps im Alltag",
+    "date": "2025-10-24",
+    "read": 5,
+    "teaser": "Fünf kleine Stop-Impulse, die Momentum bremsen und Selbstführung stärken."
+  }
+]

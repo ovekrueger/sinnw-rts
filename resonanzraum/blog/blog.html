@@ -11,17 +11,14 @@
   <!-- Lokale Ergänzungen -->
   <style>
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-    /* Hero: Bild vollständig anzeigen */
     .blog-hero{max-width:1100px;margin:16px auto;border-radius:12px;overflow:hidden;line-height:0;background:#0b0f12}
     .blog-hero img{display:block;width:100%;height:auto;border-radius:12px}
-    /* Grid/Cards */
     .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.08)}
     .card.no-img .inner{display:block;padding:18px 18px 20px}
     .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
     .card h3{margin:12px 0 6px}
     .meta{opacity:.7}
-    /* Header/Nav */
     .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
     .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{color:#ffc94d;text-decoration:none;font-weight:600}
@@ -43,7 +40,7 @@
 </head>
 
 <body class="resonanzraum">
-  <!-- Header + Navigation -->
+  <!-- Header -->
   <header class="site-header">
     <div class="nav-container">
       <a class="brand" href="../../index.html">Sinnwärts Studio</a>
@@ -53,7 +50,6 @@
           <li><a href="../../index.html">Start</a></li>
           <li><a href="../../ueber-mich.html">Über mich</a></li>
           <li><a href="../../angebot.html">Angebote</a></li>
-          <!-- HIER: aktiv und auf DIESE Seite zeigen -->
           <li><a class="active" aria-current="page" href="blog.html">Resonanzraum</a></li>
           <li><a href="../../kontakt.html">Kontakt</a></li>
         </ul>
@@ -61,21 +57,21 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum">
-    <img id="hero-img"
-         src="../../images/integrale-lebenspr.png"
+    <img src="../../images/integrale-lebenspr.png"
          alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best" />
   </header>
 
   <!-- Inhalt -->
   <main class="wrap">
-    <div style="margin:.5rem 1px 1rem">
-      <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
-         style="display:inline-flex;align-items:center;gap:.5rem">← Zurück zum Resonanzraum</a>
+    <div style="margin:.5rem 0 1rem">
+      <a class="btn btn-gold" href="/resonanzraum.html"
+         style="display:inline-flex;align-items:center;gap:.5rem">
+         ← Zurück zum Resonanzraum
+      </a>
     </div>
 
-    <!-- Grid-Container -->
     <section>
       <p id="status" class="meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
       <div id="grid" class="grid"></div>
@@ -86,67 +82,46 @@
   <script>
     // Mobile-Menü
     (function(){
-      const btn = document.querySelector('.menu-toggle');
-      const list = document.querySelector('.nav-list');
-      if(btn && list){
-        btn.addEventListener('click', () => {
-          const open = list.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      const btn=document.querySelector('.menu-toggle');
+      const list=document.querySelector('.nav-list');
+      if(btn&&list){
+        btn.addEventListener('click',()=>{
+          const open=list.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded',open?'true':'false');
         });
       }
     })();
 
-    // Zurück-Link: wenn von interner Seite, dann history.back()
-    (function () {
-      var a = document.getElementById('back-to-reso');
-      if (!a) return;
-      a.addEventListener('click', function (e) {
-        try {
-          var ref = document.referrer;
-          var same = ref && new URL(ref).origin === location.origin;
-          if (same && history.length > 1) { e.preventDefault(); history.back(); }
-        } catch(_) {}
-      });
-    })();
-
-    // Posts laden (aus posts.json)
+    // Blogposts laden
     (function(){
-      const statusEl = document.getElementById('status');
-      const gridEl = document.getElementById('grid');
-      const setStatus = (m)=>{ if(statusEl) statusEl.textContent=m; };
+      const status=document.getElementById('status');
+      const grid=document.getElementById('grid');
+      const setStatus=m=>status.textContent=m;
 
-      fetch('posts.json?v=' + Date.now())
-        .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
-        .then(posts => {
-          if(!Array.isArray(posts)) throw new Error('Ungültiges JSON (Array erwartet).');
-          posts.sort((a,b)=> String(b.date).localeCompare(String(a.date)));
-
-          const html = posts.map(p=>{
-            const slug = String(p.slug||'').trim();
-            const title = String(p.title||'Ohne Titel');
-            const date = String(p.date||'');
-            const read = String(p.read||'');
-            const teaser = String(p.teaser||'');
-            const img = String(p.img||''); // optional
-            const cls = 'card' + (img ? '' : ' no-img');
-
-            return (
-              '<article class="'+cls+'">'+
-                '<a class="inner" href="'+slug+'.html">'+
-                  (img?'<img src="'+img+'" alt="'+title.replace(/"/g,'&quot;')+'" loading="lazy">':'')+
-                  '<h3>'+title+'</h3>'+
-                  '<p class="meta">'+(date?date+' · ':'')+(read?('ca. '+read+' Min'):'')+'</p>'+
-                  (teaser?'<p class="teaser">'+teaser+'</p>':'')+
-                '</a>'+
-              '</article>'
-            );
+      fetch('posts.json?v='+Date.now())
+        .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+        .then(posts=>{
+          if(!Array.isArray(posts))throw new Error('Ungültiges JSON.');
+          posts.sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+          grid.innerHTML=posts.map(p=>{
+            const slug=p.slug||'';
+            const title=p.title||'Ohne Titel';
+            const date=p.date||'';
+            const read=p.read||'';
+            const teaser=p.teaser||'';
+            return `
+              <article class="card no-img">
+                <a class="inner" href="${slug}.html">
+                  <h3>${title}</h3>
+                  <p class="meta">${date} · ca. ${read} Min</p>
+                  <p class="teaser">${teaser}</p>
+                </a>
+              </article>`;
           }).join('');
-
-          gridEl.innerHTML = html || '<p class="meta">Noch keine Beiträge.</p>';
-          setStatus(posts.length+' Beitrag'+(posts.length===1?'':'e')+' geladen.');
+          setStatus(posts.length+' Beiträge geladen.');
         })
         .catch(err=>{
-          console.error('Blog fetch error:', err);
+          console.error(err);
           setStatus('Fehler beim Laden: '+err.message);
         });
     })();

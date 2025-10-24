@@ -347,3 +347,14 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   margin:0; color:#fff; letter-spacing:.2px; line-height:1.15;
   font-size:clamp(1.6rem,3.2vw,2.6rem);
 }
+/* Hero: wirklich unbeschnitten */
+.blog-hero{max-width:1100px;margin:16px auto;border-radius:12px;overflow:visible}
+.blog-hero img{
+  display:block;
+  width:100% !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  aspect-ratio:auto !important;
+  border-radius:12px;
+}

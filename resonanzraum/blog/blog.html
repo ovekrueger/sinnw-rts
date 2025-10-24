@@ -1,46 +1,27 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
 
-  <!-- Basis-Styles (Repo-Root) -->
-  <link rel="stylesheet" href="../../style.css">
+  <!-- Basis-Styles -->
+  <link rel="stylesheet" href="../../style.css" />
 
-  <!-- Lokale Ergänzungen (keine Doppelungen) -->
+  <!-- Lokale Ergänzungen -->
   <style>
-    /* Layout */
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-
-    /* Hero: komplettes Bild, kein Cropping */
-    .resonanzraum .blog-hero{
-      max-width:1100px;
-      margin:clamp(12px,3vw,24px) auto;
-      border-radius:12px;
-      overflow:hidden;
-      background:#0b0f12;
-      line-height:0;
-    }
-    .resonanzraum .blog-hero img{
-      display:block;
-      width:100% !important;
-      height:auto !important;
-      object-fit:unset !important;
-      object-position:unset !important;
-      aspect-ratio:auto !important;
-      border-radius:12px;
-    }
-
-    /* Cards/Grid */
+    /* Hero: Bild vollständig anzeigen */
+    .blog-hero{max-width:1100px;margin:16px auto;border-radius:12px;overflow:hidden;line-height:0;background:#0b0f12}
+    .blog-hero img{display:block;width:100%;height:auto;border-radius:12px}
+    /* Grid/Cards */
     .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.06)}
+    .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.08)}
     .card.no-img .inner{display:block;padding:18px 18px 20px}
     .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
     .card h3{margin:12px 0 6px}
     .meta{opacity:.7}
-
-    /* Header-Navigation */
+    /* Header/Nav */
     .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
     .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{color:#ffc94d;text-decoration:none;font-weight:600}
@@ -48,7 +29,6 @@
     .nav-list a{color:#fff;text-decoration:none;opacity:.9}
     .nav-list a:hover,.nav-list a.active{opacity:1;text-underline-offset:4px;text-decoration:underline}
     .menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.4rem;line-height:1}
-
     @media (max-width:800px){
       .menu-toggle{display:block;margin-left:auto}
       nav[aria-label="Hauptnavigation"]{position:relative}
@@ -73,55 +53,34 @@
           <li><a href="../../index.html">Start</a></li>
           <li><a href="../../ueber-mich.html">Über mich</a></li>
           <li><a href="../../angebot.html">Angebote</a></li>
-          <li><a class="active" aria-current="page" href="../../resonanzraum.html">Resonanzraum</a></li>
+          <!-- HIER: aktiv und auf DIESE Seite zeigen -->
+          <li><a class="active" aria-current="page" href="blog.html">Resonanzraum</a></li>
           <li><a href="../../kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
+  <!-- HERO -->
+  <header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum">
+    <img id="hero-img"
+         src="../../images/integrale-lebenspr.png"
+         alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best" />
+  </header>
 
-<!-- HERO: unbeschnitten, ganze Höhe -->
-<header class="blog-hero" role="banner" aria-label="Headerbild Resonanzraum"
-        style="max-width:1100px;margin:16px auto;border-radius:12px;overflow:visible;">
-  <img id="hero-img"
-       src="../../images/integrale-lebenspr.png"
-       alt="Integrale Lebenspraxis – Figur auf farbiger Fläche, Kontinuum, Do your best"
-       style="display:block;width:100%;height:auto;max-width:100%;border-radius:12px;">
-</header>
+  <!-- Inhalt -->
+  <main class="wrap">
+    <div style="margin:.5rem 1px 1rem">
+      <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
+         style="display:inline-flex;align-items:center;gap:.5rem">← Zurück zum Resonanzraum</a>
+    </div>
 
-<<!-- Inhalt -->
-<main class="wrap">
-  <div style="margin:.5rem 0 1rem">
-    <a class="btn btn-gold" id="back-to-reso" href="/resonanzraum.html"
-       style="display:inline-flex;align-items:center;gap:.5rem">
-      ← Zurück zum Resonanzraum
-    </a>
-  </div>
-
-  <!-- Grid-Container (neu: außerhalb des Links) -->
-  <section>
-    <p id="status" class="meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
-    <div id="grid" class="grid"></div>
-  </section>
-</main>
->
-  (function () {
-    var a = document.getElementById('back-to-reso');
-    if (!a) return;
-
-    a.addEventListener('click', function (e) {
-      try {
-        var ref = document.referrer;
-        var same = ref && new URL(ref).origin === location.origin;
-        if (same && history.length > 1) {
-          e.preventDefault();
-          history.back();
-        }
-      } catch (_) { /* Fallback: Link führt nach /resonanzraum.html */ }
-    });
-  })();
-</script>
+    <!-- Grid-Container -->
+    <section>
+      <p id="status" class="meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
 
   <!-- JS -->
   <script>
@@ -137,7 +96,20 @@
       }
     })();
 
-    // Posts laden
+    // Zurück-Link: wenn von interner Seite, dann history.back()
+    (function () {
+      var a = document.getElementById('back-to-reso');
+      if (!a) return;
+      a.addEventListener('click', function (e) {
+        try {
+          var ref = document.referrer;
+          var same = ref && new URL(ref).origin === location.origin;
+          if (same && history.length > 1) { e.preventDefault(); history.back(); }
+        } catch(_) {}
+      });
+    })();
+
+    // Posts laden (aus posts.json)
     (function(){
       const statusEl = document.getElementById('status');
       const gridEl = document.getElementById('grid');
@@ -150,13 +122,13 @@
           posts.sort((a,b)=> String(b.date).localeCompare(String(a.date)));
 
           const html = posts.map(p=>{
-            const slug=String(p.slug||'').trim();
-            const title=String(p.title||'Ohne Titel');
-            const date=String(p.date||'');
-            const read=String(p.read||'');
-            const teaser=String(p.teaser||'');
-            const img=String(p.img||'');
-            const cls='card'+(img?'':' no-img');
+            const slug = String(p.slug||'').trim();
+            const title = String(p.title||'Ohne Titel');
+            const date = String(p.date||'');
+            const read = String(p.read||'');
+            const teaser = String(p.teaser||'');
+            const img = String(p.img||''); // optional
+            const cls = 'card' + (img ? '' : ' no-img');
 
             return (
               '<article class="'+cls+'">'+

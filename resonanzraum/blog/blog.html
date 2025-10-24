@@ -11,14 +11,16 @@
   <!-- Lokale Ergänzungen -->
   <style>
     .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-    .blog-hero{max-width:1100px;margin:16px auto;border-radius:12px;overflow:hidden;line-height:0;background:#0b0f12}
-    .blog-hero img{display:block;width:100%;height:auto;border-radius:12px}
+
+    /* Karten */
     .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
     .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.08)}
     .card.no-img .inner{display:block;padding:18px 18px 20px}
     .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
     .card h3{margin:12px 0 6px}
     .meta{opacity:.7}
+
+    /* Header/Nav */
     .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
     .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
     .brand{color:#ffc94d;text-decoration:none;font-weight:600}
@@ -35,6 +37,18 @@
         border-bottom:1px solid rgba(255,255,255,.08)
       }
       .nav-list.is-open{display:flex}
+    }
+
+    /* Hero stabil: kein Cropping, keine Fremd-Regeln */
+    .blog-hero-stable{
+      max-width:1100px;
+      margin:16px auto;
+      border-radius:12px;
+      background:#0b0f12 url("../../assets/og-start.jpg") center center / contain no-repeat;
+      /* ↑ Wenn dein Wunschbild vorhanden ist: ../../images/integrale-lebenspr.png einsetzen */
+      aspect-ratio:21/7; /* 21/9 oder 16/9 für höher */
+      display:block;
+      overflow:visible;
     }
   </style>
 </head>
@@ -57,27 +71,14 @@
     </div>
   </header>
 
-<!-- Hero (stabil, kein Cropping, kein Flackern) -->
-<div
-  class="blog-hero-stable"
-  role="img"
-  aria-label="Integrale Lebenspraxis – Figur auf farbiger Fläche"
-  style="
-    max-width:1100px;
-    margin:16px auto;
-    border-radius:12px;
-    background:#0b0f12 url('../../images/integrale-lebenspr.png') center center / contain no-repeat;
-    aspect-ratio: 21 / 7;     /* Höhe nach Geschmack: 21/7 ≈ flacher Banner; nimm 21/9 für höher */
-    display:block !important;
-    overflow:visible !important;
-  ">
-</div>
+  <!-- Hero (stabil, ohne Cropping) -->
+  <div class="blog-hero-stable" role="img" aria-label="Resonanzraum Headerbild"></div>
+
+  <!-- Inhalt -->
   <main class="wrap">
     <div style="margin:.5rem 0 1rem">
       <a class="btn btn-gold" href="/resonanzraum.html"
-         style="display:inline-flex;align-items:center;gap:.5rem">
-         ← Zurück zum Resonanzraum
-      </a>
+         style="display:inline-flex;align-items:center;gap:.5rem">← Zurück zum Resonanzraum</a>
     </div>
 
     <section>
@@ -121,7 +122,7 @@
               <article class="card no-img">
                 <a class="inner" href="${slug}.html">
                   <h3>${title}</h3>
-                  <p class="meta">${date} · ca. ${read} Min</p>
+                  <p class="meta">${date}${read?' · ca. '+read+' Min':''}</p>
                   <p class="teaser">${teaser}</p>
                 </a>
               </article>`;

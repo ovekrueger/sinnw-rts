@@ -6,15 +6,15 @@
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
   <meta name="description" content="Archiv aller Blog-Beiträge im Resonanzraum von Ove Krüger – Sinnwärts Studio." />
 
-  <!-- Fonts (neutral, falls Global-CSS fehlt) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Hero Preload -->
-  <link rel="preload" as="image" href="/images/integrale-lebenspr.png">
+  <!-- Preload Hero -->
+  <link rel="preload" as="image" href="/images/integrale-lebenspr.png" />
 
-  <!-- Seite ist absichtlich SELBSTENTHALTEN (keine Abhängigkeit von ../../style.css) -->
+  <!-- Selbstenthaltener Stil (keine Abhängigkeit von ../../style.css) -->
   <style>
     :root{
       --bg:#0b0f12;
@@ -29,7 +29,7 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 
-    /* Header / Nav – minimal & unabhängig */
+    /* Header / Nav */
     .rr-header{position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--border)}
     .rr-nav{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px}
     .rr-brand{color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.02em}
@@ -38,25 +38,25 @@
     .rr-menu a[aria-current="page"], .rr-menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
     @media (max-width:760px){ .rr-menu{gap:12px;font-size:.95rem} }
 
-    /* Wrap / Blöcke */
+    /* Layout */
     .rr-wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
     .rr-block{margin:24px 0}
 
-    /* HERO – garantiert sichtbar, keine Fremdregeln */
+    /* Bild-Hero ohne Beschnitt */
     .rr-hero{
-      width:100%;
       max-width:var(--wrap);
       margin:16px auto 8px;
       border-radius:12px;
-      background:#0b0f12 url("/images/integrale-lebenspr.png") center center / cover no-repeat;
-      aspect-ratio:21/7;
+      overflow:hidden; /* Rundung clippt das Bild */
+    }
+    .rr-hero img{
       display:block;
-      overflow:visible;
+      width:100%;
+      height:auto;     /* volle Breite, variable Höhe */
     }
 
     /* Button */
     .rr-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--gold);color:var(--gold);border-radius:10px;text-decoration:none}
-    .rr-eyebrow{letter-spacing:.12em;color:var(--muted);font-size:.8rem}
 
     /* Grid Karten */
     .rr-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
@@ -66,7 +66,7 @@
     .rr-meta{opacity:.75}
     .rr-teaser{opacity:.92}
 
-    /* To-top (optional) */
+    /* To-top */
     .rr-top{position:fixed;right:16px;bottom:16px;display:none;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);color:var(--text);text-decoration:none}
     .rr-top.show{display:grid}
   </style>
@@ -87,12 +87,10 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <div class="rr-hero" role="img" aria-label="Resonanzraum – Blog-Header"></div>
-  <noscript>
-    <img src="/images/integrale-lebenspr.png" alt="Resonanzraum – Blog-Header"
-         style="width:100%;max-width:1100px;border-radius:12px;display:block;margin:16px auto 8px;">
-  </noscript>
+  <!-- HERO (img, kein Beschnitt) -->
+  <div class="rr-hero">
+    <img src="/images/integrale-lebenspr.png" alt="Resonanzraum – Blog-Header">
+  </div>
 
   <!-- INHALT -->
   <main class="rr-wrap rr-block">
@@ -109,12 +107,12 @@
   <!-- TO TOP -->
   <a class="rr-top" id="toTop" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
 
-  <!-- FOOTER kurz -->
+  <!-- FOOTER -->
   <footer class="rr-wrap rr-block" style="text-align:center;opacity:.85;padding:2rem 0">
     <small>© <span id="y"></span> Ove Krüger · Sinnwärts Studio</small>
   </footer>
 
-  <!-- SCRIPTS (nur diese Seite, keine Fremdabhängigkeiten) -->
+  <!-- SCRIPTS (nur diese Seite) -->
   <script>
     // Jahr
     document.getElementById('y').textContent = new Date().getFullYear();

@@ -4,131 +4,151 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resonanzraum – Blog-Archiv | Sinnwärts Studio</title>
+  <meta name="description" content="Archiv aller Blog-Beiträge im Resonanzraum von Ove Krüger – Sinnwärts Studio." />
 
-  <!-- Basis-Styles -->
-  <link rel="stylesheet" href="../../style.css" />
+  <!-- Fonts (neutral, falls Global-CSS fehlt) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Lokale Ergänzungen -->
+  <!-- Hero Preload -->
+  <link rel="preload" as="image" href="/images/integrale-lebenspr.png">
+
+  <!-- Seite ist absichtlich SELBSTENTHALTEN (keine Abhängigkeit von ../../style.css) -->
   <style>
-    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    :root{
+      --bg:#0b0f12;
+      --card:#14181c;
+      --text:#eaeff3;
+      --muted:#9aa4ae;
+      --gold:#ffc94d;
+      --border:rgba(255,255,255,.08);
+      --radius:16px;
+      --wrap:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 
-    /* Karten */
-    .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{border-radius:16px;background:#14181c;border:1px solid rgba(255,255,255,.08)}
-    .card.no-img .inner{display:block;padding:18px 18px 20px}
-    .card img{display:block;width:100%;height:auto;border-radius:16px 16px 0 0}
-    .card h3{margin:12px 0 6px}
-    .meta{opacity:.7}
+    /* Header / Nav – minimal & unabhängig */
+    .rr-header{position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--border)}
+    .rr-nav{max-width:var(--wrap);margin:0 auto;display:flex;align-items:center;gap:16px;padding:12px 16px}
+    .rr-brand{color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.02em}
+    .rr-menu{list-style:none;display:flex;gap:18px;margin:0 0 0 auto;padding:0}
+    .rr-menu a{color:var(--text);text-decoration:none;opacity:.9}
+    .rr-menu a[aria-current="page"], .rr-menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+    @media (max-width:760px){ .rr-menu{gap:12px;font-size:.95rem} }
 
-    /* Header/Nav */
-    .site-header{position:sticky;top:0;background:#0b0f12;color:#fff;z-index:1000}
-    .nav-container{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
-    .brand{color:#ffc94d;text-decoration:none;font-weight:600}
-    .nav-list{list-style:none;display:flex;gap:16px;margin:0;padding:0}
-    .nav-list a{color:#fff;text-decoration:none;opacity:.9}
-    .nav-list a:hover,.nav-list a.active{opacity:1;text-underline-offset:4px;text-decoration:underline}
-    .menu-toggle{display:none;background:none;border:0;color:#fff;font-size:1.4rem;line-height:1}
-    @media (max-width:800px){
-      .menu-toggle{display:block;margin-left:auto}
-      nav[aria-label="Hauptnavigation"]{position:relative}
-      .nav-list{
-        display:none;flex-direction:column;gap:12px;background:#0b0f12;
-        position:absolute;left:0;right:0;top:42px;padding:12px 16px;
-        border-bottom:1px solid rgba(255,255,255,.08)
-      }
-      .nav-list.is-open{display:flex}
+    /* Wrap / Blöcke */
+    .rr-wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+    .rr-block{margin:24px 0}
+
+    /* HERO – garantiert sichtbar, keine Fremdregeln */
+    .rr-hero{
+      width:100%;
+      max-width:var(--wrap);
+      margin:16px auto 8px;
+      border-radius:12px;
+      background:#0b0f12 url("/images/integrale-lebenspr.png") center center / cover no-repeat;
+      aspect-ratio:21/7;
+      display:block;
+      overflow:visible;
     }
 
-<!-- Hero (Hard-Override, unabhängig von style.css) -->
-<div
-  role="img"
-  aria-label="Resonanzraum Headerbild"
-  style="
-    width:100%;
-    max-width:1100px;
-    margin:16px auto;
-    border-radius:12px;
-    background:#0b0f12 url('/images/integrale-lebenspr.png') center center / cover no-repeat;
-    aspect-ratio:21/7;
-    display:block;
-    overflow:visible;
-    outline:2px solid #ffc94d; /* Debug: sichtbarer Rahmen, später entfernen */
-  ">
-</div>
+    /* Button */
+    .rr-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .75rem;border:1.5px solid var(--gold);color:var(--gold);border-radius:10px;text-decoration:none}
+    .rr-eyebrow{letter-spacing:.12em;color:var(--muted);font-size:.8rem}
+
+    /* Grid Karten */
+    .rr-grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .rr-card{border-radius:var(--radius);background:var(--card);border:1px solid var(--border)}
+    .rr-card .inner{display:block;padding:18px 18px 20px;text-decoration:none;color:inherit}
+    .rr-card h3{margin:12px 0 6px}
+    .rr-meta{opacity:.75}
+    .rr-teaser{opacity:.92}
+
+    /* To-top (optional) */
+    .rr-top{position:fixed;right:16px;bottom:16px;display:none;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);color:var(--text);text-decoration:none}
+    .rr-top.show{display:grid}
   </style>
 </head>
 
 <body class="resonanzraum">
-  <!-- Header -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="../../index.html">Sinnwärts Studio</a>
-      <button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
-      <nav aria-label="Hauptnavigation">
-        <ul class="nav-list">
-          <li><a href="../../index.html">Start</a></li>
-          <li><a href="../../ueber-mich.html">Über mich</a></li>
-          <li><a href="../../angebot.html">Angebote</a></li>
-          <li><a class="active" aria-current="page" href="blog.html">Resonanzraum</a></li>
-          <li><a href="../../kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
+  <!-- HEADER -->
+  <header class="rr-header">
+    <div class="rr-nav">
+      <a class="rr-brand" href="/index.html">SINNWÄRTS STUDIO</a>
+      <ul class="rr-menu" aria-label="Hauptnavigation">
+        <li><a href="/index.html">Start</a></li>
+        <li><a href="/ueber-mich.html">Über mich</a></li>
+        <li><a href="/angebot.html">Angebote</a></li>
+        <li><a href="/resonanzraum.html" aria-current="page">Resonanzraum</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+      </ul>
     </div>
   </header>
 
-  <!-- Hero (stabil, ohne Cropping) -->
-  <div class="blog-hero-stable" role="img" aria-label="Resonanzraum Headerbild"></div>
+  <!-- HERO -->
+  <div class="rr-hero" role="img" aria-label="Resonanzraum – Blog-Header"></div>
+  <noscript>
+    <img src="/images/integrale-lebenspr.png" alt="Resonanzraum – Blog-Header"
+         style="width:100%;max-width:1100px;border-radius:12px;display:block;margin:16px auto 8px;">
+  </noscript>
 
-  <!-- Inhalt -->
-  <main class="wrap">
+  <!-- INHALT -->
+  <main class="rr-wrap rr-block">
     <div style="margin:.5rem 0 1rem">
-      <a class="btn btn-gold" href="/resonanzraum.html"
-         style="display:inline-flex;align-items:center;gap:.5rem">← Zurück zum Resonanzraum</a>
+      <a class="rr-btn" href="/resonanzraum.html">← Zurück zum Resonanzraum</a>
     </div>
 
-    <section>
-      <p id="status" class="meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
-      <div id="grid" class="grid"></div>
+    <section class="rr-block" aria-labelledby="blog-hd">
+      <p id="status" class="rr-meta" style="margin:.5rem 0 1rem">Lade Beiträge …</p>
+      <div id="grid" class="rr-grid" role="list"></div>
     </section>
   </main>
 
-  <!-- JS -->
+  <!-- TO TOP -->
+  <a class="rr-top" id="toTop" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+
+  <!-- FOOTER kurz -->
+  <footer class="rr-wrap rr-block" style="text-align:center;opacity:.85;padding:2rem 0">
+    <small>© <span id="y"></span> Ove Krüger · Sinnwärts Studio</small>
+  </footer>
+
+  <!-- SCRIPTS (nur diese Seite, keine Fremdabhängigkeiten) -->
   <script>
-    // Mobile-Menü
+    // Jahr
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // ToTop
     (function(){
-      const btn=document.querySelector('.menu-toggle');
-      const list=document.querySelector('.nav-list');
-      if(btn&&list){
-        btn.addEventListener('click',()=>{
-          const open=list.classList.toggle('is-open');
-          btn.setAttribute('aria-expanded',open?'true':'false');
-        });
-      }
+      const b=document.getElementById('toTop');
+      function on(){ b.classList.toggle('show', window.scrollY>600); }
+      window.addEventListener('scroll', on, {passive:true}); on();
     })();
 
-    // Blogposts laden
+    // Blogposts laden – aus /resonanzraum/blog/posts.json
     (function(){
       const status=document.getElementById('status');
       const grid=document.getElementById('grid');
       const setStatus=m=>status.textContent=m;
 
-      fetch('posts.json?v='+Date.now())
+      fetch('/resonanzraum/blog/posts.json?v='+Date.now())
         .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
         .then(posts=>{
           if(!Array.isArray(posts))throw new Error('Ungültiges JSON.');
           posts.sort((a,b)=>String(b.date).localeCompare(String(a.date)));
-          grid.innerHTML=posts.map(p=>{
-            const slug=p.slug||'';
-            const title=p.title||'Ohne Titel';
-            const date=p.date||'';
-            const read=p.read||'';
-            const teaser=p.teaser||'';
+          grid.innerHTML = posts.map(p=>{
+            const slug  = p.slug   || '';
+            const title = p.title  || 'Ohne Titel';
+            const date  = p.date   || '';
+            const read  = p.read   || '';
+            const teaser= p.teaser || '';
             return `
-              <article class="card no-img">
-                <a class="inner" href="${slug}.html">
+              <article class="rr-card" role="listitem">
+                <a class="inner" href="/resonanzraum/blog/${slug}.html">
                   <h3>${title}</h3>
-                  <p class="meta">${date}${read?' · ca. '+read+' Min':''}</p>
-                  <p class="teaser">${teaser}</p>
+                  <p class="rr-meta">${date}${read?' · ca. '+read+' Min':''}</p>
+                  <p class="rr-teaser">${teaser}</p>
                 </a>
               </article>`;
           }).join('');

@@ -463,3 +463,20 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   transform:translateY(-1px);
   border-color: rgba(212,175,55,.8);
 }
+/* 1) Hero minimal kompakter */
+.hero--neu{ min-height:50vh; }
+
+/* 2) Abstand unter H1 etwas enger */
+.hero--neu h1{ margin-bottom:.25rem; }
+
+/* 3) Eltern-Block: Luft nach unten */
+#eltern-workshop{ margin-bottom: 28px; }
+
+/* 4) Pills (falls noch nicht drin) */
+.pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.55rem .9rem;border-radius:999px;
+  border:1px solid rgba(212,175,55,.55);color:#d4af37;text-decoration:none;
+  transition:transform .12s ease,border-color .2s ease;
+}
+.pill:hover,.pill:focus-visible{ transform:translateY(-1px); border-color:rgba(212,175,55,.8); }

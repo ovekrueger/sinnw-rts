@@ -17,6 +17,25 @@
       --bg:#0b0f12; --text:#eaeff3; --muted:#9aa4ae; --gold:#ffc94d;
       --border:rgba(255,255,255,.08); --wrap:900px; --card:#14181c;
     }
+    
+  <!-- Self-contained styles -->
+  <style>
+    :root{
+      --bg:#0b0f12; --text:#eaeff3; --muted:#9aa4ae; --gold:#ffc94d;
+      --border:rgba(255,255,255,.08); --wrap:900px;
+    }
+    /* Einheitlicher Sinnwärts-Button (lokal) */
+.rr-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.55rem .9rem;border:1.5px solid var(--gold);
+  color:var(--gold);border-radius:10px;text-decoration:none;
+  font-weight:500;letter-spacing:.02em;transition:all .25s ease;
+}
+.rr-btn:hover{background:var(--gold);color:var(--bg);text-decoration:none}
+.rr-btn.center{display:flex;justify-content:center;margin:1.5rem auto}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+      font:17px/1.75 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
       font:17px/1.75 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}

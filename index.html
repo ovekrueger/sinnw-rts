@@ -117,37 +117,69 @@
 
 
 
-    <!-- HERO -->
-<section class="hero hero--XL hero--soft hero--low" style="position:relative; min-height:52vh;">
+<!-- HERO -->
+<section class="hero" style="position:relative; min-height:50vh; overflow:hidden;">
   <picture>
     <source srcset="images/start.strand.webp" type="image/webp">
     <img src="images/start.strand.png"
          alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
          class="hero-bg" width="1920" height="1080"
          loading="eager" fetchpriority="high"
-         style="object-fit:cover;object-position:center 70%; width:100%; height:100%;">
+         style="object-fit:cover; object-position:center 70%; width:100%; height:100%;">
   </picture>
 
   <!-- Scrim -->
-  <div class="hero-scrim" style="position:absolute; inset:0; background:rgba(0,0,0,.48); pointer-events:none;"></div>
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,.48); pointer-events:none;"></div>
 
-  <!-- Copy nach oben ins obere Drittel -->
- <div class="inner hero-copy">
-  <h1>Willkommen im Sinnwärts-Studio</h1>
+  <!-- Copy-Layer -->
+  <div style="
+        position:absolute; inset:0; z-index:2;
+        display:flex; flex-direction:column; gap:.75rem;
+        align-items:center; justify-content:flex-start;
+        padding-top:clamp(6vh, 9vh, 12vh);">
+    
+    <!-- H1 mittig -->
+    <h1 style="margin:0; text-align:center; text-shadow:0 2px 8px rgba(0,0,0,.45);">
+      Willkommen im Sinnwärts-Studio
+    </h1>
 
-  <div class="hero-text">
-    <p class="sub sub--lead">
-      <strong>Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
-      Eltern und Kinder verlieren sich im Dauerrauschen.<br>
-      <strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen
-      und wieder bei sich anzukommen.
-    </p>
-    <p class="sub sub-strong">
-      Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
-    </p>
+    <!-- Text links (Desktop), mobil zentriert -->
+    <div style="
+          width:100%; max-width:1200px;
+          display:block;">
+      <div style="
+            max-width:720px; 
+            margin-top:.25rem;
+            text-align:left;
+            margin-left:clamp(16px, 10vw, 320px);
+            color:#f2f2f2;
+            ">
+        <p style="margin:0 0 .35rem 0; line-height:1.5; text-shadow:0 2px 8px rgba(0,0,0,.45);">
+          <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
+          Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
+          Eltern und Kinder verlieren sich im Dauerrauschen.<br>
+          <strong style="color:#d4af37;">Sinnwärts hilft,</strong> den Kreislauf zu verstehen,
+          das Nervensystem zu beruhigen und wieder bei sich anzukommen.
+        </p>
+        <p style="margin:0; line-height:1.45; text-shadow:0 2px 8px rgba(0,0,0,.45);">
+          Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
 </section>
+
+<!-- Mobile-Zentrierung (optional, falls kein globales CSS): -->
+<style>
+@media (max-width: 980px){
+  .hero div[style*="max-width:720px"]{
+    margin-left:auto !important;
+    margin-right:auto !important;
+    text-align:center !important;
+    padding:0 1rem;
+  }
+}
+</style>
     <!-- CTA direkt unter dem Hero -->
     <section class="cta-under-hero" aria-labelledby="cta-start">
       <div class="wrap tac">

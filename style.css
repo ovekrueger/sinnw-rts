@@ -498,3 +498,4 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
     align-self: start;                /* Sicherheitsgurt je Column */
   }
 }
+.zz-media img{ margin-top: 0 !important; }

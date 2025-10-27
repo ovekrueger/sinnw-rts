@@ -117,66 +117,79 @@
 
 
 
-<!-- HERO -->
-<section class="hero" style="position:relative; min-height:50vh; overflow:hidden;">
+<!-- HERO – NEU (stabil, lesbar, verdeckt die Figur nicht) -->
+<section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
+  <!-- Bild -->
   <picture>
     <source srcset="images/start.strand.webp" type="image/webp">
     <img src="images/start.strand.png"
          alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-         class="hero-bg" width="1920" height="1080"
+         width="1920" height="1080"
          loading="eager" fetchpriority="high"
-         style="object-fit:cover; object-position:center 70%; width:100%; height:100%;">
+         style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
   </picture>
 
-  <!-- Scrim -->
-  <div style="position:absolute; inset:0; background:rgba(0,0,0,.48); pointer-events:none;"></div>
-
-  <!-- Copy-Layer -->
+  <!-- Dunkle Verlaufsebene für Lesbarkeit -->
   <div style="
-        position:absolute; inset:0; z-index:2;
-        display:flex; flex-direction:column; gap:.75rem;
-        align-items:center; justify-content:flex-start;
-        padding-top:clamp(6vh, 9vh, 12vh);">
-    
+    position:absolute;inset:0;pointer-events:none;
+    background: linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);
+  "></div>
+
+  <!-- Inhalt: H1 zentriert, Text links (weg von der Figur) -->
+  <div class="hero-inner" style="
+      position:absolute;inset:0;z-index:2;
+      display:grid;grid-template-columns: 1fr minmax(0,1200px) 1fr;
+      grid-template-rows: auto auto 1fr;
+      align-content:start;gap:.75rem;
+      padding:clamp(24px,6vh,80px) 1rem 1rem;
+    ">
+
     <!-- H1 mittig -->
-    <h1 style="margin:0; text-align:center; text-shadow:0 2px 8px rgba(0,0,0,.45);">
+    <h1 style="
+        grid-column:1/-1;grid-row:1;
+        margin:0;text-align:center;
+        text-shadow:0 2px 8px rgba(0,0,0,.45);
+      ">
       Willkommen im Sinnwärts-Studio
     </h1>
 
-    <!-- Text links (Desktop), mobil zentriert -->
+    <!-- Linkskolumne: sicherer Abstand zur Mitte/Figur -->
     <div style="
-          width:100%; max-width:1200px;
-          display:block;">
-      <div style="
-            max-width:720px; 
-            margin-top:.25rem;
-            text-align:left;
-            margin-left:clamp(16px, 10vw, 320px);
-            color:#f2f2f2;
-            ">
-        <p style="margin:0 0 .35rem 0; line-height:1.5; text-shadow:0 2px 8px rgba(0,0,0,.45);">
-          <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
-          Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
-          Eltern und Kinder verlieren sich im Dauerrauschen.<br>
-          <strong style="color:#d4af37;">Sinnwärts hilft,</strong> den Kreislauf zu verstehen,
-          das Nervensystem zu beruhigen und wieder bei sich anzukommen.
-        </p>
-        <p style="margin:0; line-height:1.45; text-shadow:0 2px 8px rgba(0,0,0,.45);">
-          Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
-        </p>
-      </div>
+        grid-column:2;grid-row:2;justify-self:start;
+        max-width:680px;color:#f2f2f2;
+        margin-left:clamp(12px, 14vw, 380px);   /* Abstand zur Figur */
+        text-align:left;line-height:1.5;
+        text-shadow:0 2px 8px rgba(0,0,0,.45);
+      ">
+      <p style="margin:.25rem 0 .35rem 0;">
+        <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
+        Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
+        Eltern und Kinder verlieren sich im Dauerrauschen.
+      </p>
+      <p style="margin:0;">
+        <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
+        den Kreislauf zu verstehen, das Nervensystem zu beruhigen
+        und wieder bei sich anzukommen.
+      </p>
+      <p style="margin:.35rem 0 0 0;">
+        Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- Mobile-Zentrierung (optional, falls kein globales CSS): -->
+<!-- Responsive-Feinschliff -->
 <style>
-@media (max-width: 980px){
-  .hero div[style*="max-width:720px"]{
-    margin-left:auto !important;
-    margin-right:auto !important;
-    text-align:center !important;
-    padding:0 1rem;
+@media (min-width:1400px){
+  .hero--neu .hero-inner > div[style*="max-width:680px"]{
+    margin-left: clamp(24px, 18vw, 520px) !important; /* auf sehr breiten Screens weiter links */
+  }
+}
+@media (max-width:980px){
+  .hero--neu .hero-inner{ padding-top: clamp(18px, 7vh, 48px); }
+  .hero--neu .hero-inner > div[style*="max-width:680px"]{
+    margin-left:auto !important; margin-right:auto !important;
+    text-align:center !important; padding:0 1rem;
   }
 }
 </style>

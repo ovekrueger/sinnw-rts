@@ -31,11 +31,11 @@
   <meta name="twitter:description" content="Echtes Gespräch, klare Schritte, integrale Sicht.">
   <meta name="twitter:image" content="https://sinnwaerts-studio.de/images/og-start.jpg">
 
-  <!-- CSS (dein style.css enthält die flip-Regel) -->
+  <!-- CSS -->
   <link rel="preload" href="/style.css?v=17" as="style">
   <link rel="stylesheet" href="/style.css?v=17">
 
-  <!-- Hotfix-Padding + Benefits-Zentrierung (wie gehabt) -->
+  <!-- Hotfix-Padding + Benefits-Zentrierung -->
   <style id="hotfix-gutters">
     body.index .zz{ padding-inline: clamp(28px, 6vw, 72px) !important; }
     body.index .zz > .zz-row{ max-width:1160px !important; margin-inline:auto !important; }
@@ -53,7 +53,7 @@
     }
   </style>
 
-  <!-- A11y + CTA (bewährt) -->
+  <!-- A11y + Grid + Flip -->
   <style>
     :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
     .skip-link{
@@ -62,19 +62,6 @@
     }
     .skip-link:focus, .skip-link:focus-visible{ left:1rem; top:1rem; }
     .visually-hidden{ position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0; }
-
-    .cta-under-hero{ margin:1.2rem 0 2.2rem; text-align:center; }
-    .lead-under-hero{ margin:.2rem 0 .6rem; opacity:.9; font-size:clamp(1rem,2.2vw,1.1rem); }
-    .btn-primary{
-      display:inline-block; min-width:clamp(220px,40vw,320px);
-      padding:.9rem 1.2rem; border-radius:.9rem; background:#D4AF37; color:#0B0F12; font-weight:800; letter-spacing:.2px;
-      text-decoration:none; box-shadow:0 10px 28px -12px rgba(212,175,55,.55);
-      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-    .btn-primary:hover, .btn-primary:focus-visible{ transform:translateY(-1px); box-shadow:0 16px 34px -14px rgba(212,175,55,.6); }
-    @media (prefers-reduced-motion: reduce){ .btn-primary{ transition:none; } }
-    .btn-row--hero{ margin-top:1rem; }
-    @media (min-width:720px){ .btn-row--hero{ margin-top:1.2rem; } }
 
     .zz{ padding-inline: clamp(20px, 6vw, 56px); }
     .zz > .zz-row{ max-width: 1160px; margin-inline: auto; }
@@ -86,7 +73,6 @@
     @media (min-width: 960px){
       .zz-row{ grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap:36px; }
       .zz-row.rev{ grid-template-columns: minmax(0,0.95fr) minmax(0,1.05fr); }
-      /* Flip: Bild links, Text rechts bei gleicher DOM-Reihenfolge (Text dann Col 2) */
       .zz-row.flip .zz-text  { grid-column: 2; }
       .zz-row.flip .zz-media { grid-column: 1; }
     }
@@ -115,171 +101,87 @@
 
   <main id="main" role="main" tabindex="-1">
 
+    <!-- HERO – FINAL -->
+    <section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
+      <picture>
+        <source src="images/start.strand.webp" type="image/webp">
+        <img src="images/start.strand.png"
+             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+             width="1920" height="1080"
+             loading="eager" fetchpriority="high"
+             style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
+      </picture>
 
+      <!-- Verlauf für Kontrast -->
+      <div style="position:absolute;inset:0;pointer-events:none;
+                  background:linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);"></div>
 
-<!-- HERO – FINAL (lesbar, Figur frei, ohne zusätzlichen Button) -->
-<section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
-  <picture>
-    <source srcset="images/start.strand.webp" type="image/webp">
-    <img src="images/start.strand.png"
-         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
-  </picture>
+      <!-- Inhalt: H1 zentriert, Copy links -->
+      <div class="hero-inner" style="
+          position:absolute;inset:0;z-index:2;
+          display:grid;grid-template-columns:1fr minmax(0,1200px) 1fr;
+          grid-template-rows:auto auto 1fr;align-content:start;gap:.75rem;
+          padding:clamp(24px,6vh,80px) 1rem 1rem;">
+        <h1 style="grid-column:1/-1;margin:0;text-align:center;color:#f2f2f2;
+                   text-shadow:0 2px 8px rgba(0,0,0,.45);
+                   font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);line-height:1.15;">
+          Willkommen im Sinnwärts-Studio
+        </h1>
 
-  <!-- Verlauf für Kontrast -->
-  <div style="position:absolute;inset:0;pointer-events:none;
-              background:linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);"></div>
-
-  <!-- Inhalt: H1 zentriert, Copy links -->
-  <div class="hero-inner" style="
-      position:absolute;inset:0;z-index:2;
-      display:grid;grid-template-columns:1fr minmax(0,1200px) 1fr;
-      grid-template-rows:auto auto 1fr;align-content:start;gap:.75rem;
-      padding:clamp(24px,6vh,80px) 1rem 1rem;">
-    <h1 style="grid-column:1/-1;margin:0;text-align:center;color:#f2f2f2;
-               text-shadow:0 2px 8px rgba(0,0,0,.45);
-               font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);line-height:1.15;">
-      Willkommen im Sinnwärts-Studio
-    </h1>
-
-    <div class="hero-copyblock" style="
-        grid-column:2;justify-self:start;max-width:680px;color:#f2f2f2;
-        margin-left:clamp(16px,14vw,380px);text-align:left;line-height:1.5;
-        text-shadow:0 2px 8px rgba(0,0,0,.45);">
-      <p style="margin:.25rem 0 .35rem 0;">
-        <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
-        Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
-        Eltern und Kinder verlieren sich im Dauerrauschen.
-      </p>
-      <p style="margin:0;">
-        <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
-        den Kreislauf zu verstehen, das Nervensystem zu beruhigen
-        und wieder bei sich anzukommen.
-      </p>
-      <p style="margin:.35rem 0 0 0;">
-        Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- SEKTION: Eltern & Medienkonsum (Haupt-CTA hier, keine Doppel-Buttons) -->
-<section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin:24px auto 10px;max-width:980px;padding:0 1rem;">
-  <h2 style="margin:0 0 .35rem 0;">Eltern & Medienkonsum – ruhig, klar, machbar</h2>
-  <p style="margin:0 0 .75rem 0;line-height:1.55;">
-    Du bist müde vom Dauerrauschen. Pause: Nervensystem regulieren, klare Familienregeln setzen,
-    Rückfallprophylaxe im Alltag. <br>
-    Formate: <strong>90-Min Impuls</strong> oder <strong>4×90-Min Kompaktkurs</strong>.
-  </p>
-
-  <!-- Haupt-CTA (einziger primärer Call-to-Action im oberen Seitenbereich) -->
-  <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;">
-    <a href="/kontakt.html#klarheitsgespraech" 
-       style="display:inline-flex;align-items:center;justify-content:center;
-              padding:.7rem 1.05rem;border-radius:10px;
-              background:#d4af37;color:#0b0f12;font-weight:700;letter-spacing:.2px;
-              text-decoration:none;white-space:nowrap;
-              box-shadow:0 6px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(0,0,0,.15);
-              transition:transform .06s ease, box-shadow .2s ease;"
-       onmouseover="this.style.transform='translateY(-1px)';"
-       onmouseout="this.style.transform='none';">
-      Kostenloses Klarheits-Gespräch
-    </a>
-    <a href="/angebote.html#eltern-medien"
-       style="display:inline-flex;align-items:center;justify-content:center;
-              padding:.65rem .9rem;border-radius:10px;border:1px solid rgba(212,175,55,.55);
-              color:#d4af37;text-decoration:none;">
-      Details zum Kurs
-    </a>
-  </div>
-</section>
-
-<!-- Responsive-Feinschliff für die Hero-Copy -->
-<style>
-@media (min-width:1400px){
-  .hero--neu .hero-copyblock{ margin-left:clamp(24px,18vw,520px) !important; }
-}
-@media (max-width:980px){
-  .hero--neu .hero-copyblock{
-    margin-left:auto !important; margin-right:auto !important;
-    text-align:center !important; padding:0 1rem;
-  }
-}
-</style>
-<!-- MICRO-CTA: autark gestylt -->
-<div style="
-  max-width:960px;margin:12px auto 22px;
-  display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;">
-  <a href="#eltern-workshop"
-     style="
-       display:inline-flex;align-items:center;justify-content:center;
-       padding:.68rem 1.05rem;border-radius:10px;
-       background:#d4af37;color:#0b0f12;font-weight:700;letter-spacing:.2px;
-       text-decoration:none;white-space:nowrap;
-       box-shadow:0 6px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(0,0,0,.15);
-       transition:transform .06s ease, box-shadow .2s ease;"
-     onmouseover="this.style.transform='translateY(-1px)';"
-     onmouseout="this.style.transform='none';">
-    Eltern-Workshop: Orientierung holen
-  </a>
-</div>
-<!-- Ankerbereich (Platzhalter) -->
-<section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin-top:2rem;">
-  <h2>Eltern & Medienkonsum – ruhig, klar, machbar</h2>
-  <p>90-Min Impuls oder 4×90-Min Kompaktkurs. Fokus: Nervensystem regulieren,
-     klare Familienregeln etablieren, Rückfallprophylaxe im Alltag.</p>
-</section>
-
-<!-- Responsive-Feinschliff -->
-<style>
-/* H1 Lesbarkeit + Größe */
-.hero--neu h1{
-  color:#f2f2f2;
-  font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);
-  line-height:1.15;
-}
-
-/* Copy-Block: Abstand zur Figur links, mobil zentriert */
-.hero--neu .hero-copyblock{
-  margin-left:clamp(16px, 14vw, 380px);
-  max-width:680px;
-}
-@media (min-width:1400px){
-  .hero--neu .hero-copyblock{
-    margin-left:clamp(24px, 18vw, 520px);
-  }
-}
-@media (max-width:980px){
-  .hero--neu .hero-copyblock{
-    margin-left:auto; margin-right:auto;
-    text-align:center; padding:0 1rem;
-  }
-}
-
-/* Micro-CTA */
-.microcta .btn{ white-space:nowrap; }
-</style>
-    <!-- CTA direkt unter dem Hero -->
-    <section class="cta-under-hero" aria-labelledby="cta-start">
-      <div class="wrap tac">
-        <h2 id="cta-start" class="visually-hidden">Erste Schritte</h2>
-        <p class="lead-under-hero">In 20 Minuten zur ersten Richtung.</p>
-        <a class="btn-primary" href="kontakt.html" aria-label="Kostenloses Klarheits-Gespräch vereinbaren">
-          Kostenloses Klarheits-Gespräch
-        </a>
-        <div class="btn-row btn-row--hero">
-          <div class="row-top">
-            <a class="btn btn-gold" href="angebote/frauen/">Für Frauen – KÖNIGIN</a>
-            <a class="btn btn-gold" href="angebote/maenner/">Für Männer – SAMURAI</a>
-          </div>
-          <div class="row-bottom">
-            <a class="btn btn-outline" href="suechte.html">Zu „Süchte neu denken“</a>
-          </div>
+        <div class="hero-copyblock" style="
+            grid-column:2;justify-self:start;max-width:680px;color:#f2f2f2;
+            margin-left:clamp(16px,14vw,380px);text-align:left;line-height:1.5;
+            text-shadow:0 2px 8px rgba(0,0,0,.45);">
+          <p style="margin:.25rem 0 .35rem 0;">
+            <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
+            Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
+            Eltern und Kinder verlieren sich im Dauerrauschen.
+          </p>
+          <p style="margin:0;">
+            <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
+            den Kreislauf zu verstehen, das Nervensystem zu beruhigen
+            und wieder bei sich anzukommen.
+          </p>
+          <p style="margin:.35rem 0 0 0;">
+            Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
+          </p>
         </div>
       </div>
     </section>
+
+    <!-- BLOCK: Eltern & Medienkonsum – Gespräche (ein CTA) -->
+    <section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin:24px auto 10px;max-width:980px;padding:0 1rem;">
+      <h2 style="margin:0 0 .4rem 0;">Eltern & Medienkonsum – ruhig, klar, machbar</h2>
+      <p style="margin:0 0 .9rem 0;line-height:1.55;">
+        Aktuell biete ich <strong>Einzel- und Elterngespräche</strong> an – kein Kurs, keine Theorie-Schlacht.
+        Wir sortieren gemeinsam: Mediennutzung, Reizüberflutung, Selbstregulation und neue Klarheit im Familienalltag.
+      </p>
+
+      <a href="/kontakt.html#klarheitsgespraech"
+         style="display:inline-flex;align-items:center;justify-content:center;
+                padding:.7rem 1.05rem;border-radius:10px;
+                background:#d4af37;color:#0b0f12;font-weight:700;letter-spacing:.2px;
+                text-decoration:none;white-space:nowrap;
+                box-shadow:0 6px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(0,0,0,.15);
+                transition:transform .06s ease, box-shadow .2s ease;"
+         onmouseover="this.style.transform='translateY(-1px)';"
+         onmouseout="this.style.transform='none';">
+        Kostenloses Klarheits-Gespräch
+      </a>
+    </section>
+
+    <!-- Responsive-Feinschliff für die Hero-Copy -->
+    <style>
+    @media (min-width:1400px){
+      .hero--neu .hero-copyblock{ margin-left:clamp(24px,18vw,520px) !important; }
+    }
+    @media (max-width:980px){
+      .hero--neu .hero-copyblock{
+        margin-left:auto !important; margin-right:auto !important;
+        text-align:center !important; padding:0 1rem;
+      }
+    }
+    </style>
 
     <!-- CONTENT (.zz) -->
     <section class="zz">

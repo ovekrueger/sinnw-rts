@@ -414,3 +414,41 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 .hero .hero-copy .sub {
   text-shadow: 0 2px 8px rgba(0,0,0,.45);
 }
+/* Position & Scrim bleiben wie zuletzt */
+.hero { position:relative; overflow:hidden; }
+.hero .hero-copy{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; gap:.75rem;
+  align-items:center;                       /* H1 zentriert */
+  justify-content:flex-start;
+  padding-top: clamp(6vh, 9vh, 12vh);       /* oben, weg von der Figur */
+  text-align:center;
+}
+.hero .hero-copy h1{ 
+  margin:0; 
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+
+/* Linkskolumne nur für den Fließtext – Desktop */
+.hero .hero-text{
+  max-width: 720px;
+  text-align:left;                          /* Text links */
+  margin-top:.25rem;
+  margin-left: clamp(24px, 12vw, 320px);    /* Abstand zur Bildmitte/Person */
+}
+.hero .hero-text .sub{
+  line-height:1.45; 
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.hero .hero-text .sub strong{
+  color: var(--color-accent-gold, #d4af37);
+}
+
+/* Mobil wieder zentriert, damit’s ruhig bleibt */
+@media (max-width: 980px){
+  .hero .hero-text{
+    margin-left: 0;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

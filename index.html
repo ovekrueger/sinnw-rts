@@ -116,8 +116,9 @@
   <main id="main" role="main" tabindex="-1">
 
 
-<!-- HERO -->
-<section class="hero hero--XL hero--soft hero--low" style="position:relative; min-height:56vh;">
+
+    <!-- HERO -->
+<section class="hero hero--XL hero--soft hero--low" style="position:relative; min-height:52vh;">
   <picture>
     <source srcset="images/start.strand.webp" type="image/webp">
     <img src="images/start.strand.png"
@@ -127,17 +128,16 @@
          style="object-fit:cover;object-position:center 70%; width:100%; height:100%;">
   </picture>
 
-  <!-- Fallback-Overlay: unabhängig vom Theme -->
-  <div class="hero-scrim" style="
-    position:absolute; inset:0;
-    background: rgba(0,0,0,.48);
-    pointer-events:none;"></div>
+  <!-- Scrim -->
+  <div class="hero-scrim" style="position:absolute; inset:0; background:rgba(0,0,0,.48); pointer-events:none;"></div>
 
-  <div class="siegel">
-    <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
-  </div>
-
-  <div class="inner tac hero-copy" style="position:relative; display:flex; flex-direction:column; align-items:center; gap:.75rem; padding:2vh 1rem 1rem;">
+  <!-- Copy nach oben ins obere Drittel -->
+  <div class="inner tac hero-copy"
+       style="
+         position:absolute; inset:0;
+         display:flex; flex-direction:column; align-items:center; 
+         justify-content:flex-start;
+         padding: clamp(8vh, 12vh, 16vh) 1rem 1rem; gap:.75rem;">
     <h1 style="margin:0; text-shadow:0 2px 8px rgba(0,0,0,.45);">Willkommen im Sinnwärts-Studio</h1>
 
     <p class="sub sub--lead" style="max-width:720px; margin:0 auto; line-height:1.6; text-shadow:0 2px 8px rgba(0,0,0,.45);">

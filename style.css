@@ -409,3 +409,8 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   color: var(--color-accent-gold, #d4af37);
   font-weight: 700;
 }
+/* Variante A: dezenter Textschatten für bessere Lesbarkeit */
+.hero .hero-copy h1,
+.hero .hero-copy .sub {
+  text-shadow: 0 2px 8px rgba(0,0,0,.45);
+}

@@ -99,255 +99,179 @@
     </div>
   </header>
 
-  <main id="main" role="main" tabindex="-1">
+ <main id="main" role="main" tabindex="-1">
 
-    <!-- HERO – FINAL -->
-    <section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
-      <picture>
-        <source src="images/start.strand.webp" type="image/webp">
-        <img src="images/start.strand.png"
-             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-             width="1920" height="1080"
-             loading="eager" fetchpriority="high"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
-      </picture>
+  <!-- HERO – FINAL -->
+  <section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
+    <picture>
+      <source src="images/start.strand.webp" type="image/webp">
+      <img src="images/start.strand.png"
+           alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+           width="1920" height="1080"
+           loading="eager" fetchpriority="high"
+           style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
+    </picture>
 
-      <!-- Verlauf für Kontrast -->
-      <div style="position:absolute;inset:0;pointer-events:none;
-                  background:linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);"></div>
+    <div style="position:absolute;inset:0;pointer-events:none;
+                background:linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);"></div>
 
-      <!-- Inhalt: H1 zentriert, Copy links -->
-      <div class="hero-inner" style="
-          position:absolute;inset:0;z-index:2;
-          display:grid;grid-template-columns:1fr minmax(0,1200px) 1fr;
-          grid-template-rows:auto auto 1fr;align-content:start;gap:.75rem;
-          padding:clamp(24px,6vh,80px) 1rem 1rem;">
-       <h1 style="grid-column:1/-1;margin:0;text-align:center;color:#d4af37;
-           text-shadow:0 2px 8px rgba(0,0,0,.45);
-           font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);line-height:1.15;">
-  Willkommen im Sinnwärts-Studio
-</h1>
-        <div class="hero-copyblock" style="
-            grid-column:2;justify-self:start;max-width:680px;color:#f2f2f2;
-            margin-left:clamp(16px,14vw,380px);text-align:left;line-height:1.5;
-            text-shadow:0 2px 8px rgba(0,0,0,.45);">
-          <p style="margin:.25rem 0 .35rem 0;">
-            <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
-            Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
-            Eltern und Kinder verlieren sich im Dauerrauschen.
-          </p>
-          <p style="margin:0;">
-            <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
-            den Kreislauf zu verstehen, das Nervensystem zu beruhigen
-            und wieder bei sich anzukommen.
-          </p>
-          <p style="margin:.35rem 0 0 0;">
-            Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
-          </p>
+    <div class="hero-inner" style="
+        position:absolute;inset:0;z-index:2;
+        display:grid;grid-template-columns:1fr minmax(0,1200px) 1fr;
+        grid-template-rows:auto auto 1fr;align-content:start;gap:.75rem;
+        padding:clamp(24px,6vh,80px) 1rem 1rem;">
+      <h1 style="grid-column:1/-1;margin:0;text-align:center;color:#d4af37;
+                 text-shadow:0 2px 8px rgba(0,0,0,.45);
+                 font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);line-height:1.15;">
+        Willkommen im Sinnwärts-Studio
+      </h1>
+
+      <div class="hero-copyblock" style="
+          grid-column:2;justify-self:start;max-width:680px;color:#f2f2f2;
+          margin-left:clamp(16px,14vw,380px);text-align:left;line-height:1.5;
+          text-shadow:0 2px 8px rgba(0,0,0,.45);">
+        <p style="margin:.25rem 0 .35rem 0;">
+          <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
+          Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.
+        </p>
+        <p style="margin:0;">
+          <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
+          den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.
+        </p>
+        <p style="margin:.35rem 0 0 0;">Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA unter dem Hero: Haupt-CTA + drei Wege -->
+  <section class="wrap tac" style="max-width:980px;margin:12px auto 22px;padding:0 1rem;">
+    <a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a>
+    <div style="margin-top:.85rem; display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center;">
+      <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
+      <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
+      <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
+    </div>
+  </section>
+
+  <!-- CONTENT (.zz) -->
+  <section class="zz">
+
+    <!-- 1) Warum? -->
+    <div class="zz-row">
+      <div class="zz-text">
+        <h2>Warum?</h2>
+        <p><strong>Jeder Mensch hat seine Holpersteine.</strong><br>Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
+        <p>Du bist müde, leer, ausgebrannt. Du hängst in Mustern fest, die dir nicht guttun. Abhängigkeiten, Beziehungen, Süchte – sie scheinen stärker als du. Und plötzlich fragst du dich: <em>„Wer bin ich eigentlich – und wofür lebe ich?“</em></p>
+        <p><strong>Ich brenne für diese Themen:</strong></p>
+        <ul>
+          <li>Abhängigkeiten – besonders Sucht und Alkohol</li>
+          <li>Beziehungsprobleme</li>
+          <li>Selbstwert, Selbstachtung, Selbstbewusstsein, Selbstbild</li>
+        </ul>
+        <p>Du willst ein neues Drehbuch für dein Leben schreiben? Du spürst: Es ist Zeit loszugehen. <strong>Dann bist du hier richtig.</strong></p>
+        <p>Ich kann die Fackel sein, die deine Flamme neu entzündet. Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
+        <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
+        <p><a href="ueber-mich.html" class="btn">Mehr über mich</a></p>
+      </div>
+      <div class="zz-media">
+        <picture>
+          <source srcset="images/ove-rolli.webp" type="image/webp">
+          <img src="images/ove-rolli.jpg" width="640" height="800" alt="Ove Krüger – Portrait im schwarzen Rollkragen" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+
+    <!-- 2) Bin ich ein Coach? -->
+    <div class="zz-row flip" id="coach-section">
+      <div class="zz-text">
+        <h2>Bin ich ein Coach?</h2>
+        <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist: <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
+        <p>Coaching muss neu gedacht werden. Lineare Konzepte greifen in einer komplexen Welt nicht mehr – wir brauchen integrale Ansätze, die Denken, Fühlen, Handeln und Sein verbinden.</p>
+        <p><strong>Ich bin Experte als:</strong></p>
+        <ul>
+          <li>Zuhörer &amp; Problem-Detektiv</li>
+          <li>Praktiker &amp; Wegfinder</li>
+          <li>Humorvoller, liebevoller „Ar...treter“</li>
+          <li>Motivator, kreativer Analyt, Strukturierer</li>
+          <li>Lösungsfinder – und hartnäckig</li>
+        </ul>
+      </div>
+      <div class="zz-media">
+        <img src="/images/ove-stehend-offen.jpg" width="900" height="1125" alt="Ove Krüger im Gespräch – ruhig, offen, zugewandt" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <!-- 3) Das innere Kind -->
+    <section id="inneres-kind" class="section">
+      <div class="zz-row">
+        <div class="zz-text">
+          <h2>Das innere Kind</h2>
+          <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen. <em>Es darf weinen.</em></p>
+          <p>Wenn du dein inneres Kind würdevoll annimmst, entsteht Klarheit, Nähe und Ruhe. Dann wird aus Schmerz Würde – und aus Ohnmacht Selbstbestimmung.</p>
+          <ul>
+            <li>Alte Muster erkennen – ohne Schuld, ohne Drama.</li>
+            <li>Gefühle regulieren: Körper, Atem, klare Grenzen.</li>
+            <li>Würde integrieren: Du bist nicht dein Mangel.</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
+          </div>
+        </div>
+        <div class="zz-media">
+          <picture>
+            <source srcset="images/teddy-im-sand.webp" type="image/webp">
+            <img src="images/teddy-im-sand.png" width="640" height="400" alt="Teddybär im Sand – stilles Zeichen für das innere Kind" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
     </section>
 
- <!-- Eltern & Medienkonsum – ... -->
-<section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin:24px auto 10px;max-width:980px;padding:0 1rem;">
-  <h2 style="margin:0 0 .4rem 0;">Eltern & Medienkonsum – ruhig, klar, machbar</h2>
-  <p style="margin:0 0 .9rem 0;line-height:1.55;">
-    Aktuell biete ich <strong>Einzel- und Elterngespräche</strong> an – kein Kurs, keine Theorie-Schlacht.
-    Wir sortieren gemeinsam: Mediennutzung, Reizüberflutung, Selbstregulation und neue Klarheit im Familienalltag.
+    <!-- 4) Ich bin Ove. -->
+    <div class="zz-row flip">
+      <div class="zz-text">
+        <h2>Ich bin Ove.</h2>
+        <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
+        <p>Heute arbeite ich als Life Trust Coach. Klarheit, Würde und Freiheit sind mein Kompass – und können auch deiner sein.</p>
+        <ul>
+          <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
+          <li>Ich motiviere – ohne zu pushen.</li>
+          <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
+        </ul>
+        <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
+        <p>
+          <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
+          <a class="btn" href="angebot.html">Angebote für dich</a>
+        </p>
+      </div>
+      <div class="zz-media">
+        <picture>
+          <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
+          <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800" alt="Ove Krüger – Portrait im weißen Hemd" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
+
+  </section><!-- /.zz -->
+
+  <!-- Übergang zu Eltern/Medien -->
+  <p class="wrap" style="max-width:720px;margin:1.2rem auto .6rem;text-align:center;line-height:1.6;">
+    Und wenn Orientierung in der Familie herausfordernd wird, gilt dasselbe Prinzip:
+    <strong>Klarheit, Regulierung, Beziehung.</strong>
   </p>
 
-  <!-- Haupt-CTA -->
-  <a href="/kontakt.html#klarheitsgespraech"
-     style="display:inline-flex;align-items:center;justify-content:center;
-            padding:.7rem 1.05rem;border-radius:10px;background:#d4af37;color:#0b0f12;
-            font-weight:700;letter-spacing:.2px;text-decoration:none;white-space:nowrap;
-            box-shadow:0 6px 18px rgba(0,0,0,.25), inset 0 0 0 1px rgba(0,0,0,.15);">
-    Kostenloses Klarheits-Gespräch
-  </a>
+  <!-- Eltern & Medienkonsum – JETZT UNTEN -->
+  <section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin:10px auto 0;max-width:980px;padding:0 1rem;">
+    <h2 style="margin:0 0 .4rem 0;">Eltern & Medienkonsum – ruhig, klar, machbar</h2>
+    <p style="margin:0 0 .9rem 0;line-height:1.55;">
+      Aktuell biete ich <strong>Einzel- und Elterngespräche</strong> an – kein Kurs, keine Theorie-Schlacht.
+      Wir sortieren gemeinsam: Mediennutzung, Reizüberflutung, Selbstregulation und neue Klarheit im Familienalltag.
+    </p>
+    <a href="/kontakt.html#klarheitsgespraech"
+       class="btn btn-gold">Kostenloses Klarheits-Gespräch</a>
+  </section>
 
-  <!-- Sekundär-Pills -->
-  <div style="margin-top:.85rem; display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center;">
-    <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
-    <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
-    <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
-  </div>
-</section>
-    
-<!-- MINI-FAQ: Eltern & Medienkonsum -->
-<section id="faq-eltern" class="wrap" style="max-width:980px;margin:16px auto 34px;padding:0 1rem;">
-  <h3 style="margin:0 0 .6rem 0;">Fragen & Antworten</h3>
 
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">
-      Wie läuft ein Gespräch ab?
-    </summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      Wir beginnen mit einem <strong>kostenlosen Klarheits-Gespräch (≈20 Min.)</strong> –
-      zum Kennenlernen, Klären des Anliegens und Setzen eines ersten Fokus.
-      Danach folgt, wenn es stimmig ist, ein <strong>Einzel- oder Elterngespräch (≈60 Min.)</strong>.
-      Ziel: Nervensystem beruhigen, Überblick gewinnen, nächste Schritte entwickeln.
-    </div>
-  </details>
-
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">
-      Was kostet das?
-    </summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      <strong>Wertschätzung & Energieausgleich:</strong><br>
-      In dieser Übergangszeit arbeite ich ohne feste Preise – aus rechtlichen Gründen,
-      aber auch, weil ich an eine neue Kultur des Gebens und Empfangens glaube.
-      <br><br>
-      Gespräche finden daher <strong>auf Vertrauensbasis</strong> statt.
-      Eine Form von angemessenem Energieaustausch darf entstehen –
-      als Ausdruck von Wertschätzung, Selbstachtung und eigenem Beitrag.
-    </div>
-  </details>
-
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">
-      Online oder vor Ort?
-    </summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      Beides ist möglich – <strong>online (Video)</strong> oder <strong>vor Ort in Hamburg</strong>.
-      Termine auch am Abend.
-      Auf Wunsch mit kurzem <strong>Follow-up-Check-In</strong> einige Tage nach dem Gespräch.
-    </div>
-  </details>
-</section>
-
-<!-- Optionales FAQ-Styling -->
-<style>
-  #faq-eltern details[open] summary{ color:#d4af37; }
-  #faq-eltern summary::-webkit-details-marker{ display:none; }
-  #faq-eltern summary::after{
-    content:"＋"; float:right; font-weight:700; opacity:.7; transition:transform .2s ease;
-  }
-  #faq-eltern details[open] summary::after{ content:"–"; transform:translateY(-1px); }
-</style>
-    <!-- Responsive-Feinschliff für die Hero-Copy -->
-    <style>
-    @media (min-width:1400px){
-      .hero--neu .hero-copyblock{ margin-left:clamp(24px,18vw,520px) !important; }
-    }
-    @media (max-width:980px){
-      .hero--neu .hero-copyblock{
-        margin-left:auto !important; margin-right:auto !important;
-        text-align:center !important; padding:0 1rem;
-      }
-    }
-    </style>
-
-    <!-- CONTENT (.zz) -->
-    <section class="zz">
-
-      <!-- 1) Warum?  (Bild RECHTS – Standard) -->
-      <div class="zz-row">
-        <div class="zz-text">
-          <h2>Warum?</h2>
-          <p><strong>Jeder Mensch hat seine Holpersteine.</strong><br>Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
-          <p>Du bist müde, leer, ausgebrannt.<br>Du hängst in Mustern fest, die dir nicht guttun.<br>Abhängigkeiten, Beziehungen, Süchte – sie scheinen stärker als du.<br>Und plötzlich fragst du dich: <em>„Wer bin ich eigentlich – und wofür lebe ich?“</em></p>
-          <p><strong>Ich brenne für diese Themen:</strong></p>
-          <ul>
-            <li>Abhängigkeiten – besonders Sucht und Alkohol</li>
-            <li>Beziehungsprobleme</li>
-            <li>Selbstwert, Selbstachtung, Selbstbewusstsein, Selbstbild</li>
-          </ul>
-          <p>Du willst ein neues Drehbuch für dein Leben schreiben?<br>Du spürst: Es ist Zeit loszugehen. <strong>Dann bist du hier richtig.</strong></p>
-          <p>Ich kann die Fackel sein, die deine Flamme neu entzündet.<br>Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
-          <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
-          <p><a href="ueber-mich.html" class="btn">Mehr über mich</a></p>
-        </div>
-        <div class="zz-media">
-          <picture>
-            <source srcset="images/ove-rolli.webp" type="image/webp">
-            <img src="images/ove-rolli.jpg" width="640" height="800"
-                 alt="Ove Krüger – Portrait im schwarzen Rollkragen"
-                 loading="lazy" decoding="async">
-          </picture>
-        </div>
-      </div>
-
-      <!-- 2) Bin ich ein Coach?  (Bild LINKS → flip) -->
-      <div class="zz-row flip" id="coach-section">
-        <div class="zz-text">
-          <h2>Bin ich ein Coach?</h2>
-          <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
-             <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
-          <p>Coaching muss neu gedacht werden. Lineare Konzepte greifen in einer komplexen Welt nicht mehr –
-             wir brauchen integrale Ansätze, die Denken, Fühlen, Handeln und Sein verbinden.</p>
-          <p><strong>Ich bin Experte als:</strong></p>
-          <ul>
-            <li>Zuhörer &amp; Problem-Detektiv</li>
-            <li>Praktiker &amp; Wegfinder</li>
-            <li>Humorvoller, liebevoller „Ar...treter“</li>
-            <li>Motivator, kreativer Analyt, Strukturierer</li>
-            <li>Lösungsfinder – und hartnäckig</li>
-          </ul>
-        </div>
-        <div class="zz-media">
-          <img src="/images/ove-stehend-offen.jpg"
-               width="900" height="1125"
-               alt="Ove Krüger im Gespräch – ruhig, offen, zugewandt"
-               loading="lazy" decoding="async">
-        </div>
-      </div>
-
-      <!-- 3) Das innere Kind  (Bild RECHTS – Standard) -->
-      <section id="inneres-kind" class="section">
-        <div class="zz-row">
-          <div class="zz-text">
-            <h2>Das innere Kind</h2>
-            <p>In dir lebt ein Teil, der nicht repariert werden muss – sondern gesehen.<br><em>Es darf weinen.</em></p>
-            <p>Oft fühlt er sich allein, unsicher, überfordert. Genau da liegt die Kraft: Wenn du dein inneres Kind würdevoll annimmst, entsteht Klarheit, Nähe und Ruhe. Dann wird aus Schmerz Würde – und aus Ohnmacht Selbstbestimmung.</p>
-            <ul>
-              <li>Alte Muster erkennen – ohne Schuld, ohne Drama.</li>
-              <li>Gefühle regulieren: Körper, Atem, klare Grenzen.</li>
-              <li>Würde integrieren: Du bist nicht dein Mangel.</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn btn-gold" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
-            </div>
-          </div>
-          <div class="zz-media">
-            <picture>
-              <source srcset="images/teddy-im-sand.webp" type="image/webp">
-              <img src="images/teddy-im-sand.png" width="640" height="400"
-                   alt="Teddybär im Sand – stilles Zeichen für das innere Kind"
-                   loading="lazy" decoding="async">
-            </picture>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4) Ich bin Ove.  (Bild LINKS → flip) -->
-      <div class="zz-row flip">
-        <div class="zz-text">
-          <h2>Ich bin Ove.</h2>
-          <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
-          <p>Heute arbeite ich als Life Trust Coach. Klarheit, Würde und Freiheit sind mein Kompass – und können auch deiner sein.</p>
-          <ul>
-            <li>Ich stelle die richtigen Fragen und höre auch zwischen den Zeilen.</li>
-            <li>Ich motiviere – ohne zu pushen.</li>
-            <li>Ich finde mit dir neue Wege, wenn du gerade keinen siehst.</li>
-          </ul>
-          <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
-          <p>
-            <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
-            <a class="btn" href="angebot.html">Angebote für dich</a>
-          </p>
-        </div>
-        <div class="zz-media">
-          <picture>
-            <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
-            <img src="images/ove.stehend.weisses-hemd.jpg" width="640" height="800"
-                 alt="Ove Krüger – Portrait im weißen Hemd"
-                 loading="lazy" decoding="async">
-          </picture>
-        </div>
-      </div>
-
-    </section><!-- /.zz -->
+</main>
 
     <!-- Was du bekommst -->
     <section class="benefits" style="margin:4rem 0 3rem;">

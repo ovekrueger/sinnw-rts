@@ -117,35 +117,37 @@
 
 
 <!-- HERO -->
-<section class="hero hero--XL hero--soft hero--low" style="--overlay:.62;min-height:56vh;">
+<section class="hero hero--XL hero--soft hero--low" style="position:relative; min-height:56vh;">
   <picture>
     <source srcset="images/start.strand.webp" type="image/webp">
     <img src="images/start.strand.png"
          alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
          class="hero-bg" width="1920" height="1080"
          loading="eager" fetchpriority="high"
-         style="object-fit:cover;object-position:center 70%;">
+         style="object-fit:cover;object-position:center 70%; width:100%; height:100%;">
   </picture>
-  
-<div class="hero-scrim" style="
-  position:absolute; inset:0;
-  background: rgba(0,0,0,.48);
-  pointer-events:none;"></div>
+
+  <!-- Fallback-Overlay: unabhängig vom Theme -->
+  <div class="hero-scrim" style="
+    position:absolute; inset:0;
+    background: rgba(0,0,0,.48);
+    pointer-events:none;"></div>
+
   <div class="siegel">
     <img src="images/ltc-siegel.png" alt="Life Trust Coaching – zertifiziert by Veit Lindau">
   </div>
 
-  <div class="inner tac hero-copy" style="display:flex;flex-direction:column;align-items:center;gap:.75rem;padding:2vh 1rem 1rem;">
-    <h1 style="margin:0;">Willkommen im Sinnwärts-Studio</h1>
+  <div class="inner tac hero-copy" style="position:relative; display:flex; flex-direction:column; align-items:center; gap:.75rem; padding:2vh 1rem 1rem;">
+    <h1 style="margin:0; text-shadow:0 2px 8px rgba(0,0,0,.45);">Willkommen im Sinnwärts-Studio</h1>
 
-    <p class="sub sub--lead" style="max-width:720px;margin:0 auto;line-height:1.6;">
+    <p class="sub sub--lead" style="max-width:720px; margin:0 auto; line-height:1.6; text-shadow:0 2px 8px rgba(0,0,0,.45);">
       <strong>Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen.
       Eltern und Kinder verlieren sich im Dauerrauschen.<br>
       <strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen
       und wieder bei sich anzukommen.
     </p>
 
-    <p class="sub sub-strong" style="margin:0;">
+    <p class="sub sub-strong" style="margin:0; text-shadow:0 2px 8px rgba(0,0,0,.45);">
       Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.
     </p>
   </div>

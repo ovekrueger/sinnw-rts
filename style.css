@@ -486,3 +486,15 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   content:"＋"; float:right; font-weight:700; opacity:.7; transition:transform .2s ease;
 }
 #faq-eltern details[open] summary::after{ content:"–"; transform:translateY(-1px); }
+/* Top-Alignment der Content-Reihen (verhindert "Absacken" der linken Bilder) */
+@media (min-width: 960px){
+  .zz-row,
+  .zz-row.rev,
+  .zz-row.flip{
+    align-items: start !important;   /* statt center */
+  }
+  .zz-row .zz-media,
+  .zz-row .zz-text{
+    align-self: start;                /* Sicherheitsgurt je Column */
+  }
+}

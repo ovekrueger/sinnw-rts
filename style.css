@@ -383,3 +383,17 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   aspect-ratio:16/9;    /* statt 21/7 */
   border-radius:12px; max-width:1100px; margin:16px auto 8px; display:block;
 }
+.rr-legal{
+  margin-top:8px;
+  font-size:.9rem;
+  opacity:.75;
+}
+.rr-legal a{
+  color:var(--text);
+  text-decoration:none;
+}
+.rr-legal a:hover{
+  color:var(--gold);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}

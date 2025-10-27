@@ -56,9 +56,18 @@
       font-weight:500;letter-spacing:.02em;transition:all .25s ease;
     }
     .rr-btn:hover{background:var(--gold);color:var(--bg);text-decoration:none}
-    .rr-btn.center{display:flex;justify-content:center;margin:1.5rem auto}
+    .rr-btn.center{
+      display:block;           /* keine 100%-Breite */
+      width:max-content;       /* nur so breit wie der Text */
+      margin:1.2rem auto 0;    /* zentriert */
+    }
 
     footer{border-top:1px solid var(--border);opacity:.85;text-align:center;padding:24px 0;margin-top:36px}
+
+    /* Impressum/Datenschutz */
+    .rr-legal{margin-top:8px;font-size:.9rem;opacity:.75}
+    .rr-legal a{color:var(--text);text-decoration:none}
+    .rr-legal a:hover{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
   </style>
 </head>
 
@@ -106,17 +115,14 @@
       <p>Und vielleicht, ganz vielleicht, beginnt Sinn genau dort – wo du ihn nicht mehr suchst.</p>
 
       <a class="rr-btn center" href="/resonanzraum/blog/blog.html">← Zurück zum Blog</a>
-      
     </article>
   </main>
 
   <footer>
     <small>© <span id="y"></span> Ove Krüger · Sinnwärts Studio</small>
     <div class="rr-legal">
-  <a href="/impressum.html">Impressum</a>
-  ·
-  <a href="/datenschutz.html">Datenschutz</a>
-</div>
+      <a href="/impressum.html">Impressum</a> · <a href="/datenschutz.html">Datenschutz</a>
+    </div>
   </footer>
 
   <script>

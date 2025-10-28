@@ -499,3 +499,27 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   }
 }
 .zz-media img{ margin-top: 0 !important; }
+/* 1) Reihen obenbündig (statt center) */
+@media (min-width:960px){
+  .zz .zz-row{ align-items:start !important; }          /* global ok */
+  .zz .zz-row.flip{ align-items:start !important; }     /* falls nur flip gewünscht */
+
+  /* 2) Spalten oben festpinnen */
+  .zz .zz-row .zz-text,
+  .zz .zz-row .zz-media{
+    align-self:start !important;
+  }
+}
+
+/* 3) Verhindert „optischen Versatz“ durch erste Überschrift-Margins */
+.zz .zz-row .zz-text > *:first-child,
+.zz .zz-row .zz-media > *:first-child{
+  margin-top:0 !important;
+}
+
+/* 4) Sicherheitsgurt: keine zufälligen Offsets am Bild */
+.zz .zz-row .zz-media img,
+.zz .zz-row .zz-media picture{ 
+  display:block; 
+  margin-top:0 !important;
+}

@@ -54,31 +54,15 @@
   </style>
 
   <!-- A11y + Grid + Flip -->
-  <style>
-    :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
-    .skip-link{
-      position:absolute; left:-9999px; top:auto; background:#fff; color:#0B0F12;
-      padding:.6rem .8rem; border-radius:.5rem; box-shadow:0 6px 18px -8px rgba(0,0,0,.25); z-index:1000;
-    }
-    .skip-link:focus, .skip-link:focus-visible{ left:1rem; top:1rem; }
-    .visually-hidden{ position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0; }
-
-    .zz{ padding-inline: clamp(20px, 6vw, 56px); }
-    .zz > .zz-row{ max-width: 1160px; margin-inline: auto; }
-    .zz-row{
-      display:grid; grid-template-columns: 1fr; gap:24px;
-      align-items:start;               /* <— verhindert „Verrutschen“ */
-      margin:40px 0;
-    }
-    .zz-media img{ display:block; width:100%; height:auto; border-radius:12px; }
-    @media (min-width: 960px){
-      .zz-row{ grid-template-columns: minmax(0,1.05fr) minmax(0,0.95fr); gap:36px; }
-      .zz-row.rev{ grid-template-columns: minmax(0,0.95fr) minmax(0,1.05fr); }
-      .zz-row.flip .zz-text  { grid-column: 2; }
-      .zz-row.flip .zz-media { grid-column: 1; }
-    }
-    .zz-text{ max-width:75ch; }
-  </style>
+ <style>
+  :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
+  .skip-link{
+    position:absolute; left:-9999px; top:auto; background:#fff; color:#0B0F12;
+    padding:.6rem .8rem; border-radius:.5rem; box-shadow:0 6px 18px -8px rgba(0,0,0,.25); z-index:1000;
+  }
+  .skip-link:focus, .skip-link:focus-visible{ left:1rem; top:1rem; }
+  .visually-hidden{ position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0; }
+</style>
 </head>
 
 <body id="top" class="index">
@@ -182,8 +166,8 @@
       </div>
 
       <!-- 2) Bin ich ein Coach? -->
-      <div class="zz-row flip" id="coach-section">
-        <div class="zz-text">
+    <div class="zz-row rev" id="coach-section">        
+      <div class="zz-text">
           <h2>Bin ich ein Coach?</h2>
           <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
              <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
@@ -231,8 +215,8 @@
       </section>
 
       <!-- 4) Ich bin Ove. -->
-      <div class="zz-row flip">
-        <div class="zz-text">
+ <div class="zz-row rev" id="coach-section">        
+   <div class="zz-text">
           <h2>Ich bin Ove.</h2>
           <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken.
              Viel verloren, das Wesentliche gefunden.</p>

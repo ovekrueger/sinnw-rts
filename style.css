@@ -530,3 +530,11 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
 }
 /* falls Überschriften oben extra Luft machen: */
 .zz .zz-row .zz-text > *:first-child{ margin-top:0 !important; }
+/* Stabilisierung für Textspalten in Flip-Reihen */
+.zz-row.flip .zz-text {
+  align-self: start;
+  min-height: auto !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}

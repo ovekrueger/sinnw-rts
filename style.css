@@ -664,3 +664,86 @@ body.index .hero--neu + .wrap{ margin-top:16px; }
 
 /* Abstand zu CTA-Block darunter */
 body.index .hero--neu + .wrap{ margin-top:18px; }
+/* ===== HERO – Classic Sinnwärts (bewährte Variante) ===== */
+.hero--classic{
+  position:relative;
+  min-height:60vh;                  /* Höhe anpassbar */
+  overflow:hidden;
+  border-bottom:1px solid var(--ring);
+}
+
+.hero--classic .hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 70%;       /* Figur mittig – kein Beschnitt */
+  display:block;
+}
+
+/* neutraler dunkler Verlauf für Lesbarkeit – keine Goldstreifen */
+.hero--classic .hero-scrim{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.38) 28%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0)   80%
+  );
+}
+
+/* Layout: Text über Figur, nicht zu tief */
+.hero--classic .hero-inner{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:grid;
+  grid-template-columns:1fr minmax(0,1200px) 1fr;
+  grid-template-rows:auto auto 1fr;
+  align-content:start;
+  gap:.75rem;
+  padding:clamp(28px,6vh,90px) 1rem 1rem; /* Höhe Textblock steuern */
+}
+
+/* Überschrift */
+.hero--classic h1{
+  grid-column:1/-1;
+  margin:0;
+  text-align:center;
+  color:var(--accent);
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+  font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);
+  line-height:1.15;
+}
+
+/* Fließtext */
+.hero--classic .hero-copyblock{
+  grid-column:2;
+  justify-self:start;
+  max-width:680px;
+  color:#f2f2f2;
+  margin-left:clamp(16px,14vw,380px);
+  text-align:left;
+  line-height:1.5;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.hero--classic .hero-copyblock strong{ color:var(--accent); }
+
+@media (max-width:880px){
+  .hero--classic .hero-inner{
+    grid-template-columns:1fr;
+    padding:clamp(64px,10vh,100px) 1rem 1rem;
+    text-align:center;
+  }
+  .hero--classic .hero-copyblock{
+    margin:0 auto;
+    text-align:center;
+  }
+}
+
+/* gleichmäßiger Abstand zum CTA */
+body.index .hero--classic + .wrap{ margin-top:16px; }

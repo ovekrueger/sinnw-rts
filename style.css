@@ -425,3 +425,47 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 .btn-outline{ border-color:rgba(212,175,55,.55) }          /* etwas klarer */
 .pill{ line-height:1.05; min-height:38px; padding:.5rem .85rem }  /* ruhiger */
 .btn-row .btn{ min-width:auto }                            /* keine Zwangsbreite in Textspalten */
+/* ===== Hero v3 – ruhig & stabil ===== */
+.hero--neu{ position:relative; min-height:56vh; border-bottom:1px solid var(--ring) }
+.hero--neu .hero-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center 70%;
+  display:block; will-change:transform;
+}
+.hero--neu .hero-scrim{
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,.58) 0%,
+    rgba(0,0,0,.38) 28%,
+    rgba(0,0,0,.18) 55%,
+    rgba(0,0,0,0) 80%);
+}
+.hero--neu .hero-inner{
+  position:absolute; inset:0; z-index:2;
+  display:grid; grid-template-rows:auto auto 1fr;
+  align-content:start; gap:.6rem;
+  padding:clamp(24px,6vh,80px) 1rem 1rem;
+}
+.hero--neu h1{
+  margin:0 0 .35rem; text-align:center;
+  color:var(--accent);
+  font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);
+  line-height:1.15; text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+.hero--neu .hero-lead{
+  max-width:700px; line-height:1.5; color:#f2f2f2;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+  margin:0 auto;              /* mobil: zentriert unter H1 */
+  text-align:left;
+}
+.hero--neu .hero-lead strong{ color:var(--accent) }
+
+@media (min-width:980px){
+  .hero--neu .hero-lead{
+    margin-left:clamp(16px, 14vw, 380px);   /* Desktop: ruhig nach links versetzt */
+    margin-right:auto;
+  }
+}
+
+/* Abstand zum CTA-Block darunter – konstant */
+body.index .hero--neu + .wrap{ margin-top:12px }

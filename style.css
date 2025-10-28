@@ -767,3 +767,22 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
   content:""; display:block; width:64px; height:2px;
   margin:.6rem auto 0; background:rgba(212,175,55,.6); border-radius:2px;
 }
+/* Subhero mittig & präsenter */
+.subhero { margin: clamp(10px, 2vh, 18px) 0 10px; }
+.subhero__inner{
+  max-width: 860px;            /* enger, blockig */
+  margin: 0 auto;              /* zentriert */
+  padding: 0 16px;
+  text-align: center;          /* mittig setzen */
+  line-height: 1.65;
+  font-size: clamp(1.08rem, 1rem + 0.6vw, 1.34rem);
+  text-shadow: 0 2px 10px rgba(0,0,0,.5);
+}
+.subhero__inner p{ margin:.35rem 0; }
+.subhero__inner .lead{ font-weight:700; }
+
+/* kleine Trennlinie unter dem Block (optional, gern lassen) */
+.subhero__inner::after{
+  content:""; display:block; width:64px; height:2px;
+  margin:.6rem auto 0; background:rgba(212,175,55,.6); border-radius:2px;
+}

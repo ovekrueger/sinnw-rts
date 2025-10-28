@@ -469,3 +469,44 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 
 /* Abstand zum CTA-Block darunter – konstant */
 body.index .hero--neu + .wrap{ margin-top:12px }
+/* === HERO – Lesbarkeit & Position === */
+.hero--neu{ min-height:60vh }                      /* etwas höher */
+.hero--neu .hero-bg{
+  object-position:center 82%;                      /* Figur tiefer → kein Overlap */
+}
+.hero--neu .hero-scrim{
+  /* stärkerer Kontrast im oberen Drittel */
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,.72) 0%,
+    rgba(0,0,0,.48) 30%,
+    rgba(0,0,0,.22) 56%,
+    rgba(0,0,0,0)   82%);
+}
+.hero--neu .hero-inner{
+  padding:clamp(56px,8vh,120px) 1rem 1rem;         /* mehr Top-Abstand */
+  align-content:start;
+}
+
+/* === Typo größer/ruhiger === */
+.hero--neu h1{
+  font-size:clamp(2rem, 1rem + 3.2vw, 3rem);
+  letter-spacing:.2px;
+  margin-bottom:.4rem;
+}
+.hero--neu .hero-lead{
+  max-width:760px;
+  font-size:clamp(1.05rem, .95rem + .45vw, 1.25rem);
+  line-height:1.6;
+  color:#f4f4f4;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);
+  margin:0 auto;                                   /* mobil zentriert */
+}
+@media (min-width:980px){
+  .hero--neu .hero-lead{
+    margin-left:clamp(24px, 18vw, 440px);          /* Desktop links versetzt */
+    margin-right:auto;
+  }
+}
+
+/* Abstand zum CTA darunter konstant */
+body.index .hero--neu + .wrap{ margin-top:14px }

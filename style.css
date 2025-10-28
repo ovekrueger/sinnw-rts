@@ -402,3 +402,21 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 .pill-row{ display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center }
 /* Hotfix: doppelte Pill-Reihen direkt unter dem Hero ausblenden */
 .wrap .pill-row + .pill-row { display:none; }
+/* Textfarbe für Hinweise */
+.muted{ color: var(--muted); }
+
+/* "Mehr über mich" in Textspalten: links ausrichten + kompakter Abstand */
+.zz-text .btn-row{
+  margin-top:14px;        /* statt großer 40px */
+  margin-bottom:0;
+  justify-content:flex-start !important;
+}
+
+/* Button in Textblöcken etwas schlanker */
+.zz-text .btn{
+  min-width:0;            /* kein erzwungener 160px-Block */
+  padding:.75rem 1rem;
+}
+
+/* Kontur etwas sichtbarer auf dunkel */
+.zz-text .btn-outline{ border-color: rgba(212,175,55,.6); }

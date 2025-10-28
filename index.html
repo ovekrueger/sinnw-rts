@@ -86,46 +86,27 @@
 
   <main id="main" role="main" tabindex="-1">
     <!-- HERO – FINAL -->
-    <section class="hero hero--neu" style="position:relative; min-height:52vh; overflow:hidden;">
-      <picture>
-        <source src="images/start.strand.webp" type="image/webp">
-        <img src="images/start.strand.png"
-             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-             width="1920" height="1080"
-             loading="eager" fetchpriority="high"
-             style="width:100%;height:100%;object-fit:cover;object-position:center 70%;">
-      </picture>
+<section class="hero hero--neu">
+  <picture>
+    <source src="images/start.strand.webp" type="image/webp">
+    <img class="hero-bg"
+         src="images/start.strand.png"
+         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+         width="1920" height="1080" loading="eager" fetchpriority="high">
+  </picture>
 
-      <div style="position:absolute;inset:0;pointer-events:none;
-                  background:linear-gradient(to bottom, rgba(0,0,0,.58) 0%, rgba(0,0,0,.38) 28%, rgba(0,0,0,.18) 55%, rgba(0,0,0,0) 80%);"></div>
+  <div class="hero-scrim"></div>
 
-      <div class="hero-inner" style="
-          position:absolute;inset:0;z-index:2;
-          display:grid;grid-template-columns:1fr minmax(0,1200px) 1fr;
-          grid-template-rows:auto auto 1fr;align-content:start;gap:.75rem;
-          padding:clamp(24px,6vh,80px) 1rem 1rem;">
-        <h1 style="grid-column:1/-1;margin:0;text-align:center;color:#d4af37;
-                   text-shadow:0 2px 8px rgba(0,0,0,.45);
-                   font-size:clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);line-height:1.15;">
-          Willkommen im Sinnwärts-Studio
-        </h1>
+  <div class="hero-inner">
+    <h1>Willkommen im Sinnwärts-Studio</h1>
 
-        <div class="hero-copyblock" style="
-            grid-column:2;justify-self:start;max-width:680px;color:#f2f2f2;
-            margin-left:clamp(16px,14vw,380px);text-align:left;line-height:1.5;
-            text-shadow:0 2px 8px rgba(0,0,0,.45);">
-          <p style="margin:.25rem 0 .35rem 0;">
-            <strong style="color:#d4af37;">Sucht sucht Sinn.</strong>
-            Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.
-          </p>
-          <p style="margin:0;">
-            <strong style="color:#d4af37;">Sinnwärts hilft,</strong>
-            den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.
-          </p>
-          <p style="margin:.35rem 0 0 0;">Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
-        </div>
-      </div>
-    </section>
+    <div class="hero-lead">
+      <p><strong>Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.</p>
+      <p><strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.</p>
+      <p>Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
+    </div>
+  </div>
+</section>
 
     <!-- CTA unter dem Hero: Haupt-CTA + drei Wege -->
     <section class="wrap tac" style="max-width:980px;margin:12px auto 22px;padding:0 1rem;">

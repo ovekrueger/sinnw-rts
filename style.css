@@ -538,3 +538,15 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   flex-direction: column;
   justify-content: flex-start;
 }
+/* --- FIX: Bilder/Spalten rutschen nach unten -------------------------------- */
+body.index .zz-row { align-items: flex-start !important; }           /* ganze Zeile */
+body.index .zz-row > .zz-text,
+body.index .zz-row > .zz-media { align-self: flex-start !important; }/* beide Spalten */
+body.index .zz-row > .zz-media { margin-top: 0 !important; }         /* sicherheitshalber */
+body.index .zz-row > .zz-media picture,
+body.index .zz-row > .zz-media img { display:block; margin:0 !important; }
+
+/* kleine Schönheitskur: keine Extraluft über erstem Heading/Text */
+@media (min-width:960px){
+  body.index .zz-row .zz-text > :first-child { margin-top: 0 !important; }
+}

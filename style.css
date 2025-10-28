@@ -420,3 +420,8 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 
 /* Kontur etwas sichtbarer auf dunkel */
 .zz-text .btn-outline{ border-color: rgba(212,175,55,.6); }
+/* Mikro-Tuning: Rhythmus angleichen, Charakter behalten */
+.btn{ font-size:1rem; line-height:1.15 }
+.btn-outline{ border-color:rgba(212,175,55,.55) }          /* etwas klarer */
+.pill{ line-height:1.05; min-height:38px; padding:.5rem .85rem }  /* ruhiger */
+.btn-row .btn{ min-width:auto }                            /* keine Zwangsbreite in Textspalten */

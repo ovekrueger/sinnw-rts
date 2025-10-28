@@ -523,3 +523,10 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text); }
   display:block; 
   margin-top:0 !important;
 }
+@media (min-width:960px){
+  .zz .zz-row.flip{ align-items:start !important; }
+  .zz .zz-row.flip .zz-text,
+  .zz .zz-row.flip .zz-media{ align-self:start !important; }
+}
+/* falls Überschriften oben extra Luft machen: */
+.zz .zz-row .zz-text > *:first-child{ margin-top:0 !important; }

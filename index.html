@@ -32,8 +32,8 @@
   <meta name="twitter:image" content="https://sinnwaerts-studio.de/images/og-start.jpg">
 
   <!-- CSS -->
-  <link rel="preload" href="/style.css?v=17" as="style">
-  <link rel="stylesheet" href="/style.css?v=17">
+  <link rel="preload" href="/style.css?v=19" as="style">
+  <link rel="stylesheet" href="/style.css?v=19">
 
   <!-- Hotfix-Padding + Benefits-Zentrierung -->
   <style id="hotfix-gutters">
@@ -53,16 +53,16 @@
     }
   </style>
 
-  <!-- A11y + Grid + Flip -->
- <style>
-  :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
-  .skip-link{
-    position:absolute; left:-9999px; top:auto; background:#fff; color:#0B0F12;
-    padding:.6rem .8rem; border-radius:.5rem; box-shadow:0 6px 18px -8px rgba(0,0,0,.25); z-index:1000;
-  }
-  .skip-link:focus, .skip-link:focus-visible{ left:1rem; top:1rem; }
-  .visually-hidden{ position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0; }
-</style>
+  <!-- A11y Basics -->
+  <style>
+    :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; background:#fff; color:#0B0F12;
+      padding:.6rem .8rem; border-radius:.5rem; box-shadow:0 6px 18px -8px rgba(0,0,0,.25); z-index:1000;
+    }
+    .skip-link:focus, .skip-link:focus-visible{ left:1rem; top:1rem; }
+    .visually-hidden{ position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0; }
+  </style>
 </head>
 
 <body id="top" class="index">
@@ -85,36 +85,41 @@
   </header>
 
   <main id="main" role="main" tabindex="-1">
- <section class="hero hero--classic">
-  <picture>
-    <source src="images/start.strand.webp" type="image/webp">
-    <img src="images/start.strand.png"
-         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         class="hero-bg">
-  </picture>
+    <!-- HERO (Classic, nur H1 im Bild) -->
+    <section class="hero hero--classic">
+      <picture>
+        <source src="images/start.strand.webp" type="image/webp">
+        <img src="images/start.strand.png"
+             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit"
+             width="1920" height="1080"
+             loading="eager" fetchpriority="high"
+             class="hero-bg">
+      </picture>
 
-  <div class="hero-scrim"></div>
+      <div class="hero-scrim" aria-hidden="true"></div>
 
-  <div class="hero-inner">
-    <h1>Willkommen im Sinnwärts-Studio</h1>
+      <div class="hero-inner">
+        <h1>Willkommen im Sinnwärts-Studio</h1>
+      </div>
+    </section>
 
-    <div class="hero-copyblock">
-      <p><strong>Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.</p>
-      <p><strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.</p>
-      <p>Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
-    </div>
-  </div>
-</section>
-    <!-- CTA unter dem Hero: Haupt-CTA + drei Wege -->
+    <!-- SUB-HERO COPY (unter Bild, über CTA) -->
+    <section class="subhero">
+      <div class="subhero__inner">
+        <p><strong>Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.</p>
+        <p><strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.</p>
+        <p>Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
+      </div>
+    </section>
+
+    <!-- CTA unter dem Sub-Hero -->
     <section class="wrap tac" style="max-width:980px;margin:12px auto 22px;padding:0 1rem;">
       <a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a>
-      <div class="pill-row" style="margin-top:.85rem">
-    <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
-    <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
-    <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
-  </div>       
+      <div class="pill-row" style="margin-top:.85rem; display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center;">
+        <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
+        <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
+        <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
+      </div>
     </section>
 
     <!-- CONTENT (.zz) -->
@@ -135,9 +140,9 @@
           <p>Du willst ein neues Drehbuch für dein Leben schreiben? Du spürst: Es ist Zeit loszugehen. <strong>Dann bist du hier richtig.</strong></p>
           <p>Ich kann die Fackel sein, die deine Flamme neu entzündet. Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
           <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
-         <div class="btn-row btn-row--left">
-   <a href="ueber-mich.html" class="btn btn-outline">Mehr über mich</a>
-      </div>        
+          <div class="btn-row btn-row--left">
+            <a href="ueber-mich.html" class="btn btn-outline">Mehr über mich</a>
+          </div>
         </div>
         <div class="zz-media">
           <picture>
@@ -148,8 +153,8 @@
       </div>
 
       <!-- 2) Bin ich ein Coach? -->
-    <div class="zz-row rev" id="coach-section">        
-      <div class="zz-text">
+      <div class="zz-row rev" id="coach-section">
+        <div class="zz-text">
           <h2>Bin ich ein Coach?</h2>
           <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
              <strong>Aufdröseln, Verstehen, Erschaffen.</strong></p>
@@ -197,8 +202,8 @@
       </section>
 
       <!-- 4) Ich bin Ove. -->
- <div class="zz-row rev" id="coach-section">        
-   <div class="zz-text">
+      <div class="zz-row rev" id="ove-section">
+        <div class="zz-text">
           <h2>Ich bin Ove.</h2>
           <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken.
              Viel verloren, das Wesentliche gefunden.</p>
@@ -212,10 +217,10 @@
           <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong>
              70 % Schwerbehinderung, 100 % Mitgefühl.</p>
           <div class="btn-row btn-row--left">
-  <a class="btn btn-outline" href="kontakt.html">Kostenloses Gespräch</a>
-   <a class="btn btn-gold"    href="angebot.html">Angebote für dich</a>
- </div>        
-   </div>
+            <a class="btn btn-outline" href="kontakt.html">Kostenloses Gespräch</a>
+            <a class="btn btn-gold"    href="angebot.html">Angebote für dich</a>
+          </div>
+        </div>
         <div class="zz-media">
           <picture>
             <source srcset="images/ove.stehend.weisses-hemd.webp" type="image/webp">
@@ -286,10 +291,9 @@
             </a>
           </div>
 
-          <!-- Leseprobe -->
-          <div class="btn-row"> 
-            <a href="leseprobe.html" class="btn">📖 Online lesen</a>            
-            background:rgba(255,255,255,.04);
+          <!-- Leseprobe (aufgeräumt) -->
+          <div style="width:100%; max-width:720px; margin:0 auto;
+                      background:rgba(255,255,255,.04);
                       border:1px solid rgba(212,175,55,.25);
                       border-radius:14px; padding:1.1rem; text-align:center;">
             <p style="margin:.1rem 0 .7rem 0; max-width:580px; margin-left:auto; margin-right:auto;">
@@ -297,8 +301,8 @@
             </p>
             <div style="margin-top:.5rem; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center;">
               <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px); text-align:center">📖 Online lesen</a>
-             <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download>⬇ PDF herunterladen</a>
-        </div>          
+              <a href="assets/books/leseprobe.pdf" class="btn btn--ghost" download style="min-width:clamp(200px,24vw,300px); text-align:center">⬇ PDF herunterladen</a>
+            </div>
           </div>
         </div>
       </div>

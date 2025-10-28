@@ -400,3 +400,5 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 .pill{ padding:.55rem .9rem; border-radius:999px; border:1px solid rgba(212,175,55,.55);
        color:#d4af37; display:inline-flex; align-items:center; justify-content:center; }
 .pill-row{ display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center }
+/* Hotfix: doppelte Pill-Reihen direkt unter dem Hero ausblenden */
+.wrap .pill-row + .pill-row { display:none; }

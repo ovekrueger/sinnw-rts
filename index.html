@@ -327,29 +327,58 @@
   </script>
 
   <!-- === HERO STRIPE HOTFIX (muss vor </body> stehen) === -->
-  <style id="hero-stripe-hotfix">
-    .hero::before,
-    .hero::after { content:none!important;display:none!important; }
-    .hero--neu::after,
-    .hero--classic::after { content:none!important;display:none!important; }
-    .hero-scrim{
-      mix-blend-mode:normal!important;
-      background:linear-gradient(
-        to bottom,
-        rgba(11,15,18,.82) 0%,
-        rgba(11,15,18,.55) 42%,
-        rgba(11,15,18,0) 100%
-      )!important;
-    }
-    .hero, .hero picture, .hero .hero-bg{
-      background:none!important;
-      background-repeat:no-repeat!important;
-    }
-    .hero .hero-bg{
-      object-position:center 68%!important;
-      filter:contrast(.96) brightness(.97) saturate(.94);
-      -webkit-backface-visibility:hidden;backface-visibility:hidden;
-    }
-  </style>
+ 
+<script>
+  // To-top Button
+  (function(){
+    var btn=document.querySelector('.to-top');
+    if(!btn) return;
+    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+<style id="hero-fixes">
+  /* Kill nur die alten ::after-Overlays (Goldstreifen), ::before darf leben */
+  .hero::after,
+  .hero--neu::after,
+  .hero--classic::after { content:none !important; display:none !important; }
+
+  /* Neutrales Scrim über dem Bild (kein Blend-Mode) */
+  .hero-scrim{
+    mix-blend-mode: normal !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(11,15,18,.82) 0%,
+      rgba(11,15,18,.55) 42%,
+      rgba(11,15,18,0)   100%
+    ) !important;
+  }
+
+  /* Bildausschnitt + H1-Position */
+  .hero .hero-bg{ object-position: center 62% !important; }
+  .hero-inner{
+    place-items: start center !important;            /* H1 obenmittig */
+    padding-top: clamp(56px, 10vh, 140px) !important;
+  }
+  .hero h1{ margin:0; text-shadow:0 3px 10px rgba(0,0,0,.55); }
+
+  /* Sanftes Top-Scrim nur oben (unter dem Text, über dem Bild) */
+  .hero::before{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 36%;
+    pointer-events: none;
+    z-index: 1; /* über Bild, unter H1 */
+    background: linear-gradient(
+      to bottom,
+      rgba(11,15,18,.55) 0%,
+      rgba(11,15,18,.28) 40%,
+      rgba(11,15,18,0)  100%
+    );
+  }
+</style>
 </body>
 </html>

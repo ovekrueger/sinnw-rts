@@ -324,5 +324,39 @@
       onScroll();
     })();
   </script>
+  <!-- === HERO STRIPE HOTFIX (muss vor </body> stehen) === -->
+<style id="hero-stripe-hotfix">
+  /* 1) alle alten Pseudo-Overlays killen */
+  .hero::before,
+  .hero::after { content: none !important; display: none !important; }
+
+  /* 2) weiches, neutrales Scrim – keine Mischmodi */
+  .hero-scrim{
+    mix-blend-mode: normal !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(11,15,18,.82) 0%,
+      rgba(11,15,18,.55) 42%,
+      rgba(11,15,18,0)   100%
+    ) !important;
+  }
+
+  /* 3) Bild sicher ohne Muster/Repeats rendern */
+  .hero, .hero picture, .hero .hero-bg{
+    background: none !important;
+    background-repeat: no-repeat !important;
+  }
+  .hero .hero-bg{
+    filter: contrast(.96) brightness(.97) saturate(.94);
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+  }
+
+  /* 4) falls irgendwo noch "hero--neu"/"hero--classic" ein ::after hat */
+  .hero--neu::after,
+  .hero--classic::after { content: none !important; display: none !important; }
+</style>
+</body>
+</html>
 </body>
 </html>

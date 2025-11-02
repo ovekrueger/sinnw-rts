@@ -31,59 +31,87 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
-  <!-- Basis-CSS (deins) -->
-  <link rel="preload" href="/style.css?v=20" as="style">
-  <link rel="stylesheet" href="/style.css?v=20">
+  <!-- (Optional) dein globales CSS -->
+  <link rel="preload" href="/style.css?v=21" as="style">
+  <link rel="stylesheet" href="/style.css?v=21">
 
-  <!-- Kleine, gezielte Zusatzstyles -->
+  <!-- Seiteigene, stabile Styles (ohne spätere Fix-Overrides) -->
   <style>
-    :focus-visible{ outline:3px solid #D4AF37; outline-offset:3px; border-radius:.25rem; }
+    :root{
+      --ink:#e8e6e3; --gold:#d4af37; --bg:#0b0f12;
+    }
+    html,body{background:var(--bg);color:var(--ink)}
     .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
     .tac{text-align:center}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
-    /* HERO neutral (keine Goldstreifen) */
+    /* ==== HERO (keine Goldstreifen, keine Blendmodes) ==== */
     .hero{position:relative;min-height:52vh;overflow:hidden}
-    .hero-bg{width:100%;height:100%;object-fit:cover;object-position:center 70%}
-    .hero-scrim{position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(to bottom, rgba(11,15,18,.85) 0%, rgba(11,15,18,.55) 40%, rgba(11,15,18,0) 100%)}
-    .hero-inner{position:absolute;inset:0;display:grid;place-items:center;text-align:center;z-index:2}
-    .hero h1{margin:0;color:#d4af37;text-shadow:0 2px 8px rgba(0,0,0,.45);
+    .hero picture,.hero .hero-bg{display:block;width:100%;height:100%}
+    .hero .hero-bg{object-fit:cover;object-position:center 66%}
+    .hero::after{content:none} /* falls externe Themes ein ::after setzen */
+    .hero-scrim{
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(to bottom, rgba(11,15,18,.82) 0%, rgba(11,15,18,.55) 42%, rgba(11,15,18,0) 100%);
+    }
+    .hero::before{
+      content:"";position:absolute;left:0;right:0;top:0;height:36%;
+      pointer-events:none;z-index:1;
+      background:linear-gradient(to bottom, rgba(11,15,18,.55) 0%, rgba(11,15,18,.28) 40%, rgba(11,15,18,0) 100%);
+    }
+    .hero-inner{
+      position:absolute;inset:0;display:grid;place-items:start center;
+      padding-top:clamp(56px,10vh,140px);text-align:center;z-index:2;
+    }
+    .hero h1{margin:0;color:var(--gold);text-shadow:0 3px 10px rgba(0,0,0,.55);
       font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem);line-height:1.15}
 
-    /* Subhero Block */
+    /* ==== SUBHERO ==== */
     .subhero{padding:14px 0 8px}
-    .subhero p{margin:.35rem auto;max-width:820px;line-height:1.55;color:#f2f2f2;text-align:center}
-    .subhero strong{color:#d4af37}
+    .subhero p{margin:.35rem auto;max-width:820px;line-height:1.55;text-align:center}
+    .subhero strong{color:var(--gold)}
 
-    /* Goldene Pills */
+    /* ==== Buttons / Pills ==== */
+    .btn{display:inline-block;border-radius:999px;padding:.6rem 1.1rem;text-decoration:none}
+    .btn-gold{background:var(--gold);color:#0b0f12;font-weight:700;border:0}
+    .btn-outline{border:1px solid rgba(255,255,255,.35);color:var(--ink)}
+    .btn-row{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn-row--left{justify-content:flex-start}
     .pill-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem}
     .pill{
-      display:inline-block;color:#0b0f12;background:linear-gradient(180deg,#f6d56f 0%,#d4af37 100%);
+      display:inline-block;color:#0b0f12;background:linear-gradient(180deg,#f6d56f 0%,var(--gold) 100%);
       border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:.48rem 1.1rem;
-      font-weight:600;font-size:.92rem;text-decoration:none;transition:all .2s ease-in-out
+      font-weight:600;font-size:.92rem;text-decoration:none;transition:transform .2s ease, filter .2s ease, box-shadow .2s ease
     }
     .pill:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 0 8px rgba(212,175,55,.3)}
 
-    /* Zentrierter Übergangs-Satz */
-    .lead-center{max-width:720px;margin:1rem auto 1.4rem;text-align:center;font-size:1.05rem;line-height:1.55}
-
-    /* Content-Spalten (deine zz-Struktur) */
+    /* ==== Content-Zickzack ==== */
     .zz{padding:0 1rem}
-    .zz-row{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:start;max-width:1160px;margin:1.4rem auto}
-    .zz-row.rev{grid-template-columns:1fr 1fr}
+    .zz-row{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:clamp(18px,3vw,36px);align-items:start; /* top aligned – kein „Unterhängen“ */
+      max-width:1160px;margin:1.5rem auto;
+    }
+    /* Standard: Text links, Bild rechts */
+    .zz-row .zz-text{grid-column:1}
+    .zz-row .zz-media{grid-column:2}
+    /* Reverse: Text rechts, Bild links */
+    .zz-row.rev .zz-text{grid-column:2}
+    .zz-row.rev .zz-media{grid-column:1}
     .zz-text p{margin:.55rem 0;line-height:1.55}
-    .zz-media img{width:100%;height:auto;border-radius:12px;display:block}
-    @media (max-width:900px){ .zz-row{grid-template-columns:1fr} }
+    .zz-media{align-self:start}
+    .zz-media img{display:block;width:100%;height:auto;border-radius:12px}
 
-    /* Button-Feinschliff mobil */
-    .btn{display:inline-block;border-radius:999px;padding:.6rem 1.1rem;text-decoration:none}
-    .btn-gold{background:#d4af37;color:#0b0f12;font-weight:700;border:0}
-    .btn-outline{border:1px solid rgba(255,255,255,.35);color:#e8e6e3}
-    .btn-row{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn-row--left{justify-content:flex-start}
+    /* Mobil: untereinander, erst Text dann Bild */
+    @media (max-width:900px){
+      .zz-row,.zz-row.rev{grid-template-columns:1fr}
+      .zz-row .zz-text,.zz-row .zz-media,.zz-row.rev .zz-text,.zz-row.rev .zz-media{grid-column:auto}
+      .zz-row .zz-text,.zz-row.rev .zz-text{order:1}
+      .zz-row .zz-media,.zz-row.rev .zz-media{order:2}
+    }
+
+    /* Kleines UX */
     @media (max-width:640px){ .btn{min-width:140px;font-size:.9rem;padding:.5rem 1rem} }
-
-    /* Kleine Helfer */
     .muted{opacity:.8}
     .to-top{position:fixed;right:16px;bottom:16px;opacity:0;pointer-events:none;transition:opacity .2s}
     .to-top.show{opacity:.9;pointer-events:auto}
@@ -91,17 +119,17 @@
 </head>
 
 <body id="top" class="index">
-  <!-- NAV (deine) -->
+  <!-- NAV -->
   <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="index.html">Sinnwärts Studio</a>
+    <div class="nav-container wrap" style="display:flex;justify-content:space-between;align-items:center;padding:14px 1rem">
+      <a class="brand" href="index.html" style="text-decoration:none;color:var(--ink);font-weight:700">Sinnwärts Studio</a>
       <nav aria-label="Hauptnavigation">
-        <ul class="nav-list">
-          <li><a href="index.html" class="active" aria-current="page">Start</a></li>
-          <li><a href="ueber-mich.html">Über mich</a></li>
-          <li><a href="angebot.html">Angebote</a></li>
-          <li><a href="resonanzraum.html">Resonanzraum</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+        <ul class="nav-list" style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
+          <li><a href="index.html" class="active" aria-current="page" style="text-decoration:none;color:var(--ink)">Start</a></li>
+          <li><a href="ueber-mich.html" style="text-decoration:none;color:var(--ink)">Über mich</a></li>
+          <li><a href="angebot.html" style="text-decoration:none;color:var(--ink)">Angebote</a></li>
+          <li><a href="resonanzraum.html" style="text-decoration:none;color:var(--ink)">Resonanzraum</a></li>
+          <li><a href="kontakt.html" style="text-decoration:none;color:var(--ink)">Kontakt</a></li>
         </ul>
       </nav>
     </div>
@@ -132,15 +160,15 @@
       </div>
     </section>
 
-    <!-- ZENTRIERTER ÜBERGANGSSATZ -->
-    <p class="lead-center wrap">
+    <!-- Übergangssatz -->
+    <p class="wrap tac" style="max-width:720px;margin:1rem auto 1.4rem;line-height:1.55;">
       Du willst ein neues Drehbuch für dein Leben schreiben? Du spürst: Es ist Zeit loszugehen.
-      <strong>Dann bist du hier richtig.</strong>
+      <strong> Dann bist du hier richtig.</strong>
     </p>
 
-    <!-- CONTENT -->
+    <!-- CONTENT ZICKZACK -->
     <section class="zz">
-      <!-- Warum -->
+      <!-- 1) Warum -->
       <div class="zz-row">
         <div class="zz-text">
           <h2>Warum?</h2>
@@ -154,8 +182,6 @@
           </ul>
           <p>Ich kann die Fackel sein, die deine Flamme neu entzündet. Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
           <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
-
-          <!-- Haupt-CTA NACH „Warum?“ -->
           <div class="btn-row"><a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a></div>
         </div>
         <div class="zz-media">
@@ -166,7 +192,7 @@
         </div>
       </div>
 
-      <!-- Bin ich ein Coach? -->
+      <!-- 2) Bin ich ein Coach? (rev) -->
       <div class="zz-row rev">
         <div class="zz-text">
           <h2>Bin ich ein Coach?</h2>
@@ -188,7 +214,7 @@
         </div>
       </div>
 
-      <!-- Das innere Kind -->
+      <!-- 3) Das innere Kind -->
       <div class="zz-row">
         <div class="zz-text">
           <h2>Das innere Kind</h2>
@@ -211,7 +237,7 @@
         </div>
       </div>
 
-      <!-- Ich bin Ove -->
+      <!-- 4) Ich bin Ove (rev) -->
       <div class="zz-row rev">
         <div class="zz-text">
           <h2>Ich bin Ove.</h2>
@@ -252,7 +278,7 @@
       <a href="/kontakt.html#klarheitsgespraech" class="btn btn-gold">Kostenloses Klarheits-Gespräch</a>
     </section>
 
-    <!-- Benefits (unverändert, ggf. deine bestehende Komponente einbinden) -->
+    <!-- Benefits -->
     <section class="wrap" style="margin:4rem 0 3rem;">
       <div style="max-width:900px;margin:0 auto;text-align:center">
         <h2>Was du bekommst</h2>
@@ -268,22 +294,22 @@
         <!-- Klanggeschenk -->
         <div style="width:100%;max-width:720px;margin:0 auto 1rem;background:rgba(255,255,255,.04);
                     border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;">
-          <p style="margin:.1rem 0 .7rem 0;"> <strong>Klanggeschenk:</strong>
-            Atemraum mit <strong>Gesang von Ruth Gröger</strong> (Breathwork-Coachin).</p>
+          <p style="margin:.1rem 0 .7rem 0;">
+            <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth Gröger</strong> (Breathwork-Coachin).
+          </p>
           <audio controls preload="none" style="width:100%;max-width:420px;display:block;margin:0 auto .8rem;">
             <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
           <p style="opacity:.8;margin:.3rem auto .6rem;max-width:580px;">Schließ die Augen und gönne dir innere Stille – Einladung zum bewussten Atem (≈ 4 Min).</p>
-          <p style="opacity:.7;margin:.1rem auto .8rem;max-width:580px;">Vocals: Ruth Gröger · Komposition/Produktion: Ove Krüger & Ruth Gröger.</p>
+          <p style="opacity:.7;margin:.1rem auto .8rem;max-width:580px;">Vocals: Ruth Gröger · Komposition/Produktion: Ove Krüger &amp; Ruth Gröger.</p>
           <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download>🎵 „Atmen, mein Leben“ – Download</a>
         </div>
 
         <!-- Leseprobe -->
         <div style="width:100%;max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);
                     border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;">
-          <p style="margin:.1rem 0 .7rem 0;"><strong>Leseprobe:</strong> Ein Auszug aus meinem Buch
-            <em>Holpersteine</em> – online oder als PDF.</p>
+          <p style="margin:.1rem 0 .7rem 0;"><strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.</p>
           <div style="margin-top:.5rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;">
             <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px);text-align:center">📖 Online lesen</a>
             <a href="assets/books/leseprobe.pdf" class="btn btn-outline" download
@@ -296,7 +322,7 @@
 
   <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
 
-  <!-- FOOTER (kurz) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap" style="text-align:center;padding:2rem 1rem;">
       <small style="display:block;margin-bottom:.5rem;opacity:.85;">
@@ -314,9 +340,9 @@
     </div>
   </footer>
 
- 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script>
+    // Jahr im Footer & To-top Button
+    document.getElementById('y').textContent = new Date().getFullYear();
     (function(){
       var btn=document.querySelector('.to-top');
       if(!btn) return;
@@ -325,60 +351,5 @@
       onScroll();
     })();
   </script>
-
-  <!-- === HERO STRIPE HOTFIX (muss vor </body> stehen) === -->
- 
-<script>
-  // To-top Button
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script>
-
-<style id="hero-fixes">
-  /* Kill nur die alten ::after-Overlays (Goldstreifen), ::before darf leben */
-  .hero::after,
-  .hero--neu::after,
-  .hero--classic::after { content:none !important; display:none !important; }
-
-  /* Neutrales Scrim über dem Bild (kein Blend-Mode) */
-  .hero-scrim{
-    mix-blend-mode: normal !important;
-    background: linear-gradient(
-      to bottom,
-      rgba(11,15,18,.82) 0%,
-      rgba(11,15,18,.55) 42%,
-      rgba(11,15,18,0)   100%
-    ) !important;
-  }
-
-  /* Bildausschnitt + H1-Position */
-  .hero .hero-bg{ object-position: center 62% !important; }
-  .hero-inner{
-    place-items: start center !important;            /* H1 obenmittig */
-    padding-top: clamp(56px, 10vh, 140px) !important;
-  }
-  .hero h1{ margin:0; text-shadow:0 3px 10px rgba(0,0,0,.55); }
-
-  /* Sanftes Top-Scrim nur oben (unter dem Text, über dem Bild) */
-  .hero::before{
-    content: "";
-    position: absolute;
-    left: 0; right: 0; top: 0;
-    height: 36%;
-    pointer-events: none;
-    z-index: 1; /* über Bild, unter H1 */
-    background: linear-gradient(
-      to bottom,
-      rgba(11,15,18,.55) 0%,
-      rgba(11,15,18,.28) 40%,
-      rgba(11,15,18,0)  100%
-    );
-  }
-</style>
 </body>
 </html>

@@ -941,3 +941,14 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
   .zz-row{ gap: 18px; margin: 1.2rem auto; }
   .btn-row{ justify-content:center; }
 }
+/* === Zickzack HOTFIX: Medien oben bündig, kein „Unterrutschen“ === */
+.zz-row{ align-items: start; }                 /* gesamte Reihe oben ausrichten */
+.zz-row .zz-text,
+.zz-row .zz-media{ align-self: start; }        /* beide Spalten oben bündig */
+.zz-row .zz-media{ display:block; margin:0; }  /* kein extra margin */
+.zz-row .zz-media img{ display:block; margin:0; }
+
+/* Falls irgendwo line-height/Abstände das Layout schieben: */
+.zz-text p{ margin: .5rem 0; line-height: 1.55; }
+
+

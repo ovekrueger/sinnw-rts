@@ -854,6 +854,10 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
 .hero--neu::after, .hero--classic::after{ content:none !important; display:none !important; }
 /* === ZICKZACK-ANORDNUNG WIE FRÜHER === */
 
+/* =========================================================
+   ZICKZACK-LAYOUT + SPACING (Stand 2025-11-03)
+   ========================================================= */
+
 /* Grundlayout: 2 Spalten, sauberer Abstand */
 .zz-row{
   display:grid;
@@ -861,7 +865,7 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
   gap: clamp(18px, 3vw, 36px);
   align-items: start;
   max-width: 1160px;
-  margin: 1.5rem auto;
+  margin: 1.6rem auto;
   padding: 0 1rem;
 }
 
@@ -873,13 +877,47 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
 .zz-row.rev .zz-text  { grid-column: 2; }
 .zz-row.rev .zz-media { grid-column: 1; }
 
-/* Optik-Feinschliff */
+/* Medien-Optik */
 .zz-media img{
   width:100%;
   height:auto;
   display:block;
-  border-radius: 12px;
+  border-radius:12px;
+  border:1px solid var(--ring, #2a2f36);
 }
+
+/* Typo/Spacing in Textspalten */
+.zz-text h2{
+  margin: 0 0 .25rem 0;
+  font-size: clamp(1.35rem, 1.05rem + .8vw, 1.8rem);
+  line-height: 1.15;
+  color: var(--accent, #d4af37);
+}
+.zz-text p{ margin: .5rem 0; line-height: 1.55; }
+.zz-text .muted{ opacity:.82; }
+
+/* Listen */
+.zz-text ul{ margin: .45rem 0 0 1.1rem; padding:0; }
+.zz-text li{ margin: .22rem 0; }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:.72rem 1.1rem; border-radius:999px;
+  font-weight:600; text-decoration:none; cursor:pointer;
+  border:1px solid transparent; transition:filter .2s ease, transform .05s ease;
+}
+.btn:active{ transform:translateY(1px) }
+.btn-gold{ background:#d4af37; color:#0b0f12; border-color:#d4af37; }
+.btn-gold:hover{ filter:brightness(1.02); }
+.btn-outline{ background:transparent; color:var(--ink, #e8e6e3); border-color:rgba(255,255,255,.35); }
+.btn-outline:hover{ filter:brightness(1.08); }
+
+.btn-row{
+  display:flex; gap:.75rem; flex-wrap:wrap;
+  margin: .9rem 0 0 0;            /* Abstand der Buttons zum Text */
+}
+.btn-row--left{ justify-content:flex-start; }
 
 /* Mobile: einspaltig, Text vor Bild (A11y & Lesefluss) */
 @media (max-width: 900px){
@@ -893,9 +931,13 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
     grid-column: auto;
   }
 
-  /* Reihenfolge auf Mobil: erst Text, dann Bild */
+  /* Reihenfolge Mobil: erst Text, dann Bild */
   .zz-row .zz-text,
   .zz-row.rev .zz-text{ order: 1; }
   .zz-row .zz-media,
   .zz-row.rev .zz-media{ order: 2; }
+
+  /* etwas mehr vertikaler Atem auf Mobil */
+  .zz-row{ gap: 18px; margin: 1.2rem auto; }
+  .btn-row{ justify-content:center; }
 }

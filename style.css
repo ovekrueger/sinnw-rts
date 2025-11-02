@@ -852,3 +852,50 @@ body.index .hero--classic + .wrap{ margin-top:16px; }
 /* Sicherheitsnetz: alte Pseudo-Overlays deaktivieren */
 .hero::before, .hero::after,
 .hero--neu::after, .hero--classic::after{ content:none !important; display:none !important; }
+/* === ZICKZACK-ANORDNUNG WIE FRÜHER === */
+
+/* Grundlayout: 2 Spalten, sauberer Abstand */
+.zz-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 3vw, 36px);
+  align-items: start;
+  max-width: 1160px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Standard: Text links, Bild rechts (Warum, Inneres Kind) */
+.zz-row .zz-text  { grid-column: 1; }
+.zz-row .zz-media { grid-column: 2; }
+
+/* Reverse: Text rechts, Bild links (Coach?, Ich bin Ove) */
+.zz-row.rev .zz-text  { grid-column: 2; }
+.zz-row.rev .zz-media { grid-column: 1; }
+
+/* Optik-Feinschliff */
+.zz-media img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius: 12px;
+}
+
+/* Mobile: einspaltig, Text vor Bild (A11y & Lesefluss) */
+@media (max-width: 900px){
+  .zz-row,
+  .zz-row.rev{ grid-template-columns: 1fr; }
+
+  .zz-row .zz-text,
+  .zz-row .zz-media,
+  .zz-row.rev .zz-text,
+  .zz-row.rev .zz-media{
+    grid-column: auto;
+  }
+
+  /* Reihenfolge auf Mobil: erst Text, dann Bild */
+  .zz-row .zz-text,
+  .zz-row.rev .zz-text{ order: 1; }
+  .zz-row .zz-media,
+  .zz-row.rev .zz-media{ order: 2; }
+}

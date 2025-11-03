@@ -30,22 +30,22 @@
   <link rel="preload" href="/style.css?v=23" as="style">
   <link rel="stylesheet" href="/style.css?v=23">
 
-  <!-- Mini-Fix: Hero ohne Streifen, Text sichtbar; Button unter Hero -->
-  <style>
-    .hero{position:relative;min-height:48vh;overflow:hidden;border-bottom:1px solid #2a2f36}
-    .hero picture{display:block;width:100%;height:100%}
-    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 65%;
-              filter:none!important;mix-blend-mode:normal!important}
-    .hero::before,.hero::after,.hero .hero-scrim{display:none!important;content:none!important}
-    .hero .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;
-                      padding:clamp(48px,10vh,120px) 1rem 1.2rem;text-align:center}
-    .hero h1{margin:0;color:#d4af37;text-shadow:0 2px 8px rgba(0,0,0,.5);
-             font-size:clamp(1.7rem,1.2rem + 2.4vw,2.6rem);line-height:1.15}
-    .hero p.sub{margin:.35rem auto 0;max-width:760px;line-height:1.55;color:#f2f2f2;
-                text-shadow:0 1px 6px rgba(0,0,0,.45)}
-    .cta-under-hero{padding:12px 0 22px}
-    .cta-under-hero .pill-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:.85rem}
-  </style>
+<!-- Hero-Override: Text klar lesbar, keine Streifen/Blendmodes -->
+<style>
+  .hero{position:relative;min-height:52vh;overflow:hidden;border-bottom:1px solid var(--ring);}
+  .hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 68%;
+                 filter:none!important;mix-blend-mode:normal!important;}
+  .hero .scrim-strong{position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(to bottom,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 36%,rgba(0,0,0,.18) 62%,rgba(0,0,0,0) 86%);}
+  .hero .inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;
+               padding:clamp(56px,10vh,140px) 1rem 1.2rem;text-align:center;}
+  .hero h1{margin:0;color:#d4af37;font-size:clamp(2rem,1.2rem + 2.8vw,3rem);line-height:1.15;
+           text-shadow:0 3px 12px rgba(0,0,0,.55);}
+  .hero p.sub{margin:.4rem auto 0;max-width:780px;line-height:1.6;color:#f3f3f3;
+              text-shadow:0 2px 8px rgba(0,0,0,.45);}
+  .cta-under-hero{padding:14px 0 22px;}
+  .cta-under-hero .pill-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:.85rem;}
+</style>
 </head>
 
 <body id="top" class="index">
@@ -66,28 +66,30 @@
   </header>
 
   <main id="main" role="main" tabindex="-1">
-    <!-- HERO -->
-    <section class="hero">
-      <picture>
-        <source src="images/start.strand.webp" type="image/webp">
-        <img src="images/start.strand.png" width="1920" height="1080"
-             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" loading="eager" fetchpriority="high">
-      </picture>
-      <div class="hero-inner">
-        <h1>Willkommen im Sinnwärts-Studio</h1>
-        <p class="sub">Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
-      </div>
-    </section>
+ <section class="hero">
+  <picture>
+    <source srcset="images/start.strand.webp" type="image/webp">
+    <img src="images/start.strand.png" width="1920" height="1080"
+         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" class="hero-bg"
+         loading="eager" fetchpriority="high">
+  </picture>
 
-    <!-- CTA unter Hero -->
-    <section class="wrap tac cta-under-hero" style="max-width:980px;">
-      <a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a>
-      <div class="pill-row">
-        <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
-        <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
-        <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
-      </div>
-    </section>
+  <div class="scrim-strong" aria-hidden="true"></div>
+
+  <div class="inner">
+    <h1>Willkommen im Sinnwärts-Studio</h1>
+    <p class="sub">Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
+  </div>
+</section>
+
+  <section class="wrap tac cta-under-hero" style="max-width:980px;">
+  <a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a>
+  <div class="pill-row">
+    <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
+    <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
+    <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
+  </div>
+</section>
 
     <!-- CONTENT ZICKZACK -->
     <section class="zz">

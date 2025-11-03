@@ -377,3 +377,29 @@ main{ flex:1 }
   .zz-row .zz-text { order:1; }
   .zz-row .zz-media{ order:2; }
 }
+/* ===== Index: Bildspalte schmaler, Portraits kleiner ===== */
+body.index .zz-row{
+  /* Text breit, Bild schlank */
+  grid-template-columns: minmax(0,1.25fr) minmax(260px,420px);
+  gap: clamp(18px, 3vw, 36px);
+}
+
+/* Einheitliche Bildoptik */
+body.index .zz-media img{
+  width: 100%;
+  max-width: 420px;          /* harte Obergrenze */
+  border-radius: 12px;
+  border: 1px solid var(--ring, #2a2f36);
+  display: block;
+  margin-left: auto;         /* schiebt Bild an die rechte Kante */
+}
+
+/* Portraits hoch, Teddy quer */
+body.index .zz-media img.is-portrait{ aspect-ratio: 4 / 5; object-fit: cover; }
+body.index .zz-media img.is-landscape{ aspect-ratio: 16 / 9; object-fit: cover; }
+
+/* Mobile bleibt 1-spaltig, Bild unter Text */
+@media (max-width: 900px){
+  body.index .zz-row{ grid-template-columns: 1fr; }
+  body.index .zz-media img{ max-width: 100%; margin: 0; }
+}

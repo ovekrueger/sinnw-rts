@@ -31,10 +31,17 @@
     </div>
   </header>
 
- <section class="page-hero">
+ <!-- Über mich – robuster Hero -->
+<section class="page-hero">
   <picture>
-    <source srcset="images/hero-ueber-mich.webp" type="image/webp">
-    <img class="hero-bg" src="images/hero-ueber-mich.jpg" alt="Ove Krüger am Meer – Sinnwärts Studio" width="1920" height="1080" loading="eager" fetchpriority="high">
+    <!-- WebP (falls vorhanden) -->
+    <source srcset="/images/hero-ueber-mich.webp" type="image/webp">
+    <!-- Fallback JPG/PNG -->
+    <img class="hero-bg"
+         src="/images/hero-ueber-mich.jpg"
+         alt="Ove Krüger am Meer – Sinnwärts Studio"
+         width="1920" height="1080"
+         loading="eager" fetchpriority="high">
   </picture>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner"><h1>Über mich</h1></div>

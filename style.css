@@ -435,22 +435,3 @@ body.index .zz-media img.is-landscape{ aspect-ratio: 16 / 9; object-fit: cover; 
   font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem); line-height:1.15;
 }
 .hero .inner .sub{margin-top:.5rem; line-height:1.45; opacity:.9;}
-/* === Über-mich Hero Feintuning (global) === */
-.hero{min-height:72vh;}
-.hero .inner{
-  padding-top:clamp(120px, 22vh, 260px);
-  place-items:center center;
-  text-align:center;
-}
-.hero .inner h1{
-  font-size:clamp(2.2rem, 1.2rem + 3.2vw, 3.6rem);
-  letter-spacing:.01em;
-}
-.hero .inner .sub{
-  margin-top:.8rem;
-  font-size:clamp(1rem, .9rem + .4vw, 1.25rem);
-  opacity:.95;
-}
-@media (min-width:1200px){
-  .hero .inner{ padding-top:24vh; }
-}

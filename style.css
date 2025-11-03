@@ -410,3 +410,17 @@ main{ flex:1 }
   .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; grid-column:auto; }
   .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; grid-column:auto; }
 }
+/* === Zickzack: harte Top-Bündigkeit – auch Bild links === */
+.zz-row{ align-items:start; }               /* gesamte Reihe oben */
+.zz-row > *{ align-self:start; }            /* beide Spalten oben */
+
+.zz-text h2{ margin:0 0 .35rem; line-height:1.15; color:var(--gold); }
+.zz-text > :first-child,
+.zz-media > :first-child{ margin-top:0; }   /* erster Knoten ohne Top-Margin */
+
+.zz-media{ display:flex; align-items:flex-start; }
+.zz-media picture{ display:block; margin:0; }
+.zz-media img{
+  display:block; margin:0; vertical-align:top; /* Safari-Baseline-Fix */
+  border-radius:12px;
+}

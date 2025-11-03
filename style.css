@@ -461,4 +461,7 @@ main{ flex:1 }
   .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; }
   .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; }
 }
-
+/* Zickzack: Bildspalte ohne Zeilenhöhe/Inline-Effekte */
+.zz-row .zz-media{ display:flex; align-items:flex-start; line-height:0; }
+.zz-row .zz-media picture{ display:block; }
+.zz-row.rev .zz-media img{ margin-top:0 !important; vertical-align:top; }

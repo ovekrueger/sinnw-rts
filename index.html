@@ -31,46 +31,65 @@
   <link rel="stylesheet" href="/style.css?v=23">
 
 <!-- OVERRIDE: Zweispaltiges Master-Grid (Texte links, Bilder rechts) -->
-<style>
-  /* Container: 2 Spalten – links Text (breiter), rechts Bild */
-  .zz{
-    max-width:1160px; margin:56px auto; padding:0 24px;
-    display:grid;
+<style id="layout-fix">
+  /* ===== Einheitliches Zickzack-Layout: Texte links, Bilder rechts ===== */
+  .zz {
+    max-width: 1160px;
+    margin: 56px auto;
+    padding: 0 24px;
+    display: grid;
     grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
-    column-gap:clamp(24px,3vw,40px);
-    row-gap:56px;                /* Abstand zwischen den Sektionen */
+    gap: 64px 40px;
+  }
+  .zz-row { display: contents; }
+  .zz-text { grid-column: 1; align-self: start; max-width: 65ch; }
+  .zz-media { grid-column: 2; align-self: start; }
+
+  .zz-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--ring);
+    object-fit: cover;
   }
 
-  /* Jede Zeile gibt ihr eigenes Grid auf und liefert nur die 2 Zellen */
-  .zz-row{ display:contents; }
-
-  /* Fixe Spalten: immer Text links, Bild rechts – egal ob .rev/.flip */
-  .zz-row .zz-text{ grid-column:1; align-self:start; max-width:65ch; }
-  .zz-row .zz-media{ grid-column:2; align-self:start; }
-
-  /* Bildstil: volle Spaltenbreite, einheitlich */
-  .zz-row .zz-media picture{ display:contents; }
-  .zz-row .zz-media img{
-    display:block; width:100%; height:auto; margin:0;
-    vertical-align:top; border-radius:12px; border:1px solid var(--ring);
-    /* Optional: optische Konsistenz */
-    /* aspect-ratio: 4/5; object-fit: cover; */
+  /* Mobile → untereinander */
+  @media (max-width: 880px){
+    .zz { display: block; }
+    .zz-row { display: block; margin-bottom: 48px; }
+    .zz-media { margin-top: 18px; }
   }
 
-  /* Überschriften & Abstände */
-  .zz-text h2{
-    margin:0 0 .35rem; color:var(--accent);
-    font-size:clamp(1.35rem,1.05rem + .8vw,1.8rem); line-height:1.15;
+  /* ===== Einheitliche Buttons: Gold + schwarze Schrift ===== */
+  :root{
+    --btn-gold: #e0b937;
+    --btn-gold-hover: #cfa32f;
+    --btn-text: #0b0f12;
   }
-  .zz-text p{ margin:.5rem 0; line-height:1.55; }
-  .zz-text ul{ margin:.45rem 0 0 1.1rem; padding:0; }
-  .zz-text li{ margin:.22rem 0; }
 
-  /* Mobile: einspaltig untereinander (erst Text, dann Bild) */
-  @media (max-width: 900px){
-    .zz{ display:block; }
-    .zz-row{ display:grid; grid-template-columns:1fr; gap:18px; margin:32px 0; }
-    .zz-row .zz-text, .zz-row .zz-media{ grid-column:auto; }
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  .btn--ghost {
+    background: var(--btn-gold) !important;
+    color: var(--btn-text) !important;
+    border-color: var(--btn-gold) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+  }
+
+  .btn:hover,
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .btn--ghost:hover {
+    background: var(--btn-gold-hover) !important;
+    border-color: var(--btn-gold-hover) !important;
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--btn-gold);
+    outline-offset: 2px;
   }
 </style>
 </head>

@@ -347,3 +347,33 @@ main{ flex:1 }
     border:1px solid var(--ring);
   }
 }
+/* === HERO: Bild unten, Scrim mittig, Text oben === */
+.hero { position: relative; min-height: 52vh; overflow: hidden; }
+.hero picture,
+.hero .hero-bg { position: absolute; inset: 0; width:100%; height:100%; }
+.hero .hero-bg { object-fit: cover; object-position: center 66%; z-index: 0; }
+.hero-scrim { z-index: 1; }
+.hero-inner { position: relative; z-index: 2; }
+
+/* === Buttons: überall Gold + schwarze Schrift === */
+.btn {
+  display:inline-block; border-radius:999px;
+  padding:.6rem 1.1rem; text-decoration:none;
+  background: var(--gold); color:#0b0f12; font-weight:700; border:1px solid var(--gold);
+}
+.btn:hover { filter: brightness(1.06); transform: translateY(-1px); transition: .18s; }
+.btn:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+.btn-gold { background: var(--gold); color:#0b0f12; border-color: var(--gold); }
+.btn-outline { background: var(--gold); color:#0b0f12; border-color: var(--gold); }
+
+/* === Zickzack: Standard bleibt Text links (Col 1), Bild rechts (Col 2) === */
+.zz-row { display:grid; grid-template-columns: 1fr 1fr; gap:clamp(18px,3vw,36px); align-items:start; }
+.zz-row .zz-text  { grid-column:1; }
+.zz-row .zz-media { grid-column:2; }
+.zz-row.rev .zz-text  { grid-column:1; }   /* falls irgendwo rev stehen bleibt, neutralisieren */
+.zz-row.rev .zz-media { grid-column:2; }
+@media (max-width:900px){
+  .zz-row { grid-template-columns:1fr; }
+  .zz-row .zz-text { order:1; }
+  .zz-row .zz-media{ order:2; }
+}

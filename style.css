@@ -386,3 +386,27 @@ main{ flex:1 }
   border-top:1px solid var(--ring); margin-top:40px; font-size:.9rem;
 }
 .site-footer a{ color:var(--muted) } .site-footer a:hover{ color:var(--accent) }
+/* === Zickzack: harte Top-Bündigkeit, auch bei Bild links === */
+.zz-row{ align-items:start; }                 /* ganze Reihe oben */
+.zz-row > *{ align-self:start; }              /* beide Spalten oben */
+
+.zz-text, .zz-media{ display:block; margin-top:0; } /* keine Wrapper-Margen */
+.zz-text > :first-child,
+.zz-media > :first-child{ margin-top:0; }     /* erster Knoten ohne Abstand */
+
+.zz-row .zz-media img{
+  display:block;
+  margin:0;                                   /* kein „Unterhängen“ */
+  vertical-align:top;                         /* Safari/Satzlinie fix */
+  border-radius:12px; border:1px solid var(--ring);
+}
+
+/* Falls ein H2 oben steht: garantiert bündig */
+.zz-text h2{ margin-top:0; }
+
+/* Mobile bleibt wie gehabt */
+@media (max-width:900px){
+  .zz-row{ grid-template-columns:1fr; gap:18px; margin:32px 0; }
+  .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; grid-column:auto; }
+  .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; grid-column:auto; }
+}

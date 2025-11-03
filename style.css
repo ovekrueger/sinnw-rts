@@ -322,4 +322,28 @@ main{ flex:1 }
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto }
   .to-top{ transition:none }
+}/* === ZICKZACK: HARTE DESKTOP-REGEL (überschreibt alles Alte) === */
+@media (min-width:761px){
+  .zz-row{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap: clamp(18px, 3vw, 36px) !important;
+    align-items: start !important;
+  }
+  .zz-row > .zz-text{ grid-column:1 !important; align-self:start !important; }
+  .zz-row > .zz-media{ grid-column:2 !important; align-self:start !important; }
+  .zz-row.rev > .zz-text{ grid-column:2 !important; }
+  .zz-row.rev > .zz-media{ grid-column:1 !important; }
+
+  /* Bilder voll in die Spalte, ohne Baseline-Mätzchen */
+  .zz-media picture{ display:contents !important; }
+  .zz-media img{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    margin:0 !important;
+    vertical-align:top !important;
+    border-radius:12px;
+    border:1px solid var(--ring);
+  }
 }

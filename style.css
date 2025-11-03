@@ -403,3 +403,19 @@ body.index .zz-media img.is-landscape{ aspect-ratio: 16 / 9; object-fit: cover; 
   body.index .zz-row{ grid-template-columns: 1fr; }
   body.index .zz-media img{ max-width: 100%; margin: 0; }
 }
+/* Hero-Layer sauber staffeln */
+.page-hero .hero-bg { z-index: 0; }
+.page-hero .hero-scrim { z-index: 1; }
+.page-hero .hero-inner { z-index: 3; }
+
+/* H1 im Hero gegen globale H1-Hides absichern */
+.page-hero .hero-inner h1{
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  margin:0 !important;
+  color:var(--accent) !important;
+  text-shadow:0 3px 10px rgba(0,0,0,.55) !important;
+  font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem) !important;
+  line-height:1.15 !important;
+}

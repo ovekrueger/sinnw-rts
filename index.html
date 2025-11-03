@@ -30,21 +30,48 @@
   <link rel="preload" href="/style.css?v=23" as="style">
   <link rel="stylesheet" href="/style.css?v=23">
 
-<!-- Hero-Override: Text klar lesbar, keine Streifen/Blendmodes -->
+<!-- OVERRIDE: Zweispaltiges Master-Grid (Texte links, Bilder rechts) -->
 <style>
-  .hero{position:relative;min-height:52vh;overflow:hidden;border-bottom:1px solid var(--ring);}
-  .hero .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 68%;
-                 filter:none!important;mix-blend-mode:normal!important;}
-  .hero .scrim-strong{position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(to bottom,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 36%,rgba(0,0,0,.18) 62%,rgba(0,0,0,0) 86%);}
-  .hero .inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;
-               padding:clamp(56px,10vh,140px) 1rem 1.2rem;text-align:center;}
-  .hero h1{margin:0;color:#d4af37;font-size:clamp(2rem,1.2rem + 2.8vw,3rem);line-height:1.15;
-           text-shadow:0 3px 12px rgba(0,0,0,.55);}
-  .hero p.sub{margin:.4rem auto 0;max-width:780px;line-height:1.6;color:#f3f3f3;
-              text-shadow:0 2px 8px rgba(0,0,0,.45);}
-  .cta-under-hero{padding:14px 0 22px;}
-  .cta-under-hero .pill-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-top:.85rem;}
+  /* Container: 2 Spalten – links Text (breiter), rechts Bild */
+  .zz{
+    max-width:1160px; margin:56px auto; padding:0 24px;
+    display:grid;
+    grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+    column-gap:clamp(24px,3vw,40px);
+    row-gap:56px;                /* Abstand zwischen den Sektionen */
+  }
+
+  /* Jede Zeile gibt ihr eigenes Grid auf und liefert nur die 2 Zellen */
+  .zz-row{ display:contents; }
+
+  /* Fixe Spalten: immer Text links, Bild rechts – egal ob .rev/.flip */
+  .zz-row .zz-text{ grid-column:1; align-self:start; max-width:65ch; }
+  .zz-row .zz-media{ grid-column:2; align-self:start; }
+
+  /* Bildstil: volle Spaltenbreite, einheitlich */
+  .zz-row .zz-media picture{ display:contents; }
+  .zz-row .zz-media img{
+    display:block; width:100%; height:auto; margin:0;
+    vertical-align:top; border-radius:12px; border:1px solid var(--ring);
+    /* Optional: optische Konsistenz */
+    /* aspect-ratio: 4/5; object-fit: cover; */
+  }
+
+  /* Überschriften & Abstände */
+  .zz-text h2{
+    margin:0 0 .35rem; color:var(--accent);
+    font-size:clamp(1.35rem,1.05rem + .8vw,1.8rem); line-height:1.15;
+  }
+  .zz-text p{ margin:.5rem 0; line-height:1.55; }
+  .zz-text ul{ margin:.45rem 0 0 1.1rem; padding:0; }
+  .zz-text li{ margin:.22rem 0; }
+
+  /* Mobile: einspaltig untereinander (erst Text, dann Bild) */
+  @media (max-width: 900px){
+    .zz{ display:block; }
+    .zz-row{ display:grid; grid-template-columns:1fr; gap:18px; margin:32px 0; }
+    .zz-row .zz-text, .zz-row .zz-media{ grid-column:auto; }
+  }
 </style>
 </head>
 

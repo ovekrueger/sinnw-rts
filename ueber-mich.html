@@ -31,24 +31,17 @@
     </div>
   </header>
 
-  <!-- HERO (wie Startseite: XL, mehr Höhe) -->
-  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.35; min-height:68vh;">
-    <picture>
-      <!-- optional: WebP, falls vorhanden
-      <source srcset="/images/hero_ueber_mich_16_9_web.webp?v=1" type="image/webp">
-      -->
-      <img src="/images/hero_ueber_mich_16_9_web.png?v=1"
-           alt="Über mich – Ove Krüger"
-           class="hero-bg"
-           width="1920" height="1080"
-           loading="eager" fetchpriority="high"
-           style="object-fit:cover; object-position:center 62%;">
-    </picture>
-    <div class="inner">
-      <h1>Über mich</h1>
-      <p class="sub">Mein Weg, meine Haltung, meine Geschichte.</p>
-    </div>
-  </section>
+ <section class="page-hero">
+  <picture>
+    <source srcset="images/hero-ueber-mich.webp" type="image/webp">
+    <img class="hero-bg" src="images/hero-ueber-mich.jpg" alt="Ove Krüger am Meer – Sinnwärts Studio" width="1920" height="1080" loading="eager" fetchpriority="high">
+  </picture>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="hero-inner"><h1>Über mich</h1></div>
+</section>
+<section class="subhero">
+  <p><strong>Ich bin Ove.</strong> Klarheit, Würde, Freiheit – das ist mein Kompass.</p>
+</section>
 
   <!-- CONTENT WRAP -->
   <main class="about wrap">

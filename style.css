@@ -181,7 +181,7 @@ body{
 .zz-media > :first-child{ margin-top:0; }
 
 /* Mobil: einspaltig, erst Text dann Bild */
-@media (max-width:900px){
+@media (max-width:750px){
   .zz-row{ grid-template-columns:1fr; gap:18px; margin:32px 0; }
   .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; grid-column:auto; }
   .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; grid-column:auto; }

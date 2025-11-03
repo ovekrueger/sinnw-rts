@@ -453,3 +453,25 @@ body.index .zz-media img.is-landscape{ aspect-ratio: 16 / 9; object-fit: cover; 
 }
 .hero .inner .sub{margin-top:.8rem; font-size:clamp(1rem, .9rem + .4vw, 1.25rem); opacity:.95;}
 @media (min-width:1200px){ .hero .inner{ padding-top:24vh; } }
+/* === Über-mich: Button unter N.O.R.A. sichtbar machen === */
+.about-block#meine-ki .btn-row {
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.about-block#meine-ki .btn {
+  display: inline-block;
+  background: var(--accent, #d4af37);
+  color: #0b0f12;
+  border: 1px solid var(--accent, #d4af37);
+  font-weight: 600;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color .2s ease, transform .1s ease;
+}
+
+.about-block#meine-ki .btn:hover {
+  background-color: #cfa32f;
+  transform: translateY(-1px);
+}

@@ -10,8 +10,8 @@
   <meta name="robots" content="index,follow">
 
   <!-- CSS -->
-  <link rel="preload" href="/style.css?v=29" as="style">
-  <link rel="stylesheet" href="/style.css?v=29">
+  <link rel="preload" href="/style.css?v=30" as="style">
+  <link rel="stylesheet" href="/style.css?v=30">
 </head>
 
 <body id="top" class="ueber-mich page-about">
@@ -44,7 +44,7 @@
     </picture>
     <div class="inner">
       <h1>Über mich</h1>
-      
+      <p class="sub">Mein Weg, meine Haltung, meine Geschichte.</p>
     </div>
   </section>
 
@@ -71,4 +71,95 @@
         <p><strong>Veränderung beginnt immer im Jetzt – auch wenn es weh tut.</strong></p>
         <p>Ich weiß, wie es ist, wenn nichts mehr geht. Ich weiß, wie einsam es sich anfühlen kann, wenn man nicht mehr weiterweiß. Und ich weiß, dass es möglich ist, aus genau diesen Momenten neue Kraft zu schöpfen. Meine wichtigste Erfahrung lautet: <em>„Ja“ zum Jetzt sagen – auch wenn es schmerzhaft ist.</em></p>
 
-        <p>Dankbar blicke ich zurück: nicht als Opfer, sondern als jemand, der verstanden hat, dass Veränderung nur im Augenblick beginnt. Und genau hier liegt meine Vision: Menschen dabei zu begleiten, Bl
+        <p>Dankbar blicke ich zurück: nicht als Opfer, sondern als jemand, der verstanden hat, dass Veränderung nur im Augenblick beginnt. Und genau hier liegt meine Vision: Menschen dabei zu begleiten, Blockaden zu lösen, Klarheit zu finden und ihr Leben in Tiefe zu verwandeln.</p>
+      </div>
+    </section>
+
+    <!-- Das bin ich -->
+    <section class="about-block" id="portrait">
+      <div class="zz-row">
+        <div class="zz-text">
+          <h2>Das bin ich</h2>
+          <p>Heute begegne ich Menschen echt, klar und zugewandt.</p>
+          <p>Nicht Theorien oder fertige Konzepte tragen mich, sondern gelebte Erfahrung.</p>
+          <p>Ich bringe systemische Klarheit, integrales Denken und meine Expertise in Sucht- und Lebensberatung mit – verbunden mit Menschlichkeit und Erdung.</p>
+        </div>
+        <div class="zz-media">
+          <img src="/images/ove-rolli.webp"
+               alt="Ove Krüger – Portrait"
+               class="is-portrait"
+               loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- Meine Erkenntnisse -->
+    <section class="about-block" id="erkenntnisse">
+      <div class="zz-row">
+        <div class="zz-text">
+          <h2>Meine Erkenntnisse</h2>
+          <p>Ich sage „Ja“ zum jetzigen Augenblick – auch wenn er schmerzhaft erscheint.</p>
+          <p>Meine Erkenntnis ist: Es gibt keinen Shortcut. Jeder Moment trägt die Chance für Veränderung. Heute weiß ich: Jeder Tag ist neu – und ich bin dankbar dafür.</p>
+        </div>
+        <div class="zz-media">
+          <img src="/images/leutturm-gold.png"
+               alt="Leuchtturm – Orientierung im Sturm"
+               class="erkenntnisse-img"
+               loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- Meine KI · N.O.R.A. (Teaser) -->
+    <section class="about-block block--ki" id="meine-ki">
+      <div class="zz-row">
+        <div class="zz-text">
+          <h2>Meine KI · N.O.R.A.</h2>
+          <p>N.O.R.A. ist mein ethischer, integraler KI-Partner im Hintergrund – klar, menschlich, verantwortungsvoll.
+             Wie wir zusammenarbeiten, was sie kann und wo die Grenzen liegen, erkläre ich hier.</p>
+
+          <div class="btn-row" style="margin-top:1.4rem;">
+            <a class="btn btn-gold" href="/nora.html">Mehr über N.O.R.A.</a>
+          </div>
+        </div>
+        <div class="zz-media">
+          <img src="/images/nora/preview.webp"
+               alt="N.O.R.A. – integrale KI"
+               class="portrait-img"
+               loading="lazy" decoding="async">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="wrap footer-row" style="text-align:center;padding:2rem 1rem;">
+      <small style="display:block;margin-bottom:.5rem;opacity:.85;">
+        © <span id="y"></span> Ove Krüger · Sinnwärts Studio
+      </small>
+      <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
+        <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+        <a href="/ueber-mich.html">Über mich</a> ·
+        <a href="/angebot.html">Angebote</a> ·
+        <a href="/resonanzraum.html">Resonanzraum</a> ·
+        <a href="/kontakt.html">Kontakt</a> ·
+        <a href="/impressum.html">Impressum</a> ·
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const toTopBtn = document.querySelector('.to-top');
+    const onScroll = () => toTopBtn.classList.toggle('show', window.scrollY > 600);
+    window.addEventListener('scroll', onScroll, {passive:true});
+    toTopBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    onScroll();
+  </script>
+</body>
+</html>

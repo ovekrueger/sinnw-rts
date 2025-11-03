@@ -9,7 +9,7 @@
   <link rel="canonical" href="https://sinnwaerts-studio.de/">
   <meta name="robots" content="index,follow">
 
-  <!-- OG / X -->
+  <!-- OG / Twitter -->
   <meta property="og:site_name" content="Sinnwärts Studio">
   <meta property="og:title" content="Sinnwärts Studio – Ordnung, Mut & Richtung">
   <meta property="og:description" content="Echtes Gespräch, klare Schritte und integrale Sicht. Aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit.">
@@ -21,129 +21,156 @@
   <meta property="og:image:alt" content="Mensch am Strand bei Sonnenaufgang – Klarheit im Sinnwärts Studio">
   <meta property="og:locale" content="de_DE">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sinnwärts Studio – Ordnung, Mut & Richtung">
+  <meta name="twitter:description" content="Echtes Gespräch, klare Schritte, integrale Sicht.">
+  <meta name="twitter:image" content="https://sinnwaerts-studio.de/images/og-start.jpg">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
-  <!-- Dein globales CSS -->
+  <!-- Optional global CSS -->
   <link rel="preload" href="/style.css?v=23" as="style">
   <link rel="stylesheet" href="/style.css?v=23">
 
-<!-- OVERRIDE: Zweispaltiges Master-Grid (Texte links, Bilder rechts) -->
-<style id="layout-fix">
-  /* ===== Einheitliches Zickzack-Layout: Texte links, Bilder rechts ===== */
-  .zz {
-    max-width: 1160px;
-    margin: 56px auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
-    gap: 64px 40px;
-  }
-  .zz-row { display: contents; }
-  .zz-text { grid-column: 1; align-self: start; max-width: 65ch; }
-  .zz-media { grid-column: 2; align-self: start; }
+  <!-- Page CSS (self-contained, ensures layout works exactly as requested) -->
+  <style>
+    :root{
+      --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --gold:#d4af37; --ring:#2a2f36;
+      --maxw:1100px;
+    }
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1rem}
+    a{color:var(--gold);text-decoration:none}
+    a:hover{text-decoration:underline}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
-  .zz-media img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid var(--ring);
-    object-fit: cover;
-  }
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(11,15,18,.95);border-bottom:1px solid var(--ring)}
+    .nav-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem}
+    .brand{font-weight:800;letter-spacing:.2px;color:var(--ink);text-decoration:none}
+    .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .nav-list a{color:var(--ink);text-decoration:none}
+    .nav-list a[aria-current="page"]{color:var(--gold)}
 
-  /* Mobile → untereinander */
-  @media (max-width: 880px){
-    .zz { display: block; }
-    .zz-row { display: block; margin-bottom: 48px; }
-    .zz-media { margin-top: 18px; }
-  }
+    /* HERO (text sichtbar, keine Goldstreifen, CTA NICHT im Hero) */
+    .hero{position:relative;min-height:52vh;overflow:hidden;border-bottom:1px solid var(--ring)}
+    .hero picture,.hero .hero-bg{position:absolute;inset:0;width:100%;height:100%}
+    .hero .hero-bg{object-fit:cover;object-position:center 66%}
+    .hero .scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.82) 0%, rgba(11,15,18,.55) 42%, rgba(11,15,18,0) 100%)}
+    .hero .inner{position:relative;z-index:2;display:grid;place-items:start center;padding-top:clamp(56px,10vh,140px);text-align:center}
+    .hero h1{margin:0;color:var(--gold);text-shadow:0 3px 10px rgba(0,0,0,.55);font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem);line-height:1.15}
 
-  /* ===== Einheitliche Buttons: Gold + schwarze Schrift ===== */
-  :root{
-    --btn-gold: #e0b937;
-    --btn-gold-hover: #cfa32f;
-    --btn-text: #0b0f12;
-  }
+    /* Subhero (unter dem Hero inkl. Haupt-CTA + Pills) */
+    .subhero{padding:14px 0 8px}
+    .subhero p{margin:.35rem auto;max-width:820px;text-align:center}
+    .pill-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.85rem}
 
-  .btn,
-  .btn-primary,
-  .btn-outline,
-  .btn--ghost {
-    background: var(--btn-gold) !important;
-    color: var(--btn-text) !important;
-    border-color: var(--btn-gold) !important;
-    text-decoration: none !important;
-    font-weight: 600;
-  }
+    /* Buttons: ALLE gold mit schwarzer Schrift */
+    .btn{
+      display:inline-block;border-radius:999px;padding:.6rem 1.1rem;border:1px solid var(--gold);
+      background:var(--gold);color:#0b0f12;font-weight:700;white-space:nowrap;transition:.18s;
+    }
+    .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+    .btn--ghost{background:transparent;border-color:var(--gold);color:var(--gold)}
+    .btn--ghost:hover{background:rgba(212,175,55,.08)}
+    .btn-row{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn-row--left{justify-content:flex-start}
+    .btn-row--center{justify-content:center}
 
-  .btn:hover,
-  .btn-primary:hover,
-  .btn-outline:hover,
-  .btn--ghost:hover {
-    background: var(--btn-gold-hover) !important;
-    border-color: var(--btn-gold-hover) !important;
-  }
+    .pill{display:inline-block;background:linear-gradient(180deg,#f6d56f 0%,var(--gold) 100%);color:#0b0f12;
+      border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:.48rem 1.1rem;font-weight:700}
 
-  .btn:focus-visible {
-    outline: 2px solid var(--btn-gold);
-    outline-offset: 2px;
-  }
-</style>
+    /* ZigZag – **Text links, Bild rechts** (immer) */
+    .zz{padding:0 1rem}
+    .zz-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px);align-items:start;max-width:1160px;margin:1.5rem auto}
+    .zz-row .zz-text{grid-column:1}
+    .zz-row .zz-media{grid-column:2}
+    .zz-text h2{margin:.1rem 0 .3rem;color:var(--gold);font-size:1.25rem}
+    .zz-text p{margin:.55rem 0}
+    .zz-text .muted{color:var(--muted)}
+    .zz-media img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ring)}
+    @media (max-width:900px){
+      .zz-row{grid-template-columns:1fr}
+      .zz-row .zz-text{order:1}
+      .zz-row .zz-media{order:2}
+    }
+
+    /* Sections unten */
+    .section-spacer{margin:10px auto 0}
+    .benefit-wrap{max-width:900px;margin:0 auto;text-align:center}
+    .benefit-wrap ul{max-width:900px;margin:0 auto 1.5rem;text-align:left;padding-left:1.1rem}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem}
+    .to-top{position:fixed;right:16px;bottom:16px;opacity:0;pointer-events:none;transition:.2s}
+    .to-top.show{opacity:.9;pointer-events:auto}
+
+    /* Footer */
+    .site-footer{border-top:1px solid var(--ring);margin-top:32px}
+    .site-footer .nav a{color:var(--muted)}
+    .site-footer .nav a:hover{color:var(--gold)}
+  </style>
 </head>
 
 <body id="top" class="index">
-  <!-- NAV -->
+  <!-- HEADER -->
   <header class="site-header">
-    <div class="nav-container wrap" style="display:flex;justify-content:space-between;align-items:center;padding:14px 1rem">
-      <a class="brand" href="index.html" style="text-decoration:none;color:var(--ink);font-weight:700">Sinnwärts Studio</a>
+    <div class="nav-bar wrap">
+      <a class="brand" href="index.html">Sinnwärts Studio</a>
       <nav aria-label="Hauptnavigation">
-        <ul class="nav-list" style="display:flex;gap:1rem;list-style:none;margin:0;padding:0">
-          <li><a href="index.html" class="active" aria-current="page" style="text-decoration:none;color:var(--ink)">Start</a></li>
-          <li><a href="ueber-mich.html" style="text-decoration:none;color:var(--ink)">Über mich</a></li>
-          <li><a href="angebot.html" style="text-decoration:none;color:var(--ink)">Angebote</a></li>
-          <li><a href="resonanzraum.html" style="text-decoration:none;color:var(--ink)">Resonanzraum</a></li>
-          <li><a href="kontakt.html" style="text-decoration:none;color:var(--ink)">Kontakt</a></li>
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="angebot.html">Angebote</a></li>
+          <li><a href="resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main" role="main" tabindex="-1">
- <section class="hero">
-  <picture>
-    <source srcset="images/start.strand.webp" type="image/webp">
-    <img src="images/start.strand.png" width="1920" height="1080"
-         alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" class="hero-bg"
-         loading="eager" fetchpriority="high">
-  </picture>
+    <!-- HERO -->
+    <section class="hero">
+      <picture>
+        <source src="images/start.strand.webp" type="image/webp">
+        <img class="hero-bg" src="images/start.strand.png" width="1920" height="1080"
+             alt="Sinnwärts – Coaching für Klarheit, Würde und Freiheit" loading="eager" fetchpriority="high">
+      </picture>
+      <div class="scrim" aria-hidden="true"></div>
+      <div class="inner"><h1>Willkommen im Sinnwärts-Studio</h1></div>
+    </section>
 
-  <div class="scrim-strong" aria-hidden="true"></div>
+    <!-- SUBHERO (Text + Haupt-CTA + drei Wege) -->
+    <section class="subhero wrap">
+      <p><strong style="color:var(--gold)">Sucht sucht Sinn.</strong> Wir betäuben uns – mit Arbeit, Alkohol, Scrollen. Eltern und Kinder verlieren sich im Dauerrauschen.</p>
+      <p><strong style="color:var(--gold)">Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei sich anzukommen.</p>
+      <p>Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
 
-  <div class="inner">
-    <h1>Willkommen im Sinnwärts-Studio</h1>
-    <p class="sub">Echtes Gespräch, klare Schritte, integrale Sicht – menschlich und kraftvoll.</p>
-  </div>
-</section>
+      <div class="btn-row btn-row--center" style="margin-top:.9rem">
+        <a class="btn" href="kontakt.html#klarheitsgespraech" aria-label="Kostenloses Klarheits-Gespräch vereinbaren">
+          Kostenloses Klarheits-Gespräch
+        </a>
+      </div>
+      <div class="pill-row">
+        <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
+        <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
+        <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
+      </div>
+    </section>
 
-  <section class="wrap tac cta-under-hero" style="max-width:980px;">
-  
-  <div class="pill-row">
-    <a href="angebote/frauen/"  class="pill">Für Frauen – KÖNIGIN</a>
-    <a href="angebote/maenner/" class="pill">Für Männer – SAMURAI</a>
-    <a href="suechte.html"      class="pill">Zu „Süchte neu denken“</a>
-  </div>
-</section>
+    <!-- Übergangssatz -->
+    <p class="wrap" style="max-width:720px;margin:1rem auto 1.4rem;text-align:center">
+      Du willst ein neues Drehbuch für dein Leben schreiben? Du spürst: Es ist Zeit loszugehen.
+      <strong> Dann bist du hier richtig.</strong>
+    </p>
 
-    <!-- CONTENT ZICKZACK -->
+    <!-- CONTENT: Text links, Bild rechts -->
     <section class="zz">
-      <!-- 1) Warum?  (Bild rechts) -->
+      <!-- 1) Warum -->
       <div class="zz-row">
         <div class="zz-text">
           <h2>Warum?</h2>
-          <p><strong>Jeder Mensch hat seine Holpersteine.</strong><br>Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
+          <p><strong>Jeder Mensch hat seine Holpersteine.</strong> Süchte, Abhängigkeiten, Selbstzweifel. Kennst du das?</p>
           <p>Du bist müde, leer, ausgebrannt. Du hängst in Mustern fest, die dir nicht guttun. Abhängigkeiten, Beziehungen, Süchte – sie scheinen stärker als du. Und plötzlich fragst du dich: <em>„Wer bin ich eigentlich – und wofür lebe ich?“</em></p>
           <p><strong>Ich brenne für diese Themen:</strong></p>
           <ul>
@@ -152,7 +179,8 @@
             <li>Selbstwert, Selbstachtung, Selbstbewusstsein, Selbstbild</li>
           </ul>
           <p>Ich kann die Fackel sein, die deine Flamme neu entzündet. Denn: <strong>Du hast das Recht, glücklich, erfolgreich und zufrieden zu sein.</strong></p>
-          <div class="btn-row"><a class="btn btn-gold" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a></div>
+          <p class="muted">Mein eigener Weg war hart: 20 Jahre Alkohol, Unfälle, Abstürze. Heute stehe ich – und vielleicht erspare ich dir ein paar der ganz tiefen Abgründe.</p>
+          <div class="btn-row btn-row--left"><a class="btn" href="kontakt.html#klarheitsgespraech">Kostenloses Klarheits-Gespräch</a></div>
         </div>
         <div class="zz-media">
           <picture>
@@ -162,12 +190,12 @@
         </div>
       </div>
 
-      <!-- 2) Bin ich ein Coach?  (Bild links) -->
-      <div class="zz-row rev" id="coach-section">
+      <!-- 2) Bin ich ein Coach? -->
+      <div class="zz-row">
         <div class="zz-text">
           <h2>Bin ich ein Coach?</h2>
           <p><strong>Ja und Nein.</strong> Klassisches Coaching kann ich – doch meine Stärke ist:
-            <strong> Aufdröseln, Verstehen, Erschaffen.</strong></p>
+             <strong> Aufdröseln, Verstehen, Erschaffen.</strong></p>
           <p>Coaching muss neu gedacht werden. Lineare Konzepte greifen in einer komplexen Welt nicht mehr – wir brauchen integrale Ansätze, die Denken, Fühlen, Handeln und Sein verbinden.</p>
           <p><strong>Ich bin Experte als:</strong></p>
           <ul>
@@ -184,7 +212,7 @@
         </div>
       </div>
 
-      <!-- 3) Das innere Kind  (Bild rechts) -->
+      <!-- 3) Das innere Kind -->
       <div class="zz-row">
         <div class="zz-text">
           <h2>Das innere Kind</h2>
@@ -195,20 +223,21 @@
             <li>Gefühle regulieren: Körper, Atem, klare Grenzen.</li>
             <li>Würde integrieren: Du bist nicht dein Mangel.</li>
           </ul>
-          <div class="btn-row">
-            <a class="btn btn-gold" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
+          <div class="btn-row btn-row--left">
+            <a class="btn" href="angebot.html#inneres-kind">Arbeit mit dem inneren Kind</a>
           </div>
         </div>
         <div class="zz-media">
           <picture>
             <source srcset="images/teddy-im-sand.webp" type="image/webp">
-            <img src="images/teddy-im-sand.png" width="640" height="400" alt="Teddybär im Sand – stilles Zeichen für das innere Kind" loading="lazy" decoding="async">
+            <img src="images/teddy-im-sand.png" width="640" height="400"
+                 alt="Teddybär im Sand – stilles Zeichen für das innere Kind" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
 
-      <!-- 4) Ich bin Ove.  (Bild links) -->
-      <div class="zz-row rev">
+      <!-- 4) Ich bin Ove. -->
+      <div class="zz-row">
         <div class="zz-text">
           <h2>Ich bin Ove.</h2>
           <p>Mehr als sechs Jahrzehnte Lebenserfahrung. 20 Jahre Alkohol – seit über 15 Jahren trocken. Viel verloren, das Wesentliche gefunden.</p>
@@ -220,8 +249,8 @@
           </ul>
           <p><strong>Meine Geschichte ist kein Makel – sie ist meine Stärke.</strong> 70 % Schwerbehinderung, 100 % Mitgefühl.</p>
           <div class="btn-row btn-row--left">
-            <a class="btn btn-outline" href="kontakt.html">Kostenloses Gespräch</a>
-            <a class="btn btn-gold" href="angebot.html">Angebote für dich</a>
+            <a class="btn btn--ghost" href="kontakt.html">Kostenloses Gespräch</a>
+            <a class="btn" href="angebot.html">Angebote für dich</a>
           </div>
         </div>
         <div class="zz-media">
@@ -234,27 +263,25 @@
       </div>
     </section>
 
-    <!-- Übergangstext -->
-    <p class="wrap" style="max-width:720px;margin:1.2rem auto .6rem;text-align:center;line-height:1.6;">
+    <!-- Übergang & Eltern -->
+    <p class="wrap" style="max-width:720px;margin:1.2rem auto .6rem;text-align:center">
       Und wenn Orientierung in der Familie herausfordernd wird, gilt dasselbe Prinzip:
-      <strong>Klarheit, Regulierung, Beziehung.</strong>
+      <strong> Klarheit, Regulierung, Beziehung.</strong>
     </p>
-
-    <!-- Eltern & Medienkonsum -->
-    <section id="eltern-workshop" class="wrap" style="scroll-margin-top:80px;margin:10px auto 0;max-width:980px;padding:0 1rem;">
-      <h2 style="margin:0 0 .4rem 0;">Eltern &amp; Medienkonsum – ruhig, klar, machbar</h2>
-      <p style="margin:0 0 .9rem 0;line-height:1.55;">
+    <section id="eltern-workshop" class="wrap section-spacer">
+      <h2 style="margin:0 0 .4rem;color:var(--gold);font-size:1.25rem">Eltern &amp; Medienkonsum – ruhig, klar, machbar</h2>
+      <p style="margin:0 0 .9rem">
         Aktuell biete ich <strong>Einzel- und Elterngespräche</strong> an – kein Kurs, keine Theorie-Schlacht.
         Wir sortieren gemeinsam: Mediennutzung, Reizüberflutung, Selbstregulation und neue Klarheit im Familienalltag.
       </p>
-      <a href="/kontakt.html#klarheitsgespraech" class="btn btn-gold">Kostenloses Klarheits-Gespräch</a>
+      <a href="/kontakt.html#klarheitsgespraech" class="btn">Kostenloses Klarheits-Gespräch</a>
     </section>
 
-    <!-- Was du bekommst (unverändert) -->
-    <section class="benefits" style="margin:4rem 0 3rem;">
-      <div style="max-width:900px;margin:0 auto;text-align:center">
+    <!-- Benefits -->
+    <section class="wrap" style="margin:4rem 0 3rem;">
+      <div class="benefit-wrap">
         <h2>Was du bekommst</h2>
-        <ul style="text-align:left;max-width:900px;margin:0 auto 1.5rem">
+        <ul>
           <li>🔍 <strong>Klarheit</strong> – du erkennst, was wirklich wirkt (und stärkst dabei deinen Selbstwert).</li>
           <li>🧘 <strong>Innere Ruhe</strong> – weniger Druck, mehr Atem, mehr Achtsamkeit im Alltag.</li>
           <li>🤝 <strong>Gesündere Beziehungen</strong> – zu dir selbst und zu anderen, getragen von Würde.</li>
@@ -264,25 +291,29 @@
         </ul>
 
         <!-- Klanggeschenk -->
-        <div style="width:100%;max-width:720px;margin:0 auto 1rem;background:rgba(255,255,255,.04);
-                    border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;">
-          <p style="margin:.1rem 0 .7rem 0;"> <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth Gröger</strong> (Breathwork-Coachin). </p>
+        <div class="card" style="max-width:720px;margin:0 auto 1rem;">
+          <p style="margin:.1rem 0 .7rem 0;">
+            <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth&nbsp;Gröger</strong> (Breathwork-Coachin).
+          </p>
           <audio controls preload="none" style="width:100%;max-width:420px;display:block;margin:0 auto .8rem;">
             <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
-          <p style="opacity:.8;margin:.3rem auto .6rem;max-width:580px;">Schließ die Augen und gönne dir innere Stille – Einladung zum bewussten Atem (≈ 4 Min).</p>
-          <p style="opacity:.7;margin:.1rem auto .8rem;max-width:580px;">Vocals: Ruth Gröger · Komposition/Produktion: Ove Krüger &amp; Ruth Gröger.</p>
-          <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download>🎵 „Atmen, mein Leben“ – Download</a>
+          <p style="opacity:.8;margin:.3rem auto .6rem;max-width:580px;">
+            Schließ die Augen und gönne dir innere Stille – Einladung zum bewussten Atem (≈ 4 Min).
+          </p>
+          <p style="opacity:.7;margin:.1rem auto .8rem;max-width:580px;">
+            Vocals: Ruth&nbsp;Gröger · Komposition/Produktion: Ove&nbsp;Krüger &amp; Ruth&nbsp;Gröger.
+          </p>
+          <a class="btn" href="assets/audio/atem-mein-leben.mp3" download>🎵 „Atmen, mein Leben“ – Download</a>
         </div>
 
         <!-- Leseprobe -->
-        <div style="width:100%;max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);
-                    border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:1.1rem;">
+        <div class="card" style="max-width:720px;margin:0 auto;">
           <p style="margin:.1rem 0 .7rem 0;"><strong>Leseprobe:</strong> Ein Auszug aus meinem Buch <em>Holpersteine</em> – online oder als PDF.</p>
-          <div style="margin-top:.5rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;">
+          <div class="btn-row btn-row--center" style="margin-top:.5rem">
             <a href="leseprobe.html" class="btn" style="min-width:clamp(200px,24vw,300px);text-align:center">📖 Online lesen</a>
-            <a href="assets/books/leseprobe.pdf" class="btn btn-outline" download
+            <a href="assets/books/leseprobe.pdf" class="btn" download
                style="min-width:clamp(200px,24vw,300px);text-align:center">⬇ PDF herunterladen</a>
           </div>
         </div>
@@ -298,7 +329,7 @@
       <small style="display:block;margin-bottom:.5rem;opacity:.85;">
         © <span id="y"></span> Ove Krüger · Sinnwärts Studio
       </small>
-      <nav style="font-size:.9rem;opacity:.85" aria-label="Footer-Navigation">
+      <nav class="nav" style="font-size:.9rem;opacity:.85" aria-label="Footer-Navigation">
         <a href="index.html" rel="home">Start</a> ·
         <a href="ueber-mich.html">Über mich</a> ·
         <a href="angebot.html">Angebote</a> ·
@@ -310,12 +341,12 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
     (function(){
-      var btn=document.querySelector('.to-top');
+      const btn=document.querySelector('.to-top');
       if(!btn) return;
-      function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+      const onScroll=()=>btn.classList.toggle('show', window.scrollY>600);
       window.addEventListener('scroll', onScroll, {passive:true});
       onScroll();
     })();

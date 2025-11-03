@@ -424,3 +424,41 @@ main{ flex:1 }
   display:block; margin:0; vertical-align:top; /* Safari-Baseline-Fix */
   border-radius:12px;
 }
+/* === ZICKZACK TOP-FIX (robust, auch mit <picture>) === */
+.zz-row{ 
+  display:grid; 
+  grid-template-columns:1fr 1fr;
+  gap:clamp(18px,3vw,36px);
+  align-items:start;                 /* Zeile oben */
+}
+
+.zz-row > .zz-text,
+.zz-row > .zz-media{
+  align-self:start;                  /* Spalten oben */
+  display:flex;                      /* neuer BFC → keine Margin-Collapse-Effekte */
+  flex-direction:column;
+  justify-content:flex-start;
+  margin:0;
+}
+
+/* Bild-Spalte wirklich ohne Top-Gap */
+.zz-media picture{ display:contents; }     /* eliminiert picture-Box */
+.zz-media img{
+  display:block;
+  margin:0 !important;
+  vertical-align:top;                      /* Safari Baseline */
+  border-radius:12px;
+  border:1px solid var(--ring);
+}
+
+/* erste Kinder nie mit top-margin starten */
+.zz-text > :first-child,
+.zz-media > :first-child{ margin-top:0 !important; }
+
+/* Mobile bleibt wie gehabt */
+@media (max-width:900px){
+  .zz-row{ grid-template-columns:1fr; }
+  .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; }
+  .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; }
+}
+

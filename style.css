@@ -465,3 +465,25 @@ main{ flex:1 }
 .zz-row .zz-media{ display:flex; align-items:flex-start; line-height:0; }
 .zz-row .zz-media picture{ display:block; }
 .zz-row.rev .zz-media img{ margin-top:0 !important; vertical-align:top; }
+/* === Zickzack: Spalten STRETCH + Bilder 100% (einheitliche Breite) === */
+.zz-row{
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr); /* keine Schrumpfer */
+}
+.zz-row > .zz-text,
+.zz-row > .zz-media{
+  justify-self: stretch !important;  /* Spalte füllt Track */
+  align-self: start !important;
+  width: 100% !important;            /* Sicherheitsnetz */
+}
+
+.zz-media picture{ display:contents } /* keine zusätzliche Boxbreite */
+.zz-media img{
+  display:block;
+  width:100% !important;             /* volle Spaltenbreite */
+  height:auto;
+  border-radius:12px;
+  border:1px solid var(--ring);
+}
+/* Optional: visuell konsistente Höhen */
+.zz-media img.is-portrait{ aspect-ratio: 4 / 5;  object-fit: cover; }
+.zz-media img.is-landscape{ aspect-ratio: 16 / 10; object-fit: cover; }

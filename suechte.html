@@ -41,16 +41,14 @@
 
 <!-- HERO -->
 <section class="hero hero--soft suechte-hero">
-  <picture>
-    <!-- falls du eine WebP-Version hast, sonst diese Zeile löschen -->
-    <source srcset="images/og-suechte.webp" type="image/webp">
-    <img src="images/og-suechte.jpg"         alt="Mensch geht zur Sonne – Weg aus der Sucht"
-         class="hero-bg"
-         style="object-position:center 68%;"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high">
-  </picture>
-
+  <img
+    src="/images/og-suechte.jpg"
+    onerror="this.onerror=null;this.src='/images/hero-sucht-sucht-sinn.jpg';"
+    alt="Mensch geht zur Sonne – Weg aus der Sucht"
+    class="hero-bg"
+    style="object-position:center 68%;"
+    width="1920" height="1080"
+    loading="eager" fetchpriority="high" decoding="async">
   <div class="inner hero-copy">
     <h1>Süchte</h1>
     <p class="subhero">Abhängigkeit verstehen – Selbstwirksamkeit stärken.</p>

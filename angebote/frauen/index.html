@@ -10,11 +10,38 @@
   <link rel="stylesheet" href="/style.css">
 
   <style>
-    .section { max-width: 800px; margin: 60px auto; text-align: center; }
+    /* Seitenlokale Feinabstimmung (kollisionsfrei zu style.css) */
+    .section{ max-width: 800px; margin: 60px auto; text-align:center; }
+    body.frauen .hero{ min-height:60vh; }
+    body.frauen .hero::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.58) 88%);
+      pointer-events:none;
+    }
+    body.frauen .hero .inner{
+      position:absolute; left:50%; transform:translateX(-50%);
+      bottom:12vh; width:min(92%,1000px); text-align:center;
+    }
+    body.frauen .hero h1{ font-size:clamp(32px,5vw,56px); line-height:1.05; letter-spacing:.01em; }
+    body.frauen .hero .subhero{ margin-top:.6rem; font-weight:600; opacity:.98; text-shadow:0 2px 10px rgba(0,0,0,.6); }
+
+    /* Prosatext-Block */
+    .frauen-int{ width:min(1000px,92%); margin:56px auto 40px; text-align:left; }
+    .frauen-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
+    .frauen-int .prose strong{ font-weight:700; }
+
+    /* CTA vor Footer */
+    .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
+    .cta-bottom .lead{
+      display:inline-block; padding:14px 18px; border-radius:14px;
+      background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36);
+      line-height:1.5;
+    }
+    .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
   </style>
 </head>
- 
-<body class="frauen">
+
+<body class="frauen" id="top">
 
 <header class="site-header">
   <div class="nav-container">
@@ -30,20 +57,20 @@
     </nav>
   </div>
 </header>
-<!-- Hero -->
-<section class="hero hero--S hero--soft hero--mid hero--textHigh"
-         style="--overlay:.25; --hero-offset:34vh; --inner-bottom:15%;">
+
+<!-- HERO -->
+<section class="hero hero--soft" style="--overlay:.25;">
   <img src="../../images/koenigin-vorn.webp"
        alt="Die Stärke der Königin"
        class="hero-bg"
        style="object-position:center 12%;">
-  <div class="inner">
+  <div class="inner hero-copy">
     <h1>Die Stärke der Königin</h1>
     <p class="subhero">Klarheit und innere Ruhe für Frauen auf ihrem Weg.</p>
-    
   </div>
 </section>
-<!-- ===== Frauen – KÖNIGIN (Intro + Überleitung, bereinigt) ===== -->
+
+<!-- ===== Frauen – KÖNIGIN (Intro + Wie wir arbeiten) ===== -->
 <section id="frauen-koenigin" class="section section--women">
   <div class="wrap">
     <header class="section-head tac">
@@ -51,7 +78,6 @@
       <p class="sub">Liebevoll klar. Wertschätzend direkt. Kein Wellnessprogramm.</p>
     </header>
 
-    <!-- Intro (straff + neuer Kern) -->
     <div class="lead" style="max-width:900px;margin:0 auto;line-height:1.6">
       <p>Alles kann Suchtverhalten sein oder werden. Nicht nur Substanzen wie Alkohol – auch Gedanken, Muster, Rollen, Beziehungen.</p>
       <p>👉 Anpassung, Perfektion, Co-Abhängigkeit – all das kann dich genauso fesseln wie die Flasche Wein am Abend. <br>
@@ -93,24 +119,50 @@
         </ul>
       </article>
     </section>
+
     <!-- Callout -->
     <div class="callout tac" style="margin:2.5rem auto 0;max-width:900px;padding:1rem 1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
       <p style="margin:0;line-height:1.6">
-        Am Ende gehst du, wie du gemeint bist: nicht klein, nicht angepasst – sondern voller Würde, Klarheit und Liebe. Du bist <b>KÖNIGIN</b> deines Lebens. 👑
+        Am Ende gehst du, wie du gemeint bist: nicht klein, nicht angepasst – sondern voller Würde, Klarheit und Liebe.
+        Du bist <b>KÖNIGIN</b> deines Lebens. 👑
       </p>
     </div>
 
-    <!-- CTA zu Angeboten -->
+    <!-- CTA zu Angeboten (Seitenanker auf /angebot.html) -->
     <div class="cta tac" style="margin:2rem 0 0">
-      <a href="#angebote-frauen" class="btn btn-gold">Zu den Angeboten</a>
+      <a href="../../angebot.html#frauen" class="btn btn-gold">Zu den Angeboten für Frauen</a>
     </div>
   </div>
 </section>
 
-<!-- Anker für Angebote -->
-<section id="angebote-frauen" class="section section--offers" aria-label="Angebote für Frauen">
-  <!-- Hier kommen deine konkreten Formate/Angebote als Cards/Listen rein -->
+<!-- ===== Integrations-Abschnitt (mit Männer-Passage) ===== -->
+<section class="block frauen-int" id="frauen-integral">
+  <div class="prose">
+    <p>Ich kann als Mann nur ahnen, wie tief die alten Schatten des Patriarchats in euch Frauen wirken.
+    Wie viele Generationen von Anpassung, Rückzug und Kampf noch in euren Zellen schwingen.
+    Solange Männer kein neues Bewusstsein entwickeln, bleibt euer Weg oft ein Ringen – zwischen Selbstschutz und Sehnsucht,
+    zwischen Herz und Haltung.</p>
+
+    <p>Und doch liegt genau darin eure Kraft – <strong>und eure Verantwortung</strong>: nicht in der Nachahmung alter Rollen,
+    sondern in der Wiederentdeckung eurer ursprünglichen Weiblichkeit – frei, klar, würdevoll.</p>
+
+    <p>Weiblichkeit ist kein Gegenentwurf zur Stärke. Sie <strong>ist</strong> Stärke – nur in einer anderen Frequenz.
+    Eine Kraft, die heilt, führt und verbindet.</p>
+
+    <p><strong>Und wir Männer haben, verdammt noch mal, die Pflicht, unsere Weiblichkeit zu erkennen und zuzulassen – und unsere Männlichkeit mit der Würde eines Samurai zu leben. Nicht gegen, sondern für das Leben.</strong></p>
+  </div>
 </section>
+
+<!-- ===== CTA-Bereich direkt vor Footer (sichtbar, verlinkt) ===== -->
+<section class="cta-bottom" id="cta-frauen">
+  <p class="lead">
+    Bereit, den Weg der Königin bewusst zu gehen? Ich begleite dich klar, menschlich und wirksam.
+  </p>
+  <div>
+    <a class="btn btn-gold" href="../../angebot.html#frauen">Zu den Angeboten für Frauen</a>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="wrap" style="text-align:center;padding:2rem 1rem;">
     <small style="display:block;margin-bottom:.5rem;opacity:.85;">
@@ -128,7 +180,8 @@
   </div>
 </footer>
 
-<button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 <script>
   (function(){
@@ -139,9 +192,5 @@
     onScroll();
   })();
 </script>
-
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
-  <!-- FOOTER -->
-></body>
+</body>
 </html>
-

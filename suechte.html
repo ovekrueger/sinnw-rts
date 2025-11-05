@@ -1,189 +1,163 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Süchte – Abhängigkeit verstehen | Sinnwärts Studio</title>
 
-  <title>Süchte neu denken – Klarheit statt Scham | Sinnwärts Studio</title>
-  <meta name="description" content="Abhängigkeit verstehen, Selbstwirksamkeit stärken. Neurobiologisch fundiert, menschlich, integral. Ove Krüger – Sucht sucht Sinn.">
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="stylesheet" href="/style.css">
 
-  <!-- Canonical & Robots -->
-  <link rel="canonical" href="suechte.html">
-  <meta name="robots" content="index,follow">
-
-  <!-- Open Graph -->
-  <meta property="og:site_name" content="Sucht sucht Sinn">
-  <meta property="og:title" content="Süchte neu denken – Klarheit statt Scham">
-  <meta property="og:description" content="Abhängigkeit verstehen, Selbstwirksamkeit stärken. Neurobiologisch fundiert, menschlich, integral.">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="suechte.html">
-  <meta property="og:image" content="images/og-suechte.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Süchte neu denken – Klarheit statt Scham">
-  <meta name="twitter:description" content="Abhängigkeit verstehen, Selbstwirksamkeit stärken. Neurobiologisch fundiert, menschlich, integral.">
-  <meta name="twitter:image" content="images/og-suechte.jpg">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=9">
+  <!-- Seitenlokale Minis -->
+  <style>
+    .section{max-width:1100px;margin:48px auto;padding:0 20px;}
+    .grid{display:grid;gap:24px;align-items:start;}
+    .grid-2{grid-template-columns:1.1fr .9fr;}
+    @media (max-width:900px){ .grid-2{grid-template-columns:1fr;} }
+    .callout{border:1px solid var(--ring,#2a2f36);border-radius:14px;padding:14px 16px;background:var(--bg-soft,#10151b);}
+    .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px;}
+    .eyebrow{letter-spacing:.08em;opacity:.75;}
+  </style>
 </head>
-<body id="top">
-  
-<!-- NAV -->
+
+<body id="top" class="suechte">
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="nav-container">
-    <a class="brand" href="index.html">Sinnwärts Studio</a>
+    <a class="brand" href="/index.html">Sinnwärts Studio</a>
     <nav aria-label="Hauptnavigation">
       <ul class="nav-list">
-        <li><a href="index.html">Start</a></li>
-        <li><a href="ueber-mich.html">Über mich</a></li>
-        <li><a href="angebot.html" class="active">Angebote</a></li>
-        <li><a href="resonanzraum.html">Resonanzraum</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="/index.html">Start</a></li>
+        <li><a href="/ueber-mich.html">Über mich</a></li>
+        <li><a href="/angebot.html">Angebote</a></li>
+        <li><a href="/resonanzraum.html">Resonanzraum</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- Breadcrumb -->
-<nav class="breadcrumb" aria-label="Brotkrumen">
-  <a href="angebot.html">Angebote</a>
-  <span aria-hidden="true">›</span>
-  <span class="current" aria-current="page">Süchte</span>
+<!-- BREADCRUMB -->
+<nav class="section" aria-label="Brotkrumen">
+  <small class="eyebrow"><a href="/angebot.html">Angebote</a> › Süchte</small>
 </nav>
 
 <!-- HERO -->
-<section class="hero hero--L hero--soft hero--low"
-         style="--overlay:.32; --pos-y:78%; --inner-bottom:60%;">
-  <img src="images/suechte-strand.webp" 
-       alt="Süchte – Sinnwärts" 
-       class="hero-bg"
-       width="1920" height="1080"
-       loading="eager" fetchpriority="high">
-  <div class="inner">
+<section class="hero hero--soft" style="--overlay:.28;">
+  <img src="/images/suechte-hero.webp" alt="Spuren im Sand Richtung Sonne – Weg aus der Sucht" class="hero-bg" style="object-position:center 30%;">
+  <div class="inner hero-copy">
     <h1>Süchte</h1>
-    <p class="sub">Abhängigkeit verstehen – Selbstwirksamkeit stärken.</p>
+    <p class="subhero">Abhängigkeit verstehen – Selbstwirksamkeit stärken.</p>
   </div>
 </section>
 
-<main>
-  <!-- ZZ-Layout: drei inhaltliche Blöcke -->
-  <section class="zz">
+<!-- INTRO -->
+<section class="section grid grid-2" id="intro">
+  <div class="text">
+    <h2>Hallo, du starker Mensch.</h2>
+    <p>Ich danke dir für deinen Mut, hier zu sein. Ich weiß, wovon ich spreche: 20 Jahre Alkohol – Delirien, Krankenhaus, Entgiftungen, Therapien. Ich dachte lange, „Ich schaffe es allein“. Habe gehofft, gekämpft, bin gescheitert. Bis ich lernte: Nicht der Kampf bringt Freiheit, sondern ein neues Bewusstsein.</p>
+    <p>Heute bin ich seit vielen Jahren trocken. Und ich möchte dir sagen: <strong>Es ist möglich.</strong></p>
 
-    <!-- Einstieg (Bild rechts) -->
-    <div class="zz-row">
-      <div class="zz-text">
-        <h2>Hallo, du starker Mensch.</h2>
-        <p>Ich danke dir für deinen Mut, hier zu sein. Ich weiß, wovon ich spreche: 20 Jahre Alkohol – Delirien, Krankenhaus, Entgiftungen, Therapien. 
-           Ich dachte lange: „Ich schaffe es allein.“ Habe gehofft, gekämpft, bin gescheitert. 
-           Bis ich lernte: Nicht der Kampf bringt Freiheit, sondern ein neues Bewusstsein.</p>
-
-        <p>Heute bin ich seit vielen Jahren trocken. Und ich möchte dir sagen: <strong>Es ist möglich.</strong></p>
-
-        <p>Bevor du weiterliest, lade ich dich ein, sechs Fragen an dich selbst zu stellen:</p>
-        <ol>
-          <li>Gibt es etwas, das meine Gedanken auffällig oft besetzt?</li>
-          <li>Bin ich abhängig – von Substanzen, Dingen oder Menschen?</li>
-          <li>Was wünsche ich mir wirklich?</li>
-          <li>Kosten mich diese Gedanken Kraft?</li>
-          <li>Was bedeutet das konkret für mein Leben – und was bin ich bereit zu investieren?</li>
-          <li>Bin ich wirklich bereit, etwas zu verändern?</li>
-        </ol>
-
-        <p>Vielleicht schmerzt die Antwort. Doch genau dort beginnt Veränderung. Du musst das nicht allein schaffen.</p>
-
-        <p>Sucht ist oft der Versuch, Gefühle zu vermeiden – oder sie festzuhalten. 
-           Beides funktioniert nicht. Gefühle lassen sich nicht dauerhaft wegsperren. 
-           Sie kehren zurück, verkleidet, in neuen Mustern.</p>
-
-        <p>Ob Alkohol, Essen, Arbeit, Social Media oder das Handy – jedes kann zum Suchtmittel werden. 
-           Immer ist Dopamin im Spiel, unser inneres Drogenlabor. Der kurze Kick wird zur Abhängigkeit. 
-           Irgendwann dreht sich das ganze Leben nur noch darum. Isolation. Leere. Verzweiflung.</p>
-
-        <p>Doch genau dort liegt die Chance: Wenn du bereit bist, hinzusehen, Fragen zu stellen und neue Wege zu gehen.</p>
-      </div>
-      <div class="zz-media">
-        <img src="images/alkohol-bett.jpg" alt="Sucht – Einsamkeit und Erwachen"
-             width="800" height="600" loading="lazy">
-      </div>
+    <div class="callout" role="note" aria-label="Fragen zur Selbstklärung">
+      <p style="margin:.2rem 0 .6rem"><strong>Bevor du weiterliest, prüfe ehrlich:</strong></p>
+      <ol style="margin:0 0 .2rem 1.25rem;line-height:1.55">
+        <li>Gibt es etwas, das meine Gedanken auffällig oft besetzt?</li>
+        <li>Bin ich abhängig – von Substanzen, Dingen oder Menschen?</li>
+        <li>Was wünsche ich mir wirklich?</li>
+        <li>Kosten mich diese Gedanken Kraft?</li>
+        <li>Was bedeutet das konkret für mein Leben – und was bin ich bereit zu investieren?</li>
+        <li>Bin ich wirklich bereit, etwas zu verändern?</li>
+      </ol>
     </div>
 
-    <!-- Alkohol & Substanzen (Bild links) -->
-    <div class="zz-row rev">
-      <div class="zz-text">
-        <h2>Alkohol &amp; Substanzen</h2>
-        <p>Alkohol ist gesellschaftlich akzeptiert – genau das macht ihn tückisch. 
-           20 Jahre war er mein Begleiter. Heute weiß ich: Veränderung beginnt nicht mit Verzicht, sondern mit <em>Freiheit</em>.</p>
-        <ul>
-          <li><strong>Verstehen:</strong> Biochemie, Craving, Triggerketten.</li>
-          <li><strong>Verändern:</strong> Mikro-Entscheidungen, sichere Schritte, Rückfallprävention.</li>
-          <li><strong>Verankern:</strong> Sinn, Beziehungen, Alltag, die neue Identität.</li>
-        </ul>
-      </div>
-      <div class="zz-media">
-        <img src="images/alkohol-und-sehkraft.jpg" alt="Alkohol – Klarheit zurückgewinnen"
-             width="800" height="600" loading="lazy">
-      </div>
+    <p>Sucht ist oft der Versuch, Gefühle zu vermeiden – oder sie festzuhalten. Beides funktioniert nicht. Gefühle lassen sich nicht dauerhaft wegsperren. Sie kehren zurück, verkleidet, in neuen Mustern.</p>
+    <p>Ob Alkohol, Essen, Arbeit, Social Media oder das Handy – <em>jedes</em> kann zum Suchtmittel werden. Immer ist Dopamin im Spiel, unser inneres Drogenlabor. Der kurze Kick wird zur Abhängigkeit. Irgendwann dreht sich das ganze Leben nur noch darum. Isolation. Leere. Verzweiflung.</p>
+    <p>Doch genau dort liegt die Chance: Wenn du bereit bist, hinzusehen, Fragen zu stellen und neue Wege zu gehen.</p>
+  </div>
+
+  <figure class="media card" style="border:1px solid var(--ring);border-radius:14px;overflow:hidden">
+    <img src="/images/sucht-zimmer-flasche.webp" alt="Alkoholflasche im Licht – Einsamkeit im Zimmer" width="960" height="640" loading="lazy">
+  </figure>
+</section>
+
+<!-- ALKOHOL -->
+<section class="section" id="alkohol">
+  <div class="grid grid-2">
+    <div class="text">
+      <h3>Alkohol &amp; Substanzen</h3>
+      <p>Alkohol ist gesellschaftlich akzeptiert – genau das macht ihn tückisch. 20 Jahre war er mein Begleiter. Heute weiß ich: Veränderung beginnt nicht mit Verzicht, sondern mit <strong>Freiheit</strong>.</p>
+      <ul>
+        <li><strong>Verstehen:</strong> Biochemie, Craving, Triggerketten.</li>
+        <li><strong>Verändern:</strong> Mikro-Entscheidungen, sichere Schritte, Rückfallprävention.</li>
+        <li><strong>Verankern:</strong> Sinn, Beziehungen, Alltag, die neue Identität.</li>
+      </ul>
+    </div>
+    <figure class="media card" style="border:1px solid var(--ring);border-radius:14px;overflow:hidden">
+      <img src="/images/sucht-glas.webp" alt="Whiskyglas und Schatten – Ambivalenz" width="960" height="640" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- DIGITALE SÜCHTE -->
+<section class="section" id="digital">
+  <div class="grid grid-2">
+    <div class="text">
+      <h3>Digitale Süchte</h3>
+      <p>Games, Social Media, Newsfeeds, Streaming – das Gehirn liebt Dopamin. Jeder Klick, jedes Like, jede Benachrichtigung ist ein kleiner Schuss Belohnung. Was mit Neugier beginnt, wird schnell zur Falle. Wir trainieren uns, ständig verfügbar, ständig stimuliert zu sein – und verlieren dabei den Zugang zu echter Ruhe und Tiefe.</p>
+
+      <p>In einer Welt voller <strong>VUCA</strong> (Volatilität, Unsicherheit, Komplexität, Ambiguität) wird unser Nervensystem permanent überfordert. Wir reagieren statt zu gestalten. Der digitale Overload ist kein persönliches Versagen, sondern ein Symptom einer dopamin-getriebenen Kultur.</p>
+
+      <p><strong>Dopamin funktioniert wie Heroin:</strong> Es belohnt Erwartung, nicht Erfüllung. Also suchen wir den nächsten Reiz – den kurzen Kick, der uns vergessen lässt, dass Stille oft die größere Wahrheit trägt.</p>
+
+      <ul>
+        <li><strong>Detox mit Sinn:</strong> Klare Grenzen, neue Gewohnheiten, realistische Ziele – keine Askese, sondern Bewusstheit.</li>
+        <li><strong>Struktur statt Willenskraft:</strong> Räume, Zeiten, Tools, Community. Systeme, die dich nicht binden, sondern befreien.</li>
+        <li><strong>Fokus zurückholen:</strong> Präsenz im Körper, regelmäßiger Schlaf, echte Begegnung statt Bildschirmnähe.</li>
+        <li><strong>Balance statt Dauerfeuer:</strong> Neurobiologische Regeneration als tägliche Praxis – nicht als Ausnahme.</li>
+      </ul>
+
+      <p>Digitale Nüchternheit bedeutet nicht, offline zu gehen – sondern wieder online zu sein <em>mit dir selbst</em>. Bewusstsein vor Bildschirm. Verbindung vor Geschwindigkeit.</p>
     </div>
 
-    <!-- Digitale Süchte (Bild rechts) -->
-    <div class="zz-row">
-      <div class="zz-text">
-        <h2>Digitale Süchte</h2>
-        <p>Games, Social Media, Gambling – das Gehirn liebt Dopamin. 
-           Was mit Neugier beginnt, wird schnell zur Falle. 
-           Doch Systeme, die dich binden, lassen sich durch Systeme ersetzen, die dich stärken.</p>
-        <ul>
-          <li>Detox mit Sinn: Ziele, Grenzen, Gewohnheiten – realistisch &amp; menschlich.</li>
-          <li>Struktur statt Willenskraft: Räume, Zeiten, Tools, Community.</li>
-          <li>Fokus zurückholen: Präsenz, Körper, Schlaf, Ernährung.</li>
-        </ul>
-      </div>
-      <div class="zz-media">
-        <img src="images/handy-ohne.png" alt="Digitale Süchte – Smartphone im Griff"
-             width="800" height="600" loading="lazy">
-      </div>
-    </div>
+    <figure class="media card" style="border:1px solid var(--ring);border-radius:14px;overflow:hidden">
+      <img src="/images/sucht-phone-like.webp" alt="Smartphone mit Like-Button – Suchtpotenzial" width="960" height="640" loading="lazy">
+    </figure>
+  </div>
+</section>
 
-  </section>
-  <!-- /ZZ-Layout -->
+<!-- CTA -->
+<section class="section" id="weitergehen" style="text-align:center;">
+  <h3>Weitergehen</h3>
+  <p>Du musst das nicht allein tun. Ein Gespräch kann der erste Schritt sein – raus aus der Isolation, hin zu mehr Klarheit und Freiheit.</p>
+  <div class="btn-row">
+    <a href="/kontakt.html#gespraech" class="btn btn-gold">Kostenloses Gespräch</a>
+    <a href="/angebot.html" class="btn btn-outline">Angebote ansehen</a>
+  </div>
+</section>
 
-  <!-- Weitergehen -->
-  <section class="wrap">
-    <h2>Weitergehen</h2>
-    <p>Du musst das nicht allein tun. 
-       Ein Gespräch kann der erste Schritt sein – raus aus der Isolation, hin zu mehr Klarheit und Freiheit.</p>
-    <p>
-      <a class="btn" href="kontakt.html">Kostenloses Gespräch</a>
-      <a class="btn ghost" href="angebot.html">Angebote ansehen</a>
-    </p>
-  </section>
-
-</main>
-
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="wrap" style="text-align:center;padding:2rem 1rem;">
     <small style="display:block;margin-bottom:.5rem;opacity:.85;">
       © <span id="y"></span> Ove Krüger · Sinnwärts Studio
     </small>
     <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="ueber-mich.html">Über mich</a> ·
-      <a href="angebot.html">Angebote</a> ·
-      <a href="resonanzraum.html">Resonanzraum</a> ·
-      <a href="kontakt.html">Kontakt</a> ·
-      <a href="impressum.html">Impressum</a> ·
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+      <a href="/ueber-mich.html">Über mich</a> ·
+      <a href="/angebot.html">Angebote</a> ·
+      <a href="/resonanzraum.html">Resonanzraum</a> ·
+      <a href="/kontakt.html">Kontakt</a> ·
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/datenschutz.html">Datenschutz</a>
     </nav>
   </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-  <script>
+
+<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
   (function(){
     var btn=document.querySelector('.to-top');
     if(!btn) return;

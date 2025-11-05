@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Für Männer – Samurai sein | Sinnwärts Studio</title>
 
-  <!-- CSS -->
   <link rel="preload" href="/style.css" as="style">
   <link rel="stylesheet" href="/style.css">
 
-  <!-- Seitenlokale Feinabstimmung -->
   <style>
+    /* Seite: Männer */
     .section{ max-width: 800px; margin: 60px auto; text-align:center; }
     .btn-row{ margin-top:1.25rem; }
-    /* Hero tiefer + Subhero lesbarer (mobil robust) */
+
+    /* Hero tiefer + Lesbarkeit */
     body.maenner .hero{ min-height:60vh; }
     body.maenner .hero::after{
       content:""; position:absolute; inset:0;
@@ -22,15 +22,25 @@
     }
     body.maenner .hero .inner{
       position:absolute; left:50%; transform:translateX(-50%);
-      bottom:12vh; width:min(92%,1000px); text-align:center;
+      bottom:9vh; /* tiefer gesetzt */
+      width:min(92%,1000px); text-align:center;
     }
     body.maenner .hero h1{ font-size:clamp(32px,5vw,56px); line-height:1.05; }
     body.maenner .hero .sub{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.95); text-shadow:0 2px 10px rgba(0,0,0,.6); }
+
     /* Integraler Männertext */
     .maenner-int{ width:min(1000px,92%); margin:60px auto; text-align:left; }
     .maenner-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
+    .maenner-int .keyline{
+      font-weight:700;
+      font-size:clamp(18px,1.5vw,22px);
+      line-height:1.5;
+      margin:20px 0 8px;
+    }
+    .maenner-int .essenz{ margin-top:16px; }
     .maenner-int .prose strong{ font-weight:700; }
-    /* CTA vor Footer */
+
+    /* CTA unten */
     .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
     .cta-bottom .lead{
       display:inline-block; padding:14px 18px; border-radius:14px;
@@ -57,7 +67,7 @@
   </div>
 </header>
 
-<!-- Hero -->
+<!-- HERO -->
 <section class="hero hero--soft" style="--overlay:.25;">
   <img src="/images/samurai.webp"
        alt="Aufrecht wie ein Samurai"
@@ -97,14 +107,13 @@
 
     <p>Dieses System hat uns Macht gegeben, aber die Verbindung genommen – zu euch, zu uns selbst, zu allem Lebendigen.</p>
 
-    <p>Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</p>
+    <p class="keyline">Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</p>
 
     <p>Männer, die den Mut haben, ihre Tränen zu ehren, ihre Wut zu reinigen und ihre Zärtlichkeit zuzulassen.</p>
-  
+
     <p><strong>Das ist kein Rückzug. Das ist Revolution. Still. Echt. Integrativ.</strong></p>
 
-      <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. 
-    Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
+    <p class="essenz">Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
   </div>
 </section>
 
@@ -138,7 +147,7 @@
 <script>
   // Jahr
   document.getElementById('y').textContent = new Date().getFullYear();
-  // ↑-Button sichtbar ab Scroll
+  // Scroll-Button
   (function(){
     var btn=document.querySelector('.to-top');
     if(!btn) return;

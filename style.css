@@ -610,3 +610,15 @@ body.maenner .hero .inner{ bottom: 9vh; }   /* vorher 12vh */
 
 /* Mehr Luft vor dem abschließenden Essenz-Satz */
 .maenner-int .essenz{ margin-top: 16px; }
+body.suechte .suechte-hero{ min-height:54vh; position:relative; }
+body.suechte .suechte-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.18) 38%,rgba(0,0,0,.52) 78%,rgba(0,0,0,.62) 100%);
+  pointer-events:none;
+}
+body.suechte .suechte-hero .inner{
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:10vh; width:min(1000px,92%); text-align:center;
+}
+body.suechte .suechte-hero h1{ font-size:clamp(32px,5vw,56px); text-shadow:0 3px 16px rgba(0,0,0,.55); }
+body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.96); text-shadow:0 2px 12px rgba(0,0,0,.6); }

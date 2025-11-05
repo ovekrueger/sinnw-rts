@@ -595,3 +595,5 @@ body.frauen .hero .subhero{
   line-height:1.4;
 }
 .cta-bottom .btn{ margin-top:16px; }
+/* vermeidet unschöne Umbrüche im CTA-Button */
+.cta-bottom .btn{ white-space: nowrap; }

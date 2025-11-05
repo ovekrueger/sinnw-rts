@@ -9,15 +9,39 @@
   <link rel="preload" href="/style.css" as="style">
   <link rel="stylesheet" href="/style.css">
 
+  <!-- Seitenlokale Feinabstimmung -->
   <style>
-    .section { max-width: 800px; margin: 60px auto; text-align: center; }
-    .zz-row{display:grid;place-items:center;}
-    .zz-text{display:grid;gap:1rem;}
-    .btn-row{margin-top:1.25rem;}
+    .section{ max-width: 800px; margin: 60px auto; text-align:center; }
+    .btn-row{ margin-top:1.25rem; }
+    /* Hero tiefer + Subhero lesbarer (mobil robust) */
+    body.maenner .hero{ min-height:60vh; }
+    body.maenner .hero::after{
+      content:""; position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.58) 88%);
+      pointer-events:none;
+    }
+    body.maenner .hero .inner{
+      position:absolute; left:50%; transform:translateX(-50%);
+      bottom:12vh; width:min(92%,1000px); text-align:center;
+    }
+    body.maenner .hero h1{ font-size:clamp(32px,5vw,56px); line-height:1.05; }
+    body.maenner .hero .sub{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.95); text-shadow:0 2px 10px rgba(0,0,0,.6); }
+    /* Integraler Männertext */
+    .maenner-int{ width:min(1000px,92%); margin:60px auto; text-align:left; }
+    .maenner-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
+    .maenner-int .prose strong{ font-weight:700; }
+    /* CTA vor Footer */
+    .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
+    .cta-bottom .lead{
+      display:inline-block; padding:14px 18px; border-radius:14px;
+      background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36);
+      line-height:1.5;
+    }
+    .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
   </style>
 </head>
 
-<body id="top">
+<body class="maenner" id="top">
 <header class="site-header">
   <div class="nav-container">
     <a class="brand" href="/index.html">Sinnwärts Studio</a>
@@ -34,8 +58,7 @@
 </header>
 
 <!-- Hero -->
-<section class="hero hero--S hero--soft hero--mid hero--textHigh"
-         style="--overlay:.25; --hero-offset:34vh; --inner-bottom:25%;">
+<section class="hero hero--soft" style="--overlay:.25;">
   <img src="/images/samurai.webp"
        alt="Aufrecht wie ein Samurai"
        class="hero-bg"
@@ -50,27 +73,43 @@
 <section id="maenner-samurai" class="section">
   <p><strong>„Du toller Mann. Danke für dein Sein. – Wann hast du das letzte Mal geweint? 💧“</strong></p>
 
-  <p>Wir Männer haben selten eine Sprache für unsere Gefühle gelernt.
-  Zwischen der Angst, Frauen gegenüber nicht übergriffig zu wirken – und dem Druck,
-  bloß kein „Warmduscher“ zu sein – verlieren wir uns oft.</p>
+  <p>Wir Männer haben selten eine Sprache für unsere Gefühle gelernt. Zwischen der Angst, Frauen gegenüber nicht übergriffig zu wirken – und dem Druck, bloß kein „Warmduscher“ zu sein – verlieren wir uns oft.</p>
 
-  <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer,
-  die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen
-  Anteile wieder zu entdecken. Viele von uns haben den Kontakt zu ihren
-  Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes
-  flieht – und wie leer das bleibt.</p>
+  <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer, die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen Anteile wiederzuentdecken. Viele von uns haben den Kontakt zu ihren Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes flieht – und wie leer das bleibt.</p>
 
-  <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen.
-  Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
+  <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
 
-  <p><strong>Die Tür 🚪 steht offen – die Frage ist: gehst du hindurch?</strong></p>
+  <p><strong>Die Tür steht offen.</strong><br>Die Frage ist: <em>Hast du den Mut, hindurchzugehen?</em></p>
 
-  <p><em>Falls du wirklich, wirklich willst, dann lade ich dich ein.
-  Nicht in eine Technik, nicht in ein Programm.
-  Sondern in einen Raum, in dem du deine Stärke neu entdeckst – jenseits der Pose.</em></p>
+  <p><em>Falls du wirklich willst, lade ich dich ein. Nicht in eine Technik, nicht in ein Programm. Sondern in einen Raum, in dem du deine Stärke neu entdeckst – jenseits der Pose.</em></p>
 
   <div class="btn-row">
-    <a class="btn btn-gold" href="/kontakt.html#samurai">Jetzt deinen Weg beginnen</a>
+    <a class="btn btn-gold" href="/kontakt.html#samurai">In meine Würde eintreten</a>
+  </div>
+</section>
+
+<!-- Integraler Männertext (Patriarchat-Schatten) -->
+<section class="block maenner-int" id="maenner-integral">
+  <div class="prose">
+    <p><strong>Wir Männer sind, verdammt noch mal, Teil des Patriarchats – und damit auch Teil seines Schattens.</strong></p>
+
+    <p>Jahrhunderte lang haben wir geglaubt, Kontrolle bedeute Ordnung. Wir haben Frauen geführt, weil wir uns selbst verloren hatten.</p>
+
+    <p>Dieses System hat uns Macht gegeben, aber die Verbindung genommen – zu euch, zu uns selbst, zu allem Lebendigen.</p>
+
+    <p>Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</p>
+
+    <p>Männer, die den Mut haben, ihre Tränen zu ehren, ihre Wut zu reinigen und ihre Zärtlichkeit zuzulassen.</p>
+
+    <p><strong>Das ist kein Rückzug. Das ist Revolution. Still. Echt. Integrativ.</strong></p>
+  </div>
+</section>
+
+<!-- CTA unten -->
+<section class="cta-bottom" id="cta-maenner">
+  <p class="lead">Bereit, Verantwortung zu übernehmen – für dich, für Beziehung, für das Leben?</p>
+  <div>
+    <a class="btn btn-gold" href="/kontakt.html#samurai">In meine Würde eintreten</a>
   </div>
 </section>
 
@@ -91,17 +130,19 @@
   </div>
 </footer>
 
-<button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
+<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+
 <script>
   // Jahr
   document.getElementById('y').textContent = new Date().getFullYear();
-
-  // ↑-Button
-  const btn = document.querySelector('.to-top');
-  const onScroll = () => btn.classList.toggle('show', window.scrollY > 600);
-  window.addEventListener('scroll', onScroll, {passive:true});
-  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-  onScroll();
+  // ↑-Button sichtbar ab Scroll
+  (function(){
+    var btn=document.querySelector('.to-top');
+    if(!btn) return;
+    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
 </script>
 </body>
 </html>

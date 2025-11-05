@@ -597,3 +597,16 @@ body.frauen .hero .subhero{
 .cta-bottom .btn{ margin-top:16px; }
 /* vermeidet unschöne Umbrüche im CTA-Button */
 .cta-bottom .btn{ white-space: nowrap; }
+/* Hero-Text etwas tiefer setzen */
+body.maenner .hero .inner{ bottom: 9vh; }   /* vorher 12vh */
+
+/* Keyline hervorheben + Rhythmus */
+.maenner-int .keyline{
+  font-weight:700;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.5;
+  margin: 20px 0 8px;
+}
+
+/* Mehr Luft vor dem abschließenden Essenz-Satz */
+.maenner-int .essenz{ margin-top: 16px; }

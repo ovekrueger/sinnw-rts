@@ -663,3 +663,15 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
   border-radius: 12px;                 /* weich */
   padding: 6px;                        /* dünner Rand */
 }
+/* Basis */
+.hero-badge{
+  position:absolute; z-index:2; right:clamp(12px,2.2vw,28px); top:clamp(12px,2.2vw,28px);
+  width:clamp(72px, 7vw, 110px); height:auto;
+  padding:6px; border-radius:12px; background:rgba(0,0,0,.08);
+  filter:drop-shadow(0 2px 10px rgba(0,0,0,.35));
+}
+
+/* Presets */
+.hero-badge--sm { width: clamp(64px, 6vw, 96px); }
+.hero-badge--md { width: clamp(72px, 7vw, 120px); } /* Empfehlung Desktop */
+.hero-badge--lg { width: clamp(84px, 8vw, 140px); } /* sehr breite Heros */

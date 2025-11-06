@@ -641,19 +641,19 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
 /* === Scrim sollte unter dem Badge liegen === */
 .hero-scrim{ position:absolute; inset:0; z-index:1; }
 
-/* === Hero-Siegel (LTC) === */
+/* Hero-Siegel (größer + responsiv) */
 .hero-badge{
   position:absolute;
-  top: clamp(10px, 2.2vw, 24px);
-  right: clamp(10px, 2.2vw, 24px);
-  width: clamp(54px, 6vw, 88px);
-  height: auto;
-  z-index: 2;           /* über Scrim/Text */
+  top: clamp(12px, 2.2vw, 28px);
+  right: clamp(12px, 2.2vw, 28px);
+  width: clamp(68px, 7vw, 110px); /* vorher 54…88px */
+  height:auto;
+  z-index:2;
   opacity:.9;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.35));
-  transition: opacity .2s ease;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));
+  transition: opacity .2s ease, transform .2s ease;
 }
-.hero-badge:hover{ opacity:1; }
+.hero-badge:hover{ opacity:1; transform:scale(1.02); }
 @media (max-width:480px){
-  .hero-badge{ width:64px; } /* etwas größer am Handy */
+  .hero-badge{ width:72px; } /* bewusst etwas größer auf Handy */
 }

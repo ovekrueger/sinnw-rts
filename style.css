@@ -622,3 +622,16 @@ body.suechte .suechte-hero .inner{
 }
 body.suechte .suechte-hero h1{ font-size:clamp(32px,5vw,56px); text-shadow:0 3px 16px rgba(0,0,0,.55); }
 body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.96); text-shadow:0 2px 12px rgba(0,0,0,.6); }
+/* === Hero-Siegel === */
+.hero-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 80px;
+  opacity: 0.9;
+  z-index: 5;
+  transition: opacity .3s ease;
+}
+.hero-badge:hover {
+  opacity: 1;
+}

@@ -657,3 +657,9 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
 @media (max-width:480px){
   .hero-badge{ width:72px; } /* bewusst etwas größer auf Handy */
 }
+.hero-badge {
+  /* …wie oben… */
+  background: rgba(0,0,0,.08);        /* ganz zarte Platte */
+  border-radius: 12px;                 /* weich */
+  padding: 6px;                        /* dünner Rand */
+}

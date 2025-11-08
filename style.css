@@ -265,3 +265,55 @@ body.suechte .suechte-hero .inner{ position:absolute; left:50%; transform:transl
   background:#d4af37 !important;
   border-color:#d4af37 !important;
 }
+/* START-HERO: Bild-Layer, Scrim, Badge links oben, H1 größer */
+.hero{
+  position:relative; isolation:isolate; overflow:clip;
+}
+.hero picture, .hero .hero-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+}
+.hero .hero-scrim{
+  position:absolute; inset:0; pointer-events:none; z-index:1;
+  /* leicht abdunkeln, Fokus auf Mitte */
+  background:
+    radial-gradient(120% 70% at 50% 85%, rgba(0,0,0,.16) 0 60%, transparent 72%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.36) 78%);
+}
+
+/* Badge oben links */
+.hero .hero-badge{
+  position:absolute; z-index:3;
+  top:clamp(10px,1.6vw,18px);
+  left:clamp(10px,1.6vw,18px);
+  width:clamp(68px,6vw,96px); height:auto;
+  padding:6px;
+  background:rgba(0,0,0,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  box-shadow:0 6px 28px rgba(0,0,0,.35);
+}
+/* falls die Klasse verwendet wird */
+.hero .hero-badge--md{ width:clamp(72px,6.4vw,100px); }
+
+/* Inhalt unten mittig */
+.hero .hero-inner{
+  position:relative; z-index:2;
+  display:grid; place-items:end center;
+  min-height:inherit; /* respektiert dein Inline-min-height */
+  padding:0 12px clamp(28px,7vw,64px);
+  text-align:center;
+}
+
+/* H1 deutlich größer + Gold */
+.hero .hero-inner h1{
+  margin:0;
+  font-size:clamp(2.8rem, 6.8vw, 5.8rem);
+  line-height:1.03;
+  font-weight:800;
+  color:var(--accent);                /* Gold */
+  text-shadow:0 3px 22px rgba(0,0,0,.55);
+}
+
+@media (max-width:420px){
+  .hero .hero-inner h1{ font-size:clamp(2.2rem, 8vw, 3rem); }
+}

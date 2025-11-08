@@ -486,3 +486,26 @@ body.index .hero .hero-badge{ left:clamp(10px,1.2vw,18px) !important; right:auto
 @media (max-width:420px){
   .hero .hero-badge{ width:clamp(72px,18vw,92px); }
 }
+/* HERO-BADGE: oben rechts + größer – global */
+.hero{ position:relative; isolation:isolate; }
+.hero .hero-badge{
+  position:absolute; z-index:3;
+  top:clamp(10px,1.2vw,18px);
+  right:clamp(10px,1.2vw,18px);
+  left:auto !important;                     /* alte Links-Position neutralisieren */
+  width:clamp(96px, 8vw, 132px);            /* etwas größer */
+  height:auto;
+  padding:6px;
+  background:rgba(0,0,0,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  box-shadow:0 6px 28px rgba(0,0,0,.35);
+}
+
+/* frühere Ausblendungen überschreiben (z. B. Resonanzraum) */
+.resonanzraum .hero .hero-badge{ display:block !important; }
+
+/* sehr kleine Screens: sanfter skalieren */
+@media (max-width:420px){
+  .hero .hero-badge{ width:clamp(80px, 18vw, 100px); }
+}

@@ -759,3 +759,9 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
 
 /* frühere „kleiner machen“-Regeln killen */
 .resonanzraum .hero{ min-height: unset; } /* wird von obigem calc wieder gesetzt */
+/* FINAL: Gold-Buttons mit schwarzer Schrift */
+.btn.btn-gold,
+.btn-gold,
+.btn-gold:visited{
+  color:#0b0f12 !important;
+}

@@ -694,3 +694,68 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
   .hero .hero-copy h1{ font-size: clamp(2rem, 8vw, 2.8rem); }
   .hero .hero-claim{ bottom: clamp(96px, 22vh, 180px); }
 }
+/* ===== FINAL OVERRIDE: HERO (Resonanzraum) ===== */
+:root{ --nav-h:72px; } /* eine Variable nutzen */
+
+.resonanzraum .hero{
+  /* hoch & unter fixem Header */
+  padding-top: var(--nav-h) !important;
+  min-height: calc(92svh - var(--nav-h)) !important;
+  min-height: calc(92vh  - var(--nav-h)) !important;
+  display: grid !important;
+  align-items: end !important;
+  overflow: clip !important;
+  border-bottom: 1px solid var(--ring) !important;
+}
+
+/* Bild */
+.resonanzraum .hero .hero-bg{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 42% !important;   /* bei Bedarf feintunen */
+  z-index: -2 !important;
+}
+
+/* Scrim */
+.resonanzraum .hero::before{
+  content:"" !important; position:absolute !important; inset:0 !important; z-index:-1 !important;
+  background:
+    radial-gradient(120% 65% at 50% 85%, rgba(0,0,0,.22) 0 60%, transparent 72%),
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.46) 76%) !important;
+  opacity: .95; /* stärker, damit H1 sicher lesbar ist */
+}
+
+/* Inhalt unten, NICHT absolut positionieren */
+.resonanzraum .hero .inner{
+  position: static !important;
+  inset: auto !important;
+  width: min(1100px, 92vw) !important;
+  margin: 0 auto clamp(32px, 7vw, 64px) !important; /* Abstand nach unten */
+  padding-inline: 12px !important;
+  text-align: center !important;
+}
+
+/* Claim weiter oben im Bild */
+.resonanzraum .hero .hero-claim{
+  position: absolute !important;
+  left: 50% !important; transform: translateX(-50%) !important;
+  bottom: clamp(120px, 28vh, 300px) !important;
+  width: min(1100px, 92vw) !important; padding-inline: 12px !important;
+}
+
+/* Typo */
+.resonanzraum .hero .hero-copy h1{
+  font-size: clamp(2.4rem, 6.4vw, 4.8rem) !important;
+  line-height: 1.05 !important; font-weight: 800 !important;
+  color: var(--ink) !important;
+  text-shadow: 0 2px 24px rgba(0,0,0,.55) !important;
+}
+
+/* Badge komplett ausblenden */
+.resonanzraum .hero .hero-badge{ display: none !important; }
+
+/* frühere „kleiner machen“-Regeln killen */
+.resonanzraum .hero{ min-height: unset; } /* wird von obigem calc wieder gesetzt */

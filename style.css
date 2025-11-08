@@ -765,3 +765,19 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
 .btn-gold:visited{
   color:#0b0f12 !important;
 }
+/* === FINAL FIX 1: Hero-H1 gold (Seite Resonanzraum) === */
+body.resonanzraum .hero .hero-copy h1{
+  color: var(--accent) !important;                  /* Gold */
+  text-shadow: 0 2px 24px rgba(0,0,0,.55) !important;
+}
+
+/* === FINAL FIX 2: Blog-Buttons – Text schwarz, auch :visited/:hover === */
+a.btn.btn-gold,
+.btn.btn-gold,
+.post-grid .card .btn-gold,
+.post-grid .card .btn-gold:visited,
+.post-grid .card .btn-gold:hover,
+.btn-gold:visited,
+.btn-gold:hover{
+  color:#0b0f12 !important;                         /* Schwarz */
+}

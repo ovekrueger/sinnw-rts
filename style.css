@@ -329,3 +329,23 @@ body.index .hero .hero-inner h1{
   line-height:1.06 !important;
   letter-spacing:.01em;
 }
+/* Start-Hero: H1 dezenter, besser lesbar */
+body.index .hero .hero-inner h1{
+  font-size:clamp(2.0rem, 4.8vw, 3.8rem) !important; /* vorher 4.2rem */
+  line-height:1.04 !important;
+  letter-spacing:.005em !important;
+  max-width: 900px;              /* Zeilenlänge beruhigen */
+  margin-inline:auto;
+}
+
+/* Badge etwas kleiner & konsistent rechts oben */
+body.index .hero .hero-badge{
+  right:clamp(10px,1.6vw,18px) !important;
+  width:clamp(64px,5.2vw,88px) !important;
+}
+
+/* Scrim minimal heller, damit Bild warm bleibt */
+body.index .hero::before{ opacity:.24 !important; }
+@media (max-width:420px){
+  body.index .hero .hero-inner h1{ font-size:clamp(1.9rem, 7.6vw, 2.6rem) !important; }
+}

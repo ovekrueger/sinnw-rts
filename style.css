@@ -657,3 +657,35 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
   :root{ --header-h: 64px; }
   .hero{ min-height: 75svh; }
 }
+/* === HERO-ANZEIGE FIX (Header-Offset + Fokuskorrektur) === */
+:root {
+  --header-h: 72px; /* exakte Höhe deiner festen Navigationsleiste */
+}
+
+/* sorgt dafür, dass Heros vollständig sichtbar bleiben */
+.hero {
+  position: relative;
+  min-height: calc(100svh - var(--header-h)); /* berücksichtigt den Header */
+  padding-top: var(--header-h);
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+}
+
+/* Bildfüllung mit Fokus leicht oberhalb der Mitte */
+.hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%; /* zeigt mehr vom oberen Bildbereich */
+  z-index: -1;
+}
+
+/* Mobile Feinanpassung */
+@media (max-width: 768px) {
+  :root { --header-h: 64px; }
+  .hero { min-height: calc(100svh - var(--header-h)); }
+  .hero .hero-bg { object-position: 50% 15%; }
+}

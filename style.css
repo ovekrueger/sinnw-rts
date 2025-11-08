@@ -781,3 +781,12 @@ a.btn.btn-gold,
 .btn-gold:hover{
   color:#0b0f12 !important;                         /* Schwarz */
 }
+/* === FINAL FIX 3: Blogkarten "Lesen"-Buttons – schwarze Schrift === */
+.post-grid .card .btn-gold,
+.post-grid .card .btn-gold:visited,
+.post-grid .card .btn-gold:hover,
+.post-grid .card .btn.btn-gold{
+  color:#0b0f12 !important;       /* Schwarz */
+  background:#d4af37 !important;  /* Gold */
+  border-color:#d4af37 !important;
+}

@@ -99,30 +99,19 @@ body{
 @media (max-width:760px){ .site-header .nav-container{ flex-wrap:wrap } .site-header .nav-list{ gap:1rem 1.1rem } }
 
 /* ===================================================
-   HERO (neutraler Scrim, kein Blend-Mode)
-   HTML: <section class="hero"><picture>…<img class="hero-bg">…</picture><div class="hero-scrim"></div><div class="hero-inner">…</div>
-   =================================================== */
-.hero{
-  position:relative; min-height:var(--hero-min); overflow:hidden;
-  border-bottom:1px solid var(--ring);
-}
-.hero picture,.hero .hero-bg{ display:block; width:100%; height:100% }
-.hero .hero-bg{
-  position:absolute; inset:0; object-fit:cover; object-position:center var(--hero-img-y); z-index:0;
-}
-.hero .hero-scrim{
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:linear-gradient(to bottom, var(--scrim-1) 0%, var(--scrim-2) 42%, var(--scrim-3) 100%);
-}
-.hero .hero-inner{
-  position:absolute; inset:0; display:grid; place-items:start center;
-  padding-top:clamp(56px,10vh,140px); text-align:center; z-index:2;
-}
-.hero h1{
-  margin:0; color:var(--accent);
-  text-shadow:0 3px 10px rgba(0,0,0,.55);
-  font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem); line-height:1.15;
-}
+  <!-- HERO -->
+<section class="hero hero--soft" aria-label="Resonanzraum">
+  <picture>
+    <source srcset="images/stimmgabel-gong.webp" type="image/webp">
+    <img src="images/stimmgabel-gong.webp"
+         alt="Resonanzraum – Stimmgabel und Gong im Licht"
+         class="hero-bg" width="1920" height="1080"
+         loading="eager" fetchpriority="high">
+  </picture>
+
+  <div class="hero-claim"><h2>Wo Schwingung Begegnung wird</h2></div>
+  <div class="inner hero-copy"><h1>Resonanzraum</h1></div>
+</section>
 
 /* ===================================================
    SUBHERO

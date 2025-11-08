@@ -1,57 +1,35 @@
-
 /* =========================================================
-   SINNWÄRTS – MASTER CSS (clean, fast, deduplicated)
-   Stand: 2025-11-03
-   Struktur: Tokens → Base → Layout → Header → Hero
-             → Subhero → Zickzack → Buttons/Pills → Sections
-             → Blog/Resonanzraum → Legal → Footer → Utilities
+   SINNWÄRTS – MASTER CSS (clean, deduplicated)
+   Stand: 2025-11-08
+   Struktur: Tokens → Base → Layout → Header → Hero → Subhero
+             → Zickzack → Buttons/Pills → Sections → Blog
+             → Legal → Footer → Utilities → Page Tweaks
    ========================================================= */
 
-/* ===== Variables / Design Tokens ===== */
+/* ===== Tokens ===== */
 :root{
   /* Farben */
-  --bg:#0b0f12;
-  --bg-soft:#10151b;
-  --card:#0e1216;
-  --ink:#e8e6e3;
-  --muted:#a7a7a7;
-  --accent:#d4af37;
+  --bg:#0b0f12; --bg-soft:#10151b; --card:#0e1216;
+  --ink:#e8e6e3; --muted:#a7a7a7; --accent:#d4af37;
   --ring:#2a2f36;
 
   /* Maße */
-  --maxw:1000px;
-  --nav-h:72px;
+  --maxw:1000px; --nav-h:72px;
 
   /* Hero */
-  --hero-min:52vh;
-  --hero-img-y:66%;                 /* Startbild-Ausschnitt */
-  --scrim-1:rgba(11,15,18,.82);
-  --scrim-2:rgba(11,15,18,.55);
-  --scrim-3:rgba(11,15,18,0);
+  --overlay:.30;               /* 0..1 – Scrim-Intensität */
 }
 
 /* ===== Fonts (lokal) ===== */
-@font-face{
-  font-family:"Montserrat";
-  src:url("/fonts/montserrat/montserrat-400.woff2") format("woff2");
-  font-weight:400; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:"Montserrat";
-  src:url("/fonts/montserrat/montserrat-600.woff2") format("woff2");
-  font-weight:600; font-style:normal; font-display:swap;
-}
-@font-face{
-  font-family:"Montserrat";
-  src:url("/fonts/montserrat/montserrat-700.woff2") format("woff2");
-  font-weight:700; font-style:normal; font-display:swap;
-}
+@font-face{ font-family:"Montserrat"; src:url("/fonts/montserrat/montserrat-400.woff2") format("woff2"); font-weight:400; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Montserrat"; src:url("/fonts/montserrat/montserrat-600.woff2") format("woff2"); font-weight:600; font-style:normal; font-display:swap; }
+@font-face{ font-family:"Montserrat"; src:url("/fonts/montserrat/montserrat-700.woff2") format("woff2"); font-weight:700; font-style:normal; font-display:swap; }
 
-/* ===== Reset / Base ===== */
+/* ===== Base ===== */
 *{ box-sizing:border-box }
 html,body{ margin:0; padding:0 }
 html{ scroll-behavior:smooth }
-img{ display:block; max-width:100%; height:auto }
+img{ display:block; max-width:100%; height:auto; vertical-align:top }
 a{ color:var(--accent); text-decoration:none }
 a:hover{ text-decoration:underline }
 a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
@@ -71,13 +49,10 @@ body{
 .grid-2{ display:grid; gap:32px; grid-template-columns:1fr 1fr; align-items:center }
 @media (max-width:880px){ .grid-2{ grid-template-columns:1fr } }
 
-/* ===================================================
-   Header (fixed)
-   =================================================== */
+/* ===== Header (fixed) ===== */
 .site-header{
   position:fixed; inset:0 0 auto 0; z-index:1000;
-  background:rgba(11,15,18,.95);
-  border-bottom:1px solid var(--ring);
+  background:rgba(11,15,18,.95); border-bottom:1px solid var(--ring);
 }
 .site-header .nav-container{
   max-width:var(--maxw); margin:0 auto; padding:10px 24px;
@@ -87,7 +62,7 @@ body{
 .site-header nav{ flex:1 }
 .site-header .nav-list{ display:flex; justify-content:center; gap:2rem; list-style:none; margin:0; padding:0 }
 .site-header .nav-list a{
-  position:relative; color:var(--ink); padding:8px 0; text-decoration:none;
+  position:relative; color:var(--ink); padding:8px 0;
 }
 .site-header .nav-list a::after{
   content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
@@ -98,114 +73,93 @@ body{
 .site-header .nav-list a[aria-current="page"]::after{ background:var(--accent); transform:scaleX(1) }
 @media (max-width:760px){ .site-header .nav-container{ flex-wrap:wrap } .site-header .nav-list{ gap:1rem 1.1rem } }
 
-/* ===================================================
-   HERO (neutraler Scrim, kein Blend-Mode)
-   HTML: <section class="hero"><picture>…<img class="hero-bg">…</picture><div class="hero-scrim"></div><div class="hero-inner">…</div>
-   =================================================== */
+/* ===== Hero (einheitlich, ohne Badge) ===== */
 .hero{
-  position:relative; min-height:var(--hero-min); overflow:hidden;
-  border-bottom:1px solid var(--ring);
+  position:relative; isolation:isolate; overflow:clip;
+  padding-top:var(--nav-h);
+  min-height:calc(92svh - var(--nav-h));
+  min-height:calc(92vh  - var(--nav-h)); /* Fallback */
+  display:grid; align-items:end; border-bottom:1px solid var(--ring);
 }
-.hero picture,.hero .hero-bg{ display:block; width:100%; height:100% }
 .hero .hero-bg{
-  position:absolute; inset:0; object-fit:cover; object-position:center var(--hero-img-y); z-index:0;
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:50% 42%; z-index:-2;
 }
-.hero .hero-scrim{
-  position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:linear-gradient(to bottom, var(--scrim-1) 0%, var(--scrim-2) 42%, var(--scrim-3) 100%);
+/* Scrim für Lesbarkeit */
+.hero::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:
+    radial-gradient(120% 65% at 50% 85%, rgba(0,0,0,.18) 0 60%, transparent 72%),
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.42) 76%);
+  opacity:var(--overlay);
 }
-.hero .hero-inner{
-  position:absolute; inset:0; display:grid; place-items:start center;
-  padding-top:clamp(56px,10vh,140px); text-align:center; z-index:2;
+.hero .inner{
+  width:min(1100px,92vw);
+  margin:0 auto clamp(32px,7vw,64px);
+  padding:0 12px; text-align:center;
 }
-.hero h1{
-  margin:0; color:var(--accent);
-  text-shadow:0 3px 10px rgba(0,0,0,.55);
-  font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem); line-height:1.15;
+.hero .hero-copy h1{
+  margin:0; font-weight:800; line-height:1.05;
+  font-size:clamp(2.4rem,6.4vw,4.8rem);
+  color:var(--ink); text-shadow:0 2px 24px rgba(0,0,0,.55);
 }
+.hero .sub{
+  margin:.6rem 0 0; font-weight:600;
+  font-size:clamp(1.05rem,2.6vw,1.4rem);
+  color:rgba(255,255,255,.92); text-shadow:0 1px 12px rgba(0,0,0,.45);
+}
+@media (max-width:720px){ .hero{ min-height:calc(88svh - var(--nav-h)) } }
 
-/* ===================================================
-   SUBHERO
-   =================================================== */
+/* ===== Subhero ===== */
 .subhero{ padding:14px 0 8px }
 .subhero p{ margin:.35rem auto; max-width:820px; line-height:1.55; text-align:center }
 .subhero strong{ color:var(--accent) }
 
-/* ===================================================
-   ZICKZACK (CANONICAL) — 2 Spalten, top-bündig, konsistente Bilder
-   =================================================== */
-.zz{ max-width:1160px; margin:56px auto; padding:0 24px; }
-
+/* ===== Zickzack (kanonisch) ===== */
+.zz{ max-width:1160px; margin:56px auto; padding:0 24px }
 .zz-row{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:clamp(18px,3vw,36px);
-  align-items:start;
-  margin:56px 0;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(18px,3vw,36px); align-items:start; margin:56px 0;
 }
-
-.zz-row .zz-text{ grid-column:1; align-self:start; max-width:65ch; }
-.zz-row .zz-media{ grid-column:2; align-self:start; }
-.zz-row.rev .zz-text{ grid-column:2; }
-.zz-row.rev .zz-media{ grid-column:1; }
-
-/* Spalten füllen den Track */
-.zz-row > .zz-text,
-.zz-row > .zz-media{
-  justify-self:stretch;
-  margin:0;
-  padding:0;
-}
-
-/* Typografie */
-.zz-text h2{
-  margin:0 0 .35rem;
-  font-size:clamp(1.35rem,1.05rem + .8vw,1.8rem);
-  line-height:1.15;
-  color:var(--accent);
-}
-.zz-text p{ margin:.5rem 0; line-height:1.55; }
-.zz-text ul{ margin:.45rem 0 0 1.1rem; padding:0; }
-.zz-text li{ margin:.22rem 0; }
+.zz-row .zz-text{ grid-column:1; align-self:start; max-width:65ch }
+.zz-row .zz-media{ grid-column:2; align-self:start }
+.zz-row.rev .zz-text{ grid-column:2 }
+.zz-row.rev .zz-media{ grid-column:1 }
+.zz-row > .zz-text, .zz-row > .zz-media{ justify-self:stretch; margin:0; padding:0 }
+.zz-text h2{ margin:0 0 .35rem; font-size:clamp(1.35rem,1.05rem + .8vw,1.8rem); line-height:1.15; color:var(--accent) }
+.zz-text p{ margin:.5rem 0; line-height:1.55 }
+.zz-text ul{ margin:.45rem 0 0 1.1rem; padding:0 } .zz-text li{ margin:.22rem 0 }
 .zz-text .muted{ color:var(--muted) }
-
-/* Bilder: <picture> neutralisieren, volle Spaltenbreite */
-.zz-media picture{ display:contents; }
-.zz-media img{
-  display:block; width:100%; height:auto; margin:0;
-  vertical-align:top;                /* Safari-Baseline-Fix */
-  border-radius:12px; border:1px solid var(--ring);
-}
-
-/* Erste Kinder nie mit Top-Margin starten */
-.zz-text > :first-child,
-.zz-media > :first-child{ margin-top:0; }
-
-/* Mobil: einspaltig, erst Text dann Bild */
+.zz-media picture{ display:contents }
+.zz-media img{ width:100%; height:auto; border-radius:12px; border:1px solid var(--ring) }
+.zz-media img.is-portrait{ aspect-ratio:4/5; object-fit:cover }
+.zz-media img.is-landscape{ aspect-ratio:16/10; object-fit:cover }
 @media (max-width:750px){
-  .zz-row{ grid-template-columns:1fr; gap:18px; margin:32px 0; }
-  .zz-row .zz-text, .zz-row.rev .zz-text{ order:1; grid-column:auto; }
-  .zz-row .zz-media, .zz-row.rev .zz-media{ order:2; grid-column:auto; }
+  .zz-row{ grid-template-columns:1fr; gap:18px; margin:32px 0 }
+  .zz-row .zz-text,.zz-row.rev .zz-text{ order:1; grid-column:auto }
+  .zz-row .zz-media,.zz-row.rev .zz-media{ order:2; grid-column:auto }
 }
+/* Index: Bildspalte schlanker */
+body.index .zz-row{ grid-template-columns:minmax(0,1.25fr) minmax(260px,420px) }
+body.index .zz-media img{ max-width:420px; margin-left:auto }
+@media (max-width:900px){ body.index .zz-row{ grid-template-columns:1fr } body.index .zz-media img{ max-width:100%; margin:0 } }
 
-/* Optional: visuell konsistente Höhen nach Motiv */
-.zz-media img.is-portrait{ aspect-ratio:4/5; object-fit:cover; }
-.zz-media img.is-landscape{ aspect-ratio:16/10; object-fit:cover; }
-
-/* ===================================================
-   Buttons & Pills
-   =================================================== */
+/* ===== Buttons & Pills ===== */
 .btn{
   display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
   padding:.85rem 1.2rem; min-height:44px; border-radius:999px;
-  font-weight:600; line-height:1.2; border:1px solid transparent;
+  font-weight:700; line-height:1.2; border:1px solid transparent;
   cursor:pointer; text-decoration:none; white-space:nowrap;
-  transition:background-color .2s ease, transform .05s ease, filter .2s ease;
+  transition:background-color .2s ease, transform .05s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow:0 0 0 1px rgba(0,0,0,.15), 0 6px 16px rgba(0,0,0,.25);
 }
 .btn:active{ transform:translateY(1px) }
 .btn:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
-.btn-gold{ background:#e0b937; color:#0b0f12; border-color:#e0b937 }
-.btn-gold:hover{ background:#cfa32f; border-color:#cfa32f }
+
+.btn-gold{ background:#d4af37; color:#0b0f12; border-color:#d4af37 }
+.btn-gold:hover{ filter:brightness(1.02); transform:translateY(-1px); box-shadow:0 8px 22px rgba(0,0,0,.3) }
+.btn-gold:visited{ color:#0b0f12 }
+
 .btn-outline{ background:transparent; color:var(--accent); border-color:var(--accent) }
 .btn-outline:hover{ background:rgba(212,175,55,.08) }
 
@@ -216,33 +170,20 @@ body{
 .btn-row--left{ justify-content:flex-start }
 .btn-row--right{ justify-content:flex-end }
 .btn-row--tight{ gap:8px 10px }
-
 .zz-text .btn-row{ margin-top:14px; margin-bottom:0; justify-content:flex-start }
 .zz-text .btn{ min-width:0; padding:.75rem 1rem }
+.btn-sm{ padding:10px 16px; font-weight:600 }
 @media (max-width:640px){ .btn{ min-width:46vw } .btn--block-xs{ width:100%; min-width:unset } }
 
-/* Pills */
-.pill{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:.5rem .85rem; min-height:38px; border-radius:999px;
-  border:1px solid rgba(212,175,55,.55); color:#d4af37;
-}
-.pill-row{ display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center }
-
-/* ===================================================
-   Sections (Benefits etc.)
-   =================================================== */
+/* ===== Sections (Benefits etc.) ===== */
 .benefits{ max-width:var(--maxw); margin:60px auto; padding:0 20px; text-align:center }
 .benefits h2{ font-size:2rem; margin-bottom:24px; color:var(--accent) }
 .benefits ul{ list-style:none; padding:0; margin:0; display:grid; gap:16px }
 .benefits li{ font-size:1.1rem; line-height:1.6 }
 
-/* ===================================================
-   Blog / Resonanzraum
-   =================================================== */
+/* ===== Blog / Resonanzraum ===== */
 .post-grid{ list-style:none; margin:0; padding:0; display:grid; gap:2rem }
 .cards--3{ grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
-
 .post-grid .card{
   background:var(--card); border:1px solid var(--ring);
   border-top:3px solid var(--accent);
@@ -258,34 +199,14 @@ body{
 .card-hd .meta{ color:var(--muted); font-size:.9rem }
 .card-txt{ padding:0 1.25rem 1rem; color:var(--muted); flex-grow:1 }
 .card-cta{ display:inline-block; margin:0 1.25rem 1.25rem }
-
-/* Resonanzraum Palette */
-:root{
-  --sw-bg:#0B0F12; --sw-card:#111418; --sw-border:#2a2d31;
-  --sw-gold:#E6BE4A; --sw-text:#E8E9EA; --sw-muted:#A8B0B8;
+/* Lesen-Buttons: Schwarz auf Gold */
+.post-grid .card .btn-gold,
+.post-grid .card .btn-gold:hover,
+.post-grid .card .btn-gold:visited{
+  color:#0b0f12; background:#d4af37; border-color:#d4af37;
 }
-body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
-.resonanzraum a{ color:var(--sw-gold) }
-.resonanzraum #grid{ display:grid; gap:28px; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)) }
-.resonanzraum #grid .card{
-  background:var(--sw-card); border:1px solid var(--sw-border);
-  border-radius:16px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,.3);
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.resonanzraum #grid .card:hover{ transform:translateY(-4px); box-shadow:0 4px 10px rgba(0,0,0,.4) }
-.resonanzraum #grid .card img{ width:100%; aspect-ratio:16/9; object-fit:cover; opacity:.9 }
-.resonanzraum #grid .card .inner{ display:block; padding:18px 20px; color:inherit }
-.resonanzraum #grid .card h3{ color:var(--sw-gold); margin:.2em 0 .4em; font-weight:600; font-size:1.1rem; line-height:1.3 }
-.resonanzraum #grid .card .meta{ font-size:.9rem; color:var(--sw-muted); margin-bottom:.6em }
-.resonanzraum #grid .card .teaser{ font-size:.95rem; color:#DADDE1; line-height:1.45 }
-.resonanzraum .post{ max-width:820px; margin:0 auto; padding:0 16px }
-.resonanzraum .post .eyebrow,
-.resonanzraum .post h1,
-.resonanzraum .post .meta{ text-align:center }
 
-/* ===================================================
-   Legal
-   =================================================== */
+/* ===== Legal ===== */
 .legal .container.max{ max-width:800px }
 .legal section{
   background:#111519; border:1px solid var(--ring);
@@ -295,9 +216,7 @@ body.resonanzraum{ background:var(--sw-bg); color:var(--sw-text) }
 .legal p{ margin:.5rem 0 0; line-height:1.55 }
 .legal .small{ color:var(--muted); margin-top:24px }
 
-/* ===================================================
-   Footer
-   =================================================== */
+/* ===== Footer ===== */
 html,body{ height:100%; display:flex; flex-direction:column }
 main{ flex:1 }
 .site-footer{
@@ -307,9 +226,7 @@ main{ flex:1 }
 .site-footer a{ color:var(--muted); text-decoration:none; margin:0 .5rem }
 .site-footer a:hover{ color:var(--accent) }
 
-/* ===================================================
-   Utilities
-   =================================================== */
+/* ===== Utilities ===== */
 .to-top{
   position:fixed; right:1rem; bottom:1rem; display:none;
   padding:.55rem .7rem; border-radius:.75rem; line-height:1; font-size:1.1rem;
@@ -323,470 +240,15 @@ main{ flex:1 }
 @media (prefers-reduced-motion:reduce){
   html{ scroll-behavior:auto }
   .to-top{ transition:none }
-}/* === ZICKZACK: HARTE DESKTOP-REGEL (überschreibt alles Alte) === */
-@media (min-width:761px){
-  .zz-row{
-    display:grid !important;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
-    gap: clamp(18px, 3vw, 36px) !important;
-    align-items: start !important;
-  }
-  .zz-row > .zz-text{ grid-column:1 !important; align-self:start !important; }
-  .zz-row > .zz-media{ grid-column:2 !important; align-self:start !important; }
-  .zz-row.rev > .zz-text{ grid-column:2 !important; }
-  .zz-row.rev > .zz-media{ grid-column:1 !important; }
-
-  /* Bilder voll in die Spalte, ohne Baseline-Mätzchen */
-  .zz-media picture{ display:contents !important; }
-  .zz-media img{
-    display:block !important;
-    width:100% !important;
-    height:auto !important;
-    margin:0 !important;
-    vertical-align:top !important;
-    border-radius:12px;
-    border:1px solid var(--ring);
-  }
-}
-/* === HERO: Bild unten, Scrim mittig, Text oben === */
-.hero { position: relative; min-height: 52vh; overflow: hidden; }
-.hero picture,
-.hero .hero-bg { position: absolute; inset: 0; width:100%; height:100%; }
-.hero .hero-bg { object-fit: cover; object-position: center 66%; z-index: 0; }
-.hero-scrim { z-index: 1; }
-.hero-inner { position: relative; z-index: 2; }
-
-/* === Buttons: überall Gold + schwarze Schrift === */
-.btn {
-  display:inline-block; border-radius:999px;
-  padding:.6rem 1.1rem; text-decoration:none;
-  background: var(--gold); color:#0b0f12; font-weight:700; border:1px solid var(--gold);
-}
-.btn:hover { filter: brightness(1.06); transform: translateY(-1px); transition: .18s; }
-.btn:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
-.btn-gold { background: var(--gold); color:#0b0f12; border-color: var(--gold); }
-.btn-outline { background: var(--gold); color:#0b0f12; border-color: var(--gold); }
-
-/* === Zickzack: Standard bleibt Text links (Col 1), Bild rechts (Col 2) === */
-.zz-row { display:grid; grid-template-columns: 1fr 1fr; gap:clamp(18px,3vw,36px); align-items:start; }
-.zz-row .zz-text  { grid-column:1; }
-.zz-row .zz-media { grid-column:2; }
-.zz-row.rev .zz-text  { grid-column:1; }   /* falls irgendwo rev stehen bleibt, neutralisieren */
-.zz-row.rev .zz-media { grid-column:2; }
-@media (max-width:900px){
-  .zz-row { grid-template-columns:1fr; }
-  .zz-row .zz-text { order:1; }
-  .zz-row .zz-media{ order:2; }
-}
-/* ===== Index: Bildspalte schmaler, Portraits kleiner ===== */
-body.index .zz-row{
-  /* Text breit, Bild schlank */
-  grid-template-columns: minmax(0,1.25fr) minmax(260px,420px);
-  gap: clamp(18px, 3vw, 36px);
 }
 
-/* Einheitliche Bildoptik */
-body.index .zz-media img{
-  width: 100%;
-  max-width: 420px;          /* harte Obergrenze */
-  border-radius: 12px;
-  border: 1px solid var(--ring, #2a2f36);
-  display: block;
-  margin-left: auto;         /* schiebt Bild an die rechte Kante */
-}
+/* ===== Page Tweaks ===== */
+/* Resonanzraum: H1 gold, Motiv minimal heller */
+body.resonanzraum .hero .hero-copy h1{ color:var(--accent) }
+body.resonanzraum .hero::before{ opacity:.26 }
 
-/* Portraits hoch, Teddy quer */
-body.index .zz-media img.is-portrait{ aspect-ratio: 4 / 5; object-fit: cover; }
-body.index .zz-media img.is-landscape{ aspect-ratio: 16 / 9; object-fit: cover; }
-
-/* Mobile bleibt 1-spaltig, Bild unter Text */
-@media (max-width: 900px){
-  body.index .zz-row{ grid-template-columns: 1fr; }
-  body.index .zz-media img{ max-width: 100%; margin: 0; }
-}
-/* Hero-Layer sauber staffeln */
-.page-hero .hero-bg { z-index: 0; }
-.page-hero .hero-scrim { z-index: 1; }
-.page-hero .hero-inner { z-index: 3; }
-
-/* H1 im Hero gegen globale H1-Hides absichern */
-.page-hero .hero-inner h1{
-  display:block !important;
-  visibility:visible !important;
-  opacity:1 !important;
-  margin:0 !important;
-  color:var(--accent) !important;
-  text-shadow:0 3px 10px rgba(0,0,0,.55) !important;
-  font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem) !important;
-  line-height:1.15 !important;
-}
-/* Hero (XL/soft/low) – sichtbar & überlagerungs-sicher */
-.hero{position:relative; min-height:68vh; overflow:hidden; border-bottom:1px solid var(--ring);}
-.hero .hero-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 62%; z-index:0;}
-.hero::before{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
-  /* weicher Scrim, steuerbar per --overlay (0–1) */
-  background:linear-gradient(to bottom, rgba(11,15,18,.82) 0%, rgba(11,15,18,.55) 42%, rgba(11,15,18,0) 100%);
-  opacity:var(--overlay,.35);
-}
-.hero .inner{position:absolute; inset:0; display:grid; place-items:start center; padding-top:clamp(56px,10vh,140px); z-index:2; text-align:center;}
-.hero .inner h1{
-  display:block !important; visibility:visible !important; opacity:1 !important;
-  margin:0; color:var(--accent) !important; text-shadow:0 3px 10px rgba(0,0,0,.55);
-  font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem); line-height:1.15;
-}
-.hero .inner .sub{margin-top:.5rem; line-height:1.45; opacity:.9;}
-/* === Über-mich Hero Feintuning === */
-.hero{position:relative; min-height:72vh; overflow:hidden; border-bottom:1px solid var(--ring,#2a2f36);}
-.hero .hero-bg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 62%; z-index:0;}
-.hero::before{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
-  background:linear-gradient(to bottom, rgba(11,15,18,.82) 0%, rgba(11,15,18,.55) 42%, rgba(11,15,18,0) 100%);
-  opacity:var(--overlay,.35);
-}
-.hero .inner{position:absolute; inset:0; display:grid; place-items:center center; text-align:center; z-index:2;
-  padding-top:clamp(120px, 22vh, 260px);
-}
-.hero .inner h1{
-  margin:0; color:var(--accent,#d4af37); text-shadow:0 3px 10px rgba(0,0,0,.55);
-  font-size:clamp(2.2rem, 1.2rem + 3.2vw, 3.6rem); line-height:1.15; letter-spacing:.01em;
-  display:block; visibility:visible; opacity:1;
-}
-.hero .inner .sub{margin-top:.8rem; font-size:clamp(1rem, .9rem + .4vw, 1.25rem); opacity:.95;}
-@media (min-width:1200px){ .hero .inner{ padding-top:24vh; } }
-/* === Über-mich: Button unter N.O.R.A. sichtbar machen === */
-.about-block#meine-ki .btn-row {
-  margin-top: 1.4rem;
-  text-align: left;
-}
-
-.about-block#meine-ki .btn {
-  display: inline-block;
-  background: var(--accent, #d4af37);
-  color: #0b0f12;
-  border: 1px solid var(--accent, #d4af37);
-  font-weight: 600;
-  padding: 0.75rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background-color .2s ease, transform .1s ease;
-}
-
-.about-block#meine-ki .btn:hover {
-  background-color: #cfa32f;
-  transform: translateY(-1px);
-}
-/* === Angebote: Lesbarkeit des H1 im Hero erhöhen === */
-.page-angebote .hero .inner h1{
-  color: var(--accent);
-  font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem);
-  line-height: 1.1;
-  letter-spacing: .01em;
-  text-shadow:
-    0 6px 22px rgba(0,0,0,.70),
-    0 1px 1px rgba(0,0,0,.85);
-  -webkit-text-stroke: .3px rgba(0,0,0,.25); /* subtiler Kantenkontrast */
-}
-
-/* Optional: Bild etwas dunkler für Kontrast (falls nötig) */
-.page-angebote .hero::before{
-  opacity: var(--overlay, .62); /* greift das Inline-Overlay auf */
-}
-
-/* Subhero (falls noch nicht vorhanden) */
-.subhero{ padding:14px 0 8px; }
-.subhero p{ margin:.35rem auto; max-width:820px; line-height:1.55; text-align:center; }
-.subhero strong{ color:var(--accent); }
-/* === Resonanzraum: Buttons === */
-.btn-row{
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 20px;
-}
-@media (max-width: 992px){
-  .btn-row{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-@media (max-width: 640px){
-  .btn-row{ grid-template-columns: 1fr; }
-}
-
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 18px;
-  border-radius: 999px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-decoration: none;
-  border: 1px solid transparent;
-  transition: transform .08s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 6px 16px rgba(0,0,0,.25);
-  will-change: transform;
-}
-
-.btn-gold{
-  background: #d4af37;        /* Gold */
-  color: #0b0f12;              /* Schwarz/dunkel */
-  border-color: rgba(0,0,0,.25);
-}
-.btn-gold:hover{
-  transform: translateY(-1px);
-  box-shadow: 0 8px 22px rgba(0,0,0,.3);
-  filter: brightness(1.02);
-}
-.btn-gold:active{
-  transform: translateY(0);
-  box-shadow: 0 4px 10px rgba(0,0,0,.25);
-}
-
-/* Optional: kleine Variante für Inline-Links */
-.btn-sm{ padding: 10px 16px; font-weight: 600; }
-/* === Fix: Gold-Buttons mit schwarzer Schrift === */
-.btn { color: inherit; } /* neutralisiert evtl. globale Textfarbe */
-.btn.btn-gold{
-  background:#d4af37;
-  color:#0b0f12 !important;                /* Schwarz erzwingen */
-  border-color:rgba(0,0,0,.25);
-}
-.btn.btn-gold:hover{ filter:brightness(1.02); }
-.btn.btn-gold:active{ filter:brightness(.98); }
-.btn.btn-gold:visited{ color:#0b0f12 !important; } /* Safari/visited */
-
-/* Falls Buttons in <p> stehen, Vererbung knacken */
-p .btn.btn-gold{ color:#0b0f12 !important; }
-
-/* === Resonanzraum: Hero etwas kleiner als Start-Hero === */
-.resonanzraum .hero{
-  min-height: 48vh;              /* vorher vermutlich ~60–70vh */
-}
-@media (max-width: 900px){
-  .resonanzraum .hero{ min-height: 42vh; }
-}
-@media (max-width: 600px){
-  .resonanzraum .hero{ min-height: 38vh; }
-}
-/* === Frauen-Seite: Hero tiefer + Subhero deutlicher === */
-body.frauen .hero{ min-height:60vh; }
-body.frauen .hero::after{
-  content:""; position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.58) 88%);
-  pointer-events:none;
-}
-body.frauen .hero .hero-copy{
-  position:absolute; left:50%; transform:translateX(-50%);
-  bottom:12vh; top:auto; text-align:center; width:min(92%,1000px);
-}
-body.frauen .hero h1{ 
-  font-size:clamp(32px,5vw,56px); line-height:1.05; letter-spacing:.01em; 
-}
-body.frauen .hero .subhero{
-  margin-top:.6rem; font-weight:600; opacity:.98;
-  text-shadow:0 2px 10px rgba(0,0,0,.6);
-}
-
-/* CTA-Bereich vor dem Footer */
-.cta-bottom{ 
-  margin:48px auto 80px; text-align:center; width: min(1000px, 92%);
-}
-.cta-bottom .lead{
-  display:inline-block; padding:14px 18px; border-radius:14px;
-  background:var(--bg-soft); border:1px solid var(--ring);
-  line-height:1.4;
-}
-.cta-bottom .btn{ margin-top:16px; }
-/* vermeidet unschöne Umbrüche im CTA-Button */
-.cta-bottom .btn{ white-space: nowrap; }
-/* Hero-Text etwas tiefer setzen */
-body.maenner .hero .inner{ bottom: 9vh; }   /* vorher 12vh */
-
-/* Keyline hervorheben + Rhythmus */
-.maenner-int .keyline{
-  font-weight:700;
-  font-size: clamp(18px, 1.5vw, 22px);
-  line-height: 1.5;
-  margin: 20px 0 8px;
-}
-
-/* Mehr Luft vor dem abschließenden Essenz-Satz */
-.maenner-int .essenz{ margin-top: 16px; }
-body.suechte .suechte-hero{ min-height:54vh; position:relative; }
-body.suechte .suechte-hero::after{
-  content:""; position:absolute; inset:0;
-  background:linear-gradient(180deg,rgba(0,0,0,.06) 0%,rgba(0,0,0,.18) 38%,rgba(0,0,0,.52) 78%,rgba(0,0,0,.62) 100%);
-  pointer-events:none;
-}
-body.suechte .suechte-hero .inner{
-  position:absolute; left:50%; transform:translateX(-50%);
-  bottom:10vh; width:min(1000px,92%); text-align:center;
-}
-body.suechte .suechte-hero h1{ font-size:clamp(32px,5vw,56px); text-shadow:0 3px 16px rgba(0,0,0,.55); }
-body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.96); text-shadow:0 2px 12px rgba(0,0,0,.6); }
-:root{ --header-h:72px; --ink:#e8e6e3; --gold:#d4af37; }
-
-/* Basis */
-.hero{
-  position: relative;
-  isolation: isolate;
-  padding-top: var(--header-h);
-  /* deutlich höher */
-  min-height: calc(92svh - var(--header-h));
-  min-height: calc(92vh  - var(--header-h)); /* Fallback */
-  display: grid;
-  align-items: end;
-  overflow: clip;
-}
-@media (max-width: 720px){
-  .hero{ min-height: calc(88svh - var(--header-h)); }
-}
-
-/* Bild */
-.hero .hero-bg{
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: 50% 42%;     /* ggf. feintunen */
-  display: block;               /* kein Inline-Gap */
-  z-index: -2;
-}
-
-/* Lesbarkeits-Scrim */
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:-1;
-  background:
-    radial-gradient(120% 65% at 50% 85%, rgba(0,0,0,.22) 0 60%, transparent 72%),
-    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.46) 76%);
-}
-
-/* Goldener Cut unten */
-.hero::after{
-  content:""; position:absolute; left:0; right:0; bottom:0; height:10px;
-  background: linear-gradient(180deg, transparent, rgba(0,0,0,.55) 1px) top/100% 100% no-repeat,
-              linear-gradient(90deg, rgba(212,175,55,.85), rgba(212,175,55,.55));
-}
-
-/* Container */
-.hero .inner{ width:min(1100px,92vw); margin:0 auto clamp(32px,7vw,64px); padding-inline:12px; }
-
-/* Claim höher setzen (oben im Bild) */
-.hero .hero-claim{
-  position:absolute; left:50%;
-  bottom: clamp(120px, 28vh, 300px);   /* weiter nach oben */
-  transform: translateX(-50%);
-  width:min(1100px,92vw); padding-inline:12px;
-}
-.hero .hero-claim h2{
-  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
-  font-weight:600; color: rgba(255,255,255,.92);
-  text-shadow: 0 1px 16px rgba(0,0,0,.6);
-}
-
-/* Titel */
-.hero .hero-copy h1{
-  font-size: clamp(2.4rem, 6.4vw, 4.8rem);
-  line-height:1.05; color: var(--ink); font-weight:800;
-  text-shadow: 0 2px 24px rgba(0,0,0,.55);
-}
-
-/* Kleinbildschirm */
-@media (max-width:420px){
-  .hero .hero-copy h1{ font-size: clamp(2rem, 8vw, 2.8rem); }
-  .hero .hero-claim{ bottom: clamp(96px, 22vh, 180px); }
-}
-/* ===== FINAL OVERRIDE: HERO (Resonanzraum) ===== */
-:root{ --nav-h:72px; } /* eine Variable nutzen */
-
-.resonanzraum .hero{
-  /* hoch & unter fixem Header */
-  padding-top: var(--nav-h) !important;
-  min-height: calc(92svh - var(--nav-h)) !important;
-  min-height: calc(92vh  - var(--nav-h)) !important;
-  display: grid !important;
-  align-items: end !important;
-  overflow: clip !important;
-  border-bottom: 1px solid var(--ring) !important;
-}
-
-/* Bild */
-.resonanzraum .hero .hero-bg{
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: 50% 42% !important;   /* bei Bedarf feintunen */
-  z-index: -2 !important;
-}
-
-/* Scrim */
-.resonanzraum .hero::before{
-  content:"" !important; position:absolute !important; inset:0 !important; z-index:-1 !important;
-  background:
-    radial-gradient(120% 65% at 50% 85%, rgba(0,0,0,.22) 0 60%, transparent 72%),
-    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.46) 76%) !important;
-  opacity: .95; /* stärker, damit H1 sicher lesbar ist */
-}
-
-/* Inhalt unten, NICHT absolut positionieren */
-.resonanzraum .hero .inner{
-  position: static !important;
-  inset: auto !important;
-  width: min(1100px, 92vw) !important;
-  margin: 0 auto clamp(32px, 7vw, 64px) !important; /* Abstand nach unten */
-  padding-inline: 12px !important;
-  text-align: center !important;
-}
-
-/* Claim weiter oben im Bild */
-.resonanzraum .hero .hero-claim{
-  position: absolute !important;
-  left: 50% !important; transform: translateX(-50%) !important;
-  bottom: clamp(120px, 28vh, 300px) !important;
-  width: min(1100px, 92vw) !important; padding-inline: 12px !important;
-}
-
-/* Typo */
-.resonanzraum .hero .hero-copy h1{
-  font-size: clamp(2.4rem, 6.4vw, 4.8rem) !important;
-  line-height: 1.05 !important; font-weight: 800 !important;
-  color: var(--ink) !important;
-  text-shadow: 0 2px 24px rgba(0,0,0,.55) !important;
-}
-
-/* Badge komplett ausblenden */
-.resonanzraum .hero .hero-badge{ display: none !important; }
-
-/* frühere „kleiner machen“-Regeln killen */
-.resonanzraum .hero{ min-height: unset; } /* wird von obigem calc wieder gesetzt */
-/* FINAL: Gold-Buttons mit schwarzer Schrift */
-.btn.btn-gold,
-.btn-gold,
-.btn-gold:visited{
-  color:#0b0f12 !important;
-}
-/* === FINAL FIX 1: Hero-H1 gold (Seite Resonanzraum) === */
-body.resonanzraum .hero .hero-copy h1{
-  color: var(--accent) !important;                  /* Gold */
-  text-shadow: 0 2px 24px rgba(0,0,0,.55) !important;
-}
-
-/* === FINAL FIX 2: Blog-Buttons – Text schwarz, auch :visited/:hover === */
-a.btn.btn-gold,
-.btn.btn-gold,
-.post-grid .card .btn-gold,
-.post-grid .card .btn-gold:visited,
-.post-grid .card .btn-gold:hover,
-.btn-gold:visited,
-.btn-gold:hover{
-  color:#0b0f12 !important;                         /* Schwarz */
-}
-/* === FINAL FIX 3: Blogkarten "Lesen"-Buttons – schwarze Schrift === */
-.post-grid .card .btn-gold,
-.post-grid .card .btn-gold:visited,
-.post-grid .card .btn-gold:hover,
-.post-grid .card .btn.btn-gold{
-  color:#0b0f12 !important;       /* Schwarz */
-  background:#d4af37 !important;  /* Gold */
-  border-color:#d4af37 !important;
-}
+/* (Optional) Frauen/Männer/Süchte – bei Bedarf aktivieren
+body.frauen .hero{ min-height:60vh }
+body.suechte .suechte-hero{ min-height:54vh; position:relative }
+body.suechte .suechte-hero .inner{ position:absolute; left:50%; transform:translateX(-50%); bottom:10vh; width:min(1000px,92%); text-align:center }
+*/

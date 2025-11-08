@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="de">
 <head>
@@ -33,13 +34,21 @@
   </header>
 
   <!-- HERO -->
-  
-<section class="hero" style="padding-top:72px; min-height:calc(100svh - 72px)">
-  <img class="hero-bg" src="images/hero.ueber-mich.webp"
-       alt="Über mich – Ove Krüger"
-       style="object-position:50% 8%">
-  … Inhalt …
-</section>
+  <section class="hero hero--XL hero--soft hero--low" style="--overlay:.35;">
+    <picture>
+      <img src="/images/hero_ueber_mich_16_9_web.png?v=1"
+           alt="Über mich – Ove Krüger"
+           class="hero-bg"
+           width="1920" height="1080"
+           loading="eager" fetchpriority="high"
+           style="object-fit:cover; object-position:center 62%;">
+    </picture>
+    <div class="inner">
+      <h1>Über mich</h1>
+      
+    </div>
+  </section>
+
   <main class="about wrap">
 
     <!-- Meine Geschichte -->
@@ -131,7 +140,7 @@
     </div>
 
     <div class="zz-media">
-      <img src="/images/ki-mensch.png"
+      <img src="/images/nora/preview.webp"
            alt="N.O.R.A. – integrales KI-System im Sinnwärts Studio"
            class="portrait-img"
            loading="lazy" decoding="async">

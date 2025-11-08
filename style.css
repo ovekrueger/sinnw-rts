@@ -99,7 +99,8 @@ body{
 @media (max-width:760px){ .site-header .nav-container{ flex-wrap:wrap } .site-header .nav-list{ gap:1rem 1.1rem } }
 
 /* ===================================================
-  <!-- HERO -->
+
+<!-- HERO -->
 <section class="hero hero--soft" aria-label="Resonanzraum">
   <picture>
     <source srcset="images/stimmgabel-gong.webp" type="image/webp">
@@ -112,7 +113,6 @@ body{
   <div class="hero-claim"><h2>Wo Schwingung Begegnung wird</h2></div>
   <div class="inner hero-copy"><h1>Resonanzraum</h1></div>
 </section>
-
 /* ===================================================
    SUBHERO
    =================================================== */

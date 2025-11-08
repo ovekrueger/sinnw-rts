@@ -378,3 +378,19 @@ body.angebote .hero .hero-inner h1{
     font-size: clamp(2.0rem, 8vw, 2.6rem) !important;
   }
 }
+/* === Index: "Was du bekommst" mittig & sauber begrenzt === */
+body.index section#was-du-bekommst,
+body.index .was-du-bekommst,
+body.index .cta-bottom,
+body.index .benefits{
+  width: min(1000px, 92vw) !important;
+  margin: 0 auto !important;          /* Zentriert */
+  text-align: center !important;
+}
+
+/* Falls Unterelemente (z. B. Listen) breiter laufen */
+body.index #was-du-bekommst > *{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 860px;
+}

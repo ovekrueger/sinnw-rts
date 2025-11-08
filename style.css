@@ -675,3 +675,42 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
 .hero-badge--sm { width: clamp(64px, 6vw, 96px); }
 .hero-badge--md { width: clamp(72px, 7vw, 120px); } /* Empfehlung Desktop */
 .hero-badge--lg { width: clamp(84px, 8vw, 140px); } /* sehr breite Heros */
+/* Header-Höhe als Variable (anpassen, z.B. 72px) */
+:root{ --header-h: 72px; --hero-focus-y: 15%; } /* 0%=oben, 50%=zentriert */
+
+/* Grundlayout Hero */
+.hero{
+  position: relative;
+  min-height: calc(100dvh - var(--header-h)); /* nichts wird vom Header verdeckt */
+  padding-top: var(--header-h);               /* Inhalt unter den Header schieben */
+  overflow: clip;                             
+}
+
+/* Hintergrundbild als <img class="hero-bg"> */
+.hero .hero-bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 /* füllt den Bereich */
+  object-position: 50% var(--hero-focus-y);  /* oben sichtbar halten */
+  z-index: -1;
+}
+
+/* Falls du irgendwo background-image statt <img> nutzt */
+.hero[data-bg]{
+  background-size: cover;
+  background-position: 50% var(--hero-focus-y);
+}
+
+/* Inhalt im Hero */
+.hero > *:not(.hero-bg){
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile Sicherheit: weniger Beschnitt, etwas mehr Höhe */
+@media (max-width: 768px){
+  :root{ --hero-focus-y: 10%; }      /* noch näher an oben */
+  .hero{ min-height: 75svh; }        /* stabiler als 100vh auf iOS/Android */
+}

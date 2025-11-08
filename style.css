@@ -714,3 +714,32 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
   :root{ --hero-focus-y: 10%; }      /* noch näher an oben */
   .hero{ min-height: 75svh; }        /* stabiler als 100vh auf iOS/Android */
 }
+/* 1) Grundsätzlich: nichts in Sektionen abschneiden */
+.section,
+.zigzag,
+.zigzag .col,
+.prose { overflow: visible; }
+
+/* 2) Mehr Luft nach unten in Sektionen (besonders vor dem Footer) */
+.section { padding-block: clamp(2rem, 4vw, 4rem); }
+.section:last-of-type { padding-bottom: clamp(3rem, 6vw, 5rem); }
+
+/* Falls die N.O.R.A.-Sektion eine ID/Klasse hat – gezielt mehr Bodenluft */
+#nora, #ai-nora, .section-nora { padding-bottom: 4rem; }
+
+/* 3) Button darf selbst nie „geclippt“ werden */
+.button, .btn, a.btn, .prose a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1.1rem;
+  line-height: 1.1;
+  border-radius: 9999px;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+/* Zickzack-Layout: Inhalt nicht vertikal mittig klemmen */
+.zigzag { align-items: start; }              /* statt center */
+.zigzag .media { align-self: start; }        /* Bild klemmt nicht den Text */

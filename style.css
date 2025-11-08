@@ -252,3 +252,16 @@ body.frauen .hero{ min-height:60vh }
 body.suechte .suechte-hero{ min-height:54vh; position:relative }
 body.suechte .suechte-hero .inner{ position:absolute; left:50%; transform:translateX(-50%); bottom:10vh; width:min(1000px,92%); text-align:center }
 */
+/* BLOG-KARTEN: "Lesen"-Buttons schwarz auf Gold – inkl. Hover/Visited */
+.post-grid .card a.btn-gold,
+.post-grid .card .btn-gold,
+.post-grid .card a.btn.btn-gold,
+.post-grid .card .btn.btn-gold,
+.post-grid .card a.btn-gold:visited,
+.post-grid .card .btn-gold:visited,
+.post-grid .card a.btn-gold:hover,
+.post-grid .card .btn-gold:hover{
+  color:#0b0f12 !important;
+  background:#d4af37 !important;
+  border-color:#d4af37 !important;
+}

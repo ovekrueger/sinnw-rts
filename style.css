@@ -689,3 +689,16 @@ body.suechte .suechte-hero .subhero{ margin-top:.6rem; font-weight:600; color:rg
   .hero { min-height: calc(100svh - var(--header-h)); }
   .hero .hero-bg { object-position: 50% 15%; }
 }
+:root{ --header-h: 72px; } /* echte Navbar-Höhe eintragen (64–88px) */
+
+/* fixe/sticky Navbar */
+header.site-header{
+  position: sticky;       /* oder fixed, falls du das nutzt */
+  top: 0;
+  inset-inline: 0;
+  z-index: 1000;
+  height: var(--header-h);
+}
+
+/* Seite unter den Header schieben (nicht die Hero selbst!) */
+main{ padding-top: var(--header-h); }

@@ -394,3 +394,69 @@ body.index #was-du-bekommst > *{
   margin-right: auto;
   max-width: 860px;
 }
+/* === ÜBER MICH: Hero-H1 gold & größer (max. Kompatibilität) === */
+:root {} /* specificity helper */
+body[class*="ueber"],
+body[class*="über"],
+body[class*="about"],
+body.page-ueber-mich,
+body.ueber-mich{
+  /* nothing */
+}
+body[class*="ueber"] .hero h1,
+body[class*="über"]  .hero h1,
+body[class*="about"] .hero h1,
+body.page-ueber-mich .hero h1,
+body.ueber-mich .hero h1,
+body[class*="ueber"] .hero .inner h1,
+body[class*="über"]  .hero .inner h1,
+body[class*="about"] .hero .inner h1,
+body.page-ueber-mich .hero .inner h1,
+body.ueber-mich .hero .inner h1,
+body[class*="ueber"] .hero .hero-inner h1,
+body[class*="über"]  .hero .hero-inner h1,
+body[class*="about"] .hero .hero-inner h1,
+body.page-ueber-mich .hero .hero-inner h1,
+body.ueber-mich .hero .hero-inner h1{
+  color: var(--accent) !important;
+  font-size: clamp(2.2rem, 5.6vw, 4.4rem) !important;
+  line-height: 1.06 !important;
+  text-shadow: 0 3px 22px rgba(0,0,0,.55) !important;
+}
+
+/* === ANGEBOTE: Hero-H1 gold & größer (max. Kompatibilität) === */
+body[class*="angebot"],
+body.page-angebote,
+body.angebote{
+  /* nothing */
+}
+body[class*="angebot"] .hero h1,
+body.page-angebote .hero h1,
+body.angebote .hero h1,
+body[class*="angebot"] .hero .inner h1,
+body.page-angebote .hero .inner h1,
+body.angebote .hero .inner h1,
+body[class*="angebot"] .hero .hero-inner h1,
+body.page-angebote .hero .hero-inner h1,
+body.angebote .hero .hero-inner h1{
+  color: var(--accent) !important;
+  font-size: clamp(2.4rem, 6vw, 4.6rem) !important;
+  line-height: 1.05 !important;
+  text-shadow: 0 3px 22px rgba(0,0,0,.58) !important;
+}
+
+/* === INDEX: „Was du bekommst“ zentrieren (breite Fenster) === */
+body.index #was-du-bekommst,
+body.index .was-du-bekommst,
+body.index .cta-bottom{
+  width: min(1000px, 92vw) !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+body.index #was-du-bekommst > *,
+body.index .was-du-bekommst > *,
+body.index .cta-bottom > *{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 860px;
+}

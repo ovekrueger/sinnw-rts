@@ -317,3 +317,15 @@ body.suechte .suechte-hero .inner{ position:absolute; left:50%; transform:transl
 @media (max-width:420px){
   .hero .hero-inner h1{ font-size:clamp(2.2rem, 8vw, 3rem); }
 }
+/* Startseite: Badge nach rechts oben */
+body.index .hero .hero-badge{
+  left:auto !important;
+  right:clamp(10px,1.6vw,18px) !important;
+}
+
+/* Startseite: H1 wieder moderat groß */
+body.index .hero .hero-inner h1{
+  font-size:clamp(2.2rem, 5.4vw, 4.2rem) !important;
+  line-height:1.06 !important;
+  letter-spacing:.01em;
+}

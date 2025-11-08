@@ -460,3 +460,29 @@ body.index .cta-bottom > *{
   margin-right: auto !important;
   max-width: 860px;
 }
+/* Badge: global oben links, groß */
+.hero { position:relative; isolation:isolate; }
+.hero .hero-badge{
+  position:absolute; z-index:3;
+  top:clamp(10px,1.2vw,18px);
+  left:clamp(10px,1.2vw,18px);
+  right:auto !important;
+  width:clamp(88px,7vw,120px);
+  height:auto;
+  padding:6px;
+  background:rgba(0,0,0,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  box-shadow:0 6px 28px rgba(0,0,0,.35);
+}
+
+/* vorheriges Verstecken überschreiben (z. B. Resonanzraum) */
+.resonanzraum .hero .hero-badge{ display:block !important; }
+
+/* falls es eine alte Rechts-Ausrichtung auf der Startseite gab */
+body.index .hero .hero-badge{ left:clamp(10px,1.2vw,18px) !important; right:auto !important; }
+
+/* sehr kleine Screens: etwas kleiner */
+@media (max-width:420px){
+  .hero .hero-badge{ width:clamp(72px,18vw,92px); }
+}

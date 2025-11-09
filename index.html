@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Sinnwärts Studio – Ordnung, Mut & Richtung</title>
-  <meta name="description" content="Sinnwärts Studio: Gespräch auf Augenhöhe, klare Schritte, integraler Blick. Von alten Mustern zu Klarheit, Würde und innerer Freiheit.">
+  <title>Sinnwärts Studio – Klarheit, Würde, Richtung</title>
+  <meta name="description" content="Sinnwärts Studio: Ruhiger Raum für echte Gespräche, klare Schritte und innere Würde. Von alten Mustern zu Klarheit, Gesundheit und innerer Freiheit.">
   <link rel="canonical" href="https://sinnwaerts-studio.de/">
   <meta name="robots" content="index,follow">
 
   <!-- OG / X -->
   <meta property="og:site_name" content="Sinnwärts Studio">
-  <meta property="og:title" content="Sinnwärts Studio – Ordnung, Mut & Richtung">
-  <meta property="og:description" content="Echtes Gespräch, klare Schritte und integrale Sicht. Aus Abhängigkeit und alten Mustern – hin zu Klarheit, Würde und innerer Freiheit.">
+  <meta property="og:title" content="Sinnwärts Studio – Klarheit, Würde, Richtung">
+  <meta property="og:description" content="Ruhiger Raum für echte Gespräche, klare Schritte und innere Würde. Von alten Mustern zu Klarheit, Gesundheit und Freiheit.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sinnwaerts-studio.de/">
   <meta property="og:image" content="https://sinnwaerts-studio.de/images/og-start.jpg">
@@ -23,8 +23,9 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
   <!-- Global CSS -->
-  <link rel="preload" href="/style.css?v=25" as="style">
-  <link rel="stylesheet" href="/style.css?v=25">
+  <link rel="preload" href="/style.css?v=26" as="style">
+  <link rel="stylesheet" href="/style.css?v=26">
+  <link rel="preload" as="image" href="/images/start.strand.webp" type="image/webp">
 
   <!-- Seiten-Stile -->
   <style>
@@ -48,13 +49,14 @@
     .hero picture,.hero .hero-bg{display:block;width:100%;height:100%}
     .hero .hero-bg{object-fit:cover;object-position:center 16%}
     .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.82), rgba(11,15,18,.55) 42%, rgba(11,15,18,0))}
-    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:start center;padding-top:clamp(56px,10vh,140px);text-align:center;z-index:1}
-    .hero h1{margin:.2rem 0;color:var(--gold);text-shadow:0 3px 10px rgba(0,0,0,.55);font-size:clamp(1.6rem,1.1rem + 2.2vw,2.4rem);line-height:1.15}
-    .hero-badge{position:absolute;right:14px;top:86px;opacity:.92;border-radius:12px;background:rgba(0,0,0,.08);padding:6px}
+    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:start center;padding-top:clamp(56px,9vh,120px);text-align:center;z-index:1}
+    .hero h1{margin:.2rem 0;color:var(--gold);text-shadow:0 3px 10px rgba(0,0,0,.55);font-size:clamp(1.5rem,1rem + 2.2vw,2.4rem);line-height:1.15}
+    .hero-badge{position:absolute;right:14px;top:86px;opacity:.8;border-radius:12px;background:rgba(0,0,0,.08);padding:6px}
+    body.index .hero-badge{display:none} /* Startseite ohne Siegel für mehr Ruhe */
 
     /* Subhero / Utilities */
     .subhero{padding:14px 0 8px}
-    .subhero p{margin:.35rem auto;max-width:820px;line-height:1.55;text-align:center}
+    .subhero p{margin:.35rem auto;max-width:820px;line-height:1.6;text-align:center}
     .pill-row{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.8rem}
     .pill{display:inline-flex;align-items:center;justify-content:center;padding:.48rem 1.1rem;border-radius:999px;background:var(--gold);color:#0b0f12;font-weight:700;border:1px solid rgba(255,255,255,.08)}
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.65rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
@@ -65,15 +67,15 @@
 
     .kicker{letter-spacing:.06em;text-transform:uppercase;font-size:.9rem;color:var(--muted)}
     .lead{font-size:clamp(1rem,.9rem + .5vw,1.2rem);line-height:1.6;margin:.6rem auto 0;max-width:820px}
-    .divider{height:1px;background:var(--ring);opacity:.7;margin:clamp(16px,3vw,28px) auto;max-width:880px}
+    .divider{height:1px;background:var(--ring);opacity:.7;margin:clamp(20px,5vw,40px) auto;max-width:880px}
     .section-spacer{padding: clamp(24px,4vw,48px) 0}
 
     /* Zickzack kompakt */
     .zz-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px);align-items:start;max-width:1160px;margin:1.6rem auto}
     .zz-text{grid-column:1;max-width:70ch}
     .zz-media{grid-column:2}
-    .zz-text p{margin:.55rem 0;line-height:1.55}
-    .zz-media img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ring)}
+    .zz-text p{margin:.55rem 0;line-height:1.6}
+    .zz-media img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--ring);box-shadow:0 10px 28px rgba(0,0,0,.25)}
     .zz-media img.is-portrait{max-width:520px;margin-left:auto}
     @media (max-width:900px){
       .zz-row{grid-template-columns:1fr}
@@ -81,12 +83,11 @@
       .zz-media img.is-portrait{max-width:100%;margin-left:0}
     }
 
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2.4vw,18px)}
+    /* Cards flexibel (2–3 Spalten) */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(12px,2.4vw,18px)}
     .card{background:rgba(255,255,255,.03);border:1px solid var(--ring);border-radius:12px;padding:1rem}
     .card h3{margin:.1rem 0 .3rem 0;font-size:1.05rem}
     .card p{margin:.2rem 0 .4rem 0;line-height:1.55}
-    @media (max-width:900px){ .cards{grid-template-columns:1fr} }
 
     /* Footer */
     .muted{color:var(--muted)}
@@ -123,9 +124,8 @@
       </picture>
 
       <div class="hero-scrim" aria-hidden="true"></div>
-
       <img src="/images/ltc-siegel.png" alt="Life Trust Coach Siegel – Ove Krüger"
-           class="hero-badge hero-badge--md" width="80" height="80" loading="lazy">
+           class="hero-badge" width="80" height="80" loading="lazy">
 
       <div class="hero-inner">
         <div class="wrap">
@@ -136,7 +136,7 @@
       </div>
     </section>
 
-    <!-- SUBHERO (kurz) -->
+    <!-- SUBHERO -->
     <section class="subhero wrap section-spacer">
       <p><strong>Sucht sucht Sinn.</strong> Wir betäuben uns – Arbeit, Alkohol, Scrollen. Familien verlieren sich im Rauschen.</p>
       <p><strong>Sinnwärts hilft,</strong> den Kreislauf zu verstehen, das Nervensystem zu beruhigen und wieder bei dir anzukommen.</p>
@@ -146,9 +146,10 @@
         <a href="suechte.html"      class="pill">„Süchte neu denken“</a>
       </div>
     </section>
+
     <div class="divider" aria-hidden="true"></div>
 
-    <!-- WARUM (ein Tiefenblock) -->
+    <!-- WARUM (ein Tiefenblock, 1 Porträt) -->
     <section class="wrap section-spacer">
       <div class="zz-row">
         <div class="zz-text">
@@ -169,44 +170,42 @@
           <picture>
             <source srcset="images/ove-rolli.webp" type="image/webp">
             <img class="is-portrait" src="images/ove-rolli.jpg" width="640" height="800"
-                 alt="Ove Krüger – Portrait im schwarzen Rollkragen" loading="lazy" decoding="async">
+                 alt="Ove Krüger – Portrait im schwarzen Rollkragen, ruhig und konzentriert" loading="lazy" decoding="async">
           </picture>
         </div>
       </div>
     </section>
+
     <div class="divider" aria-hidden="true"></div>
 
-    <!-- DREI CARDS (statt 3 Zickzack-Blöcke) -->
+    <!-- ZWEI CARDS (ohne Inneres-Kind-Link) -->
     <section class="wrap section-spacer" aria-label="Überblick">
       <h2 style="text-align:center;margin:0 0 .9rem 0;">Womit ich dir diene</h2>
       <div class="cards">
         <article class="card">
           <h3>Gespräch auf Augenhöhe</h3>
           <p>Ordnung ins Chaos, klare Schritte, spürbare Entlastung – ohne Druck.</p>
-          <a class="btn btn-outline" href="angebot.html">Zu den Angeboten</a>
-        </article>
-        <article class="card">
-          <h3>Arbeit mit dem inneren Kind</h3>
-          <p>Gesehen statt repariert. Gefühle regulieren, Würde integrieren.</p>
-          <a class="btn btn-outline" href="angebot.html#inneres-kind">Mehr dazu</a>
+          <a class="btn btn-outline" href="angebot.html">Angebote</a>
         </article>
         <article class="card">
           <h3>N.O.R.A. – KI als Spiegel</h3>
           <p>Weniger Rauschen, mehr Wesentliches. Technologie als Resonanzraum.</p>
-          <a class="btn btn-outline" href="nora.html">Warum KI hier hilft</a>
+          <a class="btn btn-outline" href="nora.html">N.O.R.A. ansehen</a>
         </article>
       </div>
     </section>
+
     <div class="divider" aria-hidden="true"></div>
 
     <!-- Eltern & Medienkonsum (kurz) -->
     <section id="eltern-workshop" class="wrap section-spacer">
       <h2 style="margin:0 0 .4rem 0;">Eltern &amp; Medienkonsum – ruhig, klar, machbar</h2>
-      <p style="margin:0 0 .9rem 0;line-height:1.55;">
+      <p style="margin:0 0 .9rem 0;line-height:1.6;">
         Einzel- und Elterngespräche – keine Theorie-Schlacht. Wir sortieren: Mediennutzung, Reizüberflutung, Selbstregulation.
       </p>
       <a href="/kontakt.html#klarheitsgespraech" class="btn btn-gold">Kostenloses Klarheits-Gespräch</a>
     </section>
+
     <div class="divider" aria-hidden="true"></div>
 
     <!-- Benefits + Klanggeschenk + Leseprobe -->
@@ -214,27 +213,22 @@
       <div style="max-width:900px;margin:0 auto;text-align:center">
         <h2>Was du bekommst</h2>
         <ul style="text-align:left;max-width:900px;margin:0 auto 1.2rem;line-height:1.6">
-          <li>🔍 <strong>Klarheit</strong> – Wesentliches statt Lärm.</li>
-          <li>🧘 <strong>Innere Ruhe</strong> – regulierter Atem, weniger Druck.</li>
-          <li>🤝 <strong>Würde &amp; Beziehung</strong> – zu dir und anderen.</li>
+          <li>😴 <strong>Besserer Schlaf</strong> – tiefer, erholter, ohne Grübel-Loop.</li>
+          <li>🧘 <strong>Innere Ruhe</strong> – reguliertes Nervensystem, weniger Druck.</li>
+          <li>💛 <strong>Würde &amp; Beziehung</strong> – zu dir und anderen.</li>
           <li>🎯 <strong>Richtung</strong> – Sinn, Entscheidung, Umsetzung.</li>
         </ul>
 
-        <!-- Klanggeschenk -->
         <div class="section-card" style="max-width:720px;margin:0 auto 1rem;">
-          <p style="margin:.1rem 0 .7rem 0;">
-            <strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth Gröger</strong> (Breathwork-Coachin).
-          </p>
+          <p style="margin:.1rem 0 .7rem 0;"><strong>Klanggeschenk:</strong> Atemraum mit <strong>Gesang von Ruth Gröger</strong>.</p>
           <audio controls preload="none" style="width:100%;max-width:420px;display:block;margin:0 auto .8rem;">
             <source src="assets/audio/atem-mein-leben.mp3" type="audio/mpeg">
             Dein Browser unterstützt das Audio-Element nicht.
           </audio>
           <p class="muted" style="margin:.3rem auto .6rem;max-width:580px;">Schließ die Augen und gönn dir Stille – Einladung zum bewussten Atem (≈ 4 Min).</p>
-          <p class="muted" style="margin:.1rem auto .8rem;max-width:580px;">Vocals: Ruth Gröger · Komposition/Produktion: Ove Krüger &amp; Ruth Gröger.</p>
           <a class="btn btn-gold" href="assets/audio/atem-mein-leben.mp3" download>🎵 „Atmen, mein Leben“ – Download</a>
         </div>
 
-        <!-- Leseprobe -->
         <div class="section-card" style="max-width:720px;margin:0 auto;">
           <p style="margin:.1rem 0 .7rem 0;"><strong>Leseprobe:</strong> Auszug aus <em>Holpersteine</em> – online oder als PDF.</p>
           <div style="margin-top:.5rem;display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;">

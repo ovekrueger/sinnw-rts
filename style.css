@@ -364,3 +364,4 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
     <p class="lead">Ein ruhiger Raum für echte Gespräche, klare Schritte und innere Würde.</p>
   </div>
 </div>
+.kicker{ color:rgba(232,230,227,.9) } /* kein Gold hier */

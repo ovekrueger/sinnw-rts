@@ -303,3 +303,13 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
 @media (max-width:900px){ .cards{grid-template-columns:1fr} }
 .hero .hero-inner{padding-top:clamp(56px,9vh,120px)}
 .hero h1{font-size:clamp(1.5rem,1rem + 2.2vw,2.4rem)}
+.btn{line-height:1; min-height:42px}
+.btn:hover{filter:brightness(1.02)}
+@media (max-width:520px){
+  .hero .hero-inner{padding-top:clamp(48px,8vh,96px)}
+  .hero h1{text-shadow:0 2px 6px rgba(0,0,0,.45)}
+}
+@media (max-width:520px){
+  .hero .hero-inner{padding-top:clamp(48px,8vh,96px)}
+  .hero h1{text-shadow:0 2px 6px rgba(0,0,0,.45)}
+}

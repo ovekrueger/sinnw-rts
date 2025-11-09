@@ -381,3 +381,26 @@ body.page-angebote .hero .sub{
   border:1px solid rgba(255,255,255,.14); border-radius:12px;
   box-shadow:0 6px 28px rgba(0,0,0,.35);
 }
+/* RESONANZRAUM – mehr Bild oben zeigen */
+body.resonanzraum .hero .hero-bg{
+  object-position: 50% 30% !important;   /* vorher ~42% */
+}
+/* optional: minimal weniger Höhe */
+body.resonanzraum .hero{
+  min-height: 62svh !important;
+}
+
+/* INDEX/START – mehr Bild unten zeigen */
+body.index .hero .hero-bg{
+  object-position: 50% 68% !important;   /* vorher ~40–62% */
+}
+/* innerer Abstand unten etwas kleiner, damit nicht „abschneidet“ wirkt */
+body.index .hero .inner{
+  margin-bottom: clamp(20px, 5vw, 44px) !important;
+}
+
+/* Feintuning für breite Screens */
+@media (min-width:1200px){
+  body.resonanzraum .hero .hero-bg{ object-position:50% 28% !important; }
+  body.index .hero .hero-bg{        object-position:50% 70% !important; }
+}

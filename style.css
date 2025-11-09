@@ -313,3 +313,21 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
   .hero .hero-inner{padding-top:clamp(48px,8vh,96px)}
   .hero h1{text-shadow:0 2px 6px rgba(0,0,0,.45)}
 }
+/* Entfernen, falls vorhanden:  body.index .hero-badge{display:none} */
+
+.hero-badge{
+  position:absolute;
+  right:16px;
+  top:18px;               /* höher an den Rand */
+  width:92px;             /* etwas größer */
+  height:auto;
+  padding:6px;
+  border-radius:12px;
+  background:rgba(0,0,0,.10); /* zarte Platte */
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  z-index:2;              /* über Scrim & Inhalt */
+}
+
+@media (max-width:640px){
+  .hero-badge{right:10px; top:10px; width:72px}
+}

@@ -1,6 +1,6 @@
 /* =========================================================
    SINNWÄRTS – MASTER CSS (vNEXT, clean & unified)
-   Datum: 2025-11-08
+   Datum: 2025-11-09
    Struktur: Tokens → Base → Layout → Header → Hero (+Badge)
              → Subhero → Zickzack → Buttons → Cards/Blog
              → Sections/Legal → Footer → Page Overrides → Utils
@@ -36,7 +36,7 @@ a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
 
 body{
   background:var(--bg); color:var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
   font-size:1.05rem; line-height:1.65;
   -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;
@@ -52,7 +52,8 @@ body{
 /* ===== Header (fixed) ===== */
 .site-header{
   position:fixed; inset:0 0 auto 0; z-index:1000;
-  background:rgba(11,15,18,.95); border-bottom:1px solid var(--ring);
+  background:rgba(11,15,18,.95);
+  border-bottom:1px solid var(--ring);
 }
 .site-header .nav-container{
   max-width:var(--maxw); margin:0 auto; padding:10px 24px;
@@ -89,32 +90,30 @@ body{
     radial-gradient(120% 70% at 50% 85%, rgba(0,0,0,.16) 0 60%, transparent 72%),
     linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.36) 78%);
 }
-.hero .hero-inner{
-  position:relative; z-index:2; width:min(1100px,92vw);
-  margin:0 auto clamp(28px,7vw,56px); padding:0 12px; text-align:center;
+.hero .inner{
+  position:relative; z-index:2;
+  width:min(1100px,92vw); margin:0 auto clamp(28px,7vw,56px);
+  padding:0 12px; text-align:center;
 }
-.hero .hero-inner h1{
+.hero .inner h1{
   margin:0; font-weight:800; line-height:1.06;
   font-size:clamp(2.2rem,5vw,4rem);
   color:var(--accent);
   text-shadow:0 3px 22px rgba(0,0,0,.55);
 }
 
-/* ===== Badge (global, überall rechts oben & größer) ===== */
+/* ===== Badge (global) ===== */
 .hero .hero-badge{
   position:absolute; z-index:1002; display:block;
   top:calc(var(--nav-h) + 12px);
   right:clamp(10px,1.6vw,18px);
   width:clamp(96px,8vw,132px); height:auto;
-  padding:6px;
-  background:rgba(0,0,0,.08);
+  padding:6px; background:rgba(0,0,0,.08);
   border:1px solid rgba(255,255,255,.14);
   border-radius:12px;
   box-shadow:0 6px 28px rgba(0,0,0,.35);
 }
-@media (max-width:420px){
-  .hero .hero-badge{ width:clamp(80px,18vw,100px) }
-}
+@media (max-width:420px){ .hero .hero-badge{ width:clamp(80px,18vw,100px) } }
 
 /* ===== Subhero ===== */
 .subhero{ padding:14px 0 8px }
@@ -227,38 +226,12 @@ main{ flex:1 }
 
 /* ===== Page Overrides ===== */
 
-/* Startseite – H1 moderat + Badge rechts (bereits global) */
-body.index .hero .hero-inner h1{
-  font-size:clamp(2rem,4.8vw,3.6rem);
-  max-width:900px; margin-inline:auto;
-}
-
-/* Über mich – H1 gold & größer */
-body.ueber-mich .hero .hero-inner h1,
-body.page-ueber-mich .hero .hero-inner h1,
-body.about .hero .hero-inner h1{
-  color:var(--accent) !important;
-  font-size:clamp(2.2rem,5.6vw,4.4rem) !important;
-  line-height:1.06 !important;
-}
-
-/* Angebote – H1 gold & größer */
-body.page-angebote .hero .hero-inner h1,
-body.angebote .hero .hero-inner h1{
-  color:var(--accent) !important;
-  font-size:clamp(2.4rem,6vw,4.6rem) !important;
-  line-height:1.05 !important;
-}
-
-/* Resonanzraum – H1 gold */
-body.resonanzraum .hero .hero-inner h1{
-  color:var(--accent) !important;
-}
-
-/* Index: „Was du bekommst“ zentriert */
+/* Startseite – mehr Bild unten zeigen + moderater Titel */
+body.index .hero .hero-bg{ object-position:50% 68% !important; }
+body.index .hero .inner h1{ font-size:clamp(2rem,4.8vw,3.6rem) }
+body.index .cta-bottom,
 body.index #was-du-bekommst,
-body.index .was-du-bekommst,
-body.index .cta-bottom{
+body.index .was-du-bekommst{
   width:min(1000px,92vw); margin:0 auto; text-align:center;
 }
 body.index #was-du-bekommst > *,
@@ -266,6 +239,43 @@ body.index .was-du-bekommst > *,
 body.index .cta-bottom > *{
   margin-left:auto; margin-right:auto; max-width:860px;
 }
+
+/* Über mich – H1 gold & größer, Bildausschnitt höher */
+body.ueber-mich .hero{ min-height:74svh !important; }
+body.ueber-mich .hero .hero-bg{ object-position:50% 22% !important; }
+body.ueber-mich .hero .inner h1{
+  color:var(--accent) !important;
+  font-size:clamp(2.2rem,5.6vw,4.4rem) !important;
+  line-height:1.06 !important;
+}
+
+/* Angebote – H1 gold & größer */
+body.page-angebote .hero{ min-height:68svh !important; }
+body.page-angebote .hero .hero-bg{ object-position:50% 35% !important; }
+body.page-angebote .hero .inner h1{
+  color:var(--accent) !important;
+  font-size:clamp(2.4rem,6vw,4.6rem) !important;
+  line-height:1.05 !important;
+}
+
+/* Kontakt – H1 gold & größer */
+body.kontakt .hero,
+body.page-kontakt .hero,
+body.contact .hero{ min-height:66svh !important; }
+body.kontakt .hero .hero-bg,
+body.page-kontakt .hero .hero-bg,
+body.contact .hero .hero-bg{ object-position:50% 40% !important; }
+body.kontakt .hero .inner h1,
+body.page-kontakt .hero .inner h1,
+body.contact .hero .inner h1{
+  color:var(--accent) !important;
+  font-size:clamp(2.2rem,5.4vw,4.2rem) !important;
+}
+
+/* Resonanzraum – Top-Fokus, H1 gold, etwas weniger Höhe */
+body.resonanzraum .hero{ min-height:62svh !important; }
+body.resonanzraum .hero .hero-bg{ object-position:50% 18% !important; }
+body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
 
 /* ===== Utils ===== */
 .to-top{
@@ -277,139 +287,7 @@ body.index .cta-bottom > *{
 .to-top.show{ display:inline-flex }
 .to-top:hover{ opacity:1; transform:translateY(-2px) }
 .to-top:focus-visible{ outline:2px solid var(--accent); outline-offset:2px }
-@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto } .to-top{ transition:none } }
-/* ÜBER-MICH: Hero nicht mehr abgeschnitten */
-body.ueber-mich .hero{
-  min-height: 78svh !important;
-}
-body.ueber-mich .hero .hero-bg{
-  object-position: 50% 22% !important;   /* Bildausschnitt höher */
-}
-
-/* RESONANZRAUM: Hero-Setup stabilisieren */
-body.resonanzraum .hero{
-  min-height: 64svh !important;
-}
-body.resonanzraum .hero .hero-bg{
-  object-position: 50% 42% !important;
-}
-body.resonanzraum .hero::before{
-  opacity: .28 !important;               /* Kontrast für Gold-H1 */
-}
-
-/* Badge bleibt global rechts oben, etwas größer (Sicherheitsnetz) */
-.hero .hero-badge{
-  top: calc(var(--nav-h) + 12px) !important;
-  right: clamp(10px,1.6vw,18px) !important;
-  width: clamp(96px,8vw,132px) !important;
-}
-/* === ÜBER MICH – Hero-Text sichtbar, gold, größer === */
-body.ueber-mich .hero{ min-height:74svh !important; }
-body.ueber-mich .hero .hero-bg{ object-position:50% 22% !important; }
-
-body.ueber-mich .hero .hero-inner{ position:relative; z-index:2 !important; }
-body.ueber-mich .hero::before{ z-index:1 !important; }  /* Scrim darunter */
-
-body.ueber-mich .hero .hero-inner h1{
-  display:block !important; visibility:visible !important; opacity:1 !important;
-  margin:0 !important; font-weight:800 !important; line-height:1.06 !important;
-  color:#d4af37 !important;                         /* Gold */
-  text-shadow:0 3px 22px rgba(0,0,0,.55) !important;
-  font-size:clamp(2.2rem,5.6vw,4.4rem) !important;  /* größer */
-}
-body.ueber-mich .hero .sub{
-  margin-top:.6rem; font-weight:600;
-  color:rgba(212,175,55,.96);
-}
-
-/* === ANGEBOTE – Hero-Text sichtbar, gold, größer === */
-body.page-angebote .hero{ min-height:68svh !important; }
-body.page-angebote .hero .hero-bg{ object-position:50% 35% !important; }
-
-body.page-angebote .hero .hero-inner{ position:relative; z-index:2 !important; }
-body.page-angebote .hero::before{ z-index:1 !important; }
-
-body.page-angebote .hero .hero-inner h1{
-  display:block !important; visibility:visible !important; opacity:1 !important;
-  margin:0 !important; font-weight:800 !important; line-height:1.05 !important;
-  color:#d4af37 !important;
-  text-shadow:0 3px 22px rgba(0,0,0,.55) !important;
-  font-size:clamp(2.4rem,6vw,4.6rem) !important;
-}
-body.page-angebote .hero .sub{
-  margin-top:.6rem; font-weight:600;
-  color:rgba(212,175,55,.96);
-}
-
-/* Sicherheitsnetz (falls globale Styles blocken) */
-.hero .hero-inner h1{ z-index:2 !important; }
-.hero .hero-bg{ z-index:0 !important; }
-.hero::before{ z-index:1 !important; }
-/* HERO: Stacking + Text sichtbar (für <div class="inner">) */
-.hero{ position:relative; isolation:isolate; }
-.hero .hero-bg{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover; z-index:0;
-}
-.hero::before{
-  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
-  background:linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.36) 78%);
-}
-
-/* WICHTIG: dein Text-Container heißt .inner */
-.hero .inner{
-  position:relative; z-index:2;            /* über dem Scrim */
-  width:min(1100px,92vw); margin:0 auto clamp(28px,7vw,56px);
-  padding:0 12px; text-align:center;
-}
-
-/* H1 im Hero: sichtbar, gold, größer */
-.hero .inner h1{
-  display:block !important; visibility:visible !important; opacity:1 !important;
-  margin:0 !important; font-weight:800; line-height:1.06;
-  color:#d4af37 !important;                 /* Gold */
-  text-shadow:0 3px 22px rgba(0,0,0,.55);
-  font-size:clamp(2.2rem,5.6vw,4.4rem);
-}
-
-/* Badge global rechts oben, etwas größer */
-.hero .hero-badge{
-  position:absolute; z-index:3; display:block;
-  top:calc(var(--nav-h,72px) + 12px); right:clamp(10px,1.6vw,18px); left:auto !important;
-  width:clamp(96px,8vw,132px); height:auto;
-  padding:6px; background:rgba(0,0,0,.08);
-  border:1px solid rgba(255,255,255,.14); border-radius:12px;
-  box-shadow:0 6px 28px rgba(0,0,0,.35);
-}
-/* RESONANZRAUM – mehr Bild oben zeigen */
-body.resonanzraum .hero .hero-bg{
-  object-position: 50% 30% !important;   /* vorher ~42% */
-}
-/* optional: minimal weniger Höhe */
-body.resonanzraum .hero{
-  min-height: 62svh !important;
-}
-
-/* INDEX/START – mehr Bild unten zeigen */
-body.index .hero .hero-bg{
-  object-position: 50% 68% !important;   /* vorher ~40–62% */
-}
-/* innerer Abstand unten etwas kleiner, damit nicht „abschneidet“ wirkt */
-body.index .hero .inner{
-  margin-bottom: clamp(20px, 5vw, 44px) !important;
-}
-
-/* Feintuning für breite Screens */
-@media (min-width:1200px){
-  body.resonanzraum .hero .hero-bg{ object-position:50% 28% !important; }
-  body.index .hero .hero-bg{        object-position:50% 70% !important; }
-}
-/* Resonanzraum: Top-Fokus, mehr Bild oben zeigen */
-.hero.hero--top-focus .hero-bg{
-  object-position: 50% 18% !important;  /* ggf. 15–22% feinjustieren */
-}
-
-/* Falls der Hero insgesamt zu kurz wirkt */
-.hero.hero--top-focus{
-  min-height: 64svh !important;
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto }
+  .to-top{ transition:none }
 }

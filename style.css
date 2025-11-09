@@ -303,3 +303,45 @@ body.resonanzraum .hero::before{
   right: clamp(10px,1.6vw,18px) !important;
   width: clamp(96px,8vw,132px) !important;
 }
+/* === ÜBER MICH – Hero-Text sichtbar, gold, größer === */
+body.ueber-mich .hero{ min-height:74svh !important; }
+body.ueber-mich .hero .hero-bg{ object-position:50% 22% !important; }
+
+body.ueber-mich .hero .hero-inner{ position:relative; z-index:2 !important; }
+body.ueber-mich .hero::before{ z-index:1 !important; }  /* Scrim darunter */
+
+body.ueber-mich .hero .hero-inner h1{
+  display:block !important; visibility:visible !important; opacity:1 !important;
+  margin:0 !important; font-weight:800 !important; line-height:1.06 !important;
+  color:#d4af37 !important;                         /* Gold */
+  text-shadow:0 3px 22px rgba(0,0,0,.55) !important;
+  font-size:clamp(2.2rem,5.6vw,4.4rem) !important;  /* größer */
+}
+body.ueber-mich .hero .sub{
+  margin-top:.6rem; font-weight:600;
+  color:rgba(212,175,55,.96);
+}
+
+/* === ANGEBOTE – Hero-Text sichtbar, gold, größer === */
+body.page-angebote .hero{ min-height:68svh !important; }
+body.page-angebote .hero .hero-bg{ object-position:50% 35% !important; }
+
+body.page-angebote .hero .hero-inner{ position:relative; z-index:2 !important; }
+body.page-angebote .hero::before{ z-index:1 !important; }
+
+body.page-angebote .hero .hero-inner h1{
+  display:block !important; visibility:visible !important; opacity:1 !important;
+  margin:0 !important; font-weight:800 !important; line-height:1.05 !important;
+  color:#d4af37 !important;
+  text-shadow:0 3px 22px rgba(0,0,0,.55) !important;
+  font-size:clamp(2.4rem,6vw,4.6rem) !important;
+}
+body.page-angebote .hero .sub{
+  margin-top:.6rem; font-weight:600;
+  color:rgba(212,175,55,.96);
+}
+
+/* Sicherheitsnetz (falls globale Styles blocken) */
+.hero .hero-inner h1{ z-index:2 !important; }
+.hero .hero-bg{ z-index:0 !important; }
+.hero::before{ z-index:1 !important; }

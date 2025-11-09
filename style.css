@@ -357,3 +357,10 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
 @media (max-width:640px){
   .hero-badge{right:10px;top:10px;width:70px}
 }
+<div class="hero-inner">
+  <div class="wrap">
+    <p class="kicker">Sinnwärts Studio</p>
+    <h1>Sucht sucht Sinn – und findet Richtung.</h1>
+    <p class="lead">Ein ruhiger Raum für echte Gespräche, klare Schritte und innere Würde.</p>
+  </div>
+</div>

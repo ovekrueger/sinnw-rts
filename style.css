@@ -331,3 +331,29 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
 @media (max-width:640px){
   .hero-badge{right:10px; top:10px; width:72px}
 }
+.kicker{
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:rgba(232,230,227,.85);
+  font-weight:700;
+  font-size:clamp(1.2rem,1rem + 1.4vw,1.6rem); /* sichtbar größer */
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
+  margin:0 0 .3rem 0;
+}
+.hero-badge{
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:88px;
+  height:auto;
+  border-radius:12px;
+  padding:6px;
+  background:rgba(0,0,0,.12);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  opacity:.9;
+  backdrop-filter:saturate(120%) blur(1px);
+  z-index:2;
+}
+@media (max-width:640px){
+  .hero-badge{right:10px;top:10px;width:70px}
+}

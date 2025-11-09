@@ -404,3 +404,12 @@ body.index .hero .inner{
   body.resonanzraum .hero .hero-bg{ object-position:50% 28% !important; }
   body.index .hero .hero-bg{        object-position:50% 70% !important; }
 }
+/* Resonanzraum: Top-Fokus, mehr Bild oben zeigen */
+.hero.hero--top-focus .hero-bg{
+  object-position: 50% 18% !important;  /* ggf. 15–22% feinjustieren */
+}
+
+/* Falls der Hero insgesamt zu kurz wirkt */
+.hero.hero--top-focus{
+  min-height: 64svh !important;
+}

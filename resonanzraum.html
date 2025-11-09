@@ -30,42 +30,51 @@
 </header>
 
 <!-- HERO (Resonanzraum – korrekt) -->
+<!-- HERO – Resonanzraum -->
 <section class="hero hero--soft" aria-label="Resonanzraum"
-  <img src="/images/ltc-siegel.png"
-     alt="Life Trust Coach Siegel – Ove Krüger"
-     class="hero-badge" width="120" height="120" loading="lazy">
-  style="--nav-h:72px; padding-top:var(--nav-h);
-         min-height:calc(96svh - var(--nav-h));
-         display:grid; align-items:end; overflow:clip; position:relative; isolation:isolate;">
+         style="--nav-h:72px; padding-top:var(--nav-h);
+                min-height:calc(96svh - var(--nav-h));
+                display:grid; align-items:end; overflow:clip;
+                position:relative; isolation:isolate;">
 
   <picture style="position:absolute; inset:0; z-index:-2;">
     <source srcset="images/stimmgabel-gong.webp" type="image/webp">
-    <img src="images/stimmgabel-gong.webp"
+    <img src="images/stimmgabel-gong.webp" class="hero-bg"
          alt="Resonanzraum – Stimmgabel und Gong im Licht"
-         class="hero-bg"
          style="position:absolute; inset:0; width:100%; height:100%;
                 object-fit:cover; object-position:50% 42%;">
   </picture>
 
   <!-- Scrim -->
   <div aria-hidden="true"
-     style="position:absolute; inset:0; z-index:-1;
-            background:
-              linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.28) 72%);">
-</div>
+       style="position:absolute; inset:0; z-index:-1;
+              background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.28) 72%);">
+  </div>
+
+  <!-- Badge (oben rechts) -->
+  <img src="/images/ltc-siegel.png"
+       alt="Life Trust Coach Siegel – Ove Krüger"
+       class="hero-badge"
+       width="120" height="120" loading="lazy"
+       style="position:absolute; z-index:3;
+              top:calc(var(--nav-h) + 12px); right:12px; left:auto;
+              width:120px; height:auto;
+              padding:6px; background:rgba(0,0,0,.08);
+              border:1px solid rgba(255,255,255,.14); border-radius:12px;
+              box-shadow:0 6px 28px rgba(0,0,0,.35);">
 
   <!-- Inhalt -->
   <div class="inner hero-copy"
-       style="width:min(1100px,92vw); margin:0 auto clamp(32px,7vw,64px); padding:0 12px; text-align:center;">
+       style="width:min(1100px,92vw); margin:0 auto clamp(32px,7vw,64px);
+              padding:0 12px; text-align:center;">
     <h1 style="margin:0; font-size:clamp(2.4rem,6.4vw,4.8rem); line-height:1.05; font-weight:800;
                color:#d4af37; text-shadow:0 2px 24px rgba(0,0,0,.55);">
       Resonanzraum
     </h1>
     <p class="sub"
-   style="margin:.6rem 0 0; font-size:clamp(1.05rem,2.6vw,1.4rem); font-weight:600;
-          color:#d4af37; text-shadow:0 1px 12px rgba(0,0,0,.45);">
-  Wo Schwingung Begegnung wird
-</p>
+       style="margin:.6rem 0 0; font-size:clamp(1.05rem,2.6vw,1.4rem); font-weight:600;
+              color:#d4af37; text-shadow:0 1px 12px rgba(0,0,0,.45);">
+      Wo Schwingung Begegnung wird
     </p>
   </div>
 </section>

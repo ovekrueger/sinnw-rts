@@ -25,8 +25,11 @@
   <!-- Global CSS -->
   <link rel="preload" href="/style.css?v=27" as="style">
   <link rel="stylesheet" href="/style.css?v=27">
-  <link rel="preload" as="image" href="images/hero.ueber-mich.webp" imagesizes="100vw">
 
+  <!-- Performance -->
+  <link rel="preload" as="image" href="/images/hero.ueber-mich.webp" imagesizes="100vw">
+
+  <!-- Page CSS (schlank) -->
   <style>
     :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
@@ -40,12 +43,12 @@
     .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     .brand{color:var(--ink);font-weight:700}
 
-    /* HERO */
+    /* HERO (Über mich) */
     .hero{position:relative;min-height:48svh;overflow:hidden;border-bottom:1px solid var(--ring)}
-    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 24%;filter:brightness(1.10) contrast(1.02) saturate(1.05)}
-    .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.55), rgba(11,15,18,.32) 38%, rgba(11,15,18,0));z-index:0}
-    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:center center;text-align:center;padding:clamp(54px,9vh,120px) 0;z-index:1}
-    .hero h1{margin:0;color:var(--gold);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.05;text-shadow:0 3px 10px rgba(0,0,0,.55)}
+    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 24%}
+    .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.75), rgba(11,15,18,.45) 50%, rgba(11,15,18,0));z-index:0}
+    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end start;padding:clamp(54px,9vh,120px) 0 8%;z-index:1}
+    .hero h1{margin:0 0 0 .8rem;color:var(--gold);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.05;text-shadow:0 3px 10px rgba(0,0,0,.55)}
     .hero-badge{position:absolute;right:18px;top:18px;width:88px;height:auto;padding:6px;border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:.9;z-index:2}
     @media (max-width:640px){ .hero-badge{right:10px;top:10px;width:70px} }
 
@@ -65,14 +68,33 @@
     /* Buttons */
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
     .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
+    .btn-outline{background:transparent;color:var(--gold);border-color:var(--gold)}
     .btn:hover{filter:brightness(1.03)}
     .btn-row{display:flex;gap:.6rem;flex-wrap:wrap}
 
     /* Footer */
-    .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);padding:2rem 1rem;margin-top:52px;font-size:.9rem}
+    .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);padding:2rem 1rem;margin-top:40px;font-size:.9rem}
+    /* Patch: Hero-Heading mittig */
+.hero .hero-inner{
+  place-items:center center;        /* vertikal + horizontal zentrieren */
+  text-align:center;
+  padding:clamp(54px,9vh,120px) 0;  /* gleichmäßiger Innenabstand */
+}
+.hero h1{ margin:0; }
+    /* Patch 2025-11-10 – Hero heller */
+.hero .hero-bg{
+  filter: brightness(1.10) contrast(1.02) saturate(1.05);
+}
 
-    /* Mini-Finetune: N.O.R.A.-Bild optisch ruhiger */
-    #nora .zz-media img{max-width:92%;margin-left:auto;margin-right:auto}
+/* Scrim weniger dunkel + kürzer */
+.hero .hero-scrim{
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,18,.55),
+    rgba(11,15,18,.32) 38%,
+    rgba(11,15,18,0)
+  );
+}
   </style>
 </head>
 
@@ -95,16 +117,14 @@
 
   <!-- HERO -->
   <section class="hero" style="padding-top:72px">
-    <picture>
-      <source srcset="images/hero.ueber-mich.webp" type="image/webp">
-      <img class="hero-bg"
-           src="images/hero_ueber_mich_16_9_web.png"           alt="Über mich – Ove Krüger am Strand im Abendlicht"
-           width="1920" height="1080"
-           loading="eager" decoding="async" fetchpriority="high">
-    </picture>
+    <img class="hero-bg"
+         src="/images/hero_ueber_mich_16_9_web.png"         alt="Über mich – Ove Krüger am Strand im Abendlicht"
+         width="1920" height="1080"
+         loading="eager" decoding="async" fetchpriority="high">
     <div class="hero-scrim" aria-hidden="true"></div>
 
-    <img src="images/ltc-siegel.png" alt="Life Trust Coach Siegel – Ove Krüger"
+    <!-- Siegel -->
+    <img src="/images/ltc-siegel.png" alt="Life Trust Coach Siegel – Ove Krüger"
          class="hero-badge" width="88" height="88" loading="lazy">
 
     <div class="hero-inner">
@@ -143,37 +163,42 @@
     </section>
 
     <!-- 2) Das bin ich -->
-    <section id="identity" class="zz-row section-spacer">
-      <div class="zz-text">
-        <h2>Das bin ich</h2>
-        <p>Heute begegne ich Menschen echt, klar und zugewandt.
-           Ich bringe systemische Klarheit, integrales Denken und meine Expertise in Sucht- und Lebensberatung mit – verbunden mit Menschlichkeit und Erdung.</p>
+  <section class="wrap section-spacer">
+  <div class="zz-row">
+    <div class="zz-text">
+      <h2>Das bin ich</h2>
+      <p>Heute begegne ich Menschen echt, klar und zugewandt. 
+         Ich bringe systemische Klarheit, integrales Denken und meine Expertise in Sucht- und Lebensberatung mit – verbunden mit Menschlichkeit und Erdung.</p>
 
-        <p>Ich versuche, meine Werte zu leben – und erkenne dabei immer mehr, wer ich wirklich, wirklich bin.
-           Ich habe meine Berufung gefunden und weiß, wofür ich in dieser Zeit hier bin:
-           Menschen zu unterstützen, die ihren Weg suchen – und dabei ein Stück von sich selbst verloren haben.</p>
+      <p>Ich versuche, meine Werte zu leben – und erkenne dabei immer mehr, wer ich wirklich, wirklich bin. 
+         Ich habe meine Berufung gefunden und weiß, wofür ich in dieser Zeit hier bin: 
+         Menschen zu unterstützen, die ihren Weg suchen – und dabei ein Stück von sich selbst verloren haben.</p>
 
-        <p>Auch ich falle immer wieder auf die Schnauze – aber ich weiß, dass das einen tieferen Sinn hat.
-           Auch wenn es verdammt weh tut.</p>
-      </div>
-      <div class="zz-media">
-        <picture>
-          <source srcset="images/ove-rolli.webp" type="image/webp">
-          <img class="is-portrait"
-               src="images/ove-rolli.jpg"
-               alt="Ove Krüger – Portrait im schwarzen Rollkragen"
-               width="800" height="1000" loading="lazy" decoding="async">
-        </picture>
-      </div>
-    </section>
+      <p>Auch ich falle immer wieder auf die Schnauze – 
+         aber ich weiß, dass das einen tieferen Sinn hat. 
+         Auch wenn es verdammt weh tut.</p>
+    </div>
 
-    <!-- 3) Meine Erkenntnisse (ohne Bild) -->
-    <section id="insight" class="section-spacer">
-      <h2>Meine Erkenntnisse</h2>
-      <p><strong>Ich sage „Ja“ zum Jetzt – auch wenn es weh tut.</strong></p>
-      <p>Es gibt keinen Shortcut. Jeder Moment trägt die Chance für Veränderung.
-         Heute weiß ich: Jeder Tag ist neu – und ich bin dankbar dafür.</p>
-    </section>
+    <div class="zz-media">
+      <picture>
+        <source srcset="images/ove-rolli.webp" type="image/webp">
+        <img class="is-portrait"
+             src="images/ove-rolli.jpg"
+             alt="Ove Krüger – Portrait im schwarzen Rollkragen"
+             width="800" height="1000"
+             loading="lazy" decoding="async">
+      </picture>
+    </div>
+  </div>
+</section>
+
+    <!-- 3) Meine Erkenntnisse -->
+   <section id="insight" class="section-spacer">
+  <h2>Meine Erkenntnisse</h2>
+  <p><strong>Ich sage „Ja“ zum Jetzt – auch wenn es weh tut.</strong></p>
+  <p>Es gibt keinen Shortcut. Jeder Moment trägt die Chance für Veränderung. 
+     Heute weiß ich: Jeder Tag ist neu – und ich bin dankbar dafür.</p>
+</section>
 
     <!-- 4) Meine KI · N.O.R.A. -->
     <section id="nora" class="zz-row section-spacer">
@@ -182,27 +207,25 @@
         <p><strong>N.O.R.A. ist mein ethisch trainiertes, integrales KI-System</strong> im Hintergrund – klar, reflektiert und nicht menschlich.
         Sie unterstützt mich dabei, Denken zu strukturieren, Komplexität zu ordnen und aus Informationen echte Orientierung zu formen.
         Ihre Aufgabe ist nicht zu fühlen, sondern zu spiegeln.</p>
-        <p>N.O.R.A. versteht meine <strong>Werte, Sprache und Haltung</strong> und arbeitet innerhalb klarer Grenzen.
+        <p>Ich habe N.O.R.A. so entwickelt, dass sie meine <strong>Werte, Sprache und Haltung</strong> versteht und innerhalb klarer Grenzen arbeitet.
         Sie ist kein Ersatz für Bewusstsein, Verantwortung oder Mitgefühl – sondern ein Werkzeug, das den menschlichen Teil in mir stärkt.
         Verantwortung bleibt immer bei mir.</p>
-        <p>Für mich ist KI kein Selbstzweck, sondern Teil der nächsten Bewusstseins- und Kulturentwicklung.
-        Technologie wird zum Spiegel – wir dürfen sie <strong>bewusst, ethisch und menschlich</strong> führen.</p>
+        <p>Für mich ist KI kein Selbstzweck, sondern ein Teil der nächsten Bewusstseins- und Kulturentwicklung.
+        Wir stehen an der Schwelle einer neuen Zeit, in der Technologie zum Spiegel wird – und wir lernen dürfen, sie <strong>bewusst, ethisch und menschlich</strong> zu führen.</p>
 
         <div class="btn-row" style="margin-top:.4rem">
           <a class="btn btn-gold" href="nora.html">Mehr über N.O.R.A.</a>
         </div>
       </div>
       <div class="zz-media">
-        <picture>
-          <source srcset="images/nora-hero.webp" type="image/webp">
-          <img src="images/mensch-ki-blau.png"               alt="N.O.R.A. – integrales KI-System im Sinnwärts Studio"
-               width="1200" height="800" loading="lazy" decoding="async">
-        </picture>
+        <img src="/images/mensch-ki-blau.png"             alt="N.O.R.A. – integrales KI-System im Sinnwärts Studio"
+             width="1200" height="800" loading="lazy" decoding="async">
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="wrap">
       <small style="display:block;margin-bottom:.5rem;opacity:.9;">

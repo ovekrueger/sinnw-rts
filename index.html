@@ -119,6 +119,18 @@
       .hero .hero-inner{ padding-top:72px }
       .pill-row{ gap:.5rem }
     }
+    /* Patch 2025-11-10 – Hero heller (Startseite) */
+.hero .hero-bg{
+  filter: brightness(1.10) contrast(1.02) saturate(1.05);
+}
+.hero .hero-scrim{
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,18,.55),
+    rgba(11,15,18,.32) 38%,
+    rgba(11,15,18,0)
+  );
+}
   </style>
 </head>
 

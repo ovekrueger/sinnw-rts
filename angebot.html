@@ -97,6 +97,39 @@ body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
 @media (max-width:640px){
   body.angebot .hero{ min-height:58svh; }         /* mehr Raum auf Mobile (optional) */
 }
+    /* === Angebote – Mobile Feinschnitt (≤640px) === */
+@media (max-width:640px){
+  .wrap{ padding:0 .9rem; }
+
+  /* Hero großzügiger + sauberer Fokus */
+  body.angebot .hero{ min-height:60svh; }
+  body.angebot .hero .hero-bg{ object-position:center 38%; }
+  body.angebot .hero h1{
+    font-size:clamp(1.6rem,4.8vw + 1rem,2.2rem);
+    margin:0;
+  }
+  body.angebot .hero .hero-kicker{
+    font-size:.95rem;
+    line-height:1.35;
+    margin:.35rem 0 0 0;
+  }
+  .hero-badge{ width:64px; right:10px; top:10px; }
+
+  /* Abstände & Listen ruhiger */
+  .section-spacer{ padding:clamp(18px,5.2vw,34px) 0; }
+  .wrap h2{ margin:.15rem 0 .7rem; }
+  .wrap h3{ margin:.7rem 0 .35rem; }
+  ul{ margin:.3rem 0 .7rem 1.0rem; }
+
+  /* Buttons & Chips fingerfreundlich */
+  .btn{ padding:.62rem 1rem; }
+  .chip{ padding:.5rem .9rem; }
+
+  /* FAQ besser antippbar */
+  details{ padding:.7rem .8rem; }
+  summary{ font-size:1rem; }
+  details p{ margin:.5rem 0 0; }
+}
   </style>
 </head>
 

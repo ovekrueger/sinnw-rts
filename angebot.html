@@ -84,6 +84,19 @@
     /* Footer */
     .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);
       padding:2rem 1rem;margin-top:44px;font-size:.9rem}
+    /* === Angebote – Hero größer + mittig === */
+body.angebot .hero{ min-height:52svh; }           /* Höhe erhöhen */
+body.angebot .hero .hero-inner{
+  place-items:center center;                      /* vertikal + horizontal */
+  padding:72px 1rem;                              /* gleichmäßiger Rand */
+  text-align:center;
+}
+body.angebot .hero h1{ margin:0; }                /* linken Abstand weg */
+body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
+
+@media (max-width:640px){
+  body.angebot .hero{ min-height:58svh; }         /* mehr Raum auf Mobile (optional) */
+}
   </style>
 </head>
 

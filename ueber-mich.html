@@ -74,6 +74,13 @@
 
     /* Footer */
     .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);padding:2rem 1rem;margin-top:40px;font-size:.9rem}
+    /* Patch: Hero-Heading mittig */
+.hero .hero-inner{
+  place-items:center center;        /* vertikal + horizontal zentrieren */
+  text-align:center;
+  padding:clamp(54px,9vh,120px) 0;  /* gleichmäßiger Innenabstand */
+}
+.hero h1{ margin:0; }
   </style>
 </head>
 
@@ -97,8 +104,7 @@
   <!-- HERO -->
   <section class="hero" style="padding-top:72px">
     <img class="hero-bg"
-         src="/images/hero.ueber-mich.webp"
-         alt="Über mich – Ove Krüger am Strand im Abendlicht"
+         src="/images/hero_ueber_mich_16_9_web.png"         alt="Über mich – Ove Krüger am Strand im Abendlicht"
          width="1920" height="1080"
          loading="eager" decoding="async" fetchpriority="high">
     <div class="hero-scrim" aria-hidden="true"></div>

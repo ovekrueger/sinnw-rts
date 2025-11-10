@@ -4,266 +4,240 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Angebote – Coaching · Mentoring · KI | Sinnwärts Studio</title>
-  <meta name="description" content="Klarheit, Orientierung, Menschlichkeit. Angebote von Ove Krüger: 1:1 Coaching, Mentoring/Begleitprogramm, Lasercoaching und deine KI als Co-Pilot:in – ethisch, ruhig, wirksam.">
+  <title>Angebote – Sinnwärts Studio</title>
+  <meta name="description" content="Coaching, Mentoring, Lasercoaching und KI als Co-Pilot. Klar, integral, menschlich.">
   <link rel="canonical" href="https://sinnwaerts-studio.de/angebot.html">
   <meta name="robots" content="index,follow">
 
-  <!-- OG / Twitter -->
-  <meta property="og:title" content="Angebote – Coaching · Mentoring · KI | Sinnwärts Studio">
-  <meta property="og:description" content="1:1 Coaching, Mentoring/Begleitprogramm, Lasercoaching und deine KI als Co-Pilot:in – ethisch, ruhig, wirksam.">
+  <!-- OG / X -->
+  <meta property="og:site_name" content="Sinnwärts Studio">
+  <meta property="og:title" content="Angebote – Sinnwärts Studio">
+  <meta property="og:description" content="Coaching, Mentoring, Lasercoaching und KI als Co-Pilot. Klar, integral, menschlich.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sinnwaerts-studio.de/angebot.html">
-  <meta property="og:image" content="https://sinnwaerts-studio.de/assets/og-angebot.jpg">
-  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://sinnwaerts-studio.de/images/hero.angebote.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Angebote – Coaching · Mentoring · KI | Sinnwärts Studio">
-  <meta name="twitter:description" content="Klarheit, Orientierung, Menschlichkeit – Angebote von Ove Krüger.">
-  <meta name="twitter:image" content="https://sinnwaerts-studio.de/assets/og-angebot.jpg">
 
-  <!-- Icons -->
+  <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
-  <!-- Styles -->
-  <link rel="preload" href="/style.css" as="style">
-<link rel="stylesheet" href="/style.css?v=31">
+  <!-- Global CSS -->
+  <link rel="preload" href="/style.css?v=27" as="style">
+  <link rel="stylesheet" href="/style.css?v=27">
+  <link rel="preload" as="image" href="images/hero.angebote.webp" imagesizes="100vw">
 
-  <!-- Page tweaks -->
   <style>
-    /* mobile hero crop */
-    @media (max-width: 640px){
-      .hero-angebot { height: 60vh !important; background-position: 50% 65% !important; }
-    }
-    /* saubere Anker-Offsets */
-    #co-pilotin, #mentoring, #lasercoaching, #suechte { scroll-margin-top: 88px; }
-    /* dezente Layout-Feinschliffe, falls global nicht gesetzt */
-    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-    .block{padding:24px 0}
-    .cards{display:grid;gap:24px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-    .card{background:#0e1317;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px}
-    .card h3{margin:.2rem 0 .6rem}
-    .card ul{margin:.6rem 0 .6rem 1.1rem;opacity:.95}
-    .btn{display:inline-block;background:#d4af37;color:#0b0f12;font-weight:600;padding:.6rem 1.2rem;border-radius:999px;text-decoration:none;transition:.25s}
-    .btn:hover{background:#f1d46c;transform:translateY(-1px)}
-    .pricing{margin:36px 0 8px;padding:20px;border:1px solid rgba(212,175,55,.25);border-radius:16px;background:rgba(255,255,255,.02)}
-    .pricing h2{margin:.2rem 0 .6rem;font-size:1.25rem}
-    .grid.grid--cards{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-  </style>
+    :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
+    a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"CollectionPage",
-    "url":"https://sinnwaerts-studio.de/angebot.html",
-    "name":"Angebote – Coaching, Mentoring, KI",
-    "about":[
-      {"@type":"Service","name":"1:1 Coaching","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
-      {"@type":"Service","name":"Mentoring/Begleitprogramm","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
-      {"@type":"Service","name":"Lasercoaching","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}},
-      {"@type":"Service","name":"KI Co-Pilot:in (maßgeschneidert)","url":"https://sinnwaerts-studio.de/kontakt.html","areaServed":"DE","provider":{"@type":"Organization","name":"Sinnwärts Studio"}}
-    ]
-  }
-  </script>
+    /* NAV */
+    .site-header{border-bottom:1px solid var(--ring);background:rgba(11,15,18,.95)}
+    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem}
+    .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .brand{color:var(--ink);font-weight:700}
+
+    /* HERO kompakt + heller */
+    .hero{position:relative;min-height:38svh;overflow:hidden;border-bottom:1px solid var(--ring)}
+    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(1.10) contrast(1.02) saturate(1.05)}
+    .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.55), rgba(11,15,18,.32) 38%, rgba(11,15,18,0));z-index:0}
+    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end start;padding:72px 0 7%;z-index:1}
+    .hero h1{margin:0 0 0 .9rem;color:var(--gold);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.05;text-shadow:0 3px 10px rgba(0,0,0,.55)}
+    .hero-kicker{margin:.4rem 0 0 .9rem;opacity:.9}
+    .hero-badge{position:absolute;right:18px;top:18px;width:88px;height:auto;padding:6px;border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:.9;z-index:2}
+    @media (max-width:640px){ .hero-badge{right:10px;top:10px;width:70px} }
+
+    /* Sektionen / Typo */
+    .section-spacer{padding:clamp(22px,4.5vw,48px) 0}
+    .wrap h2{margin:.2rem 0 .8rem;font-size:clamp(1.4rem,1rem + 1vw,1.9rem)}
+    .wrap h3{margin:.8rem 0 .4rem;font-size:1.18rem}
+    p{max-width:78ch;line-height:1.65}
+    ul{margin:.4rem 0 .8rem 1.1rem}
+    hr{border:0;border-top:1px solid var(--ring);margin:1.2rem 0}
+
+    /* Buttons / Chips */
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
+    .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
+    .btn-outline{background:transparent;color:var(--gold);border-color:var(--gold)}
+    .btn:hover{filter:brightness(1.03)}
+    .chips{display:flex;gap:.6rem;flex-wrap:wrap}
+    .chip{padding:.55rem 1rem;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:700;background:transparent}
+
+    /* FAQ */
+    details{border:1px solid var(--ring);border-radius:10px;padding:.6rem .9rem;background:rgba(255,255,255,.03)}
+    summary{cursor:pointer;font-weight:700;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    details + details{margin-top:.6rem}
+
+    /* Footer */
+    .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);padding:2rem 1rem;margin-top:44px;font-size:.9rem}
+  </style>
 </head>
 
-<body id="top" class="page-angebote">
-
+<body class="angebot">
   <!-- NAV -->
   <header class="site-header">
-    <div class="nav-container">
-      <a class="brand" href="/index.html">Sinnwärts Studio</a>
+    <div class="nav-container wrap">
+      <a class="brand" href="index.html">Sinnwärts Studio</a>
       <nav aria-label="Hauptnavigation">
         <ul class="nav-list">
-          <li><a href="/index.html">Start</a></li>
-          <li><a href="/ueber-mich.html">Über mich</a></li>
-          <li><a href="/angebot.html" class="active">Angebote</a></li>
-          <li><a href="/resonanzraum.html">Resonanzraum</a></li>
-          <li><a href="/kontakt.html">Kontakt</a></li>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="angebot.html" aria-current="page">Angebote</a></li>
+          <li><a href="resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-<!-- HERO (Angebote) -->
-<section class="hero hero--XL hero--soft hero--low" style="--overlay:.62;">
-  <img src="/images/ltc-siegel.png"
-     alt="Life Trust Coach Siegel – Ove Krüger"
-     class="hero-badge" width="120" height="120" loading="lazy">
-  <picture>
-    <img src="/images/angebote-strand.webp"         alt="Angebote – Sinnwärts Studio"
-         class="hero-bg" width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         style="object-fit:cover; object-position:center 60%;">
-  </picture>
-  <img src="/images/ltc-siegel.png" 
-     alt="Life Trust Coach Siegel – Ove Krüger"
-     class="hero-badge"
-     width="80" height="80" loading="lazy">
-  <div class="inner">
-    <h1>Angebote</h1>
-  </div>
-</section>
-  <section class="subhero">
-  <p>Coaching · Mentoring · Lasercoaching · KI als Co-Pilot:in</p>
-</section>
+  <!-- HERO -->
+  <section class="hero" style="padding-top:72px">
+    <picture>
+      <source srcset="images/hero.angebote.webp" type="image/webp">
+      <img class="hero-bg" src="images/hero.angebote.jpg"
+           alt="Angebote – Strandpfad in goldenem Licht" width="1920" height="1080"
+           loading="eager" decoding="async" fetchpriority="high">
+    </picture>
+    <div class="hero-scrim" aria-hidden="true"></div>
 
-<!-- Erklärung: Wertschätzung & Energieausgleich -->
-<section class="wrap block" id="wert" style="text-align:center;max-width:780px;margin:80px auto 60px;line-height:1.8;">
-  <h2 style="font-size:1.6rem;margin-bottom:1rem;">Wertschätzung &amp; Energieausgleich</h2>
-  <p style="margin-bottom:1rem;">
-    Für mich bedeutet <strong>Wertschätzung</strong> mehr als Geld.  
-    In dieser Übergangszeit arbeite ich ohne feste Preise – aus rechtlichen Gründen,  
-    aber auch, weil ich an eine <strong>neue Kultur des Gebens und Empfangens</strong> glaube.
-  </p>
-  <p style="margin-bottom:1rem;">
-    Sobald mein Gewerbe offiziell angemeldet ist, werden klare, faire Honorare veröffentlicht.
-  </p>
-  <p style="opacity:.9;">
-    Bis dahin gilt: Wir wirken auf <strong>Vertrauensbasis</strong>.  
-    Doch eine Form von angemessenem <em>Energieaustausch</em> wird es geben –  
-    weil sich darin auch deine Werte, Selbstachtung und dein eigener Beitrag spiegeln.
-  </p>
-</section>
+    <img src="images/ltc-siegel.png" alt="Life Trust Coach Siegel – Ove Krüger"
+         class="hero-badge" width="88" height="88" loading="lazy">
 
-  <!-- Angebote (Blog-Flow) -->
-<section class="offers-flow wrap" aria-label="Angebote">
-  <!-- KI Co-Pilot:in -->
-  <article id="co-pilotin" class="offer">
-    <h2>Deine Co-Pilot:in – maßgeschneiderte KI</h2>
-    <p>KI als Spiegel, Sortierhilfe und Inspiration – so gebaut, dass sie dich stärkt, nicht ersetzt. Ruhig, ethisch, auf deine Sprache und Werte trainiert.</p>
-    <ul>
-      <li><strong>Entlastung:</strong> Routinen vereinfachen, Überblick behalten</li>
-      <li><strong>Entscheidungen:</strong> Pro/Contra, Szenarien, nächste Schritte</li>
-      <li><strong>Content:</strong> Briefings, Rohtexte, Redaktionspläne</li>
-      <li><strong>Haltung:</strong> Verantwortung &amp; Menschlichkeit bleiben bei dir</li>
-    </ul>
-    <p class="offer-cta"><a class="btn" href="/kontakt.html">Unverbindlich anfragen</a></p>
-  </article>
-
-  <hr class="offer-divider">
-
-  <!-- 1:1 Coaching -->
-  <article id="einszu1" class="offer">
-    <h2>1:1 Coaching</h2>
-    <p>Individuell, vertraulich, zielklar. Neuro-orientiert &amp; integral. Vom Verstehen ins Tun – mit Struktur, Spiegel und ruhiger Präsenz.</p>
-    <p class="offer-cta"><a class="btn" href="/kontakt.html">Anfragen</a></p>
-  </article>
-
-  <hr class="offer-divider">
-
-  <!-- Mentoring / Begleitprogramm -->
-  <article id="mentoring" class="offer">
-    <h2>Mentoring / Begleitprogramm</h2>
-    <p>Individuelle Begleitung mit viel Reflexion, klaren Challenges und intensivem Austausch – auch zwischen den Sessions. Fokus: Umsetzung, Halt, ehrliches Feedback.</p>
-    <ul>
-      <li><strong>Rahmen:</strong> 6–12 Wochen, regelmäßige Sessions</li>
-      <li><strong>Zwischenräume:</strong> kurze Check-ins (Text/Audio)</li>
-      <li><strong>Praxis:</strong> Aufgaben, Review, nächste Schritte</li>
-    </ul>
-    <p class="offer-cta"><a class="btn" href="/kontakt.html">Unverbindlich anfragen</a></p>
-  </article>
-
-  <hr class="offer-divider">
-
-  <!-- Lasercoaching -->
-  <article id="lasercoaching" class="offer">
-    <h2>Lasercoaching</h2>
-    <p>In <strong>1–2 Sessions</strong> ein konkretes Thema direkt in die Umsetzung bringen – ohne Ursachenanalyse, ohne Umwege.</p>
-    <ul>
-      <li><strong>Fokus:</strong> ein Ziel, klare Entscheidung</li>
-      <li><strong>Action:</strong> nächste Schritte, Verantwortungen, Termin</li>
-      <li><strong>Nachhalten:</strong> kurzer Check-in optional</li>
-    </ul>
-    <p class="offer-cta"><a class="btn" href="/kontakt.html">Start klarmachen</a></p>
-  </article>
-</section>
-  <!-- Süchte neu denken (angepasst) -->
-  <section id="suechte" class="offers-flow wrap" aria-label="Süchte neu denken">
-  <article class="offer">
-    <h2>Süchte neu denken</h2>
-    <p>Raus aus Scham &amp; Verstecken. Rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung – neurobiologisch fundiert, menschlich, integral.</p>
-    <ul>
-      <li><strong>1:1 Coaching:</strong> Stabilisierung, Triggerarbeit, Rückfallprävention</li>
-      <li><strong>Lasercoaching:</strong> akute Themen zügig in Umsetzung bringen</li>
-    </ul>
-    <p class="offer-cta"><a class="btn" href="/kontakt.html">Gespräch starten</a></p>
-  </article>
-</section>
-  <!-- Für wen -->
-  <section class="angebot-targets wrap block">
-    <h2>Für wen?</h2>
-    <div class="btn-row">
-      <a class="btn" href="/angebote/frauen/">Für Frauen</a>
-      <a class="btn" href="/angebote/maenner/">Für Männer</a>
+    <div class="hero-inner">
+      <div>
+        <h1>Angebote</h1>
+        <p class="hero-kicker">Coaching · Mentoring · Lasercoaching · KI als Co-Pilot</p>
+      </div>
     </div>
   </section>
-  <section id="faq-eltern" class="wrap" style="max-width:980px;margin:24px auto 34px;padding:0 1rem;">
-  <h3 style="margin:0 0 .6rem 0;">Fragen & Antworten</h3>
 
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">Wie läuft ein Gespräch ab?</summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      Start mit einem <strong>kostenlosen Klarheits-Gespräch (≈20 Min.)</strong>. Wenn es stimmig ist:
-      <strong>Einzel- oder Elterngespräch (≈60 Min.)</strong> – Nervensystem beruhigen, Überblick gewinnen, nächste Schritte.
-    </div>
-  </details>
+  <main id="main" role="main" tabindex="-1" class="wrap">
 
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">Was kostet das?</summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      <strong>Wertschätzung & Energieausgleich:</strong> In dieser Übergangszeit arbeite ich ohne feste Preise – aus rechtlichen Gründen
-      und aus Haltung. Gespräche finden <strong>auf Vertrauensbasis</strong> statt. Ein angemessener Energieaustausch darf entstehen –
-      als Ausdruck von Wertschätzung, Selbstachtung und eigenem Beitrag.
-    </div>
-  </details>
+    <!-- Wertschätzung -->
+    <section class="section-spacer" id="wertschaetzung">
+      <h2>Wertschätzung &amp; Energieausgleich</h2>
+      <p><strong>Ich arbeite aktuell ohne feste Preise</strong> – aus rechtlichen Gründen und weil ich an eine <strong>Kultur des Gebens &amp; Empfangens</strong> glaube.
+         Sobald mein Gewerbe angemeldet ist, veröffentliche ich klare, faire Honorare.</p>
+      <p>Bis dahin gilt <strong>Vertrauensbasis</strong>: Wir finden einen angemessenen Ausgleich, der Werte, Selbstachtung und deinen Beitrag spiegelt.</p>
+      <hr>
+    </section>
 
-  <details style="border:1px solid rgba(212,175,55,.25);border-radius:10px;padding:.8rem 1rem;margin:.6rem 0;background:rgba(255,255,255,.03);">
-    <summary style="cursor:pointer;font-weight:700;list-style:none;">Online oder vor Ort?</summary>
-    <div style="margin-top:.5rem;line-height:1.55;">
-      Beides möglich – <strong>online (Video)</strong> oder <strong>vor Ort in Hamburg</strong>. Termine auch am Abend.
-      Auf Wunsch kurzer <strong>Follow-up-Check-In</strong> einige Tage nach dem Gespräch.
-    </div>
-  </details>
-</section>
+    <!-- KI-Co-Pilot -->
+    <section class="section-spacer" id="kopilot">
+      <h2>Deine Co-Pilot-KI – maßgeschneidert</h2>
+      <p>KI als Spiegel, Sortierhilfe und Inspiration – so gebaut, dass sie dich stärkt, nicht ersetzt. Ruhig, ethisch, auf deine Sprache und Werte trainiert.</p>
+      <ul>
+        <li><strong>Entlastung:</strong> Routinen vereinfachen, Überblick behalten</li>
+        <li><strong>Entscheidungen:</strong> Pro/Contra, Szenarien, nächste Schritte</li>
+        <li><strong>Content:</strong> Briefings, Rohtexte, Redaktionspläne</li>
+        <li><strong>Haltung:</strong> Verantwortung &amp; Menschlichkeit bleiben bei dir</li>
+      </ul>
+      <a class="btn btn-gold" href="kontakt.html#anfrage">Unverbindlich anfragen</a>
+      <hr>
+    </section>
 
-<style>
-  #faq-eltern details[open] summary{ color:#d4af37; }
-  #faq-eltern summary::-webkit-details-marker{ display:none; }
-  #faq-eltern summary::after{ content:"＋"; float:right; font-weight:700; opacity:.7; transition:transform .2s ease; }
-  #faq-eltern details[open] summary::after{ content:"–"; transform:translateY(-1px); }
-</style>
+    <!-- 1:1 Coaching -->
+    <section class="section-spacer" id="coaching">
+      <h2>1:1 Coaching</h2>
+      <p>Individuell, vertraulich, zielklar. Neuro-orientiert &amp; integral. Vom Verstehen ins Tun – mit Struktur, Spiegel und ruhiger Präsenz.</p>
+      <a class="btn btn-gold" href="kontakt.html#anfrage">Unverbindlich anfragen</a>
+      <hr>
+    </section>
 
-  <!-- Footer -->
+    <!-- Mentoring -->
+    <section class="section-spacer" id="mentoring">
+      <h2>Mentoring / Begleitprogramm</h2>
+      <p>Individuelle Begleitung mit Reflexion, klaren Challenges und ehrlichem Halt – auch zwischen den Sessions.</p>
+      <ul>
+        <li><strong>Rahmen:</strong> 6–12 Wochen, regelmäßige Sessions</li>
+        <li><strong>Zwischenräume:</strong> kurze Check-ins (Text/Audio)</li>
+        <li><strong>Praxis:</strong> Aufgaben, Review, nächste Schritte</li>
+      </ul>
+      <a class="btn btn-gold" href="kontakt.html#anfrage">Unverbindlich anfragen</a>
+      <hr>
+    </section>
+
+    <!-- Lasercoaching -->
+    <section class="section-spacer" id="lasercoaching">
+      <h2>Lasercoaching</h2>
+      <p><strong>1–2 Sessions.</strong> Ein konkretes Thema direkt in Umsetzung – ohne Umwege.</p>
+      <ul>
+        <li><strong>Fokus:</strong> klares Ziel, klare Entscheidung</li>
+        <li><strong>Action:</strong> nächste Schritte, Verantwortungen, Termin</li>
+        <li><strong>Nachhalten:</strong> kurzer Check-in (optional)</li>
+      </ul>
+      <a class="btn btn-gold" href="kontakt.html#anfrage">Start klarmachen</a>
+      <hr>
+    </section>
+
+    <!-- Süchte neu denken -->
+    <section class="section-spacer" id="suechte">
+      <h2>Süchte neu denken</h2>
+      <p>Raus aus Scham &amp; Verstecken – rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung (neurobiologisch fundiert, integral).</p>
+      <ul>
+        <li><strong>1:1 Coaching:</strong> Stabilisierung, Triggerarbeit, Rückfallprävention</li>
+        <li><strong>Lasercoaching:</strong> akute Themen zügig in Umsetzung bringen</li>
+      </ul>
+      <a class="btn btn-gold" href="kontakt.html#anfrage">Gespräch starten</a>
+    </section>
+
+    <!-- Für wen -->
+    <section class="section-spacer" id="fuer-wen">
+      <h2>Für wen?</h2>
+      <div class="chips" aria-label="Zielgruppen">
+        <a class="chip" href="angebote/frauen/">Für Frauen</a>
+        <a class="chip" href="angebote/maenner/">Für Männer</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-spacer" id="faq">
+      <h2>Fragen &amp; Antworten</h2>
+
+      <details>
+        <summary>Wie läuft unser Gespräch ab?</summary>
+        <p>Wir klären Ziel und Rahmen, sortieren das Thema und legen 1–3 nächste Schritte fest.
+           Du bekommst ruhige Präsenz, ehrliches Feedback und klare Vereinbarungen.</p>
+      </details>
+
+      <details>
+        <summary>Was kostet das?</summary>
+        <p>Aktuell: Vertrauensbasis statt fixer Preise. Wir finden einen Ausgleich, der Werte, Selbstachtung und deinen Beitrag spiegelt.
+           Nach der Gewerbeanmeldung veröffentliche ich klare, faire Honorare.</p>
+      </details>
+
+      <details>
+        <summary>Online oder vor Ort?</summary>
+        <p>Online per Zoom (Standard) oder telefonisch. Vor Ort in Hamburg nach Absprache.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="wrap" style="text-align:center;padding:2rem 1rem;">
-      <small style="display:block;margin-bottom:.5rem;opacity:.85;">
+    <div class="wrap">
+      <small style="display:block;margin-bottom:.5rem;opacity:.9;">
         © <span id="y"></span> Ove Krüger · Sinnwärts Studio
       </small>
-      <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-        <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
-        <a href="/ueber-mich.html">Über mich</a> ·
-        <a href="/angebot.html">Angebote</a> ·
-        <a href="/resonanzraum.html">Resonanzraum</a> ·
-        <a href="/kontakt.html">Kontakt</a> ·
-        <a href="/impressum.html">Impressum</a> ·
-        <a href="/datenschutz.html">Datenschutz</a>
+      <nav aria-label="Footer-Navigation">
+        <a href="index.html">Start</a> ·
+        <a href="ueber-mich.html">Über mich</a> ·
+        <a href="angebot.html" aria-current="page">Angebote</a> ·
+        <a href="resonanzraum.html">Resonanzraum</a> ·
+        <a href="kontakt.html">Kontakt</a> ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
       </nav>
     </div>
   </footer>
 
-  <button class="to-top" aria-label="Nach oben" title="Nach oben">↑</button>
-
   <script>
-    // Jahr
     document.getElementById('y').textContent = new Date().getFullYear();
-    // ↑-Button
-    const btn = document.querySelector('.to-top');
-    const onScroll = () => btn.classList.toggle('show', window.scrollY > 600);
-    window.addEventListener('scroll', onScroll, {passive:true});
-    btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-    onScroll();
   </script>
 </body>
 </html>

@@ -81,6 +81,20 @@
   padding:clamp(54px,9vh,120px) 0;  /* gleichmäßiger Innenabstand */
 }
 .hero h1{ margin:0; }
+    /* Patch 2025-11-10 – Hero heller */
+.hero .hero-bg{
+  filter: brightness(1.10) contrast(1.02) saturate(1.05);
+}
+
+/* Scrim weniger dunkel + kürzer */
+.hero .hero-scrim{
+  background: linear-gradient(
+    to bottom,
+    rgba(11,15,18,.55),
+    rgba(11,15,18,.32) 38%,
+    rgba(11,15,18,0)
+  );
+}
   </style>
 </head>
 

@@ -15,7 +15,7 @@
   <meta property="og:description" content="Coaching, Mentoring, Lasercoaching und KI als Co-Pilot. Klar, integral, menschlich.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sinnwaerts-studio.de/angebot.html">
-  <meta property="og:image" content="https://sinnwaerts-studio.de/images/hero.angebote.webp">
+  <meta property="og:image" content="https://sinnwaerts-studio.de/images/angebote-strand.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
@@ -25,7 +25,7 @@
   <!-- Global CSS -->
   <link rel="preload" href="/style.css?v=27" as="style">
   <link rel="stylesheet" href="/style.css?v=27">
-  <link rel="preload" as="image" href="images/hero.angebote.webp" imagesizes="100vw">
+  <link rel="preload" as="image" href="images/angebote-strand.webp" imagesizes="100vw">
 
   <style>
     :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; }
@@ -40,17 +40,23 @@
     .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     .brand{color:var(--ink);font-weight:700}
 
-    /* HERO kompakt + heller */
+    /* HERO */
     .hero{position:relative;min-height:38svh;overflow:hidden;border-bottom:1px solid var(--ring)}
-    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(1.10) contrast(1.02) saturate(1.05)}
-    .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom, rgba(11,15,18,.55), rgba(11,15,18,.32) 38%, rgba(11,15,18,0));z-index:0}
-    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end start;padding:72px 0 7%;z-index:1}
-    .hero h1{margin:0 0 0 .9rem;color:var(--gold);font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.05;text-shadow:0 3px 10px rgba(0,0,0,.55)}
+    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 32%;
+      filter:brightness(1.12) contrast(1.04) saturate(1.08)}
+    .hero .hero-scrim{position:absolute;inset:0;background:linear-gradient(to bottom,
+      rgba(11,15,18,.55),rgba(11,15,18,.32) 38%,rgba(11,15,18,0));z-index:0}
+    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end start;
+      padding:72px 0 7%;z-index:1}
+    .hero h1{margin:0 0 0 .9rem;color:var(--gold);
+      font-size:clamp(2rem,1.4rem + 2.4vw,3rem);line-height:1.05;text-shadow:0 3px 10px rgba(0,0,0,.55)}
     .hero-kicker{margin:.4rem 0 0 .9rem;opacity:.9}
-    .hero-badge{position:absolute;right:18px;top:18px;width:88px;height:auto;padding:6px;border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:.9;z-index:2}
+    .hero-badge{position:absolute;right:18px;top:18px;width:88px;height:auto;padding:6px;
+      border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);
+      opacity:.9;z-index:2}
     @media (max-width:640px){ .hero-badge{right:10px;top:10px;width:70px} }
 
-    /* Sektionen / Typo */
+    /* Sektionen */
     .section-spacer{padding:clamp(22px,4.5vw,48px) 0}
     .wrap h2{margin:.2rem 0 .8rem;font-size:clamp(1.4rem,1rem + 1vw,1.9rem)}
     .wrap h3{margin:.8rem 0 .4rem;font-size:1.18rem}
@@ -59,21 +65,25 @@
     hr{border:0;border-top:1px solid var(--ring);margin:1.2rem 0}
 
     /* Buttons / Chips */
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;
+      padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
     .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
     .btn-outline{background:transparent;color:var(--gold);border-color:var(--gold)}
     .btn:hover{filter:brightness(1.03)}
     .chips{display:flex;gap:.6rem;flex-wrap:wrap}
-    .chip{padding:.55rem 1rem;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-weight:700;background:transparent}
+    .chip{padding:.55rem 1rem;border-radius:999px;border:1px solid var(--gold);
+      color:var(--gold);font-weight:700;background:transparent}
 
     /* FAQ */
-    details{border:1px solid var(--ring);border-radius:10px;padding:.6rem .9rem;background:rgba(255,255,255,.03)}
+    details{border:1px solid var(--ring);border-radius:10px;padding:.6rem .9rem;
+      background:rgba(255,255,255,.03)}
     summary{cursor:pointer;font-weight:700;list-style:none}
     summary::-webkit-details-marker{display:none}
     details + details{margin-top:.6rem}
 
     /* Footer */
-    .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);padding:2rem 1rem;margin-top:44px;font-size:.9rem}
+    .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);
+      padding:2rem 1rem;margin-top:44px;font-size:.9rem}
   </style>
 </head>
 
@@ -97,8 +107,9 @@
   <!-- HERO -->
   <section class="hero" style="padding-top:72px">
     <picture>
-      <source srcset="images/hero.angebote.webp" type="image/webp">
-      <img class="hero-bg" src="images/angebote-strand.webp"           alt="Angebote – Strandpfad in goldenem Licht" width="1920" height="1080"
+      <source srcset="images/angebote-strand.webp" type="image/webp">
+      <img class="hero-bg" src="images/angebote-strand.jpg"
+           alt="Angebote – Strandpfad in goldenem Licht" width="1920" height="1080"
            loading="eager" decoding="async" fetchpriority="high">
     </picture>
     <div class="hero-scrim" aria-hidden="true"></div>

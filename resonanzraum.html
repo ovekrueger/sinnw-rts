@@ -9,6 +9,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Fix: eigenes, kleines Hero-Stylesheet -->
+  <style>
+    /* RESONANZRAUM – Hero */
+    .hero-resonanz{ position:relative; min-height:68vh; isolation:isolate; }
+    .hero-resonanz .hero-bg{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:50% 18%;
+      z-index:-1;
+    }
+    .hero-resonanz .inner{
+      position:absolute !important;
+      left:50%; top:50%; transform:translate(-50%,-50%);
+      display:block !important;
+      width:min(92vw,1100px);
+      margin:0; padding:0 12px;
+      text-align:center; z-index:1;
+    }
+    .hero-resonanz h1{
+      margin:0 0 .35em;
+      font-size:clamp(2.4rem,6.4vw,4.8rem);
+      line-height:1.05; font-weight:800;
+      color:#d4af37; text-shadow:0 2px 24px rgba(0,0,0,.55);
+    }
+    .hero-resonanz .sub{
+      margin:0;
+      font-size:clamp(1.05rem,2.6vw,1.4rem); font-weight:600;
+      color:#d4af37; text-shadow:0 1px 12px rgba(0,0,0,.45);
+    }
+    @media (max-width:640px){
+      .hero-resonanz{ min-height:72svh; }
+      .hero-resonanz .inner{ top:56%; }
+    }
+  </style>
 </head>
 
 <body class="resonanzraum" id="top">
@@ -29,45 +63,38 @@
   </div>
 </header>
 
+<!-- HERO – Resonanzraum -->
+<section class="hero hero--soft hero-resonanz" aria-label="Resonanzraum"
+         style="--nav-h:72px; padding-top:var(--nav-h); min-height:calc(96svh - var(--nav-h)); overflow:clip;">
+  <picture style="position:absolute; inset:0; z-index:-2;">
+    <source srcset="images/stimmgabel-gong.webp" type="image/webp">
+    <img src="images/stimmgabel-gong.webp"
+         class="hero-bg"
+         alt="Resonanzraum – Stimmgabel und Gong im Licht">
+  </picture>
 
+  <!-- Scrim -->
+  <div aria-hidden="true"
+       style="position:absolute; inset:0; z-index:-1;
+              background:linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.28) 72%);">
+  </div>
 
-<!-- HERO (höher, wie Startseite) -->
-+ <section class="hero hero--XL hero--soft hero-kontakt" style="--overlay:.35; min-height:70vh;">
-+   <img src="/images/strandgespraech.webp"
-+        alt="Kontakt – Sinnwärts Studio"
-+        class="hero-bg"
-+        width="1920" height="1080"
-+        loading="eager" fetchpriority="high"
-+        style="object-fit:cover; object-position:center 42%;" />
-    <div class="inner tac">
-      <h1>Kontakt</h1>
-      <p class="sub">Klarheit beginnt mit einem Gespräch.</p>
-    </div>
-  </section>  <!-- Badge (oben rechts) -->
+  <!-- Badge (oben rechts) -->
   <img src="/images/ltc-siegel.png"
        alt="Life Trust Coach Siegel – Ove Krüger"
        class="hero-badge"
        width="120" height="120" loading="lazy"
        style="position:absolute; z-index:3;
-              top:calc(var(--nav-h) + 12px); right:12px; left:auto;
+              top:calc(var(--nav-h) + 12px); right:12px;
               width:120px; height:auto;
               padding:6px; background:rgba(0,0,0,.08);
               border:1px solid rgba(255,255,255,.14); border-radius:12px;
               box-shadow:0 6px 28px rgba(0,0,0,.35);">
 
   <!-- Inhalt -->
-  <div class="inner hero-copy"
-       style="width:min(1100px,92vw); margin:0 auto clamp(32px,7vw,64px);
-              padding:0 12px; text-align:center;">
-    <h1 style="margin:0; font-size:clamp(2.4rem,6.4vw,4.8rem); line-height:1.05; font-weight:800;
-               color:#d4af37; text-shadow:0 2px 24px rgba(0,0,0,.55);">
-      Resonanzraum
-    </h1>
-    <p class="sub"
-       style="margin:.6rem 0 0; font-size:clamp(1.05rem,2.6vw,1.4rem); font-weight:600;
-              color:#d4af37; text-shadow:0 1px 12px rgba(0,0,0,.45);">
-      Wo Schwingung Begegnung wird
-    </p>
+  <div class="inner hero-copy">
+    <h1>Resonanzraum</h1>
+    <p class="sub">Wo Schwingung Begegnung wird</p>
   </div>
 </section>
 

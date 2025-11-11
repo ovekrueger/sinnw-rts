@@ -98,6 +98,24 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
     .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
     .btn:hover{filter:brightness(1.03)}
+    /* Manuelle Positionierung des Hero-Texts */
+.hero.hero--soft .inner{
+  position:absolute;
+  left:50%;
+  top: var(--center, 50%);                  /* vertikale Mitte = 50% */
+  transform: translate(-50%, -50%)
+             translate(var(--dx, 0), var(--dy, 0)); /* Feinschub */
+  padding: 0 1rem;                          /* kein bottom-padding mehr */
+  text-align:center;
+  z-index:1;
+}
+
+/* Optional: eigener Center-Wert für Mobil */
+@media (max-width:640px){
+  .hero.hero--soft .inner{
+    top: var(--center-m, var(--center,50%));
+  }
+}
   </style>
 </head>
 
@@ -119,8 +137,15 @@
   </header>
 
   <!-- HERO (aufgeräumt, steuerbar per Inline-Variablen) -->
+
   <section class="hero hero--soft"
-         style="--overlay:.35; --focus-y:22%; --pad-bottom:12vh;">    <img src="/images/ltc-siegel.png" class="hero-badge" alt="Life Trust Coach – Ove Krüger" width="86" height="86" loading="lazy">
+         style="--overlay:.35;
+                --focus-y:14%;      /* Kopf frei (kleiner = höherer Bildfokus) */
+                --center:58%;       /* Text tiefer (50% = exakt Mitte) */
+                --dx:0;             /* horizontaler Feinschub (z.B. 6px) */
+                --dy:0;             /* vertikaler Feinschub   (z.B. 8px) */">
+  ...
+</section>
     <img src="/images/samurai.webp" class="hero-bg" alt="Aufrecht wie ein Samurai" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
     <div class="inner">
       <h1>Werte. Präsenz. Haltung.</h1>

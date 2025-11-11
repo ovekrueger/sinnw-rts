@@ -133,6 +133,25 @@
   color: #fff; /* bleibt weiß */
   text-shadow: 0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
 }
+    /* Header-Höhe berücksichtigen */
+:root{ --nav-h:72px; } /* falls noch nicht gesetzt */
+
+/* Hero unter den Sticky-Header schieben + volle Höhe nutzen */
+.hero.hero--soft{
+  padding-top: var(--nav-h,72px);
+  min-height: calc(100svh - var(--nav-h,72px));
+}
+
+/* Oben-Padding in der Textbox NICHT doppelt geben */
+.hero.hero--soft .inner{
+  padding: 0 1rem var(--pad-bottom,14vh);
+  display: grid; place-items: end center; text-align: center; z-index: 1;
+}
+
+/* Bild-Ausschnitt optional etwas tiefer setzen, damit oben nichts clippt */
+.hero.hero--soft .hero-bg{
+  object-position: center var(--focus-y,22%); /* z.B. 22–28% testen */
+}
 
   </style>
 </head>

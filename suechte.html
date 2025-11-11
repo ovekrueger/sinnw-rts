@@ -17,6 +17,28 @@
     .callout{border:1px solid var(--ring,#2a2f36);border-radius:14px;padding:14px 16px;background:var(--bg-soft,#10151b);}
     .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:18px;}
     .eyebrow{letter-spacing:.08em;opacity:.75;}
+    /* SÜCHTE – Hero zentrieren */
+.suechte-hero{
+  position: relative;
+  display: grid;
+  place-items: center;                 /* horizontal + vertikal */
+  min-height: calc(100svh - var(--nav-h,72px));
+  padding-top: var(--nav-h,72px);      /* Header ausgleichen */
+}
+
+.suechte-hero .hero-bg{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.suechte-hero .hero-copy{
+  position: relative;
+  z-index: 1;
+  text-align: center;                  /* mittige Ausrichtung der Texte */
+  margin: 0;
+}
   </style>
 </head>
 

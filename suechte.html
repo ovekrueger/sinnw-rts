@@ -48,6 +48,36 @@
 
 .suechte-hero h1{ margin: 0 0 .25em; }
 .suechte-hero .subhero{ margin: 0; }
+    /* --- FINALER OVERRIDE: Hero-Text Mitte/Mitte, unabhängig von Defaults --- */
+section.hero.suechte-hero > .hero-copy{
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: min(92vw, 1000px) !important;
+  margin: 0 !important;
+  text-align: center !important;
+  z-index: 2 !important;
+  color: var(--ink, #fff) !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,.55) !important;
+}
+
+section.hero.suechte-hero .hero-bg{
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: 0 !important;
+}
+
+/* Sichtbarkeit sicherstellen, falls globale .hero-Animationen existieren */
+section.hero.suechte-hero h1,
+section.hero.suechte-hero .subhero{
+  opacity: 1 !important;
+  transform: none !important;
+  margin: 0 0 .25em 0 !important;
+}
   </style>
 </head>
 

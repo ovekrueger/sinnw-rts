@@ -310,5 +310,27 @@
     onScroll();
   })();
 </script>
+  <style>
+/* Sichtbarkeit & Position hart erzwingen */
+.hero-resonanz .inner{
+  position:absolute !important;
+  left:50% !important; top:50% !important;
+  transform:translate(-50%,-50%) !important;
+  display:block !important;
+  z-index:5 !important; opacity:1 !important; visibility:visible !important;
+}
+
+/* Textfarbe/Lesbarkeit */
+.hero-resonanz h1,
+.hero-resonanz .sub{
+  color:#d4af37 !important;               /* Gold */
+  text-shadow:0 2px 24px rgba(0,0,0,.75) !important;
+  mix-blend-mode:normal !important;
+}
+
+/* Falls globales .hero Grid stört → neutralisieren */
+.hero-resonanz{ display:block !important; }
+.hero-resonanz .hero-bg{ z-index:-1 !important; }
+</style>
 </body>
 </html>

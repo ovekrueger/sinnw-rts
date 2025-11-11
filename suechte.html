@@ -39,6 +39,36 @@
   text-align: center;                  /* mittige Ausrichtung der Texte */
   margin: 0;
 }
+/* SÜCHTE – Hero-Text wirklich zentrieren */
+.suechte-hero{
+  position: relative;
+  display: block;                                /* Flex/Grid-Einfluss neutralisieren */
+  min-height: calc(100svh - var(--nav-h,72px));
+  padding-top: var(--nav-h,72px);
+}
+
+.suechte-hero .hero-bg{
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Absolute Center – unabhängig von .hero/.inner Defaults */
+.suechte-hero .hero-copy{
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 1000px);
+  text-align: center;
+  margin: 0;
+  z-index: 1;
+}
+
+/* kleine Abstände sauber halten */
+.suechte-hero h1{ margin: 0 0 .25em; }
+.suechte-hero .subhero{ margin: 0; }
+
   </style>
 </head>
 

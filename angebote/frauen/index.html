@@ -73,6 +73,35 @@ body.frauen .card h3 .icon{ width:16px; height:16px; }
   body.frauen .hero .hero-inner{ padding-bottom:9vh; }
   body.frauen .cards{ gap:1.1rem; }
 }
+    /* === Frauen – Hero: Titel tiefer, Gesicht frei === */
+body.frauen .hero{ 
+  min-height:66svh;                 /* mehr Raum */
+}
+body.frauen .hero .hero-inner{
+  place-items:end center;            /* Text nach unten zentriert */
+  padding:72px 1rem 12vh;            /* mehr Abstand nach unten */
+  text-align:center;
+}
+body.frauen .hero h1{ 
+  margin:0;
+  line-height:1.08;
+}
+
+/* Fokussierung des Gesichts: Bildausschnitt leicht nach oben */
+body.frauen .hero .hero-bg{
+  object-position:center 18%;        /* ggf. anpassen: 15–22% */
+}
+
+/* Badge stört nicht ins Gesicht */
+body.frauen .hero-badge{ 
+  top:16px; right:16px; width:78px;
+}
+
+/* optional: mobile noch etwas tiefer */
+@media (max-width:640px){
+  body.frauen .hero{ min-height:70svh; }
+  body.frauen .hero .hero-inner{ padding-bottom:13vh; }
+}
   </style>
 </head>
 

@@ -29,19 +29,26 @@
   </header>
 
   <!-- HERO (höher, wie Startseite) -->
-  <section class="hero hero--XL hero--soft hero-kontakt" style="--overlay:.35; min-height:70vh;">
-    <img src="/images/strandgespraech.webp"
-         alt="Kontakt – Sinnwärts Studio"
-         class="hero-bg"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         style="object-fit:cover; object-position:center 42%;">
-    <div class="inner tac">
-     <div class="inner tac" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;">
-  <h1 style="margin-bottom:.3em;">Kontakt</h1>
-  <p class="sub" style="font-size:1.3rem;">Klarheit beginnt mit einem Gespräch.</p>
-</div>
-  </section>
+<section class="hero hero--XL hero--soft hero-kontakt"
+         style="position:relative; --overlay:.35; min-height:70vh;">
+  <img src="/images/strandgespraech.webp"
+       alt="Kontakt – Sinnwärts Studio"
+       class="hero-bg"
+       width="1920" height="1080"
+       loading="eager" fetchpriority="high"
+       style="object-fit:cover; object-position:center 42%;" />
+
+  <!-- exakt Mitte/Mitte -->
+  <div class="inner tac"
+       style="position:absolute; inset:auto; top:50%; left:50%;
+              transform:translate(-50%,-50%);
+              width:min(92vw,1000px); text-align:center; margin:0;">
+    <h1 style="margin:0 0 .3em;">Kontakt</h1>
+    <p class="sub" style="font-size:1.2rem; margin:0;">
+      Klarheit beginnt mit einem Gespräch.
+    </p>
+  </div>
+</section>
 
   <main id="main">
     <!-- Kontaktinfos -->

@@ -365,3 +365,23 @@ body.resonanzraum .hero .inner h1{ color:var(--accent) !important; }
   </div>
 </div>
 .kicker{ color:rgba(232,230,227,.9) } /* kein Gold hier */
+/* === Hero-Text tiefer setzen (Gesicht bleibt frei) === */
+body.frauen .hero,
+body.maenner .hero{
+  min-height:70svh;                 /* mehr Raum */
+}
+body.frauen .hero .hero-inner,
+body.maenner .hero .hero-inner{
+  place-items:end center;            /* Text nach unten, zentriert */
+  padding:72px 1rem 14vh;            /* größerer Bottom-Offset */
+  text-align:center;
+}
+body.frauen .hero .hero-bg{  object-position:center 18%; } /* bei Bedarf 16–22% feinjustieren */
+body.maenner .hero .hero-bg{ object-position:center 20%; } /* bei Bedarf 18–24% feinjustieren */
+
+body.frauen .hero-badge,
+body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
+@media (max-width:640px){
+  body.frauen .hero, body.maenner .hero{ min-height:74svh; }
+  body.frauen .hero .hero-inner, body.maenner .hero .hero-inner{ padding-bottom:15vh; }
+}

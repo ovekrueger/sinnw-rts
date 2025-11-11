@@ -119,6 +119,21 @@
   .hero.hero--soft .inner{ padding-bottom:15vh; }
   .hero.hero--soft .hero-badge{ width:74px; right:10px; top:10px; }
 }
+    /* Männer-Hero: Größen-Finetuning */
+.hero.hero--soft h1{
+  font-size: clamp(1.6rem, 1rem + 1.6vw, 2.2rem); /* vorher größer */
+  line-height: 1.06;
+  letter-spacing: .005em;
+  margin: 0 0 .35rem;
+}
+
+.hero.hero--soft .sub{
+  font-size: clamp(1.1rem, 0.9rem + 1.1vw, 1.5rem); /* vorher kleiner */
+  font-weight: 600;
+  color: #fff; /* bleibt weiß */
+  text-shadow: 0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
+}
+
   </style>
 </head>
 

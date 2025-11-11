@@ -18,108 +18,85 @@
   <meta property="og:image" content="https://sinnwaerts-studio.de/images/maenner-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicons & CSS -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <link rel="preload" href="/style.css?v=28" as="style">
-  <link rel="stylesheet" href="/style.css?v=28">
-  <link rel="preload" as="image" href="/images/maenner-hero.webp" imagesizes="100vw">
+  <!-- Basis-CSS (optional) -->
+  <link rel="preload" href="/style.css?v=29" as="style">
+  <link rel="stylesheet" href="/style.css?v=29">
 
-  <!-- Seitenlokaler Stil: aufgeräumt & konsistent -->
+  <!-- Seitenlokal: schlank & robust -->
   <style>
     :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; --nav-h:72px; }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
     a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
-    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
-    /* NAV */
+    /* Header */
     .site-header{position:sticky;top:0;z-index:999;background:rgba(11,15,18,.95);border-bottom:1px solid var(--ring)}
-    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem;max-width:1100px;margin:0 auto}
+    .nav-container{max-width:1100px;margin:0 auto;padding:14px 1rem;display:flex;justify-content:space-between;align-items:center}
     .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     .brand{color:var(--ink);font-weight:700}
 
-    /* ===== HERO (clean, variablenbasiert) ===== */
-    .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--ring);
-          padding-top:var(--nav-h); min-height:calc(100svh - var(--nav-h));}
-
-    /* Steuer-Variablen direkt am <section> setzen:
-       --overlay: 0–.6 | --focus-y: Motiv (z.B. 20–28%) | --pad-bottom: Texttiefe */
+    /* ===== HERO – eigenständig, ohne Tüddel ===== */
+    .hero{
+      position:relative; overflow:hidden;
+      padding-top:var(--nav-h);
+      min-height:calc(100svh - var(--nav-h));
+      border-bottom:1px solid var(--ring);
+    }
+    .hero .hero-bg{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover;
+      object-position:center var(--focus-y,16%); /* Kopf frei */
+      filter:brightness(1.06) contrast(1.03) saturate(1.05);
+      z-index:0;
+    }
     .hero::before{
-      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
       background:
         linear-gradient(to bottom,
           rgba(11,15,18, calc(var(--overlay,.35) + .10)) 0%,
           rgba(11,15,18, calc(var(--overlay,.35) - .05)) 32%,
           rgba(11,15,18, 0) 62%),
-        linear-gradient(to top, rgba(11,15,18,.48) 0%, rgba(11,15,18,0) 35%);
+        linear-gradient(to top, rgba(11,15,18,.46) 0%, transparent 36%);
     }
-
-    .hero .hero-bg{
-      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-      object-position: center var(--focus-y,22%); filter:brightness(1.08) contrast(1.03) saturate(1.05);
-      z-index:-1;
-    }
-
     .hero .inner{
-      position:absolute; inset:0; display:grid; place-items:end center;
-      padding:0 1rem var(--pad-bottom,14vh); text-align:center; z-index:1;
+      position:absolute; left:50%; top:var(--center,58%);  /* tiefer als Mitte */
+      transform:translate(-50%,-50%);
+      width:min(92vw,1100px); text-align:center; z-index:2; padding:0 1rem;
     }
-
     .hero h1{
       margin:0 0 .35rem; color:var(--gold);
-      font-size: clamp(1.6rem, 1rem + 1.6vw, 2.2rem); /* kleiner als vorher */
-      line-height:1.06; letter-spacing:.005em; text-shadow:0 3px 10px rgba(0,0,0,.55);
+      font-size:clamp(1.6rem,1rem + 1.6vw,2.2rem);
+      line-height:1.06; letter-spacing:.005em;
+      text-shadow:0 3px 10px rgba(0,0,0,.55);
     }
-
     .hero .sub{
-      margin:.45rem 0 0; font-weight:600;
-      font-size: clamp(1.1rem, 0.9rem + 1.1vw, 1.5rem); /* größer als vorher */
-      color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
+      margin:0; font-weight:600; color:#fff;
+      font-size:clamp(1.1rem,.9rem + 1.1vw,1.5rem);
+      text-shadow:0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
     }
-
     .hero .hero-badge{
-      position:absolute; right:16px; top:16px; width:86px; height:auto;
-      padding:6px; background:rgba(0,0,0,.12); border-radius:12px;
-      box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:.9; z-index:2;
+      position:absolute; right:16px; top:16px; z-index:3;
+      width:86px; height:auto; padding:6px; border-radius:12px;
+      background:rgba(0,0,0,.12); box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:.9;
     }
-
     @media (max-width:640px){
       .hero{ min-height:calc(100svh - var(--nav-h)); }
-      .hero .inner{ padding-bottom: max(16vh, var(--pad-bottom,14vh)); }
-      .hero .hero-badge{ width:74px; right:10px; top:10px; }
+      .hero .inner{ width:min(94vw,680px); top:var(--center-m,62%); }
     }
 
-    /* ===== Inhalt ===== */
+    /* Inhalt */
     .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
     .section-spacer{padding:clamp(24px,5vw,50px) 0}
     .lead-narrow{max-width:70ch;margin:0 auto;line-height:1.65}
     .divider{height:1px;background:var(--ring);opacity:.7;margin:clamp(18px,4vw,28px) auto;max-width:920px}
+
     .cta-row{text-align:center;margin:1rem 0 0}
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
     .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
     .btn:hover{filter:brightness(1.03)}
-    /* Manuelle Positionierung des Hero-Texts */
-.hero.hero--soft .inner{
-  position:absolute;
-  left:50%;
-  top: var(--center, 50%);                  /* vertikale Mitte = 50% */
-  transform: translate(-50%, -50%)
-             translate(var(--dx, 0), var(--dy, 0)); /* Feinschub */
-  padding: 0 1rem;                          /* kein bottom-padding mehr */
-  text-align:center;
-  z-index:1;
-}
-
-/* Optional: eigener Center-Wert für Mobil */
-@media (max-width:640px){
-  .hero.hero--soft .inner{
-    top: var(--center-m, var(--center,50%));
-  }
-}
   </style>
 </head>
 
-<body class="maenner">
+<body class="maenner" id="top">
   <!-- NAV -->
   <header class="site-header">
     <div class="nav-container">
@@ -136,16 +113,9 @@
     </div>
   </header>
 
-  <!-- HERO (aufgeräumt, steuerbar per Inline-Variablen) -->
-
-  <section class="hero hero--soft"
-         style="--overlay:.35;
-                --focus-y:14%;      /* Kopf frei (kleiner = höherer Bildfokus) */
-                --center:58%;       /* Text tiefer (50% = exakt Mitte) */
-                --dx:0;             /* horizontaler Feinschub (z.B. 6px) */
-                --dy:0;             /* vertikaler Feinschub   (z.B. 8px) */">
-  ...
-</section>
+  <!-- HERO (nur 3 Stellschrauben im style=) -->
+  <section class="hero" style="--overlay:.35; --focus-y:14%; --center:60%;">
+    <img src="/images/ltc-siegel.png" class="hero-badge" alt="Life Trust Coach – Ove Krüger" width="86" height="86" loading="lazy">
     <img src="/images/samurai.webp" class="hero-bg" alt="Aufrecht wie ein Samurai" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
     <div class="inner">
       <h1>Werte. Präsenz. Haltung.</h1>
@@ -153,7 +123,7 @@
     </div>
   </section>
 
-  <main id="main" role="main" tabindex="-1" class="wrap">
+  <main id="main" class="wrap">
     <!-- Block 1 -->
     <section class="section-spacer">
       <p style="text-align:center;font-weight:700;max-width:65ch;margin:0 auto 1rem;">
@@ -199,11 +169,11 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap" style="text-align:center;padding:2rem 1rem;">
       <small style="display:block;margin-bottom:.5rem;opacity:.9;">
         © <span id="y"></span> Ove Krüger · Sinnwärts Studio
       </small>
-      <nav aria-label="Footer-Navigation">
+      <nav aria-label="Footer-Navigation" style="opacity:.9">
         <a href="/index.html">Start</a> ·
         <a href="/ueber-mich.html">Über mich</a> ·
         <a href="/angebot.html">Angebote</a> ·
@@ -214,6 +184,8 @@
       </nav>
     </div>
   </footer>
+
+  <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>

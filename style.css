@@ -476,4 +476,30 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   .hero .hero-bg{ object-position: center var(--focal-m, var(--focal, 22%)); }
   .hero .inner{ padding-bottom: var(--pb-m, calc(var(--pb, 16vh) + 2vh)); }
 }
+/* Header immer über dem Hero klickbar halten */
+.site-header{
+  position: sticky;      /* bleibt oben, falls du es schon fixed hast: ok */
+  top: 0;
+  z-index: 9999;         /* höher als alles im Hero */
+}
 
+/* Hero-Schichten korrekt staffeln */
+.hero{ position: relative; }
+.hero .hero-bg{ 
+  position: absolute; inset: 0;
+  z-index: -1;              /* hinter alles */
+  pointer-events: none;     /* fängt keine Klicks ab */
+}
+.hero::before{
+  pointer-events: none;     /* Overlay klick-durchlässig */
+  z-index: 0;               /* unter Text */
+}
+.hero .inner{ 
+  position: absolute; inset: 0;
+  z-index: 1;               /* Text über Overlay/Bild */
+  display: flex; flex-direction: column;
+  justify-content: flex-end; align-items: center;
+}
+
+/* Sicherheitsabstand unter dem Header, damit sich nichts überlappt */
+.hero{ padding-top: 72px; }  /* auf Männerseite ggf. bereits gesetzt – dann lassen */

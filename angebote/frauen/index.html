@@ -3,118 +3,134 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Für Frauen – Königin sein | Sinnwärts Studio</title>
+  <title>Für Frauen – Die Stärke der Königin | Sinnwärts Studio</title>
 
-  <!-- CSS -->
+  <!-- Optional: globale Styles (Seitenfunktion), kritische Lesbarkeit ist unten lokal geregelt -->
   <link rel="preload" href="/style.css" as="style">
   <link rel="stylesheet" href="/style.css">
 
- <style>
-  :root{ --gold:#d4af37; }
+  <!-- Seitenlokaler Stil – unabhängig lesbar -->
+  <style>
+    :root{ --gold:#d4af37; }
 
-  /* Basis */
-  .section{ max-width:800px; margin:60px auto; text-align:center; }
-  .site-header{ position:sticky; top:0; z-index:9999; }
+    /* Header on top */
+    .site-header{ position:sticky; top:0; z-index:9999; }
 
-  /* ---------- Frauen – HERO (ruhig, tiefer, gut lesbar in Gold) ---------- */
-  body.frauen .hero{ position:relative; min-height:72svh; }
-  body.frauen .hero .hero-bg{
-    position:absolute; inset:0; width:100%; height:100%;
-    object-fit:cover; object-position:center 26%; /* 24–32% bei Bedarf feinjustieren */
-    pointer-events:none;
-  }
-  body.frauen .hero::after{
-    content:""; position:absolute; inset:0; pointer-events:none;
-    background:linear-gradient(180deg,
-      rgba(0,0,0,.60) 0%,
-      rgba(0,0,0,.48) 38%,
-      rgba(0,0,0,.30) 100%);
-  }
-  body.frauen .hero .hero-inner{
-    position:absolute; left:50%; transform:translateX(-50%);
-    bottom:12vh; width:min(92%,1000px); text-align:center;
-  }
-  body.frauen .hero h1{
-    margin:0; font-size:clamp(32px,5vw,56px); line-height:1.08;
-    color:var(--gold);
-    -webkit-text-stroke:.6px rgba(0,0,0,.45);
-    text-shadow:0 2px 18px rgba(0,0,0,.65), 0 0 1px rgba(0,0,0,.85);
-  }
-  body.frauen .hero .sub{
-    margin-top:.6rem; font-weight:600;
-    color:color-mix(in srgb, var(--gold) 86%, #fff 14%); /* sanfter als reines Gold */
-    -webkit-text-stroke:.4px rgba(0,0,0,.35);
-    text-shadow:0 2px 14px rgba(0,0,0,.55), 0 0 1px rgba(0,0,0,.75);
-  }
-  body.frauen .hero-badge{ position:absolute; top:16px; right:16px; width:78px; }
+    /* ---------- FRAUEN: HERO (lesbar ohne style.css) ---------- */
+    body.frauen .hero{
+      position:relative; min-height:78svh; overflow:hidden;
+      /* Tuning-Variablen fürs Bild & den Scrim */
+      --focal-y: 26%;         /* 24–32% je nach Motiv */
+      --pad-bottom: 22vh;     /* Text-Abstand vom unteren Rand */
+      --scrim-strong: .60;    /* obere Abdunklung */
+      --scrim-mid:    .48;    /* Mitte */
+      --scrim-low:    .30;    /* unten */
+    }
+    body.frauen .hero .hero-bg{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; object-position:center var(--focal-y);
+      z-index:0; pointer-events:none;
+    }
+    /* Verlauf über Bild für gleichbleibende Lesbarkeit */
+    body.frauen .hero::after{
+      content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background:linear-gradient(180deg,
+        rgba(0,0,0,var(--scrim-strong)) 0%,
+        rgba(0,0,0,var(--scrim-mid))    38%,
+        rgba(0,0,0,var(--scrim-low))    100%);
+    }
+    /* Text unten mittig, sicher über Scrim */
+    body.frauen .hero .hero-inner{
+      position:absolute; left:50%; transform:translateX(-50%);
+      bottom: var(--pad-bottom);
+      width:min(92%,1000px); text-align:center; z-index:2;
+    }
+    body.frauen .hero h1{
+      margin:0; font-size:clamp(34px,5.2vw,60px); line-height:1.08;
+      color:var(--gold);
+      /* Kontrast auf hellem Motiv */
+      -webkit-text-stroke:.6px rgba(0,0,0,.45);
+      text-shadow:
+        0 3px 22px rgba(0,0,0,.65),
+        0 1px  2px rgba(0,0,0,.85);
+      letter-spacing:.01em; font-weight:800;
+    }
+    body.frauen .hero .sub{
+      margin:.6rem 0 0; font-weight:600;
+      font-size:clamp(16px,1.9vw,20px);
+      color: color-mix(in srgb, var(--gold) 86%, #fff 14%);
+      -webkit-text-stroke:.4px rgba(0,0,0,.35);
+      text-shadow:
+        0 2px 18px rgba(0,0,0,.58),
+        0 1px  2px rgba(0,0,0,.75);
+    }
+    body.frauen .hero-badge{
+      position:absolute; top:16px; right:16px; width:78px; height:auto; z-index:3;
+      filter: drop-shadow(0 4px 18px rgba(0,0,0,.35));
+    }
 
-  /* Inhalt */
-  .frauen-int{ width:min(1000px,92%); margin:56px auto 40px; text-align:left; }
-  .frauen-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
+    /* ---------- Inhalt lokal ---------- */
+    .section{ max-width:1000px; margin:60px auto; padding:0 4vw; }
+    .tac{ text-align:center; }
+    .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
+    .divider{ height:1px; background:var(--ring,#2a2f36); opacity:.7; margin:clamp(18px,4vw,28px) auto; max-width:880px; }
 
-  .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
-  .cta-bottom .lead{
-    display:inline-block; padding:14px 18px; border-radius:14px;
-    background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36); line-height:1.5;
-  }
-  .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
+    .cards{ display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); align-items:start; }
+    .card{ padding:1.25rem; border:1px solid var(--ring,#2a2f36); border-radius:14px; background:var(--card,#0e1216); }
+    .card h4{ margin:.1rem 0 .5rem; font-size:1.05rem; color:#e0b84d; }
 
-  /* Optische Ruhe & Karten */
-  body.frauen .divider{ height:1px; background:var(--ring); opacity:.7; margin:clamp(18px,4vw,28px) auto; max-width:880px; }
-  body.frauen .cards{ gap:1.4rem; }
-  body.frauen .card h3{ font-size:1.05rem; color:#e0b84d; margin:.1rem 0 .3rem; }
+    .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
+    .cta-bottom .lead{
+      display:inline-block; padding:14px 18px; border-radius:14px;
+      background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36); line-height:1.5;
+    }
 
-  /* Mobile Feinschnitt */
-  @media (max-width:640px){
-    body.frauen .hero{ min-height:76svh; }
-    body.frauen .hero .hero-bg{ object-position:center 28%; }
-    body.frauen .hero .hero-inner{ bottom:14vh; }
-  }
-</style>
+    @media (max-width:700px){
+      body.frauen .hero{ min-height:80svh; }
+      body.frauen .hero{ --focal-y: 28%; --pad-bottom: 24vh; }
+    }
+  </style>
 </head>
 
 <body class="frauen" id="top">
 
-<header class="site-header">
-  <div class="nav-container">
-    <a class="brand" href="../../index.html">Sinnwärts Studio</a>
-    <nav aria-label="Hauptnavigation">
-      <ul class="nav-list">
-        <li><a href="../../index.html">Start</a></li>
-        <li><a href="../../ueber-mich.html">Über mich</a></li>
-        <li><a href="../../angebot.html">Angebote</a></li>
-        <li><a href="../../resonanzraum.html">Resonanzraum</a></li>
-        <li><a href="../../kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a class="brand" href="/index.html">Sinnwärts Studio</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="/index.html">Start</a></li>
+          <li><a href="/ueber-mich.html">Über mich</a></li>
+          <li><a href="/angebot.html">Angebote</a></li>
+          <li><a href="/resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="hero"
-  style="min-height:78svh;        /* mehr Höhe unten */
-         --focal:26%;             /* Bild etwas nach oben: Kopf frei */
-         --pb:22vh;               /* Text weiter nach unten */
-         --focal-m:28%;           /* Mobile Feinschnitt */
-         --pb-m:24vh;">
-  <img src="/images/ltc-siegel.png" class="hero-badge" alt="" width="86" height="86" loading="lazy">
-<img src="/images/koenigin-vorn.webp" class="hero-bg" alt="Königin im goldenen Licht">
-<div class="hero-inner">
-    <h1>Die Stärke der Königin</h1>
-    <p class="sub">Klarheit und innere Ruhe für Frauen auf ihrem Weg.</p>
-  </div>
-</section>
-<!-- ===== Frauen – KÖNIGIN (Intro + Wie wir arbeiten) ===== -->
-<section id="frauen-koenigin" class="section section--women">
-  <div class="wrap">
+  <!-- HERO -->
+  <section class="hero"
+           style="--focal-y:26%; --pad-bottom:22vh; --scrim-strong:.62; --scrim-mid:.50; --scrim-low:.32;">
+    <img src="/images/ltc-siegel.png" class="hero-badge" alt="Life Trust Coach – Ove Krüger" width="86" height="86" loading="lazy">
+    <img src="/images/koenigin-vorn.webp" class="hero-bg" alt="Königin im goldenen Licht" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
+    <div class="hero-inner">
+      <h1>Die Stärke der Königin</h1>
+      <p class="sub">Klarheit und innere Ruhe für Frauen auf ihrem Weg.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="section tac" id="frauen-koenigin">
     <header class="section-head tac">
       <h2>Frauen – <span class="no-wrap">KÖNIGIN</span></h2>
       <p class="sub">Liebevoll klar. Wertschätzend direkt. Kein Wellnessprogramm.</p>
     </header>
 
-    <div class="lead" style="max-width:900px;margin:0 auto;line-height:1.6">
+    <div class="prose" style="max-width:900px; margin:0 auto;">
       <p>Alles kann Suchtverhalten sein oder werden. Nicht nur Substanzen wie Alkohol – auch Gedanken, Muster, Rollen, Beziehungen.</p>
-      <p>👉 Anpassung, Perfektion, Co-Abhängigkeit – all das kann dich genauso fesseln wie die Flasche Wein am Abend. <br>
+      <p>👉 Anpassung, Perfektion, Co-Abhängigkeit – all das kann dich genauso fesseln wie die Flasche Wein am Abend.<br>
          👉 Viele Jahre hast du funktioniert, gehalten, geliebt – und doch fehlt etwas.</p>
       <p><strong>Nicht die Männer. Nicht die Umstände.</strong><br>
          Es sind die alten Geschichten, die du dir erzählst – und an die du geglaubt hast.</p>
@@ -122,31 +138,31 @@
       <p><b>Klar, frei, würdevoll.<br> KÖNIGIN deines Lebens.</b></p>
     </div>
 
-    <div class="divider" style="height:1px;background:var(--ring,#2a2f36);margin:2.5rem 0"></div>
+    <div class="divider"></div>
 
     <!-- Wie wir arbeiten -->
-    <section aria-label="Wie wir arbeiten" class="blocks blocks--3" style="display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start">
-      <article class="block card" style="padding:1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
-        <h4 style="margin:0 0 .5rem">👁️ Klarheit</h4>
-        <ul style="margin:0;padding-left:1.1rem;line-height:1.5">
+    <section aria-label="Wie wir arbeiten" class="cards">
+      <article class="card">
+        <h4>👁️ Klarheit</h4>
+        <ul style="margin:0; padding-left:1.1rem; line-height:1.5">
           <li>Wir schauen hin – ohne Ausreden, ohne Urteil.</li>
           <li>Deine Muster werden sichtbar; du erkennst, was dich wirklich festhält.</li>
           <li>Innen statt Außen: klare Ausrichtung aus dir selbst.</li>
         </ul>
       </article>
 
-      <article class="block card" style="padding:1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
-        <h4 style="margin:0 0 .5rem">🛡️ Selbstbestimmung</h4>
-        <ul style="margin:0;padding-left:1.1rem;line-height:1.5">
+      <article class="card">
+        <h4>🛡️ Selbstbestimmung</h4>
+        <ul style="margin:0; padding-left:1.1rem; line-height:1.5">
           <li>Grenzen setzen &amp; wahren – liebevoll, deutlich, frei von Schuld.</li>
           <li>Abhängigkeiten verlieren ihre Macht; Co-Abhängigkeit wird erkannt.</li>
           <li>Dein Selbstwert wächst von innen, nicht aus Anerkennung von außen.</li>
         </ul>
       </article>
 
-      <article class="block card" style="padding:1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
-        <h4 style="margin:0 0 .5rem">🔥 Transformation</h4>
-        <ul style="margin:0;padding-left:1.1rem;line-height:1.5">
+      <article class="card">
+        <h4>🔥 Transformation</h4>
+        <ul style="margin:0; padding-left:1.1rem; line-height:1.5">
           <li>Alte Wunden werden integriert – aus Schmerz wird Würde.</li>
           <li>Vom Funktionieren zur Präsenz: deine Weiblichkeit wird Quelle.</li>
           <li>Dein inneres Feuer wird sichtbar – in Beziehung, Beruf, Leben.</li>
@@ -155,76 +171,74 @@
     </section>
 
     <!-- Callout -->
-    <div class="callout tac" style="margin:2.5rem auto 0;max-width:900px;padding:1rem 1.25rem;border:1px solid var(--ring,#2a2f36);border-radius:14px">
-      <p style="margin:0;line-height:1.6">
+    <div class="card tac" style="margin:2.5rem auto 0; max-width:900px;">
+      <p style="margin:0; line-height:1.6">
         Am Ende gehst du, wie du gemeint bist: nicht klein, nicht angepasst – sondern voller Würde, Klarheit und Liebe.
         Du bist <b>KÖNIGIN</b> deines Lebens. 👑
       </p>
     </div>
 
-    <!-- CTA zu Angeboten (Seitenanker auf /angebot.html) -->
-    <div class="cta tac" style="margin:2rem 0 0">
-      <a href="../../angebot.html#frauen" class="btn btn-gold">Zu den Angeboten für Frauen</a>
+    <!-- CTA -->
+    <div class="tac" style="margin:2rem 0 0">
+      <a href="/angebot.html#frauen" class="btn btn-gold">Zu den Angeboten für Frauen</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== Integrations-Abschnitt (mit Männer-Passage) ===== -->
-<section class="block frauen-int" id="frauen-integral">
-  <div class="prose">
-    <p>Ich kann als Mann nur ahnen, wie tief die alten Schatten des Patriarchats in euch Frauen wirken.
-    Wie viele Generationen von Anpassung, Rückzug und Kampf noch in euren Zellen schwingen.
-    Solange Männer kein neues Bewusstsein entwickeln, bleibt euer Weg oft ein Ringen – zwischen Selbstschutz und Sehnsucht,
-    zwischen Herz und Haltung.</p>
+  <!-- Integrations-Abschnitt -->
+  <section class="section" id="frauen-integral">
+    <div class="prose">
+      <p>Ich kann als Mann nur ahnen, wie tief die alten Schatten des Patriarchats in euch Frauen wirken.
+      Wie viele Generationen von Anpassung, Rückzug und Kampf noch in euren Zellen schwingen.
+      Solange Männer kein neues Bewusstsein entwickeln, bleibt euer Weg oft ein Ringen – zwischen Selbstschutz und Sehnsucht,
+      zwischen Herz und Haltung.</p>
 
-    <p>Und doch liegt genau darin eure Kraft – <strong>und eure Verantwortung</strong>: nicht in der Nachahmung alter Rollen,
-    sondern in der Wiederentdeckung eurer ursprünglichen Weiblichkeit – frei, klar, würdevoll.</p>
+      <p>Und doch liegt genau darin eure Kraft – <strong>und eure Verantwortung</strong>: nicht in der Nachahmung alter Rollen,
+      sondern in der Wiederentdeckung eurer ursprünglichen Weiblichkeit – frei, klar, würdevoll.</p>
 
-    <p>Weiblichkeit ist kein Gegenentwurf zur Stärke. Sie <strong>ist</strong> Stärke – nur in einer anderen Frequenz.
-    Eine Kraft, die heilt, führt und verbindet.</p>
+      <p>Weiblichkeit ist kein Gegenentwurf zur Stärke. Sie <strong>ist</strong> Stärke – nur in einer anderen Frequenz.
+      Eine Kraft, die heilt, führt und verbindet.</p>
 
-    <p><strong>Und wir Männer haben, verdammt noch mal, die Pflicht, unsere Weiblichkeit zu erkennen und zuzulassen – und unsere Männlichkeit mit der Würde eines Samurai zu leben. Nicht gegen, sondern für das Leben.</strong></p>
-  </div>
-</section>
+      <p><strong>Und wir Männer haben, verdammt noch mal, die Pflicht, unsere Weiblichkeit zu erkennen und zuzulassen – und unsere Männlichkeit mit der Würde eines Samurai zu leben. Nicht gegen, sondern für das Leben.</strong></p>
+    </div>
+  </section>
 
-<!-- ===== CTA-Bereich direkt vor Footer (sichtbar, verlinkt) ===== -->
-<section class="cta-bottom" id="cta-frauen">
-  <p class="lead">
-    Bereit, den Weg der Königin bewusst zu gehen? Ich begleite dich klar, menschlich und wirksam.
-  </p>
-  <div>
-    <a class="btn btn-gold" href="../../angebot.html#frauen">Zu den Angeboten für Frauen</a>
-  </div>
-</section>
+  <!-- CTA vor Footer -->
+  <section class="cta-bottom" id="cta-frauen">
+    <p class="lead">
+      Bereit, den Weg der Königin bewusst zu gehen? Ich begleite dich klar, menschlich und wirksam.
+    </p>
+    <div>
+      <a class="btn btn-gold" href="/angebot.html#frauen">Zu den Angeboten für Frauen</a>
+    </div>
+  </section>
 
-<footer class="site-footer">
-  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
-    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
-      © <span id="y"></span> Ove Krüger · Sinnwärts Studio
-    </small>
-    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="/ueber-mich.html">Über mich</a> ·
-      <a href="/angebot.html">Angebote</a> ·
-      <a href="/resonanzraum.html">Resonanzraum</a> ·
-      <a href="/kontakt.html">Kontakt</a> ·
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutz</a>
-    </nav>
-  </div>
-</footer>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap" style="text-align:center; padding:2rem 1rem;">
+      <small style="display:block; margin-bottom:.5rem; opacity:.85;">
+        © <span id="y"></span> Ove Krüger · Sinnwärts Studio
+      </small>
+      <nav style="font-size:.9rem; opacity:.85;" aria-label="Footer-Navigation">
+        <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
+        <a href="/ueber-mich.html">Über mich</a> ·
+        <a href="/angebot.html">Angebote</a> ·
+        <a href="/resonanzraum.html">Resonanzraum</a> ·
+        <a href="/kontakt.html">Kontakt</a> ·
+        <a href="/impressum.html">Impressum</a> ·
+        <a href="/datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
 
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
+  <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-<script>
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    (function(){
+      var btn=document.querySelector('.to-top'); if(!btn) return;
+      function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
+      window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    })();
+  </script>
 </body>
 </html>

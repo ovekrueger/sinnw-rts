@@ -424,29 +424,4 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   filter:brightness(1.06) contrast(1.03) saturate(1.04);
 }
 
-/* Text wirklich an den unteren Rand schieben */
-.hero.hero--soft .inner{
-  position:absolute; inset:0;
-  display:flex;                      /* Flex = zuverlässiger als Grid */
-  flex-direction:column;
-  justify-content:flex-end;          /* -> nach unten */
-  align-items:center;                /* -> zentriert */
-  padding:72px 1rem 18vh;            /* << hier tiefer stellen (16–22vh) */
-  text-align:center;
-  z-index:1;
-}
 
-.hero.hero--soft h1{
-  margin:0;
-  color:var(--gold);
-  font-size:clamp(2rem,1.3rem + 2.6vw,2.8rem);
-  line-height:1.08;
-  text-shadow:0 3px 10px rgba(0,0,0,.55);
-}
-.hero.hero--soft .sub{ margin:.5rem 0 0; opacity:.95; }
-
-/* Mobile noch weiter runter */
-@media (max-width:640px){
-  .hero.hero--soft{ min-height:76svh; }
-  .hero.hero--soft .inner{ padding-bottom:20vh; } /* bei Bedarf auf 22vh */
-}

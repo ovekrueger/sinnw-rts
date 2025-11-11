@@ -29,6 +29,8 @@
   </header>
 
   <!-- HERO (höher, wie Startseite) -->
+
+<!-- HERO (Kontakt – sauber, Mitte/Mitte) -->
 <section class="hero hero--XL hero--soft hero-kontakt"
          style="position:relative; --overlay:.35; min-height:70vh;">
   <img src="/images/strandgespraech.webp"
@@ -38,19 +40,32 @@
        loading="eager" fetchpriority="high"
        style="object-fit:cover; object-position:center 42%;" />
 
-  <!-- exakt Mitte/Mitte -->
-  <div class="inner tac"
-       style="position:absolute; inset:auto; top:50%; left:50%;
-              transform:translate(-50%,-50%);
-              width:min(92vw,1000px); text-align:center; margin:0;">
+  <div class="kontakt-center tac">
     <h1 style="margin:0 0 .3em;">Kontakt</h1>
     <p class="sub" style="font-size:1.2rem; margin:0;">
       Klarheit beginnt mit einem Gespräch.
     </p>
   </div>
 </section>
-  </section>
 
+<!-- Style-Block direkt darunter oder im <head> -->
+<style>
+.hero-kontakt .kontakt-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(92vw, 1000px);
+  text-align: center;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Mobile: leicht tiefer */
+@media (max-width: 640px){
+  .hero-kontakt .kontakt-center { top: 54%; }
+}
+</style>
 <!-- Mobile-Feinschnitt nur für diese Seite -->
 <style>
 @media (max-width: 640px){

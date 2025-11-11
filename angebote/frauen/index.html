@@ -9,126 +9,68 @@
   <link rel="preload" href="/style.css" as="style">
   <link rel="stylesheet" href="/style.css">
 
-  <style>
-    /* Seitenlokale Feinabstimmung (kollisionsfrei zu style.css) */
-    .section{ max-width: 800px; margin: 60px auto; text-align:center; }
-    body.frauen .hero{ min-height:60vh; }
-    body.frauen .hero::after{
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.58) 88%);
-      pointer-events:none;
-    }
-    body.frauen .hero .inner{
-      position:absolute; left:50%; transform:translateX(-50%);
-      bottom:12vh; width:min(92%,1000px); text-align:center;
-    }
-    body.frauen .hero h1{ font-size:clamp(32px,5vw,56px); line-height:1.05; letter-spacing:.01em; }
-    body.frauen .hero .subhero{ margin-top:.6rem; font-weight:600; opacity:.98; text-shadow:0 2px 10px rgba(0,0,0,.6); }
+ <style>
+  :root{ --gold:#d4af37; }
 
-    /* Prosatext-Block */
-    .frauen-int{ width:min(1000px,92%); margin:56px auto 40px; text-align:left; }
-    .frauen-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
-    .frauen-int .prose strong{ font-weight:700; }
+  /* Basis */
+  .section{ max-width:800px; margin:60px auto; text-align:center; }
+  .site-header{ position:sticky; top:0; z-index:9999; }
 
-    /* CTA vor Footer */
-    .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
-    .cta-bottom .lead{
-      display:inline-block; padding:14px 18px; border-radius:14px;
-      background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36);
-      line-height:1.5;
-    }
-    .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
-    /* === Frauen – Hero tiefer + ruhiger === */
-body.frauen .hero{ min-height:62svh; }
-body.frauen .hero .hero-inner{
-  place-items:end center;      /* Text nach unten, zentriert */
-  padding-bottom:8vh;
-  text-align:center;
-}
-body.frauen .hero h1{
-  font-size:clamp(1.8rem,1.3rem + 2.4vw,2.6rem);
-  line-height:1.1;
-}
+  /* ---------- Frauen – HERO (ruhig, tiefer, gut lesbar in Gold) ---------- */
+  body.frauen .hero{ position:relative; min-height:72svh; }
+  body.frauen .hero .hero-bg{
+    position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; object-position:center 26%; /* 24–32% bei Bedarf feinjustieren */
+    pointer-events:none;
+  }
+  body.frauen .hero::after{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg,
+      rgba(0,0,0,.60) 0%,
+      rgba(0,0,0,.48) 38%,
+      rgba(0,0,0,.30) 100%);
+  }
+  body.frauen .hero .hero-inner{
+    position:absolute; left:50%; transform:translateX(-50%);
+    bottom:12vh; width:min(92%,1000px); text-align:center;
+  }
+  body.frauen .hero h1{
+    margin:0; font-size:clamp(32px,5vw,56px); line-height:1.08;
+    color:var(--gold);
+    -webkit-text-stroke:.6px rgba(0,0,0,.45);
+    text-shadow:0 2px 18px rgba(0,0,0,.65), 0 0 1px rgba(0,0,0,.85);
+  }
+  body.frauen .hero .sub{
+    margin-top:.6rem; font-weight:600;
+    color:color-mix(in srgb, var(--gold) 86%, #fff 14%); /* sanfter als reines Gold */
+    -webkit-text-stroke:.4px rgba(0,0,0,.35);
+    text-shadow:0 2px 14px rgba(0,0,0,.55), 0 0 1px rgba(0,0,0,.75);
+  }
+  body.frauen .hero-badge{ position:absolute; top:16px; right:16px; width:78px; }
 
-/* Mini-Divider für optische Pause */
-body.frauen .divider{
-  height:1px; background:var(--ring);
-  opacity:.7; margin:clamp(18px,4vw,28px) auto;
-  max-width:880px;
-}
+  /* Inhalt */
+  .frauen-int{ width:min(1000px,92%); margin:56px auto 40px; text-align:left; }
+  .frauen-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
 
-/* Karten: mehr Luft + einheitliche Heads */
-body.frauen .cards{ gap:1.4rem; }
-body.frauen .card h3{
-  font-size:1.05rem;
-  color:#e0b84d;   /* sanftes Gold */
-  margin:.1rem 0 .3rem;
-}
-/* Falls du Icon-Emojis o. SVGs nutzt, etwas kleiner: */
-body.frauen .card h3 .icon{ width:16px; height:16px; }
+  .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
+  .cta-bottom .lead{
+    display:inline-block; padding:14px 18px; border-radius:14px;
+    background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36); line-height:1.5;
+  }
+  .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
 
-/* Mobile Feinschnitt */
-@media (max-width:640px){
-  body.frauen .hero{ min-height:66svh; }
-  body.frauen .hero .hero-inner{ padding-bottom:9vh; }
-  body.frauen .cards{ gap:1.1rem; }
-}
-    /* === Frauen – Hero: Titel tiefer, Gesicht frei === */
-body.frauen .hero{ 
-  min-height:66svh;                 /* mehr Raum */
-}
-body.frauen .hero .hero-inner{
-  place-items:end center;            /* Text nach unten zentriert */
-  padding:72px 1rem 12vh;            /* mehr Abstand nach unten */
-  text-align:center;
-}
-body.frauen .hero h1{ 
-  margin:0;
-  line-height:1.08;
-}
+  /* Optische Ruhe & Karten */
+  body.frauen .divider{ height:1px; background:var(--ring); opacity:.7; margin:clamp(18px,4vw,28px) auto; max-width:880px; }
+  body.frauen .cards{ gap:1.4rem; }
+  body.frauen .card h3{ font-size:1.05rem; color:#e0b84d; margin:.1rem 0 .3rem; }
 
-/* Fokussierung des Gesichts: Bildausschnitt leicht nach oben */
-body.frauen .hero .hero-bg{
-  object-position:center 18%;        /* ggf. anpassen: 15–22% */
-}
-
-/* Badge stört nicht ins Gesicht */
-body.frauen .hero-badge{ 
-  top:16px; right:16px; width:78px;
-}
-
-/* optional: mobile noch etwas tiefer */
-@media (max-width:640px){
-  body.frauen .hero{ min-height:70svh; }
-  body.frauen .hero .hero-inner{ padding-bottom:13vh; }
-}
-    /* Frauen-Hero: Gesicht frei lassen, Text tiefer */
-body.frauen .hero{
-  position: relative;
-  min-height: 72svh;              /* genug Raum unten */
-}
-body.frauen .hero .hero-bg{
-  position: absolute; inset: 0;
-  object-fit: cover;
-  object-position: center 28%;    /* 24–32 % je nach Motiv feinjustieren */
-  pointer-events: none;           /* keine Klicks abfangen */
-}
-body.frauen .hero .hero-inner{
-  position: absolute; left: 50%;
-  transform: translateX(-50%);
-  bottom: 12vh;                   /* Text nach unten */
-  width: min(92%, 1000px);
-  text-align: center;
-}
-@media (max-width: 640px){
-  body.frauen .hero{ min-height: 76svh; }
-  body.frauen .hero .hero-bg{ object-position: center 30%; }
-  body.frauen .hero .hero-inner{ bottom: 14vh; }
-}
-
-/* Sicherheit: Header immer klickbar über dem Hero */
-.site-header{ position: sticky; top:0; z-index: 9999; }
-  </style>
+  /* Mobile Feinschnitt */
+  @media (max-width:640px){
+    body.frauen .hero{ min-height:76svh; }
+    body.frauen .hero .hero-bg{ object-position:center 28%; }
+    body.frauen .hero .hero-inner{ bottom:14vh; }
+  }
+</style>
 </head>
 
 <body class="frauen" id="top">

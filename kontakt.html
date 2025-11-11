@@ -72,6 +72,27 @@
   .hero-kontakt .inner{ top:54% !important; }
 }
 </style>
+  <style>
+/* Kontakt-Hero: bessere Lesbarkeit nur über Text-Styling */
+.hero-kontakt .kontakt-center h1{
+  color: var(--gold, #d4af37);
+  -webkit-text-stroke: .6px rgba(0,0,0,.45);
+  text-shadow: 0 2px 18px rgba(0,0,0,.65), 0 0 1px rgba(0,0,0,.85);
+  letter-spacing: .01em;
+}
+
+.hero-kontakt .kontakt-center .sub{
+  color: #fff;                 /* heller als vorher */
+  font-weight: 600;
+  text-shadow: 0 2px 14px rgba(0,0,0,.60), 0 0 1px rgba(0,0,0,.85);
+  opacity: 1;                  /* falls global gedimmt */
+}
+
+/* Optional leicht größer für Klarheit – kannst du weglassen */
+@media (min-width: 700px){
+  .hero-kontakt .kontakt-center .sub{ font-size: 1.25rem; }
+}
+</style>
 
 <main id="main">
 

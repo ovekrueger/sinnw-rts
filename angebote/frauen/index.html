@@ -102,6 +102,32 @@ body.frauen .hero-badge{
   body.frauen .hero{ min-height:70svh; }
   body.frauen .hero .hero-inner{ padding-bottom:13vh; }
 }
+    /* Frauen-Hero: Gesicht frei lassen, Text tiefer */
+body.frauen .hero{
+  position: relative;
+  min-height: 72svh;              /* genug Raum unten */
+}
+body.frauen .hero .hero-bg{
+  position: absolute; inset: 0;
+  object-fit: cover;
+  object-position: center 28%;    /* 24–32 % je nach Motiv feinjustieren */
+  pointer-events: none;           /* keine Klicks abfangen */
+}
+body.frauen .hero .hero-inner{
+  position: absolute; left: 50%;
+  transform: translateX(-50%);
+  bottom: 12vh;                   /* Text nach unten */
+  width: min(92%, 1000px);
+  text-align: center;
+}
+@media (max-width: 640px){
+  body.frauen .hero{ min-height: 76svh; }
+  body.frauen .hero .hero-bg{ object-position: center 30%; }
+  body.frauen .hero .hero-inner{ bottom: 14vh; }
+}
+
+/* Sicherheit: Header immer klickbar über dem Hero */
+.site-header{ position: sticky; top:0; z-index: 9999; }
   </style>
 </head>
 
@@ -130,8 +156,8 @@ body.frauen .hero-badge{
          --focal-m:28%;           /* Mobile Feinschnitt */
          --pb-m:24vh;">
   <img src="/images/ltc-siegel.png" class="hero-badge" alt="" width="86" height="86" loading="lazy">
-  <img src="/images/koenigin-vorn.webp" ="hero-bg" alt="Königin im goldenen Licht">
-  <div class="inner">
+<img src="/images/koenigin-vorn.webp" class="hero-bg" alt="Königin im goldenen Licht">
+<div class="hero-inner">
     <h1>Die Stärke der Königin</h1>
     <p class="sub">Klarheit und innere Ruhe für Frauen auf ihrem Weg.</p>
   </div>

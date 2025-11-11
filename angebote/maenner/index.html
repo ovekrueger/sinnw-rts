@@ -1,163 +1,170 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Für Männer – Samurai sein | Sinnwärts Studio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <link rel="preload" href="/style.css" as="style">
-  <link rel="stylesheet" href="/style.css">
+  <title>Männer – Würde, Präsenz, Haltung · Sinnwärts Studio</title>
+  <meta name="description" content="Männlichkeit klar, verbunden, verantwortlich. Ein ruhiger Raum für Würde, Präsenz und Haltung – ohne Pose.">
+  <link rel="canonical" href="https://sinnwaerts-studio.de/maenner.html" />
+  <meta name="robots" content="index,follow">
+
+  <!-- OG / X -->
+  <meta property="og:site_name" content="Sinnwärts Studio">
+  <meta property="og:title" content="Männer – Würde, Präsenz, Haltung">
+  <meta property="og:description" content="Ein ruhiger Raum für Männer: Rückgrat und Herz. Klarheit, innere Ruhe, Verantwortung.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sinnwaerts-studio.de/maenner.html">
+  <meta property="og:image" content="https://sinnwaerts-studio.de/images/maenner-hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicons & CSS -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="/style.css?v=27" as="style">
+  <link rel="stylesheet" href="/style.css?v=27">
+  <link rel="preload" as="image" href="images/maenner-hero.webp" imagesizes="100vw">
 
   <style>
-    /* Seite: Männer */
-    .section{ max-width: 800px; margin: 60px auto; text-align:center; }
-    .btn-row{ margin-top:1.25rem; }
+    :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; }
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
+    a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+    :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
-    /* Hero tiefer + Lesbarkeit */
-    body.maenner .hero{ min-height:60vh; }
-    body.maenner .hero::after{
-      content:""; position:absolute; inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.58) 88%);
-      pointer-events:none;
-    }
-    body.maenner .hero .inner{
-      position:absolute; left:50%; transform:translateX(-50%);
-      bottom:9vh; /* tiefer gesetzt */
-      width:min(92%,1000px); text-align:center;
-    }
-    body.maenner .hero h1{ font-size:clamp(32px,5vw,56px); line-height:1.05; }
-    body.maenner .hero .sub{ margin-top:.6rem; font-weight:600; color:rgba(255,255,255,.95); text-shadow:0 2px 10px rgba(0,0,0,.6); }
+    /* NAV */
+    .site-header{border-bottom:1px solid var(--ring);background:rgba(11,15,18,.95)}
+    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem}
+    .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    .brand{color:var(--ink);font-weight:700}
 
-    /* Integraler Männertext */
-    .maenner-int{ width:min(1000px,92%); margin:60px auto; text-align:left; }
-    .maenner-int .prose p{ font-size:clamp(17px,1.35vw,19px); line-height:1.65; margin:0 0 14px; text-wrap:pretty; }
-    .maenner-int .keyline{
-      font-weight:700;
-      font-size:clamp(18px,1.5vw,22px);
-      line-height:1.5;
-      margin:20px 0 8px;
-    }
-    .maenner-int .essenz{ margin-top:16px; }
-    .maenner-int .prose strong{ font-weight:700; }
+    /* HERO – tiefer, Gesicht frei */
+    .hero{position:relative;min-height:70svh;overflow:hidden;border-bottom:1px solid var(--ring)}
+    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;
+      filter:brightness(1.08) contrast(1.03) saturate(1.05)}
+    .hero .hero-scrim{position:absolute;inset:0;background:
+      linear-gradient(to bottom, rgba(11,15,18,.42) 0%, rgba(11,15,18,.25) 30%, rgba(11,15,18,0) 60%),
+      linear-gradient(to top, rgba(11,15,18,.55) 0%, rgba(11,15,18,0) 35%);}
+    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end center;padding:72px 1rem 14vh;z-index:1;text-align:center}
+    .hero h1{margin:0;color:var(--gold);font-size:clamp(2rem,1.3rem + 2.6vw,2.8rem);line-height:1.08;text-shadow:0 3px 10px rgba(0,0,0,.55)}
+    .hero-kicker{margin:.45rem 0 0 0;opacity:.95}
+    .hero-badge{position:absolute;right:14px;top:14px;width:78px;height:auto;padding:6px;border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:.9;z-index:2}
+    @media (max-width:640px){ .hero{min-height:74svh} .hero-badge{width:70px;right:10px;top:10px} }
 
-    /* CTA unten */
-    .cta-bottom{ margin:48px auto 80px; text-align:center; width:min(1000px,92%); }
-    .cta-bottom .lead{
-      display:inline-block; padding:14px 18px; border-radius:14px;
-      background:var(--bg-soft,#10151b); border:1px solid var(--ring,#2a2f36);
-      line-height:1.5;
-    }
-    .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
+    /* Sektionen / Typo */
+    .section-spacer{padding:clamp(24px,5vw,50px) 0}
+    .lead-narrow{max-width:70ch;margin:0 auto;line-height:1.65}
+    .wrap h2{margin:.2rem 0 .8rem;font-size:clamp(1.4rem,1rem + 1vw,1.9rem)}
+    .divider{height:1px;background:var(--ring);opacity:.7;margin:clamp(18px,4vw,28px) auto;max-width:920px}
+
+    /* CTA / Buttons */
+    .cta-row{text-align:center;margin:1rem 0 0}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
+    .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
+    .btn:hover{filter:brightness(1.03)}
   </style>
 </head>
 
-<body class="maenner" id="top">
-<header class="site-header">
-  <div class="nav-container">
-    <a class="brand" href="/index.html">Sinnwärts Studio</a>
-    <nav aria-label="Hauptnavigation">
-      <ul class="nav-list">
-        <li><a href="/index.html">Start</a></li>
-        <li><a href="/ueber-mich.html">Über mich</a></li>
-        <li><a href="/angebot.html">Angebote</a></li>
-        <li><a href="/resonanzraum.html">Resonanzraum</a></li>
-        <li><a href="/kontakt.html">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<body class="maenner">
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="nav-container wrap">
+      <a class="brand" href="index.html">Sinnwärts Studio</a>
+      <nav aria-label="Hauptnavigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Start</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="angebot.html">Angebote</a></li>
+          <li><a href="resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="hero hero--soft" style="--overlay:.25;">
-  <img src="/images/ltc-siegel.png"
-     alt="Life Trust Coach Siegel – Ove Krüger"
-     class="hero-badge" width="120" height="120" loading="lazy">
-  <img src="/images/samurai.webp"
-       alt="Aufrecht wie ein Samurai"
-       class="hero-bg"
-       style="object-position:center 5%;">
-  <div class="inner">
-    <h1>Werte. Präsenz. Haltung.</h1>
-    <p class="sub">Männlichkeit, klar und verantwortungsvoll.</p>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero" style="padding-top:72px">
+    <picture>
+      <source srcset="images/maenner-hero.webp" type="image/webp">
+      <img class="hero-bg" src="images/maenner-hero.jpg"
+           alt="Werte. Präsenz. Haltung – Mann im goldenen Licht" width="1920" height="1080"
+           loading="eager" decoding="async" fetchpriority="high">
+    </picture>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <img src="images/ltc-siegel.png" alt="Life Trust Coach Siegel – Ove Krüger"
+         class="hero-badge" width="78" height="78" loading="lazy">
+    <div class="hero-inner">
+      <div>
+        <h1>Werte. Präsenz. Haltung.</h1>
+        <p class="hero-kicker">Männlichkeit, klar und verantwortungsvoll.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- Männer – Samurai Block -->
-<section id="maenner-samurai" class="section">
-  <p><strong>„Du toller Mann. Danke für dein Sein. – Wann hast du das letzte Mal geweint? 💧“</strong></p>
+  <main id="main" role="main" tabindex="-1" class="wrap">
 
-  <p>Wir Männer haben selten eine Sprache für unsere Gefühle gelernt. Zwischen der Angst, Frauen gegenüber nicht übergriffig zu wirken – und dem Druck, bloß kein „Warmduscher“ zu sein – verlieren wir uns oft.</p>
+    <!-- Block 1 -->
+    <section class="section-spacer">
+      <p style="text-align:center;font-weight:700;max-width:65ch;margin:0 auto 1rem;">
+        „Du toller Mann. Danke für dein Sein. – Wann hast du das letzte Mal geweint? 💧“
+      </p>
 
-  <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer, die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen Anteile wiederzuentdecken. Viele von uns haben den Kontakt zu ihren Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes flieht – und wie leer das bleibt.</p>
+      <div class="lead-narrow">
+        <p>Wir Männer haben selten eine Sprache für unsere Gefühle gelernt. Zwischen der Angst, Frauen gegenüber nicht übergriffig zu wirken – und dem Druck, bloß kein „Warmduscher“ zu sein – verlieren wir uns oft.</p>
+        <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer, die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen Anteile wiederzudecken. Viele von uns haben den Kontakt zu ihren Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes flieht – und wie leer das bleibt.</p>
+        <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
 
-  <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
+        <p style="text-align:center;font-weight:700;margin:.9rem 0 0;">Die Tür steht offen.</p>
+        <p style="text-align:center;margin:.2rem 0 .9rem;">Die Frage ist: <em>Hast du den Mut, hindurchzugehen?</em></p>
 
-  <p><strong>Die Tür steht offen.</strong><br>Die Frage ist: <em>Hast du den Mut, hindurchzugehen?</em></p>
+        <p style="text-align:center;opacity:.95">
+          Falls du wirklich willst, lade ich dich ein. Nicht in eine Technik, nicht in ein Programm. Sondern in einen<br>
+          Raum, in dem du deine Stärke neu entdeckst – jenseits der Pose.
+        </p>
+      </div>
 
-  <p><em>Falls du wirklich willst, lade ich dich ein. Nicht in eine Technik, nicht in ein Programm. Sondern in einen Raum, in dem du deine Stärke neu entdeckst – jenseits der Pose.</em></p>
+      <p class="cta-row">
+        <a class="btn btn-gold" href="angebot.html#fuer-wen">In meine Würde eintreten</a>
+      </p>
+    </section>
 
-  <div class="btn-row">
-    <a class="btn btn-gold" href="/kontakt.html#samurai">In meine Würde eintreten</a>
-  </div>
-</section>
+    <div class="divider" aria-hidden="true"></div>
 
-<!-- Integraler Männertext (Patriarchat-Schatten) -->
-<section class="block maenner-int" id="maenner-integral">
-  <div class="prose">
-    <p><strong>Wir Männer sind, verdammt noch mal, Teil des Patriarchats – und damit auch Teil seines Schattens.</strong></p>
+    <!-- Block 2 -->
+    <section class="section-spacer lead-narrow">
+      <p><strong>Wir Männer sind, verdammt noch mal, Teil des Patriarchats – und damit auch Teil seines Schattens.</strong></p>
+      <p>Jahrhunderte lang haben wir geglaubt, Kontrolle bedeute Ordnung. Wir haben Frauen geführt, weil wir uns selbst verloren hatten.</p>
+      <p>Dieses System hat uns Macht gegeben, aber die Verbindung genommen – zu euch, zu uns selbst, zu allem Lebendigen.</p>
+      <p><strong>Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</strong></p>
+      <p>Männer, die den Mut haben, ihre Tränen zu ehren, ihre Wut zu reinigen und ihre Zärtlichkeit zuzulassen.</p>
+      <p><strong>Das ist kein Rückzug. Das ist Revolution. Still. Echt. Integrativ.</strong></p>
+      <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
 
-    <p>Jahrhunderte lang haben wir geglaubt, Kontrolle bedeute Ordnung. Wir haben Frauen geführt, weil wir uns selbst verloren hatten.</p>
+      <p class="cta-row">
+        <a class="btn btn-gold" href="angebot.html#fuer-wen">In meine Würde eintreten</a>
+      </p>
+    </section>
 
-    <p>Dieses System hat uns Macht gegeben, aber die Verbindung genommen – zu euch, zu uns selbst, zu allem Lebendigen.</p>
+  </main>
 
-    <p class="keyline">Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <small style="display:block;margin-bottom:.5rem;opacity:.9;">
+        © <span id="y"></span> Ove Krüger · Sinnwärts Studio
+      </small>
+      <nav aria-label="Footer-Navigation">
+        <a href="index.html">Start</a> ·
+        <a href="ueber-mich.html">Über mich</a> ·
+        <a href="angebot.html">Angebote</a> ·
+        <a href="resonanzraum.html">Resonanzraum</a> ·
+        <a href="kontakt.html">Kontakt</a> ·
+        <a href="impressum.html">Impressum</a> ·
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
 
-    <p>Männer, die den Mut haben, ihre Tränen zu ehren, ihre Wut zu reinigen und ihre Zärtlichkeit zuzulassen.</p>
-
-    <p><strong>Das ist kein Rückzug. Das ist Revolution. Still. Echt. Integrativ.</strong></p>
-
-    <p class="essenz">Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
-  </div>
-</section>
-
-<!-- CTA unten -->
-<section class="cta-bottom" id="cta-maenner">
-  <p class="lead">Bereit, Verantwortung zu übernehmen – für dich, für Beziehung, für das Leben?</p>
-  <div>
-    <a class="btn btn-gold" href="/kontakt.html#samurai">In meine Würde eintreten</a>
-  </div>
-</section>
-
-<footer class="site-footer">
-  <div class="wrap" style="text-align:center;padding:2rem 1rem;">
-    <small style="display:block;margin-bottom:.5rem;opacity:.85;">
-      © <span id="y"></span> Ove Krüger · Sinnwärts Studio
-    </small>
-    <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-      <a href="/index.html" rel="home" aria-label="Startseite">Start</a> ·
-      <a href="/ueber-mich.html">Über mich</a> ·
-      <a href="/angebot.html">Angebote</a> ·
-      <a href="/resonanzraum.html">Resonanzraum</a> ·
-      <a href="/kontakt.html">Kontakt</a> ·
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutz</a>
-    </nav>
-  </div>
-</footer>
-
-<a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>
-
-<script>
-  // Jahr
-  document.getElementById('y').textContent = new Date().getFullYear();
-  // Scroll-Button
-  (function(){
-    var btn=document.querySelector('.to-top');
-    if(!btn) return;
-    function onScroll(){ btn.classList.toggle('show', window.scrollY > 600); }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    onScroll();
-  })();
-</script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

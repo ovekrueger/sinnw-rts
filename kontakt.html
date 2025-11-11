@@ -53,31 +53,47 @@
       <hr style="border:0;border-top:1px solid var(--ring);opacity:.5;margin:1rem 0 0;">
     </section>
 
-    <!-- Formular (lokal ohne Versand) -->
-    <section class="wrap block">
-      <h2>Deine Nachricht</h2>
-      <form action="#" method="POST" class="grid-2">
-        <div>
-          <label for="name">Name</label><br />
-          <input id="name" name="name" type="text" required
-                 style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)" />
-        </div>
-        <div>
-          <label for="email">E-Mail</label><br />
-          <input id="email" name="email" type="email" required
-                 style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)" />
-        </div>
-        <div style="grid-column:1/-1">
-          <label for="msg">Nachricht</label><br />
-          <textarea id="msg" name="message" rows="6" required
-                    style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)"></textarea>
-        </div>
-        <div style="grid-column:1/-1">
-          <button class="btn" type="submit">Senden</button>
-        </div>
-      </form>
-      <!-- Hinweis: Sobald die Seite live ist, <form action="#"> durch deine Formspree-URL ersetzen, z. B. action="https://formspree.io/f/xyzabcd" -->
-    </section>
+  
+    <!-- Formular (sendet E-Mail über FormSubmit) -->
+<section class="wrap block">
+  <h2>Deine Nachricht</h2>
+
+  <form action="https://formsubmit.co/ove.krger@gmail.com" method="POST" class="grid-2">
+    <!-- Anti-Spam (Honeypot) -->
+    <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Redirect nach Erfolg (anpassen, z. B. Danke-Seite) -->
+    <input type="hidden" name="_next" value="https://sinnwaerts-studio.de/kontakt.html?ok=1">
+    <!-- Betreff & Darstellung -->
+    <input type="hidden" name="_subject" value="Neue Nachricht über Sinnwärts Studio">
+    <input type="hidden" name="_template" value="table">
+
+    <div>
+      <label for="name">Name</label><br>
+      <input id="name" name="Name" type="text" required
+             style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
+    </div>
+    <div>
+      <label for="email">E-Mail</label><br>
+      <input id="email" name="Email" type="email" required
+             style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
+    </div>
+    <div style="grid-column:1/-1">
+      <label for="msg">Nachricht</label><br>
+      <textarea id="msg" name="Nachricht" rows="6" required
+                style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)"></textarea>
+    </div>
+    <div style="grid-column:1/-1">
+      <button class="btn" type="submit">Senden</button>
+    </div>
+  </form>
+
+  <noscript>
+    <p>JavaScript aus? Schreib mir direkt:
+      <a href="mailto:ove.krger@gmail.com?subject=Anfrage%20Sinnw%C3%A4rts%20Studio">ove.krger@gmail.com</a>
+    </p>
+  </noscript>
+</section>
   </main>
 
 <a class="to-top" href="#top" aria-label="Nach oben" title="Nach oben">↑</a>

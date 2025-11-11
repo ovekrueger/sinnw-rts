@@ -423,5 +423,57 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   object-position:center 22%;        /* bei Bedarf 18–24 % testen */
   filter:brightness(1.06) contrast(1.03) saturate(1.04);
 }
+/* === Universal Hero (focal lock + bottom padding via CSS-Variablen) === */
+.hero{
+  position: relative;
+  min-height: 70svh;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ring, #2a2f36);
+}
 
+.hero::before{ /* sanftes Overlay für Lesbarkeit */
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(11,15,18,.28) 0%,
+      rgba(11,15,18,.16) 32%,
+      rgba(11,15,18,0) 60%),
+    linear-gradient(to top,
+      rgba(11,15,18,.45) 0%,
+      rgba(11,15,18,0) 35%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.hero .hero-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit: cover;
+  object-position: center var(--focal, 20%); /* Gesichts-Höhe */
+  z-index: -1;
+}
+
+.hero .inner{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  justify-content:flex-end; align-items:center; /* unten + zentriert */
+  padding: 72px 1rem var(--pb, 16vh);          /* Texttiefe */
+  text-align:center; z-index:1;
+}
+
+/* Typo (optional) */
+.hero h1{
+  margin:0; line-height:1.08;
+  color: var(--gold, #d4af37);
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 2.8rem);
+  text-shadow: 0 3px 10px rgba(0,0,0,.55);
+}
+.hero .sub{ margin:.5rem 0 0; opacity:.95; }
+
+/* Mobile Feinschnitt */
+@media (max-width: 640px){
+  .hero{ min-height: 76svh; }
+  .hero .hero-bg{ object-position: center var(--focal-m, var(--focal, 22%)); }
+  .hero .inner{ padding-bottom: var(--pb-m, calc(var(--pb, 16vh) + 2vh)); }
+}
 

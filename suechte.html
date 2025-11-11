@@ -78,6 +78,37 @@ section.hero.suechte-hero .subhero{
   transform: none !important;
   margin: 0 0 .25em 0 !important;
 }
+    /* Größe & Lesbarkeit für Hero-Text */
+.suechte-hero .hero-copy h1{
+  font-size: clamp(2.6rem, 6.2vw, 4.8rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: .01em;
+  margin: 0 0 .3em;
+  text-shadow:
+    0 3px 22px rgba(0,0,0,.55),
+    0 1px  2px rgba(0,0,0,.65);
+}
+
+.suechte-hero .hero-copy .subhero{
+  font-size: clamp(1.1rem, 2.3vw, 1.45rem);
+  font-weight: 500;
+  opacity: .98;
+  text-shadow:
+    0 2px 16px rgba(0,0,0,.55),
+    0 1px  2px rgba(0,0,0,.6);
+}
+
+/* dezente Scrim über dem Bild für mehr Kontrast unter dem Text */
+.suechte-hero::after{
+  content:"";
+  position:absolute; inset:0;
+  z-index:1; /* über Bild, unter Text */
+  background:
+    radial-gradient(80rem 40rem at 50% 45%,
+      rgba(0,0,0,.45), rgba(0,0,0,.28) 35%, transparent 60%)
+    ,linear-gradient(to top, rgba(0,0,0,.18), transparent 40%);
+}
   </style>
 </head>
 

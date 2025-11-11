@@ -21,168 +21,115 @@
   <!-- Favicons & CSS -->
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
-  <link rel="preload" href="/style.css?v=27" as="style">
-  <link rel="stylesheet" href="/style.css?v=27">
-  <link rel="preload" as="image" href="images/maenner-hero.webp" imagesizes="100vw">
+  <link rel="preload" href="/style.css?v=28" as="style">
+  <link rel="stylesheet" href="/style.css?v=28">
+  <link rel="preload" as="image" href="/images/maenner-hero.webp" imagesizes="100vw">
 
+  <!-- Seitenlokaler Stil: aufgeräumt & konsistent -->
   <style>
-    :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; }
+    :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; --nav-h:72px; }
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
     a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
     :focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:.25rem}
 
     /* NAV */
-    .site-header{border-bottom:1px solid var(--ring);background:rgba(11,15,18,.95)}
-    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem}
+    .site-header{position:sticky;top:0;z-index:999;background:rgba(11,15,18,.95);border-bottom:1px solid var(--ring)}
+    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:14px 1rem;max-width:1100px;margin:0 auto}
     .nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
     .brand{color:var(--ink);font-weight:700}
 
-    /* HERO – tiefer, Gesicht frei */
-    .hero{position:relative;min-height:70svh;overflow:hidden;border-bottom:1px solid var(--ring)}
-    .hero .hero-bg{display:block;width:100%;height:100%;object-fit:cover;object-position:center 20%;
-      filter:brightness(1.08) contrast(1.03) saturate(1.05)}
-    .hero .hero-scrim{position:absolute;inset:0;background:
-      linear-gradient(to bottom, rgba(11,15,18,.42) 0%, rgba(11,15,18,.25) 30%, rgba(11,15,18,0) 60%),
-      linear-gradient(to top, rgba(11,15,18,.55) 0%, rgba(11,15,18,0) 35%);}
-    .hero .hero-inner{position:absolute;inset:0;display:grid;place-items:end center;padding:72px 1rem 14vh;z-index:1;text-align:center}
-    .hero h1{margin:0;color:var(--gold);font-size:clamp(2rem,1.3rem + 2.6vw,2.8rem);line-height:1.08;text-shadow:0 3px 10px rgba(0,0,0,.55)}
-    .hero-kicker{margin:.45rem 0 0 0;opacity:.95}
-    .hero-badge{position:absolute;right:14px;top:14px;width:78px;height:auto;padding:6px;border-radius:12px;background:rgba(0,0,0,.12);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:.9;z-index:2}
-    @media (max-width:640px){ .hero{min-height:74svh} .hero-badge{width:70px;right:10px;top:10px} }
+    /* ===== HERO (clean, variablenbasiert) ===== */
+    .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--ring);
+          padding-top:var(--nav-h); min-height:calc(100svh - var(--nav-h));}
 
-    /* Sektionen / Typo */
+    /* Steuer-Variablen direkt am <section> setzen:
+       --overlay: 0–.6 | --focus-y: Motiv (z.B. 20–28%) | --pad-bottom: Texttiefe */
+    .hero::before{
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background:
+        linear-gradient(to bottom,
+          rgba(11,15,18, calc(var(--overlay,.35) + .10)) 0%,
+          rgba(11,15,18, calc(var(--overlay,.35) - .05)) 32%,
+          rgba(11,15,18, 0) 62%),
+        linear-gradient(to top, rgba(11,15,18,.48) 0%, rgba(11,15,18,0) 35%);
+    }
+
+    .hero .hero-bg{
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+      object-position: center var(--focus-y,22%); filter:brightness(1.08) contrast(1.03) saturate(1.05);
+      z-index:-1;
+    }
+
+    .hero .inner{
+      position:absolute; inset:0; display:grid; place-items:end center;
+      padding:0 1rem var(--pad-bottom,14vh); text-align:center; z-index:1;
+    }
+
+    .hero h1{
+      margin:0 0 .35rem; color:var(--gold);
+      font-size: clamp(1.6rem, 1rem + 1.6vw, 2.2rem); /* kleiner als vorher */
+      line-height:1.06; letter-spacing:.005em; text-shadow:0 3px 10px rgba(0,0,0,.55);
+    }
+
+    .hero .sub{
+      margin:.45rem 0 0; font-weight:600;
+      font-size: clamp(1.1rem, 0.9rem + 1.1vw, 1.5rem); /* größer als vorher */
+      color:#fff; text-shadow:0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
+    }
+
+    .hero .hero-badge{
+      position:absolute; right:16px; top:16px; width:86px; height:auto;
+      padding:6px; background:rgba(0,0,0,.12); border-radius:12px;
+      box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:.9; z-index:2;
+    }
+
+    @media (max-width:640px){
+      .hero{ min-height:calc(100svh - var(--nav-h)); }
+      .hero .inner{ padding-bottom: max(16vh, var(--pad-bottom,14vh)); }
+      .hero .hero-badge{ width:74px; right:10px; top:10px; }
+    }
+
+    /* ===== Inhalt ===== */
+    .wrap{max-width:1100px;margin:0 auto;padding:0 1rem}
     .section-spacer{padding:clamp(24px,5vw,50px) 0}
     .lead-narrow{max-width:70ch;margin:0 auto;line-height:1.65}
-    .wrap h2{margin:.2rem 0 .8rem;font-size:clamp(1.4rem,1rem + 1vw,1.9rem)}
     .divider{height:1px;background:var(--ring);opacity:.7;margin:clamp(18px,4vw,28px) auto;max-width:920px}
-
-    /* CTA / Buttons */
     .cta-row{text-align:center;margin:1rem 0 0}
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.7rem 1.1rem;font-weight:700;border:1px solid transparent;white-space:nowrap}
     .btn-gold{background:var(--gold);color:#0b0f12;border-color:var(--gold)}
     .btn:hover{filter:brightness(1.03)}
-    /* === Hero soft: Text tiefer, Gesicht frei, Overlay steuerbar === */
-.hero.hero--soft{
-  position:relative;
-  min-height:70svh;          /* mehr Raum, damit nichts clippt */
-  overflow:hidden;
-  border-bottom:1px solid var(--ring);
-}
-
-/* Overlay via CSS-Var: --overlay (0–0.6 sinnvoll) */
-.hero.hero--soft::before{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    linear-gradient(to bottom, rgba(11,15,18, calc(var(--overlay, .30) + .10)) 0%,
-                               rgba(11,15,18, calc(var(--overlay, .30) - .05)) 32%,
-                               rgba(11,15,18, 0) 62%),
-    linear-gradient(to top, rgba(11,15,18, .48) 0%, rgba(11,15,18,0) 35%);
-  pointer-events:none;
-  z-index:0;
-}
-
-.hero.hero--soft .hero-bg{
-  position:absolute; inset:0; width:100%; height:100%;
-  object-fit:cover;
-  object-position:center 18%; /* 16–22% feinjustieren */
-  filter:brightness(1.08) contrast(1.03) saturate(1.05);
-  z-index:-1;
-}
-
-.hero.hero--soft .hero-badge{
-  position:absolute; right:16px; top:16px;
-  width:86px; height:auto; padding:6px;
-  background:rgba(0,0,0,.12); border-radius:12px;
-  box-shadow:0 8px 24px rgba(0,0,0,.35); opacity:.9;
-  z-index:2;
-}
-
-/* >>> Text nach unten zentriert */
-.hero.hero--soft .inner{
-  position:absolute; inset:0;
-  display:grid; place-items:end center;   /* unten + zentriert */
-  padding:72px 1rem 14vh;                 /* << Bottom-Offset */
-  text-align:center; z-index:1;
-}
-
-.hero.hero--soft h1{
-  margin:0; color:var(--gold);
-  font-size:clamp(2rem, 1.3rem + 2.6vw, 2.8rem);
-  line-height:1.08; text-shadow:0 3px 10px rgba(0,0,0,.55);
-}
-.hero.hero--soft .sub{ margin:.45rem 0 0; opacity:.95; }
-
-@media (max-width:640px){
-  .hero.hero--soft{ min-height:74svh; }
-  .hero.hero--soft .inner{ padding-bottom:15vh; }
-  .hero.hero--soft .hero-badge{ width:74px; right:10px; top:10px; }
-}
-    /* Männer-Hero: Größen-Finetuning */
-.hero.hero--soft h1{
-  font-size: clamp(1.6rem, 1rem + 1.6vw, 2.2rem); /* vorher größer */
-  line-height: 1.06;
-  letter-spacing: .005em;
-  margin: 0 0 .35rem;
-}
-
-.hero.hero--soft .sub{
-  font-size: clamp(1.1rem, 0.9rem + 1.1vw, 1.5rem); /* vorher kleiner */
-  font-weight: 600;
-  color: #fff; /* bleibt weiß */
-  text-shadow: 0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
-}
-    /* Header-Höhe berücksichtigen */
-:root{ --nav-h:72px; } /* falls noch nicht gesetzt */
-
-/* Hero unter den Sticky-Header schieben + volle Höhe nutzen */
-.hero.hero--soft{
-  padding-top: var(--nav-h,72px);
-  min-height: calc(100svh - var(--nav-h,72px));
-}
-
-/* Oben-Padding in der Textbox NICHT doppelt geben */
-.hero.hero--soft .inner{
-  padding: 0 1rem var(--pad-bottom,14vh);
-  display: grid; place-items: end center; text-align: center; z-index: 1;
-}
-
-/* Bild-Ausschnitt optional etwas tiefer setzen, damit oben nichts clippt */
-.hero.hero--soft .hero-bg{
-  object-position: center var(--focus-y,22%); /* z.B. 22–28% testen */
-}
-
   </style>
 </head>
 
 <body class="maenner">
   <!-- NAV -->
   <header class="site-header">
-    <div class="nav-container wrap">
-      <a class="brand" href="index.html">Sinnwärts Studio</a>
+    <div class="nav-container">
+      <a class="brand" href="/index.html">Sinnwärts Studio</a>
       <nav aria-label="Hauptnavigation">
         <ul class="nav-list">
-          <li><a href="/">Start</a></li>
-          <li><a href="ueber-mich.html">Über mich</a></li>
-          <li><a href="angebot.html">Angebote</a></li>
-          <li><a href="resonanzraum.html">Resonanzraum</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="/index.html">Start</a></li>
+          <li><a href="/ueber-mich.html">Über mich</a></li>
+          <li><a href="/angebot.html">Angebote</a></li>
+          <li><a href="/resonanzraum.html">Resonanzraum</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-<section class="hero" style="--focal:22%; --pb:12vh; --focal-m:24%; --pb-m:20vh;">
-  <img src="/images/ltc-siegel.png" class="hero-badge" alt="" width="86" height="86" loading="lazy">
-  <img src="/images/samurai.webp" class="hero-bg" alt="Aufrecht wie ein Samurai">
-  <div class="inner">
-    <h1>Werte. Präsenz. Haltung.</h1>
-    <p class="sub">Männlichkeit, klar und verantwortungsvoll.</p>
-  </div>
-</section>
-  <main id="main" role="main" tabindex="-1" class="wrap">
+  <!-- HERO (aufgeräumt, steuerbar per Inline-Variablen) -->
+  <section class="hero"
+           style="--overlay:.35; --focus-y:22%; --pad-bottom:12vh;">
+    <img src="/images/ltc-siegel.png" class="hero-badge" alt="Life Trust Coach – Ove Krüger" width="86" height="86" loading="lazy">
+    <img src="/images/samurai.webp" class="hero-bg" alt="Aufrecht wie ein Samurai" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
+    <div class="inner">
+      <h1>Werte. Präsenz. Haltung.</h1>
+      <p class="sub">Männlichkeit, klar und verantwortungsvoll.</p>
+    </div>
+  </section>
 
+  <main id="main" role="main" tabindex="-1" class="wrap">
     <!-- Block 1 -->
     <section class="section-spacer">
       <p style="text-align:center;font-weight:700;max-width:65ch;margin:0 auto 1rem;">
@@ -191,7 +138,7 @@
 
       <div class="lead-narrow">
         <p>Wir Männer haben selten eine Sprache für unsere Gefühle gelernt. Zwischen der Angst, Frauen gegenüber nicht übergriffig zu wirken – und dem Druck, bloß kein „Warmduscher“ zu sein – verlieren wir uns oft.</p>
-        <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer, die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen Anteile wiederzudecken. Viele von uns haben den Kontakt zu ihren Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes flieht – und wie leer das bleibt.</p>
+        <p>In Zeiten von Emanzipation und schnellen Veränderungen ist es schwer, die eigene Männlichkeit zu halten. Gleichzeitig gilt es, unsere weiblichen Anteile wiederzuentdecken. Viele von uns haben den Kontakt zu ihren Gefühlen verloren. Wir wissen, wie schnell man in Arbeit, Alkohol oder anderes flieht – und wie leer das bleibt.</p>
         <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
 
         <p style="text-align:center;font-weight:700;margin:.9rem 0 0;">Die Tür steht offen.</p>
@@ -204,9 +151,7 @@
       </div>
 
       <p class="cta-row">
-       <a class="btn btn-gold" href="/angebot.html#fuer-wen">
-  In meine Würde eintreten
-</a>
+        <a class="btn btn-gold" href="/angebot.html#fuer-wen">In meine Würde eintreten</a>
       </p>
     </section>
 
@@ -215,7 +160,7 @@
     <!-- Block 2 -->
     <section class="section-spacer lead-narrow">
       <p><strong>Wir Männer sind, verdammt noch mal, Teil des Patriarchats – und damit auch Teil seines Schattens.</strong></p>
-      <p>Jahrhunderte lang haben wir geglaubt, Kontrolle bedeute Ordnung. Wir haben Frauen geführt, weil wir uns selbst verloren hatten.</p>
+      <p>Jahrhundertelang haben wir geglaubt, Kontrolle bedeute Ordnung. Wir haben Frauen geführt, weil wir uns selbst verloren hatten.</p>
       <p>Dieses System hat uns Macht gegeben, aber die Verbindung genommen – zu euch, zu uns selbst, zu allem Lebendigen.</p>
       <p><strong>Heute braucht die Welt keine Sieger mehr, sondern Männer mit Rückgrat und Herz.</strong></p>
       <p>Männer, die den Mut haben, ihre Tränen zu ehren, ihre Wut zu reinigen und ihre Zärtlichkeit zuzulassen.</p>
@@ -223,12 +168,9 @@
       <p>Die wahre Kunst eines Samurai ist nicht der Kampf nach außen. Sondern der Tanz von Animus und Anima in uns: Würde, Klarheit, innere Ruhe.</p>
 
       <p class="cta-row">
-        <a class="btn btn-gold" href="/angebot.html#fuer-wen">
-  In meine Würde eintreten
-</a>
+        <a class="btn btn-gold" href="/angebot.html#fuer-wen">In meine Würde eintreten</a>
       </p>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -238,13 +180,13 @@
         © <span id="y"></span> Ove Krüger · Sinnwärts Studio
       </small>
       <nav aria-label="Footer-Navigation">
-        <a href="index.html">Start</a> ·
-        <a href="ueber-mich.html">Über mich</a> ·
-        <a href="angebot.html">Angebote</a> ·
-        <a href="resonanzraum.html">Resonanzraum</a> ·
-        <a href="kontakt.html">Kontakt</a> ·
-        <a href="impressum.html">Impressum</a> ·
-        <a href="datenschutz.html">Datenschutz</a>
+        <a href="/index.html">Start</a> ·
+        <a href="/ueber-mich.html">Über mich</a> ·
+        <a href="/angebot.html">Angebote</a> ·
+        <a href="/resonanzraum.html">Resonanzraum</a> ·
+        <a href="/kontakt.html">Kontakt</a> ·
+        <a href="/impressum.html">Impressum</a> ·
+        <a href="/datenschutz.html">Datenschutz</a>
       </nav>
     </div>
   </footer>

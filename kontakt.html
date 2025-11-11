@@ -58,25 +58,28 @@
 <section class="wrap block">
   <h2>Deine Nachricht</h2>
 
-<form action="https://formspree.io/f/xpwkzjwk" method="POST" class="grid-2" style="margin-top:1rem;">
+<form id="contactForm" action="https://formspree.io/f/xpwkzjwk" method="POST" class="grid-2" style="margin-top:1rem;">
   <div>
     <label for="name">Name</label><br>
     <input id="name" name="name" type="text" required
       style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);
       background:#0e1216;color:var(--ink)" />
   </div>
+
   <div>
     <label for="email">E-Mail</label><br>
     <input id="email" name="email" type="email" required
       style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);
       background:#0e1216;color:var(--ink)" />
   </div>
+
   <div style="grid-column:1/-1">
     <label for="msg">Nachricht</label><br>
     <textarea id="msg" name="message" rows="6" required
       style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);
       background:#0e1216;color:var(--ink)"></textarea>
   </div>
+
   <div style="grid-column:1/-1; margin-top:.5rem;">
     <label style="font-size:.85rem;opacity:.8">
       <input type="checkbox" required>
@@ -84,6 +87,7 @@
       <a href="datenschutz.html" style="color:var(--gold)">Datenschutzhinweis</a>
     </label>
   </div>
+
   <div style="grid-column:1/-1;text-align:center;margin-top:1rem;">
     <button class="btn btn-gold" type="submit">Nachricht senden</button>
   </div>

@@ -24,7 +24,8 @@
 
   <!-- Seitenlokal: schlank & robust -->
   <style>
-    :root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; --nav-h:72px; }
+:root{ --bg:#0b0f12; --ink:#e8e6e3; --muted:#a7a7a7; --ring:#2a2f36; --gold:#d4af37; --nav-h:80px; }
+
     html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
     a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
 
@@ -35,12 +36,12 @@
     .brand{color:var(--ink);font-weight:700}
 
     /* ===== HERO – eigenständig, ohne Tüddel ===== */
-    .hero{
-      position:relative; overflow:hidden;
-      padding-top:var(--nav-h);
-      min-height:calc(100svh - var(--nav-h));
-      border-bottom:1px solid var(--ring);
-    }
+   .hero{
+  position:relative; overflow:hidden;
+  padding-top: calc(var(--nav-h) + 4px);
+  min-height: calc(100svh - var(--nav-h));
+  border-bottom:1px solid var(--ring);
+}
     .hero .hero-bg{
       position:absolute; inset:0; width:100%; height:100%;
       object-fit:cover;
@@ -63,16 +64,16 @@
       width:min(92vw,1100px); text-align:center; z-index:2; padding:0 1rem;
     }
     .hero h1{
-      margin:0 0 .35rem; color:var(--gold);
-      font-size:clamp(1.6rem,1rem + 1.6vw,2.2rem);
-      line-height:1.06; letter-spacing:.005em;
-      text-shadow:0 3px 10px rgba(0,0,0,.55);
-    }
-    .hero .sub{
-      margin:0; font-weight:600; color:#fff;
-      font-size:clamp(1.1rem,.9rem + 1.1vw,1.5rem);
-      text-shadow:0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
-    }
+  margin:0 0 .35rem; color:var(--gold);
+  font-size: clamp(1.4rem, 0.9rem + 1.2vw, 1.9rem);
+  line-height:1.06; letter-spacing:.005em;
+  text-shadow:0 3px 10px rgba(0,0,0,.55);
+}
+.hero .sub{
+  margin:0; font-weight:600; color:#fff;
+  font-size: clamp(1.0rem, 0.85rem + 0.9vw, 1.3rem);
+  text-shadow:0 2px 18px rgba(0,0,0,.58), 0 1px 2px rgba(0,0,0,.75);
+}
     .hero .hero-badge{
       position:absolute; right:16px; top:16px; z-index:3;
       width:86px; height:auto; padding:6px; border-radius:12px;
@@ -114,7 +115,7 @@
   </header>
 
   <!-- HERO (nur 3 Stellschrauben im style=) -->
-  <section class="hero" style="--overlay:.35; --focus-y:14%; --center:60%;">
+  <section class="hero" style="--overlay:.35; --focus-y:10%; --center:61%;">
     <img src="/images/ltc-siegel.png" class="hero-badge" alt="Life Trust Coach – Ove Krüger" width="86" height="86" loading="lazy">
     <img src="/images/samurai.webp" class="hero-bg" alt="Aufrecht wie ein Samurai" width="1920" height="1080" loading="eager" fetchpriority="high" decoding="async">
     <div class="inner">

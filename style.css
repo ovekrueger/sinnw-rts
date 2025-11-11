@@ -385,3 +385,27 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   body.frauen .hero, body.maenner .hero{ min-height:74svh; }
   body.frauen .hero .hero-inner, body.maenner .hero .hero-inner{ padding-bottom:15vh; }
 }
+/* --- Männer: Hero tiefer + Gesicht frei (override) --- */
+.hero.hero--soft{ 
+  min-height:72svh;                 /* mehr vertikaler Raum */
+}
+
+.hero.hero--soft .inner{
+  position:absolute; inset:0;
+  display:grid; place-items:end center; /* unten + zentriert */
+  padding:72px 1rem 16vh;              /* << Bottom-Offset erhöhen */
+  text-align:center; z-index:1;
+}
+
+/* Bild-Ausschnitt höher, damit Kopf frei bleibt */
+.hero.hero--soft .hero-bg{
+  object-fit:cover;
+  object-position:center 22%;          /* 18–24% testen */
+  filter:brightness(1.06) contrast(1.03);
+}
+
+/* Mobile noch etwas tiefer */
+@media (max-width:640px){
+  .hero.hero--soft{ min-height:76svh; }
+  .hero.hero--soft .inner{ padding-bottom:17vh; }
+}

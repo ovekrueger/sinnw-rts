@@ -38,6 +38,41 @@
       line-height:1.5;
     }
     .cta-bottom .btn{ margin-top:16px; white-space:nowrap; }
+    /* === Frauen – Hero tiefer + ruhiger === */
+body.frauen .hero{ min-height:62svh; }
+body.frauen .hero .hero-inner{
+  place-items:end center;      /* Text nach unten, zentriert */
+  padding-bottom:8vh;
+  text-align:center;
+}
+body.frauen .hero h1{
+  font-size:clamp(1.8rem,1.3rem + 2.4vw,2.6rem);
+  line-height:1.1;
+}
+
+/* Mini-Divider für optische Pause */
+body.frauen .divider{
+  height:1px; background:var(--ring);
+  opacity:.7; margin:clamp(18px,4vw,28px) auto;
+  max-width:880px;
+}
+
+/* Karten: mehr Luft + einheitliche Heads */
+body.frauen .cards{ gap:1.4rem; }
+body.frauen .card h3{
+  font-size:1.05rem;
+  color:#e0b84d;   /* sanftes Gold */
+  margin:.1rem 0 .3rem;
+}
+/* Falls du Icon-Emojis o. SVGs nutzt, etwas kleiner: */
+body.frauen .card h3 .icon{ width:16px; height:16px; }
+
+/* Mobile Feinschnitt */
+@media (max-width:640px){
+  body.frauen .hero{ min-height:66svh; }
+  body.frauen .hero .hero-inner{ padding-bottom:9vh; }
+  body.frauen .cards{ gap:1.1rem; }
+}
   </style>
 </head>
 

@@ -20,7 +20,7 @@
 
   /* Hero */
   --hero-min:70svh;
-  --hero-brightness:1.18; /* 1.00 = original, 1.20 = deutlich heller */
+  --hero-brightness:1.20; /* 1.00 = original, 1.20 = deutlich heller */
   --hero-contrast:1.05;   /* leichte Leuchtkraft */
 }
   /* Maße */

@@ -84,52 +84,46 @@
     /* Footer */
     .site-footer{border-top:1px solid var(--ring);text-align:center;color:var(--muted);
       padding:2rem 1rem;margin-top:44px;font-size:.9rem}
+
     /* === Angebote – Hero größer + mittig === */
-body.angebot .hero{ min-height:52svh; }           /* Höhe erhöhen */
-body.angebot .hero .hero-inner{
-  place-items:center center;                      /* vertikal + horizontal */
-  padding:72px 1rem;                              /* gleichmäßiger Rand */
-  text-align:center;
-}
-body.angebot .hero h1{ margin:0; }                /* linken Abstand weg */
-body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
+    body.angebot .hero{ min-height:52svh; }
+    body.angebot .hero .hero-inner{
+      place-items:center center;
+      padding:72px 1rem;
+      text-align:center;
+    }
+    body.angebot .hero h1{ margin:0; }
+    body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
 
-@media (max-width:640px){
-  body.angebot .hero{ min-height:58svh; }         /* mehr Raum auf Mobile (optional) */
-}
+    @media (max-width:640px){
+      body.angebot .hero{ min-height:58svh; }
+    }
+
     /* === Angebote – Mobile Feinschnitt (≤640px) === */
-@media (max-width:640px){
-  .wrap{ padding:0 .9rem; }
-
-  /* Hero großzügiger + sauberer Fokus */
-  body.angebot .hero{ min-height:60svh; }
-  body.angebot .hero .hero-bg{ object-position:center 38%; }
-  body.angebot .hero h1{
-    font-size:clamp(1.6rem,4.8vw + 1rem,2.2rem);
-    margin:0;
-  }
-  body.angebot .hero .hero-kicker{
-    font-size:.95rem;
-    line-height:1.35;
-    margin:.35rem 0 0 0;
-  }
-  .hero-badge{ width:64px; right:10px; top:10px; }
-
-  /* Abstände & Listen ruhiger */
-  .section-spacer{ padding:clamp(18px,5.2vw,34px) 0; }
-  .wrap h2{ margin:.15rem 0 .7rem; }
-  .wrap h3{ margin:.7rem 0 .35rem; }
-  ul{ margin:.3rem 0 .7rem 1.0rem; }
-
-  /* Buttons & Chips fingerfreundlich */
-  .btn{ padding:.62rem 1rem; }
-  .chip{ padding:.5rem .9rem; }
-
-  /* FAQ besser antippbar */
-  details{ padding:.7rem .8rem; }
-  summary{ font-size:1rem; }
-  details p{ margin:.5rem 0 0; }
-}
+    @media (max-width:640px){
+      .wrap{ padding:0 .9rem; }
+      body.angebot .hero{ min-height:60svh; }
+      body.angebot .hero .hero-bg{ object-position:center 38%; }
+      body.angebot .hero h1{
+        font-size:clamp(1.6rem,4.8vw + 1rem,2.2rem);
+        margin:0;
+      }
+      body.angebot .hero .hero-kicker{
+        font-size:.95rem;
+        line-height:1.35;
+        margin:.35rem 0 0 0;
+      }
+      .hero-badge{ width:64px; right:10px; top:10px; }
+      .section-spacer{ padding:clamp(18px,5.2vw,34px) 0; }
+      .wrap h2{ margin:.15rem 0 .7rem; }
+      .wrap h3{ margin:.7rem 0 .35rem; }
+      ul{ margin:.3rem 0 .7rem 1.0rem; }
+      .btn{ padding:.62rem 1rem; }
+      .chip{ padding:.5rem .9rem; }
+      details{ padding:.7rem .8rem; }
+      summary{ font-size:1rem; }
+      details p{ margin:.5rem 0 0; }
+    }
   </style>
 </head>
 
@@ -231,25 +225,24 @@ body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
     </section>
 
     <!-- Süchte neu denken -->
-<section class="wrap section-spacer" id="suechte">
-  <h2>Süchte neu denken</h2>
-  <p>
-    Raus aus Scham & Verstecken – rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung.  
-    Neurobiologisch fundiert, integral gedacht und mit menschlicher Wärme.
-  </p>
-  <p>
-    Ich begleite Menschen, die aus Abhängigkeit oder Co-Abhängigkeit aussteigen wollen –  
-    Betroffene wie Angehörige. Es geht nicht um Schuld, sondern um Verstehen, Regulieren und neu Beginnen.
-  </p>
+    <section class="wrap section-spacer" id="suechte">
+      <h2>Süchte neu denken</h2>
+      <p>
+        Raus aus Scham &amp; Verstecken – rein in Klarheit, Selbstwirksamkeit und ehrliche Begleitung.<br>
+        Neurobiologisch fundiert, integral gedacht und mit menschlicher Wärme.
+      </p>
+      <p>
+        Ich begleite Menschen, die aus Abhängigkeit oder Co-Abhängigkeit aussteigen wollen –  
+        Betroffene wie Angehörige. Es geht nicht um Schuld, sondern um Verstehen, Regulieren und neu Beginnen.
+      </p>
+      <ul style="margin:.8rem 0 1.2rem 1.2rem; line-height:1.6">
+        <li><strong>1:1 Coaching:</strong> Stabilisierung, Triggerarbeit, Rückfallprävention</li>
+        <li><strong>Lasercoaching:</strong> akute Themen zügig in Umsetzung bringen</li>
+        <li><strong>Mentoring:</strong> Begleitung bei Beziehung, Selbstregulation &amp; Verantwortung</li>
+      </ul>
+      <a href="kontakt.html#klarheitsgespraech" class="btn btn-gold">Gespräch starten</a>
+    </section>
 
-  <ul style="margin:.8rem 0 1.2rem 1.2rem; line-height:1.6">
-    <li><strong>1:1 Coaching:</strong> Stabilisierung, Triggerarbeit, Rückfallprävention</li>
-    <li><strong>Lasercoaching:</strong> akute Themen zügig in Umsetzung bringen</li>
-    <li><strong>Mentoring:</strong> Begleitung bei Beziehung, Selbstregulation & Verantwortung</li>
-  </ul>
-
-  <a href="kontakt.html#klarheitsgespraech" class="btn btn-gold">Gespräch starten</a>
-</section>
     <!-- Für wen -->
     <section class="section-spacer" id="fuer-wen">
       <h2>Für wen?</h2>
@@ -257,6 +250,15 @@ body.angebot .hero .hero-kicker{ margin:.4rem 0 0 0; }
         <a class="chip" href="angebote/frauen/">Für Frauen</a>
         <a class="chip" href="angebote/maenner/">Für Männer</a>
       </div>
+    </section>
+
+    <!-- Kennenlernen & Vertrag (NEU) -->
+    <section class="section-spacer" id="kennenlernen">
+      <h2>Kennenlerngespräch &amp; Vertrag</h2>
+      <p><strong>Kennenlernen:</strong> Ein erstes Gespräch (ca. 20 Minuten) ist kostenfrei. Wir prüfen in Ruhe, ob mein Ansatz und deine Anliegen zusammenpassen.</p>
+      <p><strong>Rahmen:</strong> Wenn wir weitergehen, arbeiten wir auf vertraglicher Basis – klar, transparent und verbindlich.</p>
+      <a class="btn btn-outline" href="kontakt.html#klarheitsgespraech">Kostenfrei kennenlernen</a>
+      <hr>
     </section>
 
     <!-- FAQ -->

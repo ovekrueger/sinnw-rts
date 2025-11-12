@@ -7,6 +7,7 @@
    ========================================================= */
 
 /* ===== Tokens ===== */
+/* ===== Tokens ===== */
 :root{
   /* Farben */
   --bg:#0b0f12;           /* Seite */
@@ -17,6 +18,11 @@
   --accent:#d4af37;       /* Gold */
   --ring:#2a2f36;         /* Linien */
 
+  /* Hero */
+  --hero-min:70svh;
+  --hero-brightness:1.15; /* 1.00 = original, 1.20 = deutlich heller */
+  --hero-contrast:1.05;   /* leichte Leuchtkraft */
+}
   /* Maße */
   --maxw:1000px;
   --nav-h:72px;
@@ -503,3 +509,19 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
 
 /* Sicherheitsabstand unter dem Header, damit sich nichts überlappt */
 .hero{ padding-top: 72px; }  /* auf Männerseite ggf. bereits gesetzt – dann lassen */
+/* ===== Tokens ===== */
+:root{
+  /* Farben */
+  --bg:#0b0f12;           /* Seite */
+  --bg-soft:#10151b;      /* Flächen dunkel */
+  --card:#0e1216;         /* Karten */
+  --ink:#e8e6e3;          /* Text */
+  --muted:#a7a7a7;        /* Sekundär */
+  --accent:#d4af37;       /* Gold */
+  --ring:#2a2f36;         /* Linien */
+
+  /* Hero */
+  --hero-min:70svh;
+  --hero-brightness:1.15; /* 1.00 = original, 1.20 = deutlich heller */
+  --hero-contrast:1.05;   /* leichte Leuchtkraft */
+}

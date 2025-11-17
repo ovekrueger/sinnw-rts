@@ -8,6 +8,19 @@
   <link rel="canonical" href="kontakt.html" />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Kontakt – Section-Überschriften zentrieren */
+    body.kontakt main h2{
+      text-align: center;
+    }
+
+    /* Optional: erster Absatz unter der Überschrift schmaler & mittig */
+    body.kontakt main h2 + p{
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body id="top" class="kontakt">
@@ -28,80 +41,74 @@
     </div>
   </header>
 
+  <!-- HERO (Kontakt – sauber, Mitte/Mitte) -->
+  <section class="hero hero--XL hero--soft hero-kontakt"
+           style="position:relative; --overlay:.35; min-height:70vh;">
+    <img src="/images/strandgespraech.webp"
+         alt="Kontakt – Sinnwärts Studio"
+         class="hero-bg"
+         width="1920" height="1080"
+         loading="eager" fetchpriority="high"
+         style="object-fit:cover; object-position:center 42%;" />
 
-<!-- HERO (Kontakt – sauber, Mitte/Mitte) -->
-<section class="hero hero--XL hero--soft hero-kontakt"
-         style="position:relative; --overlay:.35; min-height:70vh;">
-  <img src="/images/strandgespraech.webp"
-       alt="Kontakt – Sinnwärts Studio"
-       class="hero-bg"
-       width="1920" height="1080"
-       loading="eager" fetchpriority="high"
-       style="object-fit:cover; object-position:center 42%;" />
+    <div class="kontakt-center tac">
+      <h1 style="margin:0 0 .3em;">Kontakt</h1>
+      <p class="sub" style="font-size:1.2rem; margin:0;">
+        Klarheit beginnt mit einem Gespräch.
+      </p>
+    </div>
+  </section>
 
-  <div class="kontakt-center tac">
-    <h1 style="margin:0 0 .3em;">Kontakt</h1>
-    <p class="sub" style="font-size:1.2rem; margin:0;">
-      Klarheit beginnt mit einem Gespräch.
-    </p>
-  </div>
-</section>
+  <!-- Style-Block direkt darunter oder im <head> -->
+  <style>
+  .hero-kontakt .kontakt-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(92vw, 1000px);
+    text-align: center;
+    margin: 0;
+    z-index: 2;
+  }
 
-<!-- Style-Block direkt darunter oder im <head> -->
-<style>
-.hero-kontakt .kontakt-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(92vw, 1000px);
-  text-align: center;
-  margin: 0;
-  z-index: 2;
-}
+  /* Mobile: leicht tiefer */
+  @media (max-width: 640px){
+    .hero-kontakt .kontakt-center { top: 54%; }
+  }
+  </style>
+  <!-- Mobile-Feinschnitt nur für diese Seite -->
+  <style>
+  @media (max-width: 640px){
+    .hero-kontakt .inner{ top:54% !important; }
+  }
+  </style>
+  <style>
+  .hero-kontakt .kontakt-center h1{
+    color: var(--gold,#d4af37);
+    -webkit-text-stroke: .8px rgba(0,0,0,.55);
+    text-shadow: 0 4px 28px rgba(0,0,0,.85), 0 0 1px rgba(0,0,0,.9);
+    letter-spacing:.01em;
+  }
+  .hero-kontakt .kontakt-center .sub{
+    color:#fff;
+    font-weight:700;
+    text-shadow: 0 3px 22px rgba(0,0,0,.8), 0 0 1px rgba(0,0,0,.85);
+    opacity:1;
+    font-size:clamp(1.1rem,1.2vw,1.35rem);
+  }
 
-/* Mobile: leicht tiefer */
-@media (max-width: 640px){
-  .hero-kontakt .kontakt-center { top: 54%; }
-}
-</style>
-<!-- Mobile-Feinschnitt nur für diese Seite -->
-<style>
-@media (max-width: 640px){
-  .hero-kontakt .inner{ top:54% !important; }
-}
-</style>
- <style>
-.hero-kontakt .kontakt-center h1{
-  color: var(--gold,#d4af37);
-  -webkit-text-stroke: .8px rgba(0,0,0,.55);
-  text-shadow: 0 4px 28px rgba(0,0,0,.85), 0 0 1px rgba(0,0,0,.9);
-  letter-spacing:.01em;
-}
-.hero-kontakt .kontakt-center .sub{
-  color:#fff;
-  font-weight:700;
-  text-shadow: 0 3px 22px rgba(0,0,0,.8), 0 0 1px rgba(0,0,0,.85);
-  opacity:1;
-  font-size:clamp(1.1rem,1.2vw,1.35rem);
-}
+  .hero-kontakt .kontakt-center .sub{
+    color: #fff;                 /* heller als vorher */
+    font-weight: 600;
+    text-shadow: 0 2px 14px rgba(0,0,0,.60), 0 0 1px rgba(0,0,0,.85);
+    opacity: 1;                  /* falls global gedimmt */
+  }
 
-
-
-.hero-kontakt .kontakt-center .sub{
-  color: #fff;                 /* heller als vorher */
-  font-weight: 600;
-  text-shadow: 0 2px 14px rgba(0,0,0,.60), 0 0 1px rgba(0,0,0,.85);
-  opacity: 1;                  /* falls global gedimmt */
-}
-
-/* Optional leicht größer für Klarheit – kannst du weglassen */
-@media (min-width: 700px){
-  .hero-kontakt .kontakt-center .sub{ font-size: 1.25rem; }
-}
-</style>
-
-<main id="main">
+  @media (min-width: 700px){
+    .hero-kontakt .kontakt-center .sub{ font-size: 1.25rem; }
+  }
+  </style>
 
   <main id="main">
     <!-- Kontaktinfos -->
@@ -118,9 +125,7 @@
       <h2>Deine Nachricht</h2>
 
       <form id="contactForm" action="https://formspree.io/f/xpwkzjwk" method="POST" class="grid-2" style="margin-top:1rem;">
-        <!-- optional: Betreff für die eingehende Mail -->
         <input type="hidden" name="_subject" value="Neue Nachricht – Sinnwärts Studio">
-        <!-- optional: Honeypot gegen Bots -->
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
 
         <div>

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Fix: eigenes, kleines Hero-Stylesheet -->
+   <!-- Fix: eigenes, kleines Hero-Stylesheet -->
   <style>
     /* RESONANZRAUM – Hero */
     .hero-resonanz{ position:relative; min-height:68vh; isolation:isolate; }
@@ -42,8 +42,21 @@
       .hero-resonanz{ min-height:72svh; }
       .hero-resonanz .inner{ top:56%; }
     }
+
+    /* Resonanzraum – Section-Header zentrieren */
+    body.resonanzraum .block-hd{
+      text-align: center;
+    }
+
+    /* Optional: Fließtext im Header etwas schmaler führen */
+    body.resonanzraum .block-hd p{
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 </head>
+
 
 <body class="resonanzraum" id="top">
 

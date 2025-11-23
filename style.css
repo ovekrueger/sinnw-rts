@@ -547,3 +547,18 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   color: var(--gold);
   margin: 1.5rem 0 0.8rem;
 }
+/* Einheitliche Überschriften-Formatierung (alle Abschnitte) */
+.wrap h2, .wrap h3 {
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin: 1.5rem 0 0.8rem;
+  line-height: 1.1;
+}
+
+/* Zusätzliche Hervorhebung für die beiden führenden Abschnitte */
+#wertschaetzung h2,
+#medien-coaching h3 {
+  font-size: clamp(2.8rem, 2.0rem + 2.5vw, 3.5rem);
+  /* ggf. leicht anderes Gewicht oder Farbe */
+}

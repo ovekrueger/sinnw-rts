@@ -525,3 +525,18 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   --hero-brightness:1.15; /* 1.00 = original, 1.20 = deutlich heller */
   --hero-contrast:1.05;   /* leichte Leuchtkraft */
 }
+/* Neuer Intro-Block vor dem Hero */
+#start-botschaft {
+  background: var(--bg); /* gleiche Hintergrundfarbe wie dein Body (z. B. dunkel) */
+  color: var(--ink);
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  #start-botschaft {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

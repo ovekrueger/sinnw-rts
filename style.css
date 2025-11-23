@@ -540,3 +540,10 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
     font-size: 0.9rem;
   }
 }
+.wrap h2,
+.wrap h3 {
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin: 1.5rem 0 0.8rem;
+}

@@ -602,3 +602,44 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin: 0.8rem auto 0;
   text-shadow: 0 0 10px rgba(0,0,0,0.45);
 }
+.hero-samurai{
+  background-image: url("images/schwert-hero.png");
+  background-size: cover;
+  background-position: center right; /* Fokus auf die Klinge rechts */
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  position: relative;
+}
+
+/* leichter Overlay für perfekte Textlesbarkeit */
+.hero-samurai::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* kannst du erhöhen oder senken */
+  z-index: 1;
+}
+
+.hero-samurai .hero-inner{
+  position: relative;
+  z-index: 2;
+  text-align: left;      /* Text linksbündig */
+  padding-top: 18vh;     /* gleiche Höhe wie Königin */
+  padding-left: 10vw;    /* Abstand vom linken Rand */
+}
+
+.hero-samurai h1{
+  color: var(--accent);
+  font-size: 3rem;
+  margin: 0 0 .8rem 0;
+  max-width: 500px;
+  text-shadow: 0 0 12px rgba(0,0,0,0.55);
+}
+
+.hero-samurai p{
+  color: var(--muted);
+  font-size: 1.4rem;
+  max-width: 500px;
+  margin: 0;
+  text-shadow: 0 0 8px rgba(0,0,0,0.45);
+}

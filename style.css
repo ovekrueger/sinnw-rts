@@ -625,11 +625,11 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   z-index: 2;
   text-align: left;
 
-  /* Text höher */
-  padding-top: 12vh;
+  /* Text viel weiter nach oben */
+  padding-top: 8vh;     /* vorher 12vh */
 
-  /* Text weiter links */
-  padding-left: 8vw;
+  /* Zusätzlicher Schub nach links */
+  padding-left: 6vw;    /* vorher 8vw */
 }
 
 .hero-samurai h1{

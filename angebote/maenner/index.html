@@ -52,10 +52,15 @@
         linear-gradient(to top, rgba(11,15,18,.46) 0%, transparent 36%);
     }
     .hero .inner{
-      position:absolute; left:50%; top:var(--center,60%);  /* etwas tiefer als Mitte */
-      transform:translate(-50%,-50%);
-      width:min(92vw,1100px); text-align:center; z-index:2; padding:0 1rem;
-    }
+  position:absolute;
+  left:32%;       /* stärker nach links */
+  top:38%;        /* weiter nach oben */
+  transform:translate(-50%,-50%);
+  width:min(92vw,1100px);
+  text-align:center;
+  z-index:2;
+  padding:0 1rem;
+}
     .hero h1{
       margin:0 0 .35rem; color:var(--gold);
       font-size:clamp(1.2rem,0.8rem + 1.0vw,1.7rem); /* kleiner */

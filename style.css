@@ -874,10 +874,12 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
 .hero-welle .hero-inner {
   position: relative;
   z-index: 5;
-  max-width: 780px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;          /* → macht es wirklich mittig */
+  text-align: center;      /* → zentriert alles im Block */
   padding-top: 9vh;
+  width: 100%;             /* wichtig falls grid/flex vom Parent */
+  display: block !important; /* überschreibt mögliche Flex-Anpassungen */
 }
 
 /* Kickoff oben */

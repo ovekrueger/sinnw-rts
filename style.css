@@ -660,8 +660,8 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
 /* Samurai – Text weiter nach links und oben */
 .hero-samurai .hero-inner{
   position:absolute;
-  left: 28%;          /* von 50% → mehr nach links */
-  top: 34%;           /* von 60% → viel weiter nach oben */
+  left: 26%;          /* von 50% → mehr nach links */
+  top: 30%;           /* von 60% → viel weiter nach oben */
   transform:translate(-50%,-50%);
   width:min(92vw,1100px);
   text-align:center;

@@ -831,3 +831,13 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   z-index: 10;
   opacity: 0.85;
 }
+/* HERO – Text mittig */
+.hero-welle .hero-inner {
+  position: absolute;
+  top: 18%;          /* höher setzen → kannst du anpassen */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 5;
+  max-width: 720px;
+}

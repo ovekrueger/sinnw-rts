@@ -562,3 +562,43 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   font-size: clamp(2.8rem, 2.0rem + 2.5vw, 3.5rem);
   /* ggf. leicht anderes Gewicht oder Farbe */
 }
+.hero-koenigin{
+  background-image: url("images/koenigin-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 60vh;
+  position: relative;
+}
+
+/* optional: leichter Kontrast-Overlay (für perfekte Lesbarkeit oben) */
+.hero-koenigin::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25); /* 25% Dunkelheit – kannst du erhöhen oder verringern */
+  z-index: 1;
+}
+
+.hero-koenigin .hero-inner{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 18vh;
+}
+
+.hero-koenigin h1{
+  color: var(--accent);
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 0 0 12px rgba(0,0,0,0.55);
+}
+
+.hero-koenigin p{
+  color: var(--muted);
+  font-size: 1.4rem;
+  max-width: 640px;
+  margin: 0.8rem auto 0;
+  text-shadow: 0 0 10px rgba(0,0,0,0.45);
+}

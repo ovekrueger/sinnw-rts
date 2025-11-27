@@ -908,3 +908,60 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin: 0;
   line-height: 1.5;
 }
+/* ===== NEUER START-HERO (WELLE) – OVERRIDE ===== */
+
+.hero-welle{
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* ZENTRIERT */
+  text-align: center;      /* ZENTRIERT */
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-welle .hero-bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.hero-welle .hero-inner{
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+/* Kicker */
+.hero-welle .kicker{
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Hauptheadline */
+.hero-welle h1{
+  font-size: clamp(2.2rem, 2vw + 2.6rem, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+  color: var(--gold);
+  text-shadow: 0 4px 14px rgba(0,0,0,.55);
+}
+
+/* Subline */
+.hero-welle .lead{
+  font-size: clamp(1rem, 0.2vw + 1.2rem, 1.45rem);
+  color: var(--ink);
+  opacity: .92;
+  margin: 0;
+}

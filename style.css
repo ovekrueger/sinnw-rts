@@ -1135,3 +1135,17 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
     padding-top: 18vh;          /* mobil etwas mehr Abstand */
   }
 }
+body.kontakt .wrap.block {
+  max-width: 900px;       /* gleiche Breite wie Über mich & Startseite */
+  margin: 0 auto;         /* zentriert die gesamte Section */
+  padding: 2rem 1.5rem;   /* gleichmäßiger Innenabstand */
+}
+
+body.kontakt .wrap.block h2 {
+  text-align: center;     /* Überschrift zentriert */
+  margin-bottom: 1.2rem;
+}
+
+body.kontakt .wrap.block p {
+  text-align: center;     /* Kontaktinfos ebenfalls zentriert */
+}

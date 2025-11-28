@@ -8,19 +8,6 @@
   <link rel="canonical" href="kontakt.html" />
   <meta name="robots" content="index,follow" />
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* Kontakt – Section-Überschriften zentrieren */
-    body.kontakt main h2{
-      text-align: center;
-    }
-
-    /* Optional: erster Absatz unter der Überschrift schmaler & mittig */
-    body.kontakt main h2 + p{
-      max-width: 720px;
-      margin: 0 auto;
-    }
-  </style>
 </head>
 
 <body id="top" class="kontakt">
@@ -41,76 +28,25 @@
     </div>
   </header>
 
-  <!-- HERO (Kontakt – sauber, Mitte/Mitte) -->
-  <section class="hero hero--XL hero--soft hero-kontakt"
-           style="position:relative; --overlay:.35; min-height:70vh;">
-    <img src="/images/strandgespraech.webp"
-         alt="Kontakt – Sinnwärts Studio"
-         class="hero-bg"
-         width="1920" height="1080"
-         loading="eager" fetchpriority="high"
-         style="object-fit:cover; object-position:center 42%;" />
+  <!-- UNIVERSAL HERO – Welle -->
+  <section class="hero-universal" style="padding-top:72px">
+    <img class="hero-bg"
+         src="/images/start-hero-welle.png"
+         alt="Sinnwärts Studio – Kontakt"
+         loading="eager" decoding="async" fetchpriority="high">
 
-    <div class="kontakt-center tac">
-      <h1 style="margin:0 0 .3em;">Kontakt</h1>
-      <p class="sub" style="font-size:1.2rem; margin:0;">
-        Klarheit beginnt mit einem Gespräch.
-      </p>
+    <img src="/images/ltc-siegel.png" alt="Life Trust Coach Siegel"
+         class="hero-badge" width="88" height="88" loading="lazy">
+
+    <div class="hero-inner">
+      <p class="hero-kicker">WIE DU MICH ERREICHST</p>
+      <h1 class="hero-title">Kontakt</h1>
+      <p class="hero-sub">Klarheit beginnt mit einem Gespräch.</p>
     </div>
   </section>
 
-  <!-- Style-Block direkt darunter oder im <head> -->
-  <style>
-  .hero-kontakt .kontakt-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(92vw, 1000px);
-    text-align: center;
-    margin: 0;
-    z-index: 2;
-  }
-
-  /* Mobile: leicht tiefer */
-  @media (max-width: 640px){
-    .hero-kontakt .kontakt-center { top: 54%; }
-  }
-  </style>
-  <!-- Mobile-Feinschnitt nur für diese Seite -->
-  <style>
-  @media (max-width: 640px){
-    .hero-kontakt .inner{ top:54% !important; }
-  }
-  </style>
-  <style>
-  .hero-kontakt .kontakt-center h1{
-    color: var(--gold,#d4af37);
-    -webkit-text-stroke: .8px rgba(0,0,0,.55);
-    text-shadow: 0 4px 28px rgba(0,0,0,.85), 0 0 1px rgba(0,0,0,.9);
-    letter-spacing:.01em;
-  }
-  .hero-kontakt .kontakt-center .sub{
-    color:#fff;
-    font-weight:700;
-    text-shadow: 0 3px 22px rgba(0,0,0,.8), 0 0 1px rgba(0,0,0,.85);
-    opacity:1;
-    font-size:clamp(1.1rem,1.2vw,1.35rem);
-  }
-
-  .hero-kontakt .kontakt-center .sub{
-    color: #fff;                 /* heller als vorher */
-    font-weight: 600;
-    text-shadow: 0 2px 14px rgba(0,0,0,.60), 0 0 1px rgba(0,0,0,.85);
-    opacity: 1;                  /* falls global gedimmt */
-  }
-
-  @media (min-width: 700px){
-    .hero-kontakt .kontakt-center .sub{ font-size: 1.25rem; }
-  }
-  </style>
-
   <main id="main">
+
     <!-- Kontaktinfos -->
     <section class="wrap block">
       <h2>So erreichst du mich</h2>
@@ -120,30 +56,33 @@
       <hr style="border:0;border-top:1px solid var(--ring);opacity:.5;margin:1rem 0 0;">
     </section>
 
-    <!-- Formular (sendet E-Mail über Formspree) -->
+    <!-- Kontaktformular -->
     <section class="wrap block">
       <h2>Deine Nachricht</h2>
 
-      <form id="contactForm" action="https://formspree.io/f/xpwkzjwk" method="POST" class="grid-2" style="margin-top:1rem;">
+      <form id="contactForm" action="https://formspree.io/f/xpwkzjwk"
+            method="POST" class="grid-2" style="margin-top:1rem;">
+
         <input type="hidden" name="_subject" value="Neue Nachricht – Sinnwärts Studio">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+               style="position:absolute;left:-9999px;" aria-hidden="true">
 
         <div>
           <label for="name">Name</label><br>
           <input id="name" name="name" type="text" required
-            style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
+                 class="input-dark">
         </div>
 
         <div>
           <label for="email">E-Mail</label><br>
           <input id="email" name="email" type="email" required
-            style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)">
+                 class="input-dark">
         </div>
 
         <div style="grid-column:1/-1">
           <label for="msg">Nachricht</label><br>
           <textarea id="msg" name="message" rows="6" required
-            style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:#0e1216;color:var(--ink)"></textarea>
+                    class="input-dark"></textarea>
         </div>
 
         <div style="grid-column:1/-1; margin-top:.5rem;">
@@ -157,6 +96,7 @@
         <div style="grid-column:1/-1;text-align:center;margin-top:1rem;">
           <button class="btn btn-gold" type="submit">Nachricht senden</button>
         </div>
+
       </form>
 
       <script>
@@ -170,21 +110,27 @@
               headers: { "Accept": "application/json" }
             });
             if (res.ok) {
-              form.innerHTML = "<p style='text-align:center;color:var(--gold);font-weight:600;font-size:1.1rem;'>Danke, deine Nachricht wurde gesendet.</p>";
+              form.innerHTML =
+                "<p style='text-align:center;color:var(--gold);font-weight:600;font-size:1.1rem;'>Danke, deine Nachricht wurde gesendet.</p>";
             } else {
-              form.innerHTML = "<p style='text-align:center;color:red;'>Fehler beim Senden – bitte versuch es später erneut.</p>";
+              form.innerHTML =
+                "<p style='text-align:center;color:red;'>Fehler beim Senden – bitte versuch es später erneut.</p>";
             }
           } catch (err) {
-            form.innerHTML = "<p style='text-align:center;color:red;'>Netzwerkfehler – bitte später erneut versuchen.</p>";
+            form.innerHTML =
+              "<p style='text-align:center;color:red;'>Netzwerkfehler – bitte später erneut versuchen.</p>";
           }
         });
       </script>
 
       <noscript>
         <p>JavaScript aus? Schreib mir direkt:
-          <a href="mailto:ove.krger@gmail.com?subject=Anfrage%20Sinnw%C3%A4rts%20Studio">ove.krger@gmail.com</a>
+          <a href="mailto:ove.krger@gmail.com?subject=Anfrage%20Sinnw%C3%A4rts%20Studio">
+            ove.krger@gmail.com
+          </a>
         </p>
       </noscript>
+
     </section>
   </main>
 
@@ -197,7 +143,7 @@
         © <span id="y"></span> Ove Krüger · Sinnwärts Studio
       </small>
       <nav style="font-size:.9rem;opacity:.85;" aria-label="Footer-Navigation">
-        <a href="index.html" rel="home" aria-label="Startseite">Start</a> ·
+        <a href="index.html">Start</a> ·
         <a href="ueber-mich.html">Über mich</a> ·
         <a href="angebot.html">Angebote</a> ·
         <a href="resonanzraum.html">Resonanzraum</a> ·
@@ -218,5 +164,6 @@
       onScroll();
     })();
   </script>
+
 </body>
 </html>

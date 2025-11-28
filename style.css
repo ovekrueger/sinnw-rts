@@ -877,4 +877,34 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin-bottom: 1.4rem;
   text-transform: uppercase;
   text-shadow: 0 2px 12px rgba(0,0,0,.45);
+}/* =========================================
+   PREMIUM HERO – SINNWÄRTS-STUDIO DOMINANT
+   ========================================= */
+
+.hero-welle .hero-kicker {
+  color: var(--accent);                 /* Gold */
+  font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 4px 14px rgba(0,0,0,.55);
+}
+
+/* Claim (Hauptheadline) – ruhiger, kleiner */
+.hero-welle .hero-title {
+  color: var(--accent);
+  font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.2rem 0;
+}
+
+/* Subline bleibt lesbar und weich */
+.hero-welle .hero-sub {
+  color: var(--ink);
+  font-size: clamp(1.1rem, 0.8rem + 1vw, 1.45rem);
+  font-weight: 300;
+  margin-top: .3rem;
+  opacity: .94;
 }

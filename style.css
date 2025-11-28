@@ -1149,3 +1149,17 @@ body.kontakt .wrap.block h2 {
 body.kontakt .wrap.block p {
   text-align: center;     /* Kontaktinfos ebenfalls zentriert */
 }
+.hero-resonanz .hero-badge{
+  position:absolute;
+  top:96px;        /* NEU – vorher 72px + 12px */
+  right:14px;
+  width:110px;
+  height:auto;
+  z-index:3;
+  padding:6px;
+  border-radius:12px;
+  background:rgba(0,0,0,.10);
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 8px 26px rgba(0,0,0,.45);
+  backdrop-filter:blur(2px) saturate(120%);
+}

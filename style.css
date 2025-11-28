@@ -893,3 +893,14 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
     margin-top: -1vh;
   }
 }
+/* Intro-Absatz unter dem Hero */
+.intro-text {
+  max-width: 760px;          /* schmaler, ruhiger */
+  margin: 3rem auto 2.5rem;  /* zentriert, Luft oben/unten */
+  padding: 0 1rem;           /* etwas Rand für mobile */
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.92;
+  text-align: center;        /* macht ihn harmonisch zum Hero */
+}

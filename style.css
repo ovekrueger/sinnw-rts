@@ -908,3 +908,15 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin-top: .3rem;
   opacity: .94;
 }
+/* Feinjustierung: Headline höher */
+.hero-welle .hero-title {
+  margin-top: -1.6vh;  /* leicht nach oben */
+}
+@media (max-width: 640px) {
+  .hero-welle .hero-title {
+    margin-top: -0.8vh;
+  }
+}
+.hero-welle .hero-title span {
+  opacity: 0.92;
+}

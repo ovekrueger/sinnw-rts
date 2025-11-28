@@ -978,18 +978,18 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin: 0;
 }
 /* ======================================================================
-   HERO – Über mich (mit Welle, klar + ruhig)
+   HERO – Über mich (Position nach oben korrigiert)
    ====================================================================== */
 
 .hero-uebermich {
   position: relative;
-  min-height: 74vh;
+  min-height: 78vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;   /* Textblock weiter nach oben */
+  align-items: flex-start;       /* Text sitzt oben, nicht mittig */
   text-align: center;
   overflow: hidden;
-  padding: 0;
+  padding-top: 14vh;             /* Abstand vom oberen Rand */
 }
 
 /* Hintergrund */
@@ -1003,25 +1003,23 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   z-index: 0;
 }
 
-/* Badge rechts */
+/* Siegel */
 .hero-uebermich .hero-badge {
   position: absolute;
   right: 3vw;
   bottom: 3vw;
   width: 82px;
-  height: auto;
   z-index: 5;
   opacity: .9;
 }
 
-/* Text-Block */
+/* TEXTBLOCK */
 .hero-uebermich .hero-inner {
   position: relative;
   z-index: 3;
   max-width: 880px;
-  width: 100%;
   margin: 0 auto;
-  padding-top: 8vh;
+  width: 100%;
 }
 
 /* Kicker */
@@ -1035,13 +1033,12 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   margin-bottom: 1.4rem;
 }
 
-/* Hauptheadline */
+/* Headline */
 .hero-uebermich .hero-title {
   color: var(--accent);
   font-size: clamp(2.0rem, 1.4rem + 2.4vw, 3.4rem);
   font-weight: 700;
-  line-height: 1.18;
-  margin: 0 0 1.2rem 0;
+  margin: 0 0 1.0rem 0;
   text-shadow: 0 4px 14px rgba(0,0,0,.55);
 }
 
@@ -1051,5 +1048,11 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   font-size: clamp(1.2rem, 0.8rem + 1vw, 1.45rem);
   font-weight: 300;
   opacity: .92;
-  margin-top: .2rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .hero-uebermich {
+    padding-top: 18vh;          /* mobil etwas mehr Abstand */
+  }
 }

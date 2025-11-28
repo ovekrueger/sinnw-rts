@@ -845,14 +845,15 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
   text-shadow: 0 4px 16px rgba(0,0,0,.55);
 }
 
-/* Hauptheadline – Sucht sucht Sinn */
+/* Claim (Sucht sucht Sinn – …) – ruhiger, edler, weniger dominant */
 .hero-welle .hero-title {
   color: var(--accent);
-  font-size: clamp(2.4rem, 2vw + 1.6rem, 3.4rem);
-  font-weight: 700;
-  line-height: 1.20;
-  margin: -2vh 0 1rem 0;   /* leicht nach oben versetzt */
-  text-shadow: 0 4px 14px rgba(0,0,0,.55);
+  font-size: clamp(1.9rem, 1.2rem + 1.6vw, 2.7rem); /* kleiner & ruhiger */
+  font-weight: 600;               /* weniger Fett */
+  line-height: 1.35;
+  margin: 2.2rem 0 1.2rem 0;      /* mehr Abstand nach oben */
+  opacity: 0.95;
+  text-shadow: 0 3px 10px rgba(0,0,0,.35); /* dezenter, eleganter */
 }
 
 /* Subline – Ein ruhiger Raum ... */

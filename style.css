@@ -781,19 +781,114 @@ body.maenner .hero-badge{ top:14px; right:14px; width:78px; }
     right: 5vw;
   }
 }
-/* FINAL hero-title – sauber, nur EIN Block */
+/* =========================================
+   SINNWÄRTS – HERO WELLE (FINAL & CLEAN)
+   ========================================= */
+
+.hero-welle {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Hintergrundbild */
+.hero-welle .hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Siegel */
+.hero-welle .hero-badge {
+  position: absolute;
+  right: 3vw;
+  bottom: 3vw;
+  width: 84px;
+  height: auto;
+  z-index: 5;
+  opacity: 0.9;
+}
+
+/* TEXT BLOCK – sauber und stabil */
+.hero-welle .hero-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 880px;
+  padding: 10vh 1rem 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* =========================================
+   TYPOGRAFIE
+   ========================================= */
+
+/* Kicker – SINNWÄRTS-STUDIO */
+.hero-welle .hero-kicker {
+  color: var(--accent);
+  font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 4px 16px rgba(0,0,0,.55);
+}
+
+/* Hauptheadline – Sucht sucht Sinn */
 .hero-welle .hero-title {
   color: var(--accent);
-  font-size: clamp(1.9rem, 1.2rem + 2.2vw, 3.2rem);
+  font-size: clamp(2.4rem, 2vw + 1.6rem, 3.4rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin: -1.8vh 0 1.2rem 0;   /* ← Wichtig: nach oben gezogen */
+  line-height: 1.20;
+  margin: -2vh 0 1rem 0;   /* leicht nach oben versetzt */
   text-shadow: 0 4px 14px rgba(0,0,0,.55);
 }
 
-/* Mobil leicht weniger Anhebung */
-@media (max-width: 640px) {
+/* Subline – Ein ruhiger Raum ... */
+.hero-welle .hero-sub {
+  color: var(--ink);
+  font-size: clamp(1.3rem, 1rem + 1vw, 1.65rem);
+  line-height: 1.5;
+  margin-top: 1.4rem;
+  opacity: 0.95;
+  text-shadow: 0 3px 12px rgba(0,0,0,.45);
+  position: relative;
+  top: -0.6vh; /* leicht anheben */
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .hero-welle {
+    min-height: 88vh;
+  }
+
+  .hero-welle .hero-inner {
+    padding-top: 14vh;
+  }
+
+  .hero-welle .hero-badge {
+    width: 72px;
+    right: 4vw;
+    bottom: 4vw;
+  }
+
   .hero-welle .hero-title {
-    margin-top: -0.9vh;
+    margin-top: -1vh;
   }
 }
